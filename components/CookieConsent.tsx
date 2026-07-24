@@ -51,7 +51,7 @@ export default function CookieConsent() {
 
     return (
         <div className="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
-            <div className="bg-slate-900 border border-slate-800 text-white rounded-2xl p-5 shadow-2xl space-y-4">
+            <div className="bg-slate-900 text-white rounded-2xl p-5 shadow-2xl space-y-4">
                 <div className="flex items-start justify-between gap-3">
                     <div className="flex items-center gap-2.5">
                         <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center flex-shrink-0">
