@@ -38,7 +38,7 @@ export default function ContactPage() {
         // Simulate submission & open native email prompt
         await new Promise((resolve) => setTimeout(resolve, 800));
 
-        window.location.href = `mailto:twistertoolscom@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+        window.location.href = `mailto:contact@twistertools.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
         setIsSubmitting(false);
         setIsSuccess(true);
@@ -55,7 +55,7 @@ export default function ContactPage() {
             '@type': 'Organization',
             name: 'TwisterTools',
             url: 'https://www.twistertools.com',
-            email: 'twistertoolscom@gmail.com'
+            email: 'contact@twistertools.com'
         },
     };
 
@@ -115,10 +115,10 @@ export default function ContactPage() {
                             </p>
                             <div className="pt-2">
                                 <a
-                                    href="mailto:twistertoolscom@gmail.com"
+                                    href="mailto:contact@twistertools.com"
                                     className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 underline break-all"
                                 >
-                                    <span>twistertoolscom@gmail.com</span>
+                                    <span>contact@twistertools.com</span>
                                     <ExternalLink className="w-3.5 h-3.5 flex-shrink-0" />
                                 </a>
                             </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                                         <span>Message Dispatched!</span>
                                     </div>
                                     <p className="text-sm text-emerald-700 dark:text-emerald-300 leading-relaxed">
-                                        Thank you for contacting TwisterTools. Your message handler has been initialized. If your email composer did not open automatically, please send a direct email to <strong className="underline">twistertoolscom@gmail.com</strong>.
+                                        Thank you for contacting TwisterTools. Your message handler has been initialized. If your email composer did not open automatically, please send a direct email to <strong className="underline">contact@twistertools.com</strong>.
                                     </p>
                                     <button
                                         onClick={() => setIsSuccess(false)}
@@ -248,7 +248,7 @@ export default function ContactPage() {
                                         </button>
 
                                         <a
-                                            href="mailto:twistertoolscom@gmail.com"
+                                            href="mailto:contact@twistertools.com"
                                             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-sm"
                                         >
                                             <Mail className="w-4 h-4 text-slate-500" />

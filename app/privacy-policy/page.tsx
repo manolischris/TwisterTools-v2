@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
             '@type': 'Organization',
             name: 'TwisterTools',
             url: 'https://www.twistertools.com',
-            email: 'twistertoolscom@gmail.com'
+            email: 'contact@twistertools.com'
         },
     };
 
@@ -247,11 +247,11 @@ export default function PrivacyPolicyPage() {
                         </p>
                         <div className="pt-2 flex flex-wrap gap-4 items-center">
                             <a
-                                href="mailto:twistertoolscom@gmail.com"
+                                href="mailto:contact@twistertools.com"
                                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors shadow-sm text-sm"
                             >
                                 <Mail className="w-4 h-4" />
-                                <span>twistertoolscom@gmail.com</span>
+                                <span>contact@twistertools.com</span>
                             </a>
                             <Link
                                 href="/contact"

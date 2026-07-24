@@ -53,7 +53,7 @@ export default function TermsOfServicePage() {
             '@type': 'Organization',
             name: 'TwisterTools',
             url: 'https://www.twistertools.com',
-            email: 'twistertoolscom@gmail.com'
+            email: 'contact@twistertools.com'
         },
     };
 
