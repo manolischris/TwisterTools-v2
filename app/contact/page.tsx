@@ -24,25 +24,44 @@ export default function ContactPage() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setErrorMessage(null);
 
-        // Prepare mailto link trigger as native browser handler
-        const mailtoSubject = encodeURIComponent(formData.subject || 'TwisterTools Contact Inquiry');
-        const mailtoBody = encodeURIComponent(
-            `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-        );
+        try {
+            const response = await fetch('https://formspree.io/f/xkodqdbw', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    _subject: formData.subject || 'TwisterTools Contact Inquiry',
+                    message: formData.message
+                })
+            });
 
-        // Simulate submission & open native email prompt
-        await new Promise((resolve) => setTimeout(resolve, 800));
-
-        window.location.href = `mailto:contact@twistertools.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({ name: '', email: '', subject: '', message: '' });
+            if (response.ok) {
+                setIsSuccess(true);
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                const data = await response.json();
+                if (data && data.errors) {
+                    setErrorMessage(data.errors.map((err: any) => err.message).join(', '));
+                } else {
+                    setErrorMessage('Failed to send the message. Please try again or email us directly.');
+                }
+            }
+        } catch (error) {
+            setErrorMessage('An unexpected error occurred. Please try again or email us directly.');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const jsonLd = {
@@ -162,10 +181,13 @@ export default function ContactPage() {
                                         <span>Message Dispatched!</span>
                                     </div>
                                     <p className="text-sm text-emerald-700 dark:text-emerald-300 leading-relaxed">
-                                        Thank you for contacting TwisterTools. Your message handler has been initialized. If your email composer did not open automatically, please send a direct email to <strong className="underline">contact@twistertools.com</strong>.
+                                        Thank you for contacting TwisterTools. Your message has been successfully sent. We will review your inquiry and get back to you as soon as possible.
                                     </p>
                                     <button
-                                        onClick={() => setIsSuccess(false)}
+                                        onClick={() => {
+                                            setIsSuccess(false);
+                                            setErrorMessage(null);
+                                        }}
                                         className="mt-2 text-xs font-semibold px-4 py-2 bg-emerald-600 text-white rounded-xl hover:bg-emerald-700 transition-colors shadow-sm"
                                     >
                                         Send Another Message
@@ -173,6 +195,11 @@ export default function ContactPage() {
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-4">
+                                    {errorMessage && (
+                                        <div className="p-4 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800 rounded-2xl text-rose-950 dark:text-rose-200 text-sm">
+                                            {errorMessage}
+                                        </div>
+                                    )}
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         <div className="space-y-1.5">
                                             <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
