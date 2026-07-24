@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "All Online Utilities & Tools | TwisterTools",
     description:
-      "50+ free online tools — most run in your browser with no server calls. Calculators, converters, developer tools & more.",
+      "60+ free online tools — most run in your browser with no server calls. Calculators, converters, developer tools & more.",
   },
 };
 
