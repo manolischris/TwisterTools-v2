@@ -1,0 +1,1450 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-07-13",
+  "total_tools": 166,
+  "modern_categories": {
+    "web-tools": "Web & Network Utilities",
+    "developer-tools": "Developer & Code Tools",
+    "converter-tools": "Converter Utilities",
+    "calculators": "Calculators & Unit Converters",
+    "image-tools": "Image Editing & Conversion Tools",
+    "text-tools": "Text Analysis & Manipulation Tools",
+    "password-tools": "Password & Security Tools",
+    "generator-tools": "Generator Tools"
+  },
+  "redirects": [
+    {
+      "from": "/category/text-analysis-tools",
+      "to": "/tools/text-tools",
+      "type": "301",
+      "reason": "Consolidated text analysis tools into text-tools category"
+    },
+    {
+      "from": "/category/password-management-tools",
+      "to": "/tools/password-tools",
+      "type": "301",
+      "reason": "Renamed and consolidated password tools"
+    },
+    {
+      "from": "/category/online-calculators",
+      "to": "/tools/calculators",
+      "type": "301",
+      "reason": "Simplified category name"
+    },
+    {
+      "from": "/category/unit-calculators",
+      "to": "/tools/calculators",
+      "type": "301",
+      "reason": "Merged unit converters into calculators category"
+    },
+    {
+      "from": "/category/binary-converter",
+      "to": "/tools/converter-tools",
+      "type": "301",
+      "reason": "Maintained category with updated path structure"
+    },
+    {
+      "from": "/category/image-tools",
+      "to": "/tools/image-tools",
+      "type": "301",
+      "reason": "Updated path structure"
+    },
+    {
+      "from": "/category/domain-tools",
+      "to": "/tools/web-tools",
+      "type": "301",
+      "reason": "Consolidated domain tools into SEO tools category"
+    },
+    {
+      "from": "/category/meta-tags-tools",
+      "to": "/tools/web-tools",
+      "type": "301",
+      "reason": "Consolidated meta tags tools into SEO tools category"
+    },
+    {
+      "from": "/category/development-tools",
+      "to": "/tools/developer-tools",
+      "type": "301",
+      "reason": "Renamed for clarity"
+    },
+    {
+      "from": "/category/website-management-tools",
+      "to": "/tools/web-tools",
+      "type": "301",
+      "reason": "Consolidated website management into SEO tools"
+    },
+    {
+      "from": "/category/online-pdf-tools",
+      "to": "/tools/pdf-tools",
+      "type": "301",
+      "reason": "Simplified category name"
+    },
+    {
+      "from": "/category/keywords-tool",
+      "to": "/tools/web-tools",
+      "type": "301",
+      "reason": "Consolidated keywords tools into SEO tools category"
+    },
+    {
+      "from": "/category/website-tracking-tools",
+      "to": "/tools/web-tools",
+      "type": "301",
+      "reason": "Consolidated tracking tools into SEO tools category"
+    },
+    {
+      "from": "/category/other-tools",
+      "to": "/tools/generator-tools",
+      "type": "301",
+      "reason": "Reorganized misc tools into generator category"
+    },
+    {
+      "from": "/hex-to-string",
+      "to": "/tools/converter-tools/string-to-hex",
+      "type": "301",
+      "reason": "Consolidated Hex to String into String to Hex Converter"
+    },
+    {
+      "from": "/tools/converter-tools/hex-to-string",
+      "to": "/tools/converter-tools/string-to-hex",
+      "type": "301",
+      "reason": "Consolidated Hex to String into String to Hex Converter"
+    },
+    {
+      "from": "/meta-tag-analyzer",
+      "to": "/tools/web-tools/meta-tag-generator",
+      "type": "301",
+      "reason": "Consolidated Meta Tag Analyzer into Meta Tag Generator"
+    }
+  ],
+  "tools": [
+    {
+      "id": 1,
+      "name": "MD5 Hash Generator & Checksum Tool",
+      "legacy_url": "/md5-generator",
+      "new_url": "/tools/developer-tools/md5-generator",
+      "new_category": "developer-tools",
+      "description": "Compute secure RFC 1321 MD5 hashes instantly from text strings, bulk multi-line inputs, or local files — 100% client-side with zero server transmission."
+    },
+    {
+      "id": 2,
+      "name": "WordPress Password Generator",
+      "legacy_url": "/wordpress-password-generator",
+      "new_url": "/tools/password-tools/wordpress-password-generator",
+      "new_category": "password-tools",
+      "description": "Generate secure WordPress-compatible password hashes"
+    },
+    {
+      "id": 3,
+      "name": "Password Strength Checker & Cracking Time Analyzer",
+      "legacy_url": "/password-strength-checker",
+      "new_url": "/tools/password-tools/password-strength-checker",
+      "new_category": "password-tools",
+      "description": "Zero-Data Exposure: Evaluated 100% locally in your browser. No server calls, no network transmission."
+    },
+    {
+      "id": 4,
+      "name": "Strong Password & Passphrase Generator",
+      "legacy_url": "/password-generator",
+      "new_url": "/tools/password-tools/password-generator",
+      "new_category": "password-tools",
+      "description": "Build high-entropy random passwords or memorable multi-word passphrases using cryptographically secure CSPRNG random values with custom character sets."
+    },
+    {
+      "id": 5,
+      "name": "Exact Age Calculator & Chronological Milestone Suite",
+      "legacy_url": "/age-calculator",
+      "new_url": "/tools/calculators/age-calculator",
+      "new_category": "calculators",
+      "description": "Calculate exact chronological age in years, months, weeks, days, and hours. Includes upcoming birthday countdowns and historical day-count milestones."
+    },
+    {
+      "id": 6,
+      "name": "Multi-Mode Percentage Calculator & Growth Suite",
+      "legacy_url": "/percentage-calculator",
+      "new_url": "/tools/calculators/percentage-calculator",
+      "new_category": "calculators",
+      "description": "Calculate percentage changes, value distributions, markups, discounts, and reverse percentages instantly with dynamic step-by-step math breakdowns."
+    },
+    {
+      "id": 7,
+      "name": "Average Calculator — Mean, Median, Mode & Std Dev",
+      "legacy_url": "/average-calculator",
+      "new_url": "/tools/calculators/average-calculator",
+      "new_category": "calculators",
+      "description": "Compute statistical Mean, Median, Mode, Range, Variance, and Standard Deviation for custom numeric datasets instantly with visual statistical summaries."
+    },
+    {
+      "id": 8,
+      "name": "Sales Tax Calculator & Gross/Net Expense Suite",
+      "legacy_url": "/sales-tax-calculator",
+      "new_url": "/tools/calculators/sales-tax-calculator",
+      "new_category": "calculators",
+      "description": "Calculate sales tax, reverse extract net prices from gross totals, and log multi-line expenses with US state tax presets."
+    },
+    {
+      "id": 9,
+      "name": "Discount Calculator & Savings Suite",
+      "legacy_url": "/discount-calculator",
+      "new_url": "/tools/calculators/discount-calculator",
+      "new_category": "calculators",
+      "description": "Calculate instant retail markdowns, stacked double discounts, post-tax subtotals, and reverse original list prices with precision."
+    },
+    {
+      "id": 10,
+      "name": "Probability Calculator & Event Odds Suite",
+      "legacy_url": "/probability-calculator",
+      "new_url": "/tools/calculators/probability-calculator",
+      "new_category": "calculators",
+      "description": "Calculate single event odds, conditional joint probabilities, series repetitions, and binomial distribution PMF metrics."
+    },
+    {
+      "id": 11,
+      "name": "Article Rewriter & Text Paraphraser",
+      "legacy_url": "/rewrite-article",
+      "new_url": "/tools/text-tools/rewrite-article",
+      "new_category": "text-tools",
+      "description": "Instantly rephrase prose, alter tone, and elevate article uniqueness with browser-based text transformation."
+    },
+    {
+      "id": 12,
+      "name": "Universal Text Case Converter & Capitalization Suite",
+      "legacy_url": "/case-converter",
+      "new_url": "/tools/text-tools/case-converter",
+      "new_category": "text-tools",
+      "description": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and PascalCase instantly with live word and character counts."
+    },
+    {
+      "id": 13,
+      "name": "Reverse Text Generator & Character Flipper",
+      "legacy_url": "/reverse-text-generator",
+      "new_url": "/tools/text-tools/reverse-text-generator",
+      "new_category": "text-tools",
+      "description": "Flip text strings backward, reverse word orders, mirror lines horizontally, or generate upside-down text transformations in real time."
+    },
+    {
+      "id": 14,
+      "name": "JPG to Word Converter",
+      "legacy_url": "/jpg-to-word",
+      "new_url": "/tools/pdf-tools/jpg-to-word",
+      "new_category": "pdf-tools",
+      "description": "Convert JPG images to editable Word documents"
+    },
+    {
+      "id": 15,
+      "name": "Image to Text Converter",
+      "legacy_url": "/image-to-text-converter",
+      "new_url": "/tools/image-tools/image-to-text",
+      "new_category": "image-tools",
+      "description": "Extract text from images using OCR technology"
+    },
+    {
+      "id": 16,
+      "name": "Online Text Editor & Rich Formatting Sandbox",
+      "legacy_url": "/online-text-editor",
+      "new_url": "/tools/text-tools/online-text-editor",
+      "new_category": "text-tools",
+      "description": "Rich text editing sandbox with real-time HTML view, case transformations, and document stats."
+    },
+    {
+      "id": 17,
+      "name": "RGB to Hex Converter",
+      "legacy_url": "/rgb-to-hex",
+      "new_url": "/tools/developer-tools/rgb-to-hex",
+      "new_category": "developer-tools",
+      "description": "Convert RGB to Hex and Hex to RGB in real-time with alpha opacity support and color picking."
+    },
+    {
+      "id": 18,
+      "name": "Small Text Generator & Unicode Font Styler",
+      "legacy_url": "/small-text-generator",
+      "new_url": "/tools/text-tools/small-text-generator",
+      "new_category": "text-tools",
+      "description": "Convert text to Small Caps, Superscript, Subscript, and Unicode styles instantly."
+    },
+    {
+      "id": 19,
+      "name": "Word Combiner & Phrase Generator",
+      "legacy_url": "/word-combiner",
+      "new_url": "/tools/text-tools/word-combiner",
+      "new_category": "text-tools",
+      "description": "Combine word lists into custom phrase matrices, domain names, and SEO keyword permutations instantly."
+    },
+    {
+      "id": 20,
+      "name": "Power Converter",
+      "legacy_url": "/power-converter",
+      "new_url": "/tools/calculators/power-converter",
+      "new_category": "calculators",
+      "description": "Convert between different power units"
+    },
+    {
+      "id": 21,
+      "name": "Weight Converter",
+      "legacy_url": "/weight-converter",
+      "new_url": "/tools/calculators/weight-converter",
+      "new_category": "calculators",
+      "description": "Convert between different weight units"
+    },
+    {
+      "id": 22,
+      "name": "Temperature Converter",
+      "legacy_url": "/temperature-converter",
+      "new_url": "/tools/calculators/temperature-converter",
+      "new_category": "calculators",
+      "description": "Convert between Celsius, Fahrenheit, and Kelvin"
+    },
+    {
+      "id": 23,
+      "name": "Voltage Converter",
+      "legacy_url": "/voltage-converter",
+      "new_url": "/tools/calculators/voltage-converter",
+      "new_category": "calculators",
+      "description": "Convert between different voltage units"
+    },
+    {
+      "id": 24,
+      "name": "Area Converter",
+      "legacy_url": "/area-converter",
+      "new_url": "/tools/calculators/area-converter",
+      "new_category": "calculators",
+      "description": "Convert between different area units"
+    },
+    {
+      "id": 25,
+      "name": "Length Converter",
+      "legacy_url": "/length-converter",
+      "new_url": "/tools/calculators/length-converter",
+      "new_category": "calculators",
+      "description": "Convert between different length units"
+    },
+    {
+      "id": 26,
+      "name": "Byte Converter",
+      "legacy_url": "/byte-converter",
+      "new_url": "/tools/converter-tools/byte-converter",
+      "new_category": "converter-tools",
+      "description": "Convert between different data storage units"
+    },
+    {
+      "id": 27,
+      "name": "Time Converter",
+      "legacy_url": "/time-converter",
+      "new_url": "/tools/calculators/time-converter",
+      "new_category": "calculators",
+      "description": "Convert between different time units"
+    },
+    {
+      "id": 28,
+      "name": "Pressure Converter",
+      "legacy_url": "/pressure-converter",
+      "new_url": "/tools/calculators/pressure-converter",
+      "new_category": "calculators",
+      "description": "Convert between different pressure units"
+    },
+    {
+      "id": 29,
+      "name": "Speed Converter",
+      "legacy_url": "/speed-converter",
+      "new_url": "/tools/calculators/speed-converter",
+      "new_category": "calculators",
+      "description": "Convert between different speed units"
+    },
+    {
+      "id": 30,
+      "name": "Volume Converter",
+      "legacy_url": "/volume-converter",
+      "new_url": "/tools/calculators/volume-converter",
+      "new_category": "calculators",
+      "description": "Convert between different volume units"
+    },
+    {
+      "id": 31,
+      "name": "Torque Converter",
+      "legacy_url": "/torque-converter",
+      "new_url": "/tools/calculators/torque-converter",
+      "new_category": "calculators",
+      "description": "Convert between different torque units"
+    },
+    {
+      "id": 32,
+      "name": "Unified Binary & Number Base Converter",
+      "legacy_url": "/text-to-binary",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert text, ASCII, decimal, octal, and hexadecimal values dynamically."
+    },
+    {
+      "id": 33,
+      "name": "Binary to Text",
+      "legacy_url": "/binary-to-text",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert binary code to readable text"
+    },
+    {
+      "id": 34,
+      "name": "Binary to Hex",
+      "legacy_url": "/binary-to-hex",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert binary to hexadecimal format"
+    },
+    {
+      "id": 35,
+      "name": "Hex to Binary",
+      "legacy_url": "/hex-to-binary",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert hexadecimal to binary format"
+    },
+    {
+      "id": 36,
+      "name": "Binary to ASCII",
+      "legacy_url": "/binary-to-ascii",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert binary to ASCII characters"
+    },
+    {
+      "id": 37,
+      "name": "ASCII to Binary",
+      "legacy_url": "/ascii-to-binary",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert ASCII characters to binary"
+    },
+    {
+      "id": 38,
+      "name": "Binary to Decimal",
+      "legacy_url": "/binary-to-decimal",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert binary to decimal numbers"
+    },
+    {
+      "id": 39,
+      "name": "Decimal to Binary",
+      "legacy_url": "/decimal-to-binary",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert decimal to binary numbers"
+    },
+    {
+      "id": 40,
+      "name": "Text to ASCII",
+      "legacy_url": "/text-to-ascii",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert text to ASCII code"
+    },
+    {
+      "id": 41,
+      "name": "Decimal to Hex",
+      "legacy_url": "/decimal-to-hex",
+      "new_url": "/tools/converter-tools/binary-converter",
+      "new_category": "converter-tools",
+      "description": "Convert decimal to hexadecimal format"
+    },
+    {
+      "id": 42,
+      "name": "PNG to JPG & Format Converter Suite",
+      "legacy_url": "/png-to-jpg",
+      "new_url": "/tools/image-tools/png-to-jpg",
+      "new_category": "image-tools",
+      "description": "Convert PNG images to JPG, WebP, or PNG with batch processing, custom transparency fill colors, and real-time canvas compression. 100% client-side execution."
+    },
+    {
+      "id": 43,
+      "name": "JPG to PNG Converter",
+      "legacy_url": "/jpg-to-png",
+      "new_url": "/tools/image-tools/jpg-to-png",
+      "new_category": "image-tools",
+      "description": "Convert JPG images to PNG format"
+    },
+    {
+      "id": 44,
+      "name": "Reverse Image Search",
+      "legacy_url": "/reverse-image-search",
+      "new_url": "/tools/image-tools/reverse-image-search",
+      "new_category": "image-tools",
+      "description": "Find similar images across the web"
+    },
+    {
+      "id": 45,
+      "name": "Text to Image",
+      "legacy_url": "/text-image",
+      "new_url": "/tools/image-tools/text-to-image",
+      "new_category": "image-tools",
+      "description": "Convert text to image with custom styling"
+    },
+    {
+      "id": 46,
+      "name": "JPG Converter",
+      "legacy_url": "/jpg-converter",
+      "new_url": "/tools/image-tools/jpg-converter",
+      "new_category": "image-tools",
+      "description": "Convert various image formats to JPG"
+    },
+    {
+      "id": 47,
+      "name": "Favicon Generator & Multi-Resolution App Icon Suite",
+      "legacy_url": "/favicon-generator",
+      "new_url": "/tools/image-tools/favicon-generator",
+      "new_category": "image-tools",
+      "description": "Generate standard browser favicons, Apple touch icons, and Android PWA manifest icon suites client-side."
+    },
+    {
+      "id": 48,
+      "name": "Image Compressor & Quality Optimizer",
+      "legacy_url": "/image-compressor",
+      "new_url": "/tools/image-tools/image-compressor",
+      "new_category": "image-tools",
+      "description": "Batch compress and optimize PNG, JPG, WebP, and GIF assets locally in your browser. Fine-tune compression ratios, apply custom transparency fills, and scale pixel dimensions with zero server uploads."
+    },
+    {
+      "id": 49,
+      "name": "Image Resizer & Pixel Dimensions Scaler",
+      "legacy_url": "/image-resizer",
+      "new_url": "/tools/image-tools/image-resizer",
+      "new_category": "image-tools",
+      "description": "Batch scale pixel dimensions, lock aspect ratios, and optimize web graphics locally using high-performance browser canvas rendering."
+    },
+    {
+      "id": 50,
+      "name": "Meme Generator",
+      "legacy_url": "/meme-generator",
+      "new_url": "/tools/image-tools/meme-generator",
+      "new_category": "image-tools",
+      "description": "Create custom memes with templates"
+    },
+    {
+      "id": 51,
+      "name": "WHOIS Domain Age Checker & Expiration Auditor",
+      "legacy_url": "/domain-age-checker",
+      "new_url": "/tools/web-tools/domain-age-checker",
+      "new_category": "web-tools",
+      "description": "Query live WHOIS registries to inspect domain creation dates, total active age, registrar information, expiration milestones, and trust metrics."
+    },
+    {
+      "id": 52,
+      "name": "Domain Name Search",
+      "legacy_url": "/domain-name-search",
+      "new_url": "/tools/web-tools/domain-name-search",
+      "new_category": "web-tools",
+      "description": "Search for available domain names"
+    },
+    {
+      "id": 53,
+      "name": "Domain Hosting Checker",
+      "legacy_url": "/domain-hosting-checker",
+      "new_url": "/tools/web-tools/domain-hosting-checker",
+      "new_category": "web-tools",
+      "description": "Find domain hosting information"
+    },
+    {
+      "id": 54,
+      "name": "Domain Authority Checker",
+      "legacy_url": "/domain-authority-checker",
+      "new_url": "/tools/web-tools/domain-authority-checker",
+      "new_category": "web-tools",
+      "description": "Check domain authority and metrics"
+    },
+    {
+      "id": 55,
+      "name": "Domain to IP Converter & DNS Inspector",
+      "legacy_url": "/domain-to-ip",
+      "new_url": "/tools/web-tools/domain-to-ip",
+      "new_category": "web-tools",
+      "description": "Instantly resolve domain names into IPv4/IPv6 addresses, inspect A-records, ISP metadata, and server locations."
+    },
+    {
+      "id": 56,
+      "name": "DNS Record Finder & Name Server Inspector",
+      "legacy_url": "/find-dns-record",
+      "new_url": "/tools/web-tools/find-dns-record",
+      "new_category": "web-tools",
+      "description": "Instantly query and inspect live DNS records (A, AAAA, MX, TXT, NS, CNAME, SOA) across global resolvers with full TTL telemetry."
+    },
+    {
+      "id": 57,
+      "name": "Blacklist Check",
+      "legacy_url": "/blacklist-check",
+      "new_url": "/tools/web-tools/blacklist-check",
+      "new_category": "web-tools",
+      "description": "Check if domain is blacklisted"
+    },
+    {
+      "id": 58,
+      "name": "What Is My IP Address & Network Inspector",
+      "legacy_url": "/what-is-my-ip",
+      "new_url": "/tools/web-tools/what-is-my-ip",
+      "new_category": "web-tools",
+      "description": "Check your public IPv4/IPv6 address, ISP details, geolocation, and connection security in real time."
+    },
+    {
+      "id": 59,
+      "name": "IP Location Lookup & GeoIP Visualizer",
+      "legacy_url": "/ip-location",
+      "new_url": "/tools/web-tools/ip-location",
+      "new_category": "web-tools",
+      "description": "Inspect IPv4/IPv6 locations, ASN telemetry, ISP network data, and interactive location maps."
+    },
+    {
+      "id": 60,
+      "name": "Meta Tag Analyzer",
+      "legacy_url": "/meta-tag-analyzer",
+      "new_url": "/tools/web-tools/meta-tag-generator",
+      "new_category": "web-tools",
+      "description": "Analyze meta tags on webpages"
+    },
+    {
+      "id": 61,
+      "name": "Meta Tag Generator & Social Preview Inspector",
+      "legacy_url": "/meta-tag-generator",
+      "new_url": "/tools/web-tools/meta-tag-generator",
+      "new_category": "web-tools",
+      "description": "Generate SEO-optimized HTML meta tags, Open Graph properties, and Twitter Cards with real-time live social media search snippet previews."
+    },
+    {
+      "id": 62,
+      "name": "JSON to XML",
+      "legacy_url": "/json-to-xml",
+      "new_url": "/tools/developer-tools/json-to-xml",
+      "new_category": "developer-tools",
+      "description": "Convert JSON data to XML format"
+    },
+    {
+      "id": 63,
+      "name": "JSON Formatter, Validator & Viewer",
+      "legacy_url": "/json-viewer",
+      "new_url": "/tools/developer-tools/json-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "A premium, secure client-side workbench to validate, beautify, compact, and inspect JSON data structures instantly."
+    },
+    {
+      "id": 64,
+      "name": "JSON Formatter, Validator & Viewer",
+      "legacy_url": "/json-formatter",
+      "new_url": "/tools/developer-tools/json-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "A premium, secure client-side workbench to validate, beautify, compact, and inspect JSON data structures instantly."
+    },
+    {
+      "id": 65,
+      "name": "JSON Formatter, Validator & Viewer",
+      "legacy_url": "/json-validator",
+      "new_url": "/tools/developer-tools/json-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "A premium, secure client-side workbench to validate, beautify, compact, and inspect JSON data structures instantly."
+    },
+    {
+      "id": 66,
+      "name": "JSON Formatter, Validator & Viewer",
+      "legacy_url": "/json-beautifier",
+      "new_url": "/tools/developer-tools/json-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "A premium, secure client-side workbench to validate, beautify, compact, and inspect JSON data structures instantly."
+    },
+    {
+      "id": 67,
+      "name": "JSON Formatter, Validator & Viewer",
+      "legacy_url": "/json-editor",
+      "new_url": "/tools/developer-tools/json-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "A premium, secure client-side workbench to validate, beautify, compact, and inspect JSON data structures instantly."
+    },
+    {
+      "id": 68,
+      "name": "XML to JSON",
+      "legacy_url": "/xml-json",
+      "new_url": "/tools/developer-tools/xml-to-json",
+      "new_category": "developer-tools",
+      "description": "Convert XML data to JSON format"
+    },
+    {
+      "id": 69,
+      "name": "WordPress Theme Detector",
+      "legacy_url": "/wordpress-theme-detector",
+      "new_url": "/tools/web-tools/wordpress-theme-detector",
+      "new_category": "web-tools",
+      "description": "Detect WordPress theme used by websites"
+    },
+    {
+      "id": 70,
+      "name": "Twitter Card Generator",
+      "legacy_url": "/twitter-card-generator",
+      "new_url": "/tools/web-tools/twitter-card-generator",
+      "new_category": "web-tools",
+      "description": "Generate Twitter card meta tags"
+    },
+    {
+      "id": 71,
+      "name": "Open Graph Meta Tag Generator & Social Card Suite",
+      "legacy_url": "/open-graph-generator",
+      "new_url": "/tools/web-tools/open-graph-generator",
+      "new_category": "web-tools",
+      "description": "Build Facebook, LinkedIn, and social media Open Graph tags. Preview rich card images, post titles, and descriptions prior to publishing."
+    },
+    {
+      "id": 72,
+      "name": "HTML Viewer",
+      "legacy_url": "/html-viewer",
+      "new_url": "/tools/developer-tools/html-viewer",
+      "new_category": "developer-tools",
+      "description": "View and render HTML code"
+    },
+    {
+      "id": 73,
+      "name": "XML Formatter, Validator & Viewer",
+      "legacy_url": "/xml-formatter",
+      "new_url": "/tools/developer-tools/xml-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "A premium, secure client-side workbench to format, validate, beautify, minify, and view XML documents locally and securely."
+    },
+    {
+      "id": 74,
+      "name": "SEO Report",
+      "legacy_url": "/seo-report",
+      "new_url": "/tools/web-tools/seo-report",
+      "new_category": "web-tools",
+      "description": "Generate comprehensive SEO reports"
+    },
+    {
+      "id": 75,
+      "name": "Website Screenshot Generator",
+      "legacy_url": "/website-screenshot-generator",
+      "new_url": "/tools/web-tools/website-screenshot",
+      "new_category": "web-tools",
+      "description": "Capture website screenshots"
+    },
+    {
+      "id": 76,
+      "name": "Ping Tool",
+      "legacy_url": "/ping-tool",
+      "new_url": "/tools/web-tools/ping-tool",
+      "new_category": "web-tools",
+      "description": "Test server connectivity and response time"
+    },
+    {
+      "id": 77,
+      "name": "URL Encoder / Decoder & URI Sanitizer",
+      "legacy_url": "/url-encode-decode",
+      "new_url": "/tools/developer-tools/url-encoder-decoder",
+      "new_category": "developer-tools",
+      "description": "Encode special characters into percent-encoded URI strings or decode encoded URLs back to human-readable paths in real time. 100% client-side web utility."
+    },
+    {
+      "id": 78,
+      "name": "Base64 Encoder / Decoder & String Sandbox",
+      "legacy_url": "/base64-encode-decode",
+      "new_url": "/tools/developer-tools/base64-encode-decode",
+      "new_category": "developer-tools",
+      "description": "Encode plain text to Base64 or decode Base64 strings back to readable format instantly. Supports UTF-8 strings, line breaks, and live byte metrics locally in your browser."
+    },
+    {
+      "id": 79,
+      "name": "Custom QR Code Generator with Logo & Style Suite",
+      "legacy_url": "/qr-code-generator",
+      "new_url": "/tools/generator-tools/qr-code-generator",
+      "new_category": "generator-tools",
+      "description": "Generate high-resolution custom QR codes for URLs, WiFi, contact cards, and text with custom colors, dot styles, and vector export options (PNG/SVG)."
+    },
+    {
+      "id": 80,
+      "name": "HTML Editor",
+      "legacy_url": "/html-editor",
+      "new_url": "/tools/developer-tools/html-editor",
+      "new_category": "developer-tools",
+      "description": "Edit HTML code with live preview"
+    },
+    {
+      "id": 81,
+      "name": "HTML Minifier",
+      "legacy_url": "/html-minifier",
+      "new_url": "/tools/developer-tools/html-css-minifier-unminifier",
+      "new_category": "developer-tools",
+      "description": "Minify HTML code"
+    },
+    {
+      "id": 82,
+      "name": "JS Minifier",
+      "legacy_url": "/js-minifier",
+      "new_url": "/tools/developer-tools/js-minifier",
+      "new_category": "developer-tools",
+      "description": "Minify JavaScript code"
+    },
+    {
+      "id": 83,
+      "name": "CSS Minifier",
+      "legacy_url": "/css-minifier",
+      "new_url": "/tools/developer-tools/html-css-minifier-unminifier",
+      "new_category": "developer-tools",
+      "description": "Minify CSS code"
+    },
+    {
+      "id": 84,
+      "name": "URL Opener",
+      "legacy_url": "/url-opener",
+      "new_url": "/tools/developer-tools/url-opener",
+      "new_category": "developer-tools",
+      "description": "Open multiple URLs simultaneously"
+    },
+    {
+      "id": 85,
+      "name": "XML Sitemap Generator & URL Crawler Suite",
+      "legacy_url": "/xml-sitemap-generator",
+      "new_url": "/tools/web-tools/sitemap-generator",
+      "new_category": "web-tools",
+      "description": "Compile Sitemaps.org compliant XML, TXT, and HTML sitemaps for Google Search Console."
+    },
+    {
+      "id": 86,
+      "name": "Word to PDF Converter",
+      "legacy_url": "/word-pdf-converter",
+      "new_url": "/tools/pdf-tools/word-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert Word documents to PDF"
+    },
+    {
+      "id": 87,
+      "name": "Text to PDF Converter",
+      "legacy_url": "/text-pdf-converter",
+      "new_url": "/tools/pdf-tools/text-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert text files to PDF"
+    },
+    {
+      "id": 88,
+      "name": "Merge PDF",
+      "legacy_url": "/merge-pdf",
+      "new_url": "/tools/pdf-tools/merge-pdf",
+      "new_category": "pdf-tools",
+      "description": "Merge multiple PDF files into one"
+    },
+    {
+      "id": 89,
+      "name": "Organize PDF",
+      "legacy_url": "/organize-pdf",
+      "new_url": "/tools/pdf-tools/organize-pdf",
+      "new_category": "pdf-tools",
+      "description": "Organize and rearrange PDF pages"
+    },
+    {
+      "id": 90,
+      "name": "PDF to ZIP",
+      "legacy_url": "/pdf-to-zip",
+      "new_url": "/tools/pdf-tools/pdf-to-zip",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF files to ZIP archives"
+    },
+    {
+      "id": 91,
+      "name": "Watermark PDF",
+      "legacy_url": "/watermark-pdf",
+      "new_url": "/tools/pdf-tools/watermark-pdf",
+      "new_category": "pdf-tools",
+      "description": "Add watermarks to PDF files"
+    },
+    {
+      "id": 92,
+      "name": "Lock PDF",
+      "legacy_url": "/lock-pdf",
+      "new_url": "/tools/pdf-tools/lock-pdf",
+      "new_category": "pdf-tools",
+      "description": "Protect PDF files with passwords"
+    },
+    {
+      "id": 93,
+      "name": "Unlock PDF",
+      "legacy_url": "/unlock-pdf",
+      "new_url": "/tools/pdf-tools/unlock-pdf",
+      "new_category": "pdf-tools",
+      "description": "Remove password protection from PDFs"
+    },
+    {
+      "id": 94,
+      "name": "JPG to PDF",
+      "legacy_url": "/jpg-to-pdf",
+      "new_url": "/tools/pdf-tools/jpg-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert JPG images to PDF"
+    },
+    {
+      "id": 95,
+      "name": "PNG to PDF",
+      "legacy_url": "/png-to-pdf",
+      "new_url": "/tools/pdf-tools/png-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert PNG images to PDF"
+    },
+    {
+      "id": 96,
+      "name": "GIF to PDF",
+      "legacy_url": "/gif-to-pdf",
+      "new_url": "/tools/pdf-tools/gif-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert GIF images to PDF"
+    },
+    {
+      "id": 97,
+      "name": "BMP to PDF",
+      "legacy_url": "/bmp-to-pdf",
+      "new_url": "/tools/pdf-tools/bmp-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert BMP images to PDF"
+    },
+    {
+      "id": 98,
+      "name": "TIFF to PDF",
+      "legacy_url": "/tiff-to-pdf",
+      "new_url": "/tools/pdf-tools/tiff-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert TIFF images to PDF"
+    },
+    {
+      "id": 99,
+      "name": "Image to PDF",
+      "legacy_url": "/image-to-pdf",
+      "new_url": "/tools/pdf-tools/image-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert various image formats to PDF"
+    },
+    {
+      "id": 100,
+      "name": "HTML to PDF",
+      "legacy_url": "/html-to-pdf",
+      "new_url": "/tools/pdf-tools/html-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert HTML pages to PDF"
+    },
+    {
+      "id": 101,
+      "name": "PPT to PDF",
+      "legacy_url": "/ppt-to-pdf",
+      "new_url": "/tools/pdf-tools/ppt-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert PowerPoint to PDF"
+    },
+    {
+      "id": 102,
+      "name": "Excel to PDF",
+      "legacy_url": "/excel-to-pdf",
+      "new_url": "/tools/pdf-tools/excel-to-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert Excel spreadsheets to PDF"
+    },
+    {
+      "id": 103,
+      "name": "PDF to Word",
+      "legacy_url": "/pdf-to-word",
+      "new_url": "/tools/pdf-tools/pdf-to-word",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF to editable Word documents"
+    },
+    {
+      "id": 104,
+      "name": "PDF to PowerPoint",
+      "legacy_url": "/pdf-to-powerpoint",
+      "new_url": "/tools/pdf-tools/pdf-to-ppt",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF to PowerPoint presentations"
+    },
+    {
+      "id": 105,
+      "name": "PDF to Excel",
+      "legacy_url": "/pdf-to-excel",
+      "new_url": "/tools/pdf-tools/pdf-to-excel",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF to Excel spreadsheets"
+    },
+    {
+      "id": 106,
+      "name": "PDF to PNG",
+      "legacy_url": "/pdf-to-png",
+      "new_url": "/tools/pdf-tools/pdf-to-png",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF pages to PNG images"
+    },
+    {
+      "id": 107,
+      "name": "PDF to JPG",
+      "legacy_url": "/pdf-to-jpg",
+      "new_url": "/tools/pdf-tools/pdf-to-jpg",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF pages to JPG images"
+    },
+    {
+      "id": 108,
+      "name": "PDF to TIFF",
+      "legacy_url": "/pdf-to-tiff",
+      "new_url": "/tools/pdf-tools/pdf-to-tiff",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF to TIFF images"
+    },
+    {
+      "id": 109,
+      "name": "PDF to BMP",
+      "legacy_url": "/pdf-to-bmp",
+      "new_url": "/tools/pdf-tools/pdf-to-bmp",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF to BMP images"
+    },
+    {
+      "id": 110,
+      "name": "Grayscale PDF",
+      "legacy_url": "/grayscale-pdf",
+      "new_url": "/tools/pdf-tools/grayscale-pdf",
+      "new_category": "pdf-tools",
+      "description": "Convert PDF to grayscale"
+    },
+    {
+      "id": 111,
+      "name": "PDF Compressor",
+      "legacy_url": "/pdf-compressor",
+      "new_url": "/tools/pdf-tools/compress-pdf",
+      "new_category": "pdf-tools",
+      "description": "Compress PDF files to reduce size"
+    },
+    {
+      "id": 112,
+      "name": "Remove PDF Pages",
+      "legacy_url": "/remove-pdf-pages",
+      "new_url": "/tools/pdf-tools/remove-pdf-pages",
+      "new_category": "pdf-tools",
+      "description": "Remove pages from PDF files"
+    },
+    {
+      "id": 113,
+      "name": "SERP Checker",
+      "legacy_url": "/serp-checker",
+      "new_url": "/tools/web-tools/serp-checker",
+      "new_category": "web-tools",
+      "description": "Check search engine ranking positions"
+    },
+    {
+      "id": 114,
+      "name": "Keyword Position",
+      "legacy_url": "/keyword-position",
+      "new_url": "/tools/web-tools/keyword-position",
+      "new_category": "web-tools",
+      "description": "Check keyword ranking positions"
+    },
+    {
+      "id": 115,
+      "name": "Keyword Density Checker",
+      "legacy_url": "/keyword-density-checker",
+      "new_url": "/tools/web-tools/keyword-density",
+      "new_category": "web-tools",
+      "description": "Analyze keyword density in content"
+    },
+    {
+      "id": 116,
+      "name": "Related Keywords Finder",
+      "legacy_url": "/related-keywords-finder",
+      "new_url": "/tools/web-tools/related-keywords",
+      "new_category": "web-tools",
+      "description": "Find related keywords and phrases"
+    },
+    {
+      "id": 117,
+      "name": "Keyword Research Tool",
+      "legacy_url": "/keyword-research-tool",
+      "new_url": "/tools/web-tools/keyword-research",
+      "new_category": "web-tools",
+      "description": "Research keywords for SEO campaigns"
+    },
+    {
+      "id": 118,
+      "name": "Keywords Rich Domains",
+      "legacy_url": "/keywords-rich-domains",
+      "new_url": "/tools/web-tools/keyword-domain-suggestions",
+      "new_category": "web-tools",
+      "description": "Find keyword-rich domain suggestions"
+    },
+    {
+      "id": 119,
+      "name": "MozRank Checker",
+      "legacy_url": "/mozrank-checker",
+      "new_url": "/tools/web-tools/mozrank-checker",
+      "new_category": "web-tools",
+      "description": "Check MozRank metrics"
+    },
+    {
+      "id": 120,
+      "name": "Google Cache Checker",
+      "legacy_url": "/google-cache-checker",
+      "new_url": "/tools/web-tools/google-cache-checker",
+      "new_category": "web-tools",
+      "description": "Check if pages are cached by Google"
+    },
+    {
+      "id": 121,
+      "name": "Check Gzip Compression",
+      "legacy_url": "/check-gzip-compression",
+      "new_url": "/tools/web-tools/gzip-compression",
+      "new_category": "web-tools",
+      "description": "Check if website uses Gzip compression"
+    },
+    {
+      "id": 122,
+      "name": "SSL Certificate Checker",
+      "legacy_url": "/ssl-checker",
+      "new_url": "/tools/web-tools/ssl-checker",
+      "new_category": "web-tools",
+      "description": "Check SSL certificate validity. Verify SSL/TLS certificate expiration dates, CA issuer trust chains, and security ciphers."
+    },
+    {
+      "id": 123,
+      "name": "Spider Simulator",
+      "legacy_url": "/spider-simulator",
+      "new_url": "/tools/web-tools/spider-simulator",
+      "new_category": "web-tools",
+      "description": "Simulate search engine spider crawling"
+    },
+    {
+      "id": 124,
+      "name": "What Is My Browser",
+      "legacy_url": "/what-is-my-browser",
+      "new_url": "/tools/web-tools/browser-info",
+      "new_category": "web-tools",
+      "description": "Detect browser and system information"
+    },
+    {
+      "id": 125,
+      "name": "HTTP Headers Inspector & Response Code Analyzer",
+      "legacy_url": "/get-http-headers",
+      "new_url": "/tools/web-tools/http-headers",
+      "new_category": "web-tools",
+      "description": "Inspect HTTP response headers, check HTTP status codes, and analyze web security header policies."
+    },
+    {
+      "id": 126,
+      "name": "Htaccess Redirect",
+      "legacy_url": "/htaccess-redirect",
+      "new_url": "/tools/developer-tools/htaccess-redirect",
+      "new_category": "developer-tools",
+      "description": "Generate htaccess redirect rules"
+    },
+    {
+      "id": 127,
+      "name": "Mobile Friendly Test",
+      "legacy_url": "/mobile-friendly-test",
+      "new_url": "/tools/web-tools/mobile-friendly-test",
+      "new_category": "web-tools",
+      "description": "Test mobile-friendliness of websites"
+    },
+    {
+      "id": 128,
+      "name": "AdSense Revenue Calculator",
+      "legacy_url": "/adsense-calculator",
+      "new_url": "/tools/calculators/adsense-calculator",
+      "new_category": "calculators",
+      "description": "Estimate monthly Google AdSense earnings, click-through rates, and page RPM."
+    },
+    {
+      "id": 129,
+      "name": "Webpage Screen Resolution Simulator",
+      "legacy_url": "/webpage-screen-resultion-simulator",
+      "new_url": "/tools/web-tools/screen-resolution-simulator",
+      "new_category": "web-tools",
+      "description": "Simulate webpage on different screen resolutions"
+    },
+    {
+      "id": 130,
+      "name": "English Converter",
+      "legacy_url": "/english-converter",
+      "new_url": "/tools/text-tools/english-converter",
+      "new_category": "text-tools",
+      "description": "Convert and improve English text"
+    },
+    {
+      "id": 131,
+      "name": "Paraphrased",
+      "legacy_url": "/paraphrased",
+      "new_url": "/tools/text-tools/paraphrase-tool",
+      "new_category": "text-tools",
+      "description": "Paraphrase text for unique content"
+    },
+    {
+      "id": 132,
+      "name": "Comma Separator & List Delimiter Converter",
+      "legacy_url": "/comma-separator",
+      "new_url": "/tools/text-tools/comma-separator",
+      "new_category": "text-tools",
+      "description": "Transform column listings, spreadsheet rows, or tab data into clean comma-separated lists, SQL array inputs, or custom delimited strings instantly."
+    },
+    {
+      "id": 133,
+      "name": "Broken Links Checker",
+      "legacy_url": "/websites-broken-link-checker",
+      "new_url": "/tools/web-tools/broken-links-checker",
+      "new_category": "web-tools",
+      "description": "Check websites for broken links"
+    },
+    {
+      "id": 134,
+      "name": "Video to GIF Converter",
+      "legacy_url": "/video-to-gif-converter",
+      "new_url": "/tools/image-tools/video-to-gif",
+      "new_category": "image-tools",
+      "description": "Convert video files to animated GIFs"
+    },
+    {
+      "id": 135,
+      "name": "Vector SVG Converter & Rasterizer Suite",
+      "legacy_url": "/svg-converter",
+      "new_url": "/tools/image-tools/svg-converter",
+      "new_category": "image-tools",
+      "description": "Convert SVG vector graphics to PNG, JPG, or WebP raster formats, or vectorize PNG/JPG images into clean SVG vectors with 100% client-side privacy."
+    },
+    {
+      "id": 136,
+      "name": "PNG to SVG",
+      "legacy_url": "/png-to-svg",
+      "new_url": "/tools/image-tools/png-to-svg",
+      "new_category": "image-tools",
+      "description": "Convert PNG images to SVG"
+    },
+    {
+      "id": 137,
+      "name": "JPG to SVG",
+      "legacy_url": "/jpg-to-svg",
+      "new_url": "/tools/image-tools/jpg-to-svg",
+      "new_category": "image-tools",
+      "description": "Convert JPG images to SVG"
+    },
+    {
+      "id": 138,
+      "name": "Next-Gen HEIC & AVIF Image Converter",
+      "legacy_url": "/heic-to-jpg",
+      "new_url": "/tools/image-tools/heic-to-jpg",
+      "new_category": "image-tools",
+      "description": "Batch convert Apple HEIC, HEIF, and AVIF images to standard JPG or PNG formats instantly and securely in your browser with zero server uploads."
+    },
+    {
+      "id": 139,
+      "name": "HEIC to PNG",
+      "legacy_url": "/heic-to-png",
+      "new_url": "/tools/image-tools/heic-to-png",
+      "new_category": "image-tools",
+      "description": "Convert HEIC images to PNG"
+    },
+    {
+      "id": 140,
+      "name": "AVIF to JPG",
+      "legacy_url": "/avif-to-jpg",
+      "new_url": "/tools/image-tools/avif-to-jpg",
+      "new_category": "image-tools",
+      "description": "Convert AVIF images to JPG"
+    },
+    {
+      "id": 141,
+      "name": "AVIF to PNG",
+      "legacy_url": "/avif-to-png",
+      "new_url": "/tools/image-tools/avif-to-png",
+      "new_category": "image-tools",
+      "description": "Convert AVIF images to PNG"
+    },
+    {
+      "id": 142,
+      "name": "SVG to JPG",
+      "legacy_url": "/svg-to-jpg",
+      "new_url": "/tools/image-tools/svg-to-jpg",
+      "new_category": "image-tools",
+      "description": "Convert SVG images to JPG"
+    },
+    {
+      "id": 143,
+      "name": "SVG to PNG",
+      "legacy_url": "/svg-to-png",
+      "new_url": "/tools/image-tools/svg-to-png",
+      "new_category": "image-tools",
+      "description": "Convert SVG images to PNG"
+    },
+    {
+      "id": 144,
+      "name": "Test Credit Card & Mock Identity Generator",
+      "legacy_url": "/credit-card-generator",
+      "new_url": "/tools/generator-tools/credit-card-generator",
+      "new_category": "generator-tools",
+      "description": "Generate valid Luhn-checked test credit cards and complete mock identity profiles for gateway testing and sandbox environments."
+    },
+    {
+      "id": 145,
+      "name": "Fake Address Generator",
+      "legacy_url": "/fake-address-generator",
+      "new_url": "/tools/generator-tools/fake-address-generator",
+      "new_category": "generator-tools",
+      "description": "Generate fake addresses for testing"
+    },
+    {
+      "id": 146,
+      "name": "Fake Name Generator",
+      "legacy_url": "/fake-name-generator",
+      "new_url": "/tools/generator-tools/fake-name-generator",
+      "new_category": "generator-tools",
+      "description": "Generate fake names for testing"
+    },
+    {
+      "id": 147,
+      "name": "HTML Entity Encoder / Decoder Suite",
+      "legacy_url": "/html-entity-encoder-decoder",
+      "new_url": "/tools/developer-tools/html-entity-encoder-decoder",
+      "new_category": "developer-tools",
+      "description": "Convert special HTML characters (&, <, >, quotes) into secure HTML entities and decode numeric or named entities back into raw markup safely in real time."
+    },
+    {
+      "id": 148,
+      "name": "JWT Decoder, Inspector & Payload Auditor",
+      "legacy_url": "/jwt-decoder",
+      "new_url": "/tools/developer-tools/jwt-decoder",
+      "new_category": "developer-tools",
+      "description": "Decode JSON Web Tokens (JWT) locally to inspect header parameters, payload claims, and expiration timestamps without transmitting secret keys over the wire."
+    },
+    {
+      "id": 149,
+      "name": "Bulk UUID / GUID Generator",
+      "legacy_url": "/uuid-generator",
+      "new_url": "/tools/generator-tools/uuid-generator",
+      "new_category": "generator-tools",
+      "description": "Generate single or bulk cryptographically secure UUID v4 and time-based UUID v1 identifiers."
+    },
+    {
+      "id": 150,
+      "name": "String to Hex & Hex to String Converter",
+      "legacy_url": "/string-to-hex",
+      "new_url": "/tools/converter-tools/string-to-hex",
+      "new_category": "converter-tools",
+      "description": "Convert plain text strings to hexadecimal format and decode hex arrays back to readable text in real-time."
+    },
+    {
+      "id": 151,
+      "name": "Unix Timestamp Converter & Epoch Calculator",
+      "legacy_url": "/unix-timestamp-converter",
+      "new_url": "/tools/developer-tools/unix-timestamp-converter",
+      "new_category": "developer-tools",
+      "description": "Convert Unix epoch timestamps to human-readable dates and vice versa with real-time live ticker, precision detection, and relative time calculations — all 100% client-side."
+    },
+    {
+      "id": 152,
+      "name": "SHA Hash Generator & Checksum Tool Suite",
+      "legacy_url": "/sha-generator",
+      "new_url": "/tools/developer-tools/sha-generator",
+      "new_category": "developer-tools",
+      "description": "Generate SHA-1, SHA-256, SHA-512, and SHA-3 (256/512) hashes locally and securely. Verify checksums and analyze text or files entirely in-browser."
+    },
+    {
+      "id": 153,
+      "name": "Cron Expression Generator & Explainer",
+      "legacy_url": "/cron-expression-generator",
+      "new_url": "/tools/developer-tools/cron-expression-generator",
+      "new_category": "developer-tools",
+      "description": "Generate and explain cron expressions with real-time human-readable translations, next execution dates, and custom schedulers."
+    },
+    {
+      "id": 154,
+      "name": "SQL Formatter & Query Beautifier",
+      "legacy_url": "/sql-formatter",
+      "new_url": "/tools/developer-tools/sql-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "Format, beautify, validate, and minify SQL queries with multi-dialect support (Standard SQL, MySQL, PostgreSQL, T-SQL) — 100% client-side tokenization and parsing."
+    },
+    {
+      "id": 155,
+      "name": "Regex Tester, Explainer & Cheat Sheet",
+      "legacy_url": "/regex-tester",
+      "new_url": "/tools/developer-tools/regex-tester",
+      "new_category": "developer-tools",
+      "description": "Test, debug, and explain regular expressions in real-time with native JavaScript RegExp engine, flag toggles, match highlighting, group captures, and a comprehensive syntax cheat sheet — 100% client-side."
+    },
+    {
+      "id": 156,
+      "name": "Diff Checker & Text Comparison Tool",
+      "legacy_url": "/diff-checker",
+      "new_url": "/tools/developer-tools/diff-checker",
+      "new_category": "developer-tools",
+      "description": "Compare text differences with precision — line-by-line or character-by-character. Split and unified views with real-time performance metrics."
+    },
+    {
+      "id": 157,
+      "name": "Markdown to HTML Converter & Previewer",
+      "legacy_url": "/markdown-to-html",
+      "new_url": "/tools/developer-tools/markdown-to-html",
+      "new_category": "developer-tools",
+      "description": "Convert Markdown to clean, semantic HTML instantly with a live preview. Pure TypeScript regex-based compiler — zero external dependencies, 100% client-side."
+    },
+    {
+      "id": 158,
+      "name": "CSS Formatter, Beautifier & Minifier",
+      "legacy_url": "/css-formatter",
+      "new_url": "/tools/developer-tools/css-formatter-validator",
+      "new_category": "developer-tools",
+      "description": "Format, beautify, and minify CSS code instantly with a pure TypeScript lexical tokenization engine — 100% client-side, zero external dependencies."
+    },
+    {
+      "id": 159,
+      "name": "JavaScript Formatter, Beautifier & Minifier",
+      "legacy_url": "/javascript-formatter",
+      "new_url": "/tools/developer-tools/javascript-formatter-minifier",
+      "new_category": "developer-tools",
+      "description": "Format, beautify, and minify JavaScript code instantly with a pure TypeScript lexical tokenization engine — 100% client-side, zero external dependencies."
+    },
+    {
+      "id": 160,
+      "name": "JSON to CSV & CSV to JSON Converter",
+      "legacy_url": "/json-to-csv-converter",
+      "new_url": "/tools/developer-tools/json-to-csv-converter",
+      "new_category": "developer-tools",
+      "description": "Convert JSON to CSV and CSV to JSON instantly with custom delimiters, nested object flattening, real-time reactive conversion, dynamic size metrics tracking, and drag-and-drop file ingestion — 100% client-side."
+    },
+    {
+      "id": 161,
+      "name": "HTML to Markdown & Markdown to HTML Suite",
+      "legacy_url": "/html-to-markdown",
+      "new_url": "/tools/developer-tools/html-to-markdown",
+      "new_category": "developer-tools",
+      "description": "Convert HTML to Markdown and Markdown to HTML instantly with pure TypeScript DOMParser and regex-based conversion engines — 100% client-side, zero external dependencies."
+    },
+    {
+      "id": 162,
+      "name": "HTML & CSS Minifier & Unminifier",
+      "legacy_url": "/html-css-minifier-unminifier",
+      "new_url": "/tools/developer-tools/html-css-minifier-unminifier",
+      "new_category": "developer-tools",
+      "description": "Minify, unminify, compress, and beautify HTML markup and CSS stylesheets instantly with pure TypeScript tokenization engines — 100% client-side, zero external dependencies."
+    },
+    {
+      "id": 165,
+      "name": "YAML to JSON & JSON to YAML Converter",
+      "legacy_url": "/yaml-to-json-converter",
+      "new_url": "/tools/developer-tools/yaml-to-json-converter",
+      "new_category": "developer-tools",
+      "description": "Convert YAML to JSON and JSON to YAML instantly with beautify and minify modes. Pure TypeScript YAML parser and stringifier — 100% client-side, zero external dependencies."
+    },
+    {
+      "id": 166,
+      "name": "YAML to JSON & JSON to YAML Converter",
+      "legacy_url": "/json-to-yaml-converter",
+      "new_url": "/tools/developer-tools/yaml-to-json-converter",
+      "new_category": "developer-tools",
+      "description": "Convert JSON to YAML and YAML to JSON instantly with beautify and minify modes."
+    },
+    {
+      "id": 167,
+      "name": "YAML to JSON & JSON to YAML Converter",
+      "legacy_url": "/yaml-beautifier",
+      "new_url": "/tools/developer-tools/yaml-to-json-converter",
+      "new_category": "developer-tools",
+      "description": "Beautify and standardize YAML formatting with consistent indentation."
+    },
+    {
+      "id": 168,
+      "name": "YAML to JSON & JSON to YAML Converter",
+      "legacy_url": "/yaml-formatter",
+      "new_url": "/tools/developer-tools/yaml-to-json-converter",
+      "new_category": "developer-tools",
+      "description": "Format and beautify YAML files with proper structure."
+    }
+  ],
+  "notes": "This mapping represents 156 active tools from the old platform. All legacy URLs will be redirected using Next.js 15 middleware to maintain Google indexing. Category-level redirects consolidate old categories into cleaner, more intuitive modern categories."
+}
