@@ -21,12 +21,21 @@ export const metadata: Metadata = {
     url: "https://twistertools.com/tools",
     siteName: "TwisterTools",
     type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TwisterTools — All Online Utilities & Tools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "All Online Utilities & Tools | TwisterTools",
     description:
       "60+ free online tools — most run in your browser with no server calls. Calculators, converters, developer tools & more.",
+    images: ["https://www.twistertools.com/images/tools.jpg"],
   },
 };
 

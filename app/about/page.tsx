@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'About Us & Architecture Philosophy | TwisterTools',
+    title: 'About Us & Architecture Philosophy',
     description: 'Discover TwisterTools 2.0: an ultra-fast, privacy-first web utility suite built with Next.js 15, client-side execution, and zero-retention ephemeral processing.',
     alternates: {
         canonical: 'https://www.twistertools.com/about',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         siteName: 'TwisterTools',
         images: [
             {
-                url: 'https://www.twistertools.com/images/og-default.jpg',
+                url: 'https://www.twistertools.com/images/about.jpg',
                 width: 1200,
                 height: 630,
                 alt: 'About TwisterTools 2.0',

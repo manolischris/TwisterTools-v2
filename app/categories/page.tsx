@@ -24,7 +24,7 @@ import toolsRegistry from "@/lib/tools-registry.json";
    Static Metadata (Next.js 15 App Router)
 ───────────────────────────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
-  title: "All Tool Categories | TwisterTools",
+  title: "All Tool Categories",
   description:
     "Browse all 8 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, Web Tools, Generator Tools, and Converter Tools. Free, fast, and browser-based.",
   alternates: { canonical: "https://www.twistertools.com/categories" },
@@ -35,12 +35,21 @@ export const metadata: Metadata = {
     url: "https://www.twistertools.com/categories",
     siteName: "TwisterTools",
     type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/categories.jpg",
+        width: 1200,
+        height: 630,
+        alt: "TwisterTools — All Tool Categories",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "All Tool Categories | TwisterTools",
     description:
       "8 categories of free browser-based tools — developer utilities, calculators, password generators, image editors, and more.",
+    images: ["https://www.twistertools.com/images/categories.jpg"],
   },
 };
 
