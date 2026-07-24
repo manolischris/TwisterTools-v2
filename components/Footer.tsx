@@ -109,6 +109,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/tools/pdf-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  PDF Tools
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/tools/converter-tools"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >

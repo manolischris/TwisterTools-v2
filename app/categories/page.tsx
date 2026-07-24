@@ -9,6 +9,7 @@ import {
   Calculator,
   RefreshCw,
   FileText,
+  FileCheck2,
   Image as ImageIcon,
   Globe,
   ArrowRight,
@@ -26,12 +27,12 @@ import toolsRegistry from "@/lib/tools-registry.json";
 export const metadata: Metadata = {
   title: "All Tool Categories",
   description:
-    "Browse all 8 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, Web Tools, Generator Tools, and Converter Tools. Free, fast, and browser-based.",
+    "Browse all 9 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, and Converter Tools. Free, fast, and browser-based.",
   alternates: { canonical: "https://www.twistertools.com/categories" },
   openGraph: {
     title: "All Tool Categories | TwisterTools",
     description:
-      "Discover 8 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
+      "Discover 9 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
     url: "https://www.twistertools.com/categories",
     siteName: "TwisterTools",
     type: "website",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "All Tool Categories | TwisterTools",
     description:
-      "8 categories of free browser-based tools — developer utilities, calculators, password generators, image editors, and more.",
+      "9 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and more.",
     images: ["https://www.twistertools.com/images/categories.jpg"],
   },
 };
@@ -145,6 +146,19 @@ const CATEGORIES: CategoryDef[] = [
     ],
   },
   {
+    slug: "pdf-tools",
+    name: "PDF & Document Utilities",
+    description:
+      "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files — entirely in your browser.",
+    icon: FileCheck2,
+    accentClass: "bg-orange-100 text-orange-600",
+    keywords: [
+      "PDF Merger",
+      "Image to PDF Converter",
+      "PDF Password Protector",
+    ],
+  },
+  {
     slug: "generator-tools",
     name: "Generator Tools",
     description:
@@ -196,9 +210,9 @@ const SEO_CARDS: SeoCard[] = [
   },
   {
     icon: Layers,
-    title: "Eight Growing Specialist Categories",
+    title: "Nine Growing Specialist Categories",
     content:
-      "From cryptographic developer utilities and statistical calculators to image canvas processors and live network diagnostic tools, TwisterTools is organized into eight focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
+      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and live network diagnostic tools, TwisterTools is organized into nine focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
   },
   {
     icon: Globe,
@@ -246,7 +260,7 @@ export default function CategoriesIndexPage() {
     "@type": "CollectionPage",
     name: "All Tool Categories — TwisterTools",
     description:
-      "Browse 8 curated categories of free browser-based online utilities on TwisterTools.",
+      "Browse 9 curated categories of free browser-based online utilities on TwisterTools.",
     url: "https://www.twistertools.com/categories",
     publisher: {
       "@type": "Organization",

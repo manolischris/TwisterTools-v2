@@ -10,7 +10,8 @@
     "image-tools": "Image Editing & Conversion Tools",
     "text-tools": "Text Analysis & Manipulation Tools",
     "password-tools": "Password & Security Tools",
-    "generator-tools": "Generator Tools"
+    "generator-tools": "Generator Tools",
+    "pdf-tools": "PDF & Document Utilities"
   },
   "redirects": [
     {
