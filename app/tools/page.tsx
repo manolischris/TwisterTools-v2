@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: "All Online Utilities & Tools",
   description:
     "Browse 50+ free online utilities: developer tools, calculators, converters, password tools, image tools, text tools, web tools, and generators — most run entirely in your browser.",
-  alternates: { canonical: "https://twistertools.com/tools" },
+  alternates: { canonical: "https://www.twistertools.com/tools" },
   openGraph: {
     title: "All Online Utilities & Tools | TwisterTools",
     description:
       "50+ free online tools for developers, designers, and power users. Most tools run entirely in your browser — fast, private, and free.",
-    url: "https://twistertools.com/tools",
+    url: "https://www.twistertools.com/tools",
     siteName: "TwisterTools",
     type: "website",
     images: [
@@ -82,7 +82,7 @@ export default function ToolsDirectoryPage() {
     name: "All Online Utilities & Tools",
     description:
       "Browse all 50+ free online utilities and tools on TwisterTools — developer tools, calculators, converters, password managers, image tools, text utilities, and more.",
-    url: "https://twistertools.com/tools",
+    url: "https://www.twistertools.com/tools",
     publisher: {
       "@type": "Organization",
       name: "TwisterTools",

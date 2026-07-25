@@ -58,6 +58,7 @@ import ImageCompressor from "../../../../components/tools/ImageCompressor";
 import SvgConverter from "../../../../components/tools/SvgConverter";
 import HeicToJpgConverter from "../../../../components/tools/HeicToJpgConverter";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
+import RelatedTools from "../../../../components/RelatedTools";
 
 // Type definitions for URL mapping
 interface Tool {
@@ -1105,6 +1106,9 @@ export default async function ToolPage({
               </div>
             </section>
           )}
+
+          {/* Related Tools — Internal Linking for SEO & Navigation */}
+          <RelatedTools currentSlug={toolSlug} currentCategory={category} />
 
           {/* Social Sharing Card */}
           <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">

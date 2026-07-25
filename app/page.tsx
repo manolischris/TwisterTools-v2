@@ -288,7 +288,7 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6 w-full">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md text-indigo-100 text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-indigo-100 text-xs font-semibold uppercase tracking-wider">
             <Zap className="w-3.5 h-3.5 text-indigo-300" />
             Fast, Free & Privacy-Focused Web Tools
           </div>
