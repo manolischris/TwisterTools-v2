@@ -39,6 +39,7 @@ import {
   Percent,
   Scale,
   Scaling,
+  Combine,
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -79,6 +80,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Scale,
   Scaling,
   Cpu,
+  Combine,
+  Layers,
 };
 
 const CATEGORIES = [

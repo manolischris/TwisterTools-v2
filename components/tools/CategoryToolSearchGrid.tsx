@@ -42,7 +42,8 @@ import {
   Cpu,
   ShieldAlert,
   HelpCircle,
-  Info
+  Info,
+  Combine
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -100,7 +101,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Cpu,
   ShieldAlert,
   HelpCircle,
-  Info
+  Info,
+  Combine
 };
 
 export default function CategoryToolSearchGrid({

@@ -57,6 +57,7 @@ import FaviconGeneratorSuite from "../../../../components/tools/FaviconGenerator
 import ImageCompressor from "../../../../components/tools/ImageCompressor";
 import SvgConverter from "../../../../components/tools/SvgConverter";
 import HeicToJpgConverter from "../../../../components/tools/HeicToJpgConverter";
+import PdfCompressorSuite from "../../../../components/tools/PdfCompressorSuite";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -135,6 +136,7 @@ const COMPLETED_TOOLS = [
   "favicon-generator",
   "svg-converter",
   "heic-to-jpg",
+  "compress-pdf",
 ];
 
 
@@ -725,6 +727,8 @@ export default async function ToolPage({
                   <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "heic-to-jpg" ? (
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "pdf-tools" && toolSlug === "compress-pdf" ? (
+                  <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -851,6 +855,8 @@ export default async function ToolPage({
             <SvgConverter />
           ) : category === "image-tools" && toolSlug === "heic-to-jpg" ? (
             <HeicToJpgConverter />
+          ) : category === "pdf-tools" && toolSlug === "compress-pdf" ? (
+            <PdfCompressorSuite />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

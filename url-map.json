@@ -1000,11 +1000,11 @@
     },
     {
       "id": 111,
-      "name": "PDF Compressor",
+      "name": "PDF Compressor & File Size Optimizer",
       "legacy_url": "/pdf-compressor",
       "new_url": "/tools/pdf-tools/compress-pdf",
       "new_category": "pdf-tools",
-      "description": "Compress PDF files to reduce size"
+      "description": "Reduce PDF document file size securely directly inside your browser with zero cloud uploads."
     },
     {
       "id": 112,

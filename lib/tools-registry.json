@@ -538,5 +538,46 @@
     "href": "/tools/web-tools/what-is-my-ip",
     "iconName": "Cpu",
     "isFeatured": false
+  },
+  {
+    "id": "merge-pdf",
+    "name": "Merge PDF & Document Joiner",
+    "slug": "merge-pdf",
+    "title": "Merge PDF & Document Joiner",
+    "category": "pdf-tools",
+    "description": "Combine and join multiple PDF documents securely inside your browser.",
+    "href": "/tools/pdf-tools/merge-pdf",
+    "icon": "Combine",
+    "iconName": "Combine",
+    "isFeatured": false
+  },
+  {
+    "id": "compress-pdf",
+    "name": "PDF Compressor & File Size Optimizer",
+    "title": "PDF Compressor & File Size Optimizer",
+    "slug": "compress-pdf",
+    "category": "pdf-tools",
+    "path": "/tools/pdf-tools/compress-pdf",
+    "href": "/tools/pdf-tools/compress-pdf",
+    "description": "100% Client-side PDF file size reduction suite with custom compression profiles.",
+    "icon": "FileText",
+    "iconName": "FileText",
+    "isFeatured": false
+  },
+  {
+    "id": "organize-pdf",
+    "slug": "organize-pdf",
+    "name": "Organize & Split PDF Pages",
+    "title": "Organize & Split PDF Pages",
+    "category": "pdf-tools",
+    "description": "Reorder, rotate, delete, split, and extract PDF pages with interactive client-side preview thumbnails.",
+    "icon": "Layers",
+    "iconName": "Layers",
+    "componentPath": "components/tools/OrganizePdfSuite.tsx",
+    "component": "components/tools/OrganizePdfSuite.tsx",
+    "route": "/tools/pdf-tools/organize-pdf",
+    "path": "/tools/pdf-tools/organize-pdf",
+    "href": "/tools/pdf-tools/organize-pdf",
+    "isFeatured": false
   }
 ]

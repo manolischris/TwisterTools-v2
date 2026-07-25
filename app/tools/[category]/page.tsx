@@ -370,49 +370,6 @@ const CATEGORIES_METADATA: Record<
       }
     ]
   },
-  "pdf-tools": {
-    name: "PDF Tools",
-    icon: "FileCheck2",
-    description: "Convert, merge, compress, watermark, and organize PDF documents securely in your browser.",
-    detailedGuide: "Process and edit your PDF files client-side without uploading them to external servers. High privacy, fast conversion.",
-    seoDescription: "Free online PDF tools. Merge PDFs, convert images to PDF, encrypt/decrypt PDFs, and extract text from PDFs locally.",
-    cards: [
-      {
-        title: "100% Offline PDF Utilities",
-        icon: "ShieldCheck",
-        content: "Our PDF tools run entirely within your browser using client-side JavaScript. Your files are processed locally and are never uploaded to any remote servers, maintaining complete confidentiality of sensitive documents."
-      },
-      {
-        title: "Symmetrical Format Conversion",
-        icon: "RefreshCw",
-        content: "Convert Word documents, text files, and images (JPG, PNG, GIF, BMP, TIFF) to PDF instantly. Convert PDFs to ZIP archives or extract text contents with simple one-click controls."
-      },
-      {
-        title: "Document Protection & Management",
-        icon: "Lock",
-        content: "Encrypt your PDF documents with secure passwords or remove existing password protections. Merge multiple files into a single unified document or organize and rearrange pages."
-      },
-      {
-        title: "Visual Enhancement & Watermarking",
-        icon: "Palette",
-        content: "Apply text or image-based watermarks to PDF pages. Adjust transparency, positioning, and rotation to protect your intellectual property before sharing."
-      }
-    ],
-    faqs: [
-      {
-        q: "Are my PDF files uploaded to your servers for processing?",
-        a: "No. All PDF generation, merging, conversion, and watermarking actions are executed locally on your computer's browser thread. No document data is transmitted."
-      },
-      {
-        q: "What is the file size limit for PDF processing?",
-        a: "Since conversion runs in the browser, performance is determined by your system's RAM. We recommend processing files under 30 MB for the best experience."
-      },
-      {
-        q: "Is password encryption secure?",
-        a: "Yes. PDF locking uses standard AES encryption implemented natively in local WebAssembly modules, ensuring your passwords and documents are secure."
-      }
-    ]
-  },
   "web-tools": {
     name: "Web & Network Utilities",
     icon: "Globe",
