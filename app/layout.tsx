@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.twistertools.com"),
   title: {
-    default: "TwisterTools - Free Online Text & Image Tools",
+    default: "TwisterTools - Free Online Calculators, Converters & Web Utilities",
     template: "%s | TwisterTools",
   },
   description:
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.twistertools.com",
     siteName: "TwisterTools",
-    title: "TwisterTools - Free Online Text & Image Tools",
+    title: "TwisterTools - Free Online Calculators, Converters & Web Utilities",
     description:
       "Free online tools for text manipulation, image editing, SEO optimization, and more. Fast, secure, and easy-to-use web utilities.",
     images: [
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "TwisterTools - Free Online Text & Image Tools",
+    title: "TwisterTools - Free Online Calculators, Converters & Web Utilities",
     description:
       "Free online tools for text manipulation, image editing, SEO optimization, and more.",
     images: ["/images/og-default.jpg"],

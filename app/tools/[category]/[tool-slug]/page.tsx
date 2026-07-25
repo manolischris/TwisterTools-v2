@@ -1107,9 +1107,6 @@ export default async function ToolPage({
             </section>
           )}
 
-          {/* Related Tools — Internal Linking for SEO & Navigation */}
-          <RelatedTools currentSlug={toolSlug} currentCategory={category} />
-
           {/* Social Sharing Card */}
           <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
@@ -1191,6 +1188,9 @@ export default async function ToolPage({
               </div>
             </div>
           </div>
+
+          {/* Related Tools — Internal Linking for SEO & Navigation */}
+          <RelatedTools currentSlug={toolSlug} currentCategory={category} />
         </div>
       </div>
     </div>

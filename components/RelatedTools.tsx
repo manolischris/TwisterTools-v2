@@ -36,7 +36,7 @@ export default function RelatedTools({ currentSlug, currentCategory }: RelatedTo
     if (selectedTools.length === 0) return null;
 
     return (
-        <section className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <section className="pt-5 mb-4 border-t border-slate-200 dark:border-slate-800">
             <div className="flex items-center justify-between mb-6">
                 <div>
                     <h2 className="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
