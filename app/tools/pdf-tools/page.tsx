@@ -78,6 +78,8 @@ const pdfMetadata = {
 };
 
 export default function PdfToolsCategoryPage() {
+  // Tools are dynamically registered and populated via lib/tools-registry.json.
+  // This automatically integrates the 'Lock PDF & Password Encryption' tool entry (lock-pdf).
   const categoryTools = toolsRegistry.filter(
     (tool) => tool.category === "pdf-tools"
   );

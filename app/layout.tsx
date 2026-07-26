@@ -24,14 +24,18 @@ export const metadata: Metadata = {
     template: "%s | TwisterTools",
   },
   description:
-    "Free online tools for text manipulation, image editing, SEO optimization, and more. Fast, secure, and easy-to-use web utilities for developers and content creators.",
+    "100% free, fast, and privacy-first online utilities. Access our growing suite of browser-native calculators, developer tools, image converters, text editors, and web tools with zero server tracking.",
   keywords: [
-    "online tools",
-    "text tools",
-    "image tools",
-    "SEO tools",
-    "free utilities",
-    "web tools",
+    "free online calculators",
+    "developer tools",
+    "unit converters",
+    "image converters",
+    "text editors",
+    "SEO utilities",
+    "JSON formatter",
+    "QR code generator",
+    "client-side web tools",
+    "TwisterTools"
   ],
   authors: [{ name: "TwisterTools" }],
   creator: "TwisterTools",
@@ -48,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "TwisterTools",
     title: "TwisterTools - Free Online Calculators, Converters & Web Utilities",
     description:
-      "Free online tools for text manipulation, image editing, SEO optimization, and more. Fast, secure, and easy-to-use web utilities.",
+      "100% free, fast, and privacy-first online utilities. Access our growing suite of browser-native calculators, developer tools, image converters, text editors, and web tools with zero server tracking.",
     images: [
       {
         url: "/images/og-default.jpg",
@@ -62,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TwisterTools - Free Online Calculators, Converters & Web Utilities",
     description:
-      "Free online tools for text manipulation, image editing, SEO optimization, and more.",
+      "Fast, privacy-first online utilities. Access our growing suite of browser-native calculators, converters, and web tools.",
     images: ["/images/og-default.jpg"],
     creator: "@twistertools",
   },

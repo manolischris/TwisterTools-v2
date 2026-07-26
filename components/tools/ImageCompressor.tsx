@@ -348,14 +348,14 @@ export default function ImageCompressor() {
     <div className="w-full space-y-8">
       {/* ── Workspace Grid (50/50 Split) ── */}
       <div className="grid lg:grid-cols-2 gap-6 items-start">
-        
+
         {/* ══════════════════ LEFT PANEL: INGESTION & CONTROLS ══════════════════ */}
         <div className="space-y-5">
           <div className="bg-white border border-slate-200 rounded-2xl shadow-lg overflow-hidden">
             {/* Edge-to-Edge Title Bar Header */}
             <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-2.5 flex items-center justify-between text-white min-h-[58px]">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 backdrop-blur-sm border border-white/20">
+                <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
                   <Minimize2 className="w-5 h-5 text-indigo-200" />
                 </div>
                 <div>
@@ -375,11 +375,10 @@ export default function ImageCompressor() {
                 onDragLeave={() => setIsDragging(false)}
                 onDrop={handleDrop}
                 onClick={() => fileInputRef.current?.click()}
-                className={`relative rounded-xl border-2 border-dashed cursor-pointer transition-all duration-200 flex flex-col items-center justify-center py-8 px-4 text-center ${
-                  isDragging
+                className={`relative rounded-xl border-2 border-dashed cursor-pointer transition-all duration-200 flex flex-col items-center justify-center py-8 px-4 text-center ${isDragging
                     ? "border-indigo-500 bg-indigo-50/60 scale-[0.99]"
                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
-                }`}
+                  }`}
               >
                 <input
                   ref={fileInputRef}
@@ -433,11 +432,10 @@ export default function ImageCompressor() {
                       <button
                         key={fmt}
                         onClick={() => setTargetFormat(fmt)}
-                        className={`py-2 px-3 text-xs font-semibold rounded-xl border transition-all min-h-[40px] ${
-                          targetFormat === fmt
+                        className={`py-2 px-3 text-xs font-semibold rounded-xl border transition-all min-h-[40px] ${targetFormat === fmt
                             ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
                             : "bg-white text-slate-700 border-slate-200 hover:bg-slate-100"
-                        }`}
+                          }`}
                       >
                         {FORMAT_LABELS[fmt]}
                       </button>
@@ -543,11 +541,10 @@ export default function ImageCompressor() {
                 <Layers className="w-4 h-4 text-indigo-200" />
                 <span className="text-sm font-semibold">Processed Queue ({items.length})</span>
               </div>
-              <span className={`text-xs font-mono font-semibold px-2.5 py-1 rounded-full border transition-all duration-150 ${
-                items.some((i) => i.status === "completed")
+              <span className={`text-xs font-mono font-semibold px-2.5 py-1 rounded-full border transition-all duration-150 ${items.some((i) => i.status === "completed")
                   ? "text-emerald-300 bg-emerald-950/60 border-emerald-500/30 visible"
                   : "text-transparent bg-transparent border-transparent invisible"
-              }`}>
+                }`}>
                 {overallSavings > 0 ? `${overallSavings}% Savings` : "Optimized"}
               </span>
             </div>

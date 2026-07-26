@@ -8,6 +8,7 @@ import {
   ArrowRight,
   Sparkles,
   Lock,
+  Unlock,
   Calculator,
   FileText,
   RefreshCw,
@@ -66,6 +67,7 @@ interface CategoryToolSearchGridProps {
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Sparkles,
   Lock,
+  Unlock,
   Calculator,
   FileText,
   RefreshCw,

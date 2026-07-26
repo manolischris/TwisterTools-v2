@@ -579,5 +579,31 @@
     "path": "/tools/pdf-tools/organize-pdf",
     "href": "/tools/pdf-tools/organize-pdf",
     "isFeatured": false
+  },
+  {
+    "id": "lock-pdf",
+    "name": "Lock PDF & Password Encryption",
+    "slug": "lock-pdf",
+    "title": "Lock PDF & Password Encryption",
+    "category": "pdf-tools",
+    "categoryName": "PDF Tools",
+    "description": "Encrypt PDF documents with 256-bit AES passwords and permission locks.",
+    "href": "/tools/pdf-tools/lock-pdf",
+    "icon": "Lock",
+    "iconName": "Lock",
+    "featured": true,
+    "isFeatured": true
+  },
+  {
+    "id": "unlock-pdf",
+    "name": "Unlock PDF & Password Remover",
+    "slug": "unlock-pdf",
+    "title": "Unlock PDF & Password Remover",
+    "category": "pdf-tools",
+    "description": "Remove passwords and decrypt PDF files locally inside browser memory.",
+    "href": "/tools/pdf-tools/unlock-pdf",
+    "icon": "Unlock",
+    "iconName": "Unlock",
+    "isFeatured": false
   }
 ]
