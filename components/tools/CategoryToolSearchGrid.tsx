@@ -45,7 +45,8 @@ import {
   HelpCircle,
   Info,
   Combine,
-  Stamp
+  Stamp,
+  Scissors
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -106,7 +107,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   HelpCircle,
   Info,
   Combine,
-  Stamp
+  Stamp,
+  Scissors
 };
 
 export default function CategoryToolSearchGrid({

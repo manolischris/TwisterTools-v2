@@ -617,5 +617,17 @@
     "icon": "Stamp",
     "iconName": "Stamp",
     "isFeatured": false
+  },
+  {
+    "id": "remove-pdf-pages",
+    "name": "Remove & Delete PDF Pages",
+    "slug": "remove-pdf-pages",
+    "title": "Remove & Delete PDF Pages",
+    "category": "pdf-tools",
+    "description": "Visually remove unwanted pages, delete ranges, and rebuild your PDF document instantly in browser.",
+    "href": "/tools/pdf-tools/remove-pdf-pages",
+    "icon": "Scissors",
+    "iconName": "Scissors",
+    "isFeatured": false
   }
 ]
