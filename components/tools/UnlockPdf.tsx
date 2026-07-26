@@ -24,6 +24,7 @@ import {
     FileCheck2,
 } from "lucide-react";
 import { PDFDocument } from "pdf-lib";
+import { decryptPDF } from "@pdfsmaller/pdf-decrypt";
 
 // ─────────────────────────────────────────────────────────────
 // Types & Interfaces
@@ -223,18 +224,11 @@ export default function UnlockPdf() {
         setErrorMessage(null);
 
         try {
-            // Load document using pdf-lib (ignore encryption if already authenticated or strip user password)
-            const srcDoc = await PDFDocument.load(pdfBytes, {
-                ignoreEncryption: true,
-            });
+            let unlockedBytes = pdfBytes;
+            if (isEncrypted) {
+                unlockedBytes = await decryptPDF(pdfBytes, password);
+            }
 
-            const newDoc = await PDFDocument.create();
-            const pageIndices = Array.from({ length: srcDoc.getPageCount() }, (_, i) => i);
-            const copiedPages = await newDoc.copyPages(srcDoc, pageIndices);
-
-            copiedPages.forEach((page) => newDoc.addPage(page));
-
-            const unlockedBytes = await newDoc.save();
             const blob = new Blob([unlockedBytes as any], { type: "application/pdf" });
             const downloadUrl = URL.createObjectURL(blob);
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^16.2.11",
+    "@pdfsmaller/pdf-decrypt": "^1.0.1",
     "@pdfsmaller/pdf-encrypt": "^1.0.2",
     "@radix-ui/react-slot": "^1.3.0",
     "clsx": "^2.1.1",
