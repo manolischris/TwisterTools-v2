@@ -605,5 +605,17 @@
     "icon": "Unlock",
     "iconName": "Unlock",
     "isFeatured": false
+  },
+  {
+    "id": "watermark-pdf",
+    "name": "Watermark PDF & Digital Stamp Tool",
+    "slug": "watermark-pdf",
+    "title": "Watermark PDF & Digital Stamp Tool",
+    "category": "pdf-tools",
+    "description": "Apply text watermarks, logo stamps, and dynamic security patterns to PDF files client-side.",
+    "href": "/tools/pdf-tools/watermark-pdf",
+    "icon": "Stamp",
+    "iconName": "Stamp",
+    "isFeatured": false
   }
 ]
