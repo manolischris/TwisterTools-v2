@@ -1,53 +1,54 @@
 import type { Metadata, NextPage } from "next";
 import Link from "next/link";
-import { Scissors } from "lucide-react";
-import RemovePdfPages from "@/components/tools/RemovePdfPages";
+import { Palette } from "lucide-react";
+import GrayscalePdf from "@/components/tools/GrayscalePdf";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Remove & Delete PDF Pages",
+  title: "Grayscale PDF & Monochromatizer | TwisterTools",
   description:
-    "Delete unwanted PDF pages visually or by range completely online and free.",
+    "Convert full-color PDF documents into pure grayscale, high-contrast B&W, or sepia monochrome online for free with 100% client-side privacy.",
   keywords: [
-    "remove pdf pages",
-    "delete pdf pages",
-    "remove pages from pdf",
-    "delete page range pdf",
-    "pdf page remover",
-    "client-side pdf page deletion",
+    "grayscale pdf",
+    "monochrome pdf",
+    "pdf monochromatizer",
+    "convert pdf to grayscale",
+    "black and white pdf",
+    "sepia pdf converter",
+    "client-side pdf converter",
     "twistertools",
   ],
   openGraph: {
-    title: "Remove & Delete PDF Pages | TwisterTools",
+    title: "Grayscale PDF & Monochromatizer | TwisterTools",
     description:
-      "Delete unwanted PDF pages visually or by range completely online and free.",
-    url: "https://www.twistertools.com/tools/pdf-tools/remove-pdf-pages",
+      "Convert full-color PDF documents into pure grayscale, high-contrast B&W, or sepia monochrome online for free with 100% client-side privacy.",
+    url: "https://www.twistertools.com/tools/pdf-tools/grayscale-pdf",
     siteName: "TwisterTools",
     type: "website",
     images: [
       {
-        url: "https://www.twistertools.com/images/tools/pdf-tools/remove-pdf-pages.jpg",
+        url: "https://www.twistertools.com/images/tools/pdf-tools/grayscale-pdf.jpg",
         width: 1200,
         height: 630,
-        alt: "Remove & Delete PDF Pages Tool on TwisterTools",
+        alt: "Grayscale PDF & Color Monochromatizer Tool on TwisterTools",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Remove & Delete PDF Pages | TwisterTools",
+    title: "Grayscale PDF & Monochromatizer | TwisterTools",
     description:
-      "Delete unwanted PDF pages visually or by range completely online and free.",
+      "Convert full-color PDF documents into pure grayscale, high-contrast B&W, or sepia monochrome online for free with 100% client-side privacy.",
     images: [
-      "https://www.twistertools.com/images/tools/pdf-tools/remove-pdf-pages.jpg",
+      "https://www.twistertools.com/images/tools/pdf-tools/grayscale-pdf.jpg",
     ],
   },
   alternates: {
-    canonical: "https://www.twistertools.com/tools/pdf-tools/remove-pdf-pages",
+    canonical: "https://www.twistertools.com/tools/pdf-tools/grayscale-pdf",
   },
 };
 
-const RemovePdfPagesPage: NextPage = () => {
+const GrayscalePdfPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
@@ -68,21 +69,21 @@ const RemovePdfPagesPage: NextPage = () => {
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">
-                Remove & Delete PDF Pages
+                Grayscale PDF & Color Monochromatizer
               </span>
             </div>
 
             {/* Tool Title & Description */}
             <div className="flex items-start gap-3 mt-2">
               <div className="w-14 h-14 rounded-2xl flex self-stretch items-center justify-center flex-shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
-                <Scissors className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                <Palette className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
               </div>
               <div className="flex-1 min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-0.5 leading-tight">
-                  Remove & Delete PDF Pages
+                  Grayscale PDF & Color Monochromatizer
                 </h1>
                 <p className="text-base text-slate-600 dark:text-slate-400 leading-snug">
-                  Delete unwanted PDF pages visually or by range completely online and free.
+                  Convert full-color PDF documents into pure grayscale, high-contrast B&W, or sepia monochrome online for free.
                 </p>
               </div>
             </div>
@@ -94,7 +95,7 @@ const RemovePdfPagesPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Interactive Tool Interface */}
-          <RemovePdfPages />
+          <GrayscalePdf />
 
           {/* Social Sharing Card */}
           <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">
@@ -109,7 +110,7 @@ const RemovePdfPagesPage: NextPage = () => {
                 {/* Facebook */}
                 <div className="relative group">
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/remove-pdf-pages")}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/grayscale-pdf")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on Facebook"
@@ -128,7 +129,7 @@ const RemovePdfPagesPage: NextPage = () => {
                 {/* X / Twitter */}
                 <div className="relative group">
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/remove-pdf-pages")}&text=${encodeURIComponent("Delete unwanted PDF pages visually or by range completely online and free.")}`}
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/grayscale-pdf")}&text=${encodeURIComponent("Convert full-color PDF documents into pure grayscale, high-contrast B&W, or sepia monochrome online for free with 100% client-side privacy.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on X (Twitter)"
@@ -147,7 +148,7 @@ const RemovePdfPagesPage: NextPage = () => {
                 {/* LinkedIn */}
                 <div className="relative group">
                   <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/remove-pdf-pages")}`}
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/grayscale-pdf")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on LinkedIn"
@@ -167,11 +168,11 @@ const RemovePdfPagesPage: NextPage = () => {
           </div>
 
           {/* Related Tools */}
-          <RelatedTools currentSlug="remove-pdf-pages" currentCategory="pdf-tools" />
+          <RelatedTools currentSlug="grayscale-pdf" currentCategory="pdf-tools" />
         </div>
       </div>
     </div>
   );
 };
 
-export default RemovePdfPagesPage;
+export default GrayscalePdfPage;

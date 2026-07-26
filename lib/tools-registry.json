@@ -629,5 +629,18 @@
     "icon": "Scissors",
     "iconName": "Scissors",
     "isFeatured": false
+  },
+  {
+    "id": "grayscale-pdf",
+    "name": "Grayscale PDF & Color Monochromatizer",
+    "slug": "grayscale-pdf",
+    "title": "Grayscale PDF & Color Monochromatizer",
+    "category": "pdf-tools",
+    "description": "Convert full-color PDF files into high-quality grayscale or monochromatic documents directly in browser.",
+    "href": "/tools/pdf-tools/grayscale-pdf",
+    "icon": "Palette",
+    "iconName": "Palette",
+    "featured": true,
+    "isFeatured": true
   }
 ]

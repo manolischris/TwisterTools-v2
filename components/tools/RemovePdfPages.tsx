@@ -312,18 +312,6 @@ export default function RemovePdfPages() {
 
     return (
         <div className="w-full space-y-8">
-            {/* ── Title Header System ── */}
-            <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-4 text-white rounded-2xl flex items-center gap-4 shadow-md">
-                <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center flex-shrink-0 border border-white/20">
-                    <Scissors className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                    <h1 className="text-xl font-bold">Remove & Delete PDF Pages</h1>
-                    <p className="text-xs text-indigo-100">
-                        Visually remove unwanted pages, delete ranges, and rebuild your PDF document instantly in browser.
-                    </p>
-                </div>
-            </div>
 
             {/* ── Workspace Grid (50/50 Split) ── */}
             <div className="grid lg:grid-cols-2 gap-6 items-start">
@@ -356,8 +344,8 @@ export default function RemovePdfPages() {
                             onDrop={handleDrop}
                             onClick={() => fileInputRef.current?.click()}
                             className={`relative rounded-xl border-2 border-dashed cursor-pointer transition-all duration-200 flex flex-col items-center justify-center py-7 px-4 text-center ${isDragging
-                                    ? "border-indigo-500 bg-indigo-50/60 scale-[0.99]"
-                                    : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
+                                ? "border-indigo-500 bg-indigo-50/60 scale-[0.99]"
+                                : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                 }`}
                         >
                             <input
@@ -483,10 +471,10 @@ export default function RemovePdfPages() {
                                             onDragOver={(e) => handleDragOver(e, index)}
                                             onDrop={() => handleDropReorder(index)}
                                             className={`relative group bg-white rounded-xl border p-2 transition-all flex flex-col items-center shadow-sm ${page.selected
-                                                    ? "border-indigo-600 ring-2 ring-indigo-500/20 bg-indigo-50/20"
-                                                    : dragOverPageIndex === index
-                                                        ? "border-indigo-400 border-2 scale-105"
-                                                        : "border-slate-200 hover:border-slate-300"
+                                                ? "border-indigo-600 ring-2 ring-indigo-500/20 bg-indigo-50/20"
+                                                : dragOverPageIndex === index
+                                                    ? "border-indigo-400 border-2 scale-105"
+                                                    : "border-slate-200 hover:border-slate-300"
                                                 }`}
                                         >
                                             {/* Header Controls */}
@@ -610,8 +598,8 @@ export default function RemovePdfPages() {
                             onClick={handleExport}
                             disabled={pages.length === 0 || isExporting}
                             className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${pages.length > 0 && !isExporting
-                                    ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
+                                : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
                                 }`}
                         >
                             {isExporting ? (
