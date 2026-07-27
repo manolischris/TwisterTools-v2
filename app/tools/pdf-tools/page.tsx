@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileCheck2, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, FileImage } from "lucide-react";
+import { FileCheck2, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, FileImage, FileType2 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 

@@ -40,7 +40,8 @@ import {
   Binary,
   Zap,
   Star,
-  Scissors
+  Scissors,
+  FileType2
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -91,7 +92,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Binary,
   Zap,
   Star,
-  Scissors
+  Scissors,
+  FileType2
 };
 
 /* ─────────────────────────────────────────────────────────

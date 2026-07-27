@@ -47,7 +47,8 @@ import {
   Info,
   Combine,
   Stamp,
-  Scissors
+  Scissors,
+  FileType2
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -111,7 +112,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Combine,
   Stamp,
   Scissors,
-  FileType
+  FileType,
+  FileType2
 };
 
 export default function CategoryToolSearchGrid({
