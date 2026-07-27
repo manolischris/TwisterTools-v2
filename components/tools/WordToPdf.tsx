@@ -29,7 +29,10 @@ import {
     ShieldCheck,
     Layout,
     Sliders,
+    Info,
 } from "lucide-react";
+import { PDFDocument, rgb } from "pdf-lib";
+import fontkit from "@pdf-lib/fontkit";
 import { renderAsync } from "docx-preview";
 
 // ─────────────────────────────────────────────────────────────
@@ -68,6 +71,7 @@ export default function WordToPdf() {
     const [fontSize, setFontSize] = useState<number>(11);
     const [lineSpacing, setLineSpacing] = useState<number>(1.25);
     const [includePageNumbers, setIncludePageNumbers] = useState<boolean>(true);
+    const [exportMode, setExportMode] = useState<"high-fidelity" | "reflowable">("high-fidelity");
 
     // ── UI & Processing State ──
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -210,88 +214,219 @@ export default function WordToPdf() {
         setErrorMessage(null);
 
         try {
-            // Create a hidden iframe for printing
-            const iframe = document.createElement("iframe");
-            iframe.style.position = "fixed";
-            iframe.style.right = "0";
-            iframe.style.bottom = "0";
-            iframe.style.width = "0px";
-            iframe.style.height = "0px";
-            iframe.style.border = "none";
-            document.body.appendChild(iframe);
+            if (exportMode === "high-fidelity") {
+                // Create a hidden iframe for printing (preserves styles and tables exactly)
+                const iframe = document.createElement("iframe");
+                iframe.style.position = "fixed";
+                iframe.style.right = "0";
+                iframe.style.bottom = "0";
+                iframe.style.width = "0px";
+                iframe.style.height = "0px";
+                iframe.style.border = "none";
+                document.body.appendChild(iframe);
 
-            const doc = iframe.contentWindow?.document;
-            if (!doc) {
-                throw new Error("Failed to initialize print frame.");
-            }
+                const doc = iframe.contentWindow?.document;
+                if (!doc) {
+                    throw new Error("Failed to initialize print frame.");
+                }
 
-            // Copy all styles from the parent document to ensure docx-preview styling carries over
-            const styleSheets = Array.from(document.styleSheets);
-            for (const sheet of styleSheets) {
-                try {
-                    let cssRules = "";
-                    for (const rule of Array.from(sheet.cssRules)) {
-                        cssRules += rule.cssText + "\n";
-                    }
-                    const style = doc.createElement("style");
-                    style.textContent = cssRules;
-                    doc.head.appendChild(style);
-                } catch {
-                    if (sheet.href) {
-                        const link = doc.createElement("link");
-                        link.rel = "stylesheet";
-                        link.href = sheet.href;
-                        doc.head.appendChild(link);
+                // Copy all styles from the parent document to ensure docx-preview styling carries over
+                const styleSheets = Array.from(document.styleSheets);
+                for (const sheet of styleSheets) {
+                    try {
+                        let cssRules = "";
+                        for (const rule of Array.from(sheet.cssRules)) {
+                            cssRules += rule.cssText + "\n";
+                        }
+                        const style = doc.createElement("style");
+                        style.textContent = cssRules;
+                        doc.head.appendChild(style);
+                    } catch {
+                        if (sheet.href) {
+                            const link = doc.createElement("link");
+                            link.rel = "stylesheet";
+                            link.href = sheet.href;
+                            doc.head.appendChild(link);
+                        }
                     }
                 }
-            }
 
-            // Append print styles to optimize PDF pages, ensure background colors and formatting fit
-            const printStyle = doc.createElement("style");
-            printStyle.textContent = `
-                @media print {
-                    @page {
-                        margin: 0;
+                // Append print styles to optimize PDF pages, ensure background colors and formatting fit
+                const printStyle = doc.createElement("style");
+                printStyle.textContent = `
+                    @media print {
+                        @page {
+                            margin: 0;
+                        }
+                        html, body {
+                            margin: 0 !important;
+                            padding: 0 !important;
+                            background: #ffffff !important;
+                            -webkit-print-color-adjust: exact;
+                            print-color-adjust: exact;
+                        }
+                        .docx-wrapper {
+                            background: #ffffff !important;
+                            padding: 0 !important;
+                            box-shadow: none !important;
+                        }
+                        section.docx {
+                            margin: 0 auto !important;
+                            box-shadow: none !important;
+                            page-break-after: always;
+                            page-break-inside: avoid;
+                        }
                     }
-                    html, body {
-                        margin: 0 !important;
-                        padding: 0 !important;
-                        background: #ffffff !important;
-                        -webkit-print-color-adjust: exact;
-                        print-color-adjust: exact;
-                    }
-                    .docx-wrapper {
-                        background: #ffffff !important;
-                        padding: 0 !important;
-                        box-shadow: none !important;
-                    }
-                    section.docx {
-                        margin: 0 auto !important;
-                        box-shadow: none !important;
-                        page-break-after: always;
-                        page-break-inside: avoid;
-                    }
-                }
-            `;
-            doc.head.appendChild(printStyle);
+                `;
+                doc.head.appendChild(printStyle);
 
-            // Copy the HTML content of the rendered word document into the iframe
-            doc.body.innerHTML = container.innerHTML;
+                // Copy the HTML content of the rendered word document into the iframe
+                doc.body.innerHTML = container.innerHTML;
 
-            // Wait a short time for iframe content rendering to settle, then open print dialog
-            setTimeout(() => {
-                iframe.contentWindow?.focus();
-                iframe.contentWindow?.print();
-
-                // Remove the iframe after a short delay
+                // Wait a short time for iframe content rendering to settle, then open print dialog
                 setTimeout(() => {
-                    document.body.removeChild(iframe);
-                }, 2000);
-            }, 500);
+                    iframe.contentWindow?.focus();
+                    iframe.contentWindow?.print();
 
+                    // Remove the iframe after a short delay
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                    }, 2000);
+                }, 500);
+            } else {
+                // Reflowable Text Mode (instantly compiles plain text and triggers direct file download)
+                if (!extractedText.trim()) {
+                    throw new Error("No text content available to export.");
+                }
+
+                const pdfDoc = await PDFDocument.create();
+                pdfDoc.registerFontkit(fontkit);
+
+                // Fetch and embed the local Roboto fonts supporting Greek/Latin characters
+                const [regularBytes, boldBytes] = await Promise.all([
+                    fetch("/fonts/Roboto-Regular.ttf").then((res) => {
+                        if (!res.ok) throw new Error("Failed to load Roboto-Regular font.");
+                        return res.arrayBuffer();
+                    }),
+                    fetch("/fonts/Roboto-Bold.ttf").then((res) => {
+                        if (!res.ok) throw new Error("Failed to load Roboto-Bold font.");
+                        return res.arrayBuffer();
+                    }),
+                ]);
+
+                const font = await pdfDoc.embedFont(regularBytes);
+                const fontBold = await pdfDoc.embedFont(boldBytes);
+
+                // Page Setup Dimensions (Standard Letter: 612 x 792 pt)
+                let pageWidth = 612;
+                let pageHeight = 792;
+
+                if (orientation === "landscape") {
+                    pageWidth = 792;
+                    pageHeight = 612;
+                }
+
+                const activeMargins = MARGIN_PRESETS[marginPreset];
+                const usableWidth = pageWidth - activeMargins.left - activeMargins.right;
+                const usableHeight = pageHeight - activeMargins.top - activeMargins.bottom;
+
+                const lineHeightPt = fontSize * lineSpacing;
+
+                // Text Wrapping Helper Engine
+                const paragraphs = extractedText.split(/\n+/);
+                const wrappedLines: string[] = [];
+
+                for (const para of paragraphs) {
+                    if (!para.trim()) {
+                        wrappedLines.push("");
+                        continue;
+                    }
+
+                    const words = para.split(" ");
+                    let currentLine = "";
+
+                    for (const word of words) {
+                        const testLine = currentLine ? `${currentLine} ${word}` : word;
+                        const textWidth = font.widthOfTextAtSize(testLine, fontSize);
+
+                        if (textWidth <= usableWidth) {
+                            currentLine = testLine;
+                        } else {
+                            if (currentLine) wrappedLines.push(currentLine);
+                            currentLine = word;
+                        }
+                    }
+                    if (currentLine) wrappedLines.push(currentLine);
+                    wrappedLines.push(""); // Paragraph gap
+                }
+
+                // Calculate Lines Per Page
+                const maxLinesPerPage = Math.floor(usableHeight / lineHeightPt);
+                let page = pdfDoc.addPage([pageWidth, pageHeight]);
+                let currentLineInPage = 0;
+                let totalPages = 1;
+
+                // Draw Lines onto PDF Document Pages
+                for (let i = 0; i < wrappedLines.length; i++) {
+                    if (currentLineInPage >= maxLinesPerPage) {
+                        page = pdfDoc.addPage([pageWidth, pageHeight]);
+                        currentLineInPage = 0;
+                        totalPages++;
+                    }
+
+                    const line = wrappedLines[i];
+                    if (line) {
+                        const yPosition =
+                            pageHeight - activeMargins.top - (currentLineInPage + 1) * lineHeightPt;
+
+                        page.drawText(line, {
+                            x: activeMargins.left,
+                            y: yPosition,
+                            size: fontSize,
+                            font: font,
+                            color: rgb(0.06, 0.09, 0.16), // #0f172a
+                        });
+                    }
+
+                    currentLineInPage++;
+                }
+
+                // Add Page Numbers (if enabled)
+                if (includePageNumbers) {
+                    const pages = pdfDoc.getPages();
+                    for (let idx = 0; idx < pages.length; idx++) {
+                        const p = pages[idx];
+                        const pageNumStr = `Page ${idx + 1} of ${pages.length}`;
+                        const numWidth = font.widthOfTextAtSize(pageNumStr, 9);
+
+                        p.drawText(pageNumStr, {
+                            x: (pageWidth - numWidth) / 2,
+                            y: activeMargins.bottom / 2,
+                            size: 9,
+                            font: font,
+                            color: rgb(0.4, 0.45, 0.55),
+                        });
+                    }
+                }
+
+                // Compile and Save Binary
+                const pdfBytes = await pdfDoc.save();
+                const blob = new Blob([pdfBytes as any], { type: "application/pdf" });
+                const downloadUrl = URL.createObjectURL(blob);
+
+                const a = document.createElement("a");
+                a.href = downloadUrl;
+                a.download = fileName
+                    ? `${fileName.replace(/\.docx$/i, "")}.pdf`
+                    : "converted_document.pdf";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(downloadUrl);
+            }
         } catch (err) {
             setErrorMessage(
-                err instanceof Error ? err.message : "Failed to trigger PDF print dialog."
+                err instanceof Error ? err.message : "Failed to generate PDF document."
             );
         } finally {
             setIsExporting(false);
@@ -499,135 +634,189 @@ export default function WordToPdf() {
                         </div>
 
                         <div className="p-5 space-y-5">
-                            {/* Orientation Setting */}
+                            {/* Export Mode Selector */}
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                    <Layout className="w-3.5 h-3.5 text-indigo-600" /> Page Orientation
+                                    <Sparkles className="w-3.5 h-3.5 text-indigo-600" /> Export Engine Mode
                                 </label>
-                                <div className="grid grid-cols-2 gap-3">
-                                    {(
-                                        [
-                                            { id: "portrait", label: "Portrait (Standard)" },
-                                            { id: "landscape", label: "Landscape" },
-                                        ] as const
-                                    ).map(({ id, label }) => (
-                                        <button
-                                            key={id}
-                                            type="button"
-                                            onClick={() => setOrientation(id)}
-                                            className={`py-2 px-3 text-xs font-semibold rounded-xl border transition-all ${orientation === id
-                                                    ? "bg-indigo-50 border-indigo-500 text-indigo-700 shadow-sm"
-                                                    : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
-                                                }`}
-                                        >
-                                            {label}
-                                        </button>
-                                    ))}
+                                <div className="grid grid-cols-2 gap-2 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-xl">
+                                    <button
+                                        type="button"
+                                        onClick={() => setExportMode("high-fidelity")}
+                                        className={`py-2 px-3 text-[11px] font-bold rounded-lg transition-all ${
+                                            exportMode === "high-fidelity"
+                                                ? "bg-white dark:bg-slate-700 text-indigo-700 dark:text-indigo-200 shadow-sm"
+                                                : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
+                                        }`}
+                                    >
+                                        High-Fidelity Layout
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setExportMode("reflowable")}
+                                        className={`py-2 px-3 text-[11px] font-bold rounded-lg transition-all ${
+                                            exportMode === "reflowable"
+                                                ? "bg-white dark:bg-slate-700 text-indigo-700 dark:text-indigo-200 shadow-sm"
+                                                : "text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
+                                        }`}
+                                    >
+                                        Reflowable Text
+                                    </button>
                                 </div>
+                                <p className="text-[10px] text-slate-500 dark:text-slate-400 leading-normal">
+                                    {exportMode === "high-fidelity"
+                                        ? "Preserves original margins, styles, tables, and colors perfectly. Uses your browser's Print engine (Save as PDF)."
+                                        : "Extracts plain text and lets you customize orientation, margins, font size, and line spacing. Downloads instantly."}
+                                </p>
                             </div>
 
-                            {/* Margin Preset Selection */}
-                            <div className="space-y-2">
-                                <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                                    <Settings className="w-3.5 h-3.5 text-indigo-600" /> Document Margins
-                                </label>
-                                <div className="grid grid-cols-3 gap-2">
-                                    {(
-                                        [
-                                            { id: "normal", label: "Normal (0.75 in)" },
-                                            { id: "compact", label: "Compact (0.5 in)" },
-                                            { id: "wide", label: "Wide (1.0 in)" },
-                                        ] as const
-                                    ).map(({ id, label }) => (
-                                        <button
-                                            key={id}
-                                            type="button"
-                                            onClick={() => setMarginPreset(id)}
-                                            className={`py-2 px-2 text-[11px] font-semibold rounded-xl border transition-all ${marginPreset === id
-                                                    ? "bg-indigo-50 border-indigo-500 text-indigo-700 shadow-sm"
-                                                    : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
-                                                }`}
-                                        >
-                                            {label}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
+                            {exportMode === "reflowable" ? (
+                                <>
+                                    {/* Orientation Setting */}
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                                            <Layout className="w-3.5 h-3.5 text-indigo-600" /> Page Orientation
+                                        </label>
+                                        <div className="grid grid-cols-2 gap-3">
+                                            {(
+                                                [
+                                                    { id: "portrait", label: "Portrait (Standard)" },
+                                                    { id: "landscape", label: "Landscape" },
+                                                ] as const
+                                            ).map(({ id, label }) => (
+                                                <button
+                                                    key={id}
+                                                    type="button"
+                                                    onClick={() => setOrientation(id)}
+                                                    className={`py-2 px-3 text-xs font-semibold rounded-xl border transition-all ${orientation === id
+                                                            ? "bg-indigo-50 border-indigo-500 text-indigo-700 shadow-sm"
+                                                            : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
+                                                        }`}
+                                                >
+                                                    {label}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
 
-                            {/* Typography Adjustments Grid */}
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="space-y-1.5">
-                                    <label className="text-xs font-bold text-slate-800">
-                                        Font Size ({fontSize} pt)
-                                    </label>
-                                    <input
-                                        type="range"
-                                        min={9}
-                                        max={16}
-                                        step={1}
-                                        value={fontSize}
-                                        onChange={(e) => setFontSize(Number(e.target.value))}
-                                        className="w-full accent-indigo-600 cursor-pointer"
-                                    />
-                                </div>
-                                <div className="space-y-1.5">
-                                    <label className="text-xs font-bold text-slate-800">
-                                        Line Spacing ({lineSpacing}x)
-                                    </label>
-                                    <input
-                                        type="range"
-                                        min={1.0}
-                                        max={2.0}
-                                        step={0.25}
-                                        value={lineSpacing}
-                                        onChange={(e) => setLineSpacing(Number(e.target.value))}
-                                        className="w-full accent-indigo-600 cursor-pointer"
-                                    />
-                                </div>
-                            </div>
+                                    {/* Margin Preset Selection */}
+                                    <div className="space-y-2">
+                                        <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                                            <Settings className="w-3.5 h-3.5 text-indigo-600" /> Document Margins
+                                        </label>
+                                        <div className="grid grid-cols-3 gap-2">
+                                            {(
+                                                [
+                                                    { id: "normal", label: "Normal (0.75 in)" },
+                                                    { id: "compact", label: "Compact (0.5 in)" },
+                                                    { id: "wide", label: "Wide (1.0 in)" },
+                                                ] as const
+                                            ).map(({ id, label }) => (
+                                                <button
+                                                    key={id}
+                                                    type="button"
+                                                    onClick={() => setMarginPreset(id)}
+                                                    className={`py-2 px-2 text-[11px] font-semibold rounded-xl border transition-all ${marginPreset === id
+                                                            ? "bg-indigo-50 border-indigo-500 text-indigo-700 shadow-sm"
+                                                            : "bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100"
+                                                        }`}
+                                                >
+                                                    {label}
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
 
-                            {/* Checkbox Options */}
-                            <div className="pt-1">
-                                <label className="flex items-center gap-2 cursor-pointer">
-                                    <input
-                                        type="checkbox"
-                                        checked={includePageNumbers}
-                                        onChange={(e) => setIncludePageNumbers(e.target.checked)}
-                                        className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
-                                    />
-                                    <span className="text-xs font-medium text-slate-700">
-                                        Include Page Numbers in Footer
-                                    </span>
-                                </label>
-                            </div>
+                                    {/* Typography Adjustments Grid */}
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="space-y-1.5">
+                                            <label className="text-xs font-bold text-slate-800">
+                                                Font Size ({fontSize} pt)
+                                            </label>
+                                            <input
+                                                type="range"
+                                                min={9}
+                                                max={16}
+                                                step={1}
+                                                value={fontSize}
+                                                onChange={(e) => setFontSize(Number(e.target.value))}
+                                                className="w-full accent-indigo-600 cursor-pointer"
+                                            />
+                                        </div>
+                                        <div className="space-y-1.5">
+                                            <label className="text-xs font-bold text-slate-800">
+                                                Line Spacing ({lineSpacing}x)
+                                            </label>
+                                            <input
+                                                type="range"
+                                                min={1.0}
+                                                max={2.0}
+                                                step={0.25}
+                                                value={lineSpacing}
+                                                onChange={(e) => setLineSpacing(Number(e.target.value))}
+                                                className="w-full accent-indigo-600 cursor-pointer"
+                                            />
+                                        </div>
+                                    </div>
 
-                            {/* Dynamic Document Statistics Summary */}
-                            <div className="grid grid-cols-3 gap-2.5 p-3 bg-slate-50 border border-slate-200 rounded-xl text-center">
-                                <div>
-                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
-                                        Words
-                                    </p>
-                                    <p className="text-xs font-mono font-bold text-slate-800">
-                                        {wordCount.toLocaleString()}
-                                    </p>
+                                    {/* Checkbox Options */}
+                                    <div className="pt-1">
+                                        <label className="flex items-center gap-2 cursor-pointer">
+                                            <input
+                                                type="checkbox"
+                                                checked={includePageNumbers}
+                                                onChange={(e) => setIncludePageNumbers(e.target.checked)}
+                                                className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
+                                            />
+                                            <span className="text-xs font-medium text-slate-700">
+                                                Include Page Numbers in Footer
+                                            </span>
+                                        </label>
+                                    </div>
+
+                                    {/* Dynamic Document Statistics Summary */}
+                                    <div className="grid grid-cols-3 gap-2.5 p-3 bg-slate-50 border border-slate-200 rounded-xl text-center">
+                                        <div>
+                                            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                                Words
+                                            </p>
+                                            <p className="text-xs font-mono font-bold text-slate-800">
+                                                {wordCount.toLocaleString()}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                                Characters
+                                            </p>
+                                            <p className="text-xs font-mono font-bold text-slate-800">
+                                                {characterCount.toLocaleString()}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                                Paragraphs
+                                            </p>
+                                            <p className="text-xs font-mono font-bold text-slate-800">
+                                                {paragraphCount.toLocaleString()}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100/50 dark:border-indigo-900/30 rounded-xl p-4 space-y-2.5">
+                                    <div className="flex gap-2.5">
+                                        <Info className="w-4 h-4 text-indigo-600 dark:text-indigo-400 flex-shrink-0 mt-0.5" />
+                                        <div className="space-y-1">
+                                            <p className="text-xs font-bold text-slate-800 dark:text-indigo-300">
+                                                High-Fidelity Mode Guide:
+                                            </p>
+                                            <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                                                To download, click <strong>Convert & Save as PDF</strong> below to open the browser print window. Under <strong>Destination</strong>, select <strong>Save as PDF</strong>.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
-                                        Characters
-                                    </p>
-                                    <p className="text-xs font-mono font-bold text-slate-800">
-                                        {characterCount.toLocaleString()}
-                                    </p>
-                                </div>
-                                <div>
-                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
-                                        Paragraphs
-                                    </p>
-                                    <p className="text-xs font-mono font-bold text-slate-800">
-                                        {paragraphCount.toLocaleString()}
-                                    </p>
-                                </div>
-                            </div>
+                            )}
 
                             {/* Download / Process Action Button */}
                             <button
