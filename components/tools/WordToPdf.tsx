@@ -102,9 +102,9 @@ export default function WordToPdf() {
             return;
         }
 
-        if (file.size > 20 * 1024 * 1024) {
+        if (file.size > 5 * 1024 * 1024) {
             setErrorMessage(
-                `File exceeds the 20 MB max file size limit (${(
+                `File exceeds the 5 MB max file size limit (${(
                     file.size /
                     1024 /
                     1024
@@ -443,7 +443,7 @@ export default function WordToPdf() {
                                             <span className="text-indigo-600">click to browse</span>
                                         </p>
                                         <p className="text-[11px] text-slate-400">
-                                            Maximum file size limit: 20 MB
+                                            Maximum file size limit: 5 MB
                                         </p>
                                     </>
                                 )}

@@ -8,10 +8,11 @@
     "dynamic_internal_linking": "COMPLETED"
   },
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
-  "current_task": "Word to PDF Converter layout updates and Greek character support integrated and verified",
-  "active_task_tracker": "Upgraded Word to PDF Converter (word-to-pdf) to support Greek characters locally using registered fontkit and local Roboto TTF fonts. Modified page wrapper to match standard tool structure with breadcrumbs, title layout, social sharing, and related tools, and verified Next.js build.",
-  "completedTasksCount": 95,
+  "current_task": "Word to PDF Converter bugfixes and size limit update verified",
+  "active_task_tracker": "Fixed 404 font download bugs by retrieving correct font files from raw Github URLs, updated WordToPdf component limit to 5MB, updated UI label, and verified Next.js build.",
+  "completedTasksCount": 96,
   "completed_tasks": [
+    "Resolved 'Unknown font format' error by downloading full Roboto TrueType fonts from googlefonts repository, updated client-side file size constraint to 5MB, and verified build success.",
     "Upgraded Word to PDF Converter (word-to-pdf) to support Greek characters using registered fontkit and local Roboto TTF fonts, and overhauled page route wrapper layout with standard header, breadcrumbs, social sharing card, and related tools component.",
     "Integrated Word to PDF Converter (word-to-pdf) component with client-side execution using docx-preview and pdf-lib. Created static page route at app/tools/pdf-tools/word-to-pdf/page.tsx, registered tool in lib/tools-registry.json, updated Category grid component icon map, updated project status ledger, and verified Next.js build success.",
     "Integrated Grayscale PDF & Color Monochromatizer (grayscale-pdf) component with local client-side memory execution using pdf-lib and pdfjs-dist. Created static page route at app/tools/pdf-tools/grayscale-pdf/page.tsx, registered tool in lib/tools-registry.json, updated project status ledger, and verified Next.js build success.",
