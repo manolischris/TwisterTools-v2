@@ -540,6 +540,25 @@
     "isFeatured": false
   },
   {
+    "id": "jpg-to-pdf",
+    "name": "JPG to PDF Converter",
+    "slug": "jpg-to-pdf",
+    "title": "JPG to PDF Converter",
+    "category": "pdf-tools",
+    "description": "Convert JPG, PNG, and WEBP images into a clean PDF document instantly with customizable margins and page sizes.",
+    "icon": "FileImage",
+    "iconName": "FileImage",
+    "href": "/tools/pdf-tools/jpg-to-pdf",
+    "keywords": [
+      "jpg to pdf",
+      "png to pdf",
+      "webp to pdf",
+      "convert image to pdf",
+      "image to pdf converter"
+    ],
+    "isFeatured": false
+  },
+  {
     "id": "merge-pdf",
     "name": "Merge PDF & Document Joiner",
     "slug": "merge-pdf",
@@ -681,5 +700,19 @@
     "href": "/tools/pdf-tools/text-to-pdf",
     "badge": "Popular",
     "isFeatured": false
+  },
+  {
+    "id": "png-to-pdf",
+    "name": "PNG to PDF Converter",
+    "slug": "png-to-pdf",
+    "title": "PNG to PDF Converter",
+    "category": "pdf-tools",
+    "description": "Convert PNG images to PDF documents with full alpha transparency support and custom margins.",
+    "icon": "FileImage",
+    "iconName": "FileImage",
+    "href": "/tools/pdf-tools/png-to-pdf",
+    "badge": "Popular",
+    "isFeatured": false,
+    "status": "active"
   }
 ]

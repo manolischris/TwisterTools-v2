@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Sparkles, ArrowRight, Code2, Globe, RefreshCw, Calculator, FileText, Lock, Minimize2, Scaling, CreditCard, DollarSign, Percent, Scale, MapPin, Database, ImageIcon, FileCode, Type, Layers, Hash, Calendar, Percent as PercentIcon, Sigma, ArrowRightLeft, Clock, QrCode, Combine, Scissors } from "lucide-react";
+import { Sparkles, ArrowRight, Code2, Globe, RefreshCw, Calculator, FileText, Lock, Minimize2, Scaling, CreditCard, DollarSign, Percent, Scale, MapPin, Database, ImageIcon, FileCode, Type, Layers, Hash, Calendar, Percent as PercentIcon, Sigma, ArrowRightLeft, Clock, QrCode, Combine, Scissors, FileImage } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
 // Map string icon names from registry to Lucide SVG components
@@ -7,7 +7,7 @@ const ICON_MAP: Record<string, any> = {
     Sparkles, Code2, Globe, RefreshCw, Calculator, FileText, Lock, Minimize2,
     Scaling, CreditCard, DollarSign, Percent, Scale, MapPin, Database,
     ImageIcon, FileCode, Type, Layers, Hash, Calendar, PercentIcon, Sigma,
-    ArrowRightLeft, Clock, QrCode, Combine, Scissors
+    ArrowRightLeft, Clock, QrCode, Combine, Scissors, FileImage
 };
 
 interface RelatedToolsProps {
