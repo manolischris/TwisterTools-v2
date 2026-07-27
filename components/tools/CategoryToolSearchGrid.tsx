@@ -33,6 +33,7 @@ import {
   DollarSign,
   Scale,
   FileImage,
+  FileType,
   Scaling,
   Hash,
   Key,
@@ -108,7 +109,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Info,
   Combine,
   Stamp,
-  Scissors
+  Scissors,
+  FileType
 };
 
 export default function CategoryToolSearchGrid({

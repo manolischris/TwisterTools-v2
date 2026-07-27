@@ -642,5 +642,18 @@
     "iconName": "Palette",
     "featured": true,
     "isFeatured": true
+  },
+  {
+    "id": "word-to-pdf",
+    "name": "Word to PDF Converter",
+    "slug": "word-to-pdf",
+    "title": "Word to PDF Converter",
+    "category": "pdf-tools",
+    "description": "Convert Word (.docx) files to PDF format instantly inside your browser with complete privacy.",
+    "icon": "FileType",
+    "iconName": "FileType",
+    "path": "/tools/pdf-tools/word-to-pdf",
+    "href": "/tools/pdf-tools/word-to-pdf",
+    "isFeatured": false
   }
 ]

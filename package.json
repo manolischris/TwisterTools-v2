@@ -14,6 +14,7 @@
     "@pdfsmaller/pdf-encrypt": "^1.0.2",
     "@radix-ui/react-slot": "^1.3.0",
     "clsx": "^2.1.1",
+    "docx-preview": "^0.4.0",
     "heic2any": "^0.0.4",
     "lucide-react": "^1.24.0",
     "next": "16.2.10",
