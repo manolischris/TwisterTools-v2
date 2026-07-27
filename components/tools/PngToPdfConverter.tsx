@@ -321,7 +321,7 @@ export default function PngToPdfConverter() {
                 <div className="space-y-5">
                     <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
                         {/* Edge-to-Edge Title Bar */}
-                        <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-4 flex items-center justify-between text-white">
+                        <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-2.5 flex items-center justify-between text-white">
                             <div className="flex items-center gap-3">
                                 <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
                                     <FileImage className="w-5 h-5 text-indigo-200" />
@@ -493,7 +493,7 @@ export default function PngToPdfConverter() {
                 <div className="space-y-5 sticky top-4">
                     <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden">
                         {/* Edge-to-Edge Title Bar */}
-                        <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-4 flex items-center justify-between text-white">
+                        <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-2.5 flex items-center justify-between text-white">
                             <div className="flex items-center gap-3">
                                 <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
                                     <Settings className="w-5 h-5 text-indigo-200" />

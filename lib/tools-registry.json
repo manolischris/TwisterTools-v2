@@ -711,7 +711,6 @@
     "icon": "FileImage",
     "iconName": "FileImage",
     "href": "/tools/pdf-tools/png-to-pdf",
-    "badge": "Popular",
     "isFeatured": false,
     "status": "active"
   }
