@@ -84,7 +84,7 @@ export default function PdfToolsCategoryPage() {
     (tool) => tool.category === "pdf-tools"
   ).map((tool) => {
     if (tool.id === "text-to-pdf") {
-      return { ...tool, badge: "100% Private" };
+      return { ...tool, badge: undefined };
     }
     return tool;
   });
