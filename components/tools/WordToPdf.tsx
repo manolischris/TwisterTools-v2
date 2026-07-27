@@ -30,9 +30,9 @@ import {
     Layout,
     Sliders,
 } from "lucide-react";
-import { PDFDocument, rgb } from "pdf-lib";
-import fontkit from "@pdf-lib/fontkit";
+import { PDFDocument } from "pdf-lib";
 import { renderAsync } from "docx-preview";
+import html2canvas from "html2canvas";
 
 // ─────────────────────────────────────────────────────────────
 // Types & Interfaces
@@ -102,9 +102,9 @@ export default function WordToPdf() {
             return;
         }
 
-        if (file.size > 5 * 1024 * 1024) {
+        if (file.size > 20 * 1024 * 1024) {
             setErrorMessage(
-                `File exceeds the 5 MB max file size limit (${(
+                `File exceeds the 20 MB max file size limit (${(
                     file.size /
                     1024 /
                     1024
@@ -202,9 +202,22 @@ export default function WordToPdf() {
     // ─────────────────────────────────────────────────────────────
 
     const generateAndDownloadPdf = async () => {
-        if (!extractedText.trim()) {
-            setErrorMessage("No text content available to export. Please load a valid Word document.");
+        const container = docxPreviewContainerRef.current;
+        if (!container) {
+            setErrorMessage("No document visual preview available to export.");
             return;
+        }
+
+        // Find all page elements rendered by docx-preview
+        let pages = Array.from(container.querySelectorAll(".docx-wrapper > section, section.docx"));
+        if (pages.length === 0) {
+            pages = Array.from(container.querySelectorAll("section"));
+        }
+        if (pages.length === 0) {
+            pages = Array.from(container.children);
+        }
+        if (pages.length === 0) {
+            pages = [container];
         }
 
         setIsExporting(true);
@@ -212,113 +225,35 @@ export default function WordToPdf() {
 
         try {
             const pdfDoc = await PDFDocument.create();
-            pdfDoc.registerFontkit(fontkit);
 
-            // Fetch and embed the local Roboto fonts supporting Greek characters
-            const [regularBytes, boldBytes] = await Promise.all([
-                fetch("/fonts/Roboto-Regular.ttf").then((res) => {
-                    if (!res.ok) throw new Error("Failed to load Roboto-Regular font.");
-                    return res.arrayBuffer();
-                }),
-                fetch("/fonts/Roboto-Bold.ttf").then((res) => {
-                    if (!res.ok) throw new Error("Failed to load Roboto-Bold font.");
-                    return res.arrayBuffer();
-                }),
-            ]);
+            for (let i = 0; i < pages.length; i++) {
+                const pageEl = pages[i] as HTMLElement;
 
-            const font = await pdfDoc.embedFont(regularBytes);
-            const fontBold = await pdfDoc.embedFont(boldBytes);
+                // Render page to canvas
+                const canvas = await html2canvas(pageEl, {
+                    scale: 2, // 2x scale for high-definition text
+                    useCORS: true,
+                    logging: false,
+                    allowTaint: true,
+                    backgroundColor: "#ffffff"
+                });
 
-            // Page Setup Dimensions (Standard Letter: 612 x 792 pt)
-            let pageWidth = 612;
-            let pageHeight = 792;
+                const imgData = canvas.toDataURL("image/jpeg", 0.95);
+                const imgBytes = await fetch(imgData).then((res) => res.arrayBuffer());
 
-            if (orientation === "landscape") {
-                pageWidth = 792;
-                pageHeight = 612;
-            }
+                const img = await pdfDoc.embedJpg(imgBytes);
 
-            const activeMargins = MARGIN_PRESETS[marginPreset];
-            const usableWidth = pageWidth - activeMargins.left - activeMargins.right;
-            const usableHeight = pageHeight - activeMargins.top - activeMargins.bottom;
+                // Use the page elements' client width/height as points dimensions
+                const widthPt = pageEl.offsetWidth || 612;
+                const heightPt = pageEl.offsetHeight || 792;
 
-            const lineHeightPt = fontSize * lineSpacing;
-
-            // Text Wrapping Helper Engine
-            const paragraphs = extractedText.split(/\n+/);
-            const wrappedLines: string[] = [];
-
-            for (const para of paragraphs) {
-                if (!para.trim()) {
-                    wrappedLines.push("");
-                    continue;
-                }
-
-                const words = para.split(" ");
-                let currentLine = "";
-
-                for (const word of words) {
-                    const testLine = currentLine ? `${currentLine} ${word}` : word;
-                    const textWidth = font.widthOfTextAtSize(testLine, fontSize);
-
-                    if (textWidth <= usableWidth) {
-                        currentLine = testLine;
-                    } else {
-                        if (currentLine) wrappedLines.push(currentLine);
-                        currentLine = word;
-                    }
-                }
-                if (currentLine) wrappedLines.push(currentLine);
-                wrappedLines.push(""); // Paragraph gap
-            }
-
-            // Calculate Lines Per Page
-            const maxLinesPerPage = Math.floor(usableHeight / lineHeightPt);
-            let page = pdfDoc.addPage([pageWidth, pageHeight]);
-            let currentLineInPage = 0;
-            let totalPages = 1;
-
-            // Draw Lines onto PDF Document Pages
-            for (let i = 0; i < wrappedLines.length; i++) {
-                if (currentLineInPage >= maxLinesPerPage) {
-                    page = pdfDoc.addPage([pageWidth, pageHeight]);
-                    currentLineInPage = 0;
-                    totalPages++;
-                }
-
-                const line = wrappedLines[i];
-                if (line) {
-                    const yPosition =
-                        pageHeight - activeMargins.top - (currentLineInPage + 1) * lineHeightPt;
-
-                    page.drawText(line, {
-                        x: activeMargins.left,
-                        y: yPosition,
-                        size: fontSize,
-                        font: font,
-                        color: rgb(0.06, 0.09, 0.16), // #0f172a
-                    });
-                }
-
-                currentLineInPage++;
-            }
-
-            // Add Page Numbers (if enabled)
-            if (includePageNumbers) {
-                const pages = pdfDoc.getPages();
-                for (let idx = 0; idx < pages.length; idx++) {
-                    const p = pages[idx];
-                    const pageNumStr = `Page ${idx + 1} of ${pages.length}`;
-                    const numWidth = font.widthOfTextAtSize(pageNumStr, 9);
-
-                    p.drawText(pageNumStr, {
-                        x: (pageWidth - numWidth) / 2,
-                        y: activeMargins.bottom / 2,
-                        size: 9,
-                        font: font,
-                        color: rgb(0.4, 0.45, 0.55),
-                    });
-                }
+                const page = pdfDoc.addPage([widthPt, heightPt]);
+                page.drawImage(img, {
+                    x: 0,
+                    y: 0,
+                    width: widthPt,
+                    height: heightPt,
+                });
             }
 
             // Compile and Save Binary
@@ -443,7 +378,7 @@ export default function WordToPdf() {
                                             <span className="text-indigo-600">click to browse</span>
                                         </p>
                                         <p className="text-[11px] text-slate-400">
-                                            Maximum file size limit: 5 MB
+                                            Maximum file size limit: 20 MB
                                         </p>
                                     </>
                                 )}
