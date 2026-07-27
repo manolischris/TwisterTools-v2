@@ -31,7 +31,7 @@ import {
     FileType2,
     Check,
 } from "lucide-react";
-import { PDFDocument } from "pdf-lib";
+// Removed pdf-lib import
 
 // ─────────────────────────────────────────────────────────────
 // Types & Interfaces
@@ -52,10 +52,10 @@ interface RenderedPage {
 export default function PdfToJpgConverter() {
     // ── Core State ──
     const [pdfFile, setPdfFile] = useState<File | null>(null);
-    const [pdfDoc, setPdfDoc] = useState<PDFDocument | null>(null);
     const [pages, setPages] = useState<RenderedPage[]>([]);
     const [quality, setQuality] = useState<ImageQuality>("high");
     const [format, setFormat] = useState<ImageFormat>("jpeg");
+    const [processingStatus, setProcessingStatus] = useState<string | null>(null);
 
     // ── Processing & UI State ──
     const [isProcessing, setIsProcessing] = useState<boolean>(false);
@@ -64,6 +64,7 @@ export default function PdfToJpgConverter() {
     const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const pdfBytesRef = useRef<Uint8Array | null>(null);
 
     // ─────────────────────────────────────────────────────────────
     // PDF Reader & Page Extraction Engine
@@ -82,74 +83,60 @@ export default function PdfToJpgConverter() {
         }
 
         setIsProcessing(true);
+        setProcessingStatus("Loading PDF document...");
         setPdfFile(file);
 
         try {
-            const arrayBuffer = await file.arrayBuffer();
-            const loadedPdf = await PDFDocument.load(arrayBuffer);
-            setPdfDoc(loadedPdf);
+            const pdfjsLib = await import("pdfjs-dist");
+            pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
-            const pageCount = loadedPdf.getPageCount();
+            const arrayBuffer = await file.arrayBuffer();
+            const uint8Array = new Uint8Array(arrayBuffer);
+            pdfBytesRef.current = uint8Array;
+
+            const loadingTask = pdfjsLib.getDocument({ data: uint8Array.slice() });
+            const pdfDocInstance = await loadingTask.promise;
+            const pageCount = pdfDocInstance.numPages;
             const renderedPages: RenderedPage[] = [];
 
-            // Canvas-based rendering simulation for page thumbnails
-            for (let i = 0; i < pageCount; i++) {
-                const pdfPage = loadedPdf.getPage(i);
-                const { width, height } = pdfPage.getSize();
+            for (let i = 1; i <= pageCount; i++) {
+                setProcessingStatus(`Rendering page ${i} of ${pageCount}...`);
+                const page = await pdfDocInstance.getPage(i);
+                // Standard thumbnail resolution rendering scale
+                const viewport = page.getViewport({ scale: 1.0 });
 
                 const canvas = document.createElement("canvas");
-                const scale = quality === "ultra" ? 2.5 : quality === "high" ? 2.0 : 1.5;
-                canvas.width = Math.round(width * scale);
-                canvas.height = Math.round(height * scale);
+                const context = canvas.getContext("2d");
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
 
-                const ctx = canvas.getContext("2d");
-                if (ctx) {
-                    // Draw clean PDF placeholder page representation
-                    ctx.fillStyle = "#ffffff";
-                    ctx.fillRect(0, 0, canvas.width, canvas.height);
-                    ctx.fillStyle = "#f8fafc";
-                    ctx.fillRect(15, 15, canvas.width - 30, canvas.height - 30);
-                    ctx.strokeStyle = "#e2e8f0";
-                    ctx.lineWidth = 2;
-                    ctx.strokeRect(15, 15, canvas.width - 30, canvas.height - 30);
+                if (context) {
+                    await page.render({
+                        canvasContext: context,
+                        viewport: viewport,
+                        canvas: canvas,
+                    }).promise;
 
-                    // Document Header Bar Visual Representation
-                    ctx.fillStyle = "#4f46e5";
-                    ctx.fillRect(30, 30, canvas.width - 60, 24);
+                    const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
 
-                    // Document Page Body Text Mock Lines
-                    ctx.fillStyle = "#cbd5e1";
-                    for (let lineY = 80; lineY < canvas.height - 60; lineY += 20) {
-                        ctx.fillRect(30, lineY, Math.random() * (canvas.width - 120) + 60, 10);
+                    // Convert dataUrl to Blob
+                    const byteString = atob(dataUrl.split(",")[1]);
+                    const ab = new ArrayBuffer(byteString.length);
+                    const ia = new Uint8Array(ab);
+                    for (let j = 0; j < byteString.length; j++) {
+                        ia[j] = byteString.charCodeAt(j);
                     }
+                    const blob = new Blob([ab], { type: "image/jpeg" });
 
-                    // Watermark / Page Indicator
-                    ctx.fillStyle = "#0f172a";
-                    ctx.font = `bold ${Math.round(18 * scale)}px sans-serif`;
-                    ctx.textAlign = "center";
-                    ctx.fillText(`PAGE ${i + 1}`, canvas.width / 2, canvas.height / 2);
+                    renderedPages.push({
+                        pageIndex: i - 1,
+                        dataUrl,
+                        blob,
+                        width: viewport.width,
+                        height: viewport.height,
+                        selected: true,
+                    });
                 }
-
-                const mimeType = format === "png" ? "image/png" : "image/jpeg";
-                const dataUrl = canvas.toDataURL(mimeType, quality === "ultra" ? 0.98 : 0.9);
-
-                // Convert dataUrl to Blob
-                const byteString = atob(dataUrl.split(",")[1]);
-                const ab = new ArrayBuffer(byteString.length);
-                const ia = new Uint8Array(ab);
-                for (let j = 0; j < byteString.length; j++) {
-                    ia[j] = byteString.charCodeAt(j);
-                }
-                const blob = new Blob([ab], { type: mimeType });
-
-                renderedPages.push({
-                    pageIndex: i,
-                    dataUrl,
-                    blob,
-                    width: canvas.width,
-                    height: canvas.height,
-                    selected: true,
-                });
             }
 
             setPages(renderedPages);
@@ -159,8 +146,9 @@ export default function PdfToJpgConverter() {
             );
         } finally {
             setIsProcessing(false);
+            setProcessingStatus(null);
         }
-    }, [quality, format]);
+    }, []);
 
     const handleDrop = useCallback(
         (e: React.DragEvent<HTMLDivElement>) => {
@@ -186,7 +174,7 @@ export default function PdfToJpgConverter() {
 
     const clearWorkspace = () => {
         setPdfFile(null);
-        setPdfDoc(null);
+        pdfBytesRef.current = null;
         setPages([]);
         setErrorMessage(null);
         setPreviewUrl(null);
@@ -198,24 +186,72 @@ export default function PdfToJpgConverter() {
 
     const downloadSelectedImages = async () => {
         const selectedPages = pages.filter((p) => p.selected);
-        if (selectedPages.length === 0) return;
+        if (selectedPages.length === 0 || !pdfBytesRef.current) return;
 
         setIsProcessing(true);
         try {
-            for (const page of selectedPages) {
-                const url = URL.createObjectURL(page.blob);
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = `${pdfFile?.name.replace(/\.pdf$/i, "") || "document"}_page_${page.pageIndex + 1}.${format === "png" ? "png" : "jpg"}`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+            const pdfjsLib = await import("pdfjs-dist");
+            pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+
+            const loadingTask = pdfjsLib.getDocument({ data: pdfBytesRef.current.slice() });
+            const pdfDocInstance = await loadingTask.promise;
+
+            // Determine render scale from quality setting:
+            // Standard: 150 DPI => scale: 150 / 72 = 2.0833
+            // High: 300 DPI => scale: 300 / 72 = 4.1667
+            // Ultra HD: 600 DPI => scale: 600 / 72 = 8.3333
+            let scale = 2.0833;
+            if (quality === "high") {
+                scale = 4.1667;
+            } else if (quality === "ultra") {
+                scale = 8.3333;
+            }
+
+            const mimeType = format === "png" ? "image/png" : "image/jpeg";
+            const imageExtension = format === "png" ? "png" : "jpg";
+
+            for (let idx = 0; idx < selectedPages.length; idx++) {
+                const pageItem = selectedPages[idx];
+                setProcessingStatus(`Converting page ${idx + 1} of ${selectedPages.length}...`);
+
+                // pdfjs pages are 1-indexed
+                const page = await pdfDocInstance.getPage(pageItem.pageIndex + 1);
+                const viewport = page.getViewport({ scale });
+
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                if (context) {
+                    await page.render({
+                        canvasContext: context,
+                        viewport: viewport,
+                        canvas: canvas,
+                    }).promise;
+
+                    // Convert to blob and download
+                    const blob = await new Promise<Blob | null>((resolve) => {
+                        canvas.toBlob((b) => resolve(b), mimeType, quality === "ultra" ? 0.98 : 0.92);
+                    });
+
+                    if (blob) {
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement("a");
+                        a.href = url;
+                        a.download = `${pdfFile?.name.replace(/\.pdf$/i, "") || "document"}_page_${pageItem.pageIndex + 1}.${imageExtension}`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                        URL.revokeObjectURL(url);
+                    }
+                }
             }
         } catch (err) {
-            setErrorMessage("Failed to download converted pages.");
+            setErrorMessage(err instanceof Error ? err.message : "Failed to convert and download pages.");
         } finally {
             setIsProcessing(false);
+            setProcessingStatus(null);
         }
     };
 
@@ -226,9 +262,12 @@ export default function PdfToJpgConverter() {
         return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
     };
 
+    // Calculate dynamic size estimate based on target DPI settings and format
+    const dpiScale = quality === "ultra" ? 8.3333 : quality === "high" ? 4.1667 : 2.0833;
+    const formatMultiplier = format === "png" ? 4.0 : 1.0;
     const totalSelectedSize = pages
         .filter((p) => p.selected)
-        .reduce((acc, curr) => acc + curr.blob.size, 0);
+        .reduce((acc, curr) => acc + curr.blob.size * Math.pow(dpiScale, 2) * formatMultiplier, 0);
 
     return (
         <div className="w-full space-y-8">
@@ -478,7 +517,7 @@ export default function PdfToJpgConverter() {
                                 {isProcessing ? (
                                     <>
                                         <RefreshCw className="w-4 h-4 animate-spin" />
-                                        <span>Rendering & Exporting Images...</span>
+                                        <span>{processingStatus || "Rendering & Exporting Images..."}</span>
                                     </>
                                 ) : (
                                     <>
