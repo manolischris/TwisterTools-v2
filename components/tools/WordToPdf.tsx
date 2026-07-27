@@ -30,9 +30,7 @@ import {
     Layout,
     Sliders,
 } from "lucide-react";
-import { PDFDocument } from "pdf-lib";
 import { renderAsync } from "docx-preview";
-import html2canvas from "html2canvas";
 
 // ─────────────────────────────────────────────────────────────
 // Types & Interfaces
@@ -208,71 +206,92 @@ export default function WordToPdf() {
             return;
         }
 
-        // Find all page elements rendered by docx-preview
-        let pages = Array.from(container.querySelectorAll(".docx-wrapper > section, section.docx"));
-        if (pages.length === 0) {
-            pages = Array.from(container.querySelectorAll("section"));
-        }
-        if (pages.length === 0) {
-            pages = Array.from(container.children);
-        }
-        if (pages.length === 0) {
-            pages = [container];
-        }
-
         setIsExporting(true);
         setErrorMessage(null);
 
         try {
-            const pdfDoc = await PDFDocument.create();
+            // Create a hidden iframe for printing
+            const iframe = document.createElement("iframe");
+            iframe.style.position = "fixed";
+            iframe.style.right = "0";
+            iframe.style.bottom = "0";
+            iframe.style.width = "0px";
+            iframe.style.height = "0px";
+            iframe.style.border = "none";
+            document.body.appendChild(iframe);
 
-            for (let i = 0; i < pages.length; i++) {
-                const pageEl = pages[i] as HTMLElement;
-
-                // Render page to canvas
-                const canvas = await html2canvas(pageEl, {
-                    scale: 2, // 2x scale for high-definition text
-                    useCORS: true,
-                    logging: false,
-                    allowTaint: true,
-                    backgroundColor: "#ffffff"
-                });
-
-                const imgData = canvas.toDataURL("image/jpeg", 0.95);
-                const imgBytes = await fetch(imgData).then((res) => res.arrayBuffer());
-
-                const img = await pdfDoc.embedJpg(imgBytes);
-
-                // Use the page elements' client width/height as points dimensions
-                const widthPt = pageEl.offsetWidth || 612;
-                const heightPt = pageEl.offsetHeight || 792;
-
-                const page = pdfDoc.addPage([widthPt, heightPt]);
-                page.drawImage(img, {
-                    x: 0,
-                    y: 0,
-                    width: widthPt,
-                    height: heightPt,
-                });
+            const doc = iframe.contentWindow?.document;
+            if (!doc) {
+                throw new Error("Failed to initialize print frame.");
             }
 
-            // Compile and Save Binary
-            const pdfBytes = await pdfDoc.save();
-            const blob = new Blob([pdfBytes as any], { type: "application/pdf" });
-            const downloadUrl = URL.createObjectURL(blob);
+            // Copy all styles from the parent document to ensure docx-preview styling carries over
+            const styleSheets = Array.from(document.styleSheets);
+            for (const sheet of styleSheets) {
+                try {
+                    let cssRules = "";
+                    for (const rule of Array.from(sheet.cssRules)) {
+                        cssRules += rule.cssText + "\n";
+                    }
+                    const style = doc.createElement("style");
+                    style.textContent = cssRules;
+                    doc.head.appendChild(style);
+                } catch {
+                    if (sheet.href) {
+                        const link = doc.createElement("link");
+                        link.rel = "stylesheet";
+                        link.href = sheet.href;
+                        doc.head.appendChild(link);
+                    }
+                }
+            }
 
-            const a = document.createElement("a");
-            a.href = downloadUrl;
-            a.download = fileName
-                ? `${fileName.replace(/\.docx$/i, "")}.pdf`
-                : "converted_document.pdf";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(downloadUrl);
+            // Append print styles to optimize PDF pages, ensure background colors and formatting fit
+            const printStyle = doc.createElement("style");
+            printStyle.textContent = `
+                @media print {
+                    @page {
+                        margin: 0;
+                    }
+                    html, body {
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        background: #ffffff !important;
+                        -webkit-print-color-adjust: exact;
+                        print-color-adjust: exact;
+                    }
+                    .docx-wrapper {
+                        background: #ffffff !important;
+                        padding: 0 !important;
+                        box-shadow: none !important;
+                    }
+                    section.docx {
+                        margin: 0 auto !important;
+                        box-shadow: none !important;
+                        page-break-after: always;
+                        page-break-inside: avoid;
+                    }
+                }
+            `;
+            doc.head.appendChild(printStyle);
+
+            // Copy the HTML content of the rendered word document into the iframe
+            doc.body.innerHTML = container.innerHTML;
+
+            // Wait a short time for iframe content rendering to settle, then open print dialog
+            setTimeout(() => {
+                iframe.contentWindow?.focus();
+                iframe.contentWindow?.print();
+
+                // Remove the iframe after a short delay
+                setTimeout(() => {
+                    document.body.removeChild(iframe);
+                }, 2000);
+            }, 500);
+
         } catch (err) {
             setErrorMessage(
-                err instanceof Error ? err.message : "Failed to compile PDF binary document."
+                err instanceof Error ? err.message : "Failed to trigger PDF print dialog."
             );
         } finally {
             setIsExporting(false);
@@ -623,12 +642,12 @@ export default function WordToPdf() {
                                 {isExporting ? (
                                     <>
                                         <RefreshCw className="w-4 h-4 animate-spin" />
-                                        <span>Compiling PDF Document...</span>
+                                        <span>Preparing PDF Document...</span>
                                     </>
                                 ) : (
                                     <>
                                         <Download className="w-4 h-4" />
-                                        <span>Convert & Download PDF</span>
+                                        <span>Convert & Save as PDF</span>
                                     </>
                                 )}
                             </button>

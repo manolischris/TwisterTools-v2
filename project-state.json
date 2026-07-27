@@ -8,10 +8,11 @@
     "dynamic_internal_linking": "COMPLETED"
   },
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
-  "current_task": "Word to PDF Converter high-fidelity layout and 20MB limit restored",
-  "active_task_tracker": "Implemented high-fidelity layout preservation for Word to PDF Converter using html2canvas rendering. Restored 20MB client-side upload limit and verified Next.js build compilation.",
-  "completedTasksCount": 97,
+  "current_task": "Word to PDF Converter selectable text vector conversion verified",
+  "active_task_tracker": "Migrated PDF compilation to hidden print iframe to support fully selectable vector text, perfect fonts, and layout alignment of tables, and verified Next.js build compilation.",
+  "completedTasksCount": 98,
   "completed_tasks": [
+    "Migrated Word to PDF Converter to hidden iframe print engine. This resolves table rendering alignments and font rendering bugs by using browser-native high-fidelity layout rendering, while keeping all PDF text selectable and searchable.",
     "Implemented html2canvas layout preservation in Word to PDF Converter to maintain original margins, styles, tables, and colors perfectly. Restored client-side file upload limit to 20MB, and verified build success.",
     "Resolved 'Unknown font format' error by downloading full Roboto TrueType fonts from googlefonts repository, updated client-side file size constraint to 5MB, and verified build success.",
     "Upgraded Word to PDF Converter (word-to-pdf) to support Greek characters using registered fontkit and local Roboto TTF fonts, and overhauled page route wrapper layout with standard header, breadcrumbs, social sharing card, and related tools component.",
