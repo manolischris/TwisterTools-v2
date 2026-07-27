@@ -59,6 +59,7 @@ interface RegistryTool {
   href: string;
   iconName: string;
   isFeatured?: boolean;
+  badge?: string;
 }
 
 interface CategoryToolSearchGridProps {
@@ -175,9 +176,18 @@ export default function CategoryToolSearchGrid({
                     <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-100/50 dark:bg-slate-800 dark:border-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-950/50 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                       <ResolvedIcon className="w-5 h-5" />
                     </div>
-                    <h3 className="font-semibold text-slate-900 dark:text-white text-base group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                      {tool.title}
-                    </h3>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h3 className="font-semibold text-slate-900 dark:text-white text-base group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                          {tool.title}
+                        </h3>
+                        {tool.badge && (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/30 dark:text-emerald-400 dark:border-emerald-900/50">
+                            {tool.badge}
+                          </span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mt-3.5 leading-relaxed line-clamp-3">
                     {tool.description}

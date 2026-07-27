@@ -82,7 +82,12 @@ export default function PdfToolsCategoryPage() {
   // This automatically integrates the 'Lock PDF & Password Encryption' tool entry (lock-pdf).
   const categoryTools = toolsRegistry.filter(
     (tool) => tool.category === "pdf-tools"
-  );
+  ).map((tool) => {
+    if (tool.id === "text-to-pdf") {
+      return { ...tool, badge: "100% Private" };
+    }
+    return tool;
+  });
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-16 text-slate-800 dark:text-slate-200">

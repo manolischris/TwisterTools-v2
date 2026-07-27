@@ -812,7 +812,7 @@
       "legacy_url": "/text-pdf-converter",
       "new_url": "/tools/pdf-tools/text-to-pdf",
       "new_category": "pdf-tools",
-      "description": "Convert text files to PDF"
+      "description": "Convert plain text content into formatted, paginated PDF documents directly in browser memory."
     },
     {
       "id": 88,

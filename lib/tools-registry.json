@@ -655,5 +655,31 @@
     "path": "/tools/pdf-tools/word-to-pdf",
     "href": "/tools/pdf-tools/word-to-pdf",
     "isFeatured": false
+  },
+  {
+    "id": "pdf-to-word",
+    "name": "PDF to Word Converter",
+    "slug": "pdf-to-word",
+    "title": "PDF to Word Converter",
+    "category": "pdf-tools",
+    "description": "Convert PDF files into editable Word (.docx) documents directly in your browser with complete privacy and zero server uploads.",
+    "icon": "FileType",
+    "iconName": "FileType",
+    "component": "PdfToWordConverter",
+    "href": "/tools/pdf-tools/pdf-to-word",
+    "isFeatured": false
+  },
+  {
+    "id": "text-to-pdf",
+    "slug": "text-to-pdf",
+    "name": "Text to PDF Converter",
+    "title": "Text to PDF Converter",
+    "category": "pdf-tools",
+    "description": "Convert plain text content into formatted, paginated PDF documents directly in browser memory.",
+    "icon": "FileText",
+    "iconName": "FileText",
+    "href": "/tools/pdf-tools/text-to-pdf",
+    "badge": "Popular",
+    "isFeatured": false
   }
 ]
