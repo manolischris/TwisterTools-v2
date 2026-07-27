@@ -30,7 +30,8 @@ import {
     Layout,
     Sliders,
 } from "lucide-react";
-import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
+import { PDFDocument, rgb } from "pdf-lib";
+import fontkit from "@pdf-lib/fontkit";
 import { renderAsync } from "docx-preview";
 
 // ─────────────────────────────────────────────────────────────
@@ -211,8 +212,22 @@ export default function WordToPdf() {
 
         try {
             const pdfDoc = await PDFDocument.create();
-            const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
-            const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+            pdfDoc.registerFontkit(fontkit);
+
+            // Fetch and embed the local Roboto fonts supporting Greek characters
+            const [regularBytes, boldBytes] = await Promise.all([
+                fetch("/fonts/Roboto-Regular.ttf").then((res) => {
+                    if (!res.ok) throw new Error("Failed to load Roboto-Regular font.");
+                    return res.arrayBuffer();
+                }),
+                fetch("/fonts/Roboto-Bold.ttf").then((res) => {
+                    if (!res.ok) throw new Error("Failed to load Roboto-Bold font.");
+                    return res.arrayBuffer();
+                }),
+            ]);
+
+            const font = await pdfDoc.embedFont(regularBytes);
+            const fontBold = await pdfDoc.embedFont(boldBytes);
 
             // Page Setup Dimensions (Standard Letter: 612 x 792 pt)
             let pageWidth = 612;
