@@ -9,18 +9,16 @@ import {
     RefreshCw,
     AlertTriangle,
     Shield,
-    Table,
+    Table as TableIcon,
     Workflow,
     Eye,
     FileDown,
-    Check,
     Sliders,
-    Copy,
     Cpu,
     HelpCircle,
     ChevronLeft,
     ChevronRight,
-    Sparkles,
+    Image as ImageIcon,
 } from "lucide-react";
 
 // ─────────────────────────────────────────────────────────────
@@ -29,18 +27,26 @@ import {
 
 type AspectRatio = "16:9" | "4:3";
 
+interface SlideTable {
+    rows: string[][];
+}
+
 interface SlideData {
     id: string;
     title: string;
     bullets: string[];
+    tables: SlideTable[];
+    images: string[]; // Base64 Data URLs for extracted images/media
     notes?: string;
     bgColor: string;
+    textColor: string;
 }
 
 interface PresentationConfig {
     aspectRatio: AspectRatio;
     marginMm: number;
     includeSlideNumbers: boolean;
+    useOriginalTheme: boolean;
     themeColor: string;
 }
 
@@ -53,19 +59,29 @@ const SAMPLE_PRESENTATION_SLIDES: SlideData[] = [
             "Achieved 99.99% system availability across global nodes",
             "Streamlined client-side PDF rendering pipeline efficiency",
         ],
+        tables: [],
+        images: [],
         notes: "Introductory slide highlighting key Q3 engineering metrics.",
-        bgColor: "#1e293b",
+        bgColor: "#ffffff",
+        textColor: "#0f172a",
     },
     {
         id: "slide-2",
-        title: "Technical Architecture Overview",
-        bullets: [
-            "Client-side WebAssembly compilation engine for high security",
-            "Zero server latency via in-memory vector graphics compilation",
-            "Fully compliant with WebApplication and structured Schema standards",
+        title: "Features & Platform Availability",
+        bullets: ["Direct Cloud Storage & Multi-Link Interoperability Matrix"],
+        tables: [
+            {
+                rows: [
+                    ["Feature", "Drive Direct", "GDocs2Direct", "RaptorKit"],
+                    ["No Login Required", "Yes", "Yes", "Yes"],
+                    ["Multiple Links Support", "Yes", "No", "No"],
+                    ["API Access", "Yes", "No", "No"],
+                ],
+            },
         ],
-        notes: "Emphasize security advantages of browser-bound processing.",
-        bgColor: "#0f172a",
+        images: [],
+        bgColor: "#ffffff",
+        textColor: "#0f172a",
     },
     {
         id: "slide-3",
@@ -75,8 +91,10 @@ const SAMPLE_PRESENTATION_SLIDES: SlideData[] = [
             "Expand client-side multi-format export interoperability",
             "Maintain zero-knowledge data privacy framework",
         ],
-        notes: "Review actionable goals for next quarter deployment.",
-        bgColor: "#312e81",
+        tables: [],
+        images: [],
+        bgColor: "#f8fafc",
+        textColor: "#0f172a",
     },
 ];
 
@@ -89,6 +107,7 @@ export default function PptToPdfConverter() {
         aspectRatio: "16:9",
         marginMm: 5,
         includeSlideNumbers: true,
+        useOriginalTheme: true,
         themeColor: "#4f46e5",
     });
 
@@ -103,23 +122,33 @@ export default function PptToPdfConverter() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const previewCanvasRef = useRef<HTMLDivElement>(null);
 
-    // Sync size estimates based on slide count and configuration
+    // Sync size estimates based on slide count and media assets
     useEffect(() => {
-        const estimated = slides.length > 0 ? (slides.length * 0.45) + 0.15 : 0;
+        let totalImageBytes = 0;
+        slides.forEach((s) => {
+            s.images.forEach((img) => {
+                totalImageBytes += img.length * 0.75;
+            });
+        });
+        const estimated = slides.length > 0 ? (slides.length * 0.25) + (totalImageBytes / (1024 * 1024)) + 0.15 : 0;
         setEstimatedSizeMb(parseFloat(estimated.toFixed(2)));
     }, [slides, config]);
 
-    // ── File Handling (PPTX Extraction / Parsing) ──
+    // ── File Handling & Deep XML OpenXML Parser ──
     const MAX_FILE_SIZE = 20 * 1024 * 1024; // 20 MB Limit
 
     const parsePptxFile = async (file: File) => {
         setErrorMessage(null);
+
+        if (file.name.match(/\.ppt$/i)) {
+            setErrorMessage(
+                "Legacy PowerPoint binary format (.ppt) uses a proprietary binary structure. Please save or export your presentation as .pptx in PowerPoint or Google Slides and upload again."
+            );
+            return;
+        }
+
         if (!file.name.match(/\.(pptx|potx|ppsx)$/i)) {
-            if (file.name.match(/\.ppt$/i)) {
-                setErrorMessage("Legacy PowerPoint binary format (.ppt) is not supported client-side. Please save or convert your presentation to .pptx and upload again.");
-            } else {
-                setErrorMessage("Invalid file format. Please upload a modern PPTX, POTX, or PPSX presentation file.");
-            }
+            setErrorMessage("Invalid file format. Please upload a modern PPTX, POTX, or PPSX presentation file.");
             return;
         }
 
@@ -129,11 +158,10 @@ export default function PptToPdfConverter() {
         }
 
         setIsProcessing(true);
-        setProcessingStatus("Extracting presentation XML payload...");
+        setProcessingStatus("Extracting presentation XML & media assets...");
         setFileName(file.name);
 
         try {
-            // Dynamic import JSZip to parse PPTX structure client-side
             const JSZip = (await import("jszip")).default;
             const zip = await JSZip.loadAsync(file);
 
@@ -145,7 +173,7 @@ export default function PptToPdfConverter() {
                 throw new Error("No slide content XML files found inside PPTX package.");
             }
 
-            // Sort slides numerically by file index
+            // Sort slides numerically by index (slide1.xml, slide2.xml...)
             slideFiles.sort((a, b) => {
                 const numA = parseInt(a.replace(/[^0-9]/g, "")) || 0;
                 const numB = parseInt(b.replace(/[^0-9]/g, "")) || 0;
@@ -156,24 +184,100 @@ export default function PptToPdfConverter() {
             const parser = new DOMParser();
 
             for (let i = 0; i < slideFiles.length; i++) {
-                setProcessingStatus(`Parsing slide ${i + 1} of ${slideFiles.length}...`);
-                const xmlText = await zip.files[slideFiles[i]].async("text");
+                const slidePath = slideFiles[i];
+                const slideNumber = slidePath.replace(/[^0-9]/g, "");
+                setProcessingStatus(`Parsing slide ${i + 1} of ${slideFiles.length} (XML & Graphics)...`);
+
+                const xmlText = await zip.files[slidePath].async("text");
                 const xmlDoc = parser.parseFromString(xmlText, "text/xml");
 
-                // Extract raw text elements
+                // 1. Map Slide Relationships (_rels) to locate embedded media
+                const relsPath = `ppt/slides/_rels/slide${slideNumber}.xml.rels`;
+                const relMap: Record<string, string> = {};
+
+                if (zip.files[relsPath]) {
+                    const relsXmlText = await zip.files[relsPath].async("text");
+                    const relsDoc = parser.parseFromString(relsXmlText, "text/xml");
+                    const relNodes = Array.from(relsDoc.getElementsByTagName("Relationship"));
+
+                    relNodes.forEach((node) => {
+                        const id = node.getAttribute("Id");
+                        const target = node.getAttribute("Target");
+                        if (id && target) {
+                            // Resolve relative media paths (e.g., ../media/image1.png)
+                            const cleanTarget = target.replace(/^..\/media\//, "ppt/media/");
+                            relMap[id] = cleanTarget.startsWith("ppt/") ? cleanTarget : `ppt/${cleanTarget}`;
+                        }
+                    });
+                }
+
+                // 2. Extract embedded images & graphics (<a:blip r:embed="rIdX">)
+                const blipNodes = Array.from(xmlDoc.getElementsByTagName("a:blip"));
+                const slideImages: string[] = [];
+
+                for (const blip of blipNodes) {
+                    const embedId = blip.getAttribute("r:embed") || blip.getAttribute("r:link");
+                    if (embedId && relMap[embedId] && zip.files[relMap[embedId]]) {
+                        const mediaFile = zip.files[relMap[embedId]];
+                        const ext = mediaFile.name.split(".").pop()?.toLowerCase() || "png";
+                        const base64Data = await mediaFile.async("base64");
+                        const mimeType = ext === "svg" ? "image/svg+xml" : ext === "jpg" ? "image/jpeg" : `image/${ext}`;
+                        slideImages.push(`data:${mimeType};base64,${base64Data}`);
+                    }
+                }
+
+                // 3. Extract Background Color (<p:bg> -> <a:srgbClr val="HEX">)
+                let slideBgColor = "#ffffff";
+                const bgClrNodes = xmlDoc.getElementsByTagName("a:srgbClr");
+                if (bgClrNodes.length > 0) {
+                    const hexVal = bgClrNodes[0].getAttribute("val");
+                    if (hexVal) slideBgColor = `#${hexVal}`;
+                }
+
+                // 4. Extract Tables (<a:tbl>)
+                const tableNodes = Array.from(xmlDoc.getElementsByTagName("a:tbl"));
+                const slideTables: SlideTable[] = [];
+
+                tableNodes.forEach((tbl) => {
+                    const trNodes = Array.from(tbl.getElementsByTagName("a:tr"));
+                    const tableRows: string[][] = [];
+
+                    trNodes.forEach((tr) => {
+                        const tcNodes = Array.from(tr.getElementsByTagName("a:tc"));
+                        const rowCells: string[] = [];
+                        tcNodes.forEach((tc) => {
+                            const cellTexts = Array.from(tc.getElementsByTagName("a:t"))
+                                .map((t) => t.textContent?.trim() || "")
+                                .filter((txt) => txt.length > 0);
+                            rowCells.push(cellTexts.join(" "));
+                        });
+                        if (rowCells.some((c) => c.length > 0)) {
+                            tableRows.push(rowCells);
+                        }
+                    });
+
+                    if (tableRows.length > 0) {
+                        slideTables.push({ rows: tableRows });
+                    }
+                });
+
+                // 5. Extract Text & Headings (<a:t>)
                 const textNodes = Array.from(xmlDoc.getElementsByTagName("a:t"));
                 const textLines = textNodes
                     .map((node) => node.textContent?.trim() || "")
                     .filter((t) => t.length > 0);
 
                 const slideTitle = textLines.length > 0 ? textLines[0] : `Slide ${i + 1}`;
-                const slideBullets = textLines.length > 1 ? textLines.slice(1) : ["(No body text captured for this slide)"];
+                const slideBullets = textLines.length > 1 ? textLines.slice(1) : [];
 
                 parsedSlides.push({
                     id: `extracted-slide-${i + 1}`,
                     title: slideTitle,
                     bullets: slideBullets,
-                    bgColor: i % 2 === 0 ? "#1e293b" : "#0f172a",
+                    tables: slideTables,
+                    images: slideImages,
+                    bgColor: slideBgColor,
+                    textColor: "#0f172a",
                 });
             }
 
@@ -237,7 +341,7 @@ export default function PptToPdfConverter() {
             const html2canvas = (await import("html2canvas")).default;
             const { jsPDF } = await import("jspdf");
 
-            // Slide Dimensions in mm (16:9 widescreen vs 4:3 standard)
+            // Slide Dimensions in mm
             const slideWidthMm = config.aspectRatio === "16:9" ? 297 : 280;
             const slideHeightMm = config.aspectRatio === "16:9" ? 167 : 210;
 
@@ -248,7 +352,7 @@ export default function PptToPdfConverter() {
                 compress: true,
             });
 
-            // Render each slide offscreen onto hidden DOM frame
+            // Offscreen Container Setup
             const renderContainer = document.createElement("div");
             renderContainer.style.position = "fixed";
             renderContainer.style.left = "-9999px";
@@ -262,39 +366,89 @@ export default function PptToPdfConverter() {
                 setProcessingStatus(`Compiling slide ${i + 1} of ${slides.length} to PDF...`);
 
                 const slide = slides[i];
+
+                // Determine styling based on Original Theme vs Custom Theme Override
+                const bgStyle = config.useOriginalTheme
+                    ? slide.bgColor || "#ffffff"
+                    : i % 2 === 0 ? "#1e293b" : "#0f172a";
+
+                const textStyle = config.useOriginalTheme ? "#0f172a" : "#ffffff";
+                const borderAccent = config.useOriginalTheme ? "#cbd5e1" : config.themeColor;
+                const bulletAccent = config.useOriginalTheme ? "#4f46e5" : config.themeColor;
+
+                // Render Tables HTML string
+                const tablesHtml = slide.tables
+                    .map(
+                        (t) => `
+                    <div style="margin-top: 20px; overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 20px; color: ${textStyle}; border: 1px solid ${borderAccent};">
+                            <tbody>
+                                ${t.rows
+                                .map(
+                                    (row, rIdx) => `
+                                    <tr style="background-color: ${rIdx === 0 ? (config.useOriginalTheme ? "#f1f5f9" : "rgba(255,255,255,0.1)") : "transparent"};">
+                                        ${row
+                                            .map(
+                                                (cell) => `
+                                            <td style="border: 1px solid ${borderAccent}; padding: 12px 16px; text-align: left; font-weight: ${rIdx === 0 ? "bold" : "normal"};">${cell}</td>`
+                                            )
+                                            .join("")}
+                                    </tr>`
+                                )
+                                .join("")}
+                            </tbody>
+                        </table>
+                    </div>`
+                    )
+                    .join("");
+
+                // Render Images HTML string
+                const imagesHtml = slide.images
+                    .map(
+                        (imgSrc) => `
+                    <div style="margin-top: 20px; display: flex; justify-content: center;">
+                        <img src="${imgSrc}" style="max-width: 100%; max-height: 500px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+                    </div>`
+                    )
+                    .join("");
+
                 renderContainer.innerHTML = `
-          <div style="width: 100%; height: 100%; background: ${slide.bgColor}; color: #ffffff; padding: 80px; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
-            <div style="border-left: 8px solid ${config.themeColor}; padding-left: 24px;">
-              <h1 style="font-size: 52px; font-weight: 800; margin: 0 0 16px 0; color: #ffffff; tracking: -0.02em;">${slide.title}</h1>
-              <p style="font-size: 20px; color: #a5b4fc; margin: 0;">Presentation Document • ${presentationTitle}</p>
+          <div style="width: 100%; height: 100%; background: ${bgStyle}; color: ${textStyle}; padding: 80px; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+            <div style="border-left: 8px solid ${borderAccent}; padding-left: 24px;">
+              <h1 style="font-size: 48px; font-weight: 800; margin: 0 0 12px 0; color: ${textStyle}; tracking: -0.02em;">${slide.title}</h1>
+              <p style="font-size: 18px; color: ${config.useOriginalTheme ? "#64748b" : "#a5b4fc"}; margin: 0;">${presentationTitle}</p>
             </div>
             
-            <div style="margin-top: 40px; flex-grow: 1;">
-              <ul style="list-style-type: none; padding: 0; margin: 0;">
-                ${slide.bullets
-                        .map(
-                            (b) => `
-                  <li style="font-size: 28px; line-height: 1.5; margin-bottom: 24px; color: #f1f5f9; display: flex; items-center: center;">
-                    <span style="color: ${config.themeColor}; margin-right: 16px; font-weight: bold;">▪</span> ${b}
-                  </li>`
-                        )
-                        .join("")}
-              </ul>
+            <div style="margin-top: 30px; flex-grow: 1; overflow: hidden;">
+              ${slide.bullets.length > 0
+                        ? `<ul style="list-style-type: none; padding: 0; margin: 0 0 20px 0;">
+                        ${slide.bullets
+                            .map(
+                                (b) => `
+                          <li style="font-size: 24px; line-height: 1.4; margin-bottom: 16px; color: ${textStyle}; display: flex; align-items: center;">
+                            <span style="color: ${bulletAccent}; margin-right: 14px; font-weight: bold;">▪</span> ${b}
+                          </li>`
+                            )
+                            .join("")}
+                      </ul>`
+                        : ""
+                    }
+              ${tablesHtml}
+              ${imagesHtml}
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 24px; font-size: 18px; color: #94a3b8;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid ${config.useOriginalTheme ? "#e2e8f0" : "rgba(255,255,255,0.15)"}; padding-top: 20px; font-size: 16px; color: #94a3b8;">
               <span>TwisterTools PPT to PDF Converter</span>
               ${config.includeSlideNumbers ? `<span>Slide ${i + 1} of ${slides.length}</span>` : ""}
             </div>
           </div>
         `;
 
-                // Render slide frame to high-DPI canvas
                 const canvas = await html2canvas(renderContainer, {
                     scale: 2,
                     useCORS: true,
                     logging: false,
-                    backgroundColor: slide.bgColor,
+                    backgroundColor: bgStyle,
                 });
 
                 const imgData = canvas.toDataURL("image/jpeg", 0.95);
@@ -306,7 +460,6 @@ export default function PptToPdfConverter() {
                 pdf.addImage(imgData, "JPEG", 0, 0, slideWidthMm, slideHeightMm);
             }
 
-            // Cleanup hidden container
             if (document.body.contains(renderContainer)) {
                 document.body.removeChild(renderContainer);
             }
@@ -370,7 +523,7 @@ export default function PptToPdfConverter() {
                                 <input
                                     ref={fileInputRef}
                                     type="file"
-                                    accept=".pptx,.potx,.ppsx"
+                                    accept=".pptx,.potx,.ppsx,.ppt"
                                     className="hidden"
                                     onChange={(e) => e.target.files?.[0] && parsePptxFile(e.target.files[0])}
                                 />
@@ -382,7 +535,7 @@ export default function PptToPdfConverter() {
                                         <p className="text-xs font-bold text-slate-800">
                                             Drop .pptx file here, or <span className="text-indigo-600">click to browse</span>
                                         </p>
-                                        <p className="text-[11px] text-slate-400">Modern PowerPoint formats supported (.pptx) • Max size 20 MB</p>
+                                        <p className="text-[11px] text-slate-400">PowerPoint OpenXML (.pptx) • Max size 20 MB</p>
                                     </div>
                                 </div>
                             </div>
@@ -423,9 +576,19 @@ export default function PptToPdfConverter() {
                                                         {slide.title}
                                                     </span>
                                                 </div>
-                                                <span className="text-[10px] text-slate-400 font-medium flex-shrink-0">
-                                                    {slide.bullets.length} items
-                                                </span>
+                                                <div className="flex items-center gap-2 text-[10px] text-slate-400 font-medium flex-shrink-0">
+                                                    {slide.tables.length > 0 && (
+                                                        <span className="flex items-center gap-0.5 text-indigo-600 font-semibold bg-indigo-50 px-1.5 py-0.5 rounded">
+                                                            <TableIcon className="w-3 h-3" /> Table
+                                                        </span>
+                                                    )}
+                                                    {slide.images.length > 0 && (
+                                                        <span className="flex items-center gap-0.5 text-emerald-600 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded">
+                                                            <ImageIcon className="w-3 h-3" /> Graphic
+                                                        </span>
+                                                    )}
+                                                    <span>{slide.bullets.length} items</span>
+                                                </div>
                                             </div>
                                         ))}
                                     </div>
@@ -477,16 +640,23 @@ export default function PptToPdfConverter() {
                                 </div>
 
                                 <div className="space-y-1">
-                                    <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Accent Theme</label>
+                                    <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Slide Theme</label>
                                     <select
-                                        value={config.themeColor}
-                                        onChange={(e) => setConfig({ ...config, themeColor: e.target.value })}
+                                        value={config.useOriginalTheme ? "original" : config.themeColor}
+                                        onChange={(e) => {
+                                            const val = e.target.value;
+                                            if (val === "original") {
+                                                setConfig({ ...config, useOriginalTheme: true });
+                                            } else {
+                                                setConfig({ ...config, useOriginalTheme: false, themeColor: val });
+                                            }
+                                        }}
                                         className="w-full text-xs font-medium bg-slate-50 border border-slate-200 rounded-lg p-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                                     >
-                                        <option value="#4f46e5">Indigo Accent</option>
-                                        <option value="#0284c7">Sky Blue Accent</option>
-                                        <option value="#059669">Emerald Accent</option>
-                                        <option value="#d97706">Amber Accent</option>
+                                        <option value="original">Keep Original Presentation Theme</option>
+                                        <option value="#4f46e5">Override: Dark Indigo Accent</option>
+                                        <option value="#0284c7">Override: Dark Sky Blue</option>
+                                        <option value="#059669">Override: Dark Emerald</option>
                                     </select>
                                 </div>
                             </div>
@@ -505,30 +675,77 @@ export default function PptToPdfConverter() {
 
                                 <div
                                     ref={previewCanvasRef}
-                                    className="w-full h-[250px] rounded-xl border border-slate-300 overflow-hidden relative shadow-inner p-6 flex flex-col justify-between text-white transition-all"
+                                    className="w-full h-[250px] rounded-xl border border-slate-300 overflow-hidden relative shadow-inner p-6 flex flex-col justify-between transition-all"
                                     style={{
-                                        backgroundColor: slides[activeSlideIndex]?.bgColor || "#1e293b",
+                                        backgroundColor: config.useOriginalTheme
+                                            ? slides[activeSlideIndex]?.bgColor || "#ffffff"
+                                            : activeSlideIndex % 2 === 0 ? "#1e293b" : "#0f172a",
+                                        color: config.useOriginalTheme ? "#0f172a" : "#ffffff",
                                     }}
                                 >
                                     {slides.length > 0 ? (
                                         <>
-                                            <div className="space-y-2 border-l-4 pl-3" style={{ borderColor: config.themeColor }}>
-                                                <h3 className="text-base font-bold leading-snug">
+                                            <div
+                                                className="space-y-1 border-l-4 pl-3"
+                                                style={{
+                                                    borderColor: config.useOriginalTheme ? "#cbd5e1" : config.themeColor,
+                                                }}
+                                            >
+                                                <h3 className="text-sm font-bold leading-snug">
                                                     {slides[activeSlideIndex].title}
                                                 </h3>
-                                                <p className="text-[11px] text-indigo-200/80">Presentation Slide Node</p>
+                                                <p
+                                                    className="text-[10px]"
+                                                    style={{
+                                                        color: config.useOriginalTheme ? "#64748b" : "#a5b4fc",
+                                                    }}
+                                                >
+                                                    {presentationTitle}
+                                                </p>
                                             </div>
 
-                                            <ul className="space-y-1.5 my-auto pl-1">
-                                                {slides[activeSlideIndex].bullets.slice(0, 3).map((bullet, bIdx) => (
-                                                    <li key={bIdx} className="text-xs flex items-center gap-2 text-slate-200">
-                                                        <span style={{ color: config.themeColor }} className="font-bold">•</span>
-                                                        <span className="truncate">{bullet}</span>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                            <div className="my-auto space-y-2 max-h-[130px] overflow-hidden">
+                                                {slides[activeSlideIndex].bullets.length > 0 && (
+                                                    <ul className="space-y-1 pl-1">
+                                                        {slides[activeSlideIndex].bullets.slice(0, 2).map((bullet, bIdx) => (
+                                                            <li key={bIdx} className="text-[11px] flex items-center gap-2">
+                                                                <span
+                                                                    style={{
+                                                                        color: config.useOriginalTheme ? "#4f46e5" : config.themeColor,
+                                                                    }}
+                                                                    className="font-bold"
+                                                                >
+                                                                    •
+                                                                </span>
+                                                                <span className="truncate">{bullet}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
 
-                                            <div className="flex items-center justify-between text-[10px] text-slate-400 border-t border-white/10 pt-2">
+                                                {slides[activeSlideIndex].tables.length > 0 && (
+                                                    <div className="border border-slate-200 rounded p-1.5 bg-slate-50/80 text-[10px]">
+                                                        <span className="font-semibold text-slate-700 flex items-center gap-1">
+                                                            <TableIcon className="w-3 h-3 text-indigo-600" /> Embedded Table ({slides[activeSlideIndex].tables[0].rows.length} rows)
+                                                        </span>
+                                                    </div>
+                                                )}
+
+                                                {slides[activeSlideIndex].images.length > 0 && (
+                                                    <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded p-1.5 text-[10px] text-emerald-800">
+                                                        <ImageIcon className="w-3 h-3 text-emerald-600" />
+                                                        <span>Embedded Graphic Asset Extracted</span>
+                                                    </div>
+                                                )}
+                                            </div>
+
+                                            <div
+                                                className="flex items-center justify-between text-[10px] border-t pt-2"
+                                                style={{
+                                                    borderColor: config.useOriginalTheme ? "#e2e8f0" : "rgba(255,255,255,0.15)",
+                                                    color: "#94a3b8",
+                                                }}
+                                            >
                                                 <span>TwisterTools PPT to PDF Engine</span>
                                                 {config.includeSlideNumbers && (
                                                     <span>Slide {activeSlideIndex + 1} / {slides.length}</span>
@@ -537,8 +754,8 @@ export default function PptToPdfConverter() {
                                         </>
                                     ) : (
                                         <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-center">
-                                            <Presentation className="w-8 h-8 text-slate-500 mb-2" />
-                                            <p className="text-xs font-medium text-slate-300">No active slide preview</p>
+                                            <Presentation className="w-8 h-8 text-slate-400 mb-2" />
+                                            <p className="text-xs font-medium text-slate-500">No active slide preview</p>
                                             <p className="text-[11px] text-slate-400">Upload a PPTX file or click Load Sample</p>
                                         </div>
                                     )}
@@ -606,7 +823,7 @@ export default function PptToPdfConverter() {
                     </h2>
                     <div className="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
                         <p>
-                            PowerPoint files (`.pptx`) are structured OpenXML archives containing XML markup, embedded vector graphics, typography references, and slide layout definitions. Our converter unpacks these compressed XML structures client-side, extracts slide titles, content hierarchies, bullet lists, and layout parameters, and dynamically compiles them into pristine PDF slides using high-resolution browser canvas graphics.
+                            PowerPoint files (`.pptx`) are structured OpenXML archives containing XML markup, embedded vector graphics, typography references, and slide layout definitions. Our converter unpacks these compressed XML structures client-side, maps slide relationship definitions (`.rels`), extracts embedded image assets from `ppt/media/`, parses table structures (&lt;a:tbl&gt;), and compiles them into pristine PDF slides using high-resolution browser canvas graphics.
                         </p>
                         <p>
                             By executing the entire extraction and vector compilation process directly within your browser memory sandbox, sensitive enterprise presentations, financial slides, and proprietary deck materials remain 100% confidential without ever touching external cloud servers.
@@ -618,7 +835,7 @@ export default function PptToPdfConverter() {
                 <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
-                            <Table className="w-5 h-5" />
+                            <TableIcon className="w-5 h-5" />
                         </div>
                         <span>Presentation Formatting & Export Standards</span>
                     </h2>
@@ -640,9 +857,9 @@ export default function PptToPdfConverter() {
                                     <td className="px-4 py-3">In-Memory JSZip Unpacking</td>
                                 </tr>
                                 <tr className="bg-slate-50/70">
-                                    <td className="px-4 py-3 font-semibold text-slate-900">Aspect Ratios</td>
-                                    <td className="px-4 py-3 font-mono text-xs text-indigo-600">16:9 Widescreen, 4:3 Standard</td>
-                                    <td className="px-4 py-3">Vector Geometry Alignment</td>
+                                    <td className="px-4 py-3 font-semibold text-slate-900">Visual Elements</td>
+                                    <td className="px-4 py-3 font-mono text-xs text-indigo-600">Tables, Graphics, Backgrounds</td>
+                                    <td className="px-4 py-3">Rels Mapping & Base64 Rendering</td>
                                     <td className="px-4 py-3">100% Offline Processing</td>
                                 </tr>
                                 <tr className="bg-white">
@@ -674,12 +891,12 @@ export default function PptToPdfConverter() {
                             {
                                 step: "02",
                                 title: "Inspect Slide Hierarchy",
-                                body: "Review extracted slide titles and bullet hierarchies in the left workspace deck panel.",
+                                body: "Review extracted slide titles, tables, and media assets in the left workspace deck panel.",
                             },
                             {
                                 step: "03",
-                                title: "Configure Aspect Ratio & Theme",
-                                body: "Select target aspect ratio (16:9 or 4:3) and accent themes to customize vector PDF slide frames.",
+                                title: "Configure Theme & Geometry",
+                                body: "Choose 'Keep Original Presentation Theme' or select custom accent overlays with 16:9 or 4:3 aspect ratios.",
                             },
                             {
                                 step: "04",
@@ -738,16 +955,16 @@ export default function PptToPdfConverter() {
                     <div className="space-y-4">
                         {[
                             {
-                                q: "Is my PowerPoint presentation file uploaded to any remote server?",
-                                a: "No. All slide extraction, OpenXML parsing, and PDF rendering are performed 100% locally in your web browser.",
+                                q: "Are embedded images and tables included in the converted PDF?",
+                                a: "Yes. The parser maps slide relationships and extracts embedded media from ppt/media/ as well as table elements (<a:tbl>), ensuring charts, graphics, and tables are preserved in the output PDF.",
                             },
                             {
-                                q: "Which PowerPoint formats are supported by this converter?",
-                                a: "The engine supports modern OpenXML PowerPoint formats including .pptx, .potx, and .ppsx. Older binary format (.ppt) is not supported client-side and must be converted to .pptx first.",
+                                q: "Are legacy binary .ppt files supported by this client-side converter?",
+                                a: "Legacy .ppt files use a proprietary binary structure that cannot be decompressed client-side in pure browser JavaScript. To convert a .ppt file, save or export it as .pptx in PowerPoint or Google Slides first.",
                             },
                             {
-                                q: "What is the maximum file size limit for PPTX conversion?",
-                                a: "The tool supports presentation archives up to 20 MB directly in client memory.",
+                                q: "Is my presentation uploaded to any remote server during conversion?",
+                                a: "No. All slide extraction, OpenXML parsing, and PDF rendering take place 100% locally within your browser memory.",
                             },
                         ].map(({ q, a }, idx) => (
                             <div
@@ -774,7 +991,7 @@ export default function PptToPdfConverter() {
                         operatingSystem: "All",
                         browserRequirements: "Requires JavaScript. Supports HTML5 Canvas & WebAssembly.",
                         description:
-                            "Convert PowerPoint presentation decks (.pptx) into high-resolution PDF documents client-side with complete privacy and custom aspect ratios.",
+                            "Convert PowerPoint presentation decks (.pptx) into high-resolution PDF documents client-side with complete privacy, graphics extraction, and table parsing.",
                         offers: {
                             "@type": "Offer",
                             price: "0",
@@ -792,10 +1009,10 @@ export default function PptToPdfConverter() {
                         mainEntity: [
                             {
                                 "@type": "Question",
-                                name: "Is my PowerPoint presentation file uploaded to any remote server?",
+                                name: "Are embedded images and tables included in the converted PDF?",
                                 acceptedAnswer: {
                                     "@type": "Answer",
-                                    text: "No. All slide extraction, OpenXML parsing, and PDF rendering are performed 100% locally in your web browser.",
+                                    text: "Yes. The parser maps slide relationships and extracts embedded media from ppt/media/ as well as table elements (<a:tbl>), ensuring charts, graphics, and tables are preserved in the output PDF.",
                                 },
                             },
                         ],
