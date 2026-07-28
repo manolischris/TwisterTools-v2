@@ -1,52 +1,55 @@
 import type { Metadata, NextPage } from "next";
 import Link from "next/link";
-import { Code } from "lucide-react";
-import HtmlToPdfConverter from "@/components/tools/HtmlToPdfConverter";
+import { FolderArchive } from "lucide-react";
+import PdfToZipPackager from "@/components/tools/PdfToZipPackager";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "HTML to PDF Webpage Compiler",
+  title: "PDF to ZIP Archive Packager | Convert & Package PDF Pages | TwisterTools",
   description:
-    "Convert HTML source code, inline CSS, and web pages into high-resolution PDF documents directly in your browser.",
+    "Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.",
   keywords: [
-    "html to pdf",
-    "html to pdf compiler",
-    "convert html to pdf",
-    "webpage compiler",
-    "client-side html to pdf",
+    "pdf to zip",
+    "pdf to archive",
+    "extract pdf pages",
+    "pdf page extractor",
+    "zip pdf pages",
+    "pdf packaging tool",
+    "client-side pdf to zip",
+    "free pdf zip converter",
     "twistertools",
   ],
   openGraph: {
-    title: "HTML to PDF Webpage Compiler | TwisterTools",
+    title: "PDF to ZIP Archive Packager | Convert & Package PDF Pages | TwisterTools",
     description:
-      "Convert HTML source code, inline CSS, and web pages into high-resolution PDF documents directly in your browser.",
-    url: "https://www.twistertools.com/tools/pdf-tools/html-to-pdf",
+      "Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.",
+    url: "https://www.twistertools.com/tools/pdf-tools/pdf-to-zip",
     siteName: "TwisterTools",
     type: "website",
     images: [
       {
-        url: "https://www.twistertools.com/images/tools/pdf-tools/html-to-pdf.jpg",
+        url: "https://www.twistertools.com/images/tools/pdf-tools/pdf-to-zip.jpg",
         width: 1200,
         height: 630,
-        alt: "HTML to PDF Webpage Compiler Tool on TwisterTools",
+        alt: "PDF to ZIP Archive Packager Tool on TwisterTools",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "HTML to PDF Webpage Compiler | TwisterTools",
+    title: "PDF to ZIP Archive Packager | Convert & Package PDF Pages | TwisterTools",
     description:
-      "Convert HTML source code, inline CSS, and web pages into high-resolution PDF documents directly in your browser.",
+      "Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.",
     images: [
-      "https://www.twistertools.com/images/tools/pdf-tools/html-to-pdf.jpg",
+      "https://www.twistertools.com/images/tools/pdf-tools/pdf-to-zip.jpg",
     ],
   },
   alternates: {
-    canonical: "https://www.twistertools.com/tools/pdf-tools/html-to-pdf",
+    canonical: "https://www.twistertools.com/tools/pdf-tools/pdf-to-zip",
   },
 };
 
-const HtmlToPdfPage: NextPage = () => {
+const PdfToZipPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
@@ -67,21 +70,21 @@ const HtmlToPdfPage: NextPage = () => {
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">
-                HTML to PDF Webpage Compiler
+                PDF to ZIP Archive Packager
               </span>
             </div>
 
             {/* Tool Title & Description */}
             <div className="flex items-start gap-3 mt-2">
               <div className="w-14 h-14 rounded-2xl flex self-stretch items-center justify-center flex-shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
-                <Code className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                <FolderArchive className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
               </div>
               <div className="flex-1 min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-0.5 leading-tight">
-                  HTML to PDF Webpage Compiler
+                  PDF to ZIP Archive Packager
                 </h1>
                 <p className="text-base text-slate-600 dark:text-slate-400 leading-snug">
-                  Convert HTML source code, inline CSS, and web pages into high-resolution PDF documents directly in your browser.
+                  Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.
                 </p>
               </div>
             </div>
@@ -93,7 +96,7 @@ const HtmlToPdfPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Interactive Tool Interface */}
-          <HtmlToPdfConverter />
+          <PdfToZipPackager />
 
           {/* Social Sharing Card */}
           <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">
@@ -108,7 +111,7 @@ const HtmlToPdfPage: NextPage = () => {
                 {/* Facebook */}
                 <div className="relative group">
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/html-to-pdf")}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/pdf-to-zip")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on Facebook"
@@ -127,7 +130,7 @@ const HtmlToPdfPage: NextPage = () => {
                 {/* X / Twitter */}
                 <div className="relative group">
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/html-to-pdf")}&text=${encodeURIComponent("Convert HTML source code, inline CSS, and web pages into high-resolution PDF documents directly in your browser.")}`}
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/pdf-to-zip")}&text=${encodeURIComponent("Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on X (Twitter)"
@@ -146,14 +149,14 @@ const HtmlToPdfPage: NextPage = () => {
                 {/* LinkedIn */}
                 <div className="relative group">
                   <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/html-to-pdf")}`}
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/pdf-tools/pdf-to-zip")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on LinkedIn"
                     className="w-10 h-10 rounded-lg flex items-center justify-center bg-[#0077b5] hover:bg-[#005885] text-white transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                     </svg>
                   </a>
                   <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 dark:bg-slate-700 px-2 py-1 text-[11px] font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150 shadow-lg z-10">
@@ -166,11 +169,11 @@ const HtmlToPdfPage: NextPage = () => {
           </div>
 
           {/* Related Tools */}
-          <RelatedTools currentSlug="html-to-pdf" currentCategory="pdf-tools" />
+          <RelatedTools currentSlug="pdf-to-zip" currentCategory="pdf-tools" />
         </div>
       </div>
     </div>
   );
 };
 
-export default HtmlToPdfPage;
+export default PdfToZipPage;

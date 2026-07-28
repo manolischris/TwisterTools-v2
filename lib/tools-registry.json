@@ -765,6 +765,30 @@
     "iconName": "Code",
     "href": "/tools/pdf-tools/html-to-pdf",
     "status": "active"
+  },
+  {
+    "id": "pdf-to-zip",
+    "slug": "pdf-to-zip",
+    "name": "PDF to ZIP Archive Packager",
+    "title": "PDF to ZIP Archive Packager",
+    "category": "pdf-tools",
+    "description": "Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.",
+    "icon": "FolderArchive",
+    "iconName": "FolderArchive",
+    "href": "/tools/pdf-tools/pdf-to-zip",
+    "isFeatured": false
+  },
+  {
+    "id": "rotate-pdf",
+    "slug": "rotate-pdf",
+    "name": "Rotate PDF Pages & Orientation Fixer",
+    "title": "Rotate PDF Pages & Orientation Fixer",
+    "category": "pdf-tools",
+    "description": "Fix inverted or landscape PDF pages with loss-free orientation correction.",
+    "icon": "RotateCw",
+    "iconName": "RotateCw",
+    "href": "/tools/pdf-tools/rotate-pdf",
+    "isFeatured": false
   }
 ]
 
