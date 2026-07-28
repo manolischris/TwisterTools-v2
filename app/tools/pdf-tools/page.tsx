@@ -86,6 +86,22 @@ export default function PdfToolsCategoryPage() {
     if (tool.id === "text-to-pdf") {
       return { ...tool, badge: undefined };
     }
+    if (tool.id === "pdf-to-png") {
+      return {
+        ...tool,
+        title: "PDF to PNG Converter",
+        description: "Extract crisp, high-resolution PNG images from PDF pages with full transparency support and customizable DPI scale.",
+        iconName: "FileImage"
+      };
+    }
+    if (tool.id === "html-to-pdf") {
+      return {
+        ...tool,
+        title: "HTML to PDF Webpage Compiler",
+        description: "Compile raw HTML code, CSS stylesheets, and DOM layouts into vector PDF files.",
+        iconName: "Code"
+      };
+    }
     return tool;
   });
 

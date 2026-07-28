@@ -739,5 +739,45 @@
     "href": "/tools/pdf-tools/pdf-to-jpg",
     "isFeatured": false,
     "status": "active"
+  },
+  {
+    "id": "pdf-to-png",
+    "name": "PDF to PNG Converter",
+    "slug": "pdf-to-png",
+    "title": "PDF to PNG Converter",
+    "category": "pdf-tools",
+    "description": "Convert PDF documents to high-resolution, transparent PNG images entirely in your browser.",
+    "keywords": ["pdf to png", "pdf image converter", "extract png from pdf", "pdf page rasterizer", "lossless pdf convert"],
+    "icon": "FileImage",
+    "iconName": "FileImage",
+    "href": "/tools/pdf-tools/pdf-to-png",
+    "isFeatured": true,
+    "status": "active"
+  },
+  {
+    "id": "html-to-pdf",
+    "name": "HTML to PDF Webpage Compiler",
+    "slug": "html-to-pdf",
+    "category": "pdf-tools",
+    "title": "HTML to PDF Webpage Compiler",
+    "description": "Compile HTML code and CSS into high-quality PDF documents locally in browser.",
+    "icon": "Code",
+    "iconName": "Code",
+    "href": "/tools/pdf-tools/html-to-pdf",
+    "status": "active"
+  },
+  {
+    "id": "ppt-to-pdf",
+    "name": "PPT to PDF Presentation Converter",
+    "slug": "ppt-to-pdf",
+    "category": "pdf-tools",
+    "title": "PPT to PDF Presentation Converter",
+    "description": "Convert PowerPoint slides (.pptx) to high-resolution PDF documents directly in your browser with complete privacy.",
+    "icon": "Presentation",
+    "iconName": "Presentation",
+    "href": "/tools/pdf-tools/ppt-to-pdf",
+    "route": "/tools/pdf-tools/ppt-to-pdf",
+    "status": "active",
+    "isFeatured": false
   }
 ]

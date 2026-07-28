@@ -14,6 +14,7 @@ import {
   RefreshCw,
   Globe,
   Database,
+  Code,
   Code2,
   Minimize2,
   CreditCard,
@@ -48,7 +49,8 @@ import {
   Combine,
   Stamp,
   Scissors,
-  FileType2
+  FileType2,
+  Presentation
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -78,6 +80,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   RefreshCw,
   Globe,
   Database,
+  Code,
   Code2,
   Minimize2,
   CreditCard,
@@ -113,7 +116,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Stamp,
   Scissors,
   FileType,
-  FileType2
+  FileType2,
+  Presentation
 };
 
 export default function CategoryToolSearchGrid({
