@@ -322,32 +322,6 @@ export default function HtmlToPdfConverter() {
                 ? fullHtml.replace(/(<\/head>)/i, printStyleOverrides + "$1")
                 : fullHtml.replace(/(<html[^>]*>)/i, "$1" + printStyleOverrides) || printStyleOverrides + fullHtml;
 
-            setProcessingStatus("Pre-processing embedded images...");
-
-            // ── Rewrite external image URLs through the local API proxy so html2canvas sees
-            //    same-origin images with proper CORS headers, avoiding taint and fetch interception ──
-            const proxyBase = `/api/image-proxy?url=`;
-            fullHtml = fullHtml.replace(
-                /<img\s[^>]*?src\s*=\s*"((?!data:)[^"]+)"/gi,
-                (_match: string, src: string) => {
-                    // Only proxy http/https URLs, skip data/blob URLs
-                    if (src.startsWith("http://") || src.startsWith("https://")) {
-                        return _match.replace(`"${src}"`, `"${proxyBase}${encodeURIComponent(src)}"`);
-                    }
-                    return _match;
-                }
-            );
-            // Also handle single-quoted src attributes
-            fullHtml = fullHtml.replace(
-                /<img\s[^>]*?src\s*=\s*'((?!data:)[^']+)'/gi,
-                (_match: string, src: string) => {
-                    if (src.startsWith("http://") || src.startsWith("https://")) {
-                        return _match.replace(`'${src}'`, `'${proxyBase}${encodeURIComponent(src)}'`);
-                    }
-                    return _match;
-                }
-            );
-
             setProcessingStatus("Rendering DOM offscreen...");
 
             // Create offscreen iframe (avoids screen flickering completely)
@@ -400,7 +374,7 @@ export default function HtmlToPdfConverter() {
             // Capture from documentElement instead of body for better reliability
             const canvas = await html2canvas(iframeDoc.documentElement, {
                 scale: 2,
-                useCORS: true,
+                useCORS: false,
                 allowTaint: true,
                 logging: false,
                 foreignObjectRendering: true, // let browser native text renderer draw text
