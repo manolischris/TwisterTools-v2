@@ -44,20 +44,6 @@ const nextConfig: NextConfig = {
       permanent: true,
     });
 
-    // Redirect legacy/unimplemented PDF tool routes to PDF category page
-    const legacyPdfToolSlugs = [
-      "pdf-to-ppt",
-      "excel-to-pdf",
-      "pdf-to-excel",
-    ];
-    for (const slug of legacyPdfToolSlugs) {
-      redirects.push({
-        source: `/tools/pdf-tools/${slug}`,
-        destination: "/tools/pdf-tools",
-        permanent: true,
-      });
-    }
-
     return redirects;
   },
 };

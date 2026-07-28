@@ -218,23 +218,17 @@ export async function generateMetadata({
   };
 }
 
-// Static generation: Pre-render all tool pages at build time
-// Only include tools with a valid 4-part URL (/tools/{category}/{tool-slug})
+// Static generation: Pre-render all 146 tool pages at build time
 export async function generateStaticParams() {
-  return urlMap.tools
-    .filter((tool: Tool) => {
-      const pathParts = tool.new_url.split("/");
-      return pathParts.length >= 4 && pathParts[3];
-    })
-    .map((tool: Tool) => {
-      // Extract category and tool-slug from new_url
-      // Format: /tools/{category}/{tool-slug}
-      const pathParts = tool.new_url.split("/");
-      return {
-        category: pathParts[2],
-        "tool-slug": pathParts[3],
-      };
-    });
+  return urlMap.tools.map((tool: Tool) => {
+    // Extract category and tool-slug from new_url
+    // Format: /tools/{category}/{tool-slug}
+    const pathParts = tool.new_url.split("/");
+    return {
+      category: pathParts[2],
+      "tool-slug": pathParts[3],
+    };
+  });
 }
 
 export default async function ToolPage({

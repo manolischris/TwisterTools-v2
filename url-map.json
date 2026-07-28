@@ -922,7 +922,7 @@
       "id": 102,
       "name": "Excel to PDF",
       "legacy_url": "/excel-to-pdf",
-      "new_url": "/tools/pdf-tools",
+      "new_url": "/tools/pdf-tools/excel-to-pdf",
       "new_category": "pdf-tools",
       "description": "Convert Excel spreadsheets to PDF"
     },
@@ -938,7 +938,7 @@
       "id": 104,
       "name": "PDF to PowerPoint",
       "legacy_url": "/pdf-to-powerpoint",
-      "new_url": "/tools/pdf-tools",
+      "new_url": "/tools/pdf-tools/pdf-to-ppt",
       "new_category": "pdf-tools",
       "description": "Convert PDF to PowerPoint presentations"
     },
@@ -946,7 +946,7 @@
       "id": 105,
       "name": "PDF to Excel",
       "legacy_url": "/pdf-to-excel",
-      "new_url": "/tools/pdf-tools",
+      "new_url": "/tools/pdf-tools/pdf-to-excel",
       "new_category": "pdf-tools",
       "description": "Convert PDF to Excel spreadsheets"
     },
