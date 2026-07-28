@@ -114,8 +114,12 @@ export default function PptToPdfConverter() {
 
     const parsePptxFile = async (file: File) => {
         setErrorMessage(null);
-        if (!file.name.match(/\.(pptx|ppt|potx|ppsx)$/i)) {
-            setErrorMessage("Invalid file format. Please upload a PPTX or PPT presentation file.");
+        if (!file.name.match(/\.(pptx|potx|ppsx)$/i)) {
+            if (file.name.match(/\.ppt$/i)) {
+                setErrorMessage("Legacy PowerPoint binary format (.ppt) is not supported client-side. Please save or convert your presentation to .pptx and upload again.");
+            } else {
+                setErrorMessage("Invalid file format. Please upload a modern PPTX, POTX, or PPSX presentation file.");
+            }
             return;
         }
 
@@ -177,11 +181,15 @@ export default function PptToPdfConverter() {
             setActiveSlideIndex(0);
             setPresentationTitle(file.name.replace(/\.[^/.]+$/, ""));
         } catch (err) {
-            setErrorMessage(
-                err instanceof Error
-                    ? err.message
-                    : "Failed to parse PPTX package. Using optimized slide recovery mode."
-            );
+            let errorMsg = "Failed to parse presentation package.";
+            if (err instanceof Error) {
+                if (err.message.includes("end of central directory") || err.message.includes("zip")) {
+                    errorMsg = "Legacy PowerPoint binary format (.ppt) is not supported client-side. Please convert it to .pptx (OpenXML) and try again.";
+                } else {
+                    errorMsg = err.message;
+                }
+            }
+            setErrorMessage(errorMsg);
         } finally {
             setIsProcessing(false);
             setProcessingStatus(null);
@@ -355,14 +363,14 @@ export default function PptToPdfConverter() {
                                 onDrop={handleDrop}
                                 onClick={() => fileInputRef.current?.click()}
                                 className={`relative rounded-xl border-2 border-dashed cursor-pointer transition-all duration-200 flex flex-col items-center justify-center py-6 px-4 text-center ${isDragging
-                                        ? "border-indigo-500 bg-indigo-50/60 scale-[0.99]"
-                                        : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
+                                    ? "border-indigo-500 bg-indigo-50/60 scale-[0.99]"
+                                    : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
                                 <input
                                     ref={fileInputRef}
                                     type="file"
-                                    accept=".pptx,.ppt,.potx,.ppsx"
+                                    accept=".pptx,.potx,.ppsx"
                                     className="hidden"
                                     onChange={(e) => e.target.files?.[0] && parsePptxFile(e.target.files[0])}
                                 />
@@ -372,9 +380,9 @@ export default function PptToPdfConverter() {
                                     </div>
                                     <div className="text-left">
                                         <p className="text-xs font-bold text-slate-800">
-                                            Drop .pptx or .ppt file here, or <span className="text-indigo-600">click to browse</span>
+                                            Drop .pptx file here, or <span className="text-indigo-600">click to browse</span>
                                         </p>
-                                        <p className="text-[11px] text-slate-400">PowerPoint formats supported • Max size 20 MB</p>
+                                        <p className="text-[11px] text-slate-400">Modern PowerPoint formats supported (.pptx) • Max size 20 MB</p>
                                     </div>
                                 </div>
                             </div>
@@ -397,14 +405,14 @@ export default function PptToPdfConverter() {
                                         <span className="text-[11px] text-slate-500 font-mono">{fileName}</span>
                                     </div>
 
-                                    <div className="max-h-[320px] overflow-y-auto space-y-2 pr-1">
+                                    <div className="max-h-[320px] overflow-y-auto space-y-2 p-1">
                                         {slides.map((slide, idx) => (
                                             <div
                                                 key={slide.id}
                                                 onClick={() => setActiveSlideIndex(idx)}
                                                 className={`p-3 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${activeSlideIndex === idx
-                                                        ? "border-indigo-500 bg-indigo-50/60 ring-1 ring-indigo-500"
-                                                        : "border-slate-200 bg-slate-50 hover:bg-slate-100/80"
+                                                    ? "border-indigo-500 bg-indigo-50/60 ring-1 ring-indigo-500"
+                                                    : "border-slate-200 bg-slate-50 hover:bg-slate-100/80"
                                                     }`}
                                             >
                                                 <div className="flex items-center gap-3 overflow-hidden">
@@ -563,8 +571,8 @@ export default function PptToPdfConverter() {
                                 onClick={compilePptToPdf}
                                 disabled={slides.length === 0 || isProcessing}
                                 className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${slides.length > 0 && !isProcessing
-                                        ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                        : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
+                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (
@@ -627,7 +635,7 @@ export default function PptToPdfConverter() {
                             <tbody className="divide-y divide-slate-200 text-xs md:text-sm text-slate-700">
                                 <tr className="bg-white">
                                     <td className="px-4 py-3 font-semibold text-slate-900">Input Archives</td>
-                                    <td className="px-4 py-3 font-mono text-xs text-indigo-600">.pptx, .ppt, .potx, .ppsx</td>
+                                    <td className="px-4 py-3 font-mono text-xs text-indigo-600">.pptx, .potx, .ppsx</td>
                                     <td className="px-4 py-3">OpenXML Tree Parsing</td>
                                     <td className="px-4 py-3">In-Memory JSZip Unpacking</td>
                                 </tr>
@@ -660,8 +668,8 @@ export default function PptToPdfConverter() {
                         {[
                             {
                                 step: "01",
-                                title: "Upload PowerPoint Archive",
-                                body: "Drag and drop your .pptx or .ppt presentation deck directly into the upload dropzone, or click browse.",
+                                title: "Upload PowerPoint Presentation",
+                                body: "Drag and drop your modern .pptx presentation deck directly into the upload dropzone, or click browse.",
                             },
                             {
                                 step: "02",
@@ -735,7 +743,7 @@ export default function PptToPdfConverter() {
                             },
                             {
                                 q: "Which PowerPoint formats are supported by this converter?",
-                                a: "The engine supports .pptx, .ppt, .potx, and .ppsx presentation files.",
+                                a: "The engine supports modern OpenXML PowerPoint formats including .pptx, .potx, and .ppsx. Older binary format (.ppt) is not supported client-side and must be converted to .pptx first.",
                             },
                             {
                                 q: "What is the maximum file size limit for PPTX conversion?",
