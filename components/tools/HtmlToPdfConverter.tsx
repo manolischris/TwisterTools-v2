@@ -353,33 +353,6 @@ export default function HtmlToPdfConverter() {
                 }
             }
 
-            // ── Pre-fetch external images and convert to base64 to bypass CORS restrictions on canvas ──
-            const imgElements = Array.from(iframeDoc.getElementsByTagName("img"));
-            await Promise.all(
-              imgElements.map(async (img) => {
-                if (!img.src || img.src.startsWith("data:")) return;
-                try {
-                  const response = await fetch(img.src, { mode: "cors" });
-                  if (!response.ok) throw new Error("CORS fetch failed");
-                  const blob = await response.blob();
-                  await new Promise<void>((resolve) => {
-                    const reader = new FileReader();
-                    reader.onloadend = () => {
-                      if (typeof reader.result === "string") {
-                        img.src = reader.result; // Replace remote URL with Base64 data URI
-                      }
-                      resolve();
-                    };
-                    reader.onerror = () => resolve();
-                    reader.readAsDataURL(blob);
-                  });
-                } catch {
-                  // Fallback: If CORS fetch is blocked by strict origin, attempt crossOrigin = "anonymous"
-                  img.crossOrigin = "anonymous";
-                }
-              })
-            );
-
             // Compute actual content dimensions + add 8px padding safety margin
             const contentWidth = Math.max(
                 iframeDoc.body.scrollWidth,
@@ -401,10 +374,10 @@ export default function HtmlToPdfConverter() {
             // Capture from documentElement instead of body for better reliability
             const canvas = await html2canvas(iframeDoc.documentElement, {
                 scale: 2,
-                useCORS: true,
+                useCORS: false,
                 allowTaint: true,
                 logging: false,
-                foreignObjectRendering: false, // Set to false to force canvas native drawing of base64 images
+                foreignObjectRendering: true, // let browser native text renderer draw text
                 width: contentWidth,
                 height: contentHeight,
                 windowWidth: contentWidth,
