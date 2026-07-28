@@ -5,7 +5,7 @@ import RotatePdf from "@/components/tools/RotatePdf";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Rotate PDF Pages & Orientation Fixer | TwisterTools",
+  title: "Rotate PDF Pages & Orientation Fixer",
   description:
     "Fix inverted or landscape PDF pages with loss-free orientation correction. Rotate individual or batch PDF pages online directly in your browser.",
   keywords: [

@@ -5,7 +5,7 @@ import PdfToZipPackager from "@/components/tools/PdfToZipPackager";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "PDF to ZIP Archive Packager | Convert & Package PDF Pages | TwisterTools",
+  title: "PDF to ZIP Archive Packager | Convert & Package PDF Pages",
   description:
     "Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.",
   keywords: [
