@@ -322,6 +322,32 @@ export default function HtmlToPdfConverter() {
                 ? fullHtml.replace(/(<\/head>)/i, printStyleOverrides + "$1")
                 : fullHtml.replace(/(<html[^>]*>)/i, "$1" + printStyleOverrides) || printStyleOverrides + fullHtml;
 
+            setProcessingStatus("Pre-processing embedded images...");
+
+            // ── Rewrite external image URLs through the local API proxy so html2canvas sees
+            //    same-origin images with proper CORS headers, avoiding taint and fetch interception ──
+            const proxyBase = `/api/image-proxy?url=`;
+            fullHtml = fullHtml.replace(
+                /<img\s[^>]*?src\s*=\s*"((?!data:)[^"]+)"/gi,
+                (_match: string, src: string) => {
+                    // Only proxy http/https URLs, skip data/blob URLs
+                    if (src.startsWith("http://") || src.startsWith("https://")) {
+                        return _match.replace(`"${src}"`, `"${proxyBase}${encodeURIComponent(src)}"`);
+                    }
+                    return _match;
+                }
+            );
+            // Also handle single-quoted src attributes
+            fullHtml = fullHtml.replace(
+                /<img\s[^>]*?src\s*=\s*'((?!data:)[^']+)'/gi,
+                (_match: string, src: string) => {
+                    if (src.startsWith("http://") || src.startsWith("https://")) {
+                        return _match.replace(`'${src}'`, `'${proxyBase}${encodeURIComponent(src)}'`);
+                    }
+                    return _match;
+                }
+            );
+
             setProcessingStatus("Rendering DOM offscreen...");
 
             // Create offscreen iframe (avoids screen flickering completely)
@@ -352,46 +378,6 @@ export default function HtmlToPdfConverter() {
                     /* fonts API unsupported or blocked — fixed delay above still applies */
                 }
             }
-
-            // ── Pre-process images: convert external images to Base64 via offscreen canvas to avoid CORS taint ──
-            setProcessingStatus("Pre-processing embedded images...");
-            const images = iframeDoc.querySelectorAll<HTMLImageElement>("img");
-            const imagePromises: Promise<void>[] = [];
-            images.forEach((img) => {
-                const src = img.getAttribute("src");
-                if (!src || src.startsWith("data:")) return; // skip already inline images
-
-                const promise = new Promise<void>((resolve) => {
-                    // Load the image into an offscreen Image() element (same-window, avoids fetch interception)
-                    const offscreenImg = new Image();
-                    offscreenImg.crossOrigin = "anonymous";
-                    offscreenImg.onload = () => {
-                        try {
-                            const canvas = document.createElement("canvas");
-                            canvas.width = offscreenImg.naturalWidth;
-                            canvas.height = offscreenImg.naturalHeight;
-                            const ctx = canvas.getContext("2d");
-                            if (ctx) {
-                                ctx.drawImage(offscreenImg, 0, 0);
-                                const base64 = canvas.toDataURL("image/png");
-                                img.setAttribute("src", base64);
-                            }
-                        } catch {
-                            // canvas.toDataURL may throw if image is tainted; leave original src as-is
-                        }
-                        resolve();
-                    };
-                    offscreenImg.onerror = () => {
-                        resolve(); // leave original src as fallback
-                    };
-                    offscreenImg.src = src;
-                });
-                imagePromises.push(promise);
-            });
-            await Promise.allSettled(imagePromises);
-
-            // Recompute after image replacement (images may resize)
-            await new Promise((r) => setTimeout(r, 100));
 
             // Compute actual content dimensions + add 8px padding safety margin
             const contentWidth = Math.max(
