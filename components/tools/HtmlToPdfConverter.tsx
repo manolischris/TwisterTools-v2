@@ -353,7 +353,7 @@ export default function HtmlToPdfConverter() {
                 }
             }
 
-            // ── Pre-process images: fetch external images and convert to Base64 to avoid CORS taint ──
+            // ── Pre-process images: convert external images to Base64 via offscreen canvas to avoid CORS taint ──
             setProcessingStatus("Pre-processing embedded images...");
             const images = iframeDoc.querySelectorAll<HTMLImageElement>("img");
             const imagePromises: Promise<void>[] = [];
@@ -361,27 +361,31 @@ export default function HtmlToPdfConverter() {
                 const src = img.getAttribute("src");
                 if (!src || src.startsWith("data:")) return; // skip already inline images
 
-                const promise = (async () => {
-                    try {
-                        const response = await fetch(src, {
-                            mode: "cors",
-                            credentials: "omit",
-                            cache: "force-cache",
-                        });
-                        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                        const blob = await response.blob();
-                        const mimeType = blob.type || "image/png";
-                        const base64 = await new Promise<string>((resolve, reject) => {
-                            const reader = new FileReader();
-                            reader.onloadend = () => resolve(reader.result as string);
-                            reader.onerror = () => reject(new Error("FileReader failed"));
-                            reader.readAsDataURL(blob);
-                        });
-                        img.setAttribute("src", base64);
-                    } catch {
-                        // If fetch fails, leave the original src as-is (browser fallback)
-                    }
-                })();
+                const promise = new Promise<void>((resolve) => {
+                    // Load the image into an offscreen Image() element (same-window, avoids fetch interception)
+                    const offscreenImg = new Image();
+                    offscreenImg.crossOrigin = "anonymous";
+                    offscreenImg.onload = () => {
+                        try {
+                            const canvas = document.createElement("canvas");
+                            canvas.width = offscreenImg.naturalWidth;
+                            canvas.height = offscreenImg.naturalHeight;
+                            const ctx = canvas.getContext("2d");
+                            if (ctx) {
+                                ctx.drawImage(offscreenImg, 0, 0);
+                                const base64 = canvas.toDataURL("image/png");
+                                img.setAttribute("src", base64);
+                            }
+                        } catch {
+                            // canvas.toDataURL may throw if image is tainted; leave original src as-is
+                        }
+                        resolve();
+                    };
+                    offscreenImg.onerror = () => {
+                        resolve(); // leave original src as fallback
+                    };
+                    offscreenImg.src = src;
+                });
                 imagePromises.push(promise);
             });
             await Promise.allSettled(imagePromises);
