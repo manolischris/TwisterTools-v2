@@ -37,12 +37,20 @@ const nextConfig: NextConfig = {
       permanent: true,
     });
 
-    // Purge removed tool: ppt-to-pdf → redirect to PDF category
-    redirects.push({
-      source: "/tools/pdf-tools/ppt-to-pdf",
-      destination: "/tools/pdf-tools",
-      permanent: true,
-    });
+    // Purge removed tools under pdf-tools → redirect to PDF category
+    const removedPdfTools = [
+      "/tools/pdf-tools/ppt-to-pdf",
+      "/tools/pdf-tools/pdf-to-ppt",
+      "/tools/pdf-tools/excel-to-pdf",
+      "/tools/pdf-tools/pdf-to-excel",
+    ];
+    for (const url of removedPdfTools) {
+      redirects.push({
+        source: url,
+        destination: "/tools/pdf-tools",
+        permanent: true,
+      });
+    }
 
     return redirects;
   },

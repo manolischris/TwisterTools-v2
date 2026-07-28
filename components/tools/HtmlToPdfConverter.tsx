@@ -353,6 +353,42 @@ export default function HtmlToPdfConverter() {
                 }
             }
 
+            // ── Pre-process images: fetch external images and convert to Base64 to avoid CORS taint ──
+            setProcessingStatus("Pre-processing embedded images...");
+            const images = iframeDoc.querySelectorAll<HTMLImageElement>("img");
+            const imagePromises: Promise<void>[] = [];
+            images.forEach((img) => {
+                const src = img.getAttribute("src");
+                if (!src || src.startsWith("data:")) return; // skip already inline images
+
+                const promise = (async () => {
+                    try {
+                        const response = await fetch(src, {
+                            mode: "cors",
+                            credentials: "omit",
+                            cache: "force-cache",
+                        });
+                        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                        const blob = await response.blob();
+                        const mimeType = blob.type || "image/png";
+                        const base64 = await new Promise<string>((resolve, reject) => {
+                            const reader = new FileReader();
+                            reader.onloadend = () => resolve(reader.result as string);
+                            reader.onerror = () => reject(new Error("FileReader failed"));
+                            reader.readAsDataURL(blob);
+                        });
+                        img.setAttribute("src", base64);
+                    } catch {
+                        // If fetch fails, leave the original src as-is (browser fallback)
+                    }
+                })();
+                imagePromises.push(promise);
+            });
+            await Promise.allSettled(imagePromises);
+
+            // Recompute after image replacement (images may resize)
+            await new Promise((r) => setTimeout(r, 100));
+
             // Compute actual content dimensions + add 8px padding safety margin
             const contentWidth = Math.max(
                 iframeDoc.body.scrollWidth,
