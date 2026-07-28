@@ -570,6 +570,14 @@ export default function HtmlToPdfConverter() {
                                 />
                             </div>
 
+                            {/* 💡 Image tips callout */}
+                            <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs flex items-start gap-2.5">
+                                <span className="text-base flex-shrink-0 leading-none mt-px">💡</span>
+                                <div className="text-amber-900 leading-relaxed">
+                                    <strong className="font-semibold">Tip for Images:</strong> For complete privacy, this tool runs 100% in your browser. To include images, use inline Base64 Data URIs (e.g. <code className="text-[11px] bg-amber-100/80 px-1 py-0.5 rounded font-mono">{'<img src="data:image/png;base64,...">'}</code>) or inline SVG elements. Remote HTTP/HTTPS image URLs may be blocked by browser CORS security policies.
+                                </div>
+                            </div>
+
                             <div className="flex items-center gap-2 pt-1">
                                 <button
                                     type="button"
@@ -856,8 +864,8 @@ export default function HtmlToPdfConverter() {
                                 a: "No. All HTML compilation, DOM layout rendering, and PDF byte generation take place 100% client-side within your browser JavaScript engine.",
                             },
                             {
-                                q: "Does the compiler support custom CSS fonts and embedded images?",
-                                a: "Yes! Web fonts, inline SVG elements, and standard base64 data URIs or accessible image links are fully rendered into the final output PDF.",
+                                q: "How do I include images in my HTML document?",
+                                a: "Because conversion happens 100% locally in your browser memory without cloud servers, remote image URLs are subject to browser CORS security policies. For best results, use Base64-encoded image data URIs or inline SVG graphics.",
                             },
                             {
                                 q: "What file size limit applies to imported HTML documents?",
