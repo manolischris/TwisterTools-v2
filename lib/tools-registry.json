@@ -765,19 +765,6 @@
     "iconName": "Code",
     "href": "/tools/pdf-tools/html-to-pdf",
     "status": "active"
-  },
-  {
-    "id": "ppt-to-pdf",
-    "name": "PPT to PDF Presentation Converter",
-    "slug": "ppt-to-pdf",
-    "category": "pdf-tools",
-    "title": "PPT to PDF Presentation Converter",
-    "description": "Convert PowerPoint slides (.pptx) to high-resolution PDF documents directly in your browser with complete privacy.",
-    "icon": "Presentation",
-    "iconName": "Presentation",
-    "href": "/tools/pdf-tools/ppt-to-pdf",
-    "route": "/tools/pdf-tools/ppt-to-pdf",
-    "status": "active",
-    "isFeatured": false
   }
 ]
+

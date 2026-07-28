@@ -296,8 +296,13 @@ export default async function ToolPage({
       t.new_url === `/tools/${category}/${toolSlug}`
   );
 
-  // Fallback if tool not found
+  // Fallback if tool not found in url-map
   if (!tool) {
+    notFound();
+  }
+
+  // Enforce strict 404 for tools that exist in url-map but have no completed implementation
+  if (!COMPLETED_TOOLS.includes(toolSlug)) {
     notFound();
   }
 
@@ -1043,89 +1048,9 @@ export default async function ToolPage({
                 </div>
               </section>
             </>
-          ) : (
-            <section className="bg-card border border-border rounded-lg p-6 md:p-8">
-              <div className="flex items-center gap-2 mb-4">
-                <Info className="w-5 h-5 text-primary" />
-                <h2 className="text-xl font-semibold text-foreground">
-                  Tool Interface
-                </h2>
-              </div>
-              <div className="bg-muted/50 border border-dashed border-border rounded-lg p-12 text-center">
-                <p className="text-base text-muted-foreground">
-                  Interactive {tool.name} component will be implemented here
-                </p>
-                <p className="text-sm text-muted-foreground mt-2">
-                  Tool ID: {tool.id} | Category: {category}
-                </p>
-              </div>
-            </section>
-          )}
+          ) : null}
 
-          {/* Generic Tool Explanation Section (for other tools) */}
-          {!COMPLETED_TOOLS.includes(toolSlug) && (
-            <section className="bg-card border border-border rounded-lg p-6 md:p-8">
-              <div className="flex items-center gap-2 mb-4">
-                <Info className="w-5 h-5 text-primary" />
-                <h2 className="text-xl font-semibold text-foreground">
-                  How It Works
-                </h2>
-              </div>
-              <div className="prose prose-slate dark:prose-invert max-w-none">
-                <p className="text-base text-muted-foreground">
-                  {tool.description} This tool provides a simple and efficient way
-                  to accomplish your task with just a few clicks.
-                </p>
-                <ul className="text-base text-muted-foreground space-y-1">
-                  <li>Fast and reliable processing</li>
-                  <li>No registration required</li>
-                  <li>100% free to use</li>
-                  <li>Privacy-focused - data processed locally when possible</li>
-                </ul>
-              </div>
-            </section>
-          )}
 
-          {/* Generic FAQ Section (for other tools) */}
-          {!COMPLETED_TOOLS.includes(toolSlug) && (
-            <section className="bg-card border border-border rounded-lg p-6 md:p-8">
-              <div className="flex items-center gap-2 mb-4">
-                <HelpCircle className="w-5 h-5 text-primary" />
-                <h2 className="text-xl font-semibold text-foreground">
-                  Frequently Asked Questions
-                </h2>
-              </div>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-base font-semibold text-foreground mb-2">
-                    Is this tool free to use?
-                  </h3>
-                  <p className="text-base text-muted-foreground">
-                    Yes, all tools on TwisterTools are completely free to use with
-                    no hidden costs or registration requirements.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold text-foreground mb-2">
-                    Is my data secure?
-                  </h3>
-                  <p className="text-base text-muted-foreground">
-                    We prioritize your privacy. When possible, data is processed
-                    locally in your browser and never stored on our servers.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold text-foreground mb-2">
-                    Can I use this for commercial projects?
-                  </h3>
-                  <p className="text-base text-muted-foreground">
-                    Absolutely! You can use any of our tools for personal or
-                    commercial projects without any restrictions.
-                  </p>
-                </div>
-              </div>
-            </section>
-          )}
 
           {/* Social Sharing Card */}
           <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">

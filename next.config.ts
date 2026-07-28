@@ -37,6 +37,13 @@ const nextConfig: NextConfig = {
       permanent: true,
     });
 
+    // Purge removed tool: ppt-to-pdf → redirect to PDF category
+    redirects.push({
+      source: "/tools/pdf-tools/ppt-to-pdf",
+      destination: "/tools/pdf-tools",
+      permanent: true,
+    });
+
     return redirects;
   },
 };

@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "last_updated": "2026-07-13",
-  "total_tools": 166,
+  "total_tools": 165,
   "modern_categories": {
     "web-tools": "Web & Network Utilities",
     "developer-tools": "Developer & Code Tools",
@@ -917,14 +917,6 @@
       "new_url": "/tools/pdf-tools/html-to-pdf",
       "new_category": "pdf-tools",
       "description": "Convert HTML pages to PDF"
-    },
-    {
-      "id": 101,
-      "name": "PPT to PDF",
-      "legacy_url": "/ppt-to-pdf",
-      "new_url": "/tools/pdf-tools/ppt-to-pdf",
-      "new_category": "pdf-tools",
-      "description": "Convert PowerPoint to PDF"
     },
     {
       "id": 102,
