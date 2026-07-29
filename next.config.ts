@@ -14,8 +14,10 @@ const nextConfig: NextConfig = {
       });
     }
 
-    // Tool-level redirects (146 legacy tool URLs → new clean structure)
+    // Tool-level redirects (legacy tool URLs → new clean structure)
+    // Skip entries where legacy_url equals new_url (these are new tools not in legacy platform)
     for (const tool of urlMap.tools) {
+      if (tool.legacy_url === tool.new_url) continue;
       redirects.push({
         source: tool.legacy_url,
         destination: tool.new_url,
