@@ -197,7 +197,7 @@ const AddPdfPageNumbersPage: NextPage = () => {
                 },
                 {
                   q: "What page number formats are supported?",
-                  a: "You can use formats like 'Page {n}' (Page 1), '{n} / {total}' (1 / 15), '— {n} —', or create custom format strings using {n} for the current page number and {total} for the total page count.",
+                  a: "You can use formats like 'Page {n}' (Page 1), '{n} / {total}' (1 / 15), '— {n} —', or create custom format strings using {'{n}'} for the current page number and {'{total}'} for the total page count.",
                 },
                 {
                   q: "Is there a file size limit?",
