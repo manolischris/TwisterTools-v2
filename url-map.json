@@ -3,14 +3,14 @@
   "last_updated": "2026-07-13",
   "total_tools": 165,
   "modern_categories": {
-    "web-tools": "Web & Network Utilities",
-    "developer-tools": "Developer & Code Tools",
-    "converter-tools": "Converter Utilities",
-    "calculators": "Calculators & Unit Converters",
-    "image-tools": "Image Editing & Conversion Tools",
-    "text-tools": "Text Analysis & Manipulation Tools",
-    "password-tools": "Password & Security Tools",
-    "generator-tools": "Generator Tools",
+    "web-tools": "SEO, Domain & Network Inspector Tools",
+    "developer-tools": "Developer, Code & Web Engineering Tools",
+    "converter-tools": "Data & Number Base Converter Utilities",
+    "calculators": "Daily Essentials, Financial & Math Calculators",
+    "image-tools": "Image Editing, Compression & Conversion Tools",
+    "text-tools": "Text Analysis, List Comparison & Editing Tools",
+    "password-tools": "Password Management & Security Utilities",
+    "generator-tools": "Random Data, Identity & Key Generators",
     "pdf-tools": "PDF & Document Utilities"
   },
   "redirects": [

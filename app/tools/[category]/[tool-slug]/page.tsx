@@ -339,14 +339,14 @@ export default async function ToolPage({
 
   // Get category display name matching blueprint's modern taxonomies exactly
   const categoryDisplayNames: Record<string, string> = {
-    "text-tools": "Text & List Editors",
-    "converter-tools": "Converter Utilities",
-    "web-tools": "Web & Network Utilities",
-    "generator-tools": "Generator Tools",
-    "developer-tools": "Developer Tools",
-    "password-tools": "Password & Security",
-    "calculators": "Math & Date Calculators",
-    "image-tools": "Image & Graphic Tools",
+    "text-tools": "Text Analysis, List Comparison & Editing Tools",
+    "converter-tools": "Data & Number Base Converter Utilities",
+    "web-tools": "SEO, Domain & Network Inspector Tools",
+    "generator-tools": "Random Data, Identity & Key Generators",
+    "developer-tools": "Developer, Code & Web Engineering Tools",
+    "password-tools": "Password Management & Security Utilities",
+    "calculators": "Daily Essentials, Financial & Math Calculators",
+    "image-tools": "Image Editing, Compression & Conversion Tools",
     "pdf-tools": "PDF & Document Utilities",
   };
 

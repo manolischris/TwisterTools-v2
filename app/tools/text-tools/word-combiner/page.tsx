@@ -65,7 +65,7 @@ export default function WordCombinerPage() {
                 href="/tools/text-tools"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
-                Text & List Editors
+                Text Analysis, List Comparison & Editing Tools
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">Word Combiner & Phrase Generator</span>

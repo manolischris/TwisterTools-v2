@@ -65,7 +65,7 @@ export default function WhatIsMyIpPage() {
                 href="/tools/web-tools"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
-                Web & Network Utilities
+                SEO, Domain & Network Inspector Tools
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">What Is My IP Address & Network Inspector</span>

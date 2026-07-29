@@ -63,13 +63,13 @@ export default function AboutPage() {
             name: 'TwisterTools',
             url: 'https://www.twistertools.com',
             knowsAbout: [
-                'Developer Tools',
+                'Developer, Code & Web Engineering Tools',
                 'Data Serialization',
                 'Cryptography & Hashing',
-                'Web & Network Utilities',
-                'Financial & Math Calculators',
-                'Image Compression & Conversion',
-                'PDF Document Processing'
+                'SEO, Domain & Network Inspector Tools',
+                'Daily Essentials, Financial & Math Calculators',
+                'Image Editing, Compression & Conversion Tools',
+                'PDF & Document Utilities'
             ]
         }
     };

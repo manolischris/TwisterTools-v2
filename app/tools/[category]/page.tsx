@@ -73,16 +73,18 @@ const CATEGORIES_METADATA: Record<
     description: string;
     detailedGuide: string;
     seoDescription: string;
+    keywords?: string[];
     cards: { title: string; content: string; icon: string }[];
     faqs: { q: string; a: string }[];
   }
 > = {
   "generator-tools": {
-    name: "Generator Tools",
+    name: "Random Data, Identity & Key Generators",
     icon: "Cpu",
-    description: "High-performance dynamic generators for QR codes, dummy data, custom vectors, and graphic assets.",
+    description: "Generate secure UUIDs, QR codes, test credit cards, mock identities, and random strings with cryptographic precision.",
     detailedGuide: "Create customized, production-ready assets instantly right inside your browser. All generation is computed client-side with absolute zero server transmission.",
-    seoDescription: "Generate professional custom QR codes, bulk UUIDs, and test credit cards client-side. Zero server latency, 100% private data security.",
+    seoDescription: "Generate secure UUIDs, QR codes, test credit cards, mock identities, and random strings with cryptographic precision.",
+    keywords: ["qr code generator", "uuid generator", "test credit card", "password generator"],
     cards: [
       {
         title: "Dynamic Asset Generation in Your Browser",
@@ -121,11 +123,12 @@ const CATEGORIES_METADATA: Record<
     ]
   },
   "developer-tools": {
-    name: "Developer & Code Tools",
+    name: "Developer, Code & Web Engineering Tools",
     icon: "Code",
-    description: "Robust formatting utilities, cryptographic hashing modules, and formatting tools engineered for developers.",
+    description: "Essential browser-based utilities for developers: JSON formatters, CSS generators, SQL sanitizers, and encoding suites.",
     detailedGuide: "Accelerate your debugging and development workflow with client-safe developer engines. No data entered ever leaves your device.",
-    seoDescription: "Secure JSON, XML, SQL formatters, JWT decoders, and regex testers. Run formatters and parsers securely in your browser's local sandbox.",
+    seoDescription: "Essential browser-based utilities for developers: JSON formatters, CSS generators, SQL sanitizers, and encoding suites.",
+    keywords: ["json formatter", "css gradient generator", "regex tester", "base64 encoder", "jwt decoder"],
     cards: [
       {
         title: "Client-Safe Syntax Formatting",
@@ -164,11 +167,12 @@ const CATEGORIES_METADATA: Record<
     ]
   },
   "password-tools": {
-    name: "Password & Security Tools",
+    name: "Password Management & Security Utilities",
     icon: "Lock",
-    description: "Cryptographically secure password generation tools, entropy calculators, and threat evaluation matrices.",
+    description: "Generate cryptographically strong passphrases and analyze password crack times 100% locally with zero data exposure.",
     detailedGuide: "Evaluate and construct extreme-strength local passwords using cryptographically secure PRNG architectures.",
-    seoDescription: "Create strong random passwords and check password strength locally. Secure CSPRNG calculations with Shannon Entropy metrics.",
+    seoDescription: "Generate cryptographically strong passphrases and analyze password crack times 100% locally with zero data exposure.",
+    keywords: ["password generator", "password strength checker", "passphrase generator"],
     cards: [
       {
         title: "Secure Random Key & Passphrase Generation",
@@ -207,11 +211,12 @@ const CATEGORIES_METADATA: Record<
     ]
   },
   "calculators": {
-    name: "Calculators & Unit Converters",
+    name: "Daily Essentials, Financial & Math Calculators",
     icon: "Calculator",
-    description: "Highly accurate tools for calculating age milestones, financial percentages, ratios, and dataset averages.",
+    description: "Fast, privacy-first online calculators for investments, loans, health, percentages, and daily math computations.",
     detailedGuide: "Run heavy mathematical calculations, date counts, and numerical evaluations in real-time with instant outputs.",
-    seoDescription: "Accurate age, percentage, and average calculators, plus master unit conversion. Perform complex arithmetic client-side with instant outputs.",
+    seoDescription: "Fast, privacy-first online calculators for investments, loans, health, percentages, and daily math computations.",
+    keywords: ["financial calculators", "investment tools", "math calculators", "loan estimators", "unit converters"],
     cards: [
       {
         title: "High-Precision Math Computations",
@@ -250,11 +255,12 @@ const CATEGORIES_METADATA: Record<
     ]
   },
   "converter-tools": {
-    name: "Converter Utilities",
+    name: "Data & Number Base Converter Utilities",
     icon: "RefreshCw",
-    description: "Convert between binary, hex, decimal, octal, and various structured text encoding formats.",
+    description: "Convert binary strings, ASCII codes, hexadecimals, bytes, and number bases instantly with real-time telemetry.",
     detailedGuide: "Quickly convert files, units, and structural values with high-precision mathematical precision scaling.",
-    seoDescription: "Convert plain text to binary, hexadecimal, ASCII, and decimal bases. Fast, offline byte and character converters for developers.",
+    seoDescription: "Convert binary strings, ASCII codes, hexadecimals, bytes, and number bases instantly with real-time telemetry.",
+    keywords: ["binary converter", "byte converter", "hex to string", "number base converter"],
     cards: [
       {
         title: "Multi-Base Numeric Conversions",
@@ -293,11 +299,12 @@ const CATEGORIES_METADATA: Record<
     ]
   },
   "text-tools": {
-    name: "Text Analysis & Manipulation Tools",
+    name: "Text Analysis, List Comparison & Editing Tools",
     icon: "FileText",
-    description: "Clean lists, change casing formats, count words, and scrub structural text datasets instantly.",
+    description: "Powerful browser-native utilities to compare lists, extract URLs, format text, analyze word counts, and style fonts.",
     detailedGuide: "Execute bulk text modifications, alphabetical sorting, and line extraction with optimized string processing.",
-    seoDescription: "Convert case, separate list items, combine words, and paraphrase articles. Client-side text editors and string utilities.",
+    seoDescription: "Powerful browser-native utilities to compare lists, extract URLs, format text, analyze word counts, and style fonts.",
+    keywords: ["list comparison", "url extractor", "duplicate line remover", "text case converter", "word counter"],
     cards: [
       {
         title: "Interactive Text Case Transformation",
@@ -336,11 +343,12 @@ const CATEGORIES_METADATA: Record<
     ]
   },
   "image-tools": {
-    name: "Image Editing & Conversion Tools",
+    name: "Image Editing, Compression & Conversion Tools",
     icon: "Image",
-    description: "Premium browser-based graphic compressors, aspect ratio tools, and formatting systems.",
+    description: "Convert HEIC/SVG/PNG graphics, scale pixel dimensions, generate favicons, and compress images locally in browser RAM.",
     detailedGuide: "Crop, resize, compress, and check aspect ratios locally on your device without upload delays.",
-    seoDescription: "Convert PNG to JPG, compress images, generate favicons, and rasterize SVGs client-side. Web-safe graphical manipulation.",
+    seoDescription: "Convert HEIC/SVG/PNG graphics, scale pixel dimensions, generate favicons, and compress images locally in browser RAM.",
+    keywords: ["image compressor", "image resizer", "heic to jpg", "svg converter", "favicon generator"],
     cards: [
       {
         title: "100% Private Local Image Processing",
@@ -379,11 +387,12 @@ const CATEGORIES_METADATA: Record<
     ]
   },
   "web-tools": {
-    name: "Web & Network Utilities",
+    name: "SEO, Domain & Network Inspector Tools",
     icon: "Globe",
-    description: "Analyze web pages, check search engine metrics, inspect headers, and generate sitemaps.",
+    description: "Inspect DNS records, WHOIS domain age, IP geolocation, meta tags, and network headers with zero tracking.",
     detailedGuide: "Analyze headers, encode query URIs, inspect configurations, and test networking elements safely.",
-    seoDescription: "Check WHOIS domain age, inspect SSL certificates, view HTTP headers, lookup geolocations, and compile XML sitemaps.",
+    seoDescription: "Inspect DNS records, WHOIS domain age, IP geolocation, meta tags, and network headers with zero tracking.",
+    keywords: ["domain age checker", "what is my ip", "dns record finder", "ssl checker", "sitemap generator"],
     cards: [
       {
         title: "Dynamic WHOIS & Domain Age Auditing",
@@ -420,6 +429,50 @@ const CATEGORIES_METADATA: Record<
         a: "Yes, we connect directly to the target hostname to query the live certificate chain returned by the server."
       }
     ]
+  },
+  "pdf-tools": {
+    name: "PDF & Document Utilities",
+    icon: "FileCheck2",
+    description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
+    detailedGuide: "Process and edit your PDF files client-side without uploading them to external servers. High privacy, fast conversion.",
+    seoDescription: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
+    keywords: ["merge pdf", "compress pdf", "unlock pdf", "pdf to image", "pdf metadata editor"],
+    cards: [
+      {
+        title: "100% Offline PDF Utilities",
+        icon: "ShieldCheck",
+        content: "Our PDF tools run entirely within your browser using client-side JavaScript. Your files are processed locally and are never uploaded to any remote servers, maintaining complete confidentiality of sensitive documents."
+      },
+      {
+        title: "Symmetrical Format Conversion",
+        icon: "RefreshCw",
+        content: "Convert Word documents, text files, and images (JPG, PNG, GIF, BMP, TIFF) to PDF instantly. Convert PDFs to ZIP archives or extract text contents with simple one-click controls."
+      },
+      {
+        title: "Document Protection & Management",
+        icon: "Lock",
+        content: "Encrypt your PDF documents with secure passwords or remove existing password protections. Merge multiple files into a single unified document or organize and rearrange pages."
+      },
+      {
+        title: "Visual Enhancement & Watermarking",
+        icon: "Palette",
+        content: "Apply text or image-based watermarks to PDF pages. Adjust transparency, positioning, and rotation to protect your intellectual property before sharing."
+      }
+    ],
+    faqs: [
+      {
+        q: "Are my PDF files uploaded to your servers for processing?",
+        a: "No. All PDF generation, merging, conversion, and watermarking actions are executed locally on your computer's browser thread. No document data is transmitted."
+      },
+      {
+        q: "What is the file size limit for PDF processing?",
+        a: "Since conversion runs in the browser, performance is determined by your system's RAM. We recommend processing files under 30 MB for the best experience."
+      },
+      {
+        q: "Is password encryption secure?",
+        a: "Yes. PDF locking uses standard AES encryption implemented natively in local WebAssembly modules, ensuring your passwords and documents are secure."
+      }
+    ]
   }
 };
 
@@ -452,6 +505,7 @@ export async function generateMetadata({
   return {
     title: categoryData.name,
     description: categoryData.seoDescription,
+    keywords: categoryData.keywords,
     alternates: {
       canonical: canonicalUrl
     },

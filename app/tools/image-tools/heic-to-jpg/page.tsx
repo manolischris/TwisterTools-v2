@@ -65,7 +65,7 @@ const HeicToJpgPage: NextPage = () => {
                 href="/tools/image-tools"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
-                Image & Graphic Tools
+                Image Editing, Compression & Conversion Tools
               </a>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">

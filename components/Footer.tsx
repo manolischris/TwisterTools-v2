@@ -88,7 +88,7 @@ export default function Footer() {
                   href="/tools/calculators"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  Calculators
+                  Daily Essentials, Financial & Math Calculators
                 </Link>
               </li>
               <li>
@@ -96,7 +96,7 @@ export default function Footer() {
                   href="/tools/developer-tools"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  Developer Tools
+                  Developer, Code & Web Engineering Tools
                 </Link>
               </li>
               <li>
@@ -104,7 +104,7 @@ export default function Footer() {
                   href="/tools/image-tools"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  Image Tools
+                  Image Editing, Compression & Conversion Tools
                 </Link>
               </li>
               <li>
@@ -112,7 +112,7 @@ export default function Footer() {
                   href="/tools/pdf-tools"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  PDF Tools
+                  PDF & Document Utilities
                 </Link>
               </li>
               <li>
@@ -120,7 +120,7 @@ export default function Footer() {
                   href="/tools/converter-tools"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  Converters
+                  Data & Number Base Converter Utilities
                 </Link>
               </li>
               <li>
@@ -128,7 +128,7 @@ export default function Footer() {
                   href="/tools/text-tools"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  Text Tools
+                  Text Analysis, List Comparison & Editing Tools
                 </Link>
               </li>
               <li>
@@ -136,7 +136,7 @@ export default function Footer() {
                   href="/tools/web-tools"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
-                  Web Utilities
+                  SEO, Domain & Network Inspector Tools
                 </Link>
               </li>
             </ul>

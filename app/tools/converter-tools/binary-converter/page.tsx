@@ -57,7 +57,7 @@ export default function BinaryConverterPage() {
                 href="/tools/converter-tools"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
-                Converter Utilities
+                Data & Number Base Converter Utilities
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">Binary Converter</span>

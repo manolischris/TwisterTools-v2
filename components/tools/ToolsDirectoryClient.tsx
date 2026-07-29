@@ -108,23 +108,39 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
 const CATEGORY_META: Record<string, { label: string; color: string }> = {
   all: { label: "All Tools", color: "bg-slate-800 text-white" },
   "developer-tools": {
-    label: "Developer Tools",
+    label: "Developer, Code & Web Engineering Tools",
     color: "bg-indigo-600 text-white",
   },
-  calculators: { label: "Calculators", color: "bg-blue-600 text-white" },
+  calculators: {
+    label: "Daily Essentials, Financial & Math Calculators",
+    color: "bg-blue-600 text-white",
+  },
   "password-tools": {
-    label: "Password & Security",
+    label: "Password Management & Security Utilities",
     color: "bg-rose-600 text-white",
   },
-  "text-tools": { label: "Text Tools", color: "bg-amber-600 text-white" },
-  "image-tools": { label: "Image Tools", color: "bg-emerald-600 text-white" },
-  "web-tools": { label: "Web Tools", color: "bg-cyan-600 text-white" },
+  "text-tools": {
+    label: "Text Analysis, List Comparison & Editing Tools",
+    color: "bg-amber-600 text-white",
+  },
+  "image-tools": {
+    label: "Image Editing, Compression & Conversion Tools",
+    color: "bg-emerald-600 text-white",
+  },
+  "web-tools": {
+    label: "SEO, Domain & Network Inspector Tools",
+    color: "bg-cyan-600 text-white",
+  },
   "generator-tools": {
-    label: "Generators",
+    label: "Random Data, Identity & Key Generators",
     color: "bg-purple-600 text-white",
   },
   "converter-tools": {
-    label: "Converters",
+    label: "Data & Number Base Converter Utilities",
+    color: "bg-orange-600 text-white",
+  },
+  "pdf-tools": {
+    label: "PDF & Document Utilities",
     color: "bg-orange-600 text-white",
   },
 };

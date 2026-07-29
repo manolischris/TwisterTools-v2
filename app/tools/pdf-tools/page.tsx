@@ -7,13 +7,14 @@ import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
 export const metadata: Metadata = {
   title: "PDF & Document Utilities",
-  description: "Free online PDF tools. Merge PDFs, convert images to PDF, encrypt/decrypt PDFs, and extract text from PDFs locally.",
+  description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
+  keywords: ["merge pdf", "compress pdf", "unlock pdf", "pdf to image", "pdf metadata editor"],
   alternates: {
     canonical: "https://www.twistertools.com/tools/pdf-tools",
   },
   openGraph: {
     title: "PDF & Document Utilities - TwisterTools",
-    description: "Free online PDF tools. Merge PDFs, convert images to PDF, encrypt/decrypt PDFs, and extract text from PDFs locally.",
+    description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
     url: "https://www.twistertools.com/tools/pdf-tools",
     siteName: "TwisterTools",
     type: "website",
@@ -29,15 +30,15 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PDF & Document Utilities - TwisterTools",
-    description: "Free online PDF tools. Merge PDFs, convert images to PDF, encrypt/decrypt PDFs, and extract text from PDFs locally.",
+    description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
     images: ["https://www.twistertools.com/images/categories/pdf-tools.jpg"],
   },
 };
 
 const pdfMetadata = {
-  name: "PDF Tools",
+  name: "PDF & Document Utilities",
   icon: "FileCheck2",
-  description: "Convert, merge, compress, watermark, and organize PDF documents securely in your browser.",
+  description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
   detailedGuide: "Process and edit your PDF files client-side without uploading them to external servers. High privacy, fast conversion.",
   cards: [
     {

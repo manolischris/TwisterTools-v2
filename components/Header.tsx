@@ -18,15 +18,15 @@ import {
 } from "lucide-react";
 
 const categories = [
-  { slug: "developer-tools", name: "Developer Tools", icon: Code, desc: "Formatters, generators & checkers" },
-  { slug: "calculators", name: "Calculators", icon: Calculator, desc: "High-precision math & converters" },
-  { slug: "password-tools", name: "Password Tools", icon: Lock, desc: "Secure generators & strength checkers" },
-  { slug: "text-tools", name: "Text Tools", icon: FileText, desc: "Case, word & text manipulation" },
-  { slug: "image-tools", name: "Image Tools", icon: ImageIcon, desc: "Canvas compressors, resizers & converters" },
-  { slug: "pdf-tools", name: "PDF Tools", icon: FileCheck2, desc: "Merge, convert & compress PDF files" },
-  { slug: "web-tools", name: "Web Tools", icon: Globe, desc: "WHOIS, DNS & network inspection" },
-  { slug: "generator-tools", name: "Generator Tools", icon: Cpu, desc: "QR codes & test utilities" },
-  { slug: "converter-tools", name: "Converter Tools", icon: RefreshCw, desc: "Base64, hex & binary converters" },
+  { slug: "developer-tools", name: "Developer, Code & Web Engineering Tools", icon: Code, desc: "Formatters, generators & checkers" },
+  { slug: "calculators", name: "Daily Essentials, Financial & Math Calculators", icon: Calculator, desc: "High-precision math & converters" },
+  { slug: "password-tools", name: "Password Management & Security Utilities", icon: Lock, desc: "Secure generators & strength checkers" },
+  { slug: "text-tools", name: "Text Analysis, List Comparison & Editing Tools", icon: FileText, desc: "Case, word & text manipulation" },
+  { slug: "image-tools", name: "Image Editing, Compression & Conversion Tools", icon: ImageIcon, desc: "Canvas compressors, resizers & converters" },
+  { slug: "pdf-tools", name: "PDF & Document Utilities", icon: FileCheck2, desc: "Merge, convert & compress PDF files" },
+  { slug: "web-tools", name: "SEO, Domain & Network Inspector Tools", icon: Globe, desc: "WHOIS, DNS & network inspection" },
+  { slug: "generator-tools", name: "Random Data, Identity & Key Generators", icon: Cpu, desc: "QR codes & test utilities" },
+  { slug: "converter-tools", name: "Data & Number Base Converter Utilities", icon: RefreshCw, desc: "Base64, hex & binary converters" },
 ];
 
 export default function Header() {

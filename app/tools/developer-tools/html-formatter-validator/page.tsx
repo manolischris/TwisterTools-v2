@@ -57,7 +57,7 @@ export default function HtmlFormatterPage() {
                 href="/tools/developer-tools"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
-                Developer Tools
+                Developer, Code & Web Engineering Tools
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">HTML Formatter, Beautifier & Validator</span>
