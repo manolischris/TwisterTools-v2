@@ -291,28 +291,21 @@ export default async function ToolPage({
     redirect("/tools/developer-tools/xml-formatter-validator");
   }
 
-  // Enforce strict 404 for tools that have no completed implementation
-  if (!COMPLETED_TOOLS.includes(toolSlug)) {
-    notFound();
-  }
-
   // Find the matching tool from url-map.json
-  let tool = urlMap.tools.find(
+  const tool = urlMap.tools.find(
     (t: Tool) =>
       t.new_category === category &&
       t.new_url === `/tools/${category}/${toolSlug}`
   );
 
-  // Fallback for new completed tools not in legacy url-map
+  // Fallback if tool not found in url-map
   if (!tool) {
-    tool = {
-      id: 0,
-      name: toolSlug.split("-").map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-      legacy_url: "",
-      new_url: `/tools/${category}/${toolSlug}`,
-      new_category: category,
-      description: `Free online ${category.replace("-", " ")} tool.`,
-    };
+    notFound();
+  }
+
+  // Enforce strict 404 for tools that exist in url-map but have no completed implementation
+  if (!COMPLETED_TOOLS.includes(toolSlug)) {
+    notFound();
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
