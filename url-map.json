@@ -1437,14 +1437,6 @@
       "new_url": "/tools/developer-tools/yaml-to-json-converter",
       "new_category": "developer-tools",
       "description": "Format and beautify YAML files with proper structure."
-    },
-    {
-      "id": 169,
-      "name": "Add PDF Page Numbers & Header/Footer Stamps",
-      "legacy_url": "/tools/pdf-tools/add-pdf-page-numbers",
-      "new_url": "/tools/pdf-tools/add-pdf-page-numbers",
-      "new_category": "pdf-tools",
-      "description": "Stamp page numbers, headers, and custom footers on your PDF documents with customizable fonts, colors, and positioning."
     }
   ],
   "notes": "This mapping represents 156 active tools from the old platform. All legacy URLs will be redirected using Next.js 15 middleware to maintain Google indexing. Category-level redirects consolidate old categories into cleaner, more intuitive modern categories."
