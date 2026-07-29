@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Scissors } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
 import Md5Generator from "../../../../components/tools/Md5Generator";
@@ -63,6 +63,7 @@ import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
 const TextToPdfConverter = dynamic(() => import("@/components/tools/TextToPdfConverter"));
+const AddPdfPageNumbers = dynamic(() => import("@/components/tools/AddPdfPageNumbers"));
 
 // Type definitions for URL mapping
 interface Tool {
@@ -141,6 +142,7 @@ const COMPLETED_TOOLS = [
   "heic-to-jpg",
   "compress-pdf",
   "text-to-pdf",
+  "add-pdf-page-numbers",
 ];
 
 
@@ -744,6 +746,8 @@ export default async function ToolPage({
                   <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "heic-to-jpg" ? (
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "pdf-tools" && toolSlug === "add-pdf-page-numbers" ? (
+                  <Hash className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "pdf-tools" && (toolSlug === "compress-pdf" || toolSlug === "text-to-pdf") ? (
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
@@ -876,6 +880,8 @@ export default async function ToolPage({
             <PdfCompressorSuite />
           ) : category === "pdf-tools" && toolSlug === "text-to-pdf" ? (
             <TextToPdfConverter />
+          ) : category === "pdf-tools" && toolSlug === "add-pdf-page-numbers" ? (
+            <AddPdfPageNumbers />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />
