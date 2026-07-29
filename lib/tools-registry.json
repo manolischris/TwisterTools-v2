@@ -789,19 +789,6 @@
     "iconName": "RotateCw",
     "href": "/tools/pdf-tools/rotate-pdf",
     "isFeatured": false
-  },
-  {
-    "id": "add-pdf-page-numbers",
-    "slug": "add-pdf-page-numbers",
-    "name": "Add PDF Page Numbers",
-    "title": "Add PDF Page Numbers & Header/Footer Stamps",
-    "category": "pdf-tools",
-    "description": "Stamp page numbers, headers, and custom footers on your PDF documents locally.",
-    "icon": "Hash",
-    "iconName": "Hash",
-    "href": "/tools/pdf-tools/add-pdf-page-numbers",
-    "isFeatured": false,
-    "status": "active"
   }
 ]
 
