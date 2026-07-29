@@ -789,6 +789,96 @@
     "iconName": "RotateCw",
     "href": "/tools/pdf-tools/rotate-pdf",
     "isFeatured": false
+  },
+  {
+    "id": "add-pdf-page-numbers",
+    "slug": "add-pdf-page-numbers",
+    "name": "Add PDF Page Numbers & Header/Footer Stamps",
+    "title": "Add PDF Page Numbers & Header/Footer Stamps",
+    "category": "pdf-tools",
+    "description": "Stamp custom page numbers, headers, and footers onto PDF pages with full alignment and font controls.",
+    "icon": "Hash",
+    "iconName": "Hash",
+    "href": "/tools/pdf-tools/add-pdf-page-numbers",
+    "isFeatured": false
+  },
+  {
+    "id": "extract-pdf-images",
+    "slug": "extract-pdf-images",
+    "name": "Extract Images from PDF",
+    "title": "Extract Images from PDF",
+    "category": "pdf-tools",
+    "description": "Extract embedded raw images and photos from PDF files at full original resolution.",
+    "icon": "FileImage",
+    "iconName": "FileImage",
+    "component": "ExtractPdfImages",
+    "href": "/tools/pdf-tools/extract-pdf-images",
+    "isFeatured": false
+  },
+  {
+    "id": "pdf-metadata-editor",
+    "slug": "pdf-metadata-editor",
+    "name": "PDF Metadata & Document Title Editor",
+    "title": "PDF Metadata & Document Title Editor",
+    "category": "pdf-tools",
+    "description": "Inspect, modify, or strip document titles, author details, keywords, and hidden tags in real-time.",
+    "icon": "Edit3",
+    "iconName": "Edit3",
+    "href": "/tools/pdf-tools/pdf-metadata-editor",
+    "status": "active",
+    "isFeatured": false
+  },
+  {
+    "id": "crop-pdf",
+    "name": "Crop PDF Pages & Margin Trimmer",
+    "slug": "crop-pdf",
+    "title": "Crop PDF Pages & Margin Trimmer",
+    "category": "pdf-tools",
+    "description": "Trim margins and crop custom PDF page areas instantly in your browser with zero server uploads.",
+    "icon": "Crop",
+    "iconName": "Crop",
+    "href": "/tools/pdf-tools/crop-pdf",
+    "isFeatured": false
+  },
+  {
+    "id": "reorder-pdf-pages",
+    "name": "Reorder & Reverse PDF Pages",
+    "slug": "reorder-pdf-pages",
+    "title": "Reorder & Reverse PDF Pages",
+    "category": "pdf-tools",
+    "description": "Organize PDF page sequences, reverse page order, or rotate individual pages.",
+    "icon": "ListOrdered",
+    "iconName": "ListOrdered",
+    "href": "/tools/pdf-tools/reorder-pdf-pages",
+    "status": "active",
+    "isFeatured": false
+  },
+  {
+    "id": "pdf-to-text",
+    "slug": "pdf-to-text",
+    "name": "PDF to Plain Text Extractor",
+    "title": "PDF to Plain Text Extractor",
+    "category": "pdf-tools",
+    "description": "Extract plain text from PDF documents with high fidelity.",
+    "icon": "FileText",
+    "iconName": "FileText",
+    "href": "/tools/pdf-tools/pdf-to-text",
+    "status": "active",
+    "isFeatured": false
+  },
+  {
+    "id": "pdf-to-markdown",
+    "name": "PDF to Markdown Compiler",
+    "title": "PDF to Markdown Compiler",
+    "category": "pdf-tools",
+    "slug": "pdf-to-markdown",
+    "description": "Convert PDF documents into clean, structured Markdown code with client-side layout recognition.",
+    "icon": "FileCode",
+    "iconName": "FileCode",
+    "href": "/tools/pdf-tools/pdf-to-markdown",
+    "featured": true,
+    "isFeatured": true,
+    "status": "active"
   }
 ]
 

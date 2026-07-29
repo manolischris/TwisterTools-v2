@@ -42,7 +42,9 @@ import {
   Star,
   Scissors,
   FileType2,
-  Presentation
+  Presentation,
+  Edit3,
+  ListOrdered
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -95,7 +97,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Star,
   Scissors,
   FileType2,
-  Presentation
+  Presentation,
+  Edit3,
+  ListOrdered
 };
 
 /* ─────────────────────────────────────────────────────────

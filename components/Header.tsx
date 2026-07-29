@@ -101,30 +101,32 @@ export default function Header() {
 
               {/* Dropdown Menu Panel */}
               {isDropdownOpen && (
-                <div className="absolute right-0 md:left-1/2 md:-translate-x-1/2 mt-1 w-[560px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-4 grid grid-cols-2 gap-2 z-50">
-                  {categories.map((cat) => {
-                    const Icon = cat.icon;
-                    return (
-                      <Link
-                        key={cat.slug}
-                        href={`/tools/${cat.slug}`}
-                        className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
-                        onClick={() => setIsDropdownOpen(false)}
-                      >
-                        <div className="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/60 transition-colors shrink-0">
-                          <Icon className="h-5 w-5" />
-                        </div>
-                        <div className="flex flex-col justify-center">
-                          <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                            {cat.name}
-                          </span>
-                          <span className="text-xs text-slate-500 dark:text-slate-505 line-clamp-1">
-                            {cat.desc}
-                          </span>
-                        </div>
-                      </Link>
-                    );
-                  })}
+                <div className="absolute right-0 md:left-1/2 md:-translate-x-1/2 top-full pt-1 w-[560px] z-50">
+                  <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-4 grid grid-cols-2 gap-2">
+                    {categories.map((cat) => {
+                      const Icon = cat.icon;
+                      return (
+                        <Link
+                          key={cat.slug}
+                          href={`/tools/${cat.slug}`}
+                          className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+                          onClick={() => setIsDropdownOpen(false)}
+                        >
+                          <div className="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/60 transition-colors shrink-0">
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                              {cat.name}
+                            </span>
+                            <span className="text-xs text-slate-500 dark:text-slate-505 line-clamp-1">
+                              {cat.desc}
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>

@@ -59,6 +59,7 @@ import ImageCompressor from "../../../../components/tools/ImageCompressor";
 import SvgConverter from "../../../../components/tools/SvgConverter";
 import HeicToJpgConverter from "../../../../components/tools/HeicToJpgConverter";
 import PdfCompressorSuite from "../../../../components/tools/PdfCompressorSuite";
+import ExtractPdfImages from "@/components/tools/ExtractPdfImages";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -141,6 +142,7 @@ const COMPLETED_TOOLS = [
   "heic-to-jpg",
   "compress-pdf",
   "text-to-pdf",
+  "extract-pdf-images",
 ];
 
 
@@ -153,11 +155,22 @@ export async function generateMetadata({
   const { category, "tool-slug": toolSlug } = await params;
 
   // Find the matching tool
-  const tool = urlMap.tools.find(
+  let tool = urlMap.tools.find(
     (t: Tool) =>
       t.new_category === category &&
       t.new_url === `/tools/${category}/${toolSlug}`
   );
+
+  if (category === "pdf-tools" && toolSlug === "extract-pdf-images") {
+    tool = {
+      id: 999,
+      name: "Extract Images from PDF & Asset Extractor",
+      legacy_url: "/extract-pdf-images",
+      new_url: "/tools/pdf-tools/extract-pdf-images",
+      new_category: "pdf-tools",
+      description: "Isolate and download high-resolution embedded graphics and photos from any PDF locally."
+    };
+  }
 
   if (!tool) {
     return {
@@ -220,7 +233,7 @@ export async function generateMetadata({
 
 // Static generation: Pre-render all 146 tool pages at build time
 export async function generateStaticParams() {
-  return urlMap.tools.map((tool: Tool) => {
+  const params = urlMap.tools.map((tool: Tool) => {
     // Extract category and tool-slug from new_url
     // Format: /tools/{category}/{tool-slug}
     const pathParts = tool.new_url.split("/");
@@ -229,6 +242,13 @@ export async function generateStaticParams() {
       "tool-slug": pathParts[3],
     };
   });
+
+  params.push({
+    category: "pdf-tools",
+    "tool-slug": "extract-pdf-images",
+  });
+
+  return params;
 }
 
 export default async function ToolPage({
@@ -290,11 +310,22 @@ export default async function ToolPage({
   }
 
   // Find the matching tool from url-map.json
-  const tool = urlMap.tools.find(
+  let tool = urlMap.tools.find(
     (t: Tool) =>
       t.new_category === category &&
       t.new_url === `/tools/${category}/${toolSlug}`
   );
+
+  if (category === "pdf-tools" && toolSlug === "extract-pdf-images") {
+    tool = {
+      id: 999,
+      name: "Extract Images from PDF & Asset Extractor",
+      legacy_url: "/extract-pdf-images",
+      new_url: "/tools/pdf-tools/extract-pdf-images",
+      new_category: "pdf-tools",
+      description: "Isolate and download high-resolution embedded graphics and photos from any PDF locally."
+    };
+  }
 
   // Fallback if tool not found in url-map
   if (!tool) {
@@ -744,6 +775,8 @@ export default async function ToolPage({
                   <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "heic-to-jpg" ? (
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "extract-pdf-images" ? (
+                  <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "pdf-tools" && (toolSlug === "compress-pdf" || toolSlug === "text-to-pdf") ? (
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
@@ -876,6 +909,8 @@ export default async function ToolPage({
             <PdfCompressorSuite />
           ) : category === "pdf-tools" && toolSlug === "text-to-pdf" ? (
             <TextToPdfConverter />
+          ) : category === "pdf-tools" && toolSlug === "extract-pdf-images" ? (
+            <ExtractPdfImages />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

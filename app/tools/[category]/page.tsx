@@ -24,7 +24,10 @@ import {
   Palette,
   FileCheck2,
   AlertCircle,
-  Stamp
+  Stamp,
+  FileImage,
+  Edit3,
+  ListOrdered
 } from "lucide-react";
 
 import toolsRegistry from "@/lib/tools-registry.json";
@@ -55,7 +58,10 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Type,
   Palette,
   FileCheck2,
-  Stamp
+  Stamp,
+  FileImage,
+  Edit3,
+  ListOrdered
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json

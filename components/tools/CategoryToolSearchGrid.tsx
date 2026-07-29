@@ -52,7 +52,10 @@ import {
   FileType2,
   Presentation,
   FolderArchive,
-  RotateCw
+  RotateCw,
+  Edit3,
+  Crop,
+  ListOrdered
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -121,7 +124,10 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   FileType2,
   Presentation,
   FolderArchive,
-  RotateCw
+  RotateCw,
+  Edit3,
+  Crop,
+  ListOrdered
 };
 
 export default function CategoryToolSearchGrid({

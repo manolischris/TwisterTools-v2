@@ -41,6 +41,9 @@ import {
   Scaling,
   Combine,
   Scissors,
+  Hash,
+  Edit3,
+  ListOrdered
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -84,6 +87,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Combine,
   Layers,
   Scissors,
+  Hash,
+  Edit3,
+  ListOrdered
 };
 
 const CATEGORIES = [

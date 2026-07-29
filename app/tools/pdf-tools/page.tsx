@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileCheck2, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, FileImage, FileType2 } from "lucide-react";
+import { FileCheck2, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, FileImage, FileType2, Hash, Edit3, FileCode } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -86,6 +86,14 @@ export default function PdfToolsCategoryPage() {
     if (tool.id === "text-to-pdf") {
       return { ...tool, badge: undefined };
     }
+    if (tool.id === "add-pdf-page-numbers") {
+      return {
+        ...tool,
+        title: "Add PDF Page Numbers & Header/Footer Stamps",
+        description: "Stamp custom page numbers, headers, and footers onto PDF pages with full alignment and font controls.",
+        iconName: "Hash"
+      };
+    }
     if (tool.id === "pdf-to-png") {
       return {
         ...tool,
@@ -100,6 +108,54 @@ export default function PdfToolsCategoryPage() {
         title: "HTML to PDF Webpage Compiler",
         description: "Compile raw HTML code, CSS stylesheets, and DOM layouts into vector PDF files.",
         iconName: "Code"
+      };
+    }
+    if (tool.id === "extract-pdf-images") {
+      return {
+        ...tool,
+        title: "Extract PDF Images",
+        description: "Extract embedded raw images and photos from PDF files at full original resolution.",
+        iconName: "FileImage"
+      };
+    }
+    if (tool.id === "pdf-metadata-editor") {
+      return {
+        ...tool,
+        title: "PDF Metadata Editor",
+        description: "Edit PDF titles, author information, subjects, and keywords client-side.",
+        iconName: "Edit3"
+      };
+    }
+    if (tool.id === "crop-pdf") {
+      return {
+        ...tool,
+        title: "Crop PDF Pages",
+        description: "Trim margins and crop custom page areas client-side with zero quality loss.",
+        iconName: "Crop"
+      };
+    }
+    if (tool.id === "reorder-pdf-pages") {
+      return {
+        ...tool,
+        title: "Reorder & Reverse PDF Pages",
+        description: "Organize PDF page sequences, reverse page order, or rotate individual pages.",
+        iconName: "ListOrdered"
+      };
+    }
+    if (tool.id === "pdf-to-text") {
+      return {
+        ...tool,
+        title: "PDF to Plain Text Extractor",
+        description: "Extract clean plain text from PDF files directly in your web browser.",
+        iconName: "FileText"
+      };
+    }
+    if (tool.id === "pdf-to-markdown") {
+      return {
+        ...tool,
+        title: "PDF to Markdown",
+        description: "Extract and compile PDF content into clean, structured Markdown text.",
+        iconName: "FileCode"
       };
     }
     return tool;
