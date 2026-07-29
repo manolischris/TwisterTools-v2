@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/20 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
           {/* Column 1: Brand & Mission */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 md:col-span-2">
             <Link
               href="/"
               className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg select-none w-fit"
@@ -190,7 +190,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tools/developer-tools/uuid-generator"
+                  href="/tools/generator-tools/uuid-generator"
                   className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                 >
                   UUID Generator

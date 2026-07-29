@@ -44,7 +44,8 @@ import {
   FileType2,
   Presentation,
   Edit3,
-  ListOrdered
+  ListOrdered,
+  Fingerprint
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -99,7 +100,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   FileType2,
   Presentation,
   Edit3,
-  ListOrdered
+  ListOrdered,
+  Fingerprint
 };
 
 /* ─────────────────────────────────────────────────────────

@@ -149,7 +149,7 @@
     "description": "Generate single or bulk cryptographically secure UUID v4 and time-based UUID v1 identifiers.",
     "category": "generator-tools",
     "href": "/tools/generator-tools/uuid-generator",
-    "iconName": "Sparkles",
+    "iconName": "Fingerprint",
     "isFeatured": true
   },
   {
