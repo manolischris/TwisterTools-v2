@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -104,6 +104,22 @@ export default function CalculatorsCategoryPage() {
         title: "Simple Interest & Loan Calculator",
         description: "Compute simple interest, total payback balances, and generate clear payment breakdowns instantly.",
         iconName: "Calculator"
+      };
+    }
+    if (tool.id === "mortgage-calculator") {
+      return {
+        ...tool,
+        title: "Mortgage Payment & Amortization Schedule",
+        description: "Calculate exact monthly mortgage payments, generate detailed amortization schedules, and evaluate the impact of extra payments.",
+        iconName: "Building"
+      };
+    }
+    if (tool.id === "auto-loan-calculator") {
+      return {
+        ...tool,
+        title: "Auto Loan & Monthly Payment Estimator",
+        description: "Calculate auto loan payments, trade-in tax credits, dealer fees, and amortization schedules.",
+        iconName: "Car"
       };
     }
     return tool;

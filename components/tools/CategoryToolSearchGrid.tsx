@@ -57,7 +57,9 @@ import {
   Crop,
   ListOrdered,
   Fingerprint,
-  TrendingUp
+  TrendingUp,
+  Building,
+  Car
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -131,7 +133,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Crop,
   ListOrdered,
   Fingerprint,
-  TrendingUp
+  TrendingUp,
+  Building,
+  Car
 };
 
 export default function CategoryToolSearchGrid({

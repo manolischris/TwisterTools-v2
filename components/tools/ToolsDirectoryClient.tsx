@@ -46,7 +46,9 @@ import {
   Edit3,
   ListOrdered,
   Fingerprint,
-  TrendingUp
+  TrendingUp,
+  Building,
+  Car
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -103,7 +105,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Edit3,
   ListOrdered,
   Fingerprint,
-  TrendingUp
+  TrendingUp,
+  Building,
+  Car
 };
 
 /* ─────────────────────────────────────────────────────────

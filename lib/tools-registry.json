@@ -540,6 +540,15 @@
     "isFeatured": false
   },
   {
+    "id": "mortgage-calculator",
+    "title": "Mortgage Payment & Amortization Schedule",
+    "description": "Calculate exact monthly mortgage payments, generate detailed amortization schedules, and evaluate the impact of extra payments.",
+    "category": "calculators",
+    "href": "/tools/calculators/mortgage-calculator",
+    "iconName": "Building",
+    "isFeatured": false
+  },
+  {
     "id": "binary-converter",
     "title": "Unified Binary & Number Base Converter",
     "description": "Convert text, ASCII, decimal, octal, and hexadecimal values dynamically.",
@@ -912,5 +921,14 @@
     "featured": true,
     "isFeatured": true,
     "status": "active"
+  },
+  {
+    "id": "auto-loan-calculator",
+    "title": "Auto Loan & Monthly Payment Estimator",
+    "description": "Calculate auto loan payments, trade-in tax credits, dealer fees, and amortization schedules.",
+    "category": "calculators",
+    "href": "/tools/calculators/auto-loan-calculator",
+    "iconName": "Car",
+    "isFeatured": false
   }
 ]

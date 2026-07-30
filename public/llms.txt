@@ -33,6 +33,7 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - **Sales Tax & Discount Calculators**: Compute VAT/sales tax components and promotional savings.
 - **Percentage & Average Calculators**: Solve standard growth, distribution, mean, median, mode, and standard deviation tasks.
 - **Age Calculator**: Determine exact age down to hours alongside milestones and birth countdowns.
+- **Auto Loan & Monthly Payment Estimator** (/tools/calculators/auto-loan-calculator): Estimate auto loan monthly payments, trade-in tax deductions, dealer fees, and amortization.
 
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.
