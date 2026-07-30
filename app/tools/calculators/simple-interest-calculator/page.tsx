@@ -4,7 +4,7 @@ import SimpleInterestCalculator from "@/components/tools/SimpleInterestCalculato
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Simple Interest & Loan Calculator | TwisterTools",
+  title: "Simple Interest & Loan Calculator",
   description:
     "Free browser-native simple interest and loan schedule calculator.",
   keywords: [

@@ -4,7 +4,7 @@ import MortgageCalculator from "@/components/tools/MortgageCalculator";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Mortgage Payment & Amortization Schedule | TwisterTools",
+  title: "Mortgage Payment & Amortization Schedule",
   description:
     "Calculate exact monthly mortgage payments, generate detailed amortization schedules, and evaluate the impact of extra payments.",
   keywords: [

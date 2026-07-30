@@ -4,7 +4,7 @@ import CompoundInterestCalculator from "@/components/tools/CompoundInterestCalcu
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Compound Interest & Growth Calculator - TwisterTools",
+  title: "Compound Interest & Growth Calculator",
   description:
     "Calculate interest compounding over time with monthly contributions, variable rates, APY modeling, and inflation adjustments.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "twistertools",
   ],
   openGraph: {
-    title: "Compound Interest & Growth Calculator - TwisterTools",
+    title: "Compound Interest & Growth Calculator | TwisterTools",
     description:
       "Calculate interest compounding over time with monthly contributions, variable rates, APY modeling, and inflation adjustments.",
     url: "https://www.twistertools.com/tools/calculators/compound-interest-calculator",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Compound Interest & Growth Calculator - TwisterTools",
+    title: "Compound Interest & Growth Calculator | TwisterTools",
     description:
       "Calculate interest compounding over time with monthly contributions, variable rates, APY modeling, and inflation adjustments.",
     images: [
