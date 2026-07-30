@@ -5,7 +5,7 @@ import AutoLoanCalculator from "@/components/tools/AutoLoanCalculator";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Auto Loan & Monthly Payment Estimator | TwisterTools",
+  title: "Auto Loan & Monthly Payment Estimator",
   description:
     "Calculate auto loan payments, trade-in tax credits, dealer fees, and amortization schedules.",
   keywords: [
@@ -51,38 +51,38 @@ export const metadata: Metadata = {
 const AutoLoanCalculatorPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Header - Matching Design System matching 'bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-4 text-white' */}
-      <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-4 text-white">
-        <div className="max-w-7xl mx-auto">
+      {/* Hero Header */}
+      <div className="bg-gradient-to-r from-indigo-50/80 via-white to-slate-50/50 dark:from-slate-900/50 dark:via-slate-950 dark:to-slate-900/50 border-b border-slate-200 dark:border-slate-700">
+        <div className="max-w-7xl mx-auto px-4 py-2 md:py-3">
           <div className="max-w-6xl mx-auto">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-sm text-indigo-100 mb-1.5 font-medium">
-              <Link href="/" className="hover:text-white transition-colors">
+            <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-1.5">
+              <a href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 Home
-              </Link>
+              </a>
               <span>/</span>
-              <Link
+              <a
                 href="/tools/calculators"
-                className="hover:text-white transition-colors"
+                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 Daily Essentials, Financial & Math Calculators
-              </Link>
+              </a>
               <span>/</span>
-              <span className="text-white font-semibold">
+              <span className="text-slate-900 dark:text-white">
                 Auto Loan Calculator
               </span>
             </div>
 
             {/* Tool Title & Description */}
-            <div className="flex items-start gap-3 mt-2">
-              <div className="w-14 h-14 rounded-2xl flex self-stretch items-center justify-center flex-shrink-0 bg-white/20 backdrop-blur-sm shadow-sm text-white">
-                <Car className="w-10 h-10" />
+            <div className="flex items-center gap-3">
+              <div className="w-14 h-14 rounded-2xl flex self-stretch items-center justify-center flex-shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
+                <Car className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
               </div>
               <div className="flex-1 min-w-0">
-                <h1 className="text-xl md:text-2xl font-bold text-white mb-0.5 leading-tight">
+                <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-0.5 leading-tight">
                   Auto Loan & Monthly Payment Estimator
                 </h1>
-                <p className="text-base text-indigo-100 leading-snug">
+                <p className="text-base text-slate-600 dark:text-slate-400 leading-snug">
                   Calculate auto loan payments, trade-in tax credits, dealer fees, and amortization schedules.
                 </p>
               </div>
