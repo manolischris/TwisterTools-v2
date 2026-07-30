@@ -279,7 +279,7 @@ export default function PdfToPngConverter() {
                                     <FileType2 className="w-5 h-5 text-indigo-200" />
                                 </div>
                                 <div>
-                                    <h1 className="text-base font-bold leading-tight">1. Source PDF Document</h1>
+                                    <h2 className="text-base font-bold leading-tight">1. Source PDF Document</h2>
                                     <p className="text-xs text-indigo-100/80">Upload and extract pixel-perfect PNG pages</p>
                                 </div>
                             </div>

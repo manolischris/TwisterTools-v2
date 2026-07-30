@@ -490,7 +490,7 @@ export default function HtmlToPdfConverter() {
                                     <Code className="w-5 h-5 text-indigo-200" />
                                 </div>
                                 <div>
-                                    <h1 className="text-base font-bold leading-tight">1. Source HTML & Code Editor</h1>
+                                    <h2 className="text-base font-bold leading-tight">1. Source HTML & Code Editor</h2>
                                     <p className="text-xs text-indigo-100/80">Input raw HTML5, inline CSS, or load file</p>
                                 </div>
                             </div>

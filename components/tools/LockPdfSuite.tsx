@@ -280,7 +280,7 @@ export default function LockPdfSuite() {
                                     <Lock className="w-5 h-5 text-white" />
                                 </div>
                                 <div>
-                                    <h1 className="text-base font-bold leading-tight">Lock PDF & Password Encryption</h1>
+                                    <h2 className="text-base font-bold leading-tight">Lock PDF & Password Encryption</h2>
                                     <p className="text-xs text-indigo-100">Client-Side 256-Bit Security Sandbox</p>
                                 </div>
                             </div>

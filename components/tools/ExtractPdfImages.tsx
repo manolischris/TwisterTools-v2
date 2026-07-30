@@ -335,7 +335,7 @@ export default function ExtractPdfImages() {
                                     <FileImage className="w-5 h-5 text-indigo-200" />
                                 </div>
                                 <div>
-                                    <h1 className="text-base font-bold leading-tight">1. Source Document & Embedded Assets</h1>
+                                    <h2 className="text-base font-bold leading-tight">1. Source Document & Embedded Assets</h2>
                                     <p className="text-xs text-indigo-100/80">Upload PDF to isolate internal vector and raster graphics</p>
                                 </div>
                             </div>

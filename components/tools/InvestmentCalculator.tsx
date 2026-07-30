@@ -37,19 +37,19 @@ interface ScheduleRow {
 }
 
 interface Preset {
-  id: string;
-  label: string;
-  init: number;
-  monthly: number;
-  rate: number;
-  years: number;
-  tag: string;
+    id: string;
+    label: string;
+    init: number;
+    monthly: number;
+    rate: number;
+    years: number;
+    tag: string;
 }
 
 const PRESETS: Preset[] = [
-  { id: "moderate", label: "Moderate Builder", init: 5000, monthly: 250, rate: 8, years: 15, tag: "8% ROI" },
-  { id: "aggressive", label: "Aggressive Wealth", init: 25000, monthly: 1000, rate: 10, years: 25, tag: "10% ROI" },
-  { id: "conservative", label: "Conservative Starter", init: 1000, monthly: 100, rate: 5, years: 10, tag: "5% ROI" },
+    { id: "moderate", label: "Moderate Builder", init: 5000, monthly: 250, rate: 8, years: 15, tag: "8% ROI" },
+    { id: "aggressive", label: "Aggressive Wealth", init: 25000, monthly: 1000, rate: 10, years: 25, tag: "10% ROI" },
+    { id: "conservative", label: "Conservative Starter", init: 1000, monthly: 100, rate: 5, years: 10, tag: "5% ROI" },
 ];
 
 type CurrencyCode = "USD" | "EUR" | "GBP" | "INR" | "CAD/AUD";
@@ -500,17 +500,15 @@ Calculated at twistertools.com/tools/calculators/investment-calculator`;
                                             key={preset.id}
                                             onClick={() => applyPreset(preset)}
                                             type="button"
-                                            className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all border shadow-xs whitespace-nowrap cursor-pointer ${
-                                                isActive
+                                            className={`flex-shrink-0 flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold transition-all border shadow-xs whitespace-nowrap cursor-pointer ${isActive
                                                     ? "bg-indigo-600 text-white border-indigo-600 shadow-sm"
                                                     : "bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200 hover:border-indigo-200"
-                                            }`}
+                                                }`}
                                         >
                                             <span>{preset.label}</span>
                                             <span
-                                                className={`text-[10px] px-1.5 py-0.5 rounded-md font-bold ${
-                                                    isActive ? "bg-white/20 text-white" : "bg-slate-200/80 text-slate-600"
-                                                }`}
+                                                className={`text-[10px] px-1.5 py-0.5 rounded-md font-bold ${isActive ? "bg-white/20 text-white" : "bg-slate-200/80 text-slate-600"
+                                                    }`}
                                             >
                                                 {preset.tag}
                                             </span>
@@ -693,7 +691,7 @@ Calculated at twistertools.com/tools/calculators/investment-calculator`;
             </div>
 
             {/* BELOW-THE-FOLD HIGH-VALUE CONTENT & GEO OPTIMIZATION */}
-            <div className="space-y-6 pt-2">
+            <div className="space-y-6">
 
                 {/* Card 1: Comprehensive Financial Definitions & Core Mechanics */}
                 <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">

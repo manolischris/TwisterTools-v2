@@ -643,7 +643,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
             </div>
 
             {/* BELOW-THE-FOLD CONTENT */}
-            <div className="space-y-6 pt-4">
+            <div className="space-y-6">
 
                 {/* CARD 1: DEFINITIONS & MATHEMATICAL FOUNDATION */}
                 <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
