@@ -513,6 +513,33 @@
     "isFeatured": false
   },
   {
+    "id": "investment-calculator",
+    "title": "Compound Investment & Return Calculator",
+    "description": "Calculate long-term compound growth, monthly contributions, and investment returns.",
+    "category": "calculators",
+    "href": "/tools/calculators/investment-calculator",
+    "iconName": "TrendingUp",
+    "isFeatured": true
+  },
+  {
+    "id": "compound-interest-calculator",
+    "title": "Compound Interest & Growth Calculator",
+    "description": "Calculate compound growth, regular contributions, APY yields, and inflation impact over time.",
+    "category": "calculators",
+    "href": "/tools/calculators/compound-interest-calculator",
+    "iconName": "TrendingUp",
+    "isFeatured": false
+  },
+  {
+    "id": "simple-interest-calculator",
+    "title": "Simple Interest & Loan Calculator",
+    "description": "Compute simple interest, total payback balances, and generate clear payment breakdowns instantly.",
+    "category": "calculators",
+    "href": "/tools/calculators/simple-interest-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
+  },
+  {
     "id": "binary-converter",
     "title": "Unified Binary & Number Base Converter",
     "description": "Convert text, ASCII, decimal, octal, and hexadecimal values dynamically.",
@@ -747,7 +774,13 @@
     "title": "PDF to PNG Converter",
     "category": "pdf-tools",
     "description": "Convert PDF documents to high-resolution, transparent PNG images entirely in your browser.",
-    "keywords": ["pdf to png", "pdf image converter", "extract png from pdf", "pdf page rasterizer", "lossless pdf convert"],
+    "keywords": [
+      "pdf to png",
+      "pdf image converter",
+      "extract png from pdf",
+      "pdf page rasterizer",
+      "lossless pdf convert"
+    ],
     "icon": "FileImage",
     "iconName": "FileImage",
     "href": "/tools/pdf-tools/pdf-to-png",
@@ -881,4 +914,3 @@
     "status": "active"
   }
 ]
-

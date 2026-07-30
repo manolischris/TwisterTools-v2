@@ -27,7 +27,8 @@ import {
   Stamp,
   FileImage,
   Edit3,
-  ListOrdered
+  ListOrdered,
+  TrendingUp
 } from "lucide-react";
 
 import toolsRegistry from "@/lib/tools-registry.json";
@@ -61,7 +62,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Stamp,
   FileImage,
   Edit3,
-  ListOrdered
+  ListOrdered,
+  TrendingUp
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json
@@ -545,10 +547,14 @@ export default async function CategoryDirectoryPage({
     notFound();
   }
 
-  // Filter tools belonging to this category from the dynamic registry import
-  const categoryTools = toolsRegistry.filter(
-    (tool) => tool.category === category
-  );
+  // Filter tools belonging to this category from the dynamic registry import and sort featured first
+  const categoryTools = toolsRegistry
+    .filter((tool) => tool.category === category)
+    .sort((a, b) => {
+      const aFeatured = a.isFeatured ? 1 : 0;
+      const bFeatured = b.isFeatured ? 1 : 0;
+      return bFeatured - aFeatured;
+    });
 
   const CategoryIcon = SERVER_ICON_MAP[categoryData.icon] || BookOpen;
 

@@ -160,6 +160,10 @@ export default function PdfToolsCategoryPage() {
       };
     }
     return tool;
+  }).sort((a, b) => {
+    const aFeatured = a.isFeatured ? 1 : 0;
+    const bFeatured = b.isFeatured ? 1 : 0;
+    return bFeatured - aFeatured;
   });
 
   return (
