@@ -1,0 +1,97 @@
+# TwisterTools
+
+> 100% free, fast, privacy-first, browser-native online utilities and tools.
+
+TwisterTools is a developer-centric collection of 60+ online utilities and converters designed to execute entirely in the user's browser memory (RAM). By utilizing browser-side technologies like client-side JavaScript, WebAssembly, and native browser APIs (such as the Canvas API and Web Cryptography API), TwisterTools offers zero-latency operations without transmitting any user files, inputs, codes, or secrets to external servers.
+
+## Core Value Proposition
+
+- **100% Privacy & Security**: No databases tracking inputs, no server logs, and no external transmission of user data. Your sensitive files and information never leave your local machine.
+- **Zero Server Uploads**: PDF documents, images, formatting strings, and passwords are compiled, compressed, and converted entirely in browser RAM.
+- **Instant Client-Side Computation**: Execution speeds are bound only by the user's local hardware resources, removing the lag of network queueing and remote processing.
+- **Always Free, No Registration**: Every single tool in all categories is fully accessible without subscriptions, time-limited trials, paywalls, or registrations.
+
+## Category Hubs
+
+### [Developer, Code & Web Engineering Tools](https://www.twistertools.com/tools/developer-tools)
+Essential browser-based engineering utilities for tokenizing, formatting, minifying, validating, and converting code.
+- **JSON Formatter, Validator & Viewer**: Validate, beautify, compact, and inspect JSON structures.
+- **XML Formatter, Validator & Viewer**: Pretty-print, minify, and validate XML documents.
+- **SQL Formatter & Query Beautifier**: Format and clean SQL queries with MySQL, PostgreSQL, Standard SQL, and T-SQL dialect support.
+- **CSS/JS/HTML Formatters & Minifiers**: Lexical tokenization engines to shrink or format stylesheets, scripts, and markup.
+- **Base64 / URL / HTML Entity Encoder & Decoder**: Symmetrical data encoders and decoders.
+- **Diff Checker**: Symmetrical text comparison tool featuring unified/split views.
+- **Regex Tester & Cheat Sheet**: Debug regular expressions in real-time with visual capturing groups.
+- **Unix Timestamp Converter**: Bi-directional epoch-to-date translations with a live ticker.
+- **Cron Expression Explainer**: Translate complex cron configurations into human-readable text.
+
+### [Daily Essentials, Financial & Math Calculators](https://www.twistertools.com/tools/calculators)
+Privacy-first mathematical tools and financial calculators to simulate investments and compute business metrics with multi-currency formatting.
+- **Simple Interest & Loan Calculator**: Calculate periodic interest, total payout, and amortization.
+- **Compound Interest & Growth Calculator**: Project capital appreciation over time with compound frequency.
+- **Investment Calculator**: Analyze periodic contributions, rates of return, and final balances.
+- **Sales Tax & Discount Calculators**: Compute VAT/sales tax components and promotional savings.
+- **Percentage & Average Calculators**: Solve standard growth, distribution, mean, median, mode, and standard deviation tasks.
+- **Age Calculator**: Determine exact age down to hours alongside milestones and birth countdowns.
+
+### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
+Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.
+- **Strong Password & Passphrase Generator**: Generate cryptographically secure passwords and memorable multi-word passphrases using browser-native CSPRNG.
+- **Password Strength Checker & Cracking Time Analyzer**: Audit password complexity and estimate dictionary crack time entirely inside the local browser sandbox.
+
+### [Text Analysis, List Comparison & Editing Tools](https://www.twistertools.com/tools/text-tools)
+Robust utilities to manipulate, compare, count, and format text strings or structured list arrays.
+- **Case Converter**: Transform strings between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and PascalCase.
+- **Comma Separator & List Delimiter**: Convert row listings or CSV data into custom delimited arrays.
+- **Word Counter & Text Analyzer**: Measure characters, words, sentences, reading times, and keyword densities.
+- **Reverse Text Generator**: Mirror, flip, or reverse text arrays.
+- **Small Text Generator**: Generate Unicode-styled fonts for social copy.
+- **Word Combiner**: Perform cartesian product phrase combinations for marketing and domain generation.
+
+### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
+Lossy and lossless graphic asset optimization performing pixel rendering directly in browser memory.
+- **Vector SVG Converter & Rasterizer**: Transform SVG vectors to raster PNG/JPG/WebP formats.
+- **PNG to JPG & Format Converter Suite**: Batch convert graphic files between major formats.
+- **Image Compressor**: Shrink image byte sizes using dynamic canvas-based compression ratios.
+- **Image Resizer**: Scale width/height pixel dimensions with aspect ratio preservation.
+- **HEIC to JPG Converter**: Decrypt and convert Apple HEIC photos to standard JPEG files locally.
+- **Favicon Generator**: Bundle multiple dimensions into standard ICO files.
+
+### [SEO, Domain & Network Inspector Tools](https://www.twistertools.com/tools/web-tools)
+Privacy-respecting diagnostics to analyze domains, crawl tags, inspect DNS tables, and verify web protocols.
+- **XML Sitemap Generator**: Client-side sitemap crawler conforming to Sitemaps.org standards.
+- **Meta Tag Generator & Social Previewer**: Draft SEO titles, descriptions, and preview search/social cards.
+- **Domain Age & WHOIS Checker**: Determine domain registration timestamps with native socket APIs and RDAP failovers.
+- **What Is My IP & Network Inspector**: Fetch ISP geolocation, browser headers, and evaluate TOR/VPN/Proxy exposure.
+- **DNS Record Finder**: Query A, AAAA, MX, TXT, NS, CNAME, SOA records using secure DNS-over-HTTPS.
+- **SSL Certificate Checker**: Check SSL expiry, issuer, algorithms, and chains.
+- **HTTP Headers Inspector**: Analyze response codes, security flags, and CORS parameters.
+
+### [PDF & Document Utilities](https://www.twistertools.com/tools/pdf-tools)
+Client-side PDF document manipulation engines running in browser memory with zero server uploads.
+- **PDF Compilers**: Symmetrical image-to-PDF, PNG-to-PDF, JPG-to-PDF, and Text-to-PDF converters.
+- **PDF Extractors**: Convert PDF structures back to Word documents, plain text, Markdown, or extract raster assets.
+- **PDF Split & Merge**: Combine multiple documents or slice and extract specific pages.
+- **PDF Grayscale & Watermark**: Convert pages to black-and-white or stamp text/image watermarks.
+- **PDF Lock & Unlock**: Encrypt PDF documents with passwords or decrypt password protections.
+- **PDF Page Numbers & Stampers**: Add running headers, footers, margins, and rotate/crop orientations.
+
+### [Random Data, Identity & Key Generators](https://www.twistertools.com/tools/generator-tools)
+Utilities for generating mock datasets, random credentials, and styled indicators with cryptographic precision.
+- **Custom QR Code Generator**: Build stylized vector QR codes with embedded custom brand logos.
+- **Bulk UUID/GUID Generator**: Generate bulk v1/v4 UUID strings using secure browser randomizers.
+- **Mock Identity & Test Credit Card Generator**: Generate non-live test payment cards and synthetic persona profiles for software testing.
+
+### [Data & Number Base Converter Utilities](https://www.twistertools.com/tools/converter-tools)
+Symmetrical encoders and decoders for computing byte size differences and base number conversions.
+- **Number Base Converter**: Shift digits between decimal, binary, octal, hexadecimal, and custom bases.
+- **String to Hex / Hex to String Converter**: Translate standard text strings to hexadecimal representations.
+- **Byte Converter**: Convert data capacities across bits, bytes, KB, MB, GB, and TB.
+
+## Other Resources
+
+- [All Categories Hub](https://www.twistertools.com/categories)
+- [About the Platform](https://www.twistertools.com/about)
+- [Privacy Policy](https://www.twistertools.com/privacy-policy)
+- [Terms of Service](https://www.twistertools.com/terms-of-service)
+- [Contact Support](https://www.twistertools.com/contact)
