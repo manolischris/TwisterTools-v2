@@ -138,6 +138,22 @@ export default function CalculatorsCategoryPage() {
         iconName: "PiggyBank"
       };
     }
+    if (tool.id === "inflation-calculator") {
+      return {
+        ...tool,
+        title: "Inflation Rate & Purchasing Power Calculator",
+        description: "Calculate future money value, CPI decay, and real purchasing power erosion.",
+        iconName: "TrendingUp"
+      };
+    }
+    if (tool.id === "roi-calculator") {
+      return {
+        ...tool,
+        title: "ROI Calculator",
+        description: "Calculate simple ROI, annualized return (CAGR), net profit, and investment performance across stocks and real estate.",
+        iconName: "TrendingUp"
+      };
+    }
     return tool;
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;

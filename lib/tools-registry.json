@@ -948,5 +948,23 @@
     "href": "/tools/calculators/retirement-calculator",
     "iconName": "PiggyBank",
     "isFeatured": false
+  },
+  {
+    "id": "inflation-calculator",
+    "title": "Inflation Rate & Purchasing Power Calculator",
+    "description": "Calculate future money value, CPI decay, and real purchasing power erosion.",
+    "category": "calculators",
+    "href": "/tools/calculators/inflation-calculator",
+    "iconName": "TrendingUp",
+    "isFeatured": false
+  },
+  {
+    "id": "roi-calculator",
+    "title": "ROI Calculator",
+    "description": "Calculate simple ROI, annualized return (CAGR), net profit, and investment performance across stocks and real estate.",
+    "category": "calculators",
+    "href": "/tools/calculators/roi-calculator",
+    "iconName": "TrendingUp",
+    "isFeatured": false
   }
 ]

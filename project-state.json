@@ -10,8 +10,10 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "None - All current integration tasks completed successfully.",
   "active_task_tracker": "complete",
-  "completedTasksCount": 126,
+  "completedTasksCount": 128,
   "completed_tasks": [
+    "Integrated Return on Investment (ROI) Calculator (RoiCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/roi-calculator, registering the tool inside the calculators landing search grid, adding standard route config to the master registry, and synchronizing project state.",
+    "Integrated Inflation Rate & Purchasing Power Calculator (InflationCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/inflation-calculator, updating category search grids, mapping the TrendingUp icon, updating the global tools registry, and validating the Next.js build compilation.",
     "Integrated Retirement Savings & Nest Egg Planner (RetirementCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/retirement-calculator, updating category search grids, mapping the PiggyBank icon, updating the global tools registry, and validating the Next.js build compilation.",
     "Integrated Loan Payoff & Debt Reduction Calculator (LoanPayoffCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/loan-payoff-calculator with dynamic import and SSR disabled, updating category search grids, mapping the Calculator icon, updating the global tools registry, and validating the Next.js build compilation.",
     "Integrated Auto Loan & Monthly Payment Estimator (AutoLoanCalculator) component into the calculators category, creating a dedicated page route, updating category search grids, mapping the Car icon, updating the global tools registry, and validating the Next.js build compilation.",
@@ -209,8 +211,26 @@
     "seo_optimization": "Complete with generateMetadata for all pages"
   },
   "tools_completed": {
-    "total": 77,
+    "total": 79,
     "list": [
+      {
+        "name": "Return on Investment (ROI) Calculator",
+        "slug": "roi-calculator",
+        "category": "calculators",
+        "component": "components/tools/RoiCalculator.tsx",
+        "url": "/tools/calculators/roi-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-07-31"
+      },
+      {
+        "name": "Inflation Rate & Purchasing Power Calculator",
+        "slug": "inflation-calculator",
+        "category": "calculators",
+        "component": "components/tools/InflationCalculator.tsx",
+        "url": "/tools/calculators/inflation-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-07-31"
+      },
       {
         "name": "Retirement Savings & Nest Egg Planner",
         "slug": "retirement-calculator",
