@@ -154,6 +154,14 @@ export default function CalculatorsCategoryPage() {
         iconName: "TrendingUp"
       };
     }
+    if (tool.id === "break-even-calculator") {
+      return {
+        ...tool,
+        title: "Break-Even Point Calculator",
+        description: "Calculate unit break-even points, contribution margins, and target profit volume.",
+        iconName: "Scale"
+      };
+    }
     return tool;
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;

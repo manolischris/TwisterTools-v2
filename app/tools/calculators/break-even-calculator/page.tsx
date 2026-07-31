@@ -1,55 +1,56 @@
 import type { Metadata, NextPage } from "next";
 import Link from "next/link";
-import { TrendingUp } from "lucide-react";
-import RoiCalculator from "@/components/tools/RoiCalculator";
+import { Scale } from "lucide-react";
+import BreakEvenCalculator from "@/components/tools/BreakEvenCalculator";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Return on Investment (ROI) Calculator",
+  title: "Break-Even Point & Profitability Calculator | TwisterTools",
   description:
-    "Calculate simple ROI, annualized return (CAGR), net profit, and investment performance across stocks and real estate.",
+    "Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.",
   keywords: [
-    "roi calculator",
-    "return on investment",
-    "annualized return",
-    "cagr calculator",
-    "net profit calculator",
-    "stock return calculator",
-    "real estate roi",
+    "break-even calculator",
+    "break-even point",
+    "profitability calculator",
+    "contribution margin",
+    "fixed costs",
+    "variable costs",
+    "target profit calculator",
+    "break even units",
     "financial calculator",
     "twistertools",
   ],
   openGraph: {
-    title: "Return on Investment (ROI) Calculator | TwisterTools",
+    title: "Break-Even Point & Profitability Calculator | TwisterTools",
     description:
-      "Calculate simple ROI, annualized return (CAGR), net profit, and investment performance across stocks and real estate.",
-    url: "https://www.twistertools.com/tools/calculators/roi-calculator",
+      "Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.",
+    url: "https://www.twistertools.com/tools/calculators/break-even-calculator",
     siteName: "TwisterTools",
     type: "website",
     images: [
       {
-        url: "https://www.twistertools.com/images/tools/calculators/roi-calculator.jpg",
+        url: "https://www.twistertools.com/images/tools/calculators/break-even-calculator.jpg",
         width: 1200,
         height: 630,
-        alt: "Return on Investment (ROI) Calculator on TwisterTools",
+        alt: "Break-Even Point & Profitability Calculator on TwisterTools",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Return on Investment (ROI) Calculator | TwisterTools",
+    title: "Break-Even Point & Profitability Calculator | TwisterTools",
     description:
-      "Calculate simple ROI, annualized return (CAGR), net profit, and investment performance across stocks and real estate.",
+      "Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.",
     images: [
-      "https://www.twistertools.com/images/tools/calculators/roi-calculator.jpg",
+      "https://www.twistertools.com/images/tools/calculators/break-even-calculator.jpg",
     ],
   },
   alternates: {
-    canonical: "https://www.twistertools.com/tools/calculators/roi-calculator",
+    canonical: "https://www.twistertools.com/tools/calculators/break-even-calculator",
   },
 };
 
-const RoiCalculatorPage: NextPage = () => {
+const BreakEvenCalculatorPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
@@ -70,21 +71,21 @@ const RoiCalculatorPage: NextPage = () => {
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">
-                Return on Investment (ROI) Calculator
+                Break-Even Point Calculator
               </span>
             </div>
 
             {/* Tool Title & Description */}
             <div className="flex items-start gap-3 mt-2">
               <div className="w-14 h-14 rounded-2xl flex self-stretch items-center justify-center flex-shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
-                <TrendingUp className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
               </div>
               <div className="flex-1 min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-0.5 leading-tight">
-                  Return on Investment (ROI) Calculator
+                  Break-Even Point & Profitability Calculator
                 </h1>
                 <p className="text-base text-slate-600 dark:text-slate-400 leading-snug">
-                  Calculate simple ROI, annualized return (CAGR), net profit, and investment performance across stocks and real estate.
+                  Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.
                 </p>
               </div>
             </div>
@@ -96,7 +97,7 @@ const RoiCalculatorPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Interactive Tool Interface */}
-          <RoiCalculator />
+          <BreakEvenCalculator />
 
           {/* Social Sharing Card */}
           <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">
@@ -111,7 +112,7 @@ const RoiCalculatorPage: NextPage = () => {
                 {/* Facebook */}
                 <div className="relative group">
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/calculators/roi-calculator")}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/calculators/break-even-calculator")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on Facebook"
@@ -130,7 +131,7 @@ const RoiCalculatorPage: NextPage = () => {
                 {/* X / Twitter */}
                 <div className="relative group">
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/roi-calculator")}&text=${encodeURIComponent("Calculate simple ROI, annualized return (CAGR), and net profit.")}`}
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/break-even-calculator")}&text=${encodeURIComponent("Calculate unit break-even points, contribution margins, and target profit volume.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on X (Twitter)"
@@ -149,7 +150,7 @@ const RoiCalculatorPage: NextPage = () => {
                 {/* LinkedIn */}
                 <div className="relative group">
                   <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/roi-calculator")}`}
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/break-even-calculator")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on LinkedIn"
@@ -169,11 +170,11 @@ const RoiCalculatorPage: NextPage = () => {
           </div>
 
           {/* Related Tools */}
-          <RelatedTools currentSlug="roi-calculator" currentCategory="calculators" />
+          <RelatedTools currentSlug="break-even-calculator" currentCategory="calculators" />
         </div>
       </div>
     </div>
   );
 };
 
-export default RoiCalculatorPage;
+export default BreakEvenCalculatorPage;

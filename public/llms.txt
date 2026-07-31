@@ -35,6 +35,7 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - **Age Calculator**: Determine exact age down to hours alongside milestones and birth countdowns.
 - **Auto Loan & Monthly Payment Estimator** (/tools/calculators/auto-loan-calculator): Estimate auto loan monthly payments, trade-in tax deductions, dealer fees, and amortization.
 - Retirement Savings & Nest Egg Planner (/tools/calculators/retirement-calculator): Project long-term compound savings, 401(k) matches, and safe retirement withdrawal income.
+- Break-Even Point & Profitability Calculator (/tools/calculators/break-even-calculator)
 
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.

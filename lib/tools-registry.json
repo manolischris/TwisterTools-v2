@@ -966,5 +966,14 @@
     "href": "/tools/calculators/roi-calculator",
     "iconName": "TrendingUp",
     "isFeatured": false
+  },
+  {
+    "id": "break-even-calculator",
+    "title": "Break-Even Point & Profitability Calculator",
+    "description": "Calculate unit break-even points, contribution margins, and target profit volume.",
+    "category": "calculators",
+    "href": "/tools/calculators/break-even-calculator",
+    "iconName": "Scale",
+    "isFeatured": false
   }
 ]
