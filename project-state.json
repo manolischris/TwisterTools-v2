@@ -10,8 +10,11 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "None - All current integration tasks completed successfully.",
   "active_task_tracker": "complete",
-  "completedTasksCount": 130,
+  "completedTasksCount": 133,
   "completed_tasks": [
+    "Integrated Tip & Bill Splitter Calculator (TipCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/tip-calculator, updating calculators category page landing search grid, mapping the Calculator icon, updating the global tools registry, and synchronizing project state.",
+    "Integrated Net Worth & Personal Asset Calculator (NetWorthCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/net-worth-calculator, updating calculators category page landing search grid, mapping the Scale icon, updating the global tools registry, and synchronizing project state.",
+    "Integrated Salary & Hourly Paycheck Converter (SalaryCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/salary-calculator, updating calculators category page landing search grid, mapping the Calculator icon, updating the global tools registry, and synchronizing project state.",
     "Integrated Margin & Markup Calculator (MarginCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/margin-calculator, updating calculators category page landing search grid, mapping the Calculator icon, updating the global tools registry, and synchronizing project state.",
     "Integrated Break-Even Point & Profitability Calculator (BreakEvenCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/break-even-calculator, updating calculators category page landing search grid, mapping the Scale icon, updating the global tools registry, and synchronizing project state.",
     "Integrated Return on Investment (ROI) Calculator (RoiCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/roi-calculator, registering the tool inside the calculators landing search grid, adding standard route config to the master registry, and synchronizing project state.",
@@ -213,8 +216,35 @@
     "seo_optimization": "Complete with generateMetadata for all pages"
   },
   "tools_completed": {
-    "total": 80,
+    "total": 83,
     "list": [
+      {
+        "name": "Tip & Bill Splitter Calculator",
+        "slug": "tip-calculator",
+        "category": "calculators",
+        "component": "components/tools/TipCalculator.tsx",
+        "url": "/tools/calculators/tip-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-07-31"
+      },
+      {
+        "name": "Net Worth & Personal Asset Calculator",
+        "slug": "net-worth-calculator",
+        "category": "calculators",
+        "component": "components/tools/NetWorthCalculator.tsx",
+        "url": "/tools/calculators/net-worth-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-07-31"
+      },
+      {
+        "name": "Salary & Hourly Paycheck Converter",
+        "slug": "salary-calculator",
+        "category": "calculators",
+        "component": "components/tools/SalaryCalculator.tsx",
+        "url": "/tools/calculators/salary-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-07-31"
+      },
       {
         "name": "Break-Even Point & Profitability Calculator",
         "slug": "break-even-calculator",

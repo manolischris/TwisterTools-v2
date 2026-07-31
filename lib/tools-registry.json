@@ -984,5 +984,32 @@
     "href": "/tools/calculators/margin-calculator",
     "iconName": "Calculator",
     "isFeatured": false
+  },
+  {
+    "id": "salary-calculator",
+    "title": "Salary & Hourly Paycheck Converter",
+    "description": "Convert annual salary to hourly rate and calculate net take-home pay across bi-weekly, monthly, and weekly schedules.",
+    "category": "calculators",
+    "href": "/tools/calculators/salary-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
+  },
+  {
+    "id": "net-worth-calculator",
+    "title": "Net Worth & Personal Asset Calculator",
+    "description": "Calculate total wealth, track personal asset categories, and assess debt-to-asset leverage in real time.",
+    "category": "calculators",
+    "href": "/tools/calculators/net-worth-calculator",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "tip-calculator",
+    "title": "Tip & Bill Splitter Calculator",
+    "description": "Calculate tips, sales tax, and equal or itemized per-person group bill splits.",
+    "category": "calculators",
+    "href": "/tools/calculators/tip-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
   }
 ]

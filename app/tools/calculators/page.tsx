@@ -170,6 +170,30 @@ export default function CalculatorsCategoryPage() {
         iconName: "Calculator"
       };
     }
+    if (tool.id === "salary-calculator") {
+      return {
+        ...tool,
+        title: "Salary & Hourly Paycheck Converter",
+        description: "Convert annual salary to hourly rate and calculate net take-home pay across bi-weekly, monthly, and weekly schedules.",
+        iconName: "Calculator"
+      };
+    }
+    if (tool.id === "net-worth-calculator") {
+      return {
+        ...tool,
+        title: "Net Worth Calculator",
+        description: "Track assets, evaluate liabilities, and calculate your true net worth with dynamic portfolio breakdowns.",
+        iconName: "Scale"
+      };
+    }
+    if (tool.id === "tip-calculator") {
+      return {
+        ...tool,
+        title: "Tip & Bill Splitter Calculator",
+        description: "Calculate restaurant tips, sales tax, and group bill splits with itemized individual breakdowns.",
+        iconName: "Calculator"
+      };
+    }
     return tool;
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;
