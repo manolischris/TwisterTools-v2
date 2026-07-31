@@ -930,5 +930,23 @@
     "href": "/tools/calculators/auto-loan-calculator",
     "iconName": "Car",
     "isFeatured": false
+  },
+  {
+    "id": "loan-payoff-calculator",
+    "title": "Loan Payoff & Debt Reduction Calculator",
+    "description": "Calculate payoff timelines, interest savings, and lump-sum impact to accelerate debt elimination.",
+    "category": "calculators",
+    "href": "/tools/calculators/loan-payoff-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
+  },
+  {
+    "id": "retirement-calculator",
+    "title": "Retirement Savings & Nest Egg Planner",
+    "description": "Calculate projected retirement nest egg, employer match compounding, and 4% rule safe withdrawal rates.",
+    "category": "calculators",
+    "href": "/tools/calculators/retirement-calculator",
+    "iconName": "PiggyBank",
+    "isFeatured": false
   }
 ]

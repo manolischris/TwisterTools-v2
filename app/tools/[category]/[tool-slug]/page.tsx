@@ -192,7 +192,7 @@ export async function generateMetadata({
   // Default gracefully if it doesn't exist
   const ogImageUrl = imageExists ? dynamicImageUrl : "https://www.twistertools.com/images/og-default.jpg";
 
-  let title = `${tool.name} - Free Online Tool`;
+  let title = `${tool.name}`;
   let description = tool.description;
 
   if (category === "pdf-tools" && toolSlug === "text-to-pdf") {

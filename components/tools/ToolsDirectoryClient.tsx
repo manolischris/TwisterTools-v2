@@ -48,7 +48,8 @@ import {
   Fingerprint,
   TrendingUp,
   Building,
-  Car
+  Car,
+  PiggyBank
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -107,7 +108,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Fingerprint,
   TrendingUp,
   Building,
-  Car
+  Car,
+  PiggyBank
 };
 
 /* ─────────────────────────────────────────────────────────

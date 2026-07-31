@@ -1,80 +1,91 @@
+import type { Metadata, NextPage } from "next";
 import Link from "next/link";
-import { FileCode, Copy, Check } from "lucide-react";
-import HtmlFormatter from "../../../../components/tools/HtmlFormatter";
-import CopyLinkButton from "../../../../components/CopyLinkButton";
+import { PiggyBank } from "lucide-react";
+import RetirementCalculator from "@/components/tools/RetirementCalculator";
+import RelatedTools from "@/components/RelatedTools";
 
-export async function generateMetadata() {
-  const pageUrl = "https://www.twistertools.com/tools/developer-tools/html-formatter-validator";
-  const ogImageUrl = "https://www.twistertools.com/images/og-default.jpg";
+export const metadata: Metadata = {
+  title: "Retirement Savings & Nest Egg Planner",
+  description:
+    "Project your retirement nest egg, model compound growth with employer matches, factor in inflation, and plan safe monthly withdrawals.",
+  keywords: [
+    "retirement calculator",
+    "nest egg planner",
+    "retirement savings",
+    "compound growth",
+    "employer match",
+    "inflation adjustment",
+    "safe withdrawal rate",
+    "4% rule",
+    "financial calculator",
+    "twistertools",
+  ],
+  openGraph: {
+    title: "Retirement Savings & Nest Egg Planner | TwisterTools",
+    description:
+      "Project your retirement nest egg, model compound growth with employer matches, factor in inflation, and plan safe monthly withdrawals.",
+    url: "https://www.twistertools.com/tools/calculators/retirement-calculator",
+    siteName: "TwisterTools",
+    type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools/calculators/retirement-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Retirement Savings & Nest Egg Planner on TwisterTools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Retirement Savings & Nest Egg Planner | TwisterTools",
+    description:
+      "Project your retirement nest egg, model compound growth with employer matches, factor in inflation, and plan safe monthly withdrawals.",
+    images: [
+      "https://www.twistertools.com/images/tools/calculators/retirement-calculator.jpg",
+    ],
+  },
+  alternates: {
+    canonical: "https://www.twistertools.com/tools/calculators/retirement-calculator",
+  },
+};
 
-  return {
-    title: "HTML Formatter, Beautifier & Validator",
-    description: "Free online HTML formatter, beautifier, and validator. Format, beautify, minify, and validate HTML markup instantly with pure client-side processing. Zero data leaves your browser.",
-    keywords: ["html formatter", "html beautifier", "html validator", "html minifier", "html prettier", "html code formatter", "online html tool", "twistertools"],
-    openGraph: {
-      title: "HTML Formatter, Beautifier & Validator",
-      description: "Free online HTML formatter, beautifier, and validator. Format, beautify, minify, and validate HTML markup instantly with pure client-side processing. Zero data leaves your browser.",
-      url: pageUrl,
-      siteName: "TwisterTools",
-      type: "website",
-      images: [
-        {
-          url: ogImageUrl,
-          width: 1200,
-          height: 630,
-          alt: "HTML Formatter, Beautifier & Validator on TwisterTools",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "HTML Formatter, Beautifier & Validator | TwisterTools",
-      description: "Free online HTML formatter, beautifier, and validator. Format, beautify, minify, and validate HTML markup instantly with pure client-side processing.",
-      images: [ogImageUrl],
-    },
-    alternates: {
-      canonical: pageUrl,
-    },
-  };
-}
-
-export default function HtmlFormatterPage() {
-  const toolUrl = "https://www.twistertools.com/tools/developer-tools/html-formatter-validator";
-
+const RetirementCalculatorPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Header Section */}
+      {/* Hero Header */}
       <div className="bg-gradient-to-r from-indigo-50/80 via-white to-slate-50/50 dark:from-slate-900/50 dark:via-slate-950 dark:to-slate-900/50 border-b border-slate-200 dark:border-slate-700">
         <div className="max-w-7xl mx-auto px-4 py-2 md:py-3">
           <div className="max-w-6xl mx-auto">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-1.5">
+            <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-1.5 font-medium">
               <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
                 Home
               </Link>
               <span>/</span>
               <Link
-                href="/tools/developer-tools"
+                href="/tools/calculators"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
-                Developer, Code & Web Engineering Tools
+                Daily Essentials, Financial & Math Calculators
               </Link>
               <span>/</span>
-              <span className="text-slate-900 dark:text-white">HTML Formatter, Beautifier & Validator</span>
+              <span className="text-slate-900 dark:text-white">
+                Retirement Savings & Nest Egg Planner
+              </span>
             </div>
 
             {/* Tool Title & Description */}
-            <div className="flex items-start gap-3">
-              {/* Strict square icon container — 1:1, top-aligned with text block */}
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
-                <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+            <div className="flex items-start gap-3 mt-2">
+              <div className="w-14 h-14 rounded-2xl flex self-stretch items-center justify-center flex-shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
+                <PiggyBank className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
               </div>
               <div className="flex-1 min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-0.5 leading-tight">
-                  HTML Formatter, Beautifier & Validator
+                  Retirement Savings & Nest Egg Planner
                 </h1>
                 <p className="text-base text-slate-600 dark:text-slate-400 leading-snug">
-                  Format, beautify, minify, and validate HTML markup instantly with pure client-side processing.
+                  Project your retirement nest egg, model compound growth with employer matches, factor in inflation, and plan safe monthly withdrawals.
                 </p>
               </div>
             </div>
@@ -82,26 +93,26 @@ export default function HtmlFormatterPage() {
         </div>
       </div>
 
-      {/* Main Content Container */}
+      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
         <div className="max-w-6xl mx-auto space-y-8">
-          <HtmlFormatter />
+          {/* Interactive Tool Interface */}
+          <RetirementCalculator />
 
           {/* Social Sharing Card */}
-          <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900 dark:to-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">
+          <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-              {/* Left: helper copy */}
               <p className="text-sm text-slate-600 dark:text-slate-400 flex-1">
                 Found this tool helpful?{" "}
-                <span className="font-semibold text-slate-800 dark:text-slate-200">Share it with others!</span>
+                <span className="font-semibold text-slate-800 dark:text-slate-200">
+                  Share it with others!
+                </span>
               </p>
-
-              {/* Right: icon-only buttons with CSS-only tooltips */}
               <div className="flex items-center gap-2 flex-shrink-0">
                 {/* Facebook */}
                 <div className="relative group">
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(toolUrl)}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/calculators/retirement-calculator")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on Facebook"
@@ -120,7 +131,7 @@ export default function HtmlFormatterPage() {
                 {/* X / Twitter */}
                 <div className="relative group">
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(toolUrl)}&text=${encodeURIComponent("Check out this free HTML Formatter, Beautifier & Validator tool!")}`}
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/retirement-calculator")}&text=${encodeURIComponent("Calculate projected retirement nest egg, employer match compounding, and 4% rule safe withdrawal rates.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on X (Twitter)"
@@ -139,7 +150,7 @@ export default function HtmlFormatterPage() {
                 {/* LinkedIn */}
                 <div className="relative group">
                   <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(toolUrl)}`}
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/retirement-calculator")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on LinkedIn"
@@ -154,20 +165,16 @@ export default function HtmlFormatterPage() {
                     <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900 dark:border-t-slate-700" />
                   </span>
                 </div>
-
-                {/* Copy URL */}
-                <div className="relative group">
-                  <CopyLinkButton url={toolUrl} />
-                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 dark:bg-slate-700 px-2 py-1 text-[11px] font-medium text-white opacity-0 group-hover:opacity-100 transition-opacity duration-150 shadow-lg z-10">
-                    Copy URL
-                    <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-900 dark:border-t-slate-700" />
-                  </span>
-                </div>
               </div>
             </div>
           </div>
+
+          {/* Related Tools */}
+          <RelatedTools currentSlug="retirement-calculator" currentCategory="calculators" />
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default RetirementCalculatorPage;

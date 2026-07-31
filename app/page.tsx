@@ -43,7 +43,8 @@ import {
   Scissors,
   Hash,
   Edit3,
-  ListOrdered
+  ListOrdered,
+  PiggyBank
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -89,7 +90,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Scissors,
   Hash,
   Edit3,
-  ListOrdered
+  ListOrdered,
+  PiggyBank
 };
 
 const CATEGORIES = [

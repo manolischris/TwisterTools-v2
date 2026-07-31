@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -120,6 +120,22 @@ export default function CalculatorsCategoryPage() {
         title: "Auto Loan & Monthly Payment Estimator",
         description: "Calculate auto loan payments, trade-in tax credits, dealer fees, and amortization schedules.",
         iconName: "Car"
+      };
+    }
+    if (tool.id === "loan-payoff-calculator") {
+      return {
+        ...tool,
+        title: "Loan Payoff & Debt Reduction Calculator",
+        description: "Calculate payoff timelines, interest savings, and lump-sum impact to accelerate debt elimination.",
+        iconName: "Calculator"
+      };
+    }
+    if (tool.id === "retirement-calculator") {
+      return {
+        ...tool,
+        title: "Retirement Savings & Nest Egg Planner",
+        description: "Calculate projected retirement nest egg, employer match compounding, and 4% rule safe withdrawal rates.",
+        iconName: "PiggyBank"
       };
     }
     return tool;

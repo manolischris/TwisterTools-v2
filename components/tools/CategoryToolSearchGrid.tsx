@@ -59,7 +59,8 @@ import {
   Fingerprint,
   TrendingUp,
   Building,
-  Car
+  Car,
+  PiggyBank
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -135,7 +136,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Fingerprint,
   TrendingUp,
   Building,
-  Car
+  Car,
+  PiggyBank
 };
 
 export default function CategoryToolSearchGrid({

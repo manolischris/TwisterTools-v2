@@ -7,7 +7,7 @@ import CopyLinkButton from "../../../../components/CopyLinkButton";
 
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/developer-tools/html-css-minifier-unminifier";
-  
+
   // Check if a dedicated social sharing image exists on the filesystem
   const imagePath = path.join(process.cwd(), "public", "images", "tools", "developer-tools", "html-css-minifier-unminifier.jpg");
   const imageExists = fs.existsSync(imagePath);
@@ -16,7 +16,7 @@ export async function generateMetadata() {
     : "https://www.twistertools.com/images/og-default.jpg";
 
   return {
-    title: "HTML & CSS Minifier & Unminifier - Free Online Tool",
+    title: "HTML & CSS Minifier & Unminifier",
     description: "Free online HTML and CSS minifier and unminifier. Minify, unminify, compress, and beautify HTML markup and CSS stylesheets instantly with pure client-side processing. Zero data leaves your browser.",
     keywords: ["html minifier", "css minifier", "html unminifier", "css unminifier", "html beautifier", "css beautifier", "html compressor", "css compressor", "html formatter", "css formatter", "online html tool", "online css tool", "twistertools"],
     openGraph: {
