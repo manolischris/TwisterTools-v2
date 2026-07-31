@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | TwisterTools",
   },
   description:
-    "100% free, fast, and privacy-first online utilities. Access our growing suite of browser-native calculators, developer tools, image converters, text editors, and web tools with zero server tracking.",
+    "Free, fast, and privacy-first online utilities. Growing suite of browser-native calculators, developer tools, image converters, and web tools with zero server tracking.",
   keywords: [
     "free online calculators",
     "developer tools",

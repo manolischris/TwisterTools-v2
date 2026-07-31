@@ -49,7 +49,25 @@ import {
   TrendingUp,
   Building,
   Car,
-  PiggyBank
+  PiggyBank,
+  QrCode,
+  ShieldAlert,
+  CalendarClock,
+  Type,
+  ListStart,
+  Code,
+  FileJson,
+  ArrowRightLeft,
+  Columns,
+  Share2,
+  Server,
+  Unlock,
+  Stamp,
+  FileType,
+  FolderArchive,
+  RotateCw,
+  Crop,
+  Combine
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -67,7 +85,7 @@ interface RegistryTool {
 
 /* ─────────────────────────────────────────────────────────
    Icon Map
-───────────────────────────────────────────────────────── */
+ ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Sparkles,
   Lock,
@@ -109,7 +127,25 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   TrendingUp,
   Building,
   Car,
-  PiggyBank
+  PiggyBank,
+  QrCode,
+  ShieldAlert,
+  CalendarClock,
+  Type,
+  ListStart,
+  Code,
+  FileJson,
+  ArrowRightLeft,
+  Columns,
+  Share2,
+  Server,
+  Unlock,
+  Stamp,
+  FileType,
+  FolderArchive,
+  RotateCw,
+  Crop,
+  Combine
 };
 
 /* ─────────────────────────────────────────────────────────

@@ -5,7 +5,7 @@
     "description": "Generate high-resolution custom QR codes for URLs, WiFi, contact cards, and text with custom colors, dot styles, and vector export options (PNG/SVG).",
     "category": "generator-tools",
     "href": "/tools/generator-tools/qr-code-generator",
-    "iconName": "Sparkles",
+    "iconName": "QrCode",
     "isFeatured": false
   },
   {
@@ -14,7 +14,7 @@
     "description": "Compute secure RFC 1321 MD5 hashes instantly from text strings, bulk multi-line inputs, or local files — 100% client-side with zero server transmission.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/md5-generator",
-    "iconName": "Sparkles",
+    "iconName": "Hash",
     "isFeatured": false
   },
   {
@@ -23,7 +23,7 @@
     "description": "Generate SHA-1, SHA-256, SHA-512, and SHA-3 (256/512) hashes locally and securely. Verify checksums and analyze text or files entirely in-browser.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/sha-generator",
-    "iconName": "Sparkles",
+    "iconName": "Hash",
     "isFeatured": false
   },
   {
@@ -32,7 +32,7 @@
     "description": "Build high-entropy random passwords or memorable multi-word passphrases using cryptographically secure CSPRNG random values with custom character sets.",
     "category": "password-tools",
     "href": "/tools/password-tools/password-generator",
-    "iconName": "Sparkles",
+    "iconName": "Lock",
     "isFeatured": false
   },
   {
@@ -41,7 +41,7 @@
     "description": "Zero-Data Exposure: Evaluated 100% locally in your browser. No server calls, no network transmission.",
     "category": "password-tools",
     "href": "/tools/password-tools/password-strength-checker",
-    "iconName": "Lock",
+    "iconName": "ShieldAlert",
     "isFeatured": false
   },
   {
@@ -50,7 +50,7 @@
     "description": "Calculate exact chronological age in years, months, weeks, days, and hours. Includes upcoming birthday countdowns and historical day-count milestones.",
     "category": "calculators",
     "href": "/tools/calculators/age-calculator",
-    "iconName": "Calculator",
+    "iconName": "CalendarClock",
     "isFeatured": false
   },
   {
@@ -59,7 +59,7 @@
     "description": "Calculate percentage changes, value distributions, markups, discounts, and reverse percentages instantly with dynamic step-by-step math breakdowns.",
     "category": "calculators",
     "href": "/tools/calculators/percentage-calculator",
-    "iconName": "Calculator",
+    "iconName": "Percent",
     "isFeatured": false
   },
   {
@@ -77,7 +77,7 @@
     "description": "Convert text between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and PascalCase instantly with live word and character counts.",
     "category": "text-tools",
     "href": "/tools/text-tools/case-converter",
-    "iconName": "FileText",
+    "iconName": "Type",
     "isFeatured": false
   },
   {
@@ -86,7 +86,7 @@
     "description": "Transform column listings, spreadsheet rows, or tab data into clean comma-separated lists, SQL array inputs, or custom delimited strings instantly.",
     "category": "text-tools",
     "href": "/tools/text-tools/comma-separator",
-    "iconName": "FileText",
+    "iconName": "ListStart",
     "isFeatured": false
   },
   {
@@ -95,7 +95,7 @@
     "description": "Encode plain text to Base64 or decode Base64 strings back to readable format instantly. Supports UTF-8 strings, line breaks, and live byte metrics locally in your browser.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/base64-encode-decode",
-    "iconName": "RefreshCw",
+    "iconName": "Binary",
     "isFeatured": false
   },
   {
@@ -113,7 +113,7 @@
     "description": "Convert special HTML characters (&, <, >, quotes) into secure HTML entities and decode numeric or named entities back into raw markup safely in real time.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/html-entity-encoder-decoder",
-    "iconName": "RefreshCw",
+    "iconName": "Code",
     "isFeatured": false
   },
   {
@@ -122,7 +122,7 @@
     "description": "A premium, secure client-side workbench to validate, beautify, compact, and inspect JSON data structures instantly.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/json-formatter-validator",
-    "iconName": "RefreshCw",
+    "iconName": "FileJson",
     "isFeatured": true
   },
   {
@@ -131,7 +131,7 @@
     "description": "A premium, secure client-side workbench to format, validate, beautify, minify, and view XML documents locally and securely.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/xml-formatter-validator",
-    "iconName": "RefreshCw",
+    "iconName": "FileCode",
     "isFeatured": false
   },
   {
@@ -140,7 +140,7 @@
     "description": "Decode JSON Web Tokens (JWT) locally to inspect header parameters, payload claims, and expiration timestamps without transmitting secret keys over the wire.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/jwt-decoder",
-    "iconName": "RefreshCw",
+    "iconName": "ShieldAlert",
     "isFeatured": false
   },
   {
@@ -158,7 +158,7 @@
     "description": "Convert plain text strings to hexadecimal format and decode hex arrays back to readable text in real-time.",
     "category": "converter-tools",
     "href": "/tools/converter-tools/string-to-hex",
-    "iconName": "RefreshCw",
+    "iconName": "ArrowRightLeft",
     "isFeatured": false
   },
   {
@@ -167,7 +167,7 @@
     "description": "Convert Unix epoch timestamps to human-readable dates and vice versa with real-time live ticker, precision detection, and relative time calculations — all 100% client-side.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/unix-timestamp-converter",
-    "iconName": "RefreshCw",
+    "iconName": "Clock",
     "isFeatured": false
   },
   {
@@ -176,7 +176,7 @@
     "description": "Generate and explain cron expressions with real-time human-readable translations, next execution dates, and custom schedulers.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/cron-expression-generator",
-    "iconName": "Sparkles",
+    "iconName": "Clock",
     "isFeatured": false
   },
   {
@@ -185,7 +185,7 @@
     "description": "Flip text strings backward, reverse word orders, mirror lines horizontally, or generate upside-down text transformations in real time.",
     "category": "text-tools",
     "href": "/tools/text-tools/reverse-text-generator",
-    "iconName": "Sparkles",
+    "iconName": "ArrowRightLeft",
     "isFeatured": false
   },
   {
@@ -203,7 +203,7 @@
     "description": "Test, debug, and explain regular expressions in real-time with native JavaScript RegExp engine, flag toggles, match highlighting, group captures, and a comprehensive syntax cheat sheet — 100% client-side.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/regex-tester",
-    "iconName": "Code2",
+    "iconName": "SearchCode",
     "isFeatured": false
   },
   {
@@ -212,7 +212,7 @@
     "description": "Compare text differences with precision — line-by-line or character-by-character. Split and unified views with real-time performance metrics.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/diff-checker",
-    "iconName": "RefreshCw",
+    "iconName": "Columns",
     "isFeatured": false
   },
   {
@@ -230,7 +230,7 @@
     "description": "Format, beautify, minify, and validate HTML markup instantly with pure client-side processing.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/html-formatter-validator",
-    "iconName": "Code2",
+    "iconName": "FileCode",
     "isFeatured": false
   },
   {
@@ -239,7 +239,7 @@
     "description": "Format, beautify, and minify CSS code instantly with a pure TypeScript lexical tokenization engine — 100% client-side, zero external dependencies.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/css-formatter-validator",
-    "iconName": "Code2",
+    "iconName": "FileCode",
     "isFeatured": false
   },
   {
@@ -248,7 +248,7 @@
     "description": "Format, beautify, and minify JavaScript code instantly with a pure TypeScript lexical tokenization engine — 100% client-side, zero external dependencies.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/javascript-formatter-minifier",
-    "iconName": "Minimize2",
+    "iconName": "FileCode",
     "isFeatured": false
   },
   {
@@ -257,7 +257,7 @@
     "description": "Convert JSON to CSV and CSV to JSON instantly with custom delimiters, nested object flattening, real-time reactive conversion, dynamic size metrics tracking, and drag-and-drop file ingestion — 100% client-side.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/json-to-csv-converter",
-    "iconName": "RefreshCw",
+    "iconName": "ArrowRightLeft",
     "isFeatured": false
   },
   {
@@ -266,7 +266,7 @@
     "description": "Convert HTML to Markdown and Markdown to HTML instantly with pure TypeScript DOMParser and regex-based conversion engines — 100% client-side, zero external dependencies.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/html-to-markdown",
-    "iconName": "FileText",
+    "iconName": "ArrowRightLeft",
     "isFeatured": false
   },
   {
@@ -284,7 +284,7 @@
     "description": "Convert YAML to JSON and JSON to YAML instantly with beautify and minify modes. Pure TypeScript YAML parser and stringifier — 100% client-side, zero external dependencies.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/yaml-to-json-converter",
-    "iconName": "RefreshCw",
+    "iconName": "ArrowRightLeft",
     "isFeatured": false
   },
   {
@@ -302,7 +302,7 @@
     "description": "Build Facebook, LinkedIn, and social media Open Graph tags. Preview rich card images, post titles, and descriptions prior to publishing.",
     "category": "web-tools",
     "href": "/tools/web-tools/open-graph-generator",
-    "iconName": "Sparkles",
+    "iconName": "Share2",
     "isFeatured": false
   },
   {
@@ -311,7 +311,7 @@
     "description": "Query live WHOIS registries to inspect domain creation dates, total active age, registrar information, expiration milestones, and trust metrics.",
     "category": "web-tools",
     "href": "/tools/web-tools/domain-age-checker",
-    "iconName": "Globe",
+    "iconName": "Clock",
     "isFeatured": false
   },
   {
@@ -347,7 +347,7 @@
     "description": "Check SSL certificate validity. Verify SSL/TLS certificate expiration dates, CA issuer trust chains, and security ciphers.",
     "category": "web-tools",
     "href": "/tools/web-tools/ssl-checker",
-    "iconName": "Globe",
+    "iconName": "ShieldCheck",
     "isFeatured": false
   },
   {
@@ -356,7 +356,7 @@
     "description": "Inspect HTTP response headers, check HTTP status codes, and analyze web security header policies.",
     "category": "web-tools",
     "href": "/tools/web-tools/http-headers",
-    "iconName": "Globe",
+    "iconName": "Server",
     "isFeatured": false
   },
   {
@@ -374,7 +374,7 @@
     "description": "Combine word lists into custom phrase matrices, domain names, and SEO keyword permutations instantly.",
     "category": "text-tools",
     "href": "/tools/text-tools/word-combiner",
-    "iconName": "FileText",
+    "iconName": "Layers",
     "isFeatured": false
   },
   {
@@ -383,7 +383,7 @@
     "description": "Convert text to Small Caps, Superscript, Subscript, and Unicode styles instantly.",
     "category": "text-tools",
     "href": "/tools/text-tools/small-text-generator",
-    "iconName": "Sparkles",
+    "iconName": "Type",
     "isFeatured": false
   },
   {
@@ -392,7 +392,7 @@
     "description": "Instantly rephrase prose, alter tone, and elevate article uniqueness with browser-based text transformation.",
     "category": "text-tools",
     "href": "/tools/text-tools/rewrite-article",
-    "iconName": "Code2",
+    "iconName": "RefreshCw",
     "isFeatured": false
   },
   {
@@ -410,7 +410,7 @@
     "description": "Convert RGB to Hex and Hex to RGB in real-time with alpha opacity support and color picking.",
     "category": "developer-tools",
     "href": "/tools/developer-tools/rgb-to-hex",
-    "iconName": "RefreshCw",
+    "iconName": "Palette",
     "isFeatured": false
   },
   {
@@ -464,8 +464,8 @@
     "description": "Batch convert Apple HEIC, HEIF, and AVIF images to standard JPG or PNG formats instantly and securely in your browser with zero server uploads.",
     "category": "image-tools",
     "href": "/tools/image-tools/heic-to-jpg",
-    "iconName": "ImageIcon",
-    "isFeatured": true
+    "iconName": "FileImage",
+    "isFeatured": false
   },
   {
     "id": "adsense-calculator",
@@ -554,7 +554,7 @@
     "description": "Convert text, ASCII, decimal, octal, and hexadecimal values dynamically.",
     "category": "converter-tools",
     "href": "/tools/converter-tools/binary-converter",
-    "iconName": "RefreshCw",
+    "iconName": "Binary",
     "isFeatured": false
   },
   {
@@ -646,8 +646,8 @@
     "href": "/tools/pdf-tools/lock-pdf",
     "icon": "Lock",
     "iconName": "Lock",
-    "featured": true,
-    "isFeatured": true
+    "featured": false,
+    "isFeatured": false
   },
   {
     "id": "unlock-pdf",
@@ -695,8 +695,8 @@
     "href": "/tools/pdf-tools/grayscale-pdf",
     "icon": "Palette",
     "iconName": "Palette",
-    "featured": true,
-    "isFeatured": true
+    "featured": false,
+    "isFeatured": false
   },
   {
     "id": "word-to-pdf",
@@ -793,7 +793,7 @@
     "icon": "FileImage",
     "iconName": "FileImage",
     "href": "/tools/pdf-tools/pdf-to-png",
-    "isFeatured": true,
+    "isFeatured": false,
     "status": "active"
   },
   {
@@ -918,8 +918,8 @@
     "icon": "FileCode",
     "iconName": "FileCode",
     "href": "/tools/pdf-tools/pdf-to-markdown",
-    "featured": true,
-    "isFeatured": true,
+    "featured": false,
+    "isFeatured": false,
     "status": "active"
   },
   {
