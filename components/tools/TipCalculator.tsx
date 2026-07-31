@@ -329,19 +329,6 @@ export default function TipCalculator() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-            {/* Title Header Bar */}
-            <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-4 text-white rounded-2xl flex items-center gap-4 shadow-md">
-                <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center flex-shrink-0 aspect-square border border-white/20">
-                    <Calculator className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                    <h1 className="text-xl md:text-2xl font-bold">Tip & Bill Splitter Calculator</h1>
-                    <p className="text-xs md:text-sm text-indigo-100 mt-0.5">
-                        Calculate exact gratuity, local taxes, and per-person group splits with itemized breakdowns.
-                    </p>
-                </div>
-            </div>
-
             {/* Interactive 50/50 Workspace Grid */}
             <div className="grid lg:grid-cols-2 gap-6 items-start">
                 {/* Left Workspace Panel: Input Controls */}
@@ -387,8 +374,8 @@ export default function TipCalculator() {
                                 <button
                                     onClick={() => setEnableItemizedSplit(!enableItemizedSplit)}
                                     className={`w-full px-3 py-2 rounded-xl border text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${enableItemizedSplit
-                                            ? "bg-indigo-600 text-white border-indigo-600"
-                                            : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
+                                        ? "bg-indigo-600 text-white border-indigo-600"
+                                        : "bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100"
                                         }`}
                                 >
                                     <Split className="w-3.5 h-3.5" />
@@ -500,8 +487,8 @@ export default function TipCalculator() {
                                         type="button"
                                         onClick={() => setTipPercentage(preset.value)}
                                         className={`py-1.5 rounded-xl text-xs font-bold transition border cursor-pointer ${tipPercentage === preset.value
-                                                ? "bg-indigo-600 text-white border-indigo-600 shadow-xs"
-                                                : "bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200"
+                                            ? "bg-indigo-600 text-white border-indigo-600 shadow-xs"
+                                            : "bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200"
                                             }`}
                                     >
                                         {preset.label}

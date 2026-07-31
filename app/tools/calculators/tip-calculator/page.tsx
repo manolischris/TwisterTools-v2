@@ -5,7 +5,7 @@ import TipCalculator from "@/components/tools/TipCalculator";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Tip & Bill Splitter Calculator | TwisterTools",
+  title: "Tip & Bill Splitter Calculator",
   description:
     "Calculate restaurant tips, sales tax, and group bill splits with itemized individual breakdowns.",
   keywords: [
