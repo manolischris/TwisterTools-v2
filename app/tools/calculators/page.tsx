@@ -162,6 +162,14 @@ export default function CalculatorsCategoryPage() {
         iconName: "Scale"
       };
     }
+    if (tool.id === "margin-calculator") {
+      return {
+        ...tool,
+        title: "Margin & Markup Calculator",
+        description: "Calculate profit margin, markup percentage, gross selling price, and gross profit instantly.",
+        iconName: "Calculator"
+      };
+    }
     return tool;
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;

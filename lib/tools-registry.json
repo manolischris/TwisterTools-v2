@@ -975,5 +975,14 @@
     "href": "/tools/calculators/break-even-calculator",
     "iconName": "Scale",
     "isFeatured": false
+  },
+  {
+    "id": "margin-calculator",
+    "title": "Margin & Markup Calculator",
+    "description": "Calculate profit margin, markup percentage, gross selling price, and gross profit instantly.",
+    "category": "calculators",
+    "href": "/tools/calculators/margin-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
   }
 ]

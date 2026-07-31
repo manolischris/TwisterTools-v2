@@ -255,19 +255,6 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
-            {/* Title Header Bar */}
-            <div className="bg-gradient-to-r from-slate-800 to-indigo-600 px-5 py-4 text-white rounded-2xl flex items-center justify-between shadow-md">
-                <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center flex-shrink-0 aspect-square border border-white/20">
-                        <Scale className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                        <h1 className="text-xl font-bold tracking-tight leading-tight">Break-Even Point & Profitability Calculator</h1>
-                        <p className="text-xs text-indigo-100/80 font-medium">Model unit economics, contribution margins, and sales volume targets</p>
-                    </div>
-                </div>
-            </div>
-
             {/* Interactive 50/50 Workspace Grid */}
             <div className="grid lg:grid-cols-2 gap-6 items-start">
                 {/* Left Workspace Panel: Controls & Inputs */}

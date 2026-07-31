@@ -1,56 +1,56 @@
 import type { Metadata, NextPage } from "next";
 import Link from "next/link";
-import { Scale } from "lucide-react";
-import BreakEvenCalculator from "@/components/tools/BreakEvenCalculator";
+import { Calculator } from "lucide-react";
+import MarginCalculator from "@/components/tools/MarginCalculator";
 import RelatedTools from "@/components/RelatedTools";
 
 export const metadata: Metadata = {
-  title: "Break-Even Point & Profitability Calculator",
+  title: "Margin & Markup Calculator",
   description:
-    "Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.",
+    "Calculate profit margin, markup percentage, gross selling price, and gross profit instantly.",
   keywords: [
-    "break-even calculator",
-    "break-even point",
-    "profitability calculator",
-    "contribution margin",
-    "fixed costs",
-    "variable costs",
-    "target profit calculator",
-    "break even units",
+    "margin calculator",
+    "markup calculator",
+    "profit margin",
+    "margin markup calculator",
+    "markup percentage",
+    "gross profit",
+    "selling price calculator",
+    "cogs calculator",
     "financial calculator",
     "twistertools",
   ],
   openGraph: {
-    title: "Break-Even Point & Profitability Calculator | TwisterTools",
+    title: "Margin & Markup Calculator | TwisterTools",
     description:
-      "Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.",
-    url: "https://www.twistertools.com/tools/calculators/break-even-calculator",
+      "Calculate profit margin, markup percentage, gross selling price, and gross profit instantly.",
+    url: "https://www.twistertools.com/tools/calculators/margin-calculator",
     siteName: "TwisterTools",
     type: "website",
     images: [
       {
-        url: "https://www.twistertools.com/images/tools/calculators/break-even-calculator.jpg",
+        url: "https://www.twistertools.com/images/tools/calculators/margin-calculator.jpg",
         width: 1200,
         height: 630,
-        alt: "Break-Even Point & Profitability Calculator on TwisterTools",
+        alt: "Margin & Markup Calculator on TwisterTools",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Break-Even Point & Profitability Calculator | TwisterTools",
+    title: "Margin & Markup Calculator | TwisterTools",
     description:
-      "Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.",
+      "Calculate profit margin, markup percentage, gross selling price, and gross profit instantly.",
     images: [
-      "https://www.twistertools.com/images/tools/calculators/break-even-calculator.jpg",
+      "https://www.twistertools.com/images/tools/calculators/margin-calculator.jpg",
     ],
   },
   alternates: {
-    canonical: "https://www.twistertools.com/tools/calculators/break-even-calculator",
+    canonical: "https://www.twistertools.com/tools/calculators/margin-calculator",
   },
 };
 
-const BreakEvenCalculatorPage: NextPage = () => {
+const MarginCalculatorPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Header */}
@@ -71,21 +71,21 @@ const BreakEvenCalculatorPage: NextPage = () => {
               </Link>
               <span>/</span>
               <span className="text-slate-900 dark:text-white">
-                Break-Even Point Calculator
+                Margin & Markup Calculator
               </span>
             </div>
 
             {/* Tool Title & Description */}
             <div className="flex items-start gap-3 mt-2">
               <div className="w-14 h-14 rounded-2xl flex self-stretch items-center justify-center flex-shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
-                <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
               </div>
               <div className="flex-1 min-w-0">
                 <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-0.5 leading-tight">
-                  Break-Even Point & Profitability Calculator
+                  Margin & Markup Calculator
                 </h1>
                 <p className="text-base text-slate-600 dark:text-slate-400 leading-snug">
-                  Calculate unit break-even points, contribution margin ratios, target profit sales volume, and fixed vs. variable cost structures.
+                  Calculate profit margin, markup percentage, gross selling price, and gross profit instantly.
                 </p>
               </div>
             </div>
@@ -97,7 +97,7 @@ const BreakEvenCalculatorPage: NextPage = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 md:py-6">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Interactive Tool Interface */}
-          <BreakEvenCalculator />
+          <MarginCalculator />
 
           {/* Social Sharing Card */}
           <div className="bg-gradient-to-br from-slate-50 to-white dark:from-slate-900/50 dark:to-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-sm">
@@ -112,7 +112,7 @@ const BreakEvenCalculatorPage: NextPage = () => {
                 {/* Facebook */}
                 <div className="relative group">
                   <a
-                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/calculators/break-even-calculator")}`}
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("https://www.twistertools.com/tools/calculators/margin-calculator")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on Facebook"
@@ -131,7 +131,7 @@ const BreakEvenCalculatorPage: NextPage = () => {
                 {/* X / Twitter */}
                 <div className="relative group">
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/break-even-calculator")}&text=${encodeURIComponent("Calculate unit break-even points, contribution margins, and target profit volume.")}`}
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/margin-calculator")}&text=${encodeURIComponent("Calculate profit margin, markup percentage, gross selling price, and gross profit instantly.")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on X (Twitter)"
@@ -150,7 +150,7 @@ const BreakEvenCalculatorPage: NextPage = () => {
                 {/* LinkedIn */}
                 <div className="relative group">
                   <a
-                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/break-even-calculator")}`}
+                    href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://www.twistertools.com/tools/calculators/margin-calculator")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on LinkedIn"
@@ -170,11 +170,11 @@ const BreakEvenCalculatorPage: NextPage = () => {
           </div>
 
           {/* Related Tools */}
-          <RelatedTools currentSlug="break-even-calculator" currentCategory="calculators" />
+          <RelatedTools currentSlug="margin-calculator" currentCategory="calculators" />
         </div>
       </div>
     </div>
   );
 };
 
-export default BreakEvenCalculatorPage;
+export default MarginCalculatorPage;
