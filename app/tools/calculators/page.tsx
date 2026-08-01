@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -192,6 +192,30 @@ export default function CalculatorsCategoryPage() {
         title: "Tip & Bill Splitter Calculator",
         description: "Calculate restaurant tips, sales tax, and group bill splits with itemized individual breakdowns.",
         iconName: "Calculator"
+      };
+    }
+    if (tool.id === "bmi-calculator") {
+      return {
+        ...tool,
+        title: "BMI & Body Composition Calculator",
+        description: "Calculate BMI, ideal weight targets, estimated body fat %, BMR, and TDEE.",
+        iconName: "Activity"
+      };
+    }
+    if (tool.id === "tdee-calculator") {
+      return {
+        ...tool,
+        title: "Calorie & Daily Energy Expenditure (TDEE) Calculator",
+        description: "Calculate your Total Daily Energy Expenditure (TDEE), Basal Metabolic Rate (BMR), and custom caloric goals.",
+        iconName: "Flame"
+      };
+    }
+    if (tool.id === "body-fat-calculator") {
+      return {
+        ...tool,
+        title: "Body Fat Percentage & Lean Mass Calculator",
+        description: "Calculate body fat percentage, lean body mass, and ACE fitness categories with tape measurements.",
+        iconName: "Percent"
       };
     }
     return tool;

@@ -67,7 +67,9 @@ import {
   FolderArchive,
   RotateCw,
   Crop,
-  Combine
+  Combine,
+  Activity,
+  Flame
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -87,6 +89,8 @@ interface RegistryTool {
    Icon Map
  ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Activity,
+  Flame,
   Sparkles,
   Lock,
   Calculator,

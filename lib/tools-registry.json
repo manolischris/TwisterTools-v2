@@ -1011,5 +1011,32 @@
     "href": "/tools/calculators/tip-calculator",
     "iconName": "Calculator",
     "isFeatured": false
+  },
+  {
+    "id": "bmi-calculator",
+    "title": "BMI & Body Composition Calculator",
+    "description": "Calculate BMI, ideal weight targets, estimated body fat %, BMR, and TDEE.",
+    "category": "calculators",
+    "href": "/tools/calculators/bmi-calculator",
+    "iconName": "Activity",
+    "isFeatured": false
+  },
+  {
+    "id": "tdee-calculator",
+    "title": "Calorie & Daily Energy Expenditure (TDEE) Calculator",
+    "description": "Calculate your Total Daily Energy Expenditure (TDEE), Basal Metabolic Rate (BMR), and custom caloric goals.",
+    "category": "calculators",
+    "href": "/tools/calculators/tdee-calculator",
+    "iconName": "Flame",
+    "isFeatured": false
+  },
+  {
+    "id": "body-fat-calculator",
+    "title": "Body Fat Percentage & Lean Mass Calculator",
+    "description": "Calculate accurate body fat percentage, fat mass, lean body mass, and ideal target ranges.",
+    "category": "calculators",
+    "href": "/tools/calculators/body-fat-calculator",
+    "iconName": "Percent",
+    "isFeatured": false
   }
 ]

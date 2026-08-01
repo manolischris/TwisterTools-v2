@@ -60,7 +60,9 @@ import {
   TrendingUp,
   Building,
   Car,
-  PiggyBank
+  PiggyBank,
+  Activity,
+  Flame
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -82,6 +84,8 @@ interface CategoryToolSearchGridProps {
 
 // Icon mapping dictionary to resolve icon strings dynamically
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
+  Activity,
+  Flame,
   Sparkles,
   Lock,
   Unlock,

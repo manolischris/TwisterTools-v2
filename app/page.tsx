@@ -68,7 +68,9 @@ import {
   FolderArchive,
   RotateCw,
   Crop,
-  Car
+  Car,
+  Activity,
+  Flame
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -85,6 +87,8 @@ interface Tool {
 }
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Activity,
+  Flame,
   TrendingUp,
   Code2,
   Sparkles,
