@@ -10,8 +10,10 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
   "active_task_tracker": "complete",
-  "completedTasksCount": 136,
+  "completedTasksCount": 138,
   "completed_tasks": [
+    "Integrated Ideal Body Weight (IBW) Calculator (IdealWeightCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/ideal-weight-calculator, updating calculators category page landing search grid, mapping the Scale icon, updating the global tools registry, and synchronizing project state.",
+    "Integrated Water Intake & Daily Hydration Calculator (WaterIntakeCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/water-intake-calculator, updating calculators category page landing search grid, mapping the Droplets icon, updating the global tools registry, llms.txt, and synchronizing project state.",
     "Integrated Body Fat Percentage & Lean Mass Calculator (BodyFatCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/body-fat-calculator, updating calculators category page landing search grid, mapping the Percent icon, updating the global tools registry, llms.txt, and synchronizing project state.",
     "Integrated Calorie & Daily Energy Expenditure (TDEE) Calculator (TdeeCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/tdee-calculator, updating calculators category page landing search grid, mapping the Flame icon, updating the global tools registry, and synchronizing project state.",
     "Integrated BMI & Body Composition Calculator (BmiCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/bmi-calculator, updating calculators category page landing search grid, mapping the Activity icon, updating the global tools registry, and synchronizing project state.",
@@ -219,8 +221,26 @@
     "seo_optimization": "Complete with generateMetadata for all pages"
   },
   "tools_completed": {
-    "total": 84,
+    "total": 86,
     "list": [
+      {
+        "name": "Ideal Body Weight Calculator",
+        "slug": "ideal-weight-calculator",
+        "category": "calculators",
+        "component": "components/tools/IdealWeightCalculator.tsx",
+        "url": "/tools/calculators/ideal-weight-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-01"
+      },
+      {
+        "name": "Water Intake & Daily Hydration Calculator",
+        "slug": "water-intake-calculator",
+        "category": "calculators",
+        "component": "components/tools/WaterIntakeCalculator.tsx",
+        "url": "/tools/calculators/water-intake-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-01"
+      },
       {
         "name": "Body Fat Percentage & Lean Mass Calculator",
         "slug": "body-fat-calculator",

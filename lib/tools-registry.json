@@ -1038,5 +1038,23 @@
     "href": "/tools/calculators/body-fat-calculator",
     "iconName": "Percent",
     "isFeatured": false
+  },
+  {
+    "id": "water-intake-calculator",
+    "title": "Water Intake & Daily Hydration Calculator",
+    "description": "Calculate your optimal daily water intake based on body weight, exercise duration, climate zone, and physiological conditions.",
+    "category": "calculators",
+    "href": "/tools/calculators/water-intake-calculator",
+    "iconName": "Droplets",
+    "isFeatured": false
+  },
+  {
+    "id": "ideal-weight-calculator",
+    "title": "Ideal Body Weight Calculator",
+    "description": "Calculate clinical ideal body weight using Devine, Robinson, Miller, and Hamwi formulas with healthy BMI ranges.",
+    "category": "calculators",
+    "href": "/tools/calculators/ideal-weight-calculator",
+    "iconName": "Scale",
+    "isFeatured": false
   }
 ]

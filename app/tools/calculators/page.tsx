@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -216,6 +216,22 @@ export default function CalculatorsCategoryPage() {
         title: "Body Fat Percentage & Lean Mass Calculator",
         description: "Calculate body fat percentage, lean body mass, and ACE fitness categories with tape measurements.",
         iconName: "Percent"
+      };
+    }
+    if (tool.id === "water-intake-calculator") {
+      return {
+        ...tool,
+        title: "Water Intake & Hydration Calculator",
+        description: "Calculate personalized daily water intake in liters and fl oz based on weight, exercise, climate, and health factors.",
+        iconName: "Droplets"
+      };
+    }
+    if (tool.id === "ideal-weight-calculator") {
+      return {
+        ...tool,
+        title: "Ideal Body Weight Calculator",
+        description: "Calculate clinical ideal body weight using Devine, Robinson, Miller, and Hamwi formulas with healthy BMI ranges.",
+        iconName: "Scale"
       };
     }
     return tool;

@@ -40,6 +40,7 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - BMI & Body Composition Calculator (/tools/calculators/bmi-calculator)
 - Calorie & Daily Energy Expenditure (TDEE) Calculator (/tools/calculators/tdee-calculator)
 - Body Fat Percentage & Lean Mass Calculator (/tools/calculators/body-fat-calculator)
+- Water Intake & Daily Hydration Calculator (/tools/calculators/water-intake-calculator)
 
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.

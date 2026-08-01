@@ -69,7 +69,8 @@ import {
   Crop,
   Combine,
   Activity,
-  Flame
+  Flame,
+  Droplets
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -91,6 +92,7 @@ interface RegistryTool {
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Activity,
   Flame,
+  Droplets,
   Sparkles,
   Lock,
   Calculator,

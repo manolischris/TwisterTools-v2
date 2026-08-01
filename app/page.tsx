@@ -70,7 +70,8 @@ import {
   Crop,
   Car,
   Activity,
-  Flame
+  Flame,
+  Droplets
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -89,6 +90,7 @@ interface Tool {
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Activity,
   Flame,
+  Droplets,
   TrendingUp,
   Code2,
   Sparkles,

@@ -62,7 +62,8 @@ import {
   Car,
   PiggyBank,
   Activity,
-  Flame
+  Flame,
+  Droplets
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -86,6 +87,7 @@ interface CategoryToolSearchGridProps {
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Activity,
   Flame,
+  Droplets,
   Sparkles,
   Lock,
   Unlock,
