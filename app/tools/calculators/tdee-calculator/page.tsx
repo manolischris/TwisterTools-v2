@@ -24,6 +24,23 @@ export const metadata: Metadata = {
     url: "https://www.twistertools.com/tools/calculators/tdee-calculator",
     siteName: "TwisterTools",
     type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools/calculators/tdee-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Calorie & Daily Energy Expenditure (TDEE) Calculator on TwisterTools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Calorie & Daily Energy Expenditure (TDEE) Calculator | TwisterTools",
+    description:
+      "Calculate your Total Daily Energy Expenditure (TDEE), Basal Metabolic Rate (BMR), and custom caloric goals.",
+    images: [
+      "https://www.twistertools.com/images/tools/calculators/tdee-calculator.jpg",
+    ],
   },
   alternates: {
     canonical: "https://www.twistertools.com/tools/calculators/tdee-calculator",

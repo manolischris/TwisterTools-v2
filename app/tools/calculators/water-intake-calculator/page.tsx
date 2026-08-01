@@ -25,6 +25,23 @@ export const metadata: Metadata = {
     url: "https://www.twistertools.com/tools/calculators/water-intake-calculator",
     siteName: "TwisterTools",
     type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools/calculators/water-intake-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Water Intake & Daily Hydration Calculator on TwisterTools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Water Intake & Daily Hydration Calculator | TwisterTools",
+    description:
+      "Calculate your exact daily water intake needs in liters and fluid ounces based on body weight, exercise duration, climate, and pregnancy status.",
+    images: [
+      "https://www.twistertools.com/images/tools/calculators/water-intake-calculator.jpg",
+    ],
   },
   alternates: {
     canonical: "https://www.twistertools.com/tools/calculators/water-intake-calculator",

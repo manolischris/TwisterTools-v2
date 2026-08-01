@@ -24,6 +24,23 @@ export const metadata: Metadata = {
     url: "https://www.twistertools.com/tools/calculators/body-fat-calculator",
     siteName: "TwisterTools",
     type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools/calculators/body-fat-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Body Fat Percentage & Lean Mass Calculator on TwisterTools",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Body Fat Percentage & Lean Mass Calculator | TwisterTools",
+    description:
+      "Calculate accurate body fat percentage, fat mass, lean mass, and healthy fitness ranges using the U.S. Navy method.",
+    images: [
+      "https://www.twistertools.com/images/tools/calculators/body-fat-calculator.jpg",
+    ],
   },
   alternates: {
     canonical: "https://www.twistertools.com/tools/calculators/body-fat-calculator",
