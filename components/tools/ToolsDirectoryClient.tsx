@@ -70,7 +70,8 @@ import {
   Combine,
   Activity,
   Flame,
-  Droplets
+  Droplets,
+  PieChart
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -93,6 +94,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Activity,
   Flame,
   Droplets,
+  PieChart,
   Sparkles,
   Lock,
   Calculator,

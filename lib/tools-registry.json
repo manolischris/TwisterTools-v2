@@ -1056,5 +1056,23 @@
     "href": "/tools/calculators/ideal-weight-calculator",
     "iconName": "Scale",
     "isFeatured": false
+  },
+  {
+    "id": "heart-rate-calculator",
+    "title": "Target Heart Rate Zone Calculator",
+    "description": "Calculate personal target heart rate zones for fat loss, cardiovascular endurance, and athletic performance using Karvonen and Tanaka formulas.",
+    "category": "calculators",
+    "href": "/tools/calculators/heart-rate-calculator",
+    "iconName": "Heart",
+    "isFeatured": false
+  },
+  {
+    "id": "macro-calculator",
+    "title": "Macro Ratio & Flexible Dieting Calculator",
+    "description": "Calculate accurate macro ratios (protein, carbs, fats) for fat loss, muscle gain, or ketogenic diets.",
+    "category": "calculators",
+    "href": "/tools/calculators/macro-calculator",
+    "iconName": "PieChart",
+    "isFeatured": false
   }
 ]

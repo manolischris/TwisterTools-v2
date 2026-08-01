@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -232,6 +232,22 @@ export default function CalculatorsCategoryPage() {
         title: "Ideal Body Weight Calculator",
         description: "Calculate clinical ideal body weight using Devine, Robinson, Miller, and Hamwi formulas with healthy BMI ranges.",
         iconName: "Scale"
+      };
+    }
+    if (tool.id === "heart-rate-calculator") {
+      return {
+        ...tool,
+        title: "Target Heart Rate Zone Calculator",
+        description: "Calculate personal target heart rate zones for fat loss, cardiovascular endurance, and athletic performance using Karvonen and Tanaka formulas.",
+        iconName: "Heart"
+      };
+    }
+    if (tool.id === "macro-calculator") {
+      return {
+        ...tool,
+        title: "Macro Ratio & Flexible Dieting Calculator",
+        description: "Calculate accurate macro ratios (protein, carbs, fats) for fat loss, muscle gain, or ketogenic diets.",
+        iconName: "PieChart"
       };
     }
     return tool;

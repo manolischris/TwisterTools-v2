@@ -41,6 +41,8 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - Calorie & Daily Energy Expenditure (TDEE) Calculator (/tools/calculators/tdee-calculator)
 - Body Fat Percentage & Lean Mass Calculator (/tools/calculators/body-fat-calculator)
 - Water Intake & Daily Hydration Calculator (/tools/calculators/water-intake-calculator)
+- Target Heart Rate Zone Calculator (/tools/calculators/heart-rate-calculator): Calculate personal target heart rate zones for fat loss, cardiovascular endurance, and athletic performance using Karvonen and Tanaka formulas.
+- Macro Ratio & Flexible Dieting Calculator (/tools/calculators/macro-calculator): Calculate accurate protein, carb, and fat macro ratios for fat loss, lean muscle gain, or keto diets.
 
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.

@@ -10,8 +10,10 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
   "active_task_tracker": "complete",
-  "completedTasksCount": 138,
+  "completedTasksCount": 140,
   "completed_tasks": [
+    "Integrated Macro Ratio & Flexible Dieting Calculator (MacroCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/macro-calculator, updating calculators category page landing search grid, mapping the PieChart icon across global registries, updating the global tools registry, and synchronizing project state.",
+    "Integrated Target Heart Rate Zone Calculator (HeartRateCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/heart-rate-calculator, updating calculators category page landing search grid, mapping the Heart icon, updating the global tools registry, llms.txt, and synchronizing project state.",
     "Integrated Ideal Body Weight (IBW) Calculator (IdealWeightCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/ideal-weight-calculator, updating calculators category page landing search grid, mapping the Scale icon, updating the global tools registry, and synchronizing project state.",
     "Integrated Water Intake & Daily Hydration Calculator (WaterIntakeCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/water-intake-calculator, updating calculators category page landing search grid, mapping the Droplets icon, updating the global tools registry, llms.txt, and synchronizing project state.",
     "Integrated Body Fat Percentage & Lean Mass Calculator (BodyFatCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/body-fat-calculator, updating calculators category page landing search grid, mapping the Percent icon, updating the global tools registry, llms.txt, and synchronizing project state.",
@@ -221,8 +223,17 @@
     "seo_optimization": "Complete with generateMetadata for all pages"
   },
   "tools_completed": {
-    "total": 86,
+    "total": 87,
     "list": [
+      {
+        "name": "Macro Ratio & Flexible Dieting Calculator",
+        "slug": "macro-calculator",
+        "category": "calculators",
+        "component": "components/tools/MacroCalculator.tsx",
+        "url": "/tools/calculators/macro-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-01"
+      },
       {
         "name": "Ideal Body Weight Calculator",
         "slug": "ideal-weight-calculator",
