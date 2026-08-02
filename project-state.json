@@ -10,8 +10,9 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
   "active_task_tracker": "complete",
-  "completedTasksCount": 145,
+  "completedTasksCount": 146,
   "completed_tasks": [
+    "Removed the visual featured badge from the tool cards on the all tools directory page (/tools) while keeping the featured sorting functionality fully active.",
     "Updated tool sorting across all landing grids (homepage, all tools directory, and category pages) to sort featured tools first, followed by newest tools first (creation index descending).",
     "Refactored homepage search input placeholder to round down the active tool count to the nearest ten (e.g., 100+), and resolved duplicate clear buttons on /tools search page by changing input type to text.",
     "Optimized card padding on mobile viewports across all 109 tool components and outer tool page wrappers to use responsive padding, resolving horizontal screen squeezing issues on small mobile screens (<400px), verifying the production build compilation, and pushing changes to master.",

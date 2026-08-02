@@ -123,7 +123,7 @@
     "category": "developer-tools",
     "href": "/tools/developer-tools/json-formatter-validator",
     "iconName": "FileJson",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "xml-formatter-validator",
@@ -150,7 +150,7 @@
     "category": "generator-tools",
     "href": "/tools/generator-tools/uuid-generator",
     "iconName": "Fingerprint",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "string-to-hex",

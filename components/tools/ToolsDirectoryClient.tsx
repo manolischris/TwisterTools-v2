@@ -247,13 +247,7 @@ function ToolCard({
       className="group relative bg-white border border-slate-200/80 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1 min-h-[200px] cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/50 p-4 sm:p-6"
       aria-label={`Launch ${tool.title}`}
     >
-      {/* Featured badge */}
-      {tool.isFeatured && (
-        <span className="absolute top-4 right-12 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-[10px] font-semibold uppercase tracking-wide">
-          <Star className="w-2.5 h-2.5" />
-          Featured
-        </span>
-      )}
+
 
       {/* Bookmark button */}
       <button
