@@ -402,7 +402,7 @@ export default function ToolsDirectoryClient({
           </div>
           <input
             id="tools-search-input"
-            type="search"
+            type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search all tools — e.g. JSON, password, UUID..."

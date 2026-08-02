@@ -381,7 +381,7 @@ export default function HomePage() {
                   setSearchQuery(e.target.value);
                   setIsSearchFocused(true);
                 }}
-                placeholder={`Search across ${ALL_TOOLS_REGISTRY.length}+ calculators, converters, tools...`}
+                placeholder={`Search across ${Math.floor(ALL_TOOLS_REGISTRY.length / 10) * 10}+ calculators, converters, tools...`}
                 className="w-full pl-12 pr-32 py-4 bg-white text-slate-900 placeholder-slate-400 rounded-xl shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-400 font-medium text-base"
               />
 
