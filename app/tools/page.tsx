@@ -143,7 +143,16 @@ export default function ToolsDirectoryPage() {
       {/* ── Main Client Section ──────────────────────────────── */}
       <main className="bg-slate-50 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <ToolsDirectoryClient tools={toolsRegistry} />
+          <ToolsDirectoryClient
+            tools={[...toolsRegistry]
+              .map((tool, idx) => ({ ...tool, originalIndex: idx }))
+              .sort((a, b) => {
+                const aFeatured = a.isFeatured ? 1 : 0;
+                const bFeatured = b.isFeatured ? 1 : 0;
+                if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+                return b.originalIndex - a.originalIndex;
+              })}
+          />
         </div>
 
         {/* ── SEO Below-the-Fold Cards ─────────────────────── */}

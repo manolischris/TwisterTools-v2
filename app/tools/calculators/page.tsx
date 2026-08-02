@@ -79,9 +79,10 @@ const calculatorMetadata = {
 };
 
 export default function CalculatorsCategoryPage() {
-  const categoryTools = toolsRegistry.filter(
-    (tool) => tool.category === "calculators"
-  ).map((tool) => {
+  const categoryTools = toolsRegistry
+    .map((tool, idx) => ({ ...tool, originalIndex: idx }))
+    .filter((tool) => tool.category === "calculators")
+    .map((tool) => {
     if (tool.id === "investment-calculator") {
       return {
         ...tool,
@@ -254,7 +255,8 @@ export default function CalculatorsCategoryPage() {
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;
     const bFeatured = b.isFeatured ? 1 : 0;
-    return bFeatured - aFeatured;
+    if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+    return b.originalIndex - a.originalIndex;
   });
 
   return (

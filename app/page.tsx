@@ -162,7 +162,14 @@ const CATEGORIES = [
   { id: "web-tools", name: "Web Utilities", href: "/tools/web-tools", icon: Globe },
 ];
 
-const ALL_TOOLS_REGISTRY: Tool[] = toolsRegistryData as Tool[];
+const ALL_TOOLS_REGISTRY: Tool[] = (toolsRegistryData as Tool[])
+  .map((tool, idx) => ({ ...tool, originalIndex: idx }))
+  .sort((a, b) => {
+    const aFeatured = a.isFeatured ? 1 : 0;
+    const bFeatured = b.isFeatured ? 1 : 0;
+    if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+    return b.originalIndex - a.originalIndex;
+  }) as Tool[];
 
 export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");

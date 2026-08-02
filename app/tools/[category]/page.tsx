@@ -549,11 +549,13 @@ export default async function CategoryDirectoryPage({
 
   // Filter tools belonging to this category from the dynamic registry import and sort featured first
   const categoryTools = toolsRegistry
+    .map((tool, idx) => ({ ...tool, originalIndex: idx }))
     .filter((tool) => tool.category === category)
     .sort((a, b) => {
       const aFeatured = a.isFeatured ? 1 : 0;
       const bFeatured = b.isFeatured ? 1 : 0;
-      return bFeatured - aFeatured;
+      if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+      return b.originalIndex - a.originalIndex;
     });
 
   const CategoryIcon = SERVER_ICON_MAP[categoryData.icon] || BookOpen;

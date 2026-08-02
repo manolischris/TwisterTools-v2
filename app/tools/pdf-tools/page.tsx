@@ -81,9 +81,10 @@ const pdfMetadata = {
 export default function PdfToolsCategoryPage() {
   // Tools are dynamically registered and populated via lib/tools-registry.json.
   // This automatically integrates the 'Lock PDF & Password Encryption' tool entry (lock-pdf).
-  const categoryTools = toolsRegistry.filter(
-    (tool) => tool.category === "pdf-tools"
-  ).map((tool) => {
+  const categoryTools = toolsRegistry
+    .map((tool, idx) => ({ ...tool, originalIndex: idx }))
+    .filter((tool) => tool.category === "pdf-tools")
+    .map((tool) => {
     if (tool.id === "text-to-pdf") {
       return { ...tool, badge: undefined };
     }
@@ -163,7 +164,8 @@ export default function PdfToolsCategoryPage() {
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;
     const bFeatured = b.isFeatured ? 1 : 0;
-    return bFeatured - aFeatured;
+    if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+    return b.originalIndex - a.originalIndex;
   });
 
   return (
