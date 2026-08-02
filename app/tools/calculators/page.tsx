@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -251,6 +251,38 @@ export default function CalculatorsCategoryPage() {
         iconName: "PieChart"
       };
     }
+    if (tool.id === "pregnancy-due-date-calculator") {
+      return {
+        ...tool,
+        title: "Pregnancy Due Date & Conception Calculator",
+        description: "Calculate estimated pregnancy due date, conception window, trimester milestones, and gestational age using LMP, ultrasound, or IVF transfer dates.",
+        iconName: "Baby"
+      };
+    }
+    if (tool.id === "ovulation-calculator") {
+      return {
+        ...tool,
+        title: "Ovulation Calculator",
+        description: "Calculate your estimated ovulation date, peak conception window, next period, and estimated due date.",
+        iconName: "Calendar"
+      };
+    }
+    if (tool.id === "bac-calculator") {
+      return {
+        ...tool,
+        title: "Blood Alcohol Content (BAC) Calculator",
+        description: "Calculate estimated BAC percentage, metabolic clearance time, and impairment thresholds based on body weight and drinks consumed.",
+        iconName: "Wine"
+      };
+    }
+    if (tool.id === "pace-calculator") {
+      return {
+        ...tool,
+        title: "Pace, Distance & Running Time Calculator",
+        description: "Calculate running pace, race finish time, splits, and distance with imperial and metric support.",
+        iconName: "Timer"
+      };
+    }
     return tool;
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;
@@ -324,7 +356,8 @@ export default function CalculatorsCategoryPage() {
                 card.icon === "Calculator" ? Calculator :
                 card.icon === "ShieldCheck" ? ShieldCheck :
                 card.icon === "RefreshCw" ? RefreshCw :
-                card.icon === "Lock" ? Lock : Palette;
+                card.icon === "Lock" ? Lock :
+                card.icon === "Calendar" ? Calendar : Palette;
 
               return (
                 <div

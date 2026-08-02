@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "last_updated": "2026-07-13",
-  "total_tools": 165,
+  "last_updated": "2026-08-02",
+  "total_tools": 167,
   "modern_categories": {
     "web-tools": "SEO, Domain & Network Inspector Tools",
     "developer-tools": "Developer, Code & Web Engineering Tools",
@@ -1437,6 +1437,22 @@
       "new_url": "/tools/developer-tools/yaml-to-json-converter",
       "new_category": "developer-tools",
       "description": "Format and beautify YAML files with proper structure."
+    },
+    {
+      "id": 169,
+      "name": "Pregnancy Due Date & Conception Calculator",
+      "legacy_url": "/pregnancy-due-date-calculator",
+      "new_url": "/tools/calculators/pregnancy-due-date-calculator",
+      "new_category": "calculators",
+      "description": "Calculate estimated pregnancy due date, conception window, trimester milestones, and gestational age using LMP, ultrasound, or IVF transfer dates."
+    },
+    {
+      "id": 170,
+      "name": "Scientific Calculator & Function Suite",
+      "legacy_url": "/scientific-calculator",
+      "new_url": "/tools/calculators/scientific-calculator",
+      "new_category": "calculators",
+      "description": "A powerful, browser-native scientific calculator supporting trigonometry, logarithms, powers, factorials, and configurable precision."
     }
   ],
   "notes": "This mapping represents 156 active tools from the old platform. All legacy URLs will be redirected using Next.js 15 middleware to maintain Google indexing. Category-level redirects consolidate old categories into cleaner, more intuitive modern categories."

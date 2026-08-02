@@ -7,11 +7,16 @@
     "gdpr_consent_mode_v2_gtm_integration": "COMPLETED",
     "dynamic_internal_linking": "COMPLETED"
   },
-  "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
+  "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 64 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
-  "active_task_tracker": "complete",
-  "completedTasksCount": 146,
+  "active_task_tracker": "Completed Scientific Calculator Integration",
+  "completedTasksCount": 151,
   "completed_tasks": [
+    "Integrated Scientific Calculator & Function Suite (ScientificCalculator) component into the calculators category, registered dynamic route at /tools/calculators/scientific-calculator, mapped Calculator icon in route header/grid registry, updated url-map and global tools registry entries, and synchronized project state.",
+    "Integrated Pace, Distance & Running Time Calculator (PaceCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/pace-calculator, updating calculators category landing/search icon mappings with Timer, updating the global tools registry, and synchronizing project state.",
+    "Integrated Blood Alcohol Content (BAC) Calculator (BacCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/bac-calculator, updating calculators category landing/search icon mappings with Wine, updating the global tools registry, and synchronizing project state.",
+    "Integrated Ovulation & Fertile Window Calculator (OvulationCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/ovulation-calculator, updating calculators category landing/search icon mappings with Calendar, updating the global tools registry and llms.txt, and synchronizing project state.",
+    "Integrated Pregnancy Due Date & Conception Calculator (PregnancyDueDateCalculator) component into the calculators category, wiring the dynamic route at /tools/calculators/pregnancy-due-date-calculator, updating calculators landing/search icon mappings with Baby, updating the global tools registry and URL map, and synchronizing project state.",
     "Removed the visual featured badge from the tool cards on the all tools directory page (/tools) while keeping the featured sorting functionality fully active.",
     "Updated tool sorting across all landing grids (homepage, all tools directory, and category pages) to sort featured tools first, followed by newest tools first (creation index descending).",
     "Refactored homepage search input placeholder to round down the active tool count to the nearest ten (e.g., 100+), and resolved duplicate clear buttons on /tools search page by changing input type to text.",
@@ -229,8 +234,53 @@
     "seo_optimization": "Complete with generateMetadata for all pages"
   },
   "tools_completed": {
-    "total": 87,
+    "total": 92,
     "list": [
+      {
+        "name": "Scientific Calculator & Function Suite",
+        "slug": "scientific-calculator",
+        "category": "calculators",
+        "component": "components/tools/ScientificCalculator.tsx",
+        "url": "/tools/calculators/scientific-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-02"
+      },
+      {
+        "name": "Pace, Distance & Running Time Calculator",
+        "slug": "pace-calculator",
+        "category": "calculators",
+        "component": "components/tools/PaceCalculator.tsx",
+        "url": "/tools/calculators/pace-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-02"
+      },
+      {
+        "name": "Blood Alcohol Content (BAC) Calculator",
+        "slug": "bac-calculator",
+        "category": "calculators",
+        "component": "components/tools/BacCalculator.tsx",
+        "url": "/tools/calculators/bac-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-02"
+      },
+      {
+        "name": "Ovulation & Fertile Window Calculator",
+        "slug": "ovulation-calculator",
+        "category": "calculators",
+        "component": "components/tools/OvulationCalculator.tsx",
+        "url": "/tools/calculators/ovulation-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-02"
+      },
+      {
+        "name": "Pregnancy Due Date & Conception Calculator",
+        "slug": "pregnancy-due-date-calculator",
+        "category": "calculators",
+        "component": "components/tools/PregnancyDueDateCalculator.tsx",
+        "url": "/tools/calculators/pregnancy-due-date-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-02"
+      },
       {
         "name": "Macro Ratio & Flexible Dieting Calculator",
         "slug": "macro-calculator",

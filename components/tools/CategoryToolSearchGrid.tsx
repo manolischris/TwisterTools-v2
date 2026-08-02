@@ -65,7 +65,10 @@ import {
   Flame,
   Droplets,
   Heart,
-  PieChart
+  PieChart,
+  Baby,
+  Wine,
+  Timer
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -92,6 +95,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Droplets,
   Heart,
   PieChart,
+  Baby,
+  Wine,
+  Timer,
   Sparkles,
   Lock,
   Unlock,

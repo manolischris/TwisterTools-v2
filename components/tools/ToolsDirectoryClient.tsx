@@ -71,7 +71,11 @@ import {
   Activity,
   Flame,
   Droplets,
-  PieChart
+  PieChart,
+  Heart,
+  Baby,
+  Wine,
+  Timer
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -95,6 +99,10 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Flame,
   Droplets,
   PieChart,
+  Heart,
+  Baby,
+  Wine,
+  Timer,
   Sparkles,
   Lock,
   Calculator,

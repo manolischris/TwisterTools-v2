@@ -72,7 +72,8 @@ import {
   Activity,
   Flame,
   Droplets,
-  PieChart
+  PieChart,
+  Wine
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -93,6 +94,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Flame,
   Droplets,
   PieChart,
+  Wine,
   TrendingUp,
   Code2,
   Sparkles,

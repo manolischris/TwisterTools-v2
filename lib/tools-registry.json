@@ -1074,5 +1074,50 @@
     "href": "/tools/calculators/macro-calculator",
     "iconName": "PieChart",
     "isFeatured": false
+  },
+  {
+    "id": "pregnancy-due-date-calculator",
+    "title": "Pregnancy Due Date & Conception Calculator",
+    "description": "Calculate estimated pregnancy due date, conception window, trimester milestones, and gestational age using LMP, ultrasound, or IVF transfer dates.",
+    "category": "calculators",
+    "href": "/tools/calculators/pregnancy-due-date-calculator",
+    "iconName": "Baby",
+    "isFeatured": false
+  },
+  {
+    "id": "ovulation-calculator",
+    "title": "Ovulation & Fertile Window Calculator",
+    "description": "Calculate ovulation days, peak fertile windows, next period, and conception schedules.",
+    "category": "calculators",
+    "href": "/tools/calculators/ovulation-calculator",
+    "iconName": "Calendar",
+    "isFeatured": false
+  },
+  {
+    "id": "bac-calculator",
+    "title": "Blood Alcohol Content (BAC) Calculator",
+    "description": "Calculate estimated BAC percentage, metabolic clearance time, and impairment thresholds based on body weight and drinks consumed.",
+    "category": "calculators",
+    "href": "/tools/calculators/bac-calculator",
+    "iconName": "Wine",
+    "isFeatured": false
+  },
+  {
+    "id": "pace-calculator",
+    "title": "Pace, Distance & Running Time Calculator",
+    "description": "Calculate running pace, race finish time, splits, and distance with imperial and metric support.",
+    "category": "calculators",
+    "href": "/tools/calculators/pace-calculator",
+    "iconName": "Timer",
+    "isFeatured": false
+  },
+  {
+    "id": "scientific-calculator",
+    "title": "Scientific Calculator & Function Suite",
+    "description": "Perform complex scientific computations, trigonometric operations, and formula evaluations with zero latency.",
+    "category": "calculators",
+    "href": "/tools/calculators/scientific-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
   }
 ]

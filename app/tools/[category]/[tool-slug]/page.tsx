@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
 import Md5Generator from "../../../../components/tools/Md5Generator";
@@ -60,6 +60,8 @@ import SvgConverter from "../../../../components/tools/SvgConverter";
 import HeicToJpgConverter from "../../../../components/tools/HeicToJpgConverter";
 import PdfCompressorSuite from "../../../../components/tools/PdfCompressorSuite";
 import ExtractPdfImages from "@/components/tools/ExtractPdfImages";
+import PregnancyDueDateCalculator from "@/components/tools/PregnancyDueDateCalculator";
+import ScientificCalculator from "@/components/tools/ScientificCalculator";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -143,6 +145,8 @@ const COMPLETED_TOOLS = [
   "compress-pdf",
   "text-to-pdf",
   "extract-pdf-images",
+  "pregnancy-due-date-calculator",
+  "scientific-calculator",
 ];
 
 
@@ -779,6 +783,10 @@ export default async function ToolPage({
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "pdf-tools" && (toolSlug === "compress-pdf" || toolSlug === "text-to-pdf") ? (
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "calculators" && toolSlug === "pregnancy-due-date-calculator" ? (
+                  <Baby className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
+                  <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "uuid-generator" ? (
                   <Fingerprint className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
@@ -913,6 +921,10 @@ export default async function ToolPage({
             <TextToPdfConverter />
           ) : category === "pdf-tools" && toolSlug === "extract-pdf-images" ? (
             <ExtractPdfImages />
+          ) : category === "calculators" && toolSlug === "pregnancy-due-date-calculator" ? (
+            <PregnancyDueDateCalculator />
+          ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
+            <ScientificCalculator />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />
