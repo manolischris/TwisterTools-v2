@@ -96,6 +96,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function RetirementCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -417,13 +432,13 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                         type="number"
                                         min="18"
                                         max="90"
-                                        value={currentAge || ""}
-                                        onChange={(e) => {
-                                            const val = Math.max(1, Number(e.target.value));
-                                            setCurrentAge(val);
-                                            if (val >= retirementAge) setRetirementAge(val + 5);
+                                        value={currentAge === 0 ? "" : currentAge}
+                                        onChange={(e) => handleNumberInput(e, (val) => {
+                                            const cleanVal = val === 0 ? 0 : Math.max(1, val);
+                                            setCurrentAge(cleanVal);
+                                            if (cleanVal >= retirementAge) setRetirementAge(cleanVal + 5);
                                             setActivePresetId(null);
-                                        }}
+                                        })}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -435,11 +450,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                         type="number"
                                         min={currentAge + 1}
                                         max="100"
-                                        value={retirementAge || ""}
-                                        onChange={(e) => {
-                                            setRetirementAge(Math.max(currentAge + 1, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={retirementAge === 0 ? "" : retirementAge}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setRetirementAge(val === 0 ? 0 : Math.max(currentAge + 1, val))); setActivePresetId(null); }}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -457,11 +469,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             type="number"
                                             min="0"
                                             step="1000"
-                                            value={currentSavings || ""}
-                                            onChange={(e) => {
-                                                setCurrentSavings(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={currentSavings === 0 ? "" : currentSavings}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setCurrentSavings(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-8 pr-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                         />
                                     </div>
@@ -476,11 +485,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             type="number"
                                             min="0"
                                             step="50"
-                                            value={monthlyContribution || ""}
-                                            onChange={(e) => {
-                                                setMonthlyContribution(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={monthlyContribution === 0 ? "" : monthlyContribution}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setMonthlyContribution(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-8 pr-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                         />
                                     </div>
@@ -499,11 +505,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             min="0"
                                             max="25"
                                             step="0.1"
-                                            value={annualReturn || ""}
-                                            onChange={(e) => {
-                                                setAnnualReturn(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={annualReturn === 0 ? "" : annualReturn}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setAnnualReturn(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
@@ -519,8 +522,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             min="0"
                                             max="15"
                                             step="0.1"
-                                            value={inflationRate || ""}
-                                            onChange={(e) => setInflationRate(Math.max(0, Number(e.target.value)))}
+                                            value={inflationRate === 0 ? "" : inflationRate}
+                                            onChange={(e) => handleNumberInput(e, (val) => setInflationRate(Math.max(0, val)))}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
@@ -545,8 +548,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                                 type="number"
                                                 min="0"
                                                 step="1000"
-                                                value={annualSalary || ""}
-                                                onChange={(e) => setAnnualSalary(Math.max(0, Number(e.target.value)))}
+                                                value={annualSalary === 0 ? "" : annualSalary}
+                                                onChange={(e) => handleNumberInput(e, (val) => setAnnualSalary(Math.max(0, val)))}
                                                 className="w-full pl-7 pr-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                         </div>
@@ -562,8 +565,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                                 min="0"
                                                 max="15"
                                                 step="0.5"
-                                                value={employerMatchPercent || ""}
-                                                onChange={(e) => setEmployerMatchPercent(Math.max(0, Number(e.target.value)))}
+                                                value={employerMatchPercent === 0 ? "" : employerMatchPercent}
+                                                onChange={(e) => handleNumberInput(e, (val) => setEmployerMatchPercent(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
@@ -581,8 +584,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             type="number"
                                             min="0"
                                             step="500"
-                                            value={desiredMonthlyIncome || ""}
-                                            onChange={(e) => setDesiredMonthlyIncome(Math.max(0, Number(e.target.value)))}
+                                            value={desiredMonthlyIncome === 0 ? "" : desiredMonthlyIncome}
+                                            onChange={(e) => handleNumberInput(e, (val) => setDesiredMonthlyIncome(Math.max(0, val)))}
                                             className="w-full pl-7 pr-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                         />
                                     </div>

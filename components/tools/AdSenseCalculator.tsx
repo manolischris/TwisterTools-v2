@@ -73,6 +73,21 @@ function calculateAdSense({
 //  Main Component
 // ─────────────────────────────────────────────────────────────
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function AdSenseCalculator() {
     const [pageViewsInput, setPageViewsInput] = useState<string>("10000");
     const [ctrInput, setCtrInput] = useState<string>("1.5");
@@ -169,7 +184,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                                 min="0"
                                 step="100"
                                 value={pageViewsInput}
-                                onChange={(e) => setPageViewsInput(e.target.value)}
+                                onChange={(e) => setPageViewsInput(e.target.value.replace(/^0+(?=\d)/, ""))}
                                 placeholder="10000"
                                 className="w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 py-3 text-sm text-slate-900 font-mono font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"
                             />
@@ -198,7 +213,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                                 max="100"
                                 step="0.1"
                                 value={ctrInput}
-                                onChange={(e) => setCtrInput(e.target.value)}
+                                onChange={(e) => setCtrInput(e.target.value.replace(/^0+(?=\d)/, ""))}
                                 placeholder="1.5"
                                 className="w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 py-3 text-sm text-slate-900 font-mono font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"
                             />
@@ -226,7 +241,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                                 min="0"
                                 step="0.05"
                                 value={cpcInput}
-                                onChange={(e) => setCpcInput(e.target.value)}
+                                onChange={(e) => setCpcInput(e.target.value.replace(/^0+(?=\d)/, ""))}
                                 placeholder="0.25"
                                 className="w-full rounded-xl border border-slate-200 bg-white pl-10 pr-4 py-3 text-sm text-slate-900 font-mono font-medium focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"
                             />

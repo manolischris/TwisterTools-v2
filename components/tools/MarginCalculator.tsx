@@ -54,6 +54,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function MarginCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -335,11 +350,8 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                         type="number"
                                         min="0"
                                         step="1"
-                                        value={cost || ""}
-                                        onChange={(e) => {
-                                            setCost(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={cost === 0 ? "" : cost}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setCost(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -357,11 +369,8 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                             type="number"
                                             min="0"
                                             step="1"
-                                            value={revenueOrPrice || ""}
-                                            onChange={(e) => {
-                                                setRevenueOrPrice(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={revenueOrPrice === 0 ? "" : revenueOrPrice}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setRevenueOrPrice(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                     </div>
@@ -379,11 +388,8 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                             min="0"
                                             max="99.9"
                                             step="1"
-                                            value={targetMargin || ""}
-                                            onChange={(e) => {
-                                                setTargetMargin(Math.min(99.9, Math.max(0, Number(e.target.value))));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={targetMargin === 0 ? "" : targetMargin}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setTargetMargin(Math.max(0, Math.min(99.9, val)))); setActivePresetId(null); }}
                                             className="w-full pr-8 pl-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
@@ -401,11 +407,8 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                             type="number"
                                             min="0"
                                             step="1"
-                                            value={targetMarkup || ""}
-                                            onChange={(e) => {
-                                                setTargetMarkup(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={targetMarkup === 0 ? "" : targetMarkup}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setTargetMarkup(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pr-8 pl-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>

@@ -62,6 +62,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function InflationCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -328,11 +343,8 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={initialAmount || ""}
-                                        onChange={(e) => {
-                                            setInitialAmount(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={initialAmount === 0 ? "" : initialAmount}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setInitialAmount(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -350,11 +362,8 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                             min="0"
                                             max="50"
                                             step="0.1"
-                                            value={inflationRate || ""}
-                                            onChange={(e) => {
-                                                setInflationRate(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={inflationRate === 0 ? "" : inflationRate}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setInflationRate(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
@@ -399,8 +408,8 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                             min="0"
                                             max="50"
                                             step="0.5"
-                                            value={investmentReturn || ""}
-                                            onChange={(e) => setInvestmentReturn(Math.max(0, Number(e.target.value)))}
+                                            value={investmentReturn === 0 ? "" : investmentReturn}
+                                            onChange={(e) => handleNumberInput(e, (val) => setInvestmentReturn(Math.max(0, val)))}
                                             placeholder="e.g. 7.0% stock portfolio"
                                             className="w-full pl-3 pr-8 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                         />

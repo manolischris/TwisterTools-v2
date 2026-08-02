@@ -60,7 +60,11 @@ function NumericInput({
           type="number"
           step="any"
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => {
+            const raw = e.target.value;
+            const cleaned = raw.replace(/^0+(?=\d)/, "");
+            onChange(cleaned);
+          }}
           placeholder={placeholder}
           onFocus={onFocus}
           onBlur={onBlur}

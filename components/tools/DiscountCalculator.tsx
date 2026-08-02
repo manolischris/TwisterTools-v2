@@ -127,6 +127,21 @@ function calculateDiscountMetrics(
 // Main Component
 // ─────────────────────────────────────────────────────────────
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function DiscountCalculator() {
     const [mode, setMode] = useState<CalculationMode>("single");
     const [val1, setVal1] = useState<string>("100");
@@ -233,7 +248,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                                 min="0"
                                                 step="any"
                                                 value={val1}
-                                                onChange={(e) => setVal1(e.target.value)}
+                                                onChange={(e) => setVal1(e.target.value.replace(/^0+(?=\d)/, ""))}
                                                 placeholder="100.00"
                                                 className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all"
                                             />
@@ -254,7 +269,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                                 max="100"
                                                 step="any"
                                                 value={val2}
-                                                onChange={(e) => setVal2(e.target.value)}
+                                                onChange={(e) => setVal2(e.target.value.replace(/^0+(?=\d)/, ""))}
                                                 placeholder="20"
                                                 className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all"
                                             />
@@ -276,7 +291,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                                 min="0"
                                                 step="any"
                                                 value={val1}
-                                                onChange={(e) => setVal1(e.target.value)}
+                                                onChange={(e) => setVal1(e.target.value.replace(/^0+(?=\d)/, ""))}
                                                 placeholder="45.00"
                                                 className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all"
                                             />
@@ -297,7 +312,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                                 max="99.9"
                                                 step="any"
                                                 value={val2}
-                                                onChange={(e) => setVal2(e.target.value)}
+                                                onChange={(e) => setVal2(e.target.value.replace(/^0+(?=\d)/, ""))}
                                                 placeholder="25"
                                                 className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all"
                                             />
@@ -322,7 +337,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                             max="100"
                                             step="any"
                                             value={val3}
-                                            onChange={(e) => setVal3(e.target.value)}
+                                            onChange={(e) => setVal3(e.target.value.replace(/^0+(?=\d)/, ""))}
                                             placeholder="10"
                                             className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all"
                                         />
@@ -345,7 +360,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                             min="0"
                                             step="any"
                                             value={val3}
-                                            onChange={(e) => setVal3(e.target.value)}
+                                            onChange={(e) => setVal3(e.target.value.replace(/^0+(?=\d)/, ""))}
                                             placeholder="8.25"
                                             className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all"
                                         />

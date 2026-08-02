@@ -56,6 +56,21 @@ const PRESETS: Preset[] = [
     { id: "expecting-mother", label: "Pregnant & Active", system: "metric", gender: "female", age: 31, weightLbs: 154, weightKg: 70, workoutMinutes: 30, climate: "temperate", isPregnant: true, isBreastfeeding: false, tag: "Special Condition" },
 ];
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function WaterIntakeCalculator() {
     // Unit & Demographic States
     const [unitSystem, setUnitSystem] = useState<UnitSystem>("imperial");
@@ -439,11 +454,8 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                         type="number"
                                         min="5"
                                         max="110"
-                                        value={age || ""}
-                                        onChange={(e) => {
-                                            setAge(Math.max(1, Math.min(110, Number(e.target.value))));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={age === 0 ? "" : age}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setAge(val === 0 ? 0 : Math.max(1, Math.min(110, val)))); setActivePresetId(null); }}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     />
                                 </div>
@@ -460,11 +472,8 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                             type="number"
                                             min="30"
                                             max="700"
-                                            value={weightLbs || ""}
-                                            onChange={(e) => {
-                                                setWeightLbs(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={weightLbs === 0 ? "" : weightLbs}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setWeightLbs(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">lbs</span>
@@ -475,11 +484,8 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                             type="number"
                                             min="15"
                                             max="350"
-                                            value={weightKg || ""}
-                                            onChange={(e) => {
-                                                setWeightKg(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={weightKg === 0 ? "" : weightKg}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setWeightKg(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">kg</span>
@@ -498,11 +504,8 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                             type="number"
                                             min="0"
                                             max="360"
-                                            value={workoutMinutes}
-                                            onChange={(e) => {
-                                                setWorkoutMinutes(Math.max(0, Math.min(360, Number(e.target.value))));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={workoutMinutes === 0 ? "" : workoutMinutes}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setWorkoutMinutes(Math.max(0, Math.min(360, val)))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">mins</span>

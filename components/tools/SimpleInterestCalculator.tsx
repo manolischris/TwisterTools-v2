@@ -42,6 +42,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function SimpleInterestCalculator() {
     // Input states
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -259,8 +274,8 @@ Calculated via TwisterTools.com`;
                                 type="number"
                                 min="0"
                                 step="any"
-                                value={principal || ""}
-                                onChange={(e) => setPrincipal(parseFloat(e.target.value) || 0)}
+                                value={principal === 0 ? "" : principal}
+                                onChange={(e) => handleNumberInput(e, setPrincipal)}
                                 className="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-sm"
                                 placeholder="e.g. 10000"
                             />
@@ -277,8 +292,8 @@ Calculated via TwisterTools.com`;
                                 type="number"
                                 min="0"
                                 step="0.01"
-                                value={rate || ""}
-                                onChange={(e) => setRate(parseFloat(e.target.value) || 0)}
+                                value={rate === 0 ? "" : rate}
+                                onChange={(e) => handleNumberInput(e, setRate)}
                                 className="w-full pl-4 pr-9 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-sm"
                                 placeholder="e.g. 5.5"
                             />
@@ -299,8 +314,8 @@ Calculated via TwisterTools.com`;
                                     type="number"
                                     min="0"
                                     step="any"
-                                    value={timeValue || ""}
-                                    onChange={(e) => setTimeValue(parseFloat(e.target.value) || 0)}
+                                    value={timeValue === 0 ? "" : timeValue}
+                                    onChange={(e) => handleNumberInput(e, setTimeValue)}
                                     className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-sm"
                                     placeholder="Duration"
                                 />

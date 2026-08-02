@@ -61,6 +61,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function BreakEvenCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -304,11 +319,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={fixedCosts || ""}
-                                        onChange={(e) => {
-                                            setFixedCosts(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={fixedCosts === 0 ? "" : fixedCosts}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setFixedCosts(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -327,11 +339,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                             type="number"
                                             min="0"
                                             step="5"
-                                            value={pricePerUnit || ""}
-                                            onChange={(e) => {
-                                                setPricePerUnit(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={pricePerUnit === 0 ? "" : pricePerUnit}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setPricePerUnit(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-8 pr-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                     </div>
@@ -347,11 +356,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                             type="number"
                                             min="0"
                                             step="5"
-                                            value={costPerUnit || ""}
-                                            onChange={(e) => {
-                                                setCostPerUnit(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={costPerUnit === 0 ? "" : costPerUnit}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setCostPerUnit(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-8 pr-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                     </div>
@@ -369,11 +375,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={targetProfit || ""}
-                                        onChange={(e) => {
-                                            setTargetProfit(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={targetProfit === 0 ? "" : targetProfit}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setTargetProfit(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>

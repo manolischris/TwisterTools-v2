@@ -62,6 +62,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function InvestmentCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -357,8 +372,8 @@ Calculated at twistertools.com/tools/calculators/investment-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={initialInvestment}
-                                        onChange={(e) => handleInputChange(setInitialInvestment, Math.max(0, Number(e.target.value)))}
+                                        value={initialInvestment === 0 ? "" : initialInvestment}
+                                        onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setInitialInvestment, Math.max(0, val)))}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -380,8 +395,8 @@ Calculated at twistertools.com/tools/calculators/investment-calculator`;
                                         type="number"
                                         min="0"
                                         step="50"
-                                        value={monthlyContribution}
-                                        onChange={(e) => handleInputChange(setMonthlyContribution, Math.max(0, Number(e.target.value)))}
+                                        value={monthlyContribution === 0 ? "" : monthlyContribution}
+                                        onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setMonthlyContribution, Math.max(0, val)))}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -399,8 +414,8 @@ Calculated at twistertools.com/tools/calculators/investment-calculator`;
                                             min="0"
                                             max="50"
                                             step="0.1"
-                                            value={annualRate}
-                                            onChange={(e) => handleInputChange(setAnnualRate, Math.max(0, Number(e.target.value)))}
+                                            value={annualRate === 0 ? "" : annualRate}
+                                            onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setAnnualRate, Math.max(0, val)))}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
@@ -415,8 +430,8 @@ Calculated at twistertools.com/tools/calculators/investment-calculator`;
                                         type="number"
                                         min="1"
                                         max="100"
-                                        value={years}
-                                        onChange={(e) => handleInputChange(setYears, Math.max(1, Math.min(100, Number(e.target.value))))}
+                                        value={years === 0 ? "" : years}
+                                        onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setYears, val === 0 ? 0 : Math.max(1, Math.min(100, val))))}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>

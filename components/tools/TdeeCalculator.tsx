@@ -64,6 +64,21 @@ interface MacroBreakdown {
     fatGrams: number;
 }
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function TdeeCalculator() {
     // Unit & Demographic States
     const [unitSystem, setUnitSystem] = useState<UnitSystem>("imperial");
@@ -444,11 +459,8 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                         type="number"
                                         min="10"
                                         max="120"
-                                        value={age || ""}
-                                        onChange={(e) => {
-                                            setAge(Math.max(1, Math.min(120, Number(e.target.value))));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={age === 0 ? "" : age}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setAge(val === 0 ? 0 : Math.max(1, Math.min(120, val)))); setActivePresetId(null); }}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     />
                                 </div>
@@ -466,11 +478,8 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                                 type="number"
                                                 min="2"
                                                 max="8"
-                                                value={heightFt || ""}
-                                                onChange={(e) => {
-                                                    setHeightFt(Math.max(0, Number(e.target.value)));
-                                                    setActivePresetId(null);
-                                                }}
+                                                value={heightFt === 0 ? "" : heightFt}
+                                                onChange={(e) => { handleNumberInput(e, (val) => setHeightFt(Math.max(0, val))); setActivePresetId(null); }}
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
                                             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">ft</span>
@@ -480,11 +489,8 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                                 type="number"
                                                 min="0"
                                                 max="11"
-                                                value={heightIn || ""}
-                                                onChange={(e) => {
-                                                    setHeightIn(Math.max(0, Math.min(11, Number(e.target.value))));
-                                                    setActivePresetId(null);
-                                                }}
+                                                value={heightIn === 0 ? "" : heightIn}
+                                                onChange={(e) => { handleNumberInput(e, (val) => setHeightIn(Math.max(0, Math.min(11, val)))); setActivePresetId(null); }}
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
                                             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">in</span>
@@ -496,11 +502,8 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                             type="number"
                                             min="80"
                                             max="250"
-                                            value={heightCm || ""}
-                                            onChange={(e) => {
-                                                setHeightCm(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={heightCm === 0 ? "" : heightCm}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setHeightCm(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">cm</span>
@@ -519,11 +522,8 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                             type="number"
                                             min="40"
                                             max="800"
-                                            value={weightLbs || ""}
-                                            onChange={(e) => {
-                                                setWeightLbs(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={weightLbs === 0 ? "" : weightLbs}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setWeightLbs(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">lbs</span>
@@ -534,11 +534,8 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                             type="number"
                                             min="20"
                                             max="400"
-                                            value={weightKg || ""}
-                                            onChange={(e) => {
-                                                setWeightKg(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={weightKg === 0 ? "" : weightKg}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setWeightKg(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">kg</span>

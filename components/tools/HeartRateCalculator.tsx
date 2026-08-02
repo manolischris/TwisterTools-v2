@@ -66,6 +66,21 @@ interface HeartRateZone {
     borderColor: string;
 }
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function HeartRateCalculator() {
     // Input States
     const [age, setAge] = useState<number>(35);
@@ -407,11 +422,8 @@ Calculated at twistertools.com/tools/calculators/heart-rate-calculator`;
                                         type="number"
                                         min="10"
                                         max="100"
-                                        value={age || ""}
-                                        onChange={(e) => {
-                                            setAge(Math.max(1, Math.min(100, Number(e.target.value))));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={age === 0 ? "" : age}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setAge(val === 0 ? 0 : Math.max(1, Math.min(100, val)))); setActivePresetId(null); }}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     />
                                 </div>

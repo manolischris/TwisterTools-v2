@@ -66,6 +66,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function LoanPayoffCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -389,11 +404,8 @@ Calculated at twistertools.com/tools/calculators/loan-payoff-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={currentBalance || ""}
-                                        onChange={(e) => {
-                                            setCurrentBalance(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={currentBalance === 0 ? "" : currentBalance}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setCurrentBalance(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -411,11 +423,8 @@ Calculated at twistertools.com/tools/calculators/loan-payoff-calculator`;
                                             min="0"
                                             max="50"
                                             step="0.1"
-                                            value={annualRate || ""}
-                                            onChange={(e) => {
-                                                setAnnualRate(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={annualRate === 0 ? "" : annualRate}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setAnnualRate(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
@@ -463,8 +472,8 @@ Calculated at twistertools.com/tools/calculators/loan-payoff-calculator`;
                                             type="number"
                                             min="0"
                                             step="25"
-                                            value={extraMonthlyPayment || ""}
-                                            onChange={(e) => setExtraMonthlyPayment(Math.max(0, Number(e.target.value)))}
+                                            value={extraMonthlyPayment === 0 ? "" : extraMonthlyPayment}
+                                            onChange={(e) => handleNumberInput(e, (val) => setExtraMonthlyPayment(Math.max(0, val)))}
                                             placeholder="0"
                                             className="w-full pl-7 pr-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                         />
@@ -482,8 +491,8 @@ Calculated at twistertools.com/tools/calculators/loan-payoff-calculator`;
                                                 type="number"
                                                 min="0"
                                                 step="500"
-                                                value={oneTimeLumpSum || ""}
-                                                onChange={(e) => setOneTimeLumpSum(Math.max(0, Number(e.target.value)))}
+                                                value={oneTimeLumpSum === 0 ? "" : oneTimeLumpSum}
+                                                onChange={(e) => handleNumberInput(e, (val) => setOneTimeLumpSum(Math.max(0, val)))}
                                                 placeholder="0"
                                                 className="w-full pl-7 pr-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
@@ -498,8 +507,8 @@ Calculated at twistertools.com/tools/calculators/loan-payoff-calculator`;
                                             type="number"
                                             min="1"
                                             max="360"
-                                            value={lumpSumMonth || ""}
-                                            onChange={(e) => setLumpSumMonth(Math.max(1, Number(e.target.value)))}
+                                            value={lumpSumMonth === 0 ? "" : lumpSumMonth}
+                                            onChange={(e) => handleNumberInput(e, (val) => setLumpSumMonth(val === 0 ? 0 : Math.max(1, val)))}
                                             className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                         />
                                     </div>

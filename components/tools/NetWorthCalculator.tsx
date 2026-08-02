@@ -119,6 +119,21 @@ const PRESETS: Preset[] = [
     },
 ];
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function NetWorthCalculator() {
     // Currency selection state
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -437,8 +452,8 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                                             <input
                                                 type="number"
                                                 min="0"
-                                                value={asset.amount || ""}
-                                                onChange={(e) => updateAsset(asset.id, "amount", Math.max(0, Number(e.target.value)))}
+                                                value={asset.amount === 0 ? "" : asset.amount}
+                                                onChange={(e) => handleNumberInput(e, (val) => updateAsset(asset.id, "amount", Math.max(0, val)))}
                                                 className="w-full pl-6 pr-2 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-900 bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                             />
                                         </div>
@@ -483,8 +498,8 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                                             <input
                                                 type="number"
                                                 min="0"
-                                                value={liability.amount || ""}
-                                                onChange={(e) => updateLiability(liability.id, "amount", Math.max(0, Number(e.target.value)))}
+                                                value={liability.amount === 0 ? "" : liability.amount}
+                                                onChange={(e) => handleNumberInput(e, (val) => updateLiability(liability.id, "amount", Math.max(0, val)))}
                                                 className="w-full pl-6 pr-2 py-1.5 rounded-lg border border-slate-200 text-xs font-bold text-slate-900 bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                             />
                                         </div>
@@ -511,8 +526,8 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                                     type="number"
                                     min="0"
                                     step="10000"
-                                    value={targetNetWorth || ""}
-                                    onChange={(e) => setTargetNetWorth(Math.max(0, Number(e.target.value)))}
+                                    value={targetNetWorth === 0 ? "" : targetNetWorth}
+                                    onChange={(e) => handleNumberInput(e, (val) => setTargetNetWorth(Math.max(0, val)))}
                                     className="w-full pl-7 pr-3 py-2 rounded-xl border border-slate-200 text-slate-900 text-xs font-bold focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                 />
                             </div>

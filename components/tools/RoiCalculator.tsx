@@ -60,6 +60,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function RoiCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -304,11 +319,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={initialInvestment || ""}
-                                        onChange={(e) => {
-                                            setInitialInvestment(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={initialInvestment === 0 ? "" : initialInvestment}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setInitialInvestment(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -325,11 +337,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={finalValue || ""}
-                                        onChange={(e) => {
-                                            setFinalValue(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={finalValue === 0 ? "" : finalValue}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setFinalValue(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -345,11 +354,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                     min="0.1"
                                     max="50"
                                     step="0.5"
-                                    value={investmentLength || ""}
-                                    onChange={(e) => {
-                                        setInvestmentLength(Math.max(0.1, Number(e.target.value)));
-                                        setActivePresetId(null);
-                                    }}
+                                    value={investmentLength === 0 ? "" : investmentLength}
+                                    onChange={(e) => { handleNumberInput(e, (val) => setInvestmentLength(val === 0 ? 0 : Math.max(0.1, val))); setActivePresetId(null); }}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                 />
                             </div>
@@ -369,8 +375,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                                 type="number"
                                                 min="0"
                                                 step="50"
-                                                value={additionalCosts || ""}
-                                                onChange={(e) => setAdditionalCosts(Math.max(0, Number(e.target.value)))}
+                                                value={additionalCosts === 0 ? "" : additionalCosts}
+                                                onChange={(e) => handleNumberInput(e, (val) => setAdditionalCosts(Math.max(0, val)))}
                                                 className="w-full pl-7 pr-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                         </div>
@@ -386,8 +392,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                                 type="number"
                                                 min="0"
                                                 step="50"
-                                                value={dividends || ""}
-                                                onChange={(e) => setDividends(Math.max(0, Number(e.target.value)))}
+                                                value={dividends === 0 ? "" : dividends}
+                                                onChange={(e) => handleNumberInput(e, (val) => setDividends(Math.max(0, val)))}
                                                 className="w-full pl-7 pr-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                         </div>

@@ -10,8 +10,9 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 60 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
   "active_task_tracker": "complete",
-  "completedTasksCount": 141,
+  "completedTasksCount": 142,
   "completed_tasks": [
+    "Resolved leading zero and stuck cursor input bugs across all 26 calculator components by implementing a clean, modular 'handleNumberInput' sanitizer function and empty string value binding logic for zero states, ensuring 100% Next.js build compilation and static page generation correctness.",
     "Resolved breadcrumb title wrapping (preventing 3+ lines wrapping on mobile viewports) and workspace card container horizontal scroll overflow across all 22 calculator components, validating Next.js build compilation and committing/pushing master branch.",
     "Integrated Macro Ratio & Flexible Dieting Calculator (MacroCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/macro-calculator, updating calculators category page landing search grid, mapping the PieChart icon across global registries, updating the global tools registry, and synchronizing project state.",
     "Integrated Target Heart Rate Zone Calculator (HeartRateCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/heart-rate-calculator, updating calculators category page landing search grid, mapping the Heart icon, updating the global tools registry, llms.txt, and synchronizing project state.",

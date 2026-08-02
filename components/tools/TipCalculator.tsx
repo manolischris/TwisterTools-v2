@@ -60,6 +60,21 @@ const TIP_PRESETS: QuickTipPreset[] = [
     { label: "25%", value: 25 },
 ];
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function TipCalculator() {
     // Basic State
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -399,8 +414,8 @@ export default function TipCalculator() {
                                             type="number"
                                             min="0"
                                             step="0.01"
-                                            value={billAmount || ""}
-                                            onChange={(e) => setBillAmount(Math.max(0, Number(e.target.value)))}
+                                            value={billAmount === 0 ? "" : billAmount}
+                                            onChange={(e) => handleNumberInput(e, (val) => setBillAmount(Math.max(0, val)))}
                                             className="w-full pl-7 pr-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                             placeholder="0.00"
                                         />
@@ -440,8 +455,8 @@ export default function TipCalculator() {
                                                     type="number"
                                                     min="0"
                                                     step="0.01"
-                                                    value={item.amount || ""}
-                                                    onChange={(e) => updateCustomItem(item.id, "amount", Math.max(0, Number(e.target.value)))}
+                                                    value={item.amount === 0 ? "" : item.amount}
+                                                    onChange={(e) => handleNumberInput(e, (val) => updateCustomItem(item.id, "amount", Math.max(0, val)))}
                                                     className="w-full pl-5 pr-1.5 py-1 rounded-lg border border-slate-200 text-xs font-bold text-slate-900 bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                                 />
                                             </div>
@@ -523,8 +538,8 @@ export default function TipCalculator() {
                                         type="number"
                                         min="1"
                                         max="50"
-                                        value={numberOfPeople}
-                                        onChange={(e) => handlePeopleCountChange(Number(e.target.value))}
+                                        value={numberOfPeople === 0 ? "" : numberOfPeople}
+                                        onChange={(e) => handleNumberInput(e, handlePeopleCountChange)}
                                         className="w-full text-center py-2 bg-transparent text-xs font-bold text-slate-900 outline-none"
                                     />
                                     <button
@@ -545,8 +560,8 @@ export default function TipCalculator() {
                                         type="number"
                                         min="0"
                                         step="0.1"
-                                        value={taxPercentage || ""}
-                                        onChange={(e) => setTaxPercentage(Math.max(0, Number(e.target.value)))}
+                                        value={taxPercentage === 0 ? "" : taxPercentage}
+                                        onChange={(e) => handleNumberInput(e, (val) => setTaxPercentage(Math.max(0, val)))}
                                         className="w-full pr-7 pl-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-xs bg-slate-50"
                                     />
                                     <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">

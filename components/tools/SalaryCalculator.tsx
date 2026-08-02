@@ -55,6 +55,21 @@ const PRESETS: PaycheckPreset[] = [
     { id: "hourly-freelance", label: "Hourly Freelancer", wageType: "hourly", wageValue: 45, hoursPerWeek: 35, taxRate: 20, tag: "$45 / hr" },
 ];
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function SalaryCalculator() {
     // Primary State
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -393,11 +408,8 @@ Calculated at twistertools.com/tools/calculators/salary-calculator`;
                                         type="number"
                                         min="0"
                                         step={wageType === "annual" ? "1000" : "0.5"}
-                                        value={wageValue || ""}
-                                        onChange={(e) => {
-                                            setWageValue(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={wageValue === 0 ? "" : wageValue}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setWageValue(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -413,8 +425,8 @@ Calculated at twistertools.com/tools/calculators/salary-calculator`;
                                         type="number"
                                         min="1"
                                         max="168"
-                                        value={hoursPerWeek || ""}
-                                        onChange={(e) => setHoursPerWeek(Math.max(1, Number(e.target.value)))}
+                                        value={hoursPerWeek === 0 ? "" : hoursPerWeek}
+                                        onChange={(e) => handleNumberInput(e, (val) => setHoursPerWeek(val === 0 ? 0 : Math.max(1, val)))}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                     />
                                 </div>
@@ -426,8 +438,8 @@ Calculated at twistertools.com/tools/calculators/salary-calculator`;
                                         type="number"
                                         min="1"
                                         max="52"
-                                        value={weeksPerYear || ""}
-                                        onChange={(e) => setWeeksPerYear(Math.max(1, Math.min(52, Number(e.target.value))))}
+                                        value={weeksPerYear === 0 ? "" : weeksPerYear}
+                                        onChange={(e) => handleNumberInput(e, (val) => setWeeksPerYear(val === 0 ? 0 : Math.max(1, Math.min(52, val))))}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                     />
                                 </div>
@@ -444,8 +456,8 @@ Calculated at twistertools.com/tools/calculators/salary-calculator`;
                                         <input
                                             type="number"
                                             min="0"
-                                            value={overtimeHours || ""}
-                                            onChange={(e) => setOvertimeHours(Math.max(0, Number(e.target.value)))}
+                                            value={overtimeHours === 0 ? "" : overtimeHours}
+                                            onChange={(e) => handleNumberInput(e, (val) => setOvertimeHours(Math.max(0, val)))}
                                             className="w-full px-2.5 py-1.5 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 bg-white"
                                         />
                                     </div>
@@ -477,8 +489,8 @@ Calculated at twistertools.com/tools/calculators/salary-calculator`;
                                                 type="number"
                                                 min="0"
                                                 max="100"
-                                                value={taxRate || ""}
-                                                onChange={(e) => setTaxRate(Math.max(0, Math.min(100, Number(e.target.value))))}
+                                                value={taxRate === 0 ? "" : taxRate}
+                                                onChange={(e) => handleNumberInput(e, (val) => setTaxRate(Math.max(0, Math.min(100, val))))}
                                                 className="w-full pl-3 pr-6 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-semibold focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                             <span className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-xs">%</span>
@@ -494,8 +506,8 @@ Calculated at twistertools.com/tools/calculators/salary-calculator`;
                                             <input
                                                 type="number"
                                                 min="0"
-                                                value={preTaxDeductions || ""}
-                                                onChange={(e) => setPreTaxDeductions(Math.max(0, Number(e.target.value)))}
+                                                value={preTaxDeductions === 0 ? "" : preTaxDeductions}
+                                                onChange={(e) => handleNumberInput(e, (val) => setPreTaxDeductions(Math.max(0, val)))}
                                                 className="w-full pl-6 pr-2 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                         </div>
@@ -510,8 +522,8 @@ Calculated at twistertools.com/tools/calculators/salary-calculator`;
                                             <input
                                                 type="number"
                                                 min="0"
-                                                value={postTaxDeductions || ""}
-                                                onChange={(e) => setPostTaxDeductions(Math.max(0, Number(e.target.value)))}
+                                                value={postTaxDeductions === 0 ? "" : postTaxDeductions}
+                                                onChange={(e) => handleNumberInput(e, (val) => setPostTaxDeductions(Math.max(0, val)))}
                                                 className="w-full pl-6 pr-2 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                         </div>

@@ -361,7 +361,7 @@ ${totalsBreakdown}`;
                     step="0.01"
                     min="0"
                     value={baseAmount}
-                    onChange={(e) => setBaseAmount(e.target.value)}
+                    onChange={(e) => setBaseAmount(e.target.value.replace(/^0+(?=\d)/, ""))}
                     placeholder="0.00"
                     className="w-full pl-8 pr-4 py-2.5 text-sm font-mono border border-slate-300 rounded-xl bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"
                   />
@@ -397,12 +397,7 @@ ${totalsBreakdown}`;
                       step="0.01"
                       min="0"
                       value={taxRate}
-                      onChange={(e) => {
-                        const val = e.target.value;
-                        setTaxRate(val);
-                        setNewItemTaxRate(val);
-                        setSelectedState("");
-                      }}
+                      onChange={(e) => { const val = e.target.value.replace(/^0+(?=\d)/, ""); setTaxRate(val); setNewItemTaxRate(val); setSelectedState(""); }}
                       placeholder="8.25"
                       className="w-full pl-3 pr-8 py-2.5 text-sm font-mono border border-slate-300 rounded-xl bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all"
                     />
@@ -476,7 +471,7 @@ ${totalsBreakdown}`;
                 step="0.01"
                 placeholder="Net ($)"
                 value={newItemAmount}
-                onChange={(e) => setNewItemAmount(e.target.value)}
+                onChange={(e) => setNewItemAmount(e.target.value.replace(/^0+(?=\d)/, ""))}
                 className="sm:col-span-3 px-3 py-2 text-xs font-mono border border-slate-300 rounded-lg bg-white text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-600"
               />
               <input
@@ -484,7 +479,7 @@ ${totalsBreakdown}`;
                 step="0.01"
                 placeholder="Tax %"
                 value={newItemTaxRate}
-                onChange={(e) => setNewItemTaxRate(e.target.value)}
+                onChange={(e) => setNewItemTaxRate(e.target.value.replace(/^0+(?=\d)/, ""))}
                 className="sm:col-span-2 px-3 py-2 text-xs font-mono border border-slate-300 rounded-lg bg-white text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-600"
               />
               <button

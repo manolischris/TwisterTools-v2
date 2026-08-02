@@ -86,6 +86,21 @@ function probToOdds(p: number): { favor: string; against: string } {
 
 type Mode = "single" | "two-events" | "series" | "binomial";
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function ProbabilityCalculator() {
     const [mode, setMode] = useState<Mode>("single");
     const [copied, setCopied] = useState(false);
@@ -276,8 +291,8 @@ export default function ProbabilityCalculator() {
                                 <input
                                     type="number"
                                     min="0"
-                                    value={favorable}
-                                    onChange={(e) => setFavorable(Number(e.target.value))}
+                                    value={favorable === 0 ? "" : favorable}
+                                    onChange={(e) => handleNumberInput(e, setFavorable)}
                                     className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     placeholder="e.g. 1"
                                 />
@@ -289,8 +304,8 @@ export default function ProbabilityCalculator() {
                                 <input
                                     type="number"
                                     min="1"
-                                    value={totalOutcomes}
-                                    onChange={(e) => setTotalOutcomes(Number(e.target.value))}
+                                    value={totalOutcomes === 0 ? "" : totalOutcomes}
+                                    onChange={(e) => handleNumberInput(e, setTotalOutcomes)}
                                     className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     placeholder="e.g. 6"
                                 />
@@ -310,8 +325,8 @@ export default function ProbabilityCalculator() {
                                         type="number"
                                         min="0"
                                         max="100"
-                                        value={probA}
-                                        onChange={(e) => setProbA(Number(e.target.value))}
+                                        value={probA === 0 ? "" : probA}
+                                        onChange={(e) => handleNumberInput(e, setProbA)}
                                         className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     />
                                 </div>
@@ -323,8 +338,8 @@ export default function ProbabilityCalculator() {
                                         type="number"
                                         min="0"
                                         max="100"
-                                        value={probB}
-                                        onChange={(e) => setProbB(Number(e.target.value))}
+                                        value={probB === 0 ? "" : probB}
+                                        onChange={(e) => handleNumberInput(e, setProbB)}
                                         className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     />
                                 </div>
@@ -356,8 +371,8 @@ export default function ProbabilityCalculator() {
                                         type="number"
                                         min="0"
                                         max="100"
-                                        value={probBgivenA}
-                                        onChange={(e) => setProbBgivenA(Number(e.target.value))}
+                                        value={probBgivenA === 0 ? "" : probBgivenA}
+                                        onChange={(e) => handleNumberInput(e, setProbBgivenA)}
                                         className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     />
                                 </div>
@@ -376,8 +391,8 @@ export default function ProbabilityCalculator() {
                                     type="number"
                                     min="0"
                                     max="100"
-                                    value={singleProb}
-                                    onChange={(e) => setSingleProb(Number(e.target.value))}
+                                    value={singleProb === 0 ? "" : singleProb}
+                                    onChange={(e) => handleNumberInput(e, setSingleProb)}
                                     className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     placeholder="e.g. 20"
                                 />
@@ -390,8 +405,8 @@ export default function ProbabilityCalculator() {
                                     type="number"
                                     min="1"
                                     max="500"
-                                    value={trialsSeries}
-                                    onChange={(e) => setTrialsSeries(Number(e.target.value))}
+                                    value={trialsSeries === 0 ? "" : trialsSeries}
+                                    onChange={(e) => handleNumberInput(e, setTrialsSeries)}
                                     className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     placeholder="e.g. 10"
                                 />
@@ -411,8 +426,8 @@ export default function ProbabilityCalculator() {
                                         type="number"
                                         min="1"
                                         max="200"
-                                        value={nTrials}
-                                        onChange={(e) => setNTrials(Number(e.target.value))}
+                                        value={nTrials === 0 ? "" : nTrials}
+                                        onChange={(e) => handleNumberInput(e, setNTrials)}
                                         className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     />
                                 </div>
@@ -424,8 +439,8 @@ export default function ProbabilityCalculator() {
                                         type="number"
                                         min="0"
                                         max={nTrials}
-                                        value={kSuccesses}
-                                        onChange={(e) => setKSuccesses(Number(e.target.value))}
+                                        value={kSuccesses === 0 ? "" : kSuccesses}
+                                        onChange={(e) => handleNumberInput(e, setKSuccesses)}
                                         className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                     />
                                 </div>
@@ -438,8 +453,8 @@ export default function ProbabilityCalculator() {
                                     type="number"
                                     min="0"
                                     max="100"
-                                    value={pSuccess}
-                                    onChange={(e) => setPSuccess(Number(e.target.value))}
+                                    value={pSuccess === 0 ? "" : pSuccess}
+                                    onChange={(e) => handleNumberInput(e, setPSuccess)}
                                     className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-600 outline-none text-sm"
                                 />
                             </div>

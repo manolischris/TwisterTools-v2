@@ -64,6 +64,21 @@ const currencySymbols: Record<CurrencyCode, string> = {
     "CAD/AUD": "$",
 };
 
+const handleNumberInput = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    setter: (val: number) => void
+) => {
+    const raw = e.target.value;
+    if (raw === "") {
+        setter(0);
+        return;
+    }
+    // Parse string, stripping undesirable leading zeros like "0100" -> 100
+    const cleaned = raw.replace(/^0+(?=\d)/, "");
+    const num = parseFloat(cleaned);
+    setter(isNaN(num) ? 0 : num);
+};
+
 export default function AutoLoanCalculator() {
     // Input States
     const [currency, setCurrency] = useState<CurrencyCode>("USD");
@@ -369,11 +384,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                         type="number"
                                         min="0"
                                         step="500"
-                                        value={vehiclePrice || ""}
-                                        onChange={(e) => {
-                                            setVehiclePrice(Math.max(0, Number(e.target.value)));
-                                            setActivePresetId(null);
-                                        }}
+                                        value={vehiclePrice === 0 ? "" : vehiclePrice}
+                                        onChange={(e) => { handleNumberInput(e, (val) => setVehiclePrice(Math.max(0, val))); setActivePresetId(null); }}
                                         className="w-full pl-8 pr-4 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
@@ -391,11 +403,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                             type="number"
                                             min="0"
                                             step="500"
-                                            value={downPayment || ""}
-                                            onChange={(e) => {
-                                                setDownPayment(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={downPayment === 0 ? "" : downPayment}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setDownPayment(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-7 pr-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs transition"
                                         />
                                     </div>
@@ -411,11 +420,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                             type="number"
                                             min="0"
                                             step="500"
-                                            value={tradeInValue || ""}
-                                            onChange={(e) => {
-                                                setTradeInValue(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={tradeInValue === 0 ? "" : tradeInValue}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setTradeInValue(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-7 pr-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs transition"
                                         />
                                     </div>
@@ -434,11 +440,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                             min="0"
                                             max="30"
                                             step="0.1"
-                                            value={annualRate || ""}
-                                            onChange={(e) => {
-                                                setAnnualRate(Math.max(0, Number(e.target.value)));
-                                                setActivePresetId(null);
-                                            }}
+                                            value={annualRate === 0 ? "" : annualRate}
+                                            onChange={(e) => { handleNumberInput(e, (val) => setAnnualRate(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs transition"
                                         />
                                         <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
@@ -482,8 +485,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                                 min="0"
                                                 max="25"
                                                 step="0.1"
-                                                value={salesTaxRate || ""}
-                                                onChange={(e) => setSalesTaxRate(Math.max(0, Number(e.target.value)))}
+                                                value={salesTaxRate === 0 ? "" : salesTaxRate}
+                                                onChange={(e) => handleNumberInput(e, (val) => setSalesTaxRate(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-6 py-1.5 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                             <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">%</span>
@@ -500,8 +503,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                                 type="number"
                                                 min="0"
                                                 step="50"
-                                                value={titleFees || ""}
-                                                onChange={(e) => setTitleFees(Math.max(0, Number(e.target.value)))}
+                                                value={titleFees === 0 ? "" : titleFees}
+                                                onChange={(e) => handleNumberInput(e, (val) => setTitleFees(Math.max(0, val)))}
                                                 className="w-full pl-6 pr-2 py-1.5 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
                                         </div>
@@ -518,8 +521,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                             type="number"
                                             min="0"
                                             step="25"
-                                            value={extraMonthlyPayment || ""}
-                                            onChange={(e) => setExtraMonthlyPayment(Math.max(0, Number(e.target.value)))}
+                                            value={extraMonthlyPayment === 0 ? "" : extraMonthlyPayment}
+                                            onChange={(e) => handleNumberInput(e, (val) => setExtraMonthlyPayment(Math.max(0, val)))}
                                             placeholder="Optional extra payment..."
                                             className="w-full pl-7 pr-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                         />
