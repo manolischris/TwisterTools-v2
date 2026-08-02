@@ -366,15 +366,15 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-full lg:max-w-7xl mx-auto space-y-8 overflow-x-hidden">
             {/* Schema Injection */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
             {/* Interactive 50/50 Workspace Grid */}
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Left Workspace Panel: Asset & Liability Entry */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
                     <div>
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -576,7 +576,7 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                 </div>
 
                 {/* Right Workspace Panel: Results & Financial Health Dashboard */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]" ref={exportRef}>
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0" ref={exportRef}>
                     <div className="space-y-6">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -617,7 +617,7 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                         </div>
 
                         {/* Financial Health Ratio Cards */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0">
                             <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                                 <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">Debt-to-Asset Ratio</p>
                                 <p className="text-2xl font-extrabold text-slate-900 mt-1">
@@ -728,7 +728,7 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
             <div className="space-y-6">
 
                 {/* Card 1: Comprehensive Financial Definitions & Mechanics */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -777,7 +777,7 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                 </section>
 
                 {/* Card 2: Asset Tiers & Liquidity Structure */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Layers className="w-5 h-5 text-indigo-600" />
@@ -823,7 +823,7 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                 </section>
 
                 {/* Card 3: Concrete Worked Mathematical Example */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Lightbulb className="w-5 h-5 text-indigo-600" />
@@ -877,7 +877,7 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                 </section>
 
                 {/* Card 4: Actionable Strategies to Boost Net Worth */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Zap className="w-5 h-5 text-indigo-600" />
@@ -924,7 +924,7 @@ Calculated at twistertools.com/tools/calculators/net-worth-calculator`;
                 </section>
 
                 {/* Card 5: Frequently Asked Questions (FAQ) */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

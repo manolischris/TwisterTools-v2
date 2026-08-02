@@ -313,15 +313,15 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-full lg:max-w-7xl mx-auto space-y-8 overflow-x-hidden">
             {/* Schema Injection */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
             {/* Interactive 50/50 Workspace Grid */}
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Left Workspace Panel: Controls & Inputs */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
                     <div>
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -402,7 +402,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
                                     <Ruler className="w-3.5 h-3.5 text-indigo-600" /> Stature Height
                                 </label>
                                 {unitSystem === "imperial" ? (
-                                    <div className="grid grid-cols-2 gap-3">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                                         <div className="relative">
                                             <input
                                                 type="number"
@@ -539,7 +539,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
                 </div>
 
                 {/* Right Workspace Panel: Results, Visualizations & Data Schedule */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
                     <div className="space-y-6">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -592,7 +592,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
 
                         {/* Active Tab Views */}
                         {activeTab === "formulas" && (
-                            <div className="grid grid-cols-2 gap-3.5 pt-1">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0 .5 pt-1">
                                 {/* Devine Formula */}
                                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-1">
                                     <div className="flex items-center gap-1.5 text-xs font-bold text-slate-500">
@@ -702,7 +702,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
             <div className="space-y-6">
 
                 {/* Card 1: Clinical Mechanics & Definition */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -757,7 +757,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
                 </section>
 
                 {/* Card 2: Comparative Formula Matrix Table */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Layers className="w-5 h-5 text-indigo-600" />
@@ -812,7 +812,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
                 </section>
 
                 {/* Card 3: Frame Size & Wrist Measurement Guide */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Ruler className="w-5 h-5 text-indigo-600" />
@@ -855,7 +855,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
                 </section>
 
                 {/* Card 4: Worked Case Studies / Real World Examples */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Lightbulb className="w-5 h-5 text-indigo-600" />
@@ -909,7 +909,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
                 </section>
 
                 {/* Card 5: IBW vs BMI vs Body Fat Comparison */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <PieChart className="w-5 h-5 text-indigo-600" />
@@ -946,7 +946,7 @@ Calculated at twistertools.com/tools/calculators/ideal-weight-calculator`;
                 </section>
 
                 {/* Card 6: Frequently Asked Questions (FAQ) */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

@@ -200,7 +200,7 @@ Calculated via TwisterTools.com`;
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-full lg:max-w-7xl mx-auto space-y-8 overflow-x-hidden">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppSchema) }}
@@ -211,9 +211,9 @@ Calculated via TwisterTools.com`;
             />
 
             {/* 50/50 Workspace Grid */}
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Input Panel */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                         <h2 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
                             <DollarSign className="w-5 h-5 text-indigo-600" />
@@ -355,7 +355,7 @@ Calculated via TwisterTools.com`;
                 </div>
 
                 {/* Results Panel */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-full">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-full min-w-0">
                     <div>
                         <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                             <h2 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
@@ -381,7 +381,7 @@ Calculated via TwisterTools.com`;
                         </div>
 
                         {/* Key Metric Highlights */}
-                        <div className="grid grid-cols-2 gap-4 my-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0 my-6">
                             <div className="p-4 bg-indigo-50/50 border border-indigo-100 rounded-xl">
                                 <p className="text-xs font-semibold text-indigo-700 uppercase tracking-wider">
                                     Total Interest
@@ -401,7 +401,7 @@ Calculated via TwisterTools.com`;
                         </div>
 
                         {/* Sub Metrics */}
-                        <div className="grid grid-cols-2 gap-3 text-sm py-3 border-t border-b border-slate-100">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0 text-sm py-3 border-t border-b border-slate-100">
                             <div>
                                 <span className="text-slate-500">Monthly Payment Eq.:</span>
                                 <span className="font-semibold text-slate-800 block">
@@ -490,7 +490,7 @@ Calculated via TwisterTools.com`;
             {/* BELOW THE FOLD CONTENT CARDS */}
 
             {/* Card 1: Educational & Math Overview */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <BookOpen className="w-5 h-5" />
@@ -520,7 +520,7 @@ Calculated via TwisterTools.com`;
             </div>
 
             {/* Card 2: Simple vs Compound Interest */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <TrendingUp className="w-5 h-5" />
@@ -569,7 +569,7 @@ Calculated via TwisterTools.com`;
             </div>
 
             {/* Card 3: Practical Use Cases */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <Layers className="w-5 h-5" />
@@ -618,7 +618,7 @@ Calculated via TwisterTools.com`;
             </div>
 
             {/* Card 4: Frequently Asked Questions */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <HelpCircle className="w-5 h-5" />

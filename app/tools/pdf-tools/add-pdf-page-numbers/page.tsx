@@ -57,19 +57,19 @@ const AddPdfPageNumbersPage: NextPage = () => {
         <div className="max-w-7xl mx-auto px-4 py-2 md:py-3">
           <div className="max-w-6xl mx-auto">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-1.5 font-medium">
-              <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+            <div className="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-400 mb-1.5 font-medium flex-wrap overflow-x-auto whitespace-nowrap scrollbar-none">
+              <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
                 Home
               </Link>
               <span>/</span>
               <Link
                 href="/tools/pdf-tools"
-                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate"
               >
                 PDF & Document Utilities
               </Link>
               <span>/</span>
-              <span className="text-slate-900 dark:text-white">
+              <span className="text-slate-900 dark:text-white max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
                 Add PDF Page Numbers
               </span>
             </div>

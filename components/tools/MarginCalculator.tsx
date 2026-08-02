@@ -251,15 +251,15 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-full lg:max-w-7xl mx-auto space-y-8 overflow-x-hidden">
             {/* Schema Injection */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
             {/* Interactive 50/50 Workspace Grid */}
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Left Workspace Panel: Controls & Inputs */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
                     <div>
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -472,7 +472,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                 </div>
 
                 {/* Right Workspace Panel: Profit & Margin Breakdown */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]" ref={exportRef}>
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0" ref={exportRef}>
                     <div className="space-y-6">
                         <div className="border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -482,7 +482,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                         </div>
 
                         {/* Dual Key Metrics Cards */}
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0">
                             <div className="p-4 rounded-xl bg-indigo-50/70 border border-indigo-100">
                                 <p className="text-xs font-bold text-indigo-700 uppercase tracking-wider">Profit Margin</p>
                                 <p className="text-3xl font-extrabold text-slate-900 mt-1">
@@ -577,7 +577,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
             <div className="space-y-6">
 
                 {/* Card 1: Core Concepts & Formulas */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -627,7 +627,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                 </section>
 
                 {/* Card 2: Conversion Matrix & Worked Table */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Scale className="w-5 h-5 text-indigo-600" />
@@ -682,7 +682,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                 </section>
 
                 {/* Card 3: Frequently Asked Questions (FAQ) */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

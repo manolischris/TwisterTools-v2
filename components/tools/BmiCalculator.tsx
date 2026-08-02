@@ -355,15 +355,15 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-full lg:max-w-7xl mx-auto space-y-8 overflow-x-hidden">
             {/* Schema Injection */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
             {/* Interactive 50/50 Workspace Grid */}
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Left Workspace Panel: Controls & Inputs */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
                     <div>
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -410,7 +410,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
 
                         <div className="space-y-5">
                             {/* Gender & Age Row */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0">
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Biological Sex
@@ -463,7 +463,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                     <Ruler className="w-3.5 h-3.5 text-indigo-600" /> Height
                                 </label>
                                 {unitSystem === "imperial" ? (
-                                    <div className="grid grid-cols-2 gap-3">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                                         <div className="relative">
                                             <input
                                                 type="number"
@@ -626,7 +626,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                 </div>
 
                 {/* Right Workspace Panel: Results, Visualizations & Data Schedule */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]" ref={exportRef}>
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0" ref={exportRef}>
                     <div className="space-y-6">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -699,7 +699,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
 
                         {/* Active Tab Views */}
                         {activeTab === "overview" ? (
-                            <div className="grid grid-cols-2 gap-3.5 pt-1">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0 .5 pt-1">
                                 {/* Ideal Weight */}
                                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
                                     <div className="flex items-center gap-1.5 text-xs font-bold text-slate-500">
@@ -814,7 +814,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
             <div className="space-y-6">
 
                 {/* Card 1: Comprehensive Medical Mechanics & Formulas */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -866,7 +866,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                 </section>
 
                 {/* Card 2: Detailed Reference Tables & Classifications */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Layers className="w-5 h-5 text-indigo-600" />
@@ -977,7 +977,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                 </section>
 
                 {/* Card 3: Worked Case Examples */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Lightbulb className="w-5 h-5 text-indigo-600" />
@@ -1029,7 +1029,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                 </section>
 
                 {/* Card 4: Clinical Applications & Limitations */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Stethoscope className="w-5 h-5 text-indigo-600" />
@@ -1066,7 +1066,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                 </section>
 
                 {/* Card 5: Frequently Asked Questions (FAQ) */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

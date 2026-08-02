@@ -480,15 +480,15 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-full lg:max-w-7xl mx-auto space-y-8 overflow-x-hidden">
             {/* Schema Injection */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
             {/* Interactive 50/50 Workspace Grid */}
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Left Workspace Panel: Controls & Inputs */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
                     <div>
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -505,7 +505,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
                         </div>
 
                         {/* Unit System & Algorithm Selection */}
-                        <div className="grid grid-cols-2 gap-3 mb-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0 mb-5">
                             <div>
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Unit System
@@ -551,7 +551,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
 
                         <div className="space-y-4">
                             {/* Gender & Age Row */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0">
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Biological Sex
@@ -599,13 +599,13 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
                             </div>
 
                             {/* Height & Weight Inputs */}
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0">
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <Ruler className="w-3.5 h-3.5 text-indigo-600" /> Height
                                     </label>
                                     {unitSystem === "imperial" ? (
-                                        <div className="grid grid-cols-2 gap-2">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 min-w-0">
                                             <div className="relative">
                                                 <input
                                                     type="number"
@@ -883,7 +883,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
                 </div>
 
                 {/* Right Workspace Panel: Results, Visualizations & Breakdown */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]" ref={exportRef}>
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0" ref={exportRef}>
                     <div className="space-y-6">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -951,7 +951,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
                         {/* Active Tab Views */}
                         {activeTab === "composition" && (
                             <div className="space-y-4">
-                                <div className="grid grid-cols-2 gap-3.5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0 .5">
                                     {/* Fat Mass Card */}
                                     <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80 space-y-1">
                                         <div className="flex items-center gap-1.5 text-xs font-bold text-amber-800">
@@ -1098,7 +1098,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
             <div className="space-y-6">
 
                 {/* Card 1: Comprehensive Body Fat Mechanics & U.S. Navy Method */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -1147,7 +1147,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
                 </section>
 
                 {/* Card 2: ACE Fitness Standards Table */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Award className="w-5 h-5 text-indigo-600" />
@@ -1208,7 +1208,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
                 </section>
 
                 {/* Card 3: Step-by-Step Measurement Protocol */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Crosshair className="w-5 h-5 text-indigo-600" />
@@ -1251,7 +1251,7 @@ Calculated at twistertools.com/tools/calculators/body-fat-calculator`;
                 </section>
 
                 {/* Card 4: Frequently Asked Questions (FAQ) */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

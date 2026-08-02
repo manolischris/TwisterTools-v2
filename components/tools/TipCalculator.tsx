@@ -324,15 +324,15 @@ export default function TipCalculator() {
     };
 
     return (
-        <div className="w-full max-w-7xl mx-auto space-y-8">
+        <div className="w-full max-w-full lg:max-w-7xl mx-auto space-y-8 overflow-x-hidden">
             {/* Schema Injection */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
             {/* Interactive 50/50 Workspace Grid */}
-            <div className="grid lg:grid-cols-2 gap-6 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Left Workspace Panel: Input Controls */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
                     <div className="space-y-5">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -349,7 +349,7 @@ export default function TipCalculator() {
                         </div>
 
                         {/* Currency & Calculation Mode Toggle */}
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                             <div>
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Currency
@@ -507,7 +507,7 @@ export default function TipCalculator() {
                         </div>
 
                         {/* Group Size and Tax Rate Grid */}
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                             <div>
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Number of People
@@ -562,7 +562,7 @@ export default function TipCalculator() {
                                 <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">
                                     Customize Person Names
                                 </label>
-                                <div className="grid grid-cols-2 gap-2 max-h-[110px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-200">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 min-w-0 max-h-[110px] overflow-y-auto pr-1 scrollbar-thin scrollbar-thumb-slate-200">
                                     {peopleNames.slice(0, numberOfPeople).map((name, idx) => (
                                         <input
                                             key={idx}
@@ -610,7 +610,7 @@ export default function TipCalculator() {
                 </div>
 
                 {/* Right Workspace Panel: Dynamic Results & Split Analysis */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px]" ref={exportRef}>
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0" ref={exportRef}>
                     <div className="space-y-6">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -729,7 +729,7 @@ export default function TipCalculator() {
             <div className="space-y-6">
 
                 {/* Card 1: Comprehensive Dining & Tipping Mechanics */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -774,7 +774,7 @@ export default function TipCalculator() {
                 </section>
 
                 {/* Card 2: Pre-Tax vs Post-Tax Math & Formula Breakdown */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Calculator className="w-5 h-5 text-indigo-600" />
@@ -805,7 +805,7 @@ export default function TipCalculator() {
                 </section>
 
                 {/* Card 3: Worked Case Study Example */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Lightbulb className="w-5 h-5 text-indigo-600" />
@@ -860,7 +860,7 @@ export default function TipCalculator() {
                 </section>
 
                 {/* Card 4: Best Practices & Common Pitfalls */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <CheckCircle2 className="w-5 h-5 text-indigo-600" />
@@ -902,7 +902,7 @@ export default function TipCalculator() {
                 </section>
 
                 {/* Card 5: Static FAQ Section */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

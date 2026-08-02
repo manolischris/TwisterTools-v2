@@ -274,16 +274,16 @@ export default function CalculatorsCategoryPage() {
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           {/* Navigation Breadcrumbs */}
-          <div className="flex items-center gap-2 text-indigo-100 text-xs md:text-sm font-medium">
-            <Link href="/" className="hover:text-white transition-colors">
+          <div className="flex items-center gap-1 text-indigo-100 text-xs md:text-sm font-medium flex-wrap overflow-x-auto whitespace-nowrap scrollbar-none">
+            <Link href="/" className="hover:text-white transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
               Home
             </Link>
             <span>/</span>
-            <Link href="/tools" className="hover:text-white transition-colors">
+            <Link href="/tools" className="hover:text-white transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
               Tools
             </Link>
             <span>/</span>
-            <span className="text-white font-semibold">
+            <span className="text-white font-semibold max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
               {calculatorMetadata.name}
             </span>
           </div>
