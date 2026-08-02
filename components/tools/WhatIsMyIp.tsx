@@ -157,7 +157,7 @@ export default function WhatIsMyIp() {
               )}
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="space-y-5 p-4 sm:p-6">
               {loading ? (
                 <div className="py-12 flex flex-col items-center justify-center space-y-3">
                   <RefreshCw className="w-8 h-8 text-indigo-600 animate-spin" />
@@ -171,7 +171,7 @@ export default function WhatIsMyIp() {
               ) : networkData ? (
                 <div className="space-y-5">
                   {/* Big IP Hero Container */}
-                  <div className="bg-gradient-to-br from-indigo-50/80 to-slate-50 border border-indigo-100 rounded-2xl p-6 text-center relative">
+                  <div className="bg-gradient-to-br from-indigo-50/80 to-slate-50 border border-indigo-100 rounded-2xl text-center relative p-4 sm:p-6">
                     <span className="text-xs font-bold text-indigo-600 uppercase tracking-widest block mb-1">
                       Your Active Public IP Address
                     </span>
@@ -257,7 +257,7 @@ export default function WhatIsMyIp() {
               </div>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="space-y-5 p-4 sm:p-6">
               {loading ? (
                 <div className="py-12 flex flex-col items-center justify-center space-y-3">
                   <RefreshCw className="w-8 h-8 text-indigo-600 animate-spin" />
@@ -338,7 +338,7 @@ export default function WhatIsMyIp() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6">
         {/* Card 1: What is an IP Address */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Globe className="w-5 h-5 text-indigo-600" />
@@ -354,7 +354,7 @@ export default function WhatIsMyIp() {
         </div>
 
         {/* Card 2: IPv4 vs IPv6 Architectural Comparison */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -384,7 +384,7 @@ export default function WhatIsMyIp() {
         </div>
 
         {/* Card 3: Geolocation and Security Audit Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -426,7 +426,7 @@ export default function WhatIsMyIp() {
         </div>
 
         {/* Card 4: How to Protect Your IP */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />
@@ -439,7 +439,7 @@ export default function WhatIsMyIp() {
         </div>
 
         {/* Card 5: FAQ Section */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

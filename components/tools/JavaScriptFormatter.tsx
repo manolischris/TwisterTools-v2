@@ -1322,7 +1322,7 @@ export default function JavaScriptFormatter() {
       <section className="space-y-8 mt-8">
 
         {/* ── Section 1: Technical Architecture ── */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Braces className="w-5 h-5 text-indigo-600" />
@@ -1335,7 +1335,7 @@ export default function JavaScriptFormatter() {
         </div>
 
         {/* Section 2: Lexical Tokenization Pipeline */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <ListOrdered className="w-5 h-5 text-indigo-600" />
@@ -1387,7 +1387,7 @@ export default function JavaScriptFormatter() {
         </div>
 
         {/* ── Section 3: ECMAScript Token Optimization Reference Matrix ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -1438,7 +1438,7 @@ export default function JavaScriptFormatter() {
         </div>
 
         {/* ── Section 4: Real-World Front-End Staging Use Cases ── */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Terminal className="w-5 h-5 text-indigo-600" />
@@ -1466,7 +1466,7 @@ export default function JavaScriptFormatter() {
         </div>
 
         {/* ── Section 5: Advanced JavaScript Optimization FAQs ── */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -1507,7 +1507,7 @@ export default function JavaScriptFormatter() {
         </div>
 
         {/* ── Section 6: Platform Advantages & Performance Architecture ── */}
-        <div className="bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white">
+        <div className="bg-gradient-to-br from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white p-4 sm:p-6">
           <h2 className="text-2xl font-bold mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
               <ShieldCheck className="w-5 h-5 text-white" />

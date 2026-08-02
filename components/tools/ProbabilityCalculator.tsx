@@ -251,7 +251,7 @@ export default function ProbabilityCalculator() {
             {/* ── 50/50 Split Workspace Grid ── */}
             <div className="grid lg:grid-cols-2 gap-6 items-start">
                 {/* ══════════════════ LEFT PANEL: INPUT CONTROLS ══════════════════ */}
-                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6">
                     {/* Mode Selector Tabs */}
                     <div>
                         <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
@@ -474,7 +474,7 @@ export default function ProbabilityCalculator() {
                 </div>
 
                 {/* ══════════════════ RIGHT PANEL: RESULTS DISPLAY ══════════════════ */}
-                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6">
                     <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                         <div className="flex items-center gap-2">
                             <Sparkles className="w-5 h-5 text-indigo-600" />
@@ -678,7 +678,7 @@ export default function ProbabilityCalculator() {
       ───────────────────────────────────────────────────────────── */}
 
             {/* Card 1: Foundations of Probability */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                         <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -702,7 +702,7 @@ export default function ProbabilityCalculator() {
             </div>
 
             {/* Card 2: Joint, Conditional, & Series Events */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                         <Layers className="w-5 h-5 text-indigo-600" />
@@ -731,7 +731,7 @@ export default function ProbabilityCalculator() {
             </div>
 
             {/* Card 3: Binomial Distribution & Combinatorics */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                         <BarChart3 className="w-5 h-5 text-indigo-600" />
@@ -755,7 +755,7 @@ export default function ProbabilityCalculator() {
             </div>
 
             {/* Card 4: Practical Applications & Decision Engineering */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                         <Zap className="w-5 h-5 text-indigo-600" />
@@ -793,7 +793,7 @@ export default function ProbabilityCalculator() {
             </div>
 
             {/* Card 5: FAQ Section (Static Cards - No Accordions) */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                         <HelpCircle className="w-5 h-5 text-indigo-600" />

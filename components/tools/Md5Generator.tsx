@@ -347,7 +347,7 @@ export default function Md5Generator() {
 
           {/* ── Single String Mode ── */}
           {activeMode === "single" && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label
                   htmlFor="md5-single-input"
@@ -378,7 +378,7 @@ export default function Md5Generator() {
 
           {/* ── Bulk Multi-Line Mode ── */}
           {activeMode === "bulk" && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label
                   htmlFor="md5-bulk-input"
@@ -468,7 +468,7 @@ export default function Md5Generator() {
 
           {/* ── Local File Checksum Mode ── */}
           {activeMode === "file" && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <p className="text-sm font-semibold text-slate-700 mb-1">Local File Checksum</p>
                 <p className="text-xs text-slate-500 mb-4">
@@ -713,7 +713,7 @@ export default function Md5Generator() {
       <section className="space-y-8">
 
         {/* What is MD5? */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Info className="w-5 h-5 text-indigo-600" />
@@ -739,7 +739,7 @@ export default function Md5Generator() {
         </div>
 
         {/* How It Works */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Zap className="w-5 h-5 text-indigo-600" />
@@ -788,7 +788,7 @@ export default function Md5Generator() {
         </div>
 
         {/* Use Cases */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -837,7 +837,7 @@ export default function Md5Generator() {
         </div>
 
         {/* MD5 vs Other Algorithms */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <ChevronRight className="w-5 h-5 text-indigo-600" />
@@ -886,7 +886,7 @@ export default function Md5Generator() {
         </div>
 
         {/* Security Notice */}
-        <div className="bg-gradient-to-br from-amber-50/40 to-white border border-amber-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-amber-50/40 to-white border border-amber-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
               <AlertCircle className="w-5 h-5 text-amber-600" />
@@ -942,7 +942,7 @@ export default function Md5Generator() {
         </div>
 
         {/* FAQ */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -991,7 +991,7 @@ export default function Md5Generator() {
         </div>
 
         {/* Why Our Tool */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Use TwisterTools MD5 Generator?</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

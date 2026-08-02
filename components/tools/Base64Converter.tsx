@@ -510,7 +510,7 @@ export default function Base64Converter() {
 
           {/* ── Text Input Mode ── */}
           {inputType === "text" && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label
                   htmlFor="b64-text-input"
@@ -562,7 +562,7 @@ export default function Base64Converter() {
 
           {/* ── File Input Mode ── */}
           {inputType === "file" && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <p className="text-sm font-semibold text-slate-700 mb-1">
                   Local File {activeMode === "encode" ? "Encoder" : "Decoder"}
@@ -861,7 +861,7 @@ export default function Base64Converter() {
       <section className="space-y-8">
 
         {/* Card 1: HelpCircle */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-slate-800 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -879,7 +879,7 @@ export default function Base64Converter() {
         </div>
 
         {/* Card 2: Table */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -947,7 +947,7 @@ export default function Base64Converter() {
         </div>
 
         {/* Card 3: Cpu */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-slate-800 flex items-center justify-center">
               <Cpu className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -1012,7 +1012,7 @@ export default function Base64Converter() {
         </div>
 
         {/* Card 4: ShieldAlert */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-slate-800 flex items-center justify-center">
               <ShieldAlert className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -1045,7 +1045,7 @@ export default function Base64Converter() {
         </div>
 
         {/* Card 5: MessageSquare */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-50 dark:bg-slate-800 flex items-center justify-center">
               <MessageSquare className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -1082,7 +1082,7 @@ export default function Base64Converter() {
         </div>
 
         {/* Why Our Tool - Card 6 */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Choose the TwisterTools Base64 Converter?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[

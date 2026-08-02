@@ -236,7 +236,7 @@ export default function UuidGenerator() {
       <div className="grid lg:grid-cols-12 gap-6 items-start">
         {/* ══════════════════ LEFT PANEL (CONTROL CENTER) ══════════════════ */}
         <div className="lg:col-span-7 space-y-5">
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6">
             {/* UUID Version Selector */}
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-3">
@@ -502,7 +502,7 @@ export default function UuidGenerator() {
            SEO GUIDE SECTION (BELOW-THE-FOLD)
       ───────────────────────────────────────────────────────────── */}
       {/* SECTION 1: DEFINITIONS & ARCHITECTURE MATRIX */}
-      <div className="mt-8 bg-white rounded-2xl border border-slate-200/50 p-6 md:p-8 shadow-sm">
+      <div className="mt-8 bg-white rounded-2xl border border-slate-200/50 md:p-8 shadow-sm p-4 sm:p-6">
         <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-4">
           <BookOpen className="w-5 h-5 text-indigo-600 flex-shrink-0" />
           The Definitive Guide to UUID & GUID Implementations
@@ -563,7 +563,7 @@ export default function UuidGenerator() {
       </div>
 
       {/* SECTION 2: SPECIFICATIONS AND COMPARISON */}
-      <div className="mt-6 bg-white rounded-2xl border border-slate-200/50 p-6 md:p-8 shadow-sm">
+      <div className="mt-6 bg-white rounded-2xl border border-slate-200/50 md:p-8 shadow-sm p-4 sm:p-6">
         <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-4">
           <Layers className="w-5 h-5 text-indigo-600 flex-shrink-0" />
           Comparing Version 1 (Time-Based) vs Version 4 (Cryptographically Random)
@@ -595,7 +595,7 @@ export default function UuidGenerator() {
       </div>
 
       {/* SECTION 3: THE MATHEMATICS OF COLLISIONS */}
-      <div className="mt-6 bg-white rounded-2xl border border-slate-200/50 p-6 md:p-8 shadow-sm">
+      <div className="mt-6 bg-white rounded-2xl border border-slate-200/50 md:p-8 shadow-sm p-4 sm:p-6">
         <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-4">
           <ShieldAlert className="w-5 h-5 text-indigo-600 flex-shrink-0" />
           The Mathematics of Collision Space: How Unique is a UUID?
@@ -630,7 +630,7 @@ export default function UuidGenerator() {
       </div>
 
       {/* SECTION 4: USE CASES AND PARSING MATRIX */}
-      <div className="mt-6 bg-white rounded-2xl border border-slate-200/50 p-6 md:p-8 shadow-sm">
+      <div className="mt-6 bg-white rounded-2xl border border-slate-200/50 md:p-8 shadow-sm p-4 sm:p-6">
         <h2 className="text-xl font-bold text-slate-900 flex items-center gap-3 mb-4">
           <Cpu className="w-5 h-5 text-indigo-600 flex-shrink-0" />
           Enterprise Use Cases & Integration Patterns
@@ -658,7 +658,7 @@ export default function UuidGenerator() {
       </div>
 
       {/* SECTION 5: ACCESSIBILITY FAQS */}
-      <div className="mt-6 bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+      <div className="mt-6 bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <HelpCircle className="w-5 h-5 text-indigo-600" />

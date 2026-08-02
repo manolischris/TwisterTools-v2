@@ -358,7 +358,7 @@ export default function ReverseTextGenerator() {
       <div className="pt-8">
 
         {/* Section 1: Comprehensive Technical Breakdown: What is Text Reversal? */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-6 shadow-sm">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl md:p-8 mb-6 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <LayoutGrid className="w-6 h-6 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
             Comprehensive Technical Breakdown: What is Text Reversal?
@@ -399,7 +399,7 @@ export default function ReverseTextGenerator() {
         </section>
 
         {/* Section 2: Alphanumeric Mapping Table: How Inversion Engines Process Text */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-6 shadow-sm">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl md:p-8 mb-6 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <TableProperties className="w-6 h-6 text-indigo-650 dark:text-indigo-400 flex-shrink-0" />
             Alphanumeric Mapping Table: How Inversion Engines Process Text
@@ -449,7 +449,7 @@ export default function ReverseTextGenerator() {
         </section>
 
         {/* Section 3: Step-by-Step Local Execution Workflow Matrix */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-6 shadow-sm">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl md:p-8 mb-6 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <ShieldCheck className="w-6 h-6 text-indigo-650 dark:text-indigo-400 flex-shrink-0" />
             Step-by-Step Local Execution Workflow Matrix
@@ -491,7 +491,7 @@ export default function ReverseTextGenerator() {
         </section>
 
         {/* Section 4: Advanced Developer Use Cases & Code Stress Testing Scenarios */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-6 shadow-sm">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl md:p-8 mb-6 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <Terminal className="w-6 h-6 text-indigo-650 dark:text-indigo-400 flex-shrink-0" />
             Advanced Developer Use Cases & Code Stress Testing Scenarios
@@ -529,7 +529,7 @@ export default function ReverseTextGenerator() {
         </section>
 
         {/* Section 5: In-Depth Frequently Asked Questions (FAQ) */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl p-6 md:p-8 mb-6 shadow-sm">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200/80 rounded-2xl md:p-8 mb-6 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <HelpCircle className="w-6 h-6 text-indigo-650 dark:text-indigo-400 flex-shrink-0" />
             In-Depth Frequently Asked Questions (FAQ)
@@ -567,7 +567,7 @@ export default function ReverseTextGenerator() {
         </section>
 
         {/* Section 6: Why Choose the TwisterTools Technical Workspace? */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white mb-6">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white mb-6 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Choose the TwisterTools Technical Workspace?</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

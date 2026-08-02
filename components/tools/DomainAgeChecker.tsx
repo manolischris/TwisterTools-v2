@@ -145,7 +145,7 @@ export default function DomainAgeChecker() {
               </div>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="space-y-5 p-4 sm:p-6">
               {/* Form Input */}
               <div className="space-y-2">
                 <label htmlFor="domain-input" className="block text-sm font-semibold text-slate-800">
@@ -249,7 +249,7 @@ export default function DomainAgeChecker() {
             </div>
 
             {/* Results Body */}
-            <div className="p-6 flex-1 flex flex-col justify-center">
+            <div className="flex-1 flex flex-col justify-center p-4 sm:p-6">
               {result ? (
                 <div className="space-y-6">
                   {/* Primary Hero Metric */}
@@ -341,7 +341,7 @@ export default function DomainAgeChecker() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6">
         {/* Card 1: What is Domain Age */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Clock className="w-5 h-5 text-indigo-600" />
@@ -357,7 +357,7 @@ export default function DomainAgeChecker() {
         </div>
 
         {/* Card 2: Why Domain Age Matters for SEO */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BarChart3 className="w-5 h-5 text-indigo-600" />
@@ -388,7 +388,7 @@ export default function DomainAgeChecker() {
         </div>
 
         {/* Card 3: Domain Age Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -430,7 +430,7 @@ export default function DomainAgeChecker() {
         </div>
 
         {/* Card 4: How to Use */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />
@@ -443,7 +443,7 @@ export default function DomainAgeChecker() {
         </div>
 
         {/* Card 5: FAQ Section */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

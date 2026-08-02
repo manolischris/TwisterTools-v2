@@ -350,7 +350,7 @@ export default function HttpHeadersInspector() {
               </div>
             </div>
 
-            <div className="p-6 space-y-5 flex-1 flex flex-col justify-between">
+            <div className="space-y-5 flex-1 flex flex-col justify-between p-4 sm:p-6">
               <div className="space-y-4">
                 {/* Target URL Input */}
                 <div className="space-y-2">
@@ -493,7 +493,7 @@ export default function HttpHeadersInspector() {
             </div>
 
             {/* Results Body */}
-            <div className="p-6 flex-1 flex flex-col">
+            <div className="flex-1 flex flex-col p-4 sm:p-6">
               {result ? (
                 <div className="space-y-5 flex-1 flex flex-col">
                   {/* Key Response Metrics Bar */}
@@ -635,7 +635,7 @@ export default function HttpHeadersInspector() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8">
         {/* Card 1: Technical Architecture of HTTP Headers */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -656,7 +656,7 @@ export default function HttpHeadersInspector() {
         </div>
 
         {/* Card 2: Header Inspection & Security Parsing Pipeline */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -714,7 +714,7 @@ export default function HttpHeadersInspector() {
         </div>
 
         {/* Card 3: Essential HTTP Headers & Security Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -764,7 +764,7 @@ export default function HttpHeadersInspector() {
         </div>
 
         {/* Card 4: HTTP Status Code Categorization Table */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <BarChart3 className="w-5 h-5 text-indigo-600" />
@@ -809,7 +809,7 @@ export default function HttpHeadersInspector() {
         </div>
 
         {/* Card 5: Production Engineering & DevOps Use Cases */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HardDrive className="w-5 h-5 text-indigo-600" />
@@ -851,7 +851,7 @@ export default function HttpHeadersInspector() {
         </div>
 
         {/* Card 6: Advanced Technical FAQs */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -892,7 +892,7 @@ export default function HttpHeadersInspector() {
         </div>
 
         {/* Card 7: Platform Advantages */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />

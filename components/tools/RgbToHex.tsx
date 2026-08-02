@@ -276,7 +276,7 @@ export default function RgbToHex() {
       {/* ══════════════════ WORKSPACE GRID (50/50 SPLIT) ══════════════════ */}
       <div className="grid lg:grid-cols-2 gap-6 items-start">
         {/* LEFT PANEL: INTERACTIVE CONTROLS */}
-        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 p-4 sm:p-6">
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
             <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
               <Sliders className="w-5 h-5 text-indigo-600" />
@@ -412,7 +412,7 @@ export default function RgbToHex() {
 
         {/* RIGHT PANEL: COLOR PREVIEW & OUTPUT CODES */}
         <div className="sticky top-4 space-y-6">
-          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 space-y-6">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-indigo-600" />
@@ -492,7 +492,7 @@ export default function RgbToHex() {
       {/* ══════════════════ BELOW-THE-FOLD CONTENT ══════════════════ */}
       <section className="space-y-6 pt-6">
         {/* Card 1: Comprehensive Technical Overview */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Info className="w-5 h-5 text-indigo-600" />
@@ -508,7 +508,7 @@ export default function RgbToHex() {
         </div>
 
         {/* Card 2: Technical Comparison Table */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Code className="w-5 h-5 text-indigo-600" />
@@ -559,7 +559,7 @@ export default function RgbToHex() {
         </div>
 
         {/* Card 3: Frequently Asked Questions */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -583,7 +583,7 @@ export default function RgbToHex() {
         </div>
 
         {/* Card 4: Security & Architecture Features */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 shadow-lg text-white space-y-6">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl shadow-lg text-white space-y-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold flex items-center gap-3">
             <ShieldCheck className="w-6 h-6 text-indigo-200" />
             <span>Enterprise-Grade Privacy & Real-Time Performance</span>

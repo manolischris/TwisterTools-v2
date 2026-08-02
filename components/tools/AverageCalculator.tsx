@@ -250,7 +250,7 @@ export default function AverageCalculator() {
         {/* ══════════════════ LEFT PANEL — 8 columns ══════════════════ */}
         <div className="lg:col-span-8 space-y-6">
           {/* Inputs Card */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
             <div className="flex items-center justify-between">
               <label
                 htmlFor="dataset-input"
@@ -322,7 +322,7 @@ export default function AverageCalculator() {
 
           {/* Data Distribution Visualizer Card */}
           {parsedData.values.length > 0 && (
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm p-4 sm:p-6">
               <h3 className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-5">
                 Data Distribution Visualizer
               </h3>
@@ -605,7 +605,7 @@ export default function AverageCalculator() {
       <section className="space-y-8">
         
         {/* Section 1 */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center flex-shrink-0">
               <Calculator className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -647,7 +647,7 @@ export default function AverageCalculator() {
         </div>
 
         {/* Section 2 */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/30 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/30 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center flex-shrink-0">
               <ListOrdered className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -689,7 +689,7 @@ export default function AverageCalculator() {
         </div>
 
         {/* Section 3 */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center flex-shrink-0">
               <Sigma className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -735,7 +735,7 @@ export default function AverageCalculator() {
         </div>
 
         {/* Section 4: FAQ */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/30 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/30 dark:to-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -774,7 +774,7 @@ export default function AverageCalculator() {
         </div>
 
         {/* Section 5: Why TwisterTools */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Use the TwisterTools Average Calculator?</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {[

@@ -563,7 +563,7 @@ export default function XmlFormatterValidator() {
       {/* Workspace Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         {/* ══════════════════ LEFT PANEL: WORKSPACE INPUT ══════════════════ */}
-        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4 p-4 sm:p-6">
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
             <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
               <Braces className="w-5 h-5 text-indigo-600" />
@@ -723,7 +723,7 @@ export default function XmlFormatterValidator() {
 
         {/* ══════════════════ RIGHT PANEL: OUTPUT & VALIDATION ══════════════════ */}
         <div className="sticky top-4 space-y-4">
-          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 space-y-4">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
                 <FileCode className="w-5 h-5 text-indigo-600" />
@@ -865,7 +865,7 @@ export default function XmlFormatterValidator() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6 pt-6">
         {/* Section 1: Detailed Technical Overview */}
-        <div className="bg-white rounded-2xl p-8 md:p-10 border border-slate-200/60 shadow-sm">
+        <div className="bg-white rounded-2xl md:p-10 border border-slate-200/60 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">
             <Braces className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             What is the XML Formatter, Validator & Viewer?
@@ -879,7 +879,7 @@ export default function XmlFormatterValidator() {
         </div>
 
         {/* Section 2: The Parsing and Validation Mechanism */}
-        <div className="bg-white rounded-2xl p-8 md:p-10 border border-slate-200/60 shadow-sm">
+        <div className="bg-white rounded-2xl md:p-10 border border-slate-200/60 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 mb-6">
             <Cpu className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             How the XML Validation Mechanism Operates Step-by-Step
@@ -917,7 +917,7 @@ export default function XmlFormatterValidator() {
         </div>
 
         {/* Section 3: XML Specifications & Compliance Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <Table className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             <span>XML Validation & Compliance Metrics</span>
@@ -964,7 +964,7 @@ export default function XmlFormatterValidator() {
         </div>
 
         {/* Section 4: Advanced Frequently Asked Questions (FAQ) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -1005,7 +1005,7 @@ export default function XmlFormatterValidator() {
         </div>
 
         {/* Section 5: Why Choose TwisterTools for XML Processing */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Choose TwisterTools for XML Processing?</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

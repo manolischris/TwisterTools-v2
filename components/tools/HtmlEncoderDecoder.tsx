@@ -333,7 +333,7 @@ export default function HtmlEncoderDecoder() {
       <div className="grid lg:grid-cols-2 gap-6 items-start">
         {/* ══════════════════ LEFT PANEL (Workspace Controls) ══════════════════ */}
         <div className="space-y-5">
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-5 p-4 sm:p-6">
             {/* Mode Selector Row */}
             <div className="flex bg-slate-100 rounded-xl p-1 gap-1">
               <button
@@ -729,7 +729,7 @@ export default function HtmlEncoderDecoder() {
       {/* ── Below-the-Fold Skyscraper Content Cards ── */}
       <section className="space-y-8 pt-8">
         {/* CARD 1: MASTER DEFINITION & ARCHITECTURE */}
-        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -747,7 +747,7 @@ export default function HtmlEncoderDecoder() {
         </div>
 
         {/* CARD 2: DETAILED SYSTEMATIC MATRIX TABLE */}
-        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -803,7 +803,7 @@ export default function HtmlEncoderDecoder() {
         </div>
 
         {/* CARD 3: THE TECHNICAL ALGORITHM STEP-BY-STEP */}
-        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -846,7 +846,7 @@ export default function HtmlEncoderDecoder() {
         </div>
 
         {/* CARD 4: CRITICAL SECURITY & COMPLIANCE VALUE */}
-        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-indigo-600" />
@@ -864,7 +864,7 @@ export default function HtmlEncoderDecoder() {
         </div>
 
         {/* CARD 5: REAL-WORLD CODE COMPARISON IMPLEMENTATIONS */}
-        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Code2 className="w-5 h-5 text-indigo-600" />
@@ -895,7 +895,7 @@ export default function HtmlEncoderDecoder() {
         </div>
 
         {/* CARD 6: DEEP-DIVE ENHANCED FAQ ACCORDION */}
-        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/50 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

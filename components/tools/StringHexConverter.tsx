@@ -190,7 +190,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
 
         {/* LEFT COLUMN: Interactive Input Space */}
-        <div className="bg-white border border-slate-200 shadow-sm rounded-2xl p-6 flex flex-col justify-between">
+        <div className="bg-white border border-slate-200 shadow-sm rounded-2xl flex flex-col justify-between p-4 sm:p-6">
           <div>
             {/* Multi-mode tab control bar */}
             <div className="flex bg-slate-100/80 p-1.5 rounded-xl mb-6">
@@ -486,7 +486,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
       {/* BELOW-THE-FOLD PROSE CONTENT */}
       <div className="space-y-8 mt-12 text-slate-800">
         {/* SECTION 1: SYSTEM GUIDE */}
-        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <FileText className="w-5 h-5 text-indigo-600" />
@@ -524,7 +524,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
         </section>
 
         {/* SECTION 2: CONVERSION WORKFLOWS */}
-        <section className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <section className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Settings className="w-5 h-5 text-indigo-600" />
@@ -556,7 +556,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
         </section>
 
         {/* SECTION 3: MAPPING MATRIX */}
-        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Info className="w-5 h-5 text-indigo-600" />
@@ -602,7 +602,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
         </section>
 
         {/* SECTION 4: USE CASES */}
-        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Sparkles className="w-5 h-5 text-indigo-600" />
@@ -627,7 +627,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
         </section>
 
         {/* SECTION 5: FAQS */}
-        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -653,7 +653,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
         </section>
 
         {/* SECTION 6: WHY US */}
-        <section className="bg-gradient-to-br from-indigo-900 to-slate-900 text-white rounded-2xl p-8 md:p-10 shadow-xl">
+        <section className="bg-gradient-to-br from-indigo-900 to-slate-900 text-white rounded-2xl md:p-10 shadow-xl p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold mb-4 flex items-center gap-3">
             High-Performance Client-Side Hex Encoding Environment
           </h2>

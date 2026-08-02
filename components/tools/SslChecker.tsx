@@ -275,7 +275,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
               </div>
             </div>
 
-            <div className="p-6 space-y-5 flex-1 flex flex-col justify-between">
+            <div className="space-y-5 flex-1 flex flex-col justify-between p-4 sm:p-6">
               <div className="space-y-4">
                 {/* Domain & Port Input */}
                 <div className="grid grid-cols-3 gap-3">
@@ -395,7 +395,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
             </div>
 
             {/* Results Body */}
-            <div className="p-6 flex-1 flex flex-col justify-between space-y-5">
+            <div className="flex-1 flex flex-col justify-between space-y-5 p-4 sm:p-6">
               {data && statusInfo ? (
                 <>
                   {/* Health Banner */}
@@ -537,7 +537,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8">
         {/* Card 1: Technical Architecture of SSL/TLS & PKI */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -558,7 +558,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
         </div>
 
         {/* Card 2: The TLS 1.3 Handshake & Verification Pipeline */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -616,7 +616,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
         </div>
 
         {/* Card 3: Cryptographic Protocols & Standards Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Layers className="w-5 h-5 text-indigo-600" />
@@ -665,7 +665,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
         </div>
 
         {/* Card 4: Business Risks & Downtime Impact */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <AlertTriangle className="w-5 h-5 text-indigo-600" />
@@ -707,7 +707,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
         </div>
 
         {/* Card 5: Certificate Validation Types (DV vs OV vs EV) */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Award className="w-5 h-5 text-indigo-600" />
@@ -749,7 +749,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
         </div>
 
         {/* Card 6: Comprehensive SSL Troubleshooting Guide */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -780,7 +780,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
         </div>
 
         {/* Card 7: Advanced FAQs */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -825,7 +825,7 @@ HSTS Header: ${data.hstsEnabled ? "Enforced" : "Missing"}`;
         </div>
 
         {/* Card 8: Platform Advantages */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />

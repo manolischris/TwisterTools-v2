@@ -317,7 +317,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
             {/* 50/50 WORKSPACE GRID */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* LEFT PANEL: CONTROLS & INPUTS */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5 min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-5 min-w-0 p-4 sm:p-6">
                     <div className="flex items-center justify-between pb-3 border-b border-slate-100">
                         <h2 className="text-base font-bold text-slate-800 flex items-center space-x-2">
                             <Layers className="w-4 h-4 text-indigo-600" />
@@ -493,7 +493,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                 </div>
 
                 {/* RIGHT PANEL: DISPLAY & BREAKDOWN */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6">
                     {/* Header Summary Cards */}
                     <div className="grid grid-cols-3 gap-3">
                         <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 text-center">
@@ -661,7 +661,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
             <div className="space-y-6">
 
                 {/* CARD 1: DEFINITIONS & MATHEMATICAL FOUNDATION */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <PieChart className="w-5 h-5" />
@@ -699,7 +699,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                 </div>
 
                 {/* CARD 2: APY VS APR TABLE & COMPILATION */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Scale className="w-5 h-5" />
@@ -758,7 +758,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                 </div>
 
                 {/* CARD 3: REAL-WORLD TAX DRAG & INFLATION ANALYSIS */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Flame className="w-5 h-5" />
@@ -795,7 +795,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                 </div>
 
                 {/* CARD 4: FAQS */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <HelpCircle className="w-5 h-5" />
@@ -845,7 +845,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                 </div>
 
                 {/* CARD 5: FINANCIAL DISCLAIMER */}
-                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 flex items-start space-x-4">
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl flex items-start space-x-4 p-4 sm:p-6">
                     <ShieldAlert className="w-6 h-6 text-slate-400 flex-shrink-0 mt-1" />
                     <div className="space-y-1">
                         <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider">

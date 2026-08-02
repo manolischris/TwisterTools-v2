@@ -594,7 +594,7 @@ export default function QrCodeGenerator() {
           </button>
 
           {accordionSections.find((s) => s.id === "content")?.isOpen && (
-            <div className="p-6 space-y-6">
+            <div className="space-y-6 p-4 sm:p-6">
               {/* Template Selector - 8-option horizontal scroll with arrow controls */}
               <div className="relative">
                 {/* Left arrow — large, high-usability */}
@@ -1062,7 +1062,7 @@ export default function QrCodeGenerator() {
           </button>
 
           {accordionSections.find((s) => s.id === "colors")?.isOpen && (
-            <div className="p-6 space-y-6">
+            <div className="space-y-6 p-4 sm:p-6">
               {/* Gradient Toggle */}
               <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700">
                 <label className="flex items-center justify-between cursor-pointer">
@@ -1250,7 +1250,7 @@ export default function QrCodeGenerator() {
           </button>
 
           {accordionSections.find((s) => s.id === "design")?.isOpen && (
-            <div className="p-6 space-y-6">
+            <div className="space-y-6 p-4 sm:p-6">
               {/* Dot Style */}
               <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700">
                 <label className="block text-sm font-medium text-foreground mb-3">
@@ -1330,7 +1330,7 @@ export default function QrCodeGenerator() {
           </button>
 
           {accordionSections.find((s) => s.id === "logo")?.isOpen && (
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700">
                 <p className="text-sm text-muted-foreground mb-4">
                   Upload your logo to brand your QR code. Use High (H) error correction for best results.
@@ -1389,7 +1389,7 @@ export default function QrCodeGenerator() {
       {/* RIGHT PANEL: Preview & Download (4 columns) */}
       <div className="lg:col-span-4">
         <div className="sticky top-24">
-          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl shadow-lg">
+          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl shadow-lg p-4 sm:p-6">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-950 flex items-center justify-center">
                 <QrCode className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />

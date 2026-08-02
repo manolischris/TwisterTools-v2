@@ -244,7 +244,7 @@ function ToolCard({
   return (
     <Link
       href={tool.href}
-      className="group relative bg-white border border-slate-200/80 rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1 min-h-[200px] cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+      className="group relative bg-white border border-slate-200/80 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1 min-h-[200px] cursor-pointer focus:outline-none focus:ring-2 focus:ring-indigo-500/50 p-4 sm:p-6"
       aria-label={`Launch ${tool.title}`}
     >
       {/* Featured badge */}

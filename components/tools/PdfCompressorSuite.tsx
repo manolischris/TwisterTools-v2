@@ -271,7 +271,7 @@ export default function PdfCompressorSuite() {
             {/* 50/50 Workspace Grid Layout */}
             <div className="grid lg:grid-cols-2 gap-6 items-start">
                 {/* Left Panel: Input & Options */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6">
                     <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2.5">
                         <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Upload className="w-4 h-4 text-indigo-600" />
@@ -418,7 +418,7 @@ export default function PdfCompressorSuite() {
                 </div>
 
                 {/* Right Panel: Output & Metrics */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 h-full flex flex-col justify-between">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 h-full flex flex-col justify-between p-4 sm:p-6">
                     <div className="space-y-6">
                         <h2 className="text-lg font-semibold text-slate-900 flex items-center gap-2.5">
                             <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -429,7 +429,7 @@ export default function PdfCompressorSuite() {
 
                         {/* Processing State */}
                         {isProcessing && (
-                            <div className="space-y-3 p-6 bg-indigo-50/50 rounded-xl border border-indigo-100 text-center">
+                            <div className="space-y-3 bg-indigo-50/50 rounded-xl border border-indigo-100 text-center p-4 sm:p-6">
                                 <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
                                     <div
                                         className="bg-indigo-600 h-full transition-all duration-300"
@@ -530,7 +530,7 @@ export default function PdfCompressorSuite() {
       ───────────────────────────────────────────────────────────── */}
             <section className="space-y-8 pt-6">
                 {/* Card 1: Technical Architecture & Mechanics */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Layers className="w-5 h-5 text-indigo-600" />
@@ -551,7 +551,7 @@ export default function PdfCompressorSuite() {
                 </div>
 
                 {/* Card 2: Strategic Processing Pipeline */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Workflow className="w-5 h-5 text-indigo-600" />
@@ -604,7 +604,7 @@ export default function PdfCompressorSuite() {
                 </div>
 
                 {/* Card 3: Presets Comparison Matrix */}
-                <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+                <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
                     <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
                             <Table className="w-5 h-5 text-indigo-600" />
@@ -651,7 +651,7 @@ export default function PdfCompressorSuite() {
                 </div>
 
                 {/* Card 4: Real-World Use Cases */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HardDrive className="w-5 h-5 text-indigo-600" />
@@ -693,7 +693,7 @@ export default function PdfCompressorSuite() {
                 </div>
 
                 {/* Card 5: Platform Advantages */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Zap className="w-5 h-5 text-indigo-600" />
@@ -746,7 +746,7 @@ export default function PdfCompressorSuite() {
                 </div>
 
                 {/* Card 6: Frequently Asked Questions */}
-                <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+                <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
                     <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

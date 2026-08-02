@@ -400,7 +400,7 @@ export default function JsonFormatterValidator() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         
         {/* ══════════════════ LEFT PANEL: WORKSPACE INPUT ══════════════════ */}
-        <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4 p-4 sm:p-6">
           <div className="flex items-center justify-between border-b border-slate-100 pb-3">
             <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
               <Braces className="w-5 h-5 text-indigo-600" />
@@ -568,7 +568,7 @@ export default function JsonFormatterValidator() {
         <div className="sticky top-4 space-y-4">
           
           {/* Main Formatted Code view card */}
-          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 space-y-4">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
             
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
@@ -710,7 +710,7 @@ export default function JsonFormatterValidator() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6 pt-6">
         {/* SECTION 1: COMPREHENSIVE TECHNICAL OVERVIEW */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 shadow-sm mb-6">
+        <div className="bg-white rounded-2xl md:p-8 border border-slate-200/60 shadow-sm mb-6 p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">
             <FileJson className="w-5 h-5 text-indigo-600" />
             The Ultimate Specification Guide to Modern JSON Parsing
@@ -724,7 +724,7 @@ export default function JsonFormatterValidator() {
         </div>
 
         {/* SECTION 2: THE 4-STAGE CLIENT VALIDATION ENGINE */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 shadow-sm mb-6">
+        <div className="bg-white rounded-2xl md:p-8 border border-slate-200/60 shadow-sm mb-6 p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 mb-6">
             <Cpu className="w-5 h-5 text-indigo-600" />
             How the JSON Validation Mechanism Works Step-by-Step
@@ -757,7 +757,7 @@ export default function JsonFormatterValidator() {
         </div>
 
         {/* SECTION 3: CORE COMPLIANCE AND VALIDATION MATRIX */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 shadow-sm mb-6">
+        <div className="bg-white rounded-2xl md:p-8 border border-slate-200/60 shadow-sm mb-6 p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 mb-4">
             <ShieldCheck className="w-5 h-5 text-indigo-600" />
             JSON Formatting Compliance: Valid vs. Invalid Structures
@@ -801,7 +801,7 @@ export default function JsonFormatterValidator() {
         </div>
 
         {/* SECTION 4: REAL-WORLD USE CASES */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200/60 shadow-sm mb-6">
+        <div className="bg-white rounded-2xl md:p-8 border border-slate-200/60 shadow-sm mb-6 p-4 sm:p-6">
           <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2 mb-6">
             <BookOpen className="w-5 h-5 text-indigo-600" />
             Professional Application Scenarios
@@ -847,7 +847,7 @@ export default function JsonFormatterValidator() {
         </div>
 
         {/* FAQ */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -871,7 +871,7 @@ export default function JsonFormatterValidator() {
         </div>
 
         {/* Why Choose TwisterTools */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Choose TwisterTools for Data Processing?</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

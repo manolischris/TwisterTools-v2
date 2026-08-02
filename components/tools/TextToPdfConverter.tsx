@@ -635,7 +635,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                             {/* Pagination Visualizer Display */}
                             <div className="h-[480px] overflow-y-auto bg-slate-100/70 border border-slate-200 rounded-xl p-4 space-y-4">
                                 {previewPages.length === 0 ? (
-                                    <div className="h-full flex flex-col items-center justify-center text-center p-6 text-slate-400">
+                                    <div className="h-full flex flex-col items-center justify-center text-center text-slate-400 p-4 sm:p-6">
                                         <FileText className="w-12 h-12 mb-2 text-slate-300" />
                                         <p className="text-sm font-semibold text-slate-600">
                                             No Text Content Entered
@@ -648,7 +648,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                     previewPages.map((page) => (
                                         <div
                                             key={page.pageNumber}
-                                            className="bg-white rounded-lg shadow-md border border-slate-200 p-6 space-y-2 relative transition-transform hover:shadow-lg"
+                                            className="bg-white rounded-lg shadow-md border border-slate-200 space-y-2 relative transition-transform hover:shadow-lg p-4 sm:p-6"
                                             style={{
                                                 fontFamily:
                                                     fontFamily === "Courier"
@@ -720,7 +720,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
       ───────────────────────────────────────────────────────────── */}
             <section className="space-y-8 mt-12">
                 {/* Card 1: Technical Architecture */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Cpu className="w-5 h-5 text-indigo-600" />
@@ -741,7 +741,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                 </div>
 
                 {/* Card 2: Feature Matrix */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Table className="w-5 h-5 text-indigo-600" />
@@ -787,7 +787,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                 </div>
 
                 {/* Card 3: Step-by-Step Guide */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Workflow className="w-5 h-5 text-indigo-600" />
@@ -831,7 +831,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                 </div>
 
                 {/* Card 4: Security Guarantees */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Shield className="w-5 h-5 text-indigo-600" />
@@ -866,7 +866,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                 </div>
 
                 {/* Card 5: Static FAQ Section */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

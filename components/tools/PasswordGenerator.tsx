@@ -282,7 +282,7 @@ export default function PasswordGenerator() {
               )}
             </button>
             {card1Open && (
-              <div className="p-6 space-y-4">
+              <div className="space-y-4 p-4 sm:p-6">
                 <div className="flex bg-slate-100 dark:bg-slate-900/60 p-1.5 rounded-2xl w-full">
                   <button
                     onClick={() => setMode("random")}
@@ -334,7 +334,7 @@ export default function PasswordGenerator() {
                 )}
               </button>
               {card2Open && (
-                <div className="p-6 space-y-6">
+                <div className="space-y-6 p-4 sm:p-6">
                   {/* Length Slider */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
@@ -452,7 +452,7 @@ export default function PasswordGenerator() {
                 )}
               </button>
               {card3Open && (
-                <div className="p-6 space-y-6">
+                <div className="space-y-6 p-4 sm:p-6">
                   {/* Word Count Slider */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
@@ -524,7 +524,7 @@ export default function PasswordGenerator() {
 
         {/* RIGHT PANEL: STICKY PREVIEW & STRENGTH CARD (SPAN 4) */}
         <div className="lg:col-span-4 lg:sticky lg:top-6 space-y-6">
-          <div className="bg-[#1e293b] text-white border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+          <div className="bg-[#1e293b] text-white border border-slate-800 rounded-2xl shadow-xl space-y-6 p-4 sm:p-6">
             <div className="flex items-center gap-2.5 pb-3 border-b border-slate-800">
               <Shield className="w-5 h-5 text-indigo-400" />
               <h3 className="font-bold text-sm tracking-wide uppercase text-slate-300">Preview &amp; Security</h3>
@@ -601,7 +601,7 @@ export default function PasswordGenerator() {
          ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8">
         {/* Card 1: What is a Secure Password? */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-indigo-600" />
@@ -616,7 +616,7 @@ export default function PasswordGenerator() {
         </div>
 
         {/* Card 2: How to Generate Secure Passwords */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Hash className="w-5 h-5 text-indigo-600" />
@@ -648,7 +648,7 @@ export default function PasswordGenerator() {
         </div>
 
         {/* Card 3: Password Security Best Practices */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <ShieldAlert className="w-5 h-5 text-indigo-600" />
@@ -679,7 +679,7 @@ export default function PasswordGenerator() {
         </div>
 
         {/* Card 4: Frequently Asked Questions (FAQ) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -724,7 +724,7 @@ export default function PasswordGenerator() {
         </div>
 
         {/* Card 5: Why Use Our Password Generator? */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
               <Info className="w-5 h-5 text-white" />

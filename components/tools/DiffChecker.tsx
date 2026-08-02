@@ -544,7 +544,7 @@ export default function DiffChecker() {
                   </div>
                 ))}
                 {splitViewData.length === 0 && (
-                  <div className="p-8 text-center text-sm text-slate-400">
+                  <div className="text-center text-sm text-slate-400 p-4 sm:p-6 md:p-8">
                     No content to compare
                   </div>
                 )}
@@ -589,7 +589,7 @@ export default function DiffChecker() {
                   </div>
                 ))}
                 {splitViewData.length === 0 && (
-                  <div className="p-8 text-center text-sm text-slate-400">
+                  <div className="text-center text-sm text-slate-400 p-4 sm:p-6 md:p-8">
                     No content to compare
                   </div>
                 )}
@@ -632,7 +632,7 @@ export default function DiffChecker() {
                 </div>
               ))}
               {unifiedViewData.length === 0 && (
-                <div className="p-8 text-center text-sm text-slate-400">
+                <div className="text-center text-sm text-slate-400 p-4 sm:p-6 md:p-8">
                   No content to compare
                 </div>
               )}
@@ -688,7 +688,7 @@ export default function DiffChecker() {
       <section className="space-y-8">
 
         {/* Card 1: Technical Architecture & Core Principles */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -703,7 +703,7 @@ export default function DiffChecker() {
         </div>
 
         {/* Card 2: How the Text Comparison Engine Operates Step-by-Step */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Binary className="w-5 h-5 text-indigo-600" />
@@ -752,7 +752,7 @@ export default function DiffChecker() {
         </div>
 
         {/* Card 3: Code Comparison Reference Samples */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Code className="w-5 h-5 text-indigo-600" />
@@ -801,7 +801,7 @@ export default function DiffChecker() {
         </div>
 
         {/* Card 4: Strategic Use-Cases for Technical Professionals */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Layers className="w-5 h-5 text-indigo-600" />
@@ -842,7 +842,7 @@ export default function DiffChecker() {
         </div>
 
         {/* Card 5: Advanced Frequently Asked Questions */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -879,7 +879,7 @@ export default function DiffChecker() {
         </div>
 
         {/* Card 6: Value Card Platform Advantages */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
               <Zap className="w-5 h-5 text-white" />

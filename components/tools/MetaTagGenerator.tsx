@@ -714,7 +714,7 @@ export default function MetaTagGenerator() {
       </div>
 
       {/* ── Below-the-Fold SEO Content: Card 1 ── */}
-      <section className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm space-y-6 mb-6">
+      <section className="bg-white border border-slate-200 rounded-2xl md:p-10 shadow-sm space-y-6 mb-6 p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <Info className="w-5 h-5 text-indigo-600" />
@@ -738,7 +738,7 @@ export default function MetaTagGenerator() {
       </section>
 
       {/* ── Below-the-Fold SEO Content: Card 2 ── */}
-      <section className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm space-y-6 mb-6">
+      <section className="bg-white border border-slate-200 rounded-2xl md:p-10 shadow-sm space-y-6 mb-6 p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <BarChart3 className="w-5 h-5 text-indigo-600" />
@@ -762,7 +762,7 @@ export default function MetaTagGenerator() {
       </section>
 
       {/* ── Below-the-Fold SEO Content: Card 3 ── */}
-      <section className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm space-y-6 mb-6">
+      <section className="bg-white border border-slate-200 rounded-2xl md:p-10 shadow-sm space-y-6 mb-6 p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <Zap className="w-5 h-5 text-indigo-600" />
@@ -810,7 +810,7 @@ export default function MetaTagGenerator() {
       </section>
 
       {/* ── Below-the-Fold SEO Content: Card 4 - Use Cases ── */}
-      <section className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm space-y-6 mb-6">
+      <section className="bg-white border border-slate-200 rounded-2xl md:p-10 shadow-sm space-y-6 mb-6 p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <Layout className="w-5 h-5 text-indigo-600" />
@@ -840,7 +840,7 @@ export default function MetaTagGenerator() {
       </section>
 
       {/* ── Below-the-Fold SEO Content: Card 5 - FAQ ── */}
-      <section className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm space-y-6 mb-6">
+      <section className="bg-white border border-slate-200 rounded-2xl md:p-10 shadow-sm space-y-6 mb-6 p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <HelpCircle className="w-5 h-5 text-indigo-600" />

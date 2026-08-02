@@ -393,7 +393,7 @@ export default function CreditCardGenerator() {
 
           {/* 3D Realistic Credit Card Graphic */}
           {primaryProfile && (
-            <div className="relative rounded-2xl p-6 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white shadow-xl border border-slate-800 overflow-hidden space-y-6">
+            <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white shadow-xl border border-slate-800 overflow-hidden space-y-6 p-4 sm:p-6">
               <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none" />
               
               <div className="flex justify-between items-start">
@@ -579,7 +579,7 @@ export default function CreditCardGenerator() {
 
       {/* ── Batch Table View (If > 1 record) ── */}
       {profiles.length > 1 && (
-        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden space-y-4 p-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden space-y-4 p-4 sm:p-6">
           <div className="flex items-center justify-between">
             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -620,7 +620,7 @@ export default function CreditCardGenerator() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8">
         {/* Card 1: Luhn Algorithm Validation & Mathematical Mechanics */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -647,7 +647,7 @@ export default function CreditCardGenerator() {
         </div>
 
         {/* Card 2: Industry Issuer Identification Numbers (IIN / BIN Table) */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -690,7 +690,7 @@ export default function CreditCardGenerator() {
         </div>
 
         {/* Card 3: Enterprise Integration & QA Sandbox Use Cases */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -725,7 +725,7 @@ export default function CreditCardGenerator() {
         </div>
 
         {/* Card 4: Frequently Asked Questions */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

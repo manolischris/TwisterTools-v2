@@ -727,7 +727,7 @@ export default function SqlFormatter() {
       <section className="space-y-6 pt-6">
 
         {/* SECTION 1: Extended Definitions & Technical Theory */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -745,7 +745,7 @@ export default function SqlFormatter() {
         </div>
 
         {/* SECTION 2: Step-by-Step Operational Checklist */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -780,7 +780,7 @@ export default function SqlFormatter() {
         </div>
 
         {/* SECTION 3: Production Syntax Reference Matrix */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -837,7 +837,7 @@ export default function SqlFormatter() {
         </div>
 
         {/* SECTION 4: Code Architecture & Comparison Samples */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <FileText className="w-5 h-5 text-indigo-600" />
@@ -884,7 +884,7 @@ LIMIT 100;`}</pre>
         </div>
 
         {/* SECTION 5: Deep-Dive FAQ Core Compliance Block */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -922,7 +922,7 @@ LIMIT 100;`}</pre>
         </div>
 
         {/* SECTION 6: Value Card Platform Advantages */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Choose TwisterTools for Query Beautification?</h2>
           <p className="text-indigo-100 text-sm md:text-base leading-relaxed mb-6">
             The TwisterTools developer platform provides full developer utility performance without the typical ad-bloat or tracking overhead found on legacy sites. By processing code structures 100% locally, you ensure absolute security compliance with zero data leaks. The tool scales fluidly from simple queries to deep corporate warehouse pipeline files up to 5 MB, providing fast, localized formatting with premium UI responsiveness.

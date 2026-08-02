@@ -160,7 +160,7 @@ export default function DomainToIpConverter() {
               </div>
             </div>
 
-            <div className="p-6 space-y-5">
+            <div className="space-y-5 p-4 sm:p-6">
               {/* Domain Input */}
               <div className="space-y-2">
                 <label htmlFor="domain-ip-input" className="block text-sm font-semibold text-slate-800">
@@ -264,7 +264,7 @@ export default function DomainToIpConverter() {
             </div>
 
             {/* Content Body */}
-            <div className="p-6 flex-1 flex flex-col justify-center">
+            <div className="flex-1 flex flex-col justify-center p-4 sm:p-6">
               {result ? (
                 <div className="space-y-6">
                   {/* Hero Metric Box */}
@@ -350,7 +350,7 @@ export default function DomainToIpConverter() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6">
         {/* Card 1: What is Domain to IP Resolution */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Globe className="w-5 h-5 text-indigo-600" />
@@ -366,7 +366,7 @@ export default function DomainToIpConverter() {
         </div>
 
         {/* Card 2: Strategic Network Use Cases */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Activity className="w-5 h-5 text-indigo-600" />
@@ -397,7 +397,7 @@ export default function DomainToIpConverter() {
         </div>
 
         {/* Card 3: DNS Record Comparison Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -439,7 +439,7 @@ export default function DomainToIpConverter() {
         </div>
 
         {/* Card 4: How to Convert */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />
@@ -452,7 +452,7 @@ export default function DomainToIpConverter() {
         </div>
 
         {/* Card 5: FAQ Section */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

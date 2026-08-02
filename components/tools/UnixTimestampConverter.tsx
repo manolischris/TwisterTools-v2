@@ -288,7 +288,7 @@ export default function UnixTimestampConverter() {
 
           {/* ── MODE 1: Timestamp to Date ── */}
           {activeMode === "ts-to-date" && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label
                   htmlFor="ts-input"
@@ -435,7 +435,7 @@ export default function UnixTimestampConverter() {
 
           {/* ── MODE 2: Date to Timestamp ── */}
           {activeMode === "date-to-ts" && (
-            <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label
                   htmlFor="dt-datetime"
@@ -749,7 +749,7 @@ export default function UnixTimestampConverter() {
       <div className="space-y-6 pt-4">
 
         {/* ── CARD 1: The Comprehensive Technical Guide to Unix Epoch Time ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -767,7 +767,7 @@ export default function UnixTimestampConverter() {
         </div>
 
         {/* ── CARD 2: The Anatomical Breakdown: Seconds vs. Milliseconds ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -845,7 +845,7 @@ export default function UnixTimestampConverter() {
         </div>
 
         {/* ── CARD 3: Mitigating the Impending Year 2038 Problem (Y2K38) ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <AlertTriangle className="w-5 h-5 text-indigo-600" />
@@ -889,7 +889,7 @@ export default function UnixTimestampConverter() {
         </div>
 
         {/* ── CARD 4: Step-by-Step Programming Language Implementation Guides ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <ListOrdered className="w-5 h-5 text-indigo-600" />
@@ -938,7 +938,7 @@ date -u -d @1772549600`}
         </div>
 
         {/* ── CARD 5: Key Epoch Chronological Milestones Reference ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Info className="w-5 h-5 text-indigo-600" />
@@ -984,7 +984,7 @@ date -u -d @1772549600`}
         </div>
 
         {/* ── CARD 6: Advanced Frequently Asked Questions (FAQ) ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -1025,7 +1025,7 @@ date -u -d @1772549600`}
         </div>
 
         {/* ── CARD 7: Structured JSON-LD Injection Schema ── */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Code className="w-5 h-5 text-indigo-600" />

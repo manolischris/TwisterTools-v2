@@ -1059,7 +1059,7 @@ export default function HtmlToMarkdown() {
 
       <section className="space-y-8 mt-12">
         {/* ── Card 1: Technical Architecture ── */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm p-6 md:p-8">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm md:p-8 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
               <Code2 className="w-5 h-5 text-indigo-600" />
@@ -1096,7 +1096,7 @@ export default function HtmlToMarkdown() {
         </div>
 
         {/* ── Card 2: Conversion Engine Pipeline ── */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm p-6 md:p-8">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm md:p-8 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
               <CheckCircle2 className="w-5 h-5 text-indigo-600" />
@@ -1143,7 +1143,7 @@ export default function HtmlToMarkdown() {
         </div>
 
         {/* ── Card 3: Markup Specification Reference Matrix ── */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm p-6 md:p-8">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm md:p-8 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -1215,7 +1215,7 @@ export default function HtmlToMarkdown() {
         </div>
 
         {/* ── Card 4: Enterprise Use Cases ── */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm p-6 md:p-8">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm md:p-8 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
               <Layers className="w-5 h-5 text-indigo-600" />
@@ -1253,7 +1253,7 @@ export default function HtmlToMarkdown() {
         </div>
 
         {/* ── Card 5: Frequently Asked Questions ── */}
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm p-6 md:p-8">
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm md:p-8 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -1283,7 +1283,7 @@ export default function HtmlToMarkdown() {
         </div>
 
         {/* ── Card 6: Platform Advantages ── */}
-        <div className="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-6 md:p-8 rounded-2xl">
+        <div className="bg-gradient-to-br from-indigo-900 to-slate-900 text-white md:p-8 rounded-2xl p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0">
               <Sparkles className="w-5 h-5 text-white" />

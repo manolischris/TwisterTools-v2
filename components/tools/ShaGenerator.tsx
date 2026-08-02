@@ -567,7 +567,7 @@ export default function ShaGenerator() {
 
           {/* ── Text Mode ── */}
           {activeMode === "single" && (
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label
                   htmlFor="sha-single-input"
@@ -607,7 +607,7 @@ export default function ShaGenerator() {
 
           {/* ── Bulk Mode ── */}
           {activeMode === "bulk" && (
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label
                   htmlFor="sha-bulk-input"
@@ -684,7 +684,7 @@ export default function ShaGenerator() {
 
           {/* ── File Mode ── */}
           {activeMode === "file" && (
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
               <div>
                 <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-1">
                   Local File Target
@@ -980,7 +980,7 @@ export default function ShaGenerator() {
       <div className="space-y-6 pt-4">
 
         {/* SECTION 1: Deep Definitative Reference Guide */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <Shield className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             The Ultimate Technical Guide to the Secure Hash Algorithm (SHA) Suite
@@ -997,7 +997,7 @@ export default function ShaGenerator() {
         </section>
 
         {/* SECTION 2: High-Density Cryptographic Comparison Matrix */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm mt-6">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm mt-6 p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <Hash className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             Architectural Specifications: SHA-1, SHA-2, and SHA-3 Comparison
@@ -1052,7 +1052,7 @@ export default function ShaGenerator() {
         </section>
 
         {/* SECTION 3: Detailed Step-by-Step Mathematical Flow */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm mt-6">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm mt-6 p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <Cpu className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             The Internal Mechanics: How the Compression Engine Works
@@ -1086,7 +1086,7 @@ export default function ShaGenerator() {
         </section>
 
         {/* SECTION 4: Real-World Code Examples */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm mt-6">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm mt-6 p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <Terminal className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             Programmatic Implementation Reference
@@ -1119,7 +1119,7 @@ def calculate_sha256(text: str) -> str:
         </section>
 
         {/* SECTION 5: Comprehensive Practical Use Cases */}
-        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 shadow-sm mt-6">
+        <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-8 shadow-sm mt-6 p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-3 mb-4">
             <FileText className="w-6 h-6 text-indigo-600 flex-shrink-0" />
             Strategic Use Cases for Security Professionals
@@ -1153,7 +1153,7 @@ def calculate_sha256(text: str) -> str:
         </section>
 
         {/* SECTION 6: Authoritative FAQ Section */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-950/20 dark:to-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm mt-6">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-950/20 dark:to-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm mt-6 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />

@@ -694,7 +694,7 @@ export default function CronExpressionGenerator() {
           </div>
 
           {activeTab === "presets" && (
-            <div className="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-sm">
+            <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm p-4 sm:p-6">
               <h3 className="text-sm font-bold text-slate-900 mb-4 flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-indigo-600" />
                 Select a Preset Configuration
@@ -842,7 +842,7 @@ export default function CronExpressionGenerator() {
                     </button>
 
                     {isOpen && (
-                      <div className="p-6 space-y-5">
+                      <div className="space-y-5 p-4 sm:p-6">
                         
                         <div className="flex gap-2 p-1 bg-slate-100/80 rounded-xl max-w-md">
                           {[
@@ -1008,7 +1008,7 @@ export default function CronExpressionGenerator() {
               </span>
             </div>
 
-            <div className="p-6 space-y-5 flex-1">
+            <div className="space-y-5 flex-1 p-4 sm:p-6">
               
               <div className="space-y-2">
                 <label htmlFor="raw-cron-input" className="block text-xs font-semibold text-slate-500 uppercase tracking-wide">
@@ -1128,7 +1128,7 @@ export default function CronExpressionGenerator() {
       <section className="mt-12 space-y-8">
         
         {/* Section 1: Deep Architectural Breakdown & Mathematical Anatomy */}
-        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm md:p-10 mb-8 p-4 sm:p-6">
           <div className="flex items-center space-x-3 mb-6">
             <div className="p-2 bg-indigo-50 rounded-xl text-indigo-600 flex items-center justify-center">
               <Terminal className="w-6 h-6"/>
@@ -1212,7 +1212,7 @@ export default function CronExpressionGenerator() {
         </div>
 
         {/* Section 2: Step-by-Step Logic Execution Matrix */}
-        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm md:p-10 mb-8 p-4 sm:p-6">
           <div className="flex items-center space-x-3 mb-6">
             <div className="p-2 bg-indigo-50 rounded-xl text-indigo-600 flex items-center justify-center">
               <Cpu className="w-6 h-6"/>
@@ -1275,7 +1275,7 @@ export default function CronExpressionGenerator() {
         </div>
 
         {/* Section 3: Technical Reference Expression Mapping Grid */}
-        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm md:p-10 mb-8 p-4 sm:p-6">
           <div className="flex items-center space-x-3 mb-6">
             <div className="p-2 bg-indigo-50 rounded-xl text-indigo-600 flex items-center justify-center">
               <Table className="w-6 h-6"/>
@@ -1332,7 +1332,7 @@ export default function CronExpressionGenerator() {
         </div>
 
         {/* Section 4: Enterprise Implementation & Automation Patterns */}
-        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm md:p-10 mb-8 p-4 sm:p-6">
           <div className="flex items-center space-x-3 mb-6">
             <div className="p-2 bg-indigo-50 rounded-xl text-indigo-600 flex items-center justify-center">
               <Workflow className="w-6 h-6"/>
@@ -1347,7 +1347,7 @@ export default function CronExpressionGenerator() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group">
+            <div className="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group p-4 sm:p-6">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center space-x-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-500 group-hover:scale-125 transition-transform" />
                 <span>Database Replication Snapshots</span>
@@ -1357,7 +1357,7 @@ export default function CronExpressionGenerator() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group">
+            <div className="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group p-4 sm:p-6">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center space-x-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-500 group-hover:scale-125 transition-transform" />
                 <span>Cache Eviction Frameworks</span>
@@ -1367,7 +1367,7 @@ export default function CronExpressionGenerator() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group">
+            <div className="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group p-4 sm:p-6">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center space-x-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-500 group-hover:scale-125 transition-transform" />
                 <span>SaaS Automated Billing Runtimes</span>
@@ -1377,7 +1377,7 @@ export default function CronExpressionGenerator() {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group">
+            <div className="rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50/50 to-white hover:shadow-md transition-all duration-200 group p-4 sm:p-6">
               <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center space-x-2">
                 <span className="w-2 h-2 rounded-full bg-indigo-500 group-hover:scale-125 transition-transform" />
                 <span>System Log Hygiene & Rotation</span>
@@ -1390,7 +1390,7 @@ export default function CronExpressionGenerator() {
         </div>
 
         {/* Section 5: Authoritative Frequently Asked Questions (FAQ) */}
-        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm p-8 md:p-10 mb-8">
+        <div className="bg-white border border-slate-200/60 rounded-2xl shadow-sm md:p-10 mb-8 p-4 sm:p-6">
           <div className="flex items-center space-x-3 mb-6">
             <div className="p-2 bg-indigo-50 rounded-xl text-indigo-600 flex items-center justify-center">
               <HelpCircle className="w-6 h-6"/>

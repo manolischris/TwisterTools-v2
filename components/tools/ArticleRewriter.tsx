@@ -426,7 +426,7 @@ export default function ArticleRewriter() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6 mt-12">
         {/* Card 1: Technical Architecture */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -442,7 +442,7 @@ export default function ArticleRewriter() {
         </div>
 
         {/* Card 2: Workflow Pipeline */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <CheckCircle2 className="w-5 h-5 text-indigo-600" />
@@ -486,7 +486,7 @@ export default function ArticleRewriter() {
         </div>
 
         {/* Card 3: Modes Comparison Table */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Layers className="w-5 h-5 text-indigo-600" />
@@ -534,7 +534,7 @@ export default function ArticleRewriter() {
         </div>
 
         {/* Card 4: FAQs */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

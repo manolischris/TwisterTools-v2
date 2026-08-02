@@ -763,7 +763,7 @@ export default function BinaryConverter({ initialSlug }: BinaryConverterProps) {
       <section className="space-y-6 pt-6">
         
         {/* Card 1: The Ultimate Guide */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 p-8 md:p-10 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
             <Binary className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
             <span>The Ultimate Guide to Binary and Computer Base Number Systems</span>
@@ -779,7 +779,7 @@ export default function BinaryConverter({ initialSlug }: BinaryConverterProps) {
         </div>
 
         {/* Card 2: Defining Core Bases */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 p-8 md:p-10 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
             <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
             <span>Defining the Core Base Number Systems</span>
@@ -831,7 +831,7 @@ export default function BinaryConverter({ initialSlug }: BinaryConverterProps) {
         </div>
 
         {/* Card 3: Math Walkthroughs */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 p-8 md:p-10 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
             <Activity className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
             <span>Concrete Mathematical Walkthroughs &amp; Examples</span>
@@ -908,7 +908,7 @@ export default function BinaryConverter({ initialSlug }: BinaryConverterProps) {
         </div>
 
         {/* Card 4: Use Cases */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 p-8 md:p-10 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
             <Code className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
             <span>Practical Use Cases for Technical Professionals</span>
@@ -948,7 +948,7 @@ export default function BinaryConverter({ initialSlug }: BinaryConverterProps) {
         </div>
 
         {/* Card 5: FAQs */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 p-8 md:p-10 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/60 md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <ShieldCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400 flex-shrink-0" />
             <span>Advanced Frequently Asked Questions (FAQ)</span>
@@ -987,7 +987,7 @@ export default function BinaryConverter({ initialSlug }: BinaryConverterProps) {
         </div>
 
         {/* Why Choose TwisterTools for Binary Conversion? */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <Sparkles className="w-5 h-5 text-indigo-200 flex-shrink-0" />
             <span>Why Choose TwisterTools for Binary Conversion?</span>

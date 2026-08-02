@@ -522,7 +522,7 @@ export default function JwtDecoder() {
       <section className="space-y-8">
         
         {/* What is a JWT Decoder & Inspector? */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
               <ShieldAlert className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -540,7 +540,7 @@ export default function JwtDecoder() {
         </div>
 
         {/* How JSON Web Tokens Work Step-by-Step */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -601,7 +601,7 @@ export default function JwtDecoder() {
         </div>
 
         {/* JWT Anatomy vs. Standard Base64 Encoding */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
               <Columns className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -650,7 +650,7 @@ export default function JwtDecoder() {
         </div>
 
         {/* Common JWT Claims Reference Specification Matrix */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
               <Terminal className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -696,7 +696,7 @@ export default function JwtDecoder() {
         </div>
 
         {/* Security Vulnerabilities & Cryptographic Threat Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -729,7 +729,7 @@ export default function JwtDecoder() {
         </div>
 
         {/* Frequently Asked Questions */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />

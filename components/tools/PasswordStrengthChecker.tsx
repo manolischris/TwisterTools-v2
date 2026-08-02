@@ -302,7 +302,7 @@ export default function PasswordStrengthChecker() {
         
         {/* ══════════════════ LEFT PANEL — 8 columns ══════════════════ */}
         <div className="lg:col-span-8 space-y-6">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-5">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm space-y-5 p-4 sm:p-6">
             {/* Input Text Area Container */}
             <div className="space-y-2">
               <label
@@ -366,7 +366,7 @@ export default function PasswordStrengthChecker() {
           </div>
 
           {/* Criteria Checklist Grid (2-column) */}
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm space-y-4 p-4 sm:p-6">
             <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
               Instant Security Criteria
             </h3>
@@ -415,7 +415,7 @@ export default function PasswordStrengthChecker() {
                 </div>
               </div>
 
-              <div className="p-6 space-y-6 flex flex-col items-center">
+              <div className="space-y-6 flex flex-col items-center p-4 sm:p-6">
                 {/* Circular Dynamic Security Score Dial */}
                 <div className="relative w-32 h-32 flex items-center justify-center">
                   <svg className="w-full h-full transform -rotate-90">
@@ -569,7 +569,7 @@ export default function PasswordStrengthChecker() {
       <section className="space-y-8 pt-4">
 
         {/* Card 1: What is Password Strength and Entropy? */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -590,7 +590,7 @@ export default function PasswordStrengthChecker() {
         </div>
 
         {/* Card 2: How to Interpret Your Cracking Time Results */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <Clock className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -645,7 +645,7 @@ export default function PasswordStrengthChecker() {
         </div>
 
         {/* Card 3: Five Crucial Rules for Bulletproof Password Security */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -693,7 +693,7 @@ export default function PasswordStrengthChecker() {
         </div>
 
         {/* Card 4: Frequently Asked Questions (FAQ) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900 dark:to-slate-955 border border-slate-200 dark:border-slate-800 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -733,7 +733,7 @@ export default function PasswordStrengthChecker() {
         </div>
 
         {/* Card 5: Why Use the TwisterTools Strength Analyzer? */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white p-4 sm:p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-white" />

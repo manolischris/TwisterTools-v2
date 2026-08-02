@@ -594,7 +594,7 @@ export default function FaviconGeneratorSuite() {
 
             {/* Generated Items Gallery List */}
             {generatedIcons.length === 0 ? (
-              <div className="h-[340px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
+              <div className="h-[340px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                 <Globe className="w-10 h-10 text-slate-300 mb-2" />
                 <p className="text-sm font-semibold text-slate-700">No Generated Favicons</p>
                 <p className="text-xs text-slate-400 mt-1 max-w-xs">
@@ -668,7 +668,7 @@ export default function FaviconGeneratorSuite() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8 mt-12">
         {/* Card 1: Technical Standards & Browser Rendering Specifications */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Cpu className="w-5 h-5" />
@@ -692,7 +692,7 @@ export default function FaviconGeneratorSuite() {
         </div>
 
         {/* Card 2: Resolution & Platform Specification Matrix */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Table className="w-5 h-5" />
@@ -769,7 +769,7 @@ export default function FaviconGeneratorSuite() {
         </div>
 
         {/* Card 3: Step-by-Step Implementation Guide */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Workflow className="w-5 h-5" />
@@ -813,7 +813,7 @@ export default function FaviconGeneratorSuite() {
         </div>
 
         {/* Card 4: Web App Manifest & Head Embed Code Examples */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Code2 className="w-5 h-5" />
@@ -849,7 +849,7 @@ export default function FaviconGeneratorSuite() {
         </div>
 
         {/* Card 5: Enterprise Privacy & Client-Side Sandbox Guarantees */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Shield className="w-5 h-5" />
@@ -884,7 +884,7 @@ export default function FaviconGeneratorSuite() {
         </div>
 
         {/* Card 6: Frequently Asked Questions (Static FAQ) */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <HelpCircle className="w-5 h-5" />

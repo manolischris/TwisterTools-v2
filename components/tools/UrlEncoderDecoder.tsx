@@ -164,7 +164,7 @@ export default function UrlEncoderDecoder() {
         
         {/* ══════════════════ LEFT PANEL (Workspace Controls) ══════════════════ */}
         <div className="space-y-5">
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-5 p-4 sm:p-6">
             
             {/* Mode Selector Row */}
             <div className="flex bg-slate-100 rounded-xl p-1 gap-1">
@@ -537,7 +537,7 @@ export default function UrlEncoderDecoder() {
       <section className="space-y-6">
 
         {/* Card 1: What is URL Encoding and Decoding? */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Info className="w-5 h-5 text-indigo-600" />
@@ -550,7 +550,7 @@ export default function UrlEncoderDecoder() {
         </div>
 
         {/* Card 2: The Core Mechanics of Percent-Encoding Step-by-Step (MD5 BADGE STEP DESIGN) */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -599,7 +599,7 @@ export default function UrlEncoderDecoder() {
         </div>
 
         {/* Card 3: Interactive URI Character Character Specification Matrix (MD5 DARK TABLE STYLE) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -659,7 +659,7 @@ export default function UrlEncoderDecoder() {
         </div>
 
         {/* Card 4: Technical Differences: encodeURI vs. encodeURIComponent (MD5 DARK TABLE COMPARISON STYLE) */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <GitCompare className="w-5 h-5 text-indigo-600" />
@@ -723,7 +723,7 @@ export default function UrlEncoderDecoder() {
         </div>
 
         {/* Card 5: Professional Use Cases for Technical Professionals (MD5 ROUND DOT BULLET GRID DESIGN) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Layers className="w-5 h-5 text-indigo-600" />
@@ -764,7 +764,7 @@ export default function UrlEncoderDecoder() {
         </div>
 
         {/* Card 6: Frequently Asked Questions (MD5 GRADIENT LEFT-BORDER ACCENT ACCORDION STYLE) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -805,7 +805,7 @@ export default function UrlEncoderDecoder() {
         </div>
 
         {/* Why Our Tool (MD5 ACCENT CTA DESIGN BLOCK) */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6">Why Use TwisterTools URL Encoder / Decoder?</h2>
           <div className="grid md:grid-cols-2 gap-4">
             {[

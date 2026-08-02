@@ -415,7 +415,7 @@ export default function AgeCalculator() {
         {/* ══════════════════ LEFT PANEL — 8 columns ══════════════════ */}
         <div className="lg:col-span-8 space-y-6">
           {/* Card 1: Input controls */}
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6">
             <h2 className="text-lg font-semibold text-slate-800 flex items-center gap-2 pb-3 border-b border-slate-100">
               <Calendar className="w-5 h-5 text-indigo-600" />
               Configure Birth Details
@@ -872,7 +872,7 @@ export default function AgeCalculator() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6 pt-6 border-t border-slate-200/60">
         {/* CARD 1: Understanding Chronological Age & Time Tracking */}
-        <div className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm space-y-6 mt-6">
+        <div className="bg-white border border-slate-200/80 rounded-2xl md:p-8 shadow-sm space-y-6 mt-6 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Calendar className="w-5 h-5 text-indigo-600" />
@@ -887,7 +887,7 @@ export default function AgeCalculator() {
         </div>
 
         {/* CARD 2: How the Age Calculator Computes Your Time */}
-        <div className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm space-y-6 mt-6">
+        <div className="bg-white border border-slate-200/80 rounded-2xl md:p-8 shadow-sm space-y-6 mt-6 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -946,7 +946,7 @@ export default function AgeCalculator() {
         </div>
 
         {/* CARD 3: Chronological Milestones & Time Epochs */}
-        <div className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm space-y-6 mt-6">
+        <div className="bg-white border border-slate-200/80 rounded-2xl md:p-8 shadow-sm space-y-6 mt-6 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <History className="w-5 h-5 text-indigo-600" />
@@ -994,7 +994,7 @@ export default function AgeCalculator() {
         </div>
 
         {/* CARD 4: Frequently Asked Questions */}
-        <div className="bg-white border border-slate-200/80 rounded-2xl p-6 md:p-8 shadow-sm space-y-6 mt-6">
+        <div className="bg-white border border-slate-200/80 rounded-2xl md:p-8 shadow-sm space-y-6 mt-6 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -1031,7 +1031,7 @@ export default function AgeCalculator() {
         </div>
 
         {/* CARD 5: Why Use the TwisterTools Age Calculator? */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
               <Zap className="lucide lucide-info w-5 h-5 text-white" />

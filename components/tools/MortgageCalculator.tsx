@@ -355,7 +355,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
             {/* Interactive 50/50 Workspace Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Left Workspace Panel: Controls & Inputs */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0 p-4 sm:p-6">
                     <div>
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-5">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -596,7 +596,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                 </div>
 
                 {/* Right Workspace Panel: Results, Visualizations & Data Schedule */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0" ref={exportRef}>
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 flex flex-col justify-between min-h-[640px] min-w-0 p-4 sm:p-6" ref={exportRef}>
                     <div className="space-y-6">
                         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                             <h2 className="text-lg font-bold text-slate-900 flex items-center gap-2">
@@ -762,7 +762,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
             <div className="space-y-6">
 
                 {/* Card 1: Comprehensive Financial Definitions & Core Mechanics */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -812,7 +812,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                     </div>
 
                     {/* Mathematical Formula Box */}
-                    <div className="bg-slate-900 text-white rounded-xl p-6 space-y-3">
+                    <div className="bg-slate-900 text-white rounded-xl space-y-3 p-4 sm:p-6">
                         <h3 className="text-sm font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-2">
                             <Calculator className="w-4 h-4" /> Standard Amortized Payment Equation
                         </h3>
@@ -832,7 +832,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                 </section>
 
                 {/* Card 2: Concrete Worked Mathematical Example */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Lightbulb className="w-5 h-5 text-indigo-600" />
@@ -908,7 +908,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                 </section>
 
                 {/* Card 3: Comparing Loan Terms (15-Year vs 30-Year) */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Scale className="w-5 h-5 text-indigo-600" />
@@ -963,7 +963,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                 </section>
 
                 {/* Card 4: Payoff Strategies & Bi-Weekly Accelerated Schedules */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <TrendingDown className="w-5 h-5 text-indigo-600" />
@@ -1006,7 +1006,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                 </section>
 
                 {/* Card 5: Frequently Asked Questions (FAQ) */}
-                <section className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 min-w-0">
+                <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -1074,7 +1074,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                 </section>
 
                 {/* Mandatory Financial Disclaimer Section */}
-                <section className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm space-y-2 text-xs text-slate-500">
+                <section className="bg-slate-50 border border-slate-200 rounded-2xl shadow-sm space-y-2 text-xs text-slate-500 p-4 sm:p-6">
                     <h3 className="font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
                         <ShieldCheck className="w-4 h-4 text-slate-500" /> Essential Financial Disclaimer
                     </h3>

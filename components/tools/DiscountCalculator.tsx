@@ -204,7 +204,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
             <div className="grid lg:grid-cols-2 gap-6 items-start">
                 {/* ══════════════════ LEFT PANEL: INPUT CONTROLS ══════════════════ */}
                 <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex flex-col justify-between">
-                    <div className="p-6 space-y-5">
+                    <div className="space-y-5 p-4 sm:p-6">
                         {/* Mode Selection Pills */}
                         <div>
                             <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
@@ -424,7 +424,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                             </span>
                         </div>
 
-                        <div className="p-6 space-y-6">
+                        <div className="space-y-6 p-4 sm:p-6">
                             {/* Primary Output Hero Cards */}
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-center">
@@ -538,7 +538,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
       ───────────────────────────────────────────────────────────── */}
             <section className="space-y-8">
                 {/* Card 1: Technical Architecture of Commercial Discounting */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Calculator className="w-5 h-5" />
@@ -567,7 +567,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                 </div>
 
                 {/* Card 2: Stacked & Double Discount Logic Analysis */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <TrendingDown className="w-5 h-5" />
@@ -596,7 +596,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                 </div>
 
                 {/* Card 3: Reverse Pricing & List Reconstruction */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Scale className="w-5 h-5" />
@@ -620,7 +620,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                 </div>
 
                 {/* Card 4: Discount Workflow Matrix Table */}
-                <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm space-y-6 mb-6">
+                <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm space-y-6 mb-6 p-4 sm:p-6">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Table className="w-5 h-5" />
@@ -667,7 +667,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                 </div>
 
                 {/* Card 5: Real-World Use Cases & Applications */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <ShoppingBag className="w-5 h-5" />
@@ -710,7 +710,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                 </div>
 
                 {/* Card 6: Step-by-Step Practical Calculation Guide */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <ListOrdered className="w-5 h-5" />
@@ -751,7 +751,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                 </div>
 
                 {/* Card 7: Static FAQ Section */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <HelpCircle className="w-5 h-5" />
@@ -792,7 +792,7 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                 </div>
 
                 {/* Card 8: Platform Performance & Security Advantages */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Zap className="w-5 h-5" />

@@ -223,7 +223,7 @@ export default function PercentageCalculator() {
           {/* Card 1: Find the Percentage of a Value */}
           <div
             className={cn(
-              "transition-all duration-300 rounded-2xl border p-6 shadow-sm bg-white",
+              "transition-all duration-300 rounded-2xl border shadow-sm bg-white p-4 sm:p-6",
               focusedCard === 1
                 ? "border-indigo-500 ring-1 ring-indigo-500 shadow-md shadow-indigo-50"
                 : "border-slate-200"
@@ -301,7 +301,7 @@ export default function PercentageCalculator() {
           {/* Card 2: Find the Percentage Proportion */}
           <div
             className={cn(
-              "transition-all duration-300 rounded-2xl border p-6 shadow-sm bg-white",
+              "transition-all duration-300 rounded-2xl border shadow-sm bg-white p-4 sm:p-6",
               focusedCard === 2
                 ? "border-indigo-500 ring-1 ring-indigo-500 shadow-md shadow-indigo-50"
                 : "border-slate-200"
@@ -378,7 +378,7 @@ export default function PercentageCalculator() {
           {/* Card 3: Percentage Increase / Decrease */}
           <div
             className={cn(
-              "transition-all duration-300 rounded-2xl border p-6 shadow-sm bg-white",
+              "transition-all duration-300 rounded-2xl border shadow-sm bg-white p-4 sm:p-6",
               focusedCard === 3
                 ? "border-indigo-500 ring-1 ring-indigo-500 shadow-md shadow-indigo-50"
                 : "border-slate-200"
@@ -487,7 +487,7 @@ export default function PercentageCalculator() {
           {/* Card 4: Value Adjustment by Percentage */}
           <div
             className={cn(
-              "transition-all duration-300 rounded-2xl border p-6 shadow-sm bg-white",
+              "transition-all duration-300 rounded-2xl border shadow-sm bg-white p-4 sm:p-6",
               focusedCard === 4
                 ? "border-indigo-500 ring-1 ring-indigo-500 shadow-md shadow-indigo-50"
                 : "border-slate-200"
@@ -592,7 +592,7 @@ export default function PercentageCalculator() {
           {/* Card 5: Fraction to Percentage Converter */}
           <div
             className={cn(
-              "transition-all duration-300 rounded-2xl border p-6 shadow-sm bg-white",
+              "transition-all duration-300 rounded-2xl border shadow-sm bg-white p-4 sm:p-6",
               focusedCard === 5
                 ? "border-indigo-500 ring-1 ring-indigo-500 shadow-md shadow-indigo-50"
                 : "border-slate-200"
@@ -774,7 +774,7 @@ export default function PercentageCalculator() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8">
         {/* CARD 1: What Is a Percentage Calculator */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -792,7 +792,7 @@ export default function PercentageCalculator() {
         </div>
 
         {/* CARD 2: Detailed How-to-Use Guide */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -846,7 +846,7 @@ export default function PercentageCalculator() {
         </div>
 
         {/* CARD 3: Real-World Business Use Cases */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Briefcase className="w-5 h-5 text-indigo-600" />
@@ -893,7 +893,7 @@ export default function PercentageCalculator() {
         </div>
 
         {/* CARD 4: Frequently Asked Questions */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -934,7 +934,7 @@ export default function PercentageCalculator() {
         </div>
 
         {/* CARD 5: High-Performance Mathematical Engine */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-white" />

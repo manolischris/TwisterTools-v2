@@ -399,7 +399,7 @@ export default function MasterUnitConverter() {
             </div>
           </div>
 
-          <div className="p-6 space-y-6">
+          <div className="space-y-6 p-4 sm:p-6">
             <div>
               <label className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">
                 Select Domain Category
@@ -526,8 +526,8 @@ export default function MasterUnitConverter() {
             </span>
           </div>
 
-          <div className="p-6 space-y-6">
-            <div className="bg-gradient-to-br from-indigo-50/50 to-slate-50 border border-indigo-100 rounded-2xl p-6 text-center space-y-2">
+          <div className="space-y-6 p-4 sm:p-6">
+            <div className="bg-gradient-to-br from-indigo-50/50 to-slate-50 border border-indigo-100 rounded-2xl text-center space-y-2 p-4 sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 Calculated Equivalent
               </p>
@@ -592,7 +592,7 @@ export default function MasterUnitConverter() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6">
         {/* Card 1: Architectural Overview & Standard Precision */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Database className="w-5 h-5 text-indigo-600" />
@@ -608,7 +608,7 @@ export default function MasterUnitConverter() {
         </div>
 
         {/* Card 2: Technical Conversion Mechanics & Mathematical Formulas */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -648,7 +648,7 @@ export default function MasterUnitConverter() {
         </div>
 
         {/* Card 3: Supported Units Reference Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -711,7 +711,7 @@ export default function MasterUnitConverter() {
         </div>
 
         {/* Card 4: How to Use the Universal Converter */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -765,7 +765,7 @@ export default function MasterUnitConverter() {
         </div>
 
         {/* Card 5: Industrial & Field Applications */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HardDrive className="w-5 h-5 text-indigo-600" />
@@ -813,7 +813,7 @@ export default function MasterUnitConverter() {
         </div>
 
         {/* Card 6: FAQ Section (Static Non-Accordion) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -862,7 +862,7 @@ export default function MasterUnitConverter() {
         </div>
 
         {/* Card 7: Platform Features */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />

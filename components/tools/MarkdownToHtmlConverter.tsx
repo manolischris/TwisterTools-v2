@@ -595,7 +595,7 @@ export default function MarkdownToHtmlConverter() {
           ════════════════════════════════════════════════════════ */}
 
       {/* ── Section 1: Technical Architecture ── */}
-      <section className="bg-white border border-slate-200/60 p-8 md:p-10 rounded-2xl shadow-sm">
+      <section className="bg-white border border-slate-200/60 md:p-10 rounded-2xl shadow-sm p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <Cpu className="w-5 h-5 text-indigo-600" />
@@ -650,7 +650,7 @@ export default function MarkdownToHtmlConverter() {
       </section>
 
       {/* ── Section 2: Tokenization & Compilation Pipeline ── */}
-      <section className="bg-white border border-slate-200/60 p-8 md:p-10 rounded-2xl shadow-sm">
+      <section className="bg-white border border-slate-200/60 md:p-10 rounded-2xl shadow-sm p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <Layers className="w-5 h-5 text-indigo-600" />
@@ -697,7 +697,7 @@ export default function MarkdownToHtmlConverter() {
       </section>
 
       {/* ── Section 3: Formatting Compliance Matrix ── */}
-      <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+      <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <Table className="w-5 h-5 text-indigo-600" />
@@ -761,7 +761,7 @@ export default function MarkdownToHtmlConverter() {
       </section>
 
       {/* ── Section 4: Production Workflows & Use Cases ── */}
-      <section className="bg-white border border-slate-200/60 p-8 md:p-10 rounded-2xl shadow-sm">
+      <section className="bg-white border border-slate-200/60 md:p-10 rounded-2xl shadow-sm p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <Zap className="w-5 h-5 text-indigo-600" />
@@ -814,7 +814,7 @@ export default function MarkdownToHtmlConverter() {
       </section>
 
       {/* ── Section 5: Advanced FAQ ── */}
-      <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+      <section className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
             <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -855,7 +855,7 @@ export default function MarkdownToHtmlConverter() {
       </section>
 
       {/* ── Section 6: Platform Performance Advantages ── */}
-      <section className="bg-gradient-to-br from-indigo-600 to-indigo-800 p-8 md:p-10 rounded-2xl shadow-sm">
+      <section className="bg-gradient-to-br from-indigo-600 to-indigo-800 md:p-10 rounded-2xl shadow-sm p-4 sm:p-6">
         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0">
             <Shield className="w-5 h-5 text-white" />
@@ -882,7 +882,7 @@ export default function MarkdownToHtmlConverter() {
           ].map(({ icon: Icon, title, body }) => (
             <div
               key={title}
-              className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10"
+              className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 p-4 sm:p-6"
             >
               <div className="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center mb-3">
                 <Icon className="w-5 h-5 text-white" />

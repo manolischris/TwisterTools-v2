@@ -411,7 +411,7 @@ export default function CaseConverter() {
       <section className="space-y-8">
 
         {/* Section 1: What is a Case Converter Tool? */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-850 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-850 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center">
               <Heading className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -429,7 +429,7 @@ export default function CaseConverter() {
         </div>
 
         {/* Section 2: Step-by-Step Guide to Text Transformation */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/40 dark:to-slate-950 border border-slate-200 dark:border-slate-850 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/40 dark:to-slate-950 border border-slate-200 dark:border-slate-850 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center">
               <Sparkles className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -478,7 +478,7 @@ export default function CaseConverter() {
         </div>
 
         {/* Section 3: Professional Text Manipulation Use Cases */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center">
               <Type className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -523,7 +523,7 @@ export default function CaseConverter() {
         </div>
 
         {/* Section 4: Frequently Asked Questions (FAQ) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-850 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-850 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -584,7 +584,7 @@ export default function CaseConverter() {
         </div>
 
         {/* Section 5: Why Choose TwisterTools for Text Processing? */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white p-4 sm:p-6">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center">
               <Info className="w-5 h-5 text-indigo-100" />

@@ -475,7 +475,7 @@ export default function HeicToJpgConverter() {
 
             {/* Queue List Container */}
             {items.length === 0 ? (
-              <div className="h-[380px] border border-dashed border-slate-200 rounded-xl bg-slate-50/50 flex flex-col items-center justify-center p-6 text-center">
+              <div className="h-[380px] border border-dashed border-slate-200 rounded-xl bg-slate-50/50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                 <ImageIcon className="w-10 h-10 text-slate-300 mb-2" />
                 <p className="text-sm font-medium text-slate-600">No images in queue</p>
                 <p className="text-xs text-slate-400 mt-1 max-w-xs">
@@ -569,7 +569,7 @@ export default function HeicToJpgConverter() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8 mt-12">
         {/* Card 1: Technical Architecture & Modern Compression Engines */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Cpu className="w-5 h-5 text-indigo-600" />
@@ -591,7 +591,7 @@ export default function HeicToJpgConverter() {
         </div>
 
         {/* Card 2: Technical Specifications & Codec Matrix */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Table className="w-5 h-5 text-indigo-600" />
@@ -636,7 +636,7 @@ export default function HeicToJpgConverter() {
         </div>
 
         {/* Card 3: Step-by-Step Conversion Pipeline */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Workflow className="w-5 h-5 text-indigo-600" />
@@ -689,7 +689,7 @@ export default function HeicToJpgConverter() {
         </div>
 
         {/* Card 4: Enterprise Production Workflows */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <BarChart3 className="w-5 h-5 text-indigo-600" />
@@ -732,7 +732,7 @@ export default function HeicToJpgConverter() {
         </div>
 
         {/* Card 5: Platform Performance & Local Isolation */}
-        <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />
@@ -785,7 +785,7 @@ export default function HeicToJpgConverter() {
         </div>
 
         {/* Card 6: Frequently Asked Questions (Static Non-Accordion Format) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

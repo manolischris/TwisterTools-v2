@@ -275,7 +275,7 @@ export default function CommaSeparator() {
                 onClick={(e) => (e.target as HTMLTextAreaElement).select()}
               />
               {!finalOutput && (
-                <div className="absolute inset-0 flex items-center justify-center p-8 pointer-events-none">
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none p-4 sm:p-6 md:p-8">
                   <p className="text-slate-500 text-xs italic text-center max-w-xs leading-relaxed">
                     Your processed outputs will display here in real-time as you input items and adjust options...
                   </p>
@@ -583,7 +583,7 @@ export default function CommaSeparator() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8">
         {/* Section 1: What is an Online Comma Separator Tool? */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <AlignLeft className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -598,7 +598,7 @@ export default function CommaSeparator() {
         </div>
 
         {/* Section 2: Step-by-Step List Delimitation Instructions */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/40 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white dark:from-slate-900/40 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <ListStart className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -651,7 +651,7 @@ export default function CommaSeparator() {
         </div>
 
         {/* Section 3: Practical Use Cases for List Delimitation */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <Database className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -696,7 +696,7 @@ export default function CommaSeparator() {
         </div>
 
         {/* Section 4: Frequently Asked Questions (FAQ) */}
-        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-indigo-50/20 to-white dark:from-slate-900/20 dark:to-slate-950 border border-slate-200 dark:border-slate-855 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-slate-800 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
@@ -760,7 +760,7 @@ export default function CommaSeparator() {
         </div>
 
         {/* Section 5: Why Choose TwisterTools for List Formatting? */}
-        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl p-8 md:p-10 shadow-lg text-white">
+        <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-2xl md:p-10 shadow-lg text-white p-4 sm:p-6">
           <h2 className="text-xl md:text-2xl font-bold mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0">
               <Share2 className="w-5 h-5 text-indigo-200" />

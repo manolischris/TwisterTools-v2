@@ -228,7 +228,7 @@ Calculated via TwisterTools.com`;
             {/* 50/50 Workspace Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start w-full min-w-0">
                 {/* Input Panel */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6">
                     <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                         <h2 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
                             <DollarSign className="w-5 h-5 text-indigo-600" />
@@ -370,7 +370,7 @@ Calculated via TwisterTools.com`;
                 </div>
 
                 {/* Results Panel */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-6 flex flex-col justify-between min-h-full min-w-0">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 flex flex-col justify-between min-h-full min-w-0 p-4 sm:p-6">
                     <div>
                         <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                             <h2 className="text-lg font-semibold text-slate-800 flex items-center gap-2">
@@ -505,7 +505,7 @@ Calculated via TwisterTools.com`;
             {/* BELOW THE FOLD CONTENT CARDS */}
 
             {/* Card 1: Educational & Math Overview */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 min-w-0 p-4 sm:p-6 md:p-8">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <BookOpen className="w-5 h-5" />
@@ -535,7 +535,7 @@ Calculated via TwisterTools.com`;
             </div>
 
             {/* Card 2: Simple vs Compound Interest */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 min-w-0 p-4 sm:p-6 md:p-8">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <TrendingUp className="w-5 h-5" />
@@ -584,7 +584,7 @@ Calculated via TwisterTools.com`;
             </div>
 
             {/* Card 3: Practical Use Cases */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 min-w-0 p-4 sm:p-6 md:p-8">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <Layers className="w-5 h-5" />
@@ -633,7 +633,7 @@ Calculated via TwisterTools.com`;
             </div>
 
             {/* Card 4: Frequently Asked Questions */}
-            <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6 min-w-0">
+            <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 min-w-0 p-4 sm:p-6 md:p-8">
                 <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                         <HelpCircle className="w-5 h-5" />
@@ -683,7 +683,7 @@ Calculated via TwisterTools.com`;
             </div>
 
             {/* Mandatory Financial Disclaimer Section */}
-            <section className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm space-y-2 text-xs text-slate-500">
+            <section className="bg-slate-50 border border-slate-200 rounded-2xl shadow-sm space-y-2 text-xs text-slate-500 p-4 sm:p-6">
                 <h3 className="font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-slate-500" /> Essential Financial Disclaimer
                 </h3>

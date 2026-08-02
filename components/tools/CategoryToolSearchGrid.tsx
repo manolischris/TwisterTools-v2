@@ -204,7 +204,7 @@ export default function CategoryToolSearchGrid({
               <Link
                 key={tool.id}
                 href={tool.href}
-                className="bg-white border border-slate-200/80 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1 dark:bg-slate-900 dark:border-slate-800 dark:hover:border-indigo-500/50 group flex flex-col justify-between cursor-pointer min-h-[190px] focus:outline-none focus:ring-2 focus:ring-indigo-500/50"
+                className="bg-white border border-slate-200/80 rounded-2xl transition-all duration-300 hover:shadow-lg hover:border-indigo-200 hover:-translate-y-1 dark:bg-slate-900 dark:border-slate-800 dark:hover:border-indigo-500/50 group flex flex-col justify-between cursor-pointer min-h-[190px] focus:outline-none focus:ring-2 focus:ring-indigo-500/50 p-4 sm:p-6"
                 aria-label={`Open ${tool.title}`}
               >
                 <div>

@@ -147,7 +147,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
             {/* ── Workspace Grid (50/50 Split) ── */}
             <div className="grid lg:grid-cols-2 gap-6 items-start">
                 {/* Left Panel: Inputs */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-5 p-4 sm:p-6">
                     <div className="flex items-center justify-between border-b border-slate-100 pb-4">
                         <div className="flex items-center gap-2">
                             <div className="w-8 h-8 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -273,7 +273,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
 
                 {/* Right Panel: Live Projection Dashboards */}
                 <div className="space-y-4">
-                    <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+                    <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-5 p-4 sm:p-6">
                         <div className="flex items-center gap-2 border-b border-slate-100 pb-4">
                             <div className="w-8 h-8 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                                 <TrendingUp className="w-4 h-4 text-indigo-600" />
@@ -349,7 +349,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
             {/* ── Below-the-Fold Structured Content Cards ── */}
             <section className="space-y-6">
                 {/* Card 1: Comprehensive Terminology & Technical Definitions */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <BookOpen className="w-5 h-5 text-indigo-600" />
@@ -405,7 +405,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                 </div>
 
                 {/* Card 2: Strategic Industry Shift: The Move from CPC to CPM */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Layers className="w-5 h-5 text-indigo-600" />
@@ -431,7 +431,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                 </div>
 
                 {/* Card 3: Detailed Practical Step-by-Step Calculation Example */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <PieChart className="w-5 h-5 text-indigo-600" />
@@ -461,7 +461,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                 </div>
 
                 {/* Card 4: Industry Benchmarks Table */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Globe className="w-5 h-5 text-indigo-600" />
@@ -518,7 +518,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                 </div>
 
                 {/* Card 5: Optimization Strategies */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Lightbulb className="w-5 h-5 text-indigo-600" />
@@ -549,7 +549,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                 </div>
 
                 {/* Card 6: FAQ Section (Strict Non-Accordion Border Cards) */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-xl md:text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -587,7 +587,7 @@ Generated with TwisterTools AdSense Revenue Calculator`;
                 </div>
 
                 {/* Card 7: Legal & Financial Disclaimer Callout Card */}
-                <div className="bg-amber-50/60 border border-amber-200 rounded-2xl p-6 shadow-sm space-y-3">
+                <div className="bg-amber-50/60 border border-amber-200 rounded-2xl shadow-sm space-y-3 p-4 sm:p-6">
                     <div className="flex items-center gap-2.5 text-amber-900 font-bold text-sm md:text-base">
                         <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0" />
                         <span>Disclaimer &amp; Brand Reference Notice</span>

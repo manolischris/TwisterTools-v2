@@ -306,7 +306,7 @@ ${totalsBreakdown}`;
       <div className="grid lg:grid-cols-2 gap-6 items-start">
         {/* ══════════════════ LEFT PANEL: Quick Calculator & Presets ══════════════════ */}
         <div className="space-y-6">
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-5 p-4 sm:p-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -427,7 +427,7 @@ ${totalsBreakdown}`;
 
         {/* ══════════════════ RIGHT PANEL: Expense Suite & Summaries ══════════════════ */}
         <div className="space-y-6">
-          <div className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+          <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-5 p-4 sm:p-6">
             <div className="flex items-center justify-between border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -622,7 +622,7 @@ ${totalsBreakdown}`;
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-8 pt-4">
         {/* Card 1: Architectural Foundations */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Building2 className="w-5 h-5 text-indigo-600" />
@@ -646,7 +646,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 2: Mathematical Derivations */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Scale className="w-5 h-5 text-indigo-600" />
@@ -691,7 +691,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 3: Step-by-Step User Instructions */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />
@@ -748,7 +748,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 4: Enterprise Accounting & Industry Use Cases */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Briefcase className="w-5 h-5 text-indigo-600" />
@@ -789,7 +789,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 5: US Jurisdictional Benchmark Table */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <ListOrdered className="w-5 h-5 text-indigo-600" />
@@ -858,7 +858,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 6: Comparison Grid - Direct vs Extract */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Layers className="w-5 h-5 text-indigo-600" />
@@ -901,7 +901,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 7: FAQ Section (Static Cards) */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />
@@ -949,7 +949,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 8: Platform Performance Advantages */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-indigo-600" />
@@ -988,7 +988,7 @@ ${totalsBreakdown}`;
         </div>
 
         {/* Card 9: Financial Disclaimer */}
-        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl shadow-sm space-y-3 p-4 sm:p-6">
           <div className="flex items-center gap-2 text-slate-500">
             <AlertCircle className="w-4 h-4 text-slate-400" />
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Financial Disclaimer</span>

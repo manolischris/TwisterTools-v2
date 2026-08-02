@@ -226,7 +226,7 @@ export default function OnlineTextEditor() {
   return (
     <div className="w-full space-y-8">
       {/* ── Main Workspace Grid (50/50 Split) ── */}
-      <div className={`grid ${isFullScreen ? "fixed inset-4 z-50 bg-slate-900 p-6 rounded-2xl shadow-2xl overflow-y-auto" : "lg:grid-cols-[3fr_2fr]"} gap-6 items-start`}>
+      <div className={`grid ${isFullScreen ? "fixed inset-4 z-50 bg-slate-900 rounded-2xl shadow-2xl overflow-y-auto" : "lg:grid-cols-[3fr_2fr]"} gap-6 items-start p-4 sm:p-6`}>
 
         {/* ══════════════════ LEFT PANEL: EDITOR CONTROLS & VISUAL WORKSPACE ══════════════════ */}
         <div className="space-y-4 w-full">
@@ -448,7 +448,7 @@ export default function OnlineTextEditor() {
       ───────────────────────────────────────────────────────────── */}
       <section className="space-y-6">
         {/* Card 1: Comprehensive Online Text Processing */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <FileText className="w-5 h-5 text-indigo-600" />
@@ -464,7 +464,7 @@ export default function OnlineTextEditor() {
         </div>
 
         {/* Card 2: Core Engineering Capabilities */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-indigo-600" />
@@ -500,7 +500,7 @@ export default function OnlineTextEditor() {
         </div>
 
         {/* Card 3: Frequently Asked Questions (Static Cards) */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <HelpCircle className="w-5 h-5 text-indigo-600" />

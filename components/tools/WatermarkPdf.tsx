@@ -737,7 +737,7 @@ export default function WatermarkPdf() {
 
                         {/* Page Thumbnails Display */}
                         {pages.length === 0 ? (
-                            <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center p-6 text-center">
+                            <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                 <Stamp className="w-10 h-10 text-slate-300 mb-2" />
                                 <p className="text-sm font-semibold text-slate-700">No PDF Loaded</p>
                                 <p className="text-xs text-slate-400 mt-1 max-w-xs">
@@ -848,7 +848,7 @@ export default function WatermarkPdf() {
       ───────────────────────────────────────────────────────────── */}
             <section className="space-y-6 mt-12">
                 {/* Card 1: Technical Architecture */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Cpu className="w-5 h-5 text-indigo-600" />
@@ -869,7 +869,7 @@ export default function WatermarkPdf() {
                 </div>
 
                 {/* Card 2: Technical Comparison Matrix */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Table className="w-5 h-5 text-indigo-600" />
@@ -905,7 +905,7 @@ export default function WatermarkPdf() {
                 </div>
 
                 {/* Card 3: Step-by-Step Workflow Guide */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Workflow className="w-5 h-5 text-indigo-600" />
@@ -949,7 +949,7 @@ export default function WatermarkPdf() {
                 </div>
 
                 {/* Card 4: Enterprise Privacy Guarantees */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <Shield className="w-5 h-5 text-indigo-600" />
@@ -976,7 +976,7 @@ export default function WatermarkPdf() {
                 </div>
 
                 {/* Card 5: Static FAQ Cards */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
                             <HelpCircle className="w-5 h-5 text-indigo-600" />

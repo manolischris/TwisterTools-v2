@@ -634,7 +634,7 @@ export default function HtmlCssMinifier() {
             {/* Drag and drop overlay */}
             {isDragOver && (
               <div className="absolute inset-0 z-10 bg-indigo-600/10 border-2 border-dashed border-indigo-500 rounded-xl flex items-center justify-center pointer-events-none">
-                <div className="bg-white/90 rounded-xl p-6 shadow-lg text-center">
+                <div className="bg-white/90 rounded-xl shadow-lg text-center p-4 sm:p-6">
                   <Upload className="w-10 h-10 text-indigo-600 mx-auto mb-2" />
                   <p className="font-semibold text-slate-800 text-sm">Drop file to load</p>
                 </div>
@@ -854,7 +854,7 @@ export default function HtmlCssMinifier() {
       <section className="mt-8 space-y-8">
 
         {/* Card 1: Technical Architecture */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Cpu className="w-5 h-5" />
@@ -875,7 +875,7 @@ export default function HtmlCssMinifier() {
         </div>
 
         {/* Card 2: Lexical Tokenization & Parsing Pipeline */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Workflow className="w-5 h-5 text-indigo-600" />
@@ -926,7 +926,7 @@ export default function HtmlCssMinifier() {
           </div>
         </div>
         {/* Card 3: Syntax Specification & Compression Matrix */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Table className="w-5 h-5" />
@@ -972,7 +972,7 @@ export default function HtmlCssMinifier() {
         </div>
 
         {/* Card 4: Enterprise Production & Staging Use Cases */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Layers className="w-5 h-5" />
@@ -1010,7 +1010,7 @@ export default function HtmlCssMinifier() {
         </div>
 
         {/* Card 5: Advanced Frequently Asked Questions */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <HelpCircle className="w-5 h-5" />
@@ -1048,7 +1048,7 @@ export default function HtmlCssMinifier() {
         </div>
 
         {/* Card 6: Platform Performance Advantages */}
-        <div className="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-6 md:p-8 rounded-2xl">
+        <div className="bg-gradient-to-br from-indigo-900 to-slate-900 text-white md:p-8 rounded-2xl p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0">
               <Zap className="w-5 h-5 text-white" />

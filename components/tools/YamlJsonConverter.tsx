@@ -564,7 +564,7 @@ export default function YamlJsonConverter() {
           <div onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop} className="relative">
             {isDragOver && (
               <div className="absolute inset-0 z-10 bg-indigo-600/10 border-2 border-dashed border-indigo-500 rounded-xl flex items-center justify-center pointer-events-none">
-                <div className="bg-white/90 rounded-xl p-6 shadow-lg text-center">
+                <div className="bg-white/90 rounded-xl shadow-lg text-center p-4 sm:p-6">
                   <Upload className="w-10 h-10 text-indigo-600 mx-auto mb-2" />
                   <p className="font-semibold text-slate-800 text-sm">Drop file to load</p>
                 </div>
@@ -715,7 +715,7 @@ export default function YamlJsonConverter() {
       <section className="mt-8 space-y-8">
 
         {/* Card 1: Overview & Converter Engine Specs */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Zap className="w-5 h-5" />
@@ -732,7 +732,7 @@ export default function YamlJsonConverter() {
         </div>
 
         {/* Card 2: Features & Data Integrity Guardrails */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <Shield className="w-5 h-5 text-indigo-600" />
@@ -757,7 +757,7 @@ export default function YamlJsonConverter() {
         </div>
 
         {/* Card 3: Syntax Specification & Conversion Matrix */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <Table className="w-5 h-5" />
@@ -799,7 +799,7 @@ export default function YamlJsonConverter() {
         </div>
 
         {/* Card 4: Step-by-Step Practical Usage Guide */}
-        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm">
+        <div className="bg-gradient-to-br from-slate-50/60 to-white border border-slate-200 rounded-2xl md:p-10 shadow-sm p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center">
               <ListOrdered className="w-5 h-5 text-indigo-600" />
@@ -829,7 +829,7 @@ export default function YamlJsonConverter() {
         </div>
 
         {/* Card 5: Frequently Asked Questions */}
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6 mb-6">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 mb-6 p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
               <HelpCircle className="w-5 h-5" />

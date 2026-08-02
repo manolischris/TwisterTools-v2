@@ -411,7 +411,7 @@ export default function PdfToTextExtractor() {
       ───────────────────────────────────────────────────────────── */}
             <section className="space-y-8 mt-12">
                 {/* Card 1: Technical Architecture */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Cpu className="w-5 h-5" />
@@ -429,7 +429,7 @@ export default function PdfToTextExtractor() {
                 </div>
 
                 {/* Card 2: Features Matrix */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Table className="w-5 h-5" />
@@ -471,7 +471,7 @@ export default function PdfToTextExtractor() {
                 </div>
 
                 {/* Card 3: Step-by-Step Guide */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Workflow className="w-5 h-5" />
@@ -515,7 +515,7 @@ export default function PdfToTextExtractor() {
                 </div>
 
                 {/* Card 4: Security & Privacy */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <Shield className="w-5 h-5" />
@@ -542,7 +542,7 @@ export default function PdfToTextExtractor() {
                 </div>
 
                 {/* Card 5: Static FAQ Section */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm space-y-6">
+                <div className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 p-4 sm:p-6 md:p-8">
                     <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0 text-indigo-600">
                             <HelpCircle className="w-5 h-5" />
