@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -147,6 +147,22 @@ export default function CalculatorsCategoryPage() {
         iconName: "TrendingUp"
       };
     }
+    if (tool.id === "ratio-calculator") {
+      return {
+        ...tool,
+        title: "Ratio & Proportion Calculator",
+        description: "Solve proportion equations (solve for X), simplify ratios, scale recipe factors, and partition total values.",
+        iconName: "Scale"
+      };
+    }
+    if (tool.id === "standard-deviation-calculator") {
+      return {
+        ...tool,
+        title: "Standard Deviation & Variance Calculator",
+        description: "Compute sample and population standard deviation, variance, mean, sum of squares, and step-by-step derivations.",
+        iconName: "Sigma"
+      };
+    }
     if (tool.id === "roi-calculator") {
       return {
         ...tool,
@@ -283,6 +299,30 @@ export default function CalculatorsCategoryPage() {
         iconName: "Timer"
       };
     }
+    if (tool.id === "fraction-calculator") {
+      return {
+        ...tool,
+        title: "Fraction Calculator & Simplifier",
+        description: "Perform fraction arithmetic (addition, subtraction, multiplication, division) and simplification with full step-by-step explanations.",
+        iconName: "Calculator"
+      };
+    }
+    if (tool.id === "permutation-combination-calculator") {
+      return {
+        ...tool,
+        title: "Permutation & Combination Calculator",
+        description: "Calculate permutations (nPr) and combinations (nCr) with exact BigInt precision, step-by-step math derivations, and repetition toggles.",
+        iconName: "Binary"
+      };
+    }
+    if (tool.id === "quadratic-solver") {
+      return {
+        ...tool,
+        title: "Quadratic Equation Solver",
+        description: "Solve quadratic equations instantly with real and complex roots, discriminant analysis, vertex details, and interactive 2D parabola graph visualization.",
+        iconName: "Calculator"
+      };
+    }
     return tool;
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;
@@ -304,27 +344,27 @@ export default function CalculatorsCategoryPage() {
             className="object-cover object-center opacity-50 mix-blend-luminosity"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-indigo-950/85" />
+          <div className="absolute inset-0 bg-linear-to-r from-slate-950/90 via-slate-900/80 to-indigo-950/85" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           {/* Navigation Breadcrumbs */}
           <div className="flex items-center gap-1 text-indigo-100 text-xs md:text-sm font-medium flex-wrap overflow-x-auto whitespace-nowrap scrollbar-none">
-            <Link href="/" className="hover:text-white transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
+            <Link href="/" className="hover:text-white transition-colors max-w-32.5 sm:max-w-50 md:max-w-none truncate">
               Home
             </Link>
             <span>/</span>
-            <Link href="/tools" className="hover:text-white transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
+            <Link href="/tools" className="hover:text-white transition-colors max-w-32.5 sm:max-w-50 md:max-w-none truncate">
               Tools
             </Link>
             <span>/</span>
-            <span className="text-white font-semibold max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
+            <span className="text-white font-semibold max-w-32.5 sm:max-w-50 md:max-w-none truncate">
               {calculatorMetadata.name}
             </span>
           </div>
 
           {/* Title Block */}
           <div className="flex items-start gap-4 mt-6">
-            <div className="bg-white/20 backdrop-blur-sm p-3.5 flex items-center justify-center text-white shadow-lg rounded-2xl w-14 h-14 flex-shrink-0">
+            <div className="bg-white/20 backdrop-blur-sm p-3.5 flex items-center justify-center text-white shadow-lg rounded-2xl w-14 h-14 shrink-0">
               <Calculator className="w-8 h-8" />
             </div>
             <div className="flex-1 min-w-0">
@@ -354,6 +394,7 @@ export default function CalculatorsCategoryPage() {
               // Map dynamic icons
               const CardIcon =
                 card.icon === "Calculator" ? Calculator :
+                card.icon === "Binary" ? Binary :
                 card.icon === "ShieldCheck" ? ShieldCheck :
                 card.icon === "RefreshCw" ? RefreshCw :
                 card.icon === "Lock" ? Lock :
@@ -365,7 +406,7 @@ export default function CalculatorsCategoryPage() {
                   className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm space-y-4"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/80 flex items-center justify-center flex-shrink-0 text-indigo-600 dark:text-indigo-400">
+                    <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/80 flex items-center justify-center shrink-0 text-indigo-600 dark:text-indigo-400">
                       <CardIcon className="w-5 h-5" />
                     </div>
                     <h2 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white">
@@ -383,7 +424,7 @@ export default function CalculatorsCategoryPage() {
           {/* Full-width FAQ SEO Card */}
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/80 flex items-center justify-center flex-shrink-0 text-indigo-600 dark:text-indigo-400">
+              <div className="w-9 h-9 rounded-xl bg-indigo-100 dark:bg-indigo-950/80 flex items-center justify-center shrink-0 text-indigo-600 dark:text-indigo-400">
                 <HelpCircle className="w-5 h-5" />
               </div>
               <h2 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white">

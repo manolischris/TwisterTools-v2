@@ -1119,5 +1119,50 @@
     "href": "/tools/calculators/scientific-calculator",
     "iconName": "Calculator",
     "isFeatured": false
+  },
+  {
+    "id": "fraction-calculator",
+    "title": "Fraction Calculator & Simplifier",
+    "description": "Perform fraction arithmetic (addition, subtraction, multiplication, division) and simplification with full step-by-step explanations.",
+    "category": "calculators",
+    "href": "/tools/calculators/fraction-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
+  },
+  {
+    "id": "ratio-calculator",
+    "title": "Ratio & Proportion Calculator",
+    "description": "Solve proportion equations (solve for X), simplify ratios, scale recipe factors, and partition total values.",
+    "category": "calculators",
+    "href": "/tools/calculators/ratio-calculator",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "standard-deviation-calculator",
+    "title": "Standard Deviation & Variance Calculator",
+    "description": "Compute sample and population standard deviation, variance, mean, sum of squares, and step-by-step statistical derivations.",
+    "category": "calculators",
+    "href": "/tools/calculators/standard-deviation-calculator",
+    "iconName": "Sigma",
+    "isFeatured": false
+  },
+  {
+    "id": "permutation-combination-calculator",
+    "title": "Permutation & Combination Calculator",
+    "description": "Calculate permutations (nPr) and combinations (nCr) with exact BigInt precision, step-by-step math derivations, and repetition toggles.",
+    "category": "calculators",
+    "href": "/tools/calculators/permutation-combination-calculator",
+    "iconName": "Binary",
+    "isFeatured": false
+  },
+  {
+    "id": "quadratic-solver",
+    "title": "Quadratic Equation Solver & Visualizer",
+    "description": "Solve quadratic equations instantly with real and complex roots, discriminant analysis, vertex details, and interactive 2D parabola graph visualization.",
+    "category": "calculators",
+    "href": "/tools/calculators/quadratic-solver",
+    "iconName": "Calculator",
+    "isFeatured": false
   }
 ]

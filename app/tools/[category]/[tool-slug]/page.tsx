@@ -186,15 +186,15 @@ export async function generateMetadata({
   const toolUrl = `https://www.twistertools.com${tool.new_url}`;
   const toolName = tool.name;
 
-  // Construct dynamic image URL pointing to: https://www.twistertools.com/images/tools/${params.category}/${params.toolSlug}.jpg
-  const dynamicImageUrl = `https://www.twistertools.com/images/tools/${category}/${toolSlug}.jpg`;
-
-  // Verify if image exists on filesystem inside public/images/tools/${category}/
-  const imagePath = path.join(process.cwd(), "public", "images", "tools", category, `${toolSlug}.jpg`);
-  const imageExists = fs.existsSync(imagePath);
-
-  // Default gracefully if it doesn't exist
-  const ogImageUrl = imageExists ? dynamicImageUrl : "https://www.twistertools.com/images/og-default.jpg";
+  // Prefer .webp featured images, then fallback to .jpg, then default OG image.
+  const imageBasePath = path.join(process.cwd(), "public", "images", "tools", category, toolSlug);
+  const webpPath = `${imageBasePath}.webp`;
+  const jpgPath = `${imageBasePath}.jpg`;
+  const ogImageUrl = fs.existsSync(webpPath)
+    ? `https://www.twistertools.com/images/tools/${category}/${toolSlug}.webp`
+    : fs.existsSync(jpgPath)
+      ? `https://www.twistertools.com/images/tools/${category}/${toolSlug}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
 
   let title = `${tool.name}`;
   let description = tool.description;
