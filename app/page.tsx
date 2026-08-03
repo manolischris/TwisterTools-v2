@@ -73,7 +73,13 @@ import {
   Flame,
   Droplets,
   PieChart,
-  Wine
+  Wine,
+  Fingerprint,
+  Building,
+  Heart,
+  Baby,
+  Calendar,
+  Timer
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -95,6 +101,12 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Droplets,
   PieChart,
   Wine,
+  Fingerprint,
+  Building,
+  Heart,
+  Baby,
+  Calendar,
+  Timer,
   TrendingUp,
   Code2,
   Sparkles,
