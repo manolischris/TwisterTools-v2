@@ -115,6 +115,30 @@
       "to": "/tools/web-tools/meta-tag-generator",
       "type": "301",
       "reason": "Consolidated Meta Tag Analyzer into Meta Tag Generator"
+    },
+    {
+      "from": "/blog/:path*",
+      "to": "/tools",
+      "type": "301",
+      "reason": "Redirect retired blog routes to tools hub"
+    },
+    {
+      "from": "/plans",
+      "to": "/",
+      "type": "301",
+      "reason": "Redirect retired plans route to homepage"
+    },
+    {
+      "from": "/register",
+      "to": "/",
+      "type": "301",
+      "reason": "Redirect retired register route to homepage"
+    },
+    {
+      "from": "/login",
+      "to": "/",
+      "type": "301",
+      "reason": "Redirect retired login route to homepage"
     }
   ],
   "tools": [
@@ -130,7 +154,7 @@
       "id": 2,
       "name": "WordPress Password Generator",
       "legacy_url": "/wordpress-password-generator",
-      "new_url": "/tools/password-tools/wordpress-password-generator",
+      "new_url": "/tools/password-tools",
       "new_category": "password-tools",
       "description": "Generate secure WordPress-compatible password hashes"
     },
@@ -226,7 +250,7 @@
       "id": 14,
       "name": "JPG to Word Converter",
       "legacy_url": "/jpg-to-word",
-      "new_url": "/tools/pdf-tools/jpg-to-word",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert JPG images to editable Word documents"
     },
@@ -234,7 +258,7 @@
       "id": 15,
       "name": "Image to Text Converter",
       "legacy_url": "/image-to-text-converter",
-      "new_url": "/tools/image-tools/image-to-text",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Extract text from images using OCR technology"
     },
@@ -274,7 +298,7 @@
       "id": 20,
       "name": "Power Converter",
       "legacy_url": "/power-converter",
-      "new_url": "/tools/calculators/power-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different power units"
     },
@@ -282,7 +306,7 @@
       "id": 21,
       "name": "Weight Converter",
       "legacy_url": "/weight-converter",
-      "new_url": "/tools/calculators/weight-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different weight units"
     },
@@ -290,7 +314,7 @@
       "id": 22,
       "name": "Temperature Converter",
       "legacy_url": "/temperature-converter",
-      "new_url": "/tools/calculators/temperature-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between Celsius, Fahrenheit, and Kelvin"
     },
@@ -298,7 +322,7 @@
       "id": 23,
       "name": "Voltage Converter",
       "legacy_url": "/voltage-converter",
-      "new_url": "/tools/calculators/voltage-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different voltage units"
     },
@@ -306,7 +330,7 @@
       "id": 24,
       "name": "Area Converter",
       "legacy_url": "/area-converter",
-      "new_url": "/tools/calculators/area-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different area units"
     },
@@ -314,7 +338,7 @@
       "id": 25,
       "name": "Length Converter",
       "legacy_url": "/length-converter",
-      "new_url": "/tools/calculators/length-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different length units"
     },
@@ -322,7 +346,7 @@
       "id": 26,
       "name": "Byte Converter",
       "legacy_url": "/byte-converter",
-      "new_url": "/tools/converter-tools/byte-converter",
+      "new_url": "/tools/converter-tools",
       "new_category": "converter-tools",
       "description": "Convert between different data storage units"
     },
@@ -330,7 +354,7 @@
       "id": 27,
       "name": "Time Converter",
       "legacy_url": "/time-converter",
-      "new_url": "/tools/calculators/time-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different time units"
     },
@@ -338,7 +362,7 @@
       "id": 28,
       "name": "Pressure Converter",
       "legacy_url": "/pressure-converter",
-      "new_url": "/tools/calculators/pressure-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different pressure units"
     },
@@ -346,7 +370,7 @@
       "id": 29,
       "name": "Speed Converter",
       "legacy_url": "/speed-converter",
-      "new_url": "/tools/calculators/speed-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different speed units"
     },
@@ -354,7 +378,7 @@
       "id": 30,
       "name": "Volume Converter",
       "legacy_url": "/volume-converter",
-      "new_url": "/tools/calculators/volume-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different volume units"
     },
@@ -362,7 +386,7 @@
       "id": 31,
       "name": "Torque Converter",
       "legacy_url": "/torque-converter",
-      "new_url": "/tools/calculators/torque-converter",
+      "new_url": "/tools/calculators",
       "new_category": "calculators",
       "description": "Convert between different torque units"
     },
@@ -458,7 +482,7 @@
       "id": 43,
       "name": "JPG to PNG Converter",
       "legacy_url": "/jpg-to-png",
-      "new_url": "/tools/image-tools/jpg-to-png",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert JPG images to PNG format"
     },
@@ -466,7 +490,7 @@
       "id": 44,
       "name": "Reverse Image Search",
       "legacy_url": "/reverse-image-search",
-      "new_url": "/tools/image-tools/reverse-image-search",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Find similar images across the web"
     },
@@ -474,7 +498,7 @@
       "id": 45,
       "name": "Text to Image",
       "legacy_url": "/text-image",
-      "new_url": "/tools/image-tools/text-to-image",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert text to image with custom styling"
     },
@@ -482,7 +506,7 @@
       "id": 46,
       "name": "JPG Converter",
       "legacy_url": "/jpg-converter",
-      "new_url": "/tools/image-tools/jpg-converter",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert various image formats to JPG"
     },
@@ -514,7 +538,7 @@
       "id": 50,
       "name": "Meme Generator",
       "legacy_url": "/meme-generator",
-      "new_url": "/tools/image-tools/meme-generator",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Create custom memes with templates"
     },
@@ -530,7 +554,7 @@
       "id": 52,
       "name": "Domain Name Search",
       "legacy_url": "/domain-name-search",
-      "new_url": "/tools/web-tools/domain-name-search",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Search for available domain names"
     },
@@ -538,7 +562,7 @@
       "id": 53,
       "name": "Domain Hosting Checker",
       "legacy_url": "/domain-hosting-checker",
-      "new_url": "/tools/web-tools/domain-hosting-checker",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Find domain hosting information"
     },
@@ -546,7 +570,7 @@
       "id": 54,
       "name": "Domain Authority Checker",
       "legacy_url": "/domain-authority-checker",
-      "new_url": "/tools/web-tools/domain-authority-checker",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check domain authority and metrics"
     },
@@ -570,7 +594,7 @@
       "id": 57,
       "name": "Blacklist Check",
       "legacy_url": "/blacklist-check",
-      "new_url": "/tools/web-tools/blacklist-check",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check if domain is blacklisted"
     },
@@ -610,7 +634,7 @@
       "id": 62,
       "name": "JSON to XML",
       "legacy_url": "/json-to-xml",
-      "new_url": "/tools/developer-tools/json-to-xml",
+      "new_url": "/tools/developer-tools",
       "new_category": "developer-tools",
       "description": "Convert JSON data to XML format"
     },
@@ -658,7 +682,7 @@
       "id": 68,
       "name": "XML to JSON",
       "legacy_url": "/xml-json",
-      "new_url": "/tools/developer-tools/xml-to-json",
+      "new_url": "/tools/developer-tools",
       "new_category": "developer-tools",
       "description": "Convert XML data to JSON format"
     },
@@ -666,7 +690,7 @@
       "id": 69,
       "name": "WordPress Theme Detector",
       "legacy_url": "/wordpress-theme-detector",
-      "new_url": "/tools/web-tools/wordpress-theme-detector",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Detect WordPress theme used by websites"
     },
@@ -674,7 +698,7 @@
       "id": 70,
       "name": "Twitter Card Generator",
       "legacy_url": "/twitter-card-generator",
-      "new_url": "/tools/web-tools/twitter-card-generator",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Generate Twitter card meta tags"
     },
@@ -690,7 +714,7 @@
       "id": 72,
       "name": "HTML Viewer",
       "legacy_url": "/html-viewer",
-      "new_url": "/tools/developer-tools/html-viewer",
+      "new_url": "/tools/developer-tools",
       "new_category": "developer-tools",
       "description": "View and render HTML code"
     },
@@ -706,7 +730,7 @@
       "id": 74,
       "name": "SEO Report",
       "legacy_url": "/seo-report",
-      "new_url": "/tools/web-tools/seo-report",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Generate comprehensive SEO reports"
     },
@@ -714,7 +738,7 @@
       "id": 75,
       "name": "Website Screenshot Generator",
       "legacy_url": "/website-screenshot-generator",
-      "new_url": "/tools/web-tools/website-screenshot",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Capture website screenshots"
     },
@@ -722,7 +746,7 @@
       "id": 76,
       "name": "Ping Tool",
       "legacy_url": "/ping-tool",
-      "new_url": "/tools/web-tools/ping-tool",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Test server connectivity and response time"
     },
@@ -754,7 +778,7 @@
       "id": 80,
       "name": "HTML Editor",
       "legacy_url": "/html-editor",
-      "new_url": "/tools/developer-tools/html-editor",
+      "new_url": "/tools/developer-tools",
       "new_category": "developer-tools",
       "description": "Edit HTML code with live preview"
     },
@@ -770,7 +794,7 @@
       "id": 82,
       "name": "JS Minifier",
       "legacy_url": "/js-minifier",
-      "new_url": "/tools/developer-tools/js-minifier",
+      "new_url": "/tools/developer-tools",
       "new_category": "developer-tools",
       "description": "Minify JavaScript code"
     },
@@ -786,7 +810,7 @@
       "id": 84,
       "name": "URL Opener",
       "legacy_url": "/url-opener",
-      "new_url": "/tools/developer-tools/url-opener",
+      "new_url": "/tools/developer-tools",
       "new_category": "developer-tools",
       "description": "Open multiple URLs simultaneously"
     },
@@ -882,7 +906,7 @@
       "id": 96,
       "name": "GIF to PDF",
       "legacy_url": "/gif-to-pdf",
-      "new_url": "/tools/pdf-tools/gif-to-pdf",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert GIF images to PDF"
     },
@@ -890,7 +914,7 @@
       "id": 97,
       "name": "BMP to PDF",
       "legacy_url": "/bmp-to-pdf",
-      "new_url": "/tools/pdf-tools/bmp-to-pdf",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert BMP images to PDF"
     },
@@ -898,7 +922,7 @@
       "id": 98,
       "name": "TIFF to PDF",
       "legacy_url": "/tiff-to-pdf",
-      "new_url": "/tools/pdf-tools/tiff-to-pdf",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert TIFF images to PDF"
     },
@@ -922,7 +946,7 @@
       "id": 102,
       "name": "Excel to PDF",
       "legacy_url": "/excel-to-pdf",
-      "new_url": "/tools/pdf-tools/excel-to-pdf",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert Excel spreadsheets to PDF"
     },
@@ -938,7 +962,7 @@
       "id": 104,
       "name": "PDF to PowerPoint",
       "legacy_url": "/pdf-to-powerpoint",
-      "new_url": "/tools/pdf-tools/pdf-to-ppt",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert PDF to PowerPoint presentations"
     },
@@ -946,7 +970,7 @@
       "id": 105,
       "name": "PDF to Excel",
       "legacy_url": "/pdf-to-excel",
-      "new_url": "/tools/pdf-tools/pdf-to-excel",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert PDF to Excel spreadsheets"
     },
@@ -970,7 +994,7 @@
       "id": 108,
       "name": "PDF to TIFF",
       "legacy_url": "/pdf-to-tiff",
-      "new_url": "/tools/pdf-tools/pdf-to-tiff",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert PDF to TIFF images"
     },
@@ -978,7 +1002,7 @@
       "id": 109,
       "name": "PDF to BMP",
       "legacy_url": "/pdf-to-bmp",
-      "new_url": "/tools/pdf-tools/pdf-to-bmp",
+      "new_url": "/tools/pdf-tools",
       "new_category": "pdf-tools",
       "description": "Convert PDF to BMP images"
     },
@@ -1010,7 +1034,7 @@
       "id": 113,
       "name": "SERP Checker",
       "legacy_url": "/serp-checker",
-      "new_url": "/tools/web-tools/serp-checker",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check search engine ranking positions"
     },
@@ -1018,7 +1042,7 @@
       "id": 114,
       "name": "Keyword Position",
       "legacy_url": "/keyword-position",
-      "new_url": "/tools/web-tools/keyword-position",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check keyword ranking positions"
     },
@@ -1026,7 +1050,7 @@
       "id": 115,
       "name": "Keyword Density Checker",
       "legacy_url": "/keyword-density-checker",
-      "new_url": "/tools/web-tools/keyword-density",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Analyze keyword density in content"
     },
@@ -1034,7 +1058,7 @@
       "id": 116,
       "name": "Related Keywords Finder",
       "legacy_url": "/related-keywords-finder",
-      "new_url": "/tools/web-tools/related-keywords",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Find related keywords and phrases"
     },
@@ -1042,7 +1066,7 @@
       "id": 117,
       "name": "Keyword Research Tool",
       "legacy_url": "/keyword-research-tool",
-      "new_url": "/tools/web-tools/keyword-research",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Research keywords for SEO campaigns"
     },
@@ -1050,7 +1074,7 @@
       "id": 118,
       "name": "Keywords Rich Domains",
       "legacy_url": "/keywords-rich-domains",
-      "new_url": "/tools/web-tools/keyword-domain-suggestions",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Find keyword-rich domain suggestions"
     },
@@ -1058,7 +1082,7 @@
       "id": 119,
       "name": "MozRank Checker",
       "legacy_url": "/mozrank-checker",
-      "new_url": "/tools/web-tools/mozrank-checker",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check MozRank metrics"
     },
@@ -1066,7 +1090,7 @@
       "id": 120,
       "name": "Google Cache Checker",
       "legacy_url": "/google-cache-checker",
-      "new_url": "/tools/web-tools/google-cache-checker",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check if pages are cached by Google"
     },
@@ -1074,7 +1098,7 @@
       "id": 121,
       "name": "Check Gzip Compression",
       "legacy_url": "/check-gzip-compression",
-      "new_url": "/tools/web-tools/gzip-compression",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check if website uses Gzip compression"
     },
@@ -1090,7 +1114,7 @@
       "id": 123,
       "name": "Spider Simulator",
       "legacy_url": "/spider-simulator",
-      "new_url": "/tools/web-tools/spider-simulator",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Simulate search engine spider crawling"
     },
@@ -1098,7 +1122,7 @@
       "id": 124,
       "name": "What Is My Browser",
       "legacy_url": "/what-is-my-browser",
-      "new_url": "/tools/web-tools/browser-info",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Detect browser and system information"
     },
@@ -1114,7 +1138,7 @@
       "id": 126,
       "name": "Htaccess Redirect",
       "legacy_url": "/htaccess-redirect",
-      "new_url": "/tools/developer-tools/htaccess-redirect",
+      "new_url": "/tools/developer-tools",
       "new_category": "developer-tools",
       "description": "Generate htaccess redirect rules"
     },
@@ -1122,7 +1146,7 @@
       "id": 127,
       "name": "Mobile Friendly Test",
       "legacy_url": "/mobile-friendly-test",
-      "new_url": "/tools/web-tools/mobile-friendly-test",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Test mobile-friendliness of websites"
     },
@@ -1138,7 +1162,7 @@
       "id": 129,
       "name": "Webpage Screen Resolution Simulator",
       "legacy_url": "/webpage-screen-resultion-simulator",
-      "new_url": "/tools/web-tools/screen-resolution-simulator",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Simulate webpage on different screen resolutions"
     },
@@ -1146,7 +1170,7 @@
       "id": 130,
       "name": "English Converter",
       "legacy_url": "/english-converter",
-      "new_url": "/tools/text-tools/english-converter",
+      "new_url": "/tools/text-tools",
       "new_category": "text-tools",
       "description": "Convert and improve English text"
     },
@@ -1154,7 +1178,7 @@
       "id": 131,
       "name": "Paraphrased",
       "legacy_url": "/paraphrased",
-      "new_url": "/tools/text-tools/paraphrase-tool",
+      "new_url": "/tools/text-tools",
       "new_category": "text-tools",
       "description": "Paraphrase text for unique content"
     },
@@ -1170,7 +1194,7 @@
       "id": 133,
       "name": "Broken Links Checker",
       "legacy_url": "/websites-broken-link-checker",
-      "new_url": "/tools/web-tools/broken-links-checker",
+      "new_url": "/tools/web-tools",
       "new_category": "web-tools",
       "description": "Check websites for broken links"
     },
@@ -1178,7 +1202,7 @@
       "id": 134,
       "name": "Video to GIF Converter",
       "legacy_url": "/video-to-gif-converter",
-      "new_url": "/tools/image-tools/video-to-gif",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert video files to animated GIFs"
     },
@@ -1194,7 +1218,7 @@
       "id": 136,
       "name": "PNG to SVG",
       "legacy_url": "/png-to-svg",
-      "new_url": "/tools/image-tools/png-to-svg",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert PNG images to SVG"
     },
@@ -1202,7 +1226,7 @@
       "id": 137,
       "name": "JPG to SVG",
       "legacy_url": "/jpg-to-svg",
-      "new_url": "/tools/image-tools/jpg-to-svg",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert JPG images to SVG"
     },
@@ -1218,7 +1242,7 @@
       "id": 139,
       "name": "HEIC to PNG",
       "legacy_url": "/heic-to-png",
-      "new_url": "/tools/image-tools/heic-to-png",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert HEIC images to PNG"
     },
@@ -1226,7 +1250,7 @@
       "id": 140,
       "name": "AVIF to JPG",
       "legacy_url": "/avif-to-jpg",
-      "new_url": "/tools/image-tools/avif-to-jpg",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert AVIF images to JPG"
     },
@@ -1234,7 +1258,7 @@
       "id": 141,
       "name": "AVIF to PNG",
       "legacy_url": "/avif-to-png",
-      "new_url": "/tools/image-tools/avif-to-png",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert AVIF images to PNG"
     },
@@ -1242,7 +1266,7 @@
       "id": 142,
       "name": "SVG to JPG",
       "legacy_url": "/svg-to-jpg",
-      "new_url": "/tools/image-tools/svg-to-jpg",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert SVG images to JPG"
     },
@@ -1250,7 +1274,7 @@
       "id": 143,
       "name": "SVG to PNG",
       "legacy_url": "/svg-to-png",
-      "new_url": "/tools/image-tools/svg-to-png",
+      "new_url": "/tools/image-tools",
       "new_category": "image-tools",
       "description": "Convert SVG images to PNG"
     },
@@ -1266,7 +1290,7 @@
       "id": 145,
       "name": "Fake Address Generator",
       "legacy_url": "/fake-address-generator",
-      "new_url": "/tools/generator-tools/fake-address-generator",
+      "new_url": "/tools/generator-tools",
       "new_category": "generator-tools",
       "description": "Generate fake addresses for testing"
     },
@@ -1274,7 +1298,7 @@
       "id": 146,
       "name": "Fake Name Generator",
       "legacy_url": "/fake-name-generator",
-      "new_url": "/tools/generator-tools/fake-name-generator",
+      "new_url": "/tools/generator-tools",
       "new_category": "generator-tools",
       "description": "Generate fake names for testing"
     },

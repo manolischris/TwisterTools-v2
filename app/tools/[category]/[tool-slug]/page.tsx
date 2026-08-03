@@ -237,15 +237,18 @@ export async function generateMetadata({
 
 // Static generation: Pre-render all 146 tool pages at build time
 export async function generateStaticParams() {
-  const params = urlMap.tools.map((tool: Tool) => {
-    // Extract category and tool-slug from new_url
-    // Format: /tools/{category}/{tool-slug}
+  const params: { category: string; "tool-slug": string }[] = [];
+
+  for (const tool of urlMap.tools) {
     const pathParts = tool.new_url.split("/");
-    return {
-      category: pathParts[2],
-      "tool-slug": pathParts[3],
-    };
-  });
+    // Only generate static params for actual tools (path length is 4: /tools/{category}/{tool-slug})
+    if (pathParts.length >= 4) {
+      params.push({
+        category: pathParts[2],
+        "tool-slug": pathParts[3],
+      });
+    }
+  }
 
   params.push({
     category: "pdf-tools",

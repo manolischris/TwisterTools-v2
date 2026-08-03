@@ -220,7 +220,7 @@ async function runTests() {
     });
 
     console.log(`- Static pages detected: ${colors.cyan}${staticUrls.length}${colors.reset} (Expected: 6 - homepage, about, contact, privacy-policy, terms-of-service, categories)`);
-    console.log(`- Category URLs detected: ${colors.cyan}${categoryUrls.length}${colors.reset} (Expected: 8)`);
+    console.log(`- Category URLs detected: ${colors.cyan}${categoryUrls.length}${colors.reset} (Expected: 9)`);
     console.log(`- Tool URLs detected: ${colors.cyan}${toolUrls.length}${colors.reset} (Expected: ${toolsRegistry.length})`);
 
     let sitemapErrors: string[] = [];
@@ -231,8 +231,8 @@ async function runTests() {
     if (staticUrls.length !== 6) {
       sitemapErrors.push(`Static URL count mismatch. Found ${staticUrls.length}, expected 6.`);
     }
-    if (categoryUrls.length !== 8) {
-      sitemapErrors.push(`Category URL count mismatch. Found ${categoryUrls.length}, expected 8.`);
+    if (categoryUrls.length !== 9) {
+      sitemapErrors.push(`Category URL count mismatch. Found ${categoryUrls.length}, expected 9.`);
     }
     if (toolUrls.length !== toolsRegistry.length) {
       sitemapErrors.push(`Tool URL count mismatch. Found ${toolUrls.length}, expected ${toolsRegistry.length}.`);

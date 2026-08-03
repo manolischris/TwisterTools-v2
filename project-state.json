@@ -1,7 +1,7 @@
 {
   "current_phase": "READY FOR PRODUCTION DEPLOYMENT",
-  "last_updated": "2026-08-02",
-  "last_build_update": "2026-08-02",
+  "last_updated": "2026-08-03",
+  "last_build_update": "2026-08-03",
   "modules": {
     "informational_pages": "COMPLETED",
     "gdpr_consent_mode_v2_gtm_integration": "COMPLETED",
@@ -10,8 +10,9 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 64 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
   "active_task_tracker": "Completed Scientific Calculator Integration",
-  "completedTasksCount": 151,
+  "completedTasksCount": 152,
   "completed_tasks": [
+    "Performed legacy redirect audit and cleanup by mapping 70 unimplemented tools in url-map.json to their respective parent category hubs. Cleaned up next.config.ts routes by filtering out unimplemented slugs from generateStaticParams to prevent static pre-rendering build failures. Added retired blog (/blog/*) and auth page (/plans, /register, /login) 301 redirects to url-map.json. Adjusted verification scripts to expect 9 category hubs, ran npm run build successfully, and confirmed all 189 redirects pass HTTP 301 and 200 OK target validation checks.",
     "Integrated Scientific Calculator & Function Suite (ScientificCalculator) component into the calculators category, registered dynamic route at /tools/calculators/scientific-calculator, mapped Calculator icon in route header/grid registry, updated url-map and global tools registry entries, and synchronized project state.",
     "Integrated Pace, Distance & Running Time Calculator (PaceCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/pace-calculator, updating calculators category landing/search icon mappings with Timer, updating the global tools registry, and synchronizing project state.",
     "Integrated Blood Alcohol Content (BAC) Calculator (BacCalculator) component into the calculators category, creating a dedicated page route at /tools/calculators/bac-calculator, updating calculators category landing/search icon mappings with Wine, updating the global tools registry, and synchronizing project state.",
