@@ -1127,7 +1127,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                         <ShieldCheck className="w-4 h-4 text-amber-600" /> Mandatory Health & Medical Disclaimer
                     </h3>
                     <p className="leading-relaxed">
-                        Medical Disclaimer: This calculator provides estimated metrics for informational and educational purposes only[cite: 2]. It is not intended as medical advice, diagnosis, or treatment[cite: 2]. Always consult a qualified healthcare professional before making health, fitness, or dietary changes[cite: 2].
+                        Medical Disclaimer: This calculator provides estimated metrics for informational and educational purposes only. It is not intended as medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional before making health, fitness, or dietary changes.
                     </p>
                 </section>
 
