@@ -41,6 +41,8 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - Calorie & Daily Energy Expenditure (TDEE) Calculator (/tools/calculators/tdee-calculator)
 - Body Fat Percentage & Lean Mass Calculator (/tools/calculators/body-fat-calculator)
 - Water Intake & Daily Hydration Calculator (/tools/calculators/water-intake-calculator)
+- Exponential Growth & Decay Calculator: Discrete & continuous exponential growth/decay, doubling time, half-life, and time series schedule calculations.
+- GPA & Grade Point Average Calculator (/tools/calculators/gpa-calculator): Calculate term and cumulative GPA across 4.0, 4.3, and 5.0 weighted scales.
 - Target Heart Rate Zone Calculator (/tools/calculators/heart-rate-calculator): Calculate personal target heart rate zones for fat loss, cardiovascular endurance, and athletic performance using Karvonen and Tanaka formulas.
 - Macro Ratio & Flexible Dieting Calculator (/tools/calculators/macro-calculator): Calculate accurate protein, carb, and fat macro ratios for fat loss, lean muscle gain, or keto diets.
 - Ovulation & Fertile Window Calculator (/tools/calculators/ovulation-calculator): Calculate estimated ovulation dates, fertile windows, next period, and pregnancy test schedules.

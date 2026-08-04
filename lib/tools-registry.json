@@ -1164,5 +1164,41 @@
     "href": "/tools/calculators/quadratic-solver",
     "iconName": "Calculator",
     "isFeatured": false
+  },
+  {
+    "id": "matrix-calculator",
+    "title": "Matrix Mathematics & Determinant Calculator",
+    "description": "Solve determinants, matrix inversions, transpositions, and scalar multiplication with step-by-step proofs.",
+    "category": "calculators",
+    "href": "/tools/calculators/matrix-calculator",
+    "iconName": "Grid",
+    "isFeatured": false
+  },
+  {
+    "id": "exponential-calculator",
+    "title": "Exponential Growth & Decay Calculator",
+    "description": "Calculate discrete and continuous exponential growth, decay, doubling time, half-life, and timeline trajectories.",
+    "category": "calculators",
+    "href": "/tools/calculators/exponential-calculator",
+    "iconName": "TrendingUp",
+    "isFeatured": false
+  },
+  {
+    "id": "gpa-calculator",
+    "title": "GPA & Grade Point Average Calculator",
+    "description": "Calculate semester and cumulative GPA with 4.0, 4.3, and 5.0 weighted scales and target planning.",
+    "category": "calculators",
+    "href": "/tools/calculators/gpa-calculator",
+    "iconName": "GraduationCap",
+    "isFeatured": false
+  },
+  {
+    "id": "final-grade-calculator",
+    "title": "Grade & Exam Score Needed Calculator",
+    "description": "Calculate the exact score needed on your final exam to reach your target class grade.",
+    "category": "calculators",
+    "href": "/tools/calculators/final-grade-calculator",
+    "iconName": "GraduationCap",
+    "isFeatured": false
   }
 ]

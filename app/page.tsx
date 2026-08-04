@@ -79,7 +79,8 @@ import {
   Heart,
   Baby,
   Calendar,
-  Timer
+  Timer,
+  GraduationCap
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -107,6 +108,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Baby,
   Calendar,
   Timer,
+  GraduationCap,
   TrendingUp,
   Code2,
   Sparkles,

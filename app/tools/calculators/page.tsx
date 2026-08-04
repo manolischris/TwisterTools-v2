@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary } from "lucide-react";
+import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -323,6 +323,38 @@ export default function CalculatorsCategoryPage() {
         iconName: "Calculator"
       };
     }
+    if (tool.id === "matrix-calculator") {
+      return {
+        ...tool,
+        title: "Matrix Mathematics & Determinant Calculator",
+        description: "Solve determinants, matrix inversions, transpositions, and scalar multiplication with step-by-step proofs.",
+        iconName: "Grid"
+      };
+    }
+    if (tool.id === "exponential-calculator") {
+      return {
+        ...tool,
+        title: "Exponential Growth & Decay Calculator",
+        description: "Calculate discrete and continuous exponential growth, decay, doubling time, half-life, and timeline trajectories.",
+        iconName: "TrendingUp"
+      };
+    }
+    if (tool.id === "gpa-calculator") {
+      return {
+        ...tool,
+        title: "GPA & Grade Point Average Calculator",
+        description: "Compute term and cumulative GPA across 4.0, 4.3, and 5.0 weighted grading scales with target planner.",
+        iconName: "GraduationCap"
+      };
+    }
+    if (tool.id === "final-grade-calculator") {
+      return {
+        ...tool,
+        title: "Grade & Exam Score Needed Calculator",
+        description: "Calculate the exact score needed on your final exam to reach your target class grade.",
+        iconName: "GraduationCap"
+      };
+    }
     return tool;
   }).sort((a, b) => {
     const aFeatured = a.isFeatured ? 1 : 0;
@@ -395,6 +427,7 @@ export default function CalculatorsCategoryPage() {
               const CardIcon =
                 card.icon === "Calculator" ? Calculator :
                 card.icon === "Binary" ? Binary :
+                card.icon === "Grid" ? Grid :
                 card.icon === "ShieldCheck" ? ShieldCheck :
                 card.icon === "RefreshCw" ? RefreshCw :
                 card.icon === "Lock" ? Lock :

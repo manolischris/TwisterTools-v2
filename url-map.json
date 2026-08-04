@@ -1477,6 +1477,14 @@
       "new_url": "/tools/calculators/scientific-calculator",
       "new_category": "calculators",
       "description": "A powerful, browser-native scientific calculator supporting trigonometry, logarithms, powers, factorials, and configurable precision."
+    },
+    {
+      "id": 171,
+      "name": "Grade & Exam Score Needed Calculator",
+      "legacy_url": "/final-grade-calculator",
+      "new_url": "/tools/calculators/final-grade-calculator",
+      "new_category": "calculators",
+      "description": "Calculate the exact score needed on your final exam to reach your target class grade."
     }
   ],
   "notes": "This mapping represents 156 active tools from the old platform. All legacy URLs will be redirected using Next.js 15 middleware to maintain Google indexing. Category-level redirects consolidate old categories into cleaner, more intuitive modern categories."
