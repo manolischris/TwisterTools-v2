@@ -48,34 +48,66 @@ interface ProcessingOptions {
 }
 
 /**
- * Extracts usernames from raw HTML/JSON text (Instagram export format or generic markup).
+ * Robustly extracts clean Instagram usernames from JSON structures, HTML documents, or text lists.
  */
 function extractInstagramUsernames(text: string): string[] {
-  const usernames = new Set<string>();
+  if (!text || !text.trim()) return [];
 
-  // 1. Try parsing as JSON first
+  const usernames = new Set<string>();
+  const isIgnoredHandle = (handle: string) =>
+    [
+      "_u",
+      "explore",
+      "direct",
+      "reels",
+      "stories",
+      "p",
+      "tv",
+      "developer",
+      "about",
+      "help",
+      "legal",
+      "privacy",
+      "terms",
+      "locations",
+      "instagram",
+    ].includes(handle.toLowerCase());
+
+  // 1. JSON Export Parser
   try {
     const json = JSON.parse(text);
     const extractFromObj = (obj: unknown) => {
       if (!obj) return;
       if (typeof obj === "string") {
         if (obj.startsWith("http") && obj.includes("instagram.com/")) {
-          const match = obj.match(/instagram\.com\/([^/?#]+)/);
-          if (match && match[1]) usernames.add(match[1]);
+          const match = obj.match(/instagram\.com\/(?:_u\/)?([^/?#]+)/);
+          if (match && match[1] && !isIgnoredHandle(match[1])) {
+            usernames.add(match[1]);
+          }
         }
       } else if (Array.isArray(obj)) {
         obj.forEach(extractFromObj);
       } else if (typeof obj === "object") {
         const record = obj as Record<string, unknown>;
-        if (typeof record.value === "string") {
-          usernames.add(record.value);
+        if (typeof record.value === "string" && record.value.trim()) {
+          const val = record.value.trim().replace(/^@/, "");
+          if (/^[a-zA-Z0-9_.-]{1,30}$/.test(val) && !isIgnoredHandle(val)) {
+            usernames.add(val);
+          }
         }
         if (typeof record.string_list_data === "object" && Array.isArray(record.string_list_data)) {
           record.string_list_data.forEach((item) => {
-            if (item && typeof item.value === "string") usernames.add(item.value);
+            if (item && typeof item.value === "string" && item.value.trim()) {
+              const val = item.value.trim().replace(/^@/, "");
+              if (/^[a-zA-Z0-9_.-]{1,30}$/.test(val) && !isIgnoredHandle(val)) {
+                usernames.add(val);
+              }
+            }
             if (item && typeof item.href === "string") {
-              const match = item.href.match(/instagram\.com\/([^/?#]+)/);
-              if (match && match[1]) usernames.add(match[1]);
+              const match = item.href.match(/instagram\.com\/(?:_u\/)?([^/?#]+)/);
+              if (match && match[1] && !isIgnoredHandle(match[1])) {
+                usernames.add(match[1]);
+              }
             }
           });
         }
@@ -85,24 +117,76 @@ function extractInstagramUsernames(text: string): string[] {
     extractFromObj(json);
     if (usernames.size > 0) return Array.from(usernames);
   } catch {
-    // Not valid JSON, proceed to HTML/Regex parsing
+    // Not valid JSON, proceed to HTML/Text DOM parsing
   }
 
-  // 2. HTML / Regex fallback for anchor tags and URLs
-  const hrefRegex = /href=["'](?:https?:\/\/)?(?:www\.)?instagram\.com\/([a-zA-Z0-9_.-]+)\/?["']/g;
+  // 2. Client-Side HTML DOM Parser (for HTML data exports)
+  if (typeof window !== "undefined" && (text.includes("<html") || text.includes("<div") || text.includes("<table") || text.includes("<a"))) {
+    try {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(text, "text/html");
+
+      // Strategy A: Check H2 headers (Instagram HTML export format for following.html)
+      const h2Elements = doc.querySelectorAll("h2");
+      h2Elements.forEach((h2) => {
+        const txt = h2.textContent?.trim().replace(/^@/, "") || "";
+        if (/^[a-zA-Z0-9_.-]{1,30}$/.test(txt) && !isIgnoredHandle(txt)) {
+          usernames.add(txt);
+        }
+      });
+
+      // Strategy B: Check HTML links pointing to instagram.com/_u/username or instagram.com/username
+      const anchors = doc.querySelectorAll("a[href*='instagram.com']");
+      anchors.forEach((a) => {
+        const href = a.getAttribute("href") || "";
+        const match = href.match(/instagram\.com\/(?:_u\/)?([^/?#]+)/);
+        if (match && match[1] && !isIgnoredHandle(match[1])) {
+          usernames.add(match[1]);
+        } else {
+          const anchorText = a.textContent?.trim().replace(/^@/, "") || "";
+          if (/^[a-zA-Z0-9_.-]{1,30}$/.test(anchorText) && !isIgnoredHandle(anchorText)) {
+            usernames.add(anchorText);
+          }
+        }
+      });
+
+      // Strategy C: Table cells (Instagram HTML exports format: Username / Όνομα χρήστη)
+      const rows = doc.querySelectorAll("tr, div._a6-g, div.pam");
+      rows.forEach((row) => {
+        const cells = Array.from(row.querySelectorAll("td, div, span"));
+        for (let i = 0; i < cells.length; i++) {
+          const cellText = cells[i].textContent?.trim().toLowerCase() || "";
+          if (cellText.includes("username") || cellText.includes("όνομα χρήστη")) {
+            const valueCell = cells[i + 1] || cells[i];
+            const candidate = valueCell?.textContent?.trim().replace(/^@/, "") || "";
+            if (/^[a-zA-Z0-9_.-]{1,30}$/.test(candidate) && !isIgnoredHandle(candidate)) {
+              usernames.add(candidate);
+            }
+          }
+        }
+      });
+
+      if (usernames.size > 0) return Array.from(usernames);
+    } catch {
+      /* Fallback to regex if DOMParser fails */
+    }
+  }
+
+  // 3. Fallback Regex for URL patterns
+  const hrefRegex = /href=["'](?:https?:\/\/)?(?:www\.)?instagram\.com\/(?:_u\/)?([a-zA-Z0-9_.-]+)\/?["']/gi;
   let match: RegExpExecArray | null;
   while ((match = hrefRegex.exec(text)) !== null) {
-    if (match[1] && !["explore", "direct", "reels", "stories", "p"].includes(match[1].toLowerCase())) {
+    if (match[1] && !isIgnoredHandle(match[1])) {
       usernames.add(match[1]);
     }
   }
 
-  // 3. Fallback for plain @username or text lists
+  // 4. Plain Text Fallback
   if (usernames.size === 0) {
     const lines = text.split(/\r?\n/);
     lines.forEach((line) => {
       const trimmed = line.trim().replace(/^@/, "");
-      if (/^[a-zA-Z0-9_.-]{1,30}$/.test(trimmed)) {
+      if (/^[a-zA-Z0-9_.-]{1,30}$/.test(trimmed) && !isIgnoredHandle(trimmed)) {
         usernames.add(trimmed);
       }
     });
@@ -266,7 +350,7 @@ export default function CompareTwoLists() {
   const countA = parsedA.length;
   const countB = parsedB.length;
 
-  // ── File Loaders ──
+  // ── File Loaders for Individual Files ──
   const handleSingleFileUpload = (
     e: React.ChangeEvent<HTMLInputElement>,
     target: "A" | "B"
@@ -277,6 +361,15 @@ export default function CompareTwoLists() {
     const reader = new FileReader();
     reader.onload = (event) => {
       const text = event.target?.result as string;
+      if (options.instagramMode || file.name.endsWith(".html") || file.name.endsWith(".json")) {
+        const cleanedUsernames = extractInstagramUsernames(text);
+        if (cleanedUsernames.length > 0) {
+          const joined = cleanedUsernames.join("\n");
+          if (target === "A") setListAText(joined);
+          else setListBText(joined);
+          return;
+        }
+      }
       if (target === "A") setListAText(text);
       else setListBText(text);
     };
@@ -296,41 +389,59 @@ export default function CompareTwoLists() {
       const zip = new JSZip();
       const unzipped = await zip.loadAsync(file);
 
-      let followersContent = "";
-      let followingContent = "";
+      let rawFollowersContent = "";
+      let rawFollowingContent = "";
 
       const filePaths = Object.keys(unzipped.files);
 
       for (const path of filePaths) {
-        const lowerPath = path.toLowerCase();
+        const filename = path.split("/").pop()?.toLowerCase() || "";
+
+        // Precise filename matching regardless of parent directory structure
         if (
-          lowerPath.includes("followers") ||
-          lowerPath.includes("followers_1")
+          filename === "followers_1.html" ||
+          filename === "followers_1.json" ||
+          filename === "followers.html" ||
+          filename === "followers.json"
         ) {
-          followersContent = await unzipped.files[path].async("text");
+          rawFollowersContent += "\n" + (await unzipped.files[path].async("text"));
         }
+
         if (
-          lowerPath.includes("following") ||
-          lowerPath.includes("following_1")
+          filename === "following.html" ||
+          filename === "following.json" ||
+          filename === "following_1.html" ||
+          filename === "following_1.json"
         ) {
-          followingContent = await unzipped.files[path].async("text");
+          rawFollowingContent += "\n" + (await unzipped.files[path].async("text"));
         }
       }
 
-      if (!followersContent && !followingContent) {
+      if (!rawFollowersContent && !rawFollowingContent) {
         throw new Error(
           "Could not find followers or following files in the zip archive. Please ensure you uploaded an official Instagram Data Export ZIP."
         );
       }
 
+      // Automatically enable Instagram Mode
       setOptions((prev) => ({ ...prev, instagramMode: true }));
 
-      if (followersContent) setListBText(followersContent);
-      if (followingContent) setListAText(followingContent);
-      setActiveTab("aOnly");
+      // Extract clean usernames BEFORE assigning to textarea state
+      const followersUsernames = extractInstagramUsernames(rawFollowersContent);
+      const followingUsernames = extractInstagramUsernames(rawFollowingContent);
+
+      if (followersUsernames.length === 0 && followingUsernames.length === 0) {
+        throw new Error(
+          "Could not parse any valid usernames from the extracted archive files. Make sure the ZIP contains official Instagram data."
+        );
+      }
+
+      setListBText(followersUsernames.join("\n")); // Followers in List B
+      setListAText(followingUsernames.join("\n")); // Following in List A
+      setActiveTab("aOnly"); // Show accounts you follow who don't follow back (Unfollowers)
 
       setZipMessage(
-        "Successfully extracted Followers & Following! Displaying non-reciprocal accounts (Unfollowers)."
+        `Successfully extracted ${followingUsernames.length} Following and ${followersUsernames.length} Followers! Displaying accounts you follow who do not follow back.`
       );
     } catch (err) {
       setZipError(
@@ -399,7 +510,7 @@ export default function CompareTwoLists() {
                 </span>
               </h3>
               <p className="text-xs text-slate-300 mt-0.5">
-                Upload your Instagram data ZIP file to instantly detect non-reciprocal accounts (unfollowers) without sharing passwords.
+                Upload your Instagram data ZIP file (HTML or JSON) to instantly detect non-reciprocal accounts (unfollowers) without sharing passwords.
               </p>
             </div>
           </div>
@@ -830,7 +941,7 @@ export default function CompareTwoLists() {
               <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2">
                 <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">2</div>
                 <h3 className="font-semibold text-slate-900">2. Pattern Extraction</h3>
-                <p className="text-slate-600 text-xs">Regex patterns strip HTML links, JSON metadata, and timestamps to extract clean item handles.</p>
+                <p className="text-slate-600 text-xs">DOM and Regex parsers strip HTML markup, tables, JSON keys, and timestamps to extract clean handles.</p>
               </div>
               <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2">
                 <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">3</div>
