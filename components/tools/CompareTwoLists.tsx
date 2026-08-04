@@ -535,7 +535,7 @@ export default function CompareTwoLists() {
         </div>
 
         {zipMessage && (
-          <div className="mt-4 bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 rounded-xl p-3 text-xs flex items-center gap-2">
+          <div className="mt-4 bg-emerald-500/10 text-emerald-300 rounded-xl p-3 text-xs flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
             <span>{zipMessage}</span>
           </div>

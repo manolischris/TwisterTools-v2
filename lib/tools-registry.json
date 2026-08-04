@@ -96,7 +96,7 @@
     "category": "text-tools",
     "href": "/tools/text-tools/compare-two-lists",
     "iconName": "ArrowLeftRight",
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "id": "base64-encode-decode",
