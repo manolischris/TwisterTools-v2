@@ -11,7 +11,9 @@ import {
     Zap,
     RefreshCw,
     ShieldAlert,
-    ExternalLink
+    ExternalLink,
+    Scale,
+    ShieldCheck
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -48,7 +50,7 @@ export default function TermsOfServicePage() {
         '@type': 'WebPage',
         name: 'Terms of Service',
         url: 'https://www.twistertools.com/terms-of-service',
-        description: 'Terms of Service outlining terms of access, user obligations, and intellectual property conditions for TwisterTools.',
+        description: 'Terms of Service outlining terms of access, user obligations, acceptable use, and intellectual property conditions for TwisterTools.',
         publisher: {
             '@type': 'Organization',
             name: 'TwisterTools',
@@ -90,7 +92,7 @@ export default function TermsOfServicePage() {
                         <div>
                             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">Terms of Service</h1>
                             <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-2xl leading-relaxed">
-                                Last Updated: July 2026 | Platform Terms, Acceptable Use & Operational Policies
+                                Last Updated: August 2026 | Platform Terms, Acceptable Use & Operational Policies
                             </p>
                         </div>
                     </div>
@@ -110,7 +112,7 @@ export default function TermsOfServicePage() {
                     </div>
                     <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
                         <p>
-                            By accessing, browsing, or utilizing any tool, calculator, converter, or page on twistertools.com (&ldquo;Service&rdquo;), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you should immediately discontinue using the site.
+                            By accessing, browsing, or utilizing any tool, calculator, converter, or service on twistertools.com (&ldquo;Service&rdquo;), you agree to be bound by these Terms of Service. If you do not agree with any part of these operational guidelines, you should immediately discontinue using the site.
                         </p>
                     </div>
                 </section>
@@ -125,28 +127,28 @@ export default function TermsOfServicePage() {
                     </div>
                     <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
                         <p>
-                            TwisterTools provides free developer, designer, data, and daily productivity utilities. When utilizing our utilities, you agree not to:
+                            TwisterTools provides free developer, designer, health, financial, image, PDF, and daily productivity utilities. When utilizing our utilities, you agree not to:
                         </p>
                         <ul className="list-disc pl-5 space-y-2 text-xs md:text-sm">
-                            <li>Attempt to scrape, reverse-engineer, or automatically harvest backend routes outside of normal Web UI browser interactions.</li>
-                            <li>Utilize tools to encode, generate, or transmit malicious code, malware, exploits, or illegal content.</li>
-                            <li>Attempt to bypass bandwidth limits or technical safeguards put in place to ensure platform availability for all users.</li>
-                            <li>Incorporate our public endpoints into automated bot networks or DDoS vectors.</li>
+                            <li>Attempt to scrape, reverse-engineer, or harvest platform assets outside of standard web browser interactions.</li>
+                            <li>Utilize tools to encode, generate, or transmit malicious payloads, exploits, malware, or illegal content.</li>
+                            <li>Attempt to bypass security safeguards or rate limits engineered to maintain platform availability for all users.</li>
+                            <li>Incorporate our public site endpoints into automated bot networks or malicious traffic vectors.</li>
                         </ul>
                     </div>
                 </section>
 
-                {/* Section 3: Execution Models & Disclaimers */}
+                {/* Section 3: Client-Side Execution & Disclaimers */}
                 <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold flex-shrink-0">
                             <Cpu className="w-5 h-5" />
                         </div>
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">3. Tool Execution & Disclaimer of Warranties</h2>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">3. Local Execution & General Warranty Disclaimer</h2>
                     </div>
                     <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
                         <p>
-                            Our platform utilizes a hybrid execution model. Browser-native utilities execute directly on your local device CPU, while heavy document tools (like PDF operations) process files on ephemeral servers with immediate automatic deletion.
+                            Our platform operates a browser-native architecture where utilities execute directly on your client device CPU using JavaScript, WebAssembly, and modern browser APIs.
                         </p>
                         <div className="p-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/80 rounded-xl text-amber-900 dark:text-amber-200 text-sm space-y-2">
                             <div className="flex items-center space-x-2 font-semibold text-amber-800 dark:text-amber-300">
@@ -154,74 +156,93 @@ export default function TermsOfServicePage() {
                                 <span>Warranty Disclaimer</span>
                             </div>
                             <p className="text-xs md:text-sm leading-relaxed text-amber-800/90 dark:text-amber-300/90">
-                                The Service is provided on an &ldquo;AS IS&rdquo; and &ldquo;AS AVAILABLE&rdquo; basis without warranties of any kind, express or implied. TwisterTools does not guarantee that mathematical calculations, data conversions, or file transformations will be error-free or uninterrupted. TwisterTools is not liable for data loss or operational issues resulting from tool usage.
+                                The Service is provided on an &ldquo;AS IS&rdquo; and &ldquo;AS AVAILABLE&rdquo; basis without warranties of any kind, express or implied. TwisterTools does not guarantee that mathematical calculations, data conversions, image processing, or file transformations will be completely error-free or uninterrupted. TwisterTools is not liable for data loss or operational issues resulting from tool usage.
                             </p>
                         </div>
                     </div>
                 </section>
 
-                {/* Section 4: Intellectual Property */}
+                {/* Section 4: YMYL Disclaimer */}
+                <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+                    <div className="flex items-center space-x-3">
+                        <div className="w-9 h-9 bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold flex-shrink-0">
+                            <Scale className="w-5 h-5" />
+                        </div>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">4. Health, Financial & Educational Tool Disclaimers</h2>
+                    </div>
+                    <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
+                        <p>
+                            Interactive financial planners, loan estimators, and health/fitness calculators provided on TwisterTools are designed strictly for educational and informational purposes based on standard mathematical formulas:
+                        </p>
+                        <ul className="list-disc pl-5 space-y-2 text-xs md:text-sm">
+                            <li><strong>Financial Tools:</strong> Calculation outputs do not constitute formal financial, investment, tax, or legal advice. Always consult a certified financial advisor before making financial commitments.</li>
+                            <li><strong>Health & Fitness Tools:</strong> Estimations (such as BMI, TDEE, body fat, or pregnancy milestones) are calculated using public mathematical formulas and do not constitute professional medical advice or diagnoses. Always consult a qualified healthcare provider for medical guidance.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                {/* Section 5: Intellectual Property */}
                 <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold flex-shrink-0">
                             <Copyright className="w-5 h-5" />
                         </div>
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">4. Intellectual Property Rights</h2>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">5. Intellectual Property Rights & Content Ownership</h2>
                     </div>
                     <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
                         <p>
                             All branding, custom codebases, design architecture, and logos associated with TwisterTools are the intellectual property of TwisterTools.
                         </p>
                         <p>
-                            <strong>Your Ownership:</strong> TwisterTools claims zero ownership or copyright over the input text, code snippets, graphics, or files you process using our utilities. All converted or generated outputs belong entirely to you.
+                            <strong>Your Ownership:</strong> TwisterTools claims zero ownership or copyright over the input text, code snippets, graphics, document files, or parameters you process using our utilities. All converted, generated, or formatted outputs belong 100% to you.
                         </p>
                     </div>
                 </section>
 
-                {/* Section 5: Advertising & Affiliate Disclosure */}
+                {/* Section 6: Advertising & Affiliate Disclosure */}
                 <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold flex-shrink-0">
                             <ExternalLink className="w-5 h-5" />
                         </div>
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">5. Advertisements & Affiliate Links</h2>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">6. Advertisements & Third-Party Links</h2>
                     </div>
                     <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
                         <p>
-                            To keep our tools freely accessible, TwisterTools displays third-party advertisements (such as Google AdSense) and may include affiliate referral links.
+                            To maintain free access to our web tool ecosystem, TwisterTools displays third-party advertisements (such as Google AdSense) and may include affiliate referral links.
                         </p>
                         <p className="text-xs md:text-sm">
-                            Interacting with third-party advertisements or clicking affiliate links redirects you to external web services governed by their own privacy policies and terms. TwisterTools does not endorse or guarantee third-party products, and clicking affiliate links incurs no extra cost to you.
+                            Interacting with third-party advertisements or clicking external links redirects you to third-party web services governed by their own privacy policies and terms. TwisterTools does not endorse or guarantee third-party products, and clicking affiliate links incurs zero extra cost to you.
                         </p>
                     </div>
                 </section>
 
-                {/* Section 6: Modifications */}
+                {/* Section 7: Service Modifications */}
                 <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold flex-shrink-0">
                             <Zap className="w-5 h-5" />
                         </div>
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">6. Service Modifications</h2>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">7. Service Modifications</h2>
                     </div>
                     <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
                         <p>
-                            TwisterTools reserves the right to modify, adjust, update, or temporarily pause any tool, feature, or route at any time to maintain system security or performance without prior notice.
+                            TwisterTools reserves the right to modify, adjust, update, or temporarily pause any tool, feature, or route at any time to maintain platform performance or system security without prior notice.
                         </p>
                     </div>
                 </section>
 
-                {/* Section 7: Updates */}
+                {/* Section 8: Amendments */}
                 <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
                     <div className="flex items-center space-x-3">
                         <div className="w-9 h-9 bg-indigo-100 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center font-bold flex-shrink-0">
                             <RefreshCw className="w-5 h-5" />
                         </div>
-                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">7. Terms Amendments</h2>
+                        <h2 className="text-xl font-bold text-slate-900 dark:text-white">8. Terms Amendments</h2>
                     </div>
                     <div className="text-slate-700 dark:text-slate-300 text-sm md:text-base leading-relaxed space-y-4">
                         <p>
-                            We reserve the right to revise these Terms of Service periodically. Continued usage of TwisterTools following published updates signifies your agreement to the modified terms.
+                            We reserve the right to revise these Terms of Service periodically. Continued usage of TwisterTools following published revisions signifies your agreement to the updated terms.
                         </p>
                     </div>
                 </section>

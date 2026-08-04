@@ -90,6 +90,15 @@
     "isFeatured": false
   },
   {
+    "id": "compare-two-lists",
+    "title": "Compare Two Lists & Set Difference Finder",
+    "description": "Compare two text lists online to find missing items, set differences, intersections, and unfollowers from Instagram ZIP exports.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/compare-two-lists",
+    "iconName": "ArrowLeftRight",
+    "isFeatured": false
+  },
+  {
     "id": "base64-encode-decode",
     "title": "Base64 Encoder / Decoder & String Sandbox",
     "description": "Encode plain text to Base64 or decode Base64 strings back to readable format instantly. Supports UTF-8 strings, line breaks, and live byte metrics locally in your browser.",

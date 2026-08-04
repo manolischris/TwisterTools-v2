@@ -19,6 +19,7 @@ import {
   Minimize2,
   CreditCard,
   Image,
+  ArrowLeftRight,
   ArrowRightLeft,
   Binary,
   FileJson,
@@ -115,6 +116,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   CreditCard,
   Image,
   ImageIcon: Image, // Alias just in case
+  ArrowLeftRight,
   ArrowRightLeft,
   Binary,
   FileJson,
