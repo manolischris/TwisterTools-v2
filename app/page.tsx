@@ -4,6 +4,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
+  Link as LinkIcon,
   Search,
   Bookmark,
   BookmarkCheck,
@@ -81,6 +82,7 @@ import {
   Baby,
   Calendar,
   Timer,
+  Grid,
   GraduationCap
 } from "lucide-react";
 
@@ -98,6 +100,7 @@ interface Tool {
 }
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Link: LinkIcon,
   Activity,
   Flame,
   Droplets,
@@ -109,6 +112,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Baby,
   Calendar,
   Timer,
+  Grid,
   GraduationCap,
   TrendingUp,
   Code2,

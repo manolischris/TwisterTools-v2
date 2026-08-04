@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
+  Link as LinkIcon,
   AlertCircle,
   Search,
   Compass,
@@ -51,6 +52,8 @@ const POPULAR_TOOL_IDS = [
 
 const getToolIcon = (iconName: string) => {
   switch (iconName) {
+    case "Link":
+      return LinkIcon;
     case "Calculator":
       return Calculator;
     case "Code2":

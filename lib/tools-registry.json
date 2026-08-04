@@ -1209,5 +1209,14 @@
     "href": "/tools/calculators/final-grade-calculator",
     "iconName": "GraduationCap",
     "isFeatured": false
+  },
+  {
+    "id": "url-extractor",
+    "title": "URL & Hyperlink Text Extractor",
+    "description": "Extract URLs and anchor text from HTML or plain text with deduplication and export capabilities.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/url-extractor",
+    "iconName": "Link",
+    "isFeatured": false
   }
 ]

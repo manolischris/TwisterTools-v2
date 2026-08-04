@@ -9,9 +9,10 @@
   },
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 67 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
-  "active_task_tracker": "Integrated Compare Two Lists & Set Difference Finder (compare-two-lists) - Completed",
-  "completedTasksCount": 166,
+  "active_task_tracker": "Completed url-extractor integration, sorting and icon fixes",
+  "completedTasksCount": 167,
   "completed_tasks": [
+    "Integrated URL & Hyperlink Text Extractor (UrlExtractor) into text-tools, resolved metadata title layout template formatting, appended registry record at the end of lib/tools-registry.json to display newest tools first, synchronized sorting logic across all lists, imported and mapped all 64 icons (including Grid) from the registry in home page and dynamic category lists to fix mismatches, and synchronized project state.",
     "Integrated Compare Two Lists & Set Difference Finder (CompareTwoLists) into text-tools, repaired component compile error, created dedicated page route at /tools/text-tools/compare-two-lists with standard header layout and metadata, added a static text-tools category page at /tools/text-tools with registry-driven grid mapping, registered the tool in lib/tools-registry.json with ArrowLeftRight icon, updated shared icon maps for category/directory/home/related cards, and synchronized project state.",
     "Integrated Grade & Exam Score Needed Calculator (FinalGradeCalculator) component into the calculators category, fixed component syntax/diagnostic issues, created a dedicated page route at /tools/calculators/final-grade-calculator with GraduationCap hero icon, updated calculators category card mapping, registered the tool in lib/tools-registry.json, and synchronized project state.",
     "Integrated GPA & Grade Point Average Calculator (GpaCalculator) component into the calculators category, created a dedicated page route at /tools/calculators/gpa-calculator with GraduationCap hero icon, updated calculators category card mapping, registered the tool in lib/tools-registry.json, refreshed llms.txt calculator bullets, and synchronized project state.",
