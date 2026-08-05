@@ -72,7 +72,11 @@ import {
   Wine,
   Timer,
   Grid,
-  GraduationCap
+  GraduationCap,
+  AtSign,
+  Phone,
+  ListFilter,
+  ArrowUpDown
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -161,7 +165,11 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Building,
   Car,
   PiggyBank,
-  GraduationCap
+  GraduationCap,
+  AtSign,
+  Phone,
+  ListFilter,
+  ArrowUpDown
 };
 
 export default function CategoryToolSearchGrid({

@@ -1218,5 +1218,50 @@
     "href": "/tools/text-tools/url-extractor",
     "iconName": "Link",
     "isFeatured": false
+  },
+  {
+    "id": "url-opener",
+    "title": "Bulk Multi-URL Opener & Launch Sandbox",
+    "description": "Sanitize, deduplicate, throttle, and launch large batches of website URLs across isolated browser tabs simultaneously.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/url-opener",
+    "iconName": "Globe",
+    "isFeatured": false
+  },
+  {
+    "id": "email-extractor",
+    "title": "Email Address Extractor & Scraper",
+    "description": "Extract, clean, filter, and sort email addresses instantly from raw text, code logs, or unstructured documents.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/email-extractor",
+    "iconName": "AtSign",
+    "isFeatured": false
+  },
+  {
+    "id": "phone-number-extractor",
+    "title": "Phone Number Extractor & Formatter",
+    "description": "Extract, deduplicate, and format phone numbers from raw text into E.164 or US national formats.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/phone-number-extractor",
+    "iconName": "Phone",
+    "isFeatured": false
+  },
+  {
+    "id": "duplicate-line-remover",
+    "title": "Duplicate Line Remover & Deduplicator",
+    "description": "Scrub duplicate text lines, trim whitespace, filter empty lines, and sort lists safely.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/duplicate-line-remover",
+    "iconName": "ListFilter",
+    "isFeatured": false
+  },
+  {
+    "id": "line-sorter",
+    "title": "Line Alphabetizer & Sort Suite",
+    "description": "Sort, deduplicate, trim, and format line-delimited text instantly.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/line-sorter",
+    "iconName": "ArrowUpDown",
+    "isFeatured": false
   }
 ]

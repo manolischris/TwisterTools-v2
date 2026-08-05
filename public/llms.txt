@@ -62,6 +62,9 @@ Robust utilities to manipulate, compare, count, and format text strings or struc
 - **Reverse Text Generator**: Mirror, flip, or reverse text arrays.
 - **Small Text Generator**: Generate Unicode-styled fonts for social copy.
 - **Word Combiner**: Perform cartesian product phrase combinations for marketing and domain generation.
+- **Email Address Extractor & Scraper** (/tools/text-tools/email-extractor): Extract, clean, deduplicate, filter by domain, and sort email addresses from raw text, logs, or unstructured documents — 100% client-side.
+- **Duplicate Line Remover & Deduplicator** (/tools/text-tools/duplicate-line-remover): Scrape and clean duplicate lines with browser-native precision.
+- Line Alphabetizer & Sort Suite: Client-side line sorting, natural numerical ordering, and deduplication tool.
 
 ### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
 Lossy and lossless graphic asset optimization performing pixel rendering directly in browser memory.

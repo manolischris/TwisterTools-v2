@@ -49,6 +49,7 @@ import {
   QrCode,
   ShieldAlert,
   CalendarClock,
+  ArrowUpDown,
   Type,
   ListStart,
   Binary,
@@ -169,7 +170,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   FolderArchive,
   RotateCw,
   Crop,
-  Car
+  Car,
+  ArrowUpDown
 };
 
 const CATEGORIES = [
