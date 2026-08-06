@@ -84,7 +84,12 @@ import {
   Calendar,
   Timer,
   Grid,
-  GraduationCap
+  GraduationCap,
+  AlignLeft,
+  ListFilter,
+  AtSign,
+  Phone,
+  Replace
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -171,7 +176,12 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   RotateCw,
   Crop,
   Car,
-  ArrowUpDown
+  ArrowUpDown,
+  AlignLeft,
+  ListFilter,
+  AtSign,
+  Phone,
+  Replace
 };
 
 const CATEGORIES = [

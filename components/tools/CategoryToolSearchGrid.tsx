@@ -76,7 +76,9 @@ import {
   AtSign,
   Phone,
   ListFilter,
-  ArrowUpDown
+  ArrowUpDown,
+  AlignLeft,
+  Replace
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -169,7 +171,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   AtSign,
   Phone,
   ListFilter,
-  ArrowUpDown
+  ArrowUpDown,
+  AlignLeft,
+  Replace
 };
 
 export default function CategoryToolSearchGrid({

@@ -3,8 +3,11 @@ import Link from "next/link";
 import Image from "next/image";
 import Script from "next/script";
 import { ChevronRight, Layers } from "lucide-react";
-import toolsRegistry from "@/lib/tools-registry.json";
 import ToolsDirectoryClient from "@/components/tools/ToolsDirectoryClient";
+import fs from "fs";
+import path from "path";
+
+export const dynamic = "force-dynamic";
 
 /* ─────────────────────────────────────────────────────────
    Static Metadata (Next.js 15 App Router)
@@ -73,6 +76,8 @@ const SEO_CARDS = [
    Server Page
 ───────────────────────────────────────────────────────── */
 export default function ToolsDirectoryPage() {
+  const registryPath = path.join(process.cwd(), "lib", "tools-registry.json");
+  const toolsRegistry = JSON.parse(fs.readFileSync(registryPath, "utf-8")) as Array<any>;
   const totalTools = toolsRegistry.length;
 
   /* JSON-LD CollectionPage schema */

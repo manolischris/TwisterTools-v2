@@ -3,6 +3,7 @@ import urlMap from "./url-map.json";
 
 const nextConfig: NextConfig = {
   async redirects() {
+    // Force config reload for cache clearance
     const redirects = [];
 
     // Category-level redirects (14 legacy categories → modern categories)

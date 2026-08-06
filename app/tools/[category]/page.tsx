@@ -74,11 +74,19 @@ import {
   Info,
   AlertCircle,
   FileCheck2,
-  Image as ImageIcon
+  Image as ImageIcon,
+  AlignLeft,
+  ListFilter,
+  AtSign,
+  Phone,
+  Replace
 } from "lucide-react";
 
-import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
+import fs from "fs";
+import path from "path";
+
+export const dynamic = "force-dynamic";
 
 // Type definitions for Next.js params
 type Params = Promise<{ category: string }>;
@@ -154,9 +162,13 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   HelpCircle,
   Info,
   AlertCircle,
-  FileCheck2,
   ImageIcon,
-  Image: ImageIcon
+  Image: ImageIcon,
+  AlignLeft,
+  ListFilter,
+  AtSign,
+  Phone,
+  Replace
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json
@@ -641,6 +653,9 @@ export default async function CategoryDirectoryPage({
   }
 
   // Filter tools belonging to this category from the dynamic registry import and sort featured first
+  const registryPath = path.join(process.cwd(), "lib", "tools-registry.json");
+  const toolsRegistry = JSON.parse(fs.readFileSync(registryPath, "utf-8")) as Array<any>;
+
   const categoryTools = toolsRegistry
     .map((tool, idx) => ({ ...tool, originalIndex: idx }))
     .filter((tool) => tool.category === category)

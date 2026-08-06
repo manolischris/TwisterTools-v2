@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Type, RefreshCw, Layers, HelpCircle } from "lucide-react";
-import toolsRegistry from "@/lib/tools-registry.json";
+import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
+import fs from "fs";
+import path from "path";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Text Analysis, List Comparison & Editing Tools",
@@ -86,6 +89,9 @@ const textToolsMeta = {
 };
 
 export default function TextToolsCategoryPage() {
+  const registryPath = path.join(process.cwd(), "lib", "tools-registry.json");
+  const toolsRegistry = JSON.parse(fs.readFileSync(registryPath, "utf-8")) as Array<any>;
+
   const categoryTools = toolsRegistry
     .map((tool, idx) => ({ ...tool, originalIndex: idx }))
     .filter((tool) => tool.category === "text-tools")
@@ -97,6 +103,33 @@ export default function TextToolsCategoryPage() {
           description:
             "Compare two lists online to find missing items, set differences, intersections, and unfollowers from Instagram data exports.",
           iconName: "ArrowLeftRight"
+        };
+      }
+      if (tool.id === "character-frequency-counter") {
+        return {
+          ...tool,
+          title: "Character Frequency Counter",
+          description:
+            "Analyze letter occurrence counts, character density percentages, and symbol frequencies in real time.",
+          iconName: "Hash"
+        };
+      }
+      if (tool.id === "reading-time-calculator") {
+        return {
+          ...tool,
+          title: "Reading Time Calculator",
+          description:
+            "Estimate silent reading time and speech presentation duration based on word counts and custom WPM speeds.",
+          iconName: "Clock"
+        };
+      }
+      if (tool.id === "text-replacer") {
+        return {
+          ...tool,
+          title: "Text Replace & Pattern Substitution",
+          description:
+            "Batch replace text, execute complex Regex patterns, and clean string data instantly.",
+          iconName: "Replace"
         };
       }
       return tool;

@@ -58,13 +58,18 @@ Zero-exposure cryptographic tools to audit password complexity and generate entr
 Robust utilities to manipulate, compare, count, and format text strings or structured list arrays.
 - **Case Converter**: Transform strings between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and PascalCase.
 - **Comma Separator & List Delimiter**: Convert row listings or CSV data into custom delimited arrays.
-- **Word Counter & Text Analyzer**: Measure characters, words, sentences, reading times, and keyword densities.
+- **Word Counter & Text Analyzer** (/tools/text-tools/word-counter): Measure characters, words, sentences, reading times, and keyword densities.
 - **Reverse Text Generator**: Mirror, flip, or reverse text arrays.
 - **Small Text Generator**: Generate Unicode-styled fonts for social copy.
 - **Word Combiner**: Perform cartesian product phrase combinations for marketing and domain generation.
 - **Email Address Extractor & Scraper** (/tools/text-tools/email-extractor): Extract, clean, deduplicate, filter by domain, and sort email addresses from raw text, logs, or unstructured documents — 100% client-side.
 - **Duplicate Line Remover & Deduplicator** (/tools/text-tools/duplicate-line-remover): Scrape and clean duplicate lines with browser-native precision.
-- Line Alphabetizer & Sort Suite: Client-side line sorting, natural numerical ordering, and deduplication tool.
+- **Line Alphabetizer & Sort Suite** (/tools/text-tools/line-sorter): Client-side line sorting, natural numerical ordering, and deduplication tool.
+- **Text Line Counter & Blank Line Stripper** (/tools/text-tools/line-counter): Count total lines, strip blank lines, deduplicate entries, trim whitespace, and sort text lists online in real-time.
+- **Phone Number Extractor & Formatter** (/tools/text-tools/phone-number-extractor): Extract, deduplicate, and format phone numbers from raw text into E.164 or US national formats.
+- **Bulk Multi-URL Opener & Launch Sandbox** (/tools/text-tools/url-opener): Open multiple URLs.
+- **URL & Hyperlink Text Extractor** (/tools/text-tools/url-extractor): Extract URLs from text.
+- Text Replace & Pattern Substitution Tool: Client-side string replacement and Regex substitution engine.
 
 ### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
 Lossy and lossless graphic asset optimization performing pixel rendering directly in browser memory.

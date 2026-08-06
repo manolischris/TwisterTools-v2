@@ -80,7 +80,12 @@ import {
   Wine,
   Timer,
   Grid,
-  GraduationCap
+  GraduationCap,
+  AlignLeft,
+  ListFilter,
+  AtSign,
+  Phone,
+  Replace
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -171,7 +176,12 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   FolderArchive,
   RotateCw,
   Crop,
-  Combine
+  Combine,
+  AlignLeft,
+  ListFilter,
+  AtSign,
+  Phone,
+  Replace
 };
 
 /* ─────────────────────────────────────────────────────────

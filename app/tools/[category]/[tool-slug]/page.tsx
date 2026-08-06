@@ -1,10 +1,11 @@
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
-import { redirect, notFound } from "next/navigation";
+import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
 import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby } from "lucide-react";
 import urlMap from "../../../../url-map.json";
+import toolsRegistry from "../../../../lib/tools-registry.json";
 import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
 import Md5Generator from "../../../../components/tools/Md5Generator";
 import PasswordGenerator from "../../../../components/tools/PasswordGenerator";
@@ -149,6 +150,58 @@ const COMPLETED_TOOLS = [
   "scientific-calculator",
 ];
 
+function handleConsolidationRedirects(category: string, toolSlug: string) {
+  // Consolidate the 10 binary conversion pages to the unified binary-converter path
+  const binaryLegacySlugs = [
+    "text-to-binary",
+    "binary-to-text",
+    "binary-to-hex",
+    "hex-to-binary",
+    "binary-to-ascii",
+    "ascii-to-binary",
+    "binary-to-decimal",
+    "decimal-to-binary",
+    "text-to-ascii",
+    "decimal-to-hex",
+  ];
+  if (category === "converter-tools" && binaryLegacySlugs.includes(toolSlug)) {
+    permanentRedirect("/tools/converter-tools/binary-converter");
+  }
+
+  // Redirect legacy HTML/CSS minifier slugs to the unified html-css-minifier-unminifier
+  const htmlCssLegacySlugs = ["html-minifier", "css-minifier"];
+  if (category === "developer-tools" && htmlCssLegacySlugs.includes(toolSlug)) {
+    permanentRedirect("/tools/developer-tools/html-css-minifier-unminifier");
+  }
+
+  // Redirect legacy url-encode-decode slug to modern url-encoder-decoder
+  if (category === "developer-tools" && toolSlug === "url-encode-decode") {
+    permanentRedirect("/tools/developer-tools/url-encoder-decoder");
+  }
+
+  // Redirect legacy JSON formatting/validation slugs to the unified json-formatter-validator path
+  const jsonLegacySlugs = [
+    "json-formatter",
+    "json-validator",
+    "json-beautifier",
+    "json-viewer",
+    "json-editor",
+  ];
+  if (category === "developer-tools" && jsonLegacySlugs.includes(toolSlug)) {
+    permanentRedirect("/tools/developer-tools/json-formatter-validator");
+  }
+
+  // Redirect legacy XML formatting/validation slugs to the unified xml-formatter-validator path
+  const xmlLegacySlugs = [
+    "xml-formatter",
+    "xml-validator",
+    "xml-beautifier",
+    "xml-viewer",
+  ];
+  if (category === "developer-tools" && xmlLegacySlugs.includes(toolSlug)) {
+    permanentRedirect("/tools/developer-tools/xml-formatter-validator");
+  }
+}
 
 // Generate metadata for SEO optimization
 export async function generateMetadata({
@@ -157,6 +210,15 @@ export async function generateMetadata({
   params: Promise<{ category: string; "tool-slug": string }>;
 }) {
   const { category, "tool-slug": toolSlug } = await params;
+
+  // 1. Check consolidation redirects first
+  handleConsolidationRedirects(category, toolSlug);
+
+  // 2. Check if the tool is actively implemented
+  const isActive = toolsRegistry.some((t) => t.id === toolSlug);
+  if (!isActive) {
+    permanentRedirect(`/tools/${category}`);
+  }
 
   // Find the matching tool
   let tool = urlMap.tools.find(
@@ -176,11 +238,23 @@ export async function generateMetadata({
     };
   }
 
+  // Fallback to registry if not found in url-map
   if (!tool) {
-    return {
-      title: "Tool Not Found",
-      description: "The requested tool could not be found.",
-    };
+    const regTool = toolsRegistry.find((t) => t.id === toolSlug);
+    if (regTool) {
+      tool = {
+        id: regTool.id as any,
+        name: regTool.title,
+        legacy_url: "",
+        new_url: regTool.href,
+        new_category: regTool.category,
+        description: regTool.description,
+      };
+    }
+  }
+
+  if (!tool) {
+    permanentRedirect(`/tools/${category}`);
   }
 
   const toolUrl = `https://www.twistertools.com${tool.new_url}`;
@@ -235,25 +309,27 @@ export async function generateMetadata({
   };
 }
 
-// Static generation: Pre-render all 146 tool pages at build time
+// Static generation: Pre-render only active, non-static tool pages at build time
 export async function generateStaticParams() {
   const params: { category: string; "tool-slug": string }[] = [];
 
-  for (const tool of urlMap.tools) {
-    const pathParts = tool.new_url.split("/");
-    // Only generate static params for actual tools (path length is 4: /tools/{category}/{tool-slug})
-    if (pathParts.length >= 4) {
-      params.push({
-        category: pathParts[2],
-        "tool-slug": pathParts[3],
-      });
+  for (const tool of toolsRegistry) {
+    const pathParts = tool.href.split("/");
+    // pathParts format: ["", "tools", category, tool-slug]
+    if (pathParts.length >= 4 && pathParts[1] === "tools") {
+      const category = pathParts[2];
+      const toolSlug = pathParts[3];
+
+      // Exclude tools that have their own static folder page implementation
+      const staticFolderPath = path.join(process.cwd(), "app", "tools", category, toolSlug);
+      if (!fs.existsSync(staticFolderPath)) {
+        params.push({
+          category,
+          "tool-slug": toolSlug,
+        });
+      }
     }
   }
-
-  params.push({
-    category: "pdf-tools",
-    "tool-slug": "extract-pdf-images",
-  });
 
   return params;
 }
@@ -265,55 +341,13 @@ export default async function ToolPage({
 }) {
   const { category, "tool-slug": toolSlug } = await params;
 
-  // Consolidate the 10 binary conversion pages to the unified binary-converter path
-  const binaryLegacySlugs = [
-    "text-to-binary",
-    "binary-to-text",
-    "binary-to-hex",
-    "hex-to-binary",
-    "binary-to-ascii",
-    "ascii-to-binary",
-    "binary-to-decimal",
-    "decimal-to-binary",
-    "text-to-ascii",
-    "decimal-to-hex",
-  ];
-  if (category === "converter-tools" && binaryLegacySlugs.includes(toolSlug)) {
-    redirect("/tools/converter-tools/binary-converter");
-  }
+  // 1. Check consolidation redirects first
+  handleConsolidationRedirects(category, toolSlug);
 
-  // Redirect legacy HTML/CSS minifier slugs to the unified html-css-minifier-unminifier
-  const htmlCssLegacySlugs = ["html-minifier", "css-minifier"];
-  if (category === "developer-tools" && htmlCssLegacySlugs.includes(toolSlug)) {
-    redirect("/tools/developer-tools/html-css-minifier-unminifier");
-  }
-
-  // Redirect legacy url-encode-decode slug to modern url-encoder-decoder
-  if (category === "developer-tools" && toolSlug === "url-encode-decode") {
-    redirect("/tools/developer-tools/url-encoder-decoder");
-  }
-
-  // Redirect legacy JSON formatting/validation slugs to the unified json-formatter-validator path
-  const jsonLegacySlugs = [
-    "json-formatter",
-    "json-validator",
-    "json-beautifier",
-    "json-viewer",
-    "json-editor",
-  ];
-  if (category === "developer-tools" && jsonLegacySlugs.includes(toolSlug)) {
-    redirect("/tools/developer-tools/json-formatter-validator");
-  }
-
-  // Redirect legacy XML formatting/validation slugs to the unified xml-formatter-validator path
-  const xmlLegacySlugs = [
-    "xml-formatter",
-    "xml-validator",
-    "xml-beautifier",
-    "xml-viewer",
-  ];
-  if (category === "developer-tools" && xmlLegacySlugs.includes(toolSlug)) {
-    redirect("/tools/developer-tools/xml-formatter-validator");
+  // 2. Check if the tool is actively implemented
+  const isActive = toolsRegistry.some((t) => t.id === toolSlug);
+  if (!isActive) {
+    permanentRedirect(`/tools/${category}`);
   }
 
   // Find the matching tool from url-map.json
@@ -334,14 +368,24 @@ export default async function ToolPage({
     };
   }
 
-  // Fallback if tool not found in url-map
+  // Fallback to registry if not found in url-map
   if (!tool) {
-    notFound();
+    const regTool = toolsRegistry.find((t) => t.id === toolSlug);
+    if (regTool) {
+      tool = {
+        id: regTool.id as any,
+        name: regTool.title,
+        legacy_url: "",
+        new_url: regTool.href,
+        new_category: regTool.category,
+        description: regTool.description,
+      };
+    }
   }
 
-  // Enforce strict 404 for tools that exist in url-map but have no completed implementation
-  if (!COMPLETED_TOOLS.includes(toolSlug)) {
-    notFound();
+  // Fallback if still not found
+  if (!tool) {
+    permanentRedirect(`/tools/${category}`);
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly

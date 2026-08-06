@@ -1263,5 +1263,50 @@
     "href": "/tools/text-tools/line-sorter",
     "iconName": "ArrowUpDown",
     "isFeatured": false
+  },
+  {
+    "id": "line-counter",
+    "title": "Text Line Counter & Blank Line Stripper",
+    "description": "Count total lines, strip blank lines, deduplicate entries, trim whitespace, and sort text lists online in real-time.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/line-counter",
+    "iconName": "AlignLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "word-counter",
+    "title": "String Length & Word Count Analyzer",
+    "description": "Calculate real-time word count, character limits, reading time, and keyword density.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/word-counter",
+    "iconName": "AlignLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "character-frequency-counter",
+    "title": "Character Frequency & Density Analyzer",
+    "description": "Analyze letter occurrence counts, character density percentages, and symbol frequencies in real time.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/character-frequency-counter",
+    "iconName": "Hash",
+    "isFeatured": false
+  },
+  {
+    "id": "reading-time-calculator",
+    "title": "Reading Time & Speaking Pace Estimator",
+    "description": "Calculate silent reading time and speech delivery duration with custom WPM speeds and text analytics.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/reading-time-calculator",
+    "iconName": "Clock",
+    "isFeatured": false
+  },
+  {
+    "id": "text-replacer",
+    "title": "Text Replace & Pattern Substitution Tool",
+    "description": "Batch replace text, execute complex Regex patterns, and clean string data instantly.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/text-replacer",
+    "iconName": "Replace",
+    "isFeatured": false
   }
 ]
