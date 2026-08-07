@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
   Link as LinkIcon,
+  Link2,
   Search,
   X,
   ArrowRight,
@@ -106,6 +107,7 @@ interface RegistryTool {
  ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Link: LinkIcon,
+  Link2,
   Activity,
   Flame,
   Droplets,

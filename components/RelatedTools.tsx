@@ -1,6 +1,7 @@
 import Link from "next/link";
 import {
   Link as LinkIcon,
+  Link2,
   Activity,
   ArrowLeftRight,
   ArrowRightLeft,
@@ -75,6 +76,7 @@ import toolsRegistry from "@/lib/tools-registry.json";
 // Map string icon names from registry to Lucide SVG components
 const ICON_MAP: Record<string, any> = {
   Link: LinkIcon,
+  Link2,
   Activity,
   ArrowLeftRight,
   ArrowRightLeft,

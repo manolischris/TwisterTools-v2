@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   Link as LinkIcon,
+  Link2,
   Search,
   Bookmark,
   BookmarkCheck,
@@ -107,6 +108,7 @@ interface Tool {
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Link: LinkIcon,
+  Link2,
   Activity,
   Flame,
   Droplets,

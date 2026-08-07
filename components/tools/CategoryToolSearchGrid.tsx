@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   Link as LinkIcon,
+  Link2,
   Search,
   X,
   ArrowRight,
@@ -101,6 +102,7 @@ interface CategoryToolSearchGridProps {
 // Icon mapping dictionary to resolve icon strings dynamically
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Link: LinkIcon,
+  Link2,
   Activity,
   Flame,
   Droplets,

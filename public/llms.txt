@@ -70,6 +70,7 @@ Robust utilities to manipulate, compare, count, and format text strings or struc
 - **Bulk Multi-URL Opener & Launch Sandbox** (/tools/text-tools/url-opener): Open multiple URLs.
 - **URL & Hyperlink Text Extractor** (/tools/text-tools/url-extractor): Extract URLs from text.
 - Text Replace & Pattern Substitution Tool: Client-side string replacement and Regex substitution engine.
+- [Slugify & URL Slug Generator](https://twistertools.com/tools/text-tools/slug-generator): Client-side tool to convert headlines into web-safe SEO permalinks.
 
 ### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
 Lossy and lossless graphic asset optimization performing pixel rendering directly in browser memory.

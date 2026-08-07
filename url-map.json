@@ -628,7 +628,7 @@
       "legacy_url": "/meta-tag-generator",
       "new_url": "/tools/web-tools/meta-tag-generator",
       "new_category": "web-tools",
-      "description": "Generate SEO-optimized HTML meta tags, Open Graph properties, and Twitter Cards with real-time live social media search snippet previews."
+      "description": "Generate SEO-optimized HTML meta tags, Open Graph properties, and Twitter Cards with live previews for Google, Facebook, & X. 100% client-side & secure."
     },
     {
       "id": 62,

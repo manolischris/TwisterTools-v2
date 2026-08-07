@@ -299,7 +299,7 @@
   {
     "id": "meta-tag-generator",
     "title": "Meta Tag Generator & Social Preview Inspector",
-    "description": "Generate SEO-optimized HTML meta tags, Open Graph properties, and Twitter Cards with real-time live social media search snippet previews.",
+    "description": "Generate SEO-optimized HTML meta tags, Open Graph properties, and Twitter Cards with live previews for Google, Facebook, & X. 100% client-side & secure.",
     "category": "web-tools",
     "href": "/tools/web-tools/meta-tag-generator",
     "iconName": "Globe",
@@ -1307,6 +1307,51 @@
     "category": "text-tools",
     "href": "/tools/text-tools/text-replacer",
     "iconName": "Replace",
+    "isFeatured": false
+  },
+  {
+    "id": "prefix-suffix-attacher",
+    "title": "Prefix and Suffix Text Attacher",
+    "description": "Prepend and append custom text, tags, code syntax, or line numbers to each line of text instantly in your browser.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/prefix-suffix-attacher",
+    "iconName": "ArrowRightLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "slug-generator",
+    "title": "Slugify & URL Slug Generator",
+    "description": "Convert titles and text into clean, SEO-friendly URL permalinks with custom separators and casing rules.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/slug-generator",
+    "iconName": "Link2",
+    "isFeatured": false
+  },
+  {
+    "id": "random-string-generator",
+    "title": "Random String & Hash Key Generator",
+    "description": "Generate cryptographically secure CSPRNG random strings, API secret keys, and mapped cryptographic hash digests on demand.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/random-string-generator",
+    "iconName": "Key",
+    "isFeatured": false
+  },
+  {
+    "id": "lorem-ipsum-generator",
+    "title": "Lorem Ipsum Generator",
+    "description": "Generate customizable placeholder text in paragraphs, sentences, or words with multiple themes including Latin, Hipster, Pirate, and Tech.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/lorem-ipsum-generator",
+    "iconName": "FileText",
+    "isFeatured": false
+  },
+  {
+    "id": "fake-word-generator",
+    "title": "Fake Word & Nonsense Vocabulary Generator",
+    "description": "Generate unique pseudowords, brand names, and nonsense vocabulary with custom phonetics and JSON/CSV export.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/fake-word-generator",
+    "iconName": "Type",
     "isFeatured": false
   }
 ]

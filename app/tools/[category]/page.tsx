@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   Link as LinkIcon,
+  Link2,
   Activity,
   ArrowLeftRight,
   ArrowRightLeft,
@@ -94,6 +95,7 @@ type Params = Promise<{ category: string }>;
 // Map icon strings to Lucide components for the Server Page
 const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Link: LinkIcon,
+  Link2,
   Activity,
   ArrowLeftRight,
   ArrowRightLeft,

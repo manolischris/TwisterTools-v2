@@ -63,6 +63,7 @@ import PdfCompressorSuite from "../../../../components/tools/PdfCompressorSuite"
 import ExtractPdfImages from "@/components/tools/ExtractPdfImages";
 import PregnancyDueDateCalculator from "@/components/tools/PregnancyDueDateCalculator";
 import ScientificCalculator from "@/components/tools/ScientificCalculator";
+import LoremIpsumGenerator from "@/components/tools/LoremIpsumGenerator";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -220,12 +221,22 @@ export async function generateMetadata({
     permanentRedirect(`/tools/${category}`);
   }
 
-  // Find the matching tool
-  let tool = urlMap.tools.find(
-    (t: Tool) =>
-      t.new_category === category &&
-      t.new_url === `/tools/${category}/${toolSlug}`
-  );
+  // Find the matching tool by checking registry first, then fallback to url-map
+  const regTool = toolsRegistry.find((t) => t.id === toolSlug);
+  let tool = regTool
+    ? {
+        id: regTool.id as any,
+        name: regTool.title,
+        legacy_url: "",
+        new_url: regTool.href,
+        new_category: regTool.category,
+        description: regTool.description,
+      }
+    : urlMap.tools.find(
+        (t: Tool) =>
+          t.new_category === category &&
+          t.new_url === `/tools/${category}/${toolSlug}`
+      );
 
   if (category === "pdf-tools" && toolSlug === "extract-pdf-images") {
     tool = {
@@ -236,21 +247,6 @@ export async function generateMetadata({
       new_category: "pdf-tools",
       description: "Isolate and download high-resolution embedded graphics and photos from any PDF locally."
     };
-  }
-
-  // Fallback to registry if not found in url-map
-  if (!tool) {
-    const regTool = toolsRegistry.find((t) => t.id === toolSlug);
-    if (regTool) {
-      tool = {
-        id: regTool.id as any,
-        name: regTool.title,
-        legacy_url: "",
-        new_url: regTool.href,
-        new_category: regTool.category,
-        description: regTool.description,
-      };
-    }
   }
 
   if (!tool) {
@@ -278,12 +274,20 @@ export async function generateMetadata({
     description = "Convert plain text content into formatted, paginated PDF documents directly in browser memory.";
   }
 
+  if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
+    title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
+  }
+
   return {
     title,
     description,
     keywords: [tool.name, category, "online tool", "free tool", "twistertools"],
     openGraph: {
-      title: category === "pdf-tools" && toolSlug === "text-to-pdf" ? title : `${tool.name} | TwisterTools`,
+      title:
+        (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
+        (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
+          ? title
+          : `${tool.name} | TwisterTools`,
       description,
       url: toolUrl,
       siteName: "TwisterTools",
@@ -299,7 +303,11 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: category === "pdf-tools" && toolSlug === "text-to-pdf" ? title : `${tool.name} | TwisterTools`,
+      title:
+        (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
+        (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
+          ? title
+          : `${tool.name} | TwisterTools`,
       description,
       images: [ogImageUrl],
     },
@@ -350,12 +358,22 @@ export default async function ToolPage({
     permanentRedirect(`/tools/${category}`);
   }
 
-  // Find the matching tool from url-map.json
-  let tool = urlMap.tools.find(
-    (t: Tool) =>
-      t.new_category === category &&
-      t.new_url === `/tools/${category}/${toolSlug}`
-  );
+  // Find the matching tool by checking registry first, then fallback to url-map
+  const regTool = toolsRegistry.find((t) => t.id === toolSlug);
+  let tool = regTool
+    ? {
+        id: regTool.id as any,
+        name: regTool.title,
+        legacy_url: "",
+        new_url: regTool.href,
+        new_category: regTool.category,
+        description: regTool.description,
+      }
+    : urlMap.tools.find(
+        (t: Tool) =>
+          t.new_category === category &&
+          t.new_url === `/tools/${category}/${toolSlug}`
+      );
 
   if (category === "pdf-tools" && toolSlug === "extract-pdf-images") {
     tool = {
@@ -366,21 +384,6 @@ export default async function ToolPage({
       new_category: "pdf-tools",
       description: "Isolate and download high-resolution embedded graphics and photos from any PDF locally."
     };
-  }
-
-  // Fallback to registry if not found in url-map
-  if (!tool) {
-    const regTool = toolsRegistry.find((t) => t.id === toolSlug);
-    if (regTool) {
-      tool = {
-        id: regTool.id as any,
-        name: regTool.title,
-        legacy_url: "",
-        new_url: regTool.href,
-        new_category: regTool.category,
-        description: regTool.description,
-      };
-    }
   }
 
   // Fallback if still not found
@@ -828,7 +831,7 @@ export default async function ToolPage({
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "extract-pdf-images" ? (
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : category === "pdf-tools" && (toolSlug === "compress-pdf" || toolSlug === "text-to-pdf") ? (
+                ) : (category === "text-tools" && toolSlug === "lorem-ipsum-generator") || (category === "pdf-tools" && (toolSlug === "compress-pdf" || toolSlug === "text-to-pdf")) ? (
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "calculators" && toolSlug === "pregnancy-due-date-calculator" ? (
                   <Baby className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -890,6 +893,8 @@ export default async function ToolPage({
             <ArticleRewriter />
           ) : category === "text-tools" && toolSlug === "online-text-editor" ? (
             <OnlineTextEditor />
+          ) : category === "text-tools" && toolSlug === "lorem-ipsum-generator" ? (
+            <LoremIpsumGenerator />
           ) : category === "password-tools" && toolSlug === "password-generator" ? (
             <PasswordGenerator />
           ) : category === "password-tools" && toolSlug === "password-strength-checker" ? (

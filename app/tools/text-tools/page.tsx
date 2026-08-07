@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace } from "lucide-react";
+import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace, ArrowRightLeft, Key } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
 import path from "path";
@@ -130,6 +130,47 @@ export default function TextToolsCategoryPage() {
           description:
             "Batch replace text, execute complex Regex patterns, and clean string data instantly.",
           iconName: "Replace"
+        };
+      }
+      if (tool.id === "prefix-suffix-attacher") {
+        return {
+          ...tool,
+          title: "Prefix and Suffix Text Attacher",
+          description:
+            "Prepend and append custom text, tags, code syntax, or line numbers to each line of text instantly in your browser.",
+          iconName: "ArrowRightLeft"
+        };
+      }
+      if (tool.id === "slug-generator") {
+        return {
+          ...tool,
+          title: "Slugify & URL Slug Generator",
+          description: "Convert titles and text into clean, SEO-friendly URL permalinks with custom separators and casing rules.",
+          iconName: "Link2"
+        };
+      }
+      if (tool.id === "random-string-generator") {
+        return {
+          ...tool,
+          title: "Random String & Hash Key Generator",
+          description: "Generate cryptographically secure CSPRNG random strings, API secret keys, and mapped cryptographic hash digests (SHA-256, SHA-512, MD5) on demand.",
+          iconName: "Key"
+        };
+      }
+      if (tool.id === "lorem-ipsum-generator") {
+        return {
+          ...tool,
+          title: "Lorem Ipsum Generator",
+          description: "Generate customizable placeholder text in paragraphs, sentences, or words with multiple themes including Latin, Hipster, Pirate, and Tech.",
+          iconName: "FileText"
+        };
+      }
+      if (tool.id === "fake-word-generator") {
+        return {
+          ...tool,
+          title: "Fake Word Generator",
+          description: "Generate unique pseudowords, brand names, and nonsense vocabulary with custom phonetics and JSON/CSV export.",
+          iconName: "Type"
         };
       }
       return tool;
