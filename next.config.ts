@@ -53,6 +53,27 @@ const nextConfig: NextConfig = {
       });
     }
 
+    // Specific legacy 301 redirects to resolve 404s and map to appropriate targets
+    const legacyRedirects = [
+      { source: "/page/terms-of-use", destination: "/terms-of-service" },
+      { source: "/ppt-to-pdf", destination: "/tools/pdf-tools" },
+      { source: "/length-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/weight-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/temperature-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/area-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/volume-converter", destination: "/tools/calculators/master-unit-converter" },
+    ];
+    for (const r of legacyRedirects) {
+      // Avoid duplicate redirects if they're already loaded from url-map.json
+      if (!redirects.some((existing) => existing.source === r.source)) {
+        redirects.push({
+          source: r.source,
+          destination: r.destination,
+          permanent: true,
+        });
+      }
+    }
+
     return redirects;
   },
 };

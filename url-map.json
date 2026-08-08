@@ -139,6 +139,18 @@
       "to": "/",
       "type": "301",
       "reason": "Redirect retired login route to homepage"
+    },
+    {
+      "from": "/page/terms-of-use",
+      "to": "/terms-of-service",
+      "type": "301",
+      "reason": "Redirect legacy terms of use page"
+    },
+    {
+      "from": "/ppt-to-pdf",
+      "to": "/tools/pdf-tools",
+      "type": "301",
+      "reason": "Redirect legacy PPT to PDF tool"
     }
   ],
   "tools": [
@@ -306,7 +318,7 @@
       "id": 21,
       "name": "Weight Converter",
       "legacy_url": "/weight-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different weight units"
     },
@@ -314,7 +326,7 @@
       "id": 22,
       "name": "Temperature Converter",
       "legacy_url": "/temperature-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between Celsius, Fahrenheit, and Kelvin"
     },
@@ -330,7 +342,7 @@
       "id": 24,
       "name": "Area Converter",
       "legacy_url": "/area-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different area units"
     },
@@ -338,7 +350,7 @@
       "id": 25,
       "name": "Length Converter",
       "legacy_url": "/length-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different length units"
     },
@@ -378,7 +390,7 @@
       "id": 30,
       "name": "Volume Converter",
       "legacy_url": "/volume-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different volume units"
     },
