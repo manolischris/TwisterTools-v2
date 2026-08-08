@@ -11,7 +11,8 @@
     "text-tools": "Text Analysis, List Comparison & Editing Tools",
     "password-tools": "Password Management & Security Utilities",
     "generator-tools": "Random Data, Identity & Key Generators",
-    "pdf-tools": "PDF & Document Utilities"
+    "pdf-tools": "PDF & Document Utilities",
+    "date-tools": "Date, Time & Scheduling Tools"
   },
   "redirects": [
     {

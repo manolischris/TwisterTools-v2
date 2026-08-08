@@ -90,7 +90,10 @@ import {
   ListFilter,
   AtSign,
   Phone,
-  Replace
+  Replace,
+  Radio,
+  Strikethrough,
+  CalendarDays
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -119,6 +122,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Heart,
   Baby,
   Calendar,
+  CalendarDays,
   Timer,
   Grid,
   GraduationCap,
@@ -136,6 +140,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   FileCheck2,
   Shield,
   Zap,
+  Strikethrough,
   Minimize2,
   MapPin,
   CreditCard,
@@ -183,7 +188,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   ListFilter,
   AtSign,
   Phone,
-  Replace
+  Replace,
+  Radio
 };
 
 const CATEGORIES = [
@@ -196,6 +202,7 @@ const CATEGORIES = [
   { id: "pdf-tools", name: "PDF Tools", href: "/tools/pdf-tools", icon: FileCheck2 },
   { id: "text-tools", name: "Text Tools", href: "/tools/text-tools", icon: FileText },
   { id: "web-tools", name: "Web Utilities", href: "/tools/web-tools", icon: Globe },
+  { id: "date-tools", name: "Date & Time Tools", href: "/tools/date-tools", icon: Calendar },
 ];
 
 const ALL_TOOLS_REGISTRY: Tool[] = (toolsRegistryData as Tool[])

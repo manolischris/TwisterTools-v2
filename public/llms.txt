@@ -71,6 +71,9 @@ Robust utilities to manipulate, compare, count, and format text strings or struc
 - **URL & Hyperlink Text Extractor** (/tools/text-tools/url-extractor): Extract URLs from text.
 - Text Replace & Pattern Substitution Tool: Client-side string replacement and Regex substitution engine.
 - [Slugify & URL Slug Generator](https://twistertools.com/tools/text-tools/slug-generator): Client-side tool to convert headlines into web-safe SEO permalinks.
+- Morse Code Translator & Audio Synthesizer: Real-time text-to-Morse and Morse-to-text converter with Web Audio tone playback.
+- NATO Phonetic Converter: Real-time text to ICAO/NATO phonetic alphabet converter with Web Speech audio playback and phonetic guides.
+- Strikethrough & Underline Font Styler (/tools/text-tools/strikethrough-text-generator): Generate Unicode strikethrough and underline text.
 
 ### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
 Lossy and lossless graphic asset optimization performing pixel rendering directly in browser memory.
@@ -111,6 +114,11 @@ Symmetrical encoders and decoders for computing byte size differences and base n
 - **Number Base Converter**: Shift digits between decimal, binary, octal, hexadecimal, and custom bases.
 - **String to Hex / Hex to String Converter**: Translate standard text strings to hexadecimal representations.
 - **Byte Converter**: Convert data capacities across bits, bytes, KB, MB, GB, and TB.
+
+### [Date, Time & Scheduling Tools](https://www.twistertools.com/tools/date-tools)
+Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.
+- **Days Between Dates & Span Calculator** (`/tools/date-tools/days-between-dates`): Calculate exact days between dates, working business days, total weeks, and perform date addition or subtraction.
+- [Time Duration & Hour Counter](/tools/date-tools/time-duration-calculator): Calculate exact days between dates, business days, and perform date arithmetic.
 
 ## Other Resources
 

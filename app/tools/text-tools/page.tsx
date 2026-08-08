@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace, ArrowRightLeft, Key } from "lucide-react";
+import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace, ArrowRightLeft, Key, Radio, Zap, Strikethrough } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
 import path from "path";
@@ -171,6 +171,50 @@ export default function TextToolsCategoryPage() {
           title: "Fake Word Generator",
           description: "Generate unique pseudowords, brand names, and nonsense vocabulary with custom phonetics and JSON/CSV export.",
           iconName: "Type"
+        };
+      }
+      if (tool.id === "text-encryptor") {
+        return {
+          ...tool,
+          title: "Text Encryption & Decryption Suite",
+          description: "Secure AES-256-GCM & Caesar cipher text encryption tool.",
+          iconName: "Lock"
+        };
+      }
+      if (tool.id === "morse-code-translator") {
+        return {
+          ...tool,
+          title: "Morse Code Translator & Audio Synthesizer",
+          description:
+            "Encode and decode Morse code in real-time with Web Audio API tone synthesis and PARIS timing standard.",
+          iconName: "Radio"
+        };
+      }
+      if (tool.id === "nato-phonetic-converter") {
+        return {
+          ...tool,
+          title: "NATO Phonetic Alphabet Converter",
+          description:
+            "Convert text to ICAO/NATO phonetic codewords in real-time with native Web Speech audio playback and full pronunciation guides.",
+          iconName: "Radio"
+        };
+      }
+      if (tool.id === "zalgo-text-generator") {
+        return {
+          ...tool,
+          title: "Zalgo Glitch Text Generator",
+          description:
+            "Corrupt text with Unicode combining diacritical marks and adjust glitch intensity.",
+          iconName: "Zap"
+        };
+      }
+      if (tool.id === "strikethrough-text-generator") {
+        return {
+          ...tool,
+          title: "Strikethrough & Underline Font Styler",
+          description:
+            "Generate cross-platform strikethrough, underline, and overline text styles using native Unicode combining characters.",
+          iconName: "Strikethrough"
         };
       }
       return tool;

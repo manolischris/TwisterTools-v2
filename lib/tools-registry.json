@@ -1353,5 +1353,68 @@
     "href": "/tools/text-tools/fake-word-generator",
     "iconName": "Type",
     "isFeatured": false
+  },
+  {
+    "id": "text-encryptor",
+    "title": "Text Encryption & Decryption Suite (AES / Caesar)",
+    "description": "Browser-native text encryption suite featuring AES-256-GCM and classical Caesar shift ciphers.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/text-encryptor",
+    "iconName": "Lock",
+    "isFeatured": false
+  },
+  {
+    "id": "morse-code-translator",
+    "title": "Morse Code Translator & Audio Synthesizer",
+    "description": "Real-time Morse code translator with Web Audio tone playback, customizable WPM speed, pitch frequency controls, and PARIS timing standard.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/morse-code-translator",
+    "iconName": "Radio",
+    "isFeatured": false
+  },
+  {
+    "id": "nato-phonetic-converter",
+    "title": "NATO Phonetic Alphabet Converter",
+    "description": "Convert text to standard ICAO/NATO phonetic alphabet codewords with native audio voice playback and pronunciation guides.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/nato-phonetic-converter",
+    "iconName": "Radio",
+    "isFeatured": false
+  },
+  {
+    "id": "zalgo-text-generator",
+    "title": "Zalgo Glitch Text Generator",
+    "description": "Corrupt text with Unicode combining diacritical marks and adjust glitch intensity.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/zalgo-text-generator",
+    "iconName": "Zap",
+    "isFeatured": false
+  },
+  {
+    "id": "strikethrough-text-generator",
+    "title": "Strikethrough & Underline Font Styler",
+    "description": "Generate cross-platform strikethrough, underline, and overline text styles using native Unicode combining characters.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/strikethrough-text-generator",
+    "iconName": "Strikethrough",
+    "isFeatured": false
+  },
+  {
+    "id": "days-between-dates",
+    "title": "Days Between Dates & Span Calculator",
+    "description": "Calculate exact days between dates, working business days, total weeks, and perform date addition or subtraction.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/days-between-dates",
+    "iconName": "Calendar",
+    "isFeatured": false
+  },
+  {
+    "id": "time-duration-calculator",
+    "title": "Time Duration & Hour Counter",
+    "description": "Calculate exact days between dates, net business working days, and perform date addition or subtraction in real-time.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/time-duration-calculator",
+    "iconName": "CalendarDays",
+    "isFeatured": false
   }
 ]

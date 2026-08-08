@@ -18,6 +18,7 @@ import {
   Zap,
   Layers,
   ChevronRight,
+  Calendar,
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -27,12 +28,12 @@ import toolsRegistry from "@/lib/tools-registry.json";
 export const metadata: Metadata = {
   title: "All Tool Categories",
   description:
-    "Browse all 9 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, and Converter Tools. Free, fast, and browser-based.",
+    "Browse all 10 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, Converter Tools, and Date & Time Tools. Free, fast, and browser-based.",
   alternates: { canonical: "https://www.twistertools.com/categories" },
   openGraph: {
     title: "All Tool Categories | TwisterTools",
     description:
-      "Discover 9 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
+      "Discover 10 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
     url: "https://www.twistertools.com/categories",
     siteName: "TwisterTools",
     type: "website",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "All Tool Categories | TwisterTools",
     description:
-      "9 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and more.",
+      "10 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and more.",
     images: ["https://www.twistertools.com/images/categories.jpg"],
   },
 };
@@ -198,6 +199,21 @@ const CATEGORIES: CategoryDef[] = [
       "number base converter",
     ],
   },
+  {
+    slug: "date-tools",
+    name: "Date, Time & Scheduling Tools",
+    description:
+      "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
+    icon: Calendar,
+    accentClass: "bg-fuchsia-100 text-fuchsia-600",
+    keywords: [
+      "date calculator",
+      "timezone converter",
+      "workday calculator",
+      "countdown timer",
+      "schedule planner",
+    ],
+  },
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -224,9 +240,9 @@ const SEO_CARDS: SeoCard[] = [
   },
   {
     icon: Layers,
-    title: "Nine Growing Specialist Categories",
+    title: "Ten Growing Specialist Categories",
     content:
-      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and live network diagnostic tools, TwisterTools is organized into nine focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
+      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and live network diagnostic tools, TwisterTools is organized into ten focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
   },
   {
     icon: Globe,
@@ -274,7 +290,7 @@ export default function CategoriesIndexPage() {
     "@type": "CollectionPage",
     name: "All Tool Categories — TwisterTools",
     description:
-      "Browse 9 curated categories of free browser-based online utilities on TwisterTools.",
+      "Browse 10 curated categories of free browser-based online utilities on TwisterTools.",
     url: "https://www.twistertools.com/categories",
     publisher: {
       "@type": "Organization",

@@ -80,7 +80,10 @@ import {
   ListFilter,
   AtSign,
   Phone,
-  Replace
+  Replace,
+  Radio,
+  Zap,
+  Strikethrough
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -148,6 +151,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Scale,
   Scaling,
   Scissors,
+  Strikethrough,
   SearchCode,
   Server,
   Share2,
@@ -170,7 +174,9 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   ListFilter,
   AtSign,
   Phone,
-  Replace
+  Replace,
+  Radio,
+  Zap
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json
@@ -580,6 +586,50 @@ const CATEGORIES_METADATA: Record<
       {
         q: "Is password encryption secure?",
         a: "Yes. PDF locking uses standard AES encryption implemented natively in local WebAssembly modules, ensuring your passwords and documents are secure."
+      }
+    ]
+  },
+  "date-tools": {
+    name: "Date, Time & Scheduling Tools",
+    icon: "Calendar",
+    description: "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
+    detailedGuide: "Perform date calculations, convert timezones, count working days, or generate countdown timers locally in your browser session with zero server uploads.",
+    seoDescription: "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
+    keywords: ["days between dates", "timezone converter", "workday calculator", "countdown timer", "date calculator"],
+    cards: [
+      {
+        title: "100% Offline Date & Time Math",
+        icon: "ShieldCheck",
+        content: "All calculations, timezone offsets, and duration counting happen completely locally within your browser tab. We never transmit your calendar entries, event details, or scheduling calculations to any server."
+      },
+      {
+        title: "High Precision Chronological Engines",
+        icon: "Timer",
+        content: "Our date engines strictly comply with ISO-8601 week specifications, standard Gregorian leap year rule sets, and global daylight saving transition database guidelines. Avoid manual calculation errors with custom roundings."
+      },
+      {
+        title: "Event Countdowns & Scheduling Utilities",
+        icon: "Clock",
+        content: "Easily plan projects or track personal milestones. Convert UTC times to local time zones in real-time, generate custom countdown widget timers, and compute net business workdays in seconds."
+      },
+      {
+        title: "Zero Account Sign-ups Required",
+        icon: "Layers",
+        content: "No subscription plans or account configurations are necessary. Load the date tools and start calculating immediately on any desktop or mobile device."
+      }
+    ],
+    faqs: [
+      {
+        q: "Are my schedules or event dates sent to a server?",
+        a: "No. All date, timezone, and calendar math is calculated purely client-side on your own CPU in real-time."
+      },
+      {
+        q: "Does the workday calculator account for holidays?",
+        a: "Yes. Our upcoming workday utilities support custom configurations so you can toggle local public holiday calendars and weekend schedules."
+      },
+      {
+        q: "Does the timezone converter adjust for daylight saving transitions?",
+        a: "Yes. It leverages native browser Internationalization APIs (Intl) and timezone offset registries to correctly calculate DST changes."
       }
     ]
   }

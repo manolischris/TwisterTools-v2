@@ -55,6 +55,7 @@ import {
   QrCode,
   ShieldAlert,
   CalendarClock,
+  Calendar,
   Type,
   ListStart,
   Code,
@@ -86,12 +87,15 @@ import {
   ListFilter,
   AtSign,
   Phone,
-  Replace
+  Replace,
+  Radio,
+  Strikethrough,
+  CalendarDays
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
    Types
-───────────────────────────────────────────────────────── */
+   ───────────────────────────────────────────────────────── */
 interface RegistryTool {
   id: string;
   title: string;
@@ -147,6 +151,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   MapPin,
   Binary,
   Zap,
+  Strikethrough,
   Star,
   Scissors,
   FileType2,
@@ -162,6 +167,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   QrCode,
   ShieldAlert,
   CalendarClock,
+  Calendar,
+  CalendarDays,
   Type,
   ListStart,
   Code,
@@ -183,7 +190,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   ListFilter,
   AtSign,
   Phone,
-  Replace
+  Replace,
+  Radio
 };
 
 /* ─────────────────────────────────────────────────────────
@@ -226,6 +234,10 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   "pdf-tools": {
     label: "PDF & Document Utilities",
     color: "bg-orange-600 text-white",
+  },
+  "date-tools": {
+    label: "Date, Time & Scheduling Tools",
+    color: "bg-fuchsia-600 text-white",
   },
 };
 

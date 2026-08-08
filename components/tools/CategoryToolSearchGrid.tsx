@@ -79,7 +79,11 @@ import {
   ListFilter,
   ArrowUpDown,
   AlignLeft,
-  Replace
+  Replace,
+  Radio,
+  Zap,
+  Strikethrough,
+  CalendarDays
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -145,6 +149,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Scaling,
   Hash,
   Key,
+  CalendarDays,
   Calendar,
   Percent,
   Sigma,
@@ -156,6 +161,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Combine,
   Stamp,
   Scissors,
+  Strikethrough,
   FileType,
   FileType2,
   Presentation,
@@ -175,7 +181,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   ListFilter,
   ArrowUpDown,
   AlignLeft,
-  Replace
+  Replace,
+  Radio,
+  Zap
 };
 
 export default function CategoryToolSearchGrid({

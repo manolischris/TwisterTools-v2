@@ -171,6 +171,14 @@ export default function Footer() {
                   SEO, Domain & Network Inspector Tools
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/date-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Date, Time & Scheduling Tools
+                </Link>
+              </li>
             </ul>
           </div>
 

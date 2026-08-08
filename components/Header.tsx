@@ -15,6 +15,7 @@ import {
   Globe,
   Cpu,
   RefreshCw,
+  Calendar,
 } from "lucide-react";
 
 const categories = [
@@ -27,6 +28,7 @@ const categories = [
   { slug: "web-tools", name: "SEO, Domain & Network Inspector Tools", icon: Globe, desc: "WHOIS, DNS & network inspection" },
   { slug: "generator-tools", name: "Random Data, Identity & Key Generators", icon: Cpu, desc: "QR codes & test utilities" },
   { slug: "converter-tools", name: "Data & Number Base Converter Utilities", icon: RefreshCw, desc: "Base64, hex & binary converters" },
+  { slug: "date-tools", name: "Date, Time & Scheduling Tools", icon: Calendar, desc: "Date differences, timezone conversions & countdowns" },
 ];
 
 export default function Header() {

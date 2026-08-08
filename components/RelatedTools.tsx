@@ -69,7 +69,10 @@ import {
   Sparkles,
   ArrowRight,
   Code2,
-  Image as ImageIcon
+  Image as ImageIcon,
+  Zap,
+  Strikethrough,
+  CalendarDays
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -87,6 +90,7 @@ const ICON_MAP: Record<string, any> = {
   Calculator,
   Calendar,
   CalendarClock,
+  CalendarDays,
   Car,
   Clock,
   Code,
@@ -145,7 +149,9 @@ const ICON_MAP: Record<string, any> = {
   ArrowRight,
   Code2,
   ImageIcon,
-  Image: ImageIcon
+  Image: ImageIcon,
+  Zap,
+  Strikethrough
 };
 
 interface RelatedToolsProps {
