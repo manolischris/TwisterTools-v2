@@ -83,7 +83,9 @@ import {
   Radio,
   Zap,
   Strikethrough,
-  CalendarDays
+  CalendarDays,
+  Sunrise,
+  Moon
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -183,7 +185,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   AlignLeft,
   Replace,
   Radio,
-  Zap
+  Zap,
+  Sunrise,
+  Moon
 };
 
 export default function CategoryToolSearchGrid({

@@ -1425,5 +1425,59 @@
     "href": "/tools/date-tools/timezone-converter",
     "iconName": "Globe",
     "isFeatured": false
+  },
+  {
+    "id": "leap-year-checker",
+    "title": "Leap Year Checker & Calendar Auditor",
+    "description": "Instantly verify leap years, century leap year rules, solar year deviations, and calendar range audits.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/leap-year-checker",
+    "iconName": "Calendar",
+    "isFeatured": false
+  },
+  {
+    "id": "day-of-week-calculator",
+    "title": "Day of the Week Calculator",
+    "description": "Determine the exact day of the week for any past, present, or future calendar date instantly.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/day-of-week-calculator",
+    "iconName": "CalendarDays",
+    "isFeatured": false
+  },
+  {
+    "id": "week-number-calculator",
+    "title": "Week Number Calculator (ISO-8601)",
+    "description": "Calculate ISO-8601 week numbers, week date ranges, and annual week metrics.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/week-number-calculator",
+    "iconName": "Hash",
+    "isFeatured": false
+  },
+  {
+    "id": "countdown-timer-generator",
+    "title": "Event Countdown Timer Generator",
+    "description": "Create customizable, embeddable countdown timers for launches, sales, and events.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/countdown-timer-generator",
+    "iconName": "Timer",
+    "isFeatured": false
+  },
+  {
+    "id": "sunrise-sunset-calculator",
+    "title": "Sunrise & Sunset Time Estimator",
+    "description": "Calculate accurate sunrise, sunset, twilight phases, golden hour, and daylight duration for any coordinates.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/sunrise-sunset-calculator",
+    "iconName": "Sunrise",
+    "isFeatured": false
+  },
+  {
+    "id": "moon-phase-calculator",
+    "title": "Moon Phase Calendar & Visualizer",
+    "description": "Calculate accurate lunar phases, illumination percentages, moon age, distance, and monthly lunar calendar views.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/moon-phase-calculator",
+    "iconName": "Moon",
+    "isFeatured": false
   }
 ]

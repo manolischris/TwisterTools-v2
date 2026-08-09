@@ -93,7 +93,9 @@ import {
   Replace,
   Radio,
   Strikethrough,
-  CalendarDays
+  CalendarDays,
+  Sunrise,
+  Moon
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -189,7 +191,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   AtSign,
   Phone,
   Replace,
-  Radio
+  Radio,
+  Sunrise,
+  Moon
 };
 
 const CATEGORIES = [

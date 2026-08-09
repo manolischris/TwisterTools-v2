@@ -120,6 +120,10 @@ Fast, precise, and privacy-first utilities for calculating date differences, tim
 - **Days Between Dates & Span Calculator** (`/tools/date-tools/days-between-dates`): Calculate exact days between dates, working business days, total weeks, and perform date addition or subtraction.
 - [Time Duration & Hour Counter](/tools/date-tools/time-duration-calculator): Calculate exact days between dates, business days, and perform date arithmetic.
 - [World Clock & Timezone Converter Matrix](/tools/date-tools/timezone-converter): Convert live and scheduled time across multiple international time zones simultaneously.
+- Week Number Calculator (ISO-8601): Calculate ISO-8601 week numbers, week date ranges, and annual week metrics.
+- [Event Countdown Timer Generator](/tools/date-tools/countdown-timer-generator): Create customizable, embeddable countdown timers for launches, sales, and events.
+- Sunrise & Sunset Time Estimator (/tools/date-tools/sunrise-sunset-calculator): Calculate accurate sunrise, sunset, twilight phases, golden hour, and daylight duration for any coordinates.
+- [Moon Phase Calendar & Visualizer](/tools/date-tools/moon-phase-calculator): Calculate accurate lunar phases, illumination percentages, moon age, distance, and monthly lunar calendar views.
 
 ## Other Resources
 

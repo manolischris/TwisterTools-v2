@@ -870,7 +870,7 @@ export default function AgeCalculator() {
       {/* ─────────────────────────────────────────────────────────────
            SEO DEEP-CONTENT BLOCK
       ───────────────────────────────────────────────────────────── */}
-      <section className="space-y-6 pt-6 border-t border-slate-200/60">
+      <section className="space-y-6">
         {/* CARD 1: Understanding Chronological Age & Time Tracking */}
         <div className="bg-white border border-slate-200/80 rounded-2xl md:p-8 shadow-sm space-y-6 mt-6 p-4 sm:p-6">
           <h2 className="text-2xl font-bold text-slate-900 mb-5 flex items-center gap-3">

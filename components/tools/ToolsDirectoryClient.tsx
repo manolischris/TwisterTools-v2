@@ -90,7 +90,9 @@ import {
   Replace,
   Radio,
   Strikethrough,
-  CalendarDays
+  CalendarDays,
+  Sunrise,
+  Moon
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -191,7 +193,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   AtSign,
   Phone,
   Replace,
-  Radio
+  Radio,
+  Sunrise,
+  Moon
 };
 
 /* ─────────────────────────────────────────────────────────

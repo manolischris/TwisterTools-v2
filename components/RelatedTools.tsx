@@ -72,7 +72,9 @@ import {
   Image as ImageIcon,
   Zap,
   Strikethrough,
-  CalendarDays
+  CalendarDays,
+  Sunrise,
+  Moon
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -151,7 +153,9 @@ const ICON_MAP: Record<string, any> = {
   ImageIcon,
   Image: ImageIcon,
   Zap,
-  Strikethrough
+  Strikethrough,
+  Sunrise,
+  Moon
 };
 
 interface RelatedToolsProps {

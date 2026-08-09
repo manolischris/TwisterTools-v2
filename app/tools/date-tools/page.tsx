@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, ShieldCheck, Timer, Clock, Layers, HelpCircle, CalendarDays } from "lucide-react";
+import { Calendar, ShieldCheck, Timer, Clock, Layers, HelpCircle, CalendarDays, Hash, Sunrise, Moon } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 
@@ -82,6 +82,57 @@ export default function DateToolsCategoryPage() {
   const categoryTools = toolsRegistry
     .map((tool, idx) => ({ ...tool, originalIndex: idx }))
     .filter((tool) => tool.category === "date-tools")
+    .map((tool) => {
+      if (tool.id === "leap-year-checker") {
+        return {
+          ...tool,
+          title: "Leap Year Checker",
+          description: "Instantly check leap years, century leap rules, and date range schedules.",
+          iconName: "Calendar",
+        };
+      }
+      if (tool.id === "day-of-week-calculator") {
+        return {
+          ...tool,
+          title: "Day of the Week Calculator",
+          description: "Determine the exact day of the week for any past, present, or future calendar date instantly.",
+          iconName: "CalendarDays",
+        };
+      }
+      if (tool.id === "week-number-calculator") {
+        return {
+          ...tool,
+          title: "Week Number Calculator (ISO-8601)",
+          description: "Calculate ISO-8601 week numbers, week date ranges, and annual week metrics.",
+          iconName: "Hash",
+        };
+      }
+      if (tool.id === "countdown-timer-generator") {
+        return {
+          ...tool,
+          title: "Event Countdown Timer Generator",
+          description: "Create customizable, embeddable countdown timers for launches, sales, and events.",
+          iconName: "Timer",
+        };
+      }
+      if (tool.id === "sunrise-sunset-calculator") {
+        return {
+          ...tool,
+          title: "Sunrise & Sunset Time Estimator",
+          description: "Calculate accurate sunrise, sunset, twilight phases, golden hour, and daylight duration for any coordinates.",
+          iconName: "Sunrise",
+        };
+      }
+      if (tool.id === "moon-phase-calculator") {
+        return {
+          ...tool,
+          title: "Moon Phase Calendar & Visualizer",
+          description: "Calculate accurate lunar phases, illumination percentages, moon age, distance, and monthly lunar calendar views.",
+          iconName: "Moon",
+        };
+      }
+      return tool;
+    })
     .sort((a, b) => {
       const aFeatured = a.isFeatured ? 1 : 0;
       const bFeatured = b.isFeatured ? 1 : 0;

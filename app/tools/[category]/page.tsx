@@ -83,7 +83,9 @@ import {
   Replace,
   Radio,
   Zap,
-  Strikethrough
+  Strikethrough,
+  Sunrise,
+  Moon
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -176,7 +178,9 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Phone,
   Replace,
   Radio,
-  Zap
+  Zap,
+  Sunrise,
+  Moon
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json
