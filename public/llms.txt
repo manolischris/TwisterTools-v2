@@ -119,6 +119,7 @@ Symmetrical encoders and decoders for computing byte size differences and base n
 Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.
 - **Days Between Dates & Span Calculator** (`/tools/date-tools/days-between-dates`): Calculate exact days between dates, working business days, total weeks, and perform date addition or subtraction.
 - [Time Duration & Hour Counter](/tools/date-tools/time-duration-calculator): Calculate exact days between dates, business days, and perform date arithmetic.
+- [World Clock & Timezone Converter Matrix](/tools/date-tools/timezone-converter): Convert live and scheduled time across multiple international time zones simultaneously.
 
 ## Other Resources
 

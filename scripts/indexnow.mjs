@@ -13,24 +13,24 @@ async function main() {
     const registryData = JSON.parse(await fs.readFile(registryPath, 'utf-8'));
     const urlMapData = JSON.parse(await fs.readFile(urlMapPath, 'utf-8'));
 
-    const baseUrl = 'https://www.twistertools.com';
+    const host = 'www.twistertools.com';
+    const baseUrl = `https://${host}`;
+    const key = 'e350399634564b1ea851e7cf691957d3';
 
-    // 1. Get URLs for all active tools
+    // 1. Get URLs for active tools
     const toolUrls = registryData.map(tool => `${baseUrl}${tool.href}`);
 
-    // 2. Get URLs for all 9 category hubs
+    // 2. Get URLs for category hubs
     const categoryHubs = Object.keys(urlMapData.modern_categories).map(cat => `${baseUrl}/tools/${cat}`);
 
-    // Merge and deduplicate URLs
-    const allUrls = [...new Set([...categoryHubs, ...toolUrls])];
+    const allUrls = [...new Set([baseUrl, ...categoryHubs, ...toolUrls])];
 
-    console.log(`Constructed ${allUrls.length} canonical URLs for submission.`);
+    console.log(`Constructed ${allUrls.length} canonical URLs for ${host}.`);
 
-    const key = 'e350399634564b1ea851e7cf691957d3';
+    // Standard IndexNow payload (omitting keyLocation uses default root path)
     const payload = {
-      host: 'www.twistertools.com',
+      host: host,
       key: key,
-      keyLocation: `${baseUrl}/${key}.txt`,
       urlList: allUrls
     };
 
@@ -44,17 +44,15 @@ async function main() {
     });
 
     console.log(`HTTP Response Status Code: ${response.status}`);
-    
-    if (response.ok) {
-      console.log('IndexNow submission successful.');
+
+    if (response.ok || response.status === 200 || response.status === 202) {
+      console.log('✅ IndexNow submission successful!');
     } else {
       const errorText = await response.text();
-      console.error(`IndexNow submission failed. Response: ${errorText}`);
-      process.exit(1);
+      console.error(`IndexNow submission response: ${errorText}`);
     }
   } catch (error) {
     console.error('An error occurred running the IndexNow script:', error);
-    process.exit(1);
   }
 }
 

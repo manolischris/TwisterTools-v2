@@ -1416,5 +1416,14 @@
     "href": "/tools/date-tools/time-duration-calculator",
     "iconName": "CalendarDays",
     "isFeatured": false
+  },
+  {
+    "id": "timezone-converter",
+    "title": "World Clock & Timezone Converter Matrix",
+    "description": "Convert live and scheduled time across multiple international time zones simultaneously.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/timezone-converter",
+    "iconName": "Globe",
+    "isFeatured": false
   }
 ]

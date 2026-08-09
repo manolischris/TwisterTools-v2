@@ -64,6 +64,7 @@ import ExtractPdfImages from "@/components/tools/ExtractPdfImages";
 import PregnancyDueDateCalculator from "@/components/tools/PregnancyDueDateCalculator";
 import ScientificCalculator from "@/components/tools/ScientificCalculator";
 import LoremIpsumGenerator from "@/components/tools/LoremIpsumGenerator";
+import TimezoneConverter from "@/components/tools/TimezoneConverter";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -149,6 +150,7 @@ const COMPLETED_TOOLS = [
   "extract-pdf-images",
   "pregnancy-due-date-calculator",
   "scientific-calculator",
+  "timezone-converter",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -803,7 +805,7 @@ export default async function ToolPage({
                   <Server className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "ssl-checker" ? (
                   <ShieldCheck className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "sitemap-generator" ? (
+                ) : (toolSlug === "sitemap-generator" || toolSlug === "timezone-converter") ? (
                   <Globe className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "yaml-to-json-converter" ? (
                   <ArrowRightLeft className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -977,6 +979,8 @@ export default async function ToolPage({
             <PregnancyDueDateCalculator />
           ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
             <ScientificCalculator />
+          ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
+            <TimezoneConverter />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

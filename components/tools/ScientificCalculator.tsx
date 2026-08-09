@@ -960,16 +960,16 @@ export default function ScientificCalculator() {
               The <strong>TwisterTools Scientific Calculator & Function Suite</strong> is an enterprise-grade computational platform constructed entirely in client-side TypeScript. Traditional web-based calculators often rely on primitive JavaScript string evaluation (`eval()`) or simple sequential left-to-right execution. This naive approach introduces severe vulnerabilities—such as arbitrary code execution—and completely fails to observe formal operator precedence, yielding mathematically invalid results when handling multi-term equations.
             </p>
             <p>
-              Our engine overcomes these limitations by implementing a dedicated <strong>Lexical Analyzer (Lexer) and Recursive Descent Parser</strong> based on Context-Free Grammar (CFG) rules[cite: 2]. When an expression like `sin(45)^2 + cos(45)^2` is evaluated, the engine breaks the string into distinct token streams (identifiers, literals, operators, and grouping delimiters)[cite: 2]. It then constructs an Abstract Syntax Tree (AST) that natively enforces standard algebraic precedence (PEMDAS/BODMAS):
+              Our engine overcomes these limitations by implementing a dedicated <strong>Lexical Analyzer (Lexer) and Recursive Descent Parser</strong> based on Context-Free Grammar (CFG) rules. When an expression like `sin(45)^2 + cos(45)^2` is evaluated, the engine breaks the string into distinct token streams (identifiers, literals, operators, and grouping delimiters). It then constructs an Abstract Syntax Tree (AST) that natively enforces standard algebraic precedence (PEMDAS/BODMAS):
             </p>
             <ul className="list-disc pl-6 space-y-2 text-slate-700">
               <li><strong>Parentheses & Function Delimiters:</strong> Evaluated recursively at the deepest subtree node.</li>
               <li><strong>Exponentiation (`^`):</strong> Processed with right-to-left associativity for compound powers.</li>
-              <li><strong>Multiplication (`*`), Division (`/`), and Modulo (`%`):</strong> Processed with left-to-right precedence[cite: 2].</li>
-              <li><strong>Addition (`+`) and Subtraction (`-`):</strong> Evaluated at the root expression tier[cite: 2].</li>
+              <li><strong>Multiplication (`*`), Division (`/`), and Modulo (`%`):</strong> Processed with left-to-right precedence.</li>
+              <li><strong>Addition (`+`) and Subtraction (`-`):</strong> Evaluated at the root expression tier.</li>
             </ul>
             <p>
-              By executing all calculations directly inside browser V8/SpiderMonkey virtual machines without API network requests, this tool guarantees instantaneous sub-millisecond computations and 100% data privacy for sensitive academic and proprietary engineering formulas[cite: 1].
+              By executing all calculations directly inside browser V8/SpiderMonkey virtual machines without API network requests, this tool guarantees instantaneous sub-millisecond computations and 100% data privacy for sensitive academic and proprietary engineering formulas.
             </p>
           </div>
         </div>
@@ -983,7 +983,7 @@ export default function ScientificCalculator() {
             <span>The Four-Stage Lexical Parsing & Syntax Evaluation Pipeline</span>
           </h2>
           <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-            Every formula entered into the workspace passes through a deterministic four-stage processing pipeline engineered to handle edge cases, division-by-zero errors, overflow boundaries, and transcendental function conversions[cite: 2].
+            Every formula entered into the workspace passes through a deterministic four-stage processing pipeline engineered to handle edge cases, division-by-zero errors, overflow boundaries, and transcendental function conversions.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {[
@@ -1039,7 +1039,7 @@ export default function ScientificCalculator() {
             <span>Scientific Operator & Mathematical Function Specifications</span>
           </h2>
           <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-6">
-            The reference table below details the full range of mathematical functions, algebraic operators, and universal constants supported by our custom parser, along with their strict domain conditions and syntax guidelines[cite: 2].
+            The reference table below details the full range of mathematical functions, algebraic operators, and universal constants supported by our custom parser, along with their strict domain conditions and syntax guidelines.
           </p>
           <div className="overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full border-collapse">
@@ -1094,7 +1094,7 @@ export default function ScientificCalculator() {
               When working with high-precision scientific calculations, understanding hardware limitations and binary floating-point representation is vital. Modern processors implement the <strong>IEEE 754 Standard for Double-Precision Floating-Point Arithmetic (64-bit)</strong>. This format allocates 1 bit for the sign, 11 bits for the exponent, and 52 bits for the mantissa (significand), providing approximately 15 to 17 significant decimal digits of precision.
             </p>
             <p>
-              Because certain decimal fractions (like 0.1 or 0.2) cannot be represented exactly in binary floating-point, standard calculations can sometimes introduce minor imprecisions (e.g., `0.1 + 0.2 = 0.30000000000000004`). The TwisterTools engine mitigates this by integrating a dynamic precision filter[cite: 2]. By applying rounding algorithms based on user-selected decimal tolerances (ranging from 0 to 12 places), our suite suppresses floating-point artifacts and delivers clean, exact results for engineering documentation[cite: 2].
+              Because certain decimal fractions (like 0.1 or 0.2) cannot be represented exactly in binary floating-point, standard calculations can sometimes introduce minor imprecisions (e.g., `0.1 + 0.2 = 0.30000000000000004`). The TwisterTools engine mitigates this by integrating a dynamic precision filter. By applying rounding algorithms based on user-selected decimal tolerances (ranging from 0 to 12 places), our suite suppresses floating-point artifacts and delivers clean, exact results for engineering documentation.
             </p>
             <div className="grid sm:grid-cols-3 gap-4 pt-2">
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center">

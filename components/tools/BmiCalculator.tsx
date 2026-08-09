@@ -822,7 +822,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        <strong>Body Mass Index (BMI)</strong> is an international epidemiological metric established by the World Health Organization (WHO) to classify body weight relative to height[cite: 2]. While BMI serves as a primary screening tool for population health and clinical risk stratification, evaluating true body composition requires analyzing complementary metrics like Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and estimated body fat percentage[cite: 2].
+                        <strong>Body Mass Index (BMI)</strong> is an international epidemiological metric established by the World Health Organization (WHO) to classify body weight relative to height. While BMI serves as a primary screening tool for population health and clinical risk stratification, evaluating true body composition requires analyzing complementary metrics like Basal Metabolic Rate (BMR), Total Daily Energy Expenditure (TDEE), and estimated body fat percentage.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
@@ -831,7 +831,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                 <Scale className="w-4 h-4 text-indigo-600" /> Imperial vs. Metric Equations
                             </h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
-                                Imperial units utilize a scaling constant of 703 to convert pounds and inches: BMI = (weight in pounds / (height in inches)²) × 703[cite: 2]. Metric calculation uses the direct ratio: BMI = weight in kg / (height in meters)²[cite: 2].
+                                Imperial units utilize a scaling constant of 703 to convert pounds and inches: BMI = (weight in pounds / (height in inches)²) × 703. Metric calculation uses the direct ratio: BMI = weight in kg / (height in meters)².
                             </p>
                         </div>
                         <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
@@ -839,7 +839,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                 <Flame className="w-4 h-4 text-indigo-600" /> Mifflin-St Jeor BMR Standard
                             </h3>
                             <p className="text-sm text-slate-700 leading-relaxed">
-                                Widely regarded by dietitians as the most accurate clinical BMR formula[cite: 2]. It computes resting metabolic baseline based on mass, stature, age, and biological sex[cite: 2].
+                                Widely regarded by dietitians as the most accurate clinical BMR formula. It computes resting metabolic baseline based on mass, stature, age, and biological sex.
                             </p>
                         </div>
                     </div>
@@ -850,14 +850,14 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                             <Calculator className="w-4 h-4" /> Comprehensive Metabolic Equations
                         </h3>
                         <p className="text-xs text-slate-300">
-                            Clinical equations implemented directly inside this engine[cite: 2]:
+                            Clinical equations implemented directly inside this engine:
                         </p>
                         <div className="bg-slate-950 p-4 rounded-lg font-mono text-xs sm:text-sm text-indigo-300 overflow-x-auto border border-slate-800 space-y-2">
-                            <div><strong>1. Metric BMI:</strong> BMI = weight(kg) / height(m)²[cite: 2]</div>
-                            <div><strong>2. Imperial BMI:</strong> BMI = [weight(lbs) / height(in)²] × 703[cite: 2]</div>
-                            <div><strong>3. BMR (Male):</strong> (10 × weight_kg) + (6.25 × height_cm) - (5 × age) + 5[cite: 2]</div>
-                            <div><strong>4. BMR (Female):</strong> (10 × weight_kg) + (6.25 × height_cm) - (5 × age) - 161[cite: 2]</div>
-                            <div><strong>5. Adult Body Fat %:</strong> (1.20 × BMI) + (0.23 × Age) - (10.8 × sex_factor) - 5.4 [Male = 1, Female = 0][cite: 2]</div>
+                            <div><strong>1. Metric BMI:</strong> BMI = weight(kg) / height(m)²</div>
+                            <div><strong>2. Imperial BMI:</strong> BMI = [weight(lbs) / height(in)²] × 703</div>
+                            <div><strong>3. BMR (Male):</strong> (10 × weight_kg) + (6.25 × height_cm) - (5 × age) + 5</div>
+                            <div><strong>4. BMR (Female):</strong> (10 × weight_kg) + (6.25 × height_cm) - (5 × age) - 161</div>
+                            <div><strong>5. Adult Body Fat %:</strong> (1.20 × BMI) + (0.23 × Age) - (10.8 × sex_factor) - 5.4 [Male = 1, Female = 0]</div>
                         </div>
                     </div>
                 </section>
@@ -1037,26 +1037,26 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        While BMI correlates strongly with health outcomes across large population groups[cite: 2], health professionals emphasize that individual evaluations must account for muscle density, bone mass, and fat distribution[cite: 2]:
+                        While BMI correlates strongly with health outcomes across large population groups, health professionals emphasize that individual evaluations must account for muscle density, bone mass, and fat distribution:
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-4">
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-bold text-slate-900 text-sm mb-1">Athletes & Muscle Density</h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                Lean muscle mass weighs significantly more per unit volume than fat tissue[cite: 2]. Muscular individuals may be classified as overweight or obese despite low essential body fat[cite: 2].
+                                Lean muscle mass weighs significantly more per unit volume than fat tissue. Muscular individuals may be classified as overweight or obese despite low essential body fat.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-bold text-slate-900 text-sm mb-1">Elderly Populations</h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                Age-related muscle loss (sarcopenia) may cause individuals to fall within a "normal" BMI range despite carrying excess internal visceral fat[cite: 2].
+                                Age-related muscle loss (sarcopenia) may cause individuals to fall within a "normal" BMI range despite carrying excess internal visceral fat.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-bold text-slate-900 text-sm mb-1">Visceral vs Subcutaneous Fat</h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                BMI does not measure where fat is stored[cite: 2]. Waist circumference and body fat percentage offer deeper insights into cardiovascular health risks[cite: 2].
+                                BMI does not measure where fat is stored. Waist circumference and body fat percentage offer deeper insights into cardiovascular health risks.
                             </p>
                         </div>
                     </div>
@@ -1079,7 +1079,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                 What is Body Mass Index (BMI)?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                Body Mass Index (BMI) is a standardized screening metric calculated using a person's weight and height[cite: 2]. It provides a quick general assessment to categorize individuals as underweight, normal weight, overweight, or obese[cite: 2].
+                                Body Mass Index (BMI) is a standardized screening metric calculated using a person's weight and height. It provides a quick general assessment to categorize individuals as underweight, normal weight, overweight, or obese.
                             </p>
                         </div>
 
@@ -1088,7 +1088,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                 How is BMI calculated in Imperial vs. Metric units?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                In the metric system, BMI is calculated as weight in kilograms divided by height in meters squared (kg/m²)[cite: 2]. In the imperial system, it is calculated as [weight in pounds / (height in inches)²] × 703[cite: 2].
+                                In the metric system, BMI is calculated as weight in kilograms divided by height in meters squared (kg/m²). In the imperial system, it is calculated as [weight in pounds / (height in inches)²] × 703.
                             </p>
                         </div>
 
@@ -1097,7 +1097,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                 What are the key limitations of BMI?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                BMI does not directly measure body fat or distinguish between lean muscle mass and adipose tissue[cite: 2]. As a result, muscular athletes may be categorized as overweight or obese despite having low body fat[cite: 2].
+                                BMI does not directly measure body fat or distinguish between lean muscle mass and adipose tissue. As a result, muscular athletes may be categorized as overweight or obese despite having low body fat.
                             </p>
                         </div>
 
@@ -1106,7 +1106,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                 What is BMR and TDEE?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                Basal Metabolic Rate (BMR) is the total calories your body burns at complete rest to maintain vital life functions[cite: 2]. Total Daily Energy Expenditure (TDEE) factors in physical activity level to calculate total daily calorie expenditure[cite: 2].
+                                Basal Metabolic Rate (BMR) is the total calories your body burns at complete rest to maintain vital life functions. Total Daily Energy Expenditure (TDEE) factors in physical activity level to calculate total daily calorie expenditure.
                             </p>
                         </div>
 
@@ -1115,7 +1115,7 @@ Calculated at twistertools.com/tools/calculators/bmi-calculator`;
                                 How is body fat percentage estimated in this calculator?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                This calculator utilizes the Adult Body Fat percentage equation, which incorporates BMI, age, and sex to estimate body composition without clinical skinfold caliper testing[cite: 2].
+                                This calculator utilizes the Adult Body Fat percentage equation, which incorporates BMI, age, and sex to estimate body composition without clinical skinfold caliper testing.
                             </p>
                         </div>
                     </div>

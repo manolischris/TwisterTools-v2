@@ -650,7 +650,7 @@ export default function HttpHeadersInspector() {
               An HTTP response header payload is structurally organized as colon-separated key-value ASCII strings ending with CRLF (Carriage Return Line Feed) delimiters. Modern HTTP/2 and HTTP/3 protocols optimize these headers through HPACK and QPACK binary compression algorithms without altering their semantic meaning. Header fields govern crucial operational parameters, including SSL/TLS security policies, browser execution permissions, MIME type declarations, caching lifetimes, and server fingerprinting.
             </p>
             <p>
-              Analyzing HTTP headers is an essential prerequisite for web performance engineers, cybersecurity specialists, and full-stack developers[cite: 3]. Misconfigured or absent security headers leave web applications vulnerable to Cross-Site Scripting (XSS), Clickjacking, session hijacking, and MIME-sniffing exploits[cite: 3]. Furthermore, improper cache-control directives result in severe latency bottlenecks or stale content delivery across global edge networks[cite: 3].
+              Analyzing HTTP headers is an essential prerequisite for web performance engineers, cybersecurity specialists, and full-stack developers. Misconfigured or absent security headers leave web applications vulnerable to Cross-Site Scripting (XSS), Clickjacking, session hijacking, and MIME-sniffing exploits. Furthermore, improper cache-control directives result in severe latency bottlenecks or stale content delivery across global edge networks.
             </p>
           </div>
         </div>
@@ -722,7 +722,7 @@ export default function HttpHeadersInspector() {
             <span>HTTP Security Headers & Policy Directive Matrix</span>
           </h2>
           <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-6">
-            The following reference matrix outlines essential HTTP security headers recommended by OWASP and web standards bodies. It details standard header syntax, security benefits, risk profiles when omitted, and recommended configuration values[cite: 3].
+            The following reference matrix outlines essential HTTP security headers recommended by OWASP and web standards bodies. It details standard header syntax, security benefits, risk profiles when omitted, and recommended configuration values.
           </p>
           <div className="overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full border-collapse">
@@ -772,7 +772,7 @@ export default function HttpHeadersInspector() {
             <span>Comprehensive HTTP Response Status Code Guide</span>
           </h2>
           <p className="text-slate-700 text-sm md:text-base leading-relaxed mb-6">
-            HTTP response status codes consist of three-digit integers issued by web servers to indicate the precise outcome of an incoming client request[cite: 3]. The first digit defines the status code category[cite: 3]:
+            HTTP response status codes consist of three-digit integers issued by web servers to indicate the precise outcome of an incoming client request. The first digit defines the status code category:
           </p>
           <div className="overflow-x-auto rounded-xl border border-slate-200">
             <table className="w-full border-collapse">
@@ -787,10 +787,10 @@ export default function HttpHeadersInspector() {
               <tbody>
                 {[
                   ["1xx Informational", "Protocol Handshake", "100 Continue, 101 Switching Protocols", "Request received; server is continuing processing protocol upgrade."],
-                  ["2xx Success", "Successful Request", "200 OK, 201 Created, 204 No Content", "Action successfully received, understood, and accepted by target server[cite: 3]."],
-                  ["3xx Redirection", "Resource Relocation", "301 Moved Permanently, 302 Found, 304 Not Modified", "Further action required; client redirected to new URI or served cached copy[cite: 3]."],
-                  ["4xx Client Error", "Request Fault", "400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found", "Request contains invalid syntax, missing authentication, or bad resource URI[cite: 3]."],
-                  ["5xx Server Error", "Infrastructure Failure", "500 Internal Error, 502 Bad Gateway, 503 Service Unavailable", "Server failed to fulfill an apparently valid request due to internal error[cite: 3]."],
+                  ["2xx Success", "Successful Request", "200 OK, 201 Created, 204 No Content", "Action successfully received, understood, and accepted by target server."],
+                  ["3xx Redirection", "Resource Relocation", "301 Moved Permanently, 302 Found, 304 Not Modified", "Further action required; client redirected to new URI or served cached copy."],
+                  ["4xx Client Error", "Request Fault", "400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found", "Request contains invalid syntax, missing authentication, or bad resource URI."],
+                  ["5xx Server Error", "Infrastructure Failure", "500 Internal Error, 502 Bad Gateway, 503 Service Unavailable", "Server failed to fulfill an apparently valid request due to internal error."],
                 ].map((row, idx) => (
                   <tr
                     key={idx}
@@ -820,7 +820,7 @@ export default function HttpHeadersInspector() {
             {[
               {
                 title: "Security & OWASP Compliance Audits",
-                body: "Verify that web applications meet enterprise security standards by confirming the presence of HSTS, CSP, and X-Frame-Options headers to protect against web vulnerabilities[cite: 3].",
+                body: "Verify that web applications meet enterprise security standards by confirming the presence of HSTS, CSP, and X-Frame-Options headers to protect against web vulnerabilities.",
               },
               {
                 title: "CDN & Edge Cache Verification",
@@ -828,11 +828,11 @@ export default function HttpHeadersInspector() {
               },
               {
                 title: "API Endpoint & CORS Debugging",
-                body: "Analyze Access-Control-Allow-Origin, Access-Control-Allow-Methods, and custom API response headers to resolve cross-origin request issues in browser applications[cite: 3].",
+                body: "Analyze Access-Control-Allow-Origin, Access-Control-Allow-Methods, and custom API response headers to resolve cross-origin request issues in browser applications.",
               },
               {
                 title: "Infrastructure & Server Hardening",
-                body: "Identify and eliminate unnecessary server information disclosures (such as Server, X-Powered-By, or X-AspNet-Version) to prevent attacker fingerprinting[cite: 3].",
+                body: "Identify and eliminate unnecessary server information disclosures (such as Server, X-Powered-By, or X-AspNet-Version) to prevent attacker fingerprinting.",
               },
             ].map(({ title, body }) => (
               <div
@@ -862,19 +862,19 @@ export default function HttpHeadersInspector() {
             {[
               {
                 q: "Why do some HTTP headers appear missing when testing cross-origin URLs?",
-                a: "When requesting HTTP headers from a client-side browser context across different origins, Cross-Origin Resource Sharing (CORS) security rules restrict access to non-simple response headers unless explicitly listed in the target server's Access-Control-Expose-Headers response header[cite: 3].",
+                a: "When requesting HTTP headers from a client-side browser context across different origins, Cross-Origin Resource Sharing (CORS) security rules restrict access to non-simple response headers unless explicitly listed in the target server's Access-Control-Expose-Headers response header.",
               },
               {
                 q: "What is the technical difference between HEAD and GET HTTP request methods?",
-                a: "A HEAD request asks the server to return only the status line and response headers without downloading the actual response body payload[cite: 3]. This allows fast header inspections without wasting network bandwidth[cite: 3]. A GET request downloads both response headers and the full body payload[cite: 3].",
+                a: "A HEAD request asks the server to return only the status line and response headers without downloading the actual response body payload. This allows fast header inspections without wasting network bandwidth. A GET request downloads both response headers and the full body payload.",
               },
               {
                 q: "Why should backend technologies like 'X-Powered-By' be hidden from HTTP headers?",
-                a: "Disclosing exact technology stack versions (e.g., Express, ASP.NET, PHP) in response headers allows malicious actors to quickly target known framework-specific security vulnerabilities[cite: 3]. Removing or suppressing these headers improves security through obfuscation[cite: 3].",
+                a: "Disclosing exact technology stack versions (e.g., Express, ASP.NET, PHP) in response headers allows malicious actors to quickly target known framework-specific security vulnerabilities. Removing or suppressing these headers improves security through obfuscation.",
               },
               {
                 q: "How does the 'Cache-Control: max-age' directive interact with CDN edge caches?",
-                a: "The 'max-age' directive specifies how many seconds a browser can cache a resource. To set separate cache durations for CDN edge servers (like Cloudflare or Fastly), developers use the 's-maxage' directive, which overrides 'max-age' specifically for shared proxies and CDNs[cite: 3].",
+                a: "The 'max-age' directive specifies how many seconds a browser can cache a resource. To set separate cache durations for CDN edge servers (like Cloudflare or Fastly), developers use the 's-maxage' directive, which overrides 'max-age' specifically for shared proxies and CDNs.",
               },
             ].map(({ q, a }) => (
               <div
@@ -904,22 +904,22 @@ export default function HttpHeadersInspector() {
               {
                 icon: Zap,
                 title: "Instant Response Latency Audit",
-                body: "Measures precise endpoint response times in milliseconds alongside HTTP response header processing for performance benchmarking[cite: 3].",
+                body: "Measures precise endpoint response times in milliseconds alongside HTTP response header processing for performance benchmarking.",
               },
               {
                 icon: Shield,
                 title: "Automated OWASP Security Grading",
-                body: "Evaluates missing security headers and assigns an instant security score (A+ to F) with actionable fix recommendations[cite: 3].",
+                body: "Evaluates missing security headers and assigns an instant security score (A+ to F) with actionable fix recommendations.",
               },
               {
                 icon: Cpu,
                 title: "Client-Side Processing Security",
-                body: "Executes inspection logic directly in the browser environment without storing target URLs or inspection data on external databases[cite: 3].",
+                body: "Executes inspection logic directly in the browser environment without storing target URLs or inspection data on external databases.",
               },
               {
                 icon: Blocks,
                 title: "Multi-Method Request Engine",
-                body: "Supports both HEAD and GET HTTP methods with configurable redirect follow strategies and custom User-Agent options[cite: 3].",
+                body: "Supports both HEAD and GET HTTP methods with configurable redirect follow strategies and custom User-Agent options.",
               },
             ].map(({ icon: Icon, title, body }) => (
               <div
