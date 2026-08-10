@@ -179,6 +179,14 @@ export default function Footer() {
                   Date, Time & Scheduling Tools
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/random-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Randomization, Games & Decision Tools
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -85,7 +85,8 @@ import {
   Zap,
   Strikethrough,
   Sunrise,
-  Moon
+  Moon,
+  Dices
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -180,7 +181,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Radio,
   Zap,
   Sunrise,
-  Moon
+  Moon,
+  Dices
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json
@@ -634,6 +636,50 @@ const CATEGORIES_METADATA: Record<
       {
         q: "Does the timezone converter adjust for daylight saving transitions?",
         a: "Yes. It leverages native browser Internationalization APIs (Intl) and timezone offset registries to correctly calculate DST changes."
+      }
+    ]
+  },
+  "random-tools": {
+    name: "Randomization, Games & Decision Tools",
+    icon: "Dices",
+    description: "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
+    detailedGuide: "Make quick decisions, play chance games, or shuffle lists securely. All calculations run entirely in your browser with zero server transmission.",
+    seoDescription: "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
+    keywords: ["random picker", "dice roller", "coin flipper", "team generator", "list shuffler"],
+    cards: [
+      {
+        title: "100% Client-Side Randomization",
+        icon: "Dices",
+        content: "Our randomizers use cryptographically secure random number generation or high-performance pseudo-random algorithms directly inside your browser. No seed data or choices are sent to external servers."
+      },
+      {
+        title: "Fair Play & Transparency",
+        icon: "ShieldCheck",
+        content: "Every coin flip, dice roll, or list shuffle is computed locally with mathematical fairness. There are no rigged outcomes, bias, or hidden algorithms—what you see is exactly what the random math produces."
+      },
+      {
+        title: "Clean, Touch-Friendly Layouts",
+        icon: "Layers",
+        content: "Whether you need to pick a name out of a hat on your phone or roll a set of D&D dice on your tablet, our tools feature responsive, fast, and interactive design elements with satisfying animations."
+      },
+      {
+        title: "Bulk Shuffling & Group Operations",
+        icon: "Cpu",
+        content: "Quickly generate random team groups, assign tasks, or shuffle large lists. Export your randomized outputs or copy them to your clipboard with a single click."
+      }
+    ],
+    faqs: [
+      {
+        q: "Are the coin flips or dice rolls rigged?",
+        a: "No. The outcomes are generated using native JavaScript random number generation (Math.random or Web Crypto API), ensuring unbiased and mathematically random distributions."
+      },
+      {
+        q: "Can I input custom names or lists?",
+        a: "Yes. Our random picker and team generator tools allow you to paste custom list entries, shuffle them, and pick single or multiple items locally in your browser memory."
+      },
+      {
+        q: "Is my list data stored anywhere?",
+        a: "Never. All list inputs, names, and generated teams exist purely in the temporary memory of your current browser session. Reloading the page clears all data."
       }
     ]
   }

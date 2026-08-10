@@ -62,7 +62,7 @@ const SEO_CARDS = [
     icon: "Layers",
     title: "A Growing Library of Utilities",
     content:
-      "TwisterTools already spans ten categories: Developer, Code & Web Engineering Tools, Daily Essentials, Financial & Math Calculators, Password Management & Security Utilities, Text Analysis, List Comparison & Editing Tools, Image Editing, Compression & Conversion Tools, SEO, Domain & Network Inspector Tools, Random Data, Identity & Key Generators, Data & Number Base Converter Utilities, PDF & Document Utilities, and Date, Time & Scheduling Tools. New tools are added regularly — all free and mobile-first.",
+      "TwisterTools already spans eleven categories: Developer, Code & Web Engineering Tools, Daily Essentials, Financial & Math Calculators, Password Management & Security Utilities, Text Analysis, List Comparison & Editing Tools, Image Editing, Compression & Conversion Tools, SEO, Domain & Network Inspector Tools, Random Data, Identity & Key Generators, Data & Number Base Converter Utilities, PDF & Document Utilities, Date, Time & Scheduling Tools, and Randomization, Games & Decision Tools. New tools are added regularly — all free and mobile-first.",
   },
   {
     icon: "Globe",

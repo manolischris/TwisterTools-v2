@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
@@ -65,6 +65,7 @@ import PregnancyDueDateCalculator from "@/components/tools/PregnancyDueDateCalcu
 import ScientificCalculator from "@/components/tools/ScientificCalculator";
 import LoremIpsumGenerator from "@/components/tools/LoremIpsumGenerator";
 import TimezoneConverter from "@/components/tools/TimezoneConverter";
+import DiceRoller from "@/components/tools/DiceRoller";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -151,6 +152,7 @@ const COMPLETED_TOOLS = [
   "pregnancy-due-date-calculator",
   "scientific-calculator",
   "timezone-converter",
+  "dice-roller",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -841,6 +843,8 @@ export default async function ToolPage({
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "uuid-generator" ? (
                   <Fingerprint className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "dice-roller" ? (
+                  <Dices className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -981,6 +985,8 @@ export default async function ToolPage({
             <ScientificCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
+          ) : category === "random-tools" && toolSlug === "dice-roller" ? (
+            <DiceRoller />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

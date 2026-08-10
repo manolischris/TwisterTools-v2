@@ -125,6 +125,11 @@ Fast, precise, and privacy-first utilities for calculating date differences, tim
 - Sunrise & Sunset Time Estimator (/tools/date-tools/sunrise-sunset-calculator): Calculate accurate sunrise, sunset, twilight phases, golden hour, and daylight duration for any coordinates.
 - [Moon Phase Calendar & Visualizer](/tools/date-tools/moon-phase-calculator): Calculate accurate lunar phases, illumination percentages, moon age, distance, and monthly lunar calendar views.
 
+### [Randomization, Games & Decision Tools](https://www.twistertools.com/tools/random-tools)
+Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.
+- Coin Flipper & Probability Simulator (/tools/random-tools/coin-flipper)
+- Dice Roller & Multi-Die Simulator: /tools/random-tools/dice-roller
+
 ## Other Resources
 
 - [All Categories Hub](https://www.twistertools.com/categories)

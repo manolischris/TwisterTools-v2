@@ -16,6 +16,7 @@ import {
   Cpu,
   RefreshCw,
   Calendar,
+  Dices,
 } from "lucide-react";
 
 const categories = [
@@ -29,6 +30,7 @@ const categories = [
   { slug: "generator-tools", name: "Random Data, Identity & Key Generators", icon: Cpu, desc: "QR codes & test utilities" },
   { slug: "converter-tools", name: "Data & Number Base Converter Utilities", icon: RefreshCw, desc: "Base64, hex & binary converters" },
   { slug: "date-tools", name: "Date, Time & Scheduling Tools", icon: Calendar, desc: "Date differences, timezone conversions & countdowns" },
+  { slug: "random-tools", name: "Randomization, Games & Decision Tools", icon: Dices, desc: "Random pickers, dice, coins & team generators" },
 ];
 
 export default function Header() {

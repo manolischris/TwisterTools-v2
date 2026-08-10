@@ -95,7 +95,8 @@ import {
   Strikethrough,
   CalendarDays,
   Sunrise,
-  Moon
+  Moon,
+  Dices
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -193,7 +194,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Replace,
   Radio,
   Sunrise,
-  Moon
+  Moon,
+  Dices
 };
 
 const CATEGORIES = [
@@ -207,6 +209,7 @@ const CATEGORIES = [
   { id: "text-tools", name: "Text Tools", href: "/tools/text-tools", icon: FileText },
   { id: "web-tools", name: "Web Utilities", href: "/tools/web-tools", icon: Globe },
   { id: "date-tools", name: "Date & Time Tools", href: "/tools/date-tools", icon: Calendar },
+  { id: "random-tools", name: "Random & Games", href: "/tools/random-tools", icon: Dices },
 ];
 
 const ALL_TOOLS_REGISTRY: Tool[] = (toolsRegistryData as Tool[])

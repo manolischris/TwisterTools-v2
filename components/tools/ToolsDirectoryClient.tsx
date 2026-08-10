@@ -92,7 +92,8 @@ import {
   Strikethrough,
   CalendarDays,
   Sunrise,
-  Moon
+  Moon,
+  Dices
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -195,7 +196,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Replace,
   Radio,
   Sunrise,
-  Moon
+  Moon,
+  Dices
 };
 
 /* ─────────────────────────────────────────────────────────
@@ -242,6 +244,10 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
   "date-tools": {
     label: "Date, Time & Scheduling Tools",
     color: "bg-fuchsia-600 text-white",
+  },
+  "random-tools": {
+    label: "Randomization, Games & Decision Tools",
+    color: "bg-pink-600 text-white",
   },
 };
 

@@ -19,6 +19,7 @@ import {
   Layers,
   ChevronRight,
   Calendar,
+  Dices,
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -28,12 +29,12 @@ import toolsRegistry from "@/lib/tools-registry.json";
 export const metadata: Metadata = {
   title: "All Tool Categories",
   description:
-    "Browse all 10 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, Converter Tools, and Date & Time Tools. Free, fast, and browser-based.",
+    "Browse all 11 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, Converter Tools, Date & Time Tools, and Randomization, Games & Decision Tools. Free, fast, and browser-based.",
   alternates: { canonical: "https://www.twistertools.com/categories" },
   openGraph: {
     title: "All Tool Categories | TwisterTools",
     description:
-      "Discover 10 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
+      "Discover 11 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
     url: "https://www.twistertools.com/categories",
     siteName: "TwisterTools",
     type: "website",
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "All Tool Categories | TwisterTools",
     description:
-      "10 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and more.",
+      "11 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and more.",
     images: ["https://www.twistertools.com/images/categories.jpg"],
   },
 };
@@ -214,6 +215,20 @@ const CATEGORIES: CategoryDef[] = [
       "schedule planner",
     ],
   },
+  {
+    slug: "random-tools",
+    name: "Randomization, Games & Decision Tools",
+    description:
+      "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
+    icon: Dices,
+    accentClass: "bg-pink-100 text-pink-600",
+    keywords: [
+      "random picker",
+      "dice roller",
+      "coin flipper",
+      "team generator",
+    ],
+  },
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -290,7 +305,7 @@ export default function CategoriesIndexPage() {
     "@type": "CollectionPage",
     name: "All Tool Categories — TwisterTools",
     description:
-      "Browse 10 curated categories of free browser-based online utilities on TwisterTools.",
+      "Browse 11 curated categories of free browser-based online utilities on TwisterTools.",
     url: "https://www.twistertools.com/categories",
     publisher: {
       "@type": "Organization",

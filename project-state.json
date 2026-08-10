@@ -9,9 +9,12 @@
   },
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 71 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Completed",
-  "active_task_tracker": "Integrate Moon Phase Calendar & Visualizer Completed",
-  "completedTasksCount": 201,
+  "active_task_tracker": "Integrate Dice Roller & Multi-Die Simulator Completed",
+  "completedTasksCount": 204,
   "completed_tasks": [
+    "Integrate Dice Roller & Multi-Die Simulator into random-tools: verified package dependencies, registered tool slug page route under /tools/random-tools/dice-roller mapping to DiceRoller component with Dices icon and full SEO metadata, added category grid entry in app/tools/random-tools/page.tsx, registered in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
+    "Integrate Coin Flipper & Probability Simulator into random-tools: verified package dependencies, created static page route at app/tools/random-tools/coin-flipper/page.tsx with Dices icon and full SEO metadata, added category grid entry mapping in app/tools/random-tools/page.tsx, registered in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
+    "Performed full architecture audit and registered random-tools as the 11th modern category. Updated app/categories/page.tsx with Dices icon, bg-pink-100/text-pink-600 accent, correct slug, description, and keywords; bumped 10→11 category count strings across metadata, schema, and SEO cards. Added Dices import + random-tools entry to components/Header.tsx categories array. Added Randomization, Games & Decision Tools link to Footer.tsx Top Categories column. Added random-tools mapping to url-map.json modern_categories ensuring the sitemap dynamically emits /tools/random-tools. Confirmed CATEGORIES_METADATA in app/tools/[category]/page.tsx has a complete random-tools entry. Added Dices icon mapping across CategoryToolSearchGrid, RelatedTools, ToolsDirectoryClient, and app/page.tsx. Created static landing page at app/tools/random-tools/page.tsx with zero build compilation warnings.",
     "Integrate Moon Phase Calendar & Visualizer into date-tools: fixed syntax error in the component (condition check parenthesis missing), created static page route at app/tools/date-tools/moon-phase-calculator/page.tsx with Moon hero icon and full SEO metadata, added category grid entry in app/tools/date-tools/page.tsx, registered in lib/tools-registry.json, imported and mapped Moon icon across CategoryToolSearchGrid, RelatedTools, ToolsDirectoryClient, app/page.tsx, and app/tools/[category]/page.tsx, incremented completedTasksCount, and updated project-state.json.",
     "Integrate Sunrise & Sunset Time Estimator into date-tools: verified package dependencies, created static page route at app/tools/date-tools/sunrise-sunset-calculator/page.tsx with Sunrise icon and full SEO metadata, added the entry in app/tools/date-tools/page.tsx grid list, registered in lib/tools-registry.json, imported and mapped Sunrise across CategoryToolSearchGrid, RelatedTools, ToolsDirectoryClient, app/page.tsx, and app/tools/[category]/page.tsx icon mappings, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
     "Integrate Event Countdown Timer Generator into date-tools: fixed syntax error in the component (d.setDays property assignment on Date object), created static page route at app/tools/date-tools/countdown-timer-generator/page.tsx with Timer icon, custom gradient title header, and full SEO metadata, added the entry in app/tools/date-tools/page.tsx grid list, registered in lib/tools-registry.json, incremented completedTasksCount, and updated project-state.json.",
@@ -283,8 +286,26 @@
     "seo_optimization": "Complete with generateMetadata for all pages"
   },
   "tools_completed": {
-    "total": 118,
+    "total": 120,
     "list": [
+      {
+        "name": "Dice Roller & Multi-Die Simulator",
+        "slug": "dice-roller",
+        "category": "random-tools",
+        "component": "components/tools/DiceRoller.tsx",
+        "url": "/tools/random-tools/dice-roller",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-10"
+      },
+      {
+        "name": "Coin Flipper & Probability Simulator",
+        "slug": "coin-flipper",
+        "category": "random-tools",
+        "component": "components/tools/CoinFlipper.tsx",
+        "url": "/tools/random-tools/coin-flipper",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-10"
+      },
       {
         "name": "Moon Phase Calendar & Visualizer",
         "slug": "moon-phase-calculator",
