@@ -1506,5 +1506,14 @@
     "href": "/tools/random-tools/random-number-generator",
     "iconName": "Dices",
     "isFeatured": false
+  },
+  {
+    "id": "random-name-picker",
+    "title": "Random Name Picker & Winner Selector",
+    "description": "Pick random winners securely with Web Crypto API entropy and slot-machine animations.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-name-picker",
+    "iconName": "Dices",
+    "isFeatured": true
   }
 ]

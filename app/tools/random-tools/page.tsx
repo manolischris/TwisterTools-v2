@@ -139,6 +139,14 @@ export default function RandomToolsCategoryPage() {
           iconName: "Dices"
         };
       }
+      if (tool.id === "random-name-picker") {
+        return {
+          ...tool,
+          title: "Random Name Picker & Winner Selector",
+          description: "Pick random winners securely with Web Crypto API entropy and slot-machine animations.",
+          iconName: "Dices"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {
