@@ -4,47 +4,62 @@ import Image from "next/image";
 import { Dices, ShieldCheck, Layers, Cpu, HelpCircle } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
+import fs from "fs";
+import path from "path";
 
-export const metadata: Metadata = {
-  title: "Randomization, Games & Decision Tools",
-  description:
-    "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
-  keywords: [
-    "random picker",
-    "dice roller",
-    "coin flipper",
-    "team generator",
-    "list shuffler",
-    "decision tools",
-    "twistertools"
-  ],
-  alternates: {
-    canonical: "https://www.twistertools.com/tools/random-tools",
-  },
-  openGraph: {
-    title: "Randomization, Games & Decision Tools - TwisterTools",
+export async function generateMetadata(): Promise<Metadata> {
+  const category = "random-tools";
+  const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
+  const webpCategoryPath = `${categoryImagePath}.webp`;
+  const jpgCategoryPath = `${categoryImagePath}.jpg`;
+  
+  const featuredImage = fs.existsSync(webpCategoryPath)
+    ? `https://www.twistertools.com/images/categories/${category}.webp`
+    : fs.existsSync(jpgCategoryPath)
+      ? `https://www.twistertools.com/images/categories/${category}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
+
+  return {
+    title: "Randomization, Games & Decision Tools",
     description:
       "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
-    url: "https://www.twistertools.com/tools/random-tools",
-    siteName: "TwisterTools",
-    type: "website",
-    images: [
-      {
-        url: "https://www.twistertools.com/images/categories/random-tools.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Randomization, Games & Decision Tools",
-      },
+    keywords: [
+      "random picker",
+      "dice roller",
+      "coin flipper",
+      "team generator",
+      "list shuffler",
+      "decision tools",
+      "twistertools"
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Randomization, Games & Decision Tools - TwisterTools",
-    description:
-      "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
-    images: ["https://www.twistertools.com/images/categories/random-tools.jpg"],
-  },
-};
+    alternates: {
+      canonical: "https://www.twistertools.com/tools/random-tools",
+    },
+    openGraph: {
+      title: "Randomization, Games & Decision Tools - TwisterTools",
+      description:
+        "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
+      url: "https://www.twistertools.com/tools/random-tools",
+      siteName: "TwisterTools",
+      type: "website",
+      images: [
+        {
+          url: featuredImage,
+          width: 1200,
+          height: 630,
+          alt: "Randomization, Games & Decision Tools",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Randomization, Games & Decision Tools - TwisterTools",
+      description:
+        "Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.",
+      images: [featuredImage],
+    },
+  };
+}
 
 const randomMetadata = {
   name: "Randomization, Games & Decision Tools",
@@ -113,6 +128,14 @@ export default function RandomToolsCategoryPage() {
           ...tool,
           title: "Dice Roller & Multi-Die Simulator",
           description: "Cryptographically secure polyhedral dice roller with modifiers, drop rules, and session history.",
+          iconName: "Dices"
+        };
+      }
+      if (tool.id === "random-number-generator") {
+        return {
+          ...tool,
+          title: "Random Number Generator & Range Picker",
+          description: "Generate cryptographically secure random numbers with customizable bounds, duplicate control, and batch export options.",
           iconName: "Dices"
         };
       }

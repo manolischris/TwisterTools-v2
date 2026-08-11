@@ -4,36 +4,51 @@ import Image from "next/image";
 import { Calendar, ShieldCheck, Timer, Clock, Layers, HelpCircle, CalendarDays, Hash, Sunrise, Moon } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
+import fs from "fs";
+import path from "path";
 
-export const metadata: Metadata = {
-  title: "Date, Time & Scheduling Tools",
-  description: "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
-  keywords: ["days between dates", "timezone converter", "workday calculator", "countdown timer", "date calculator"],
-  alternates: {
-    canonical: "https://www.twistertools.com/tools/date-tools",
-  },
-  openGraph: {
-    title: "Date, Time & Scheduling Tools - TwisterTools",
+export async function generateMetadata(): Promise<Metadata> {
+  const category = "date-tools";
+  const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
+  const webpCategoryPath = `${categoryImagePath}.webp`;
+  const jpgCategoryPath = `${categoryImagePath}.jpg`;
+  
+  const featuredImage = fs.existsSync(webpCategoryPath)
+    ? `https://www.twistertools.com/images/categories/${category}.webp`
+    : fs.existsSync(jpgCategoryPath)
+      ? `https://www.twistertools.com/images/categories/${category}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
+
+  return {
+    title: "Date, Time & Scheduling Tools",
     description: "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
-    url: "https://www.twistertools.com/tools/date-tools",
-    siteName: "TwisterTools",
-    type: "website",
-    images: [
-      {
-        url: "https://www.twistertools.com/images/categories/date-tools.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Date, Time & Scheduling Tools",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Date, Time & Scheduling Tools - TwisterTools",
-    description: "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
-    images: ["https://www.twistertools.com/images/categories/date-tools.jpg"],
-  },
-};
+    keywords: ["days between dates", "timezone converter", "workday calculator", "countdown timer", "date calculator"],
+    alternates: {
+      canonical: "https://www.twistertools.com/tools/date-tools",
+    },
+    openGraph: {
+      title: "Date, Time & Scheduling Tools - TwisterTools",
+      description: "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
+      url: "https://www.twistertools.com/tools/date-tools",
+      siteName: "TwisterTools",
+      type: "website",
+      images: [
+        {
+          url: featuredImage,
+          width: 1200,
+          height: 630,
+          alt: "Date, Time & Scheduling Tools",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Date, Time & Scheduling Tools - TwisterTools",
+      description: "Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.",
+      images: [featuredImage],
+    },
+  };
+}
 
 const dateMetadata = {
   name: "Date, Time & Scheduling Tools",

@@ -709,7 +709,17 @@ export async function generateMetadata({
   }
 
   const canonicalUrl = `https://www.twistertools.com/tools/${category}`;
-  const featuredImage = `https://www.twistertools.com/images/categories/${category}.jpg`;
+  
+  const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
+  const webpCategoryPath = `${categoryImagePath}.webp`;
+  const jpgCategoryPath = `${categoryImagePath}.jpg`;
+
+  const featuredImage = fs.existsSync(webpCategoryPath)
+    ? `https://www.twistertools.com/images/categories/${category}.webp`
+    : fs.existsSync(jpgCategoryPath)
+      ? `https://www.twistertools.com/images/categories/${category}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
+
 
   return {
     title: categoryData.name,

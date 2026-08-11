@@ -1497,5 +1497,14 @@
     "href": "/tools/random-tools/dice-roller",
     "iconName": "Dices",
     "isFeatured": false
+  },
+  {
+    "id": "random-number-generator",
+    "title": "Random Number Generator & Range Picker",
+    "description": "Cryptographically secure random number engine with custom range bounds, non-repeating filters, and statistical analytics.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-number-generator",
+    "iconName": "Dices",
+    "isFeatured": false
   }
 ]

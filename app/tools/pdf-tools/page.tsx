@@ -4,36 +4,51 @@ import Image from "next/image";
 import { FileCheck2, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, FileImage, FileType2, Hash, Edit3, FileCode } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
+import fs from "fs";
+import path from "path";
 
-export const metadata: Metadata = {
-  title: "PDF & Document Utilities",
-  description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
-  keywords: ["merge pdf", "compress pdf", "unlock pdf", "pdf to image", "pdf metadata editor"],
-  alternates: {
-    canonical: "https://www.twistertools.com/tools/pdf-tools",
-  },
-  openGraph: {
-    title: "PDF & Document Utilities - TwisterTools",
+export async function generateMetadata(): Promise<Metadata> {
+  const category = "pdf-tools";
+  const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
+  const webpCategoryPath = `${categoryImagePath}.webp`;
+  const jpgCategoryPath = `${categoryImagePath}.jpg`;
+  
+  const featuredImage = fs.existsSync(webpCategoryPath)
+    ? `https://www.twistertools.com/images/categories/${category}.webp`
+    : fs.existsSync(jpgCategoryPath)
+      ? `https://www.twistertools.com/images/categories/${category}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
+
+  return {
+    title: "PDF & Document Utilities",
     description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
-    url: "https://www.twistertools.com/tools/pdf-tools",
-    siteName: "TwisterTools",
-    type: "website",
-    images: [
-      {
-        url: "https://www.twistertools.com/images/categories/pdf-tools.jpg",
-        width: 1200,
-        height: 630,
-        alt: "PDF Tools",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "PDF & Document Utilities - TwisterTools",
-    description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
-    images: ["https://www.twistertools.com/images/categories/pdf-tools.jpg"],
-  },
-};
+    keywords: ["merge pdf", "compress pdf", "unlock pdf", "pdf to image", "pdf metadata editor"],
+    alternates: {
+      canonical: "https://www.twistertools.com/tools/pdf-tools",
+    },
+    openGraph: {
+      title: "PDF & Document Utilities - TwisterTools",
+      description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
+      url: "https://www.twistertools.com/tools/pdf-tools",
+      siteName: "TwisterTools",
+      type: "website",
+      images: [
+        {
+          url: featuredImage,
+          width: 1200,
+          height: 630,
+          alt: "PDF Tools",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "PDF & Document Utilities - TwisterTools",
+      description: "Fast, secure, and privacy-first PDF document processing engines for converting, merging, compressing, and editing PDF files.",
+      images: [featuredImage],
+    },
+  };
+}
 
 const pdfMetadata = {
   name: "PDF & Document Utilities",

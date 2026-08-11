@@ -8,45 +8,58 @@ import path from "path";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Text Analysis, List Comparison & Editing Tools",
-  description:
-    "Powerful browser-native text tools to compare lists, find set differences, format cases, and process bulk text securely client-side.",
-  keywords: [
-    "text tools",
-    "list comparison",
-    "set difference finder",
-    "case converter",
-    "comma separator",
-    "word combiner"
-  ],
-  alternates: {
-    canonical: "https://www.twistertools.com/tools/text-tools"
-  },
-  openGraph: {
-    title: "Text Analysis, List Comparison & Editing Tools - TwisterTools",
+export async function generateMetadata(): Promise<Metadata> {
+  const category = "text-tools";
+  const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
+  const webpCategoryPath = `${categoryImagePath}.webp`;
+  const jpgCategoryPath = `${categoryImagePath}.jpg`;
+  
+  const featuredImage = fs.existsSync(webpCategoryPath)
+    ? `https://www.twistertools.com/images/categories/${category}.webp`
+    : fs.existsSync(jpgCategoryPath)
+      ? `https://www.twistertools.com/images/categories/${category}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
+
+  return {
+    title: "Text Analysis, List Comparison & Editing Tools",
     description:
       "Powerful browser-native text tools to compare lists, find set differences, format cases, and process bulk text securely client-side.",
-    url: "https://www.twistertools.com/tools/text-tools",
-    siteName: "TwisterTools",
-    type: "website",
-    images: [
-      {
-        url: "https://www.twistertools.com/images/categories/text-tools.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Text Analysis, List Comparison & Editing Tools"
-      }
-    ]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Text Analysis, List Comparison & Editing Tools - TwisterTools",
-    description:
-      "Powerful browser-native text tools to compare lists, find set differences, format cases, and process bulk text securely client-side.",
-    images: ["https://www.twistertools.com/images/categories/text-tools.jpg"]
-  }
-};
+    keywords: [
+      "text tools",
+      "list comparison",
+      "set difference finder",
+      "case converter",
+      "comma separator",
+      "word combiner"
+    ],
+    alternates: {
+      canonical: "https://www.twistertools.com/tools/text-tools"
+    },
+    openGraph: {
+      title: "Text Analysis, List Comparison & Editing Tools - TwisterTools",
+      description:
+        "Powerful browser-native text tools to compare lists, find set differences, format cases, and process bulk text securely client-side.",
+      url: "https://www.twistertools.com/tools/text-tools",
+      siteName: "TwisterTools",
+      type: "website",
+      images: [
+        {
+          url: featuredImage,
+          width: 1200,
+          height: 630,
+          alt: "Text Analysis, List Comparison & Editing Tools"
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Text Analysis, List Comparison & Editing Tools - TwisterTools",
+      description:
+        "Powerful browser-native text tools to compare lists, find set differences, format cases, and process bulk text securely client-side.",
+      images: [featuredImage]
+    }
+  };
+}
 
 const textToolsMeta = {
   name: "Text Analysis, List Comparison & Editing Tools",

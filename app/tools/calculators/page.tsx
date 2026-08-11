@@ -4,36 +4,51 @@ import Image from "next/image";
 import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
+import fs from "fs";
+import path from "path";
 
-export const metadata: Metadata = {
-  title: "Daily Essentials, Financial & Math Calculators",
-  description: "Fast, privacy-first online calculators for investments, loans, health, percentages, and daily math computations.",
-  keywords: ["financial calculators", "investment tools", "math calculators", "loan estimators", "unit converters"],
-  alternates: {
-    canonical: "https://www.twistertools.com/tools/calculators",
-  },
-  openGraph: {
-    title: "Daily Essentials, Financial & Math Calculators - TwisterTools",
+export async function generateMetadata(): Promise<Metadata> {
+  const category = "calculators";
+  const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
+  const webpCategoryPath = `${categoryImagePath}.webp`;
+  const jpgCategoryPath = `${categoryImagePath}.jpg`;
+  
+  const featuredImage = fs.existsSync(webpCategoryPath)
+    ? `https://www.twistertools.com/images/categories/${category}.webp`
+    : fs.existsSync(jpgCategoryPath)
+      ? `https://www.twistertools.com/images/categories/${category}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
+
+  return {
+    title: "Daily Essentials, Financial & Math Calculators",
     description: "Fast, privacy-first online calculators for investments, loans, health, percentages, and daily math computations.",
-    url: "https://www.twistertools.com/tools/calculators",
-    siteName: "TwisterTools",
-    type: "website",
-    images: [
-      {
-        url: "https://www.twistertools.com/images/categories/calculators.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Daily Essentials, Financial & Math Calculators",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Daily Essentials, Financial & Math Calculators - TwisterTools",
-    description: "Fast, privacy-first online calculators for investments, loans, health, percentages, and daily math computations.",
-    images: ["https://www.twistertools.com/images/categories/calculators.jpg"],
-  },
-};
+    keywords: ["financial calculators", "investment tools", "math calculators", "loan estimators", "unit converters"],
+    alternates: {
+      canonical: "https://www.twistertools.com/tools/calculators",
+    },
+    openGraph: {
+      title: "Daily Essentials, Financial & Math Calculators - TwisterTools",
+      description: "Fast, privacy-first online calculators for investments, loans, health, percentages, and daily math computations.",
+      url: "https://www.twistertools.com/tools/calculators",
+      siteName: "TwisterTools",
+      type: "website",
+      images: [
+        {
+          url: featuredImage,
+          width: 1200,
+          height: 630,
+          alt: "Daily Essentials, Financial & Math Calculators",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Daily Essentials, Financial & Math Calculators - TwisterTools",
+      description: "Fast, privacy-first online calculators for investments, loans, health, percentages, and daily math computations.",
+      images: [featuredImage],
+    },
+  };
+}
 
 const calculatorMetadata = {
   name: "Daily Essentials, Financial & Math Calculators",
