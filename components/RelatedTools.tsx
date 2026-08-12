@@ -75,7 +75,8 @@ import {
   CalendarDays,
   Sunrise,
   Moon,
-  Dices
+  Dices,
+  Users
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -157,7 +158,8 @@ const ICON_MAP: Record<string, any> = {
   Strikethrough,
   Sunrise,
   Moon,
-  Dices
+  Dices,
+  Users
 };
 
 interface RelatedToolsProps {

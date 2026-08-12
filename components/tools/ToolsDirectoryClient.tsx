@@ -93,7 +93,8 @@ import {
   CalendarDays,
   Sunrise,
   Moon,
-  Dices
+  Dices,
+  Users
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -197,7 +198,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Radio,
   Sunrise,
   Moon,
-  Dices
+  Dices,
+  Users
 };
 
 /* ─────────────────────────────────────────────────────────

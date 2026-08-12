@@ -147,6 +147,22 @@ export default function RandomToolsCategoryPage() {
           iconName: "Dices"
         };
       }
+      if (tool.id === "spin-the-wheel") {
+        return {
+          ...tool,
+          title: "Spin the Wheel & Choice Picker",
+          description: "Interactive wheel spinner for fair decisions, giveaways, and random selection.",
+          iconName: "PieChart"
+        };
+      }
+      if (tool.id === "random-team-generator") {
+        return {
+          ...tool,
+          title: "Random Team & Group Generator",
+          description: "Split rosters into fair, randomized teams or groups instantly with optional skill balancing and Web Crypto RNG.",
+          iconName: "Users"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {

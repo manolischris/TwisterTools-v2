@@ -1515,5 +1515,23 @@
     "href": "/tools/random-tools/random-name-picker",
     "iconName": "Dices",
     "isFeatured": true
+  },
+  {
+    "id": "spin-the-wheel",
+    "title": "Spin the Wheel & Choice Picker",
+    "description": "Interactive HTML5 wheel spinner for fair random decisions, giveaway drawings, and weighted choices.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/spin-the-wheel",
+    "iconName": "PieChart",
+    "isFeatured": true
+  },
+  {
+    "id": "random-team-generator",
+    "title": "Random Team & Group Generator",
+    "description": "Split rosters into fair, randomized teams or groups instantly with optional skill balancing and Web Crypto RNG.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-team-generator",
+    "iconName": "Users",
+    "isFeatured": false
   }
 ]

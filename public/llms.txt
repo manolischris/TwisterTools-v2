@@ -131,6 +131,7 @@ Interactive, client-side tools for quick decision making, chance games, and list
 - Dice Roller & Multi-Die Simulator: /tools/random-tools/dice-roller
 - Random Number Generator & Range Picker (/tools/random-tools/random-number-generator)
 - Random Name Picker & Winner Selector (/tools/random-tools/random-name-picker)
+- Spin the Wheel & Choice Picker (/tools/random-tools/spin-the-wheel): Interactive random choice wheel.
 
 ## Other Resources
 

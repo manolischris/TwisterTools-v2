@@ -96,7 +96,8 @@ import {
   CalendarDays,
   Sunrise,
   Moon,
-  Dices
+  Dices,
+  Users
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -195,7 +196,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Radio,
   Sunrise,
   Moon,
-  Dices
+  Dices,
+  Users
 };
 
 const CATEGORIES = [
