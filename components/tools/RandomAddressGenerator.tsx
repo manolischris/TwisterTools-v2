@@ -833,13 +833,22 @@ export default function RandomAddressGenerator() {
                                     </span>
                                 </div>
                                 <div className="h-40 w-full rounded-lg bg-slate-200 relative overflow-hidden border border-slate-300 flex items-center justify-center shadow-inner group">
-                                    {/* Mock Map Background Grids */}
-                                    <div className="absolute inset-0 opacity-40 bg-[linear-gradient(to_right,#cbd5e1_1px,transparent_1px),linear-gradient(to_bottom,#cbd5e1_1px,transparent_1px)] bg-[size:20px_20px]" />
+                                    {/* Real OpenStreetMap Live Preview centered on address coordinates */}
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        scrolling="no"
+                                        src={`https://www.openstreetmap.org/export/embed.html?bbox=${activeAddress.longitude - 0.012}%2C${activeAddress.latitude - 0.006}%2C${activeAddress.longitude + 0.012}%2C${activeAddress.latitude + 0.006}&layer=mapnik`}
+                                        className="absolute inset-0 w-full h-full border-0 pointer-events-none opacity-80 mix-blend-multiply dark:mix-blend-normal"
+                                    />
+                                    {/* Subtle overlay for text contrast and premium design feel */}
+                                    <div className="absolute inset-0 bg-slate-900/5 dark:bg-black/25 pointer-events-none" />
+
                                     <div className="relative z-10 flex flex-col items-center gap-1 text-center p-3">
                                         <div className="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center shadow-lg animate-bounce">
                                             <MapPin className="w-5 h-5" />
                                         </div>
-                                        <span className="text-xs font-bold text-slate-900 bg-white/90 px-2 py-0.5 rounded shadow-xs backdrop-blur-xs">
+                                        <span className="text-xs font-bold text-slate-900 bg-white/95 px-2.5 py-1 rounded-lg shadow-sm border border-slate-200/80">
                                             {activeAddress.city}, {activeAddress.country}
                                         </span>
                                     </div>

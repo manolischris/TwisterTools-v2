@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Dices, ShieldCheck, Layers, Cpu, HelpCircle, MapPin } from "lucide-react";
+import { Dices, ShieldCheck, Layers, Cpu, HelpCircle, MapPin, Globe2 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -169,6 +169,14 @@ export default function RandomToolsCategoryPage() {
           title: "Random Address & Location Picker",
           description: "Generate realistic mock addresses, real postal code structures, and calibrated latitude and longitude GPS coordinates across international territories.",
           iconName: "MapPin"
+        };
+      }
+      if (tool.id === "random-country-picker") {
+        return {
+          ...tool,
+          title: "Random Country & Flag Quiz",
+          description: "Generate random sovereign countries with flag vectors, capitals, and interactive geography trivia quizzes.",
+          iconName: "Globe2"
         };
       }
       return tool;

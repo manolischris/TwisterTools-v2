@@ -2,6 +2,14 @@ import type { NextConfig } from "next";
 import urlMap from "./url-map.json";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "flagcdn.com",
+      },
+    ],
+  },
   async redirects() {
     // Force config reload for cache clearance
     const redirects = [];

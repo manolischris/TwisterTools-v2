@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
@@ -67,6 +67,7 @@ import LoremIpsumGenerator from "@/components/tools/LoremIpsumGenerator";
 import TimezoneConverter from "@/components/tools/TimezoneConverter";
 import DiceRoller from "@/components/tools/DiceRoller";
 import RandomAddressGenerator from "@/components/tools/RandomAddressGenerator";
+import RandomCountryPicker from "@/components/tools/RandomCountryPicker";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -155,6 +156,7 @@ const COMPLETED_TOOLS = [
   "timezone-converter",
   "dice-roller",
   "random-address-generator",
+  "random-country-picker",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -803,6 +805,8 @@ export default async function ToolPage({
                   <Globe className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (toolSlug === "ip-location" || toolSlug === "random-address-generator") ? (
                   <MapPin className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "random-country-picker" ? (
+                  <Globe2 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "find-dns-record" ? (
                   <Database className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "http-headers" ? (
@@ -991,6 +995,8 @@ export default async function ToolPage({
             <DiceRoller />
           ) : category === "random-tools" && toolSlug === "random-address-generator" ? (
             <RandomAddressGenerator />
+          ) : category === "random-tools" && toolSlug === "random-country-picker" ? (
+            <RandomCountryPicker />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

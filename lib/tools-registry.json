@@ -1560,5 +1560,14 @@
     "href": "/tools/random-tools/random-address-generator",
     "iconName": "MapPin",
     "isFeatured": false
+  },
+  {
+    "id": "random-country-picker",
+    "title": "Random Country & Flag Quiz Generator",
+    "description": "Generate random sovereign nations, display official flags and country factsheets, or challenge yourself in interactive flag and capital quiz modes.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-country-picker",
+    "iconName": "Globe2",
+    "isFeatured": false
   }
 ]
