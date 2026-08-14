@@ -66,6 +66,7 @@ import ScientificCalculator from "@/components/tools/ScientificCalculator";
 import LoremIpsumGenerator from "@/components/tools/LoremIpsumGenerator";
 import TimezoneConverter from "@/components/tools/TimezoneConverter";
 import DiceRoller from "@/components/tools/DiceRoller";
+import RandomAddressGenerator from "@/components/tools/RandomAddressGenerator";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -153,6 +154,7 @@ const COMPLETED_TOOLS = [
   "scientific-calculator",
   "timezone-converter",
   "dice-roller",
+  "random-address-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -799,7 +801,7 @@ export default async function ToolPage({
                   <Clock className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "domain-to-ip" ? (
                   <Globe className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "ip-location" ? (
+                ) : (toolSlug === "ip-location" || toolSlug === "random-address-generator") ? (
                   <MapPin className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "find-dns-record" ? (
                   <Database className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -987,6 +989,8 @@ export default async function ToolPage({
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
             <DiceRoller />
+          ) : category === "random-tools" && toolSlug === "random-address-generator" ? (
+            <RandomAddressGenerator />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

@@ -5,6 +5,8 @@ import { Minimize2, Copy, Check } from "lucide-react";
 import HtmlCssMinifier from "../../../../components/tools/HtmlCssMinifier";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/developer-tools/html-css-minifier-unminifier";
 
@@ -171,6 +173,8 @@ export default function HtmlCssMinifierPage() {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="html-css-minifier-unminifier" currentCategory="developer-tools" />
         </div>
       </div>
     </div>

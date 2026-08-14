@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { Calculator } from "lucide-react";
 import ProbabilityCalculator from "@/components/tools/ProbabilityCalculator";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "Probability Calculator & Event Odds Suite",
   description:
@@ -162,6 +164,8 @@ const ProbabilityCalculatorPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="probability-calculator" currentCategory="calculators" />
         </div>
       </div>
     </div>

@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { Scaling } from "lucide-react";
 import ImageResizer from "@/components/tools/ImageResizer";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "Image Resizer & Pixel Dimensions Scaler",
   description:
@@ -166,6 +168,8 @@ const ImageResizerPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="image-resizer" currentCategory="image-tools" />
         </div>
       </div>
     </div>

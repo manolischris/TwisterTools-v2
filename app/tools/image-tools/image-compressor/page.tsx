@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { Minimize2 } from "lucide-react";
 import ImageCompressor from "@/components/tools/ImageCompressor";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "Image Compressor & Quality Optimizer",
   description:
@@ -166,6 +168,8 @@ const ImageCompressorPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="image-compressor" currentCategory="image-tools" />
         </div>
       </div>
     </div>

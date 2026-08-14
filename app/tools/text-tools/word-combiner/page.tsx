@@ -5,6 +5,8 @@ import { Layers } from "lucide-react";
 import WordCombiner from "../../../../components/tools/WordCombiner";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/text-tools/word-combiner";
 
@@ -171,6 +173,8 @@ export default function WordCombinerPage() {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="word-combiner" currentCategory="text-tools" />
         </div>
       </div>
     </div>

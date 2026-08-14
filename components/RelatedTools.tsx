@@ -76,7 +76,8 @@ import {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -159,7 +160,8 @@ const ICON_MAP: Record<string, any> = {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 };
 
 interface RelatedToolsProps {

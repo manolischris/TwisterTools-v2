@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { Scale } from "lucide-react";
 import MasterUnitConverter from "@/components/tools/MasterUnitConverter";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "Universal Unit Converter Suite",
   description:
@@ -174,6 +176,8 @@ const MasterUnitConverterPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="master-unit-converter" currentCategory="calculators" />
         </div>
       </div>
     </div>

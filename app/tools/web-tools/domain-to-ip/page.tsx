@@ -5,6 +5,8 @@ import { Globe } from "lucide-react";
 import DomainToIpConverter from "../../../../components/tools/DomainToIpConverter";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/web-tools/domain-to-ip";
 
@@ -171,6 +173,8 @@ export default function DomainToIpPage() {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="domain-to-ip" currentCategory="web-tools" />
         </div>
       </div>
     </div>

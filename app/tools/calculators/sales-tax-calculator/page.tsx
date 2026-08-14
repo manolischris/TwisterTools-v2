@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { Calculator } from "lucide-react";
 import SalesTaxCalculator from "../../../../components/tools/SalesTaxCalculator";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "Sales Tax Calculator & Gross/Net Expense Suite",
   description:
@@ -169,6 +171,8 @@ const SalesTaxCalculatorPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="sales-tax-calculator" currentCategory="calculators" />
         </div>
       </div>
     </div>

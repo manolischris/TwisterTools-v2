@@ -9,6 +9,8 @@ const TOOL_SLUG = "gpa-calculator";
 const TOOL_DESCRIPTION =
   "Calculate semester & cumulative GPA across 4.0, 4.3, and 5.0 weighted scales.";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata(): Promise<Metadata> {
   const canonicalUrl = `https://www.twistertools.com/tools/calculators/${TOOL_SLUG}`;
   const imageBasePath = path.join(
@@ -112,8 +114,10 @@ export default function GpaCalculatorPage() {
       </div>
 
       <main className="mx-auto max-w-7xl px-4 py-4 sm:px-6 md:px-8 md:py-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-6xl space-y-8">
           <GpaCalculator />
+        {/* Related Tools */}
+        <RelatedTools currentSlug="gpa-calculator" currentCategory="calculators" />
         </div>
       </main>
     </div>

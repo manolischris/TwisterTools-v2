@@ -97,7 +97,8 @@ import {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -197,7 +198,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 };
 
 const CATEGORIES = [

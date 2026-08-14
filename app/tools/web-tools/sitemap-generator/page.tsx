@@ -5,6 +5,8 @@ import { Globe } from "lucide-react";
 import SitemapGenerator from "../../../../components/tools/SitemapGenerator";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/web-tools/sitemap-generator";
 
@@ -171,6 +173,8 @@ export default function SitemapGeneratorPage() {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="sitemap-generator" currentCategory="web-tools" />
         </div>
       </div>
     </div>

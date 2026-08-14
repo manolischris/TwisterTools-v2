@@ -11,6 +11,8 @@ const TOOL_DESCRIPTION =
 const TOOL_META_DESCRIPTION =
   "Calculate the exact score required on your final exam to achieve your target class grade. Supports simple current grade mode and weighted course categories.";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata(): Promise<Metadata> {
   const canonicalUrl = `https://www.twistertools.com/tools/calculators/${TOOL_SLUG}`;
   const imageBasePath = path.join(
@@ -111,8 +113,10 @@ export default function FinalGradeCalculatorPage() {
       </div>
 
       <main className="mx-auto max-w-7xl px-4 py-4 sm:px-6 md:px-8 md:py-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-6xl space-y-8">
           <FinalGradeCalculator />
+        {/* Related Tools */}
+        <RelatedTools currentSlug="final-grade-calculator" currentCategory="calculators" />
         </div>
       </main>
     </div>

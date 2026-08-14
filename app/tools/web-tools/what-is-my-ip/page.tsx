@@ -5,6 +5,8 @@ import { Globe } from "lucide-react";
 import WhatIsMyIp from "../../../../components/tools/WhatIsMyIp";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/web-tools/what-is-my-ip";
 
@@ -171,6 +173,8 @@ export default function WhatIsMyIpPage() {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="what-is-my-ip" currentCategory="web-tools" />
         </div>
       </div>
     </div>

@@ -3,6 +3,8 @@ import { Binary, Copy, Check, QrCode } from "lucide-react";
 import BinaryConverter from "../../../../components/tools/BinaryConverter";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/converter-tools/binary-converter";
   const ogImageUrl = "https://www.twistertools.com/images/og-default.jpg";
@@ -166,6 +168,8 @@ export default function BinaryConverterPage() {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="binary-converter" currentCategory="converter-tools" />
         </div>
       </div>
     </div>

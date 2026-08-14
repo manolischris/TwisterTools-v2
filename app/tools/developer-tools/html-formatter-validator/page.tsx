@@ -3,6 +3,8 @@ import { FileCode, Copy, Check } from "lucide-react";
 import HtmlFormatter from "../../../../components/tools/HtmlFormatter";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export async function generateMetadata() {
   const pageUrl = "https://www.twistertools.com/tools/developer-tools/html-formatter-validator";
   const ogImageUrl = "https://www.twistertools.com/images/og-default.jpg";
@@ -166,6 +168,8 @@ export default function HtmlFormatterPage() {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="html-formatter-validator" currentCategory="developer-tools" />
         </div>
       </div>
     </div>

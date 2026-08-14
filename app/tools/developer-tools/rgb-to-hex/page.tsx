@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { Palette } from "lucide-react";
 import RgbToHex from "../../../../components/tools/RgbToHex";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "RGB to Hex & Hex to RGB Color Converter",
   description:
@@ -170,6 +172,8 @@ const RgbToHexPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="rgb-to-hex" currentCategory="developer-tools" />
         </div>
       </div>
     </div>

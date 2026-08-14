@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { Percent } from "lucide-react";
 import DiscountCalculator from "@/components/tools/DiscountCalculator";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "Discount Calculator & Savings Percentage Suite",
   description:
@@ -167,6 +169,8 @@ const DiscountCalculatorPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="discount-calculator" currentCategory="calculators" />
         </div>
       </div>
     </div>

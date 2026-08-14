@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { CreditCard } from "lucide-react";
 import CreditCardGenerator from "../../../../components/tools/CreditCardGenerator";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "Test Credit Card & Mock Identity Generator",
   description:
@@ -170,6 +172,8 @@ const CreditCardGeneratorPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="credit-card-generator" currentCategory="generator-tools" />
         </div>
       </div>
     </div>

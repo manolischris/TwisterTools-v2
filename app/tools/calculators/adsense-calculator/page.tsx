@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { DollarSign } from "lucide-react";
 import AdSenseCalculator from "@/components/tools/AdSenseCalculator";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "AdSense Revenue & CTR/RPM Earnings Calculator",
   description:
@@ -164,6 +166,8 @@ const AdSenseCalculatorPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="adsense-calculator" currentCategory="calculators" />
         </div>
       </div>
     </div>

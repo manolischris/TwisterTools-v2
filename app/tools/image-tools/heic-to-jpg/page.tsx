@@ -2,6 +2,8 @@ import type { Metadata, NextPage } from "next";
 import { FileImage } from "lucide-react";
 import HeicToJpgConverter from "@/components/tools/HeicToJpgConverter";
 
+import RelatedTools from "@/components/RelatedTools";
+
 export const metadata: Metadata = {
   title: "HEIC / AVIF Image Converter | Free Online Browser Tool",
   description:
@@ -166,6 +168,8 @@ const HeicToJpgPage: NextPage = () => {
               </div>
             </div>
           </div>
+        {/* Related Tools */}
+        <RelatedTools currentSlug="heic-to-jpg" currentCategory="image-tools" />
         </div>
       </div>
     </div>

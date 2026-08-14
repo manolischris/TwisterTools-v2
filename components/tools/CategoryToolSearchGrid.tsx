@@ -87,7 +87,8 @@ import {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -191,7 +192,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 };
 
 export default function CategoryToolSearchGrid({

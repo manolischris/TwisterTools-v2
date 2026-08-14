@@ -94,7 +94,8 @@ import {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -199,7 +200,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Sunrise,
   Moon,
   Dices,
-  Users
+  Users,
+  Shuffle
 };
 
 /* ─────────────────────────────────────────────────────────

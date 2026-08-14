@@ -132,6 +132,8 @@ Interactive, client-side tools for quick decision making, chance games, and list
 - Random Number Generator & Range Picker (/tools/random-tools/random-number-generator)
 - Random Name Picker & Winner Selector (/tools/random-tools/random-name-picker)
 - Spin the Wheel & Choice Picker (/tools/random-tools/spin-the-wheel): Interactive random choice wheel.
+- [Random Color & Palette Generator](https://twistertools.com/tools/random-tools/random-color-generator): Generate harmonious palettes, random HEX/RGB/HSL swatches, and WCAG accessibility contrast ratios.
+- /tools/random-tools/random-address-generator: Synthetic address and GPS location generator with bounding box geocoding, multi-country postal formatting, and JSON/CSV bulk export.
 
 ## Other Resources
 

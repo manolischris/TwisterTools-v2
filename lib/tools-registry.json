@@ -1514,7 +1514,7 @@
     "category": "random-tools",
     "href": "/tools/random-tools/random-name-picker",
     "iconName": "Dices",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "spin-the-wheel",
@@ -1532,6 +1532,33 @@
     "category": "random-tools",
     "href": "/tools/random-tools/random-team-generator",
     "iconName": "Users",
+    "isFeatured": false
+  },
+  {
+    "id": "random-card-drawer",
+    "title": "Playing Card Shuffler & Hand Generator",
+    "description": "Simulate fair, cryptographically secure 52-card deck shuffles and draw hands with real-time poker evaluation and statistical analytics.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-card-drawer",
+    "iconName": "Shuffle",
+    "isFeatured": false
+  },
+  {
+    "id": "random-color-generator",
+    "title": "Random Color & Palette Generator",
+    "description": "Generate harmonious color schemes, random HEX/RGB/HSL palettes, and evaluate WCAG contrast ratios with hardware cryptographic entropy.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-color-generator",
+    "iconName": "Palette",
+    "isFeatured": false
+  },
+  {
+    "id": "random-address-generator",
+    "title": "Random Address & Location Picker",
+    "description": "Generate authentic mock addresses, postal regions, and bounded GPS coordinates across international territories for QA and testing.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-address-generator",
+    "iconName": "MapPin",
     "isFeatured": false
   }
 ]

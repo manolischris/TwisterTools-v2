@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Dices, ShieldCheck, Layers, Cpu, HelpCircle } from "lucide-react";
+import { Dices, ShieldCheck, Layers, Cpu, HelpCircle, MapPin } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -161,6 +161,14 @@ export default function RandomToolsCategoryPage() {
           title: "Random Team & Group Generator",
           description: "Split rosters into fair, randomized teams or groups instantly with optional skill balancing and Web Crypto RNG.",
           iconName: "Users"
+        };
+      }
+      if (tool.id === "random-address-generator") {
+        return {
+          ...tool,
+          title: "Random Address & Location Picker",
+          description: "Generate realistic mock addresses, real postal code structures, and calibrated latitude and longitude GPS coordinates across international territories.",
+          iconName: "MapPin"
         };
       }
       return tool;
