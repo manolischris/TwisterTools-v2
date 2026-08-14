@@ -1487,7 +1487,7 @@
     "category": "random-tools",
     "href": "/tools/random-tools/coin-flipper",
     "iconName": "Dices",
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "id": "dice-roller",
@@ -1568,6 +1568,6 @@
     "category": "random-tools",
     "href": "/tools/random-tools/random-country-picker",
     "iconName": "Globe2",
-    "isFeatured": false
+    "isFeatured": true
   }
 ]

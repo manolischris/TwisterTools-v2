@@ -46,55 +46,202 @@ interface CountryData {
 
 // Curated 70+ sovereign nation dataset covering all continents
 const COUNTRIES: CountryData[] = [
+    { code: "af", name: "Afghanistan", capital: "Kabul", continent: "Asia", population: 41100000, areaSqKm: 652864, currency: "Afghan Afghani (AFN)", languages: ["Pashto", "Dari"] },
+    { code: "al", name: "Albania", capital: "Tirana", continent: "Europe", population: 2800000, areaSqKm: 28748, currency: "Albanian Lek (ALL)", languages: ["Albanian"] },
+    { code: "dz", name: "Algeria", capital: "Algiers", continent: "Africa", population: 44900000, areaSqKm: 2381741, currency: "Algerian Dinar (DZD)", languages: ["Arabic", "Berber"] },
+    { code: "ad", name: "Andorra", capital: "Andorra la Vella", continent: "Europe", population: 80000, areaSqKm: 468, currency: "Euro (EUR)", languages: ["Catalan"] },
+    { code: "ao", name: "Angola", capital: "Luanda", continent: "Africa", population: 35600000, areaSqKm: 1246700, currency: "Angolan Kwanza (AOA)", languages: ["Portuguese"] },
+    { code: "ag", name: "Antigua and Barbuda", capital: "Saint John's", continent: "Americas", population: 94000, areaSqKm: 442, currency: "East Caribbean Dollar (XCD)", languages: ["English"] },
     { code: "ar", name: "Argentina", capital: "Buenos Aires", continent: "Americas", population: 45800000, areaSqKm: 2780400, currency: "Argentine Peso (ARS)", languages: ["Spanish"] },
+    { code: "am", name: "Armenia", capital: "Yerevan", continent: "Asia", population: 2800000, areaSqKm: 29743, currency: "Armenian Dram (AMD)", languages: ["Armenian"] },
     { code: "au", name: "Australia", capital: "Canberra", continent: "Oceania", population: 26000000, areaSqKm: 7692024, currency: "Australian Dollar (AUD)", languages: ["English"] },
     { code: "at", name: "Austria", capital: "Vienna", continent: "Europe", population: 9100000, areaSqKm: 83879, currency: "Euro (EUR)", languages: ["German"] },
+    { code: "az", name: "Azerbaijan", capital: "Baku", continent: "Asia", population: 10100000, areaSqKm: 86600, currency: "Azerbaijani Manat (AZN)", languages: ["Azerbaijani"] },
+    { code: "bs", name: "Bahamas", capital: "Nassau", continent: "Americas", population: 410000, areaSqKm: 13878, currency: "Bahamian Dollar (BSD)", languages: ["English"] },
+    { code: "bh", name: "Bahrain", capital: "Manama", continent: "Asia", population: 1500000, areaSqKm: 785, currency: "Bahraini Dinar (BHD)", languages: ["Arabic"] },
+    { code: "bd", name: "Bangladesh", capital: "Dhaka", continent: "Asia", population: 171000000, areaSqKm: 148460, currency: "Bangladeshi Taka (BDT)", languages: ["Bengali"] },
+    { code: "bb", name: "Barbados", capital: "Bridgetown", continent: "Americas", population: 282000, areaSqKm: 430, currency: "Barbados Dollar (BBD)", languages: ["English"] },
+    { code: "by", name: "Belarus", capital: "Minsk", continent: "Europe", population: 9200000, areaSqKm: 207600, currency: "Belarusian Ruble (BYN)", languages: ["Belarusian", "Russian"] },
     { code: "be", name: "Belgium", capital: "Brussels", continent: "Europe", population: 11700000, areaSqKm: 30528, currency: "Euro (EUR)", languages: ["Dutch", "French", "German"] },
+    { code: "bz", name: "Belize", capital: "Belmopan", continent: "Americas", population: 405000, areaSqKm: 22966, currency: "Belize Dollar (BZD)", languages: ["English", "Spanish"] },
+    { code: "bj", name: "Benin", capital: "Porto-Novo", continent: "Africa", population: 13400000, areaSqKm: 114763, currency: "West African CFA franc (XOF)", languages: ["French"] },
+    { code: "bt", name: "Bhutan", capital: "Thimphu", continent: "Asia", population: 782000, areaSqKm: 38394, currency: "Bhutanese Ngultrum (BTN)", languages: ["Dzongkha"] },
+    { code: "bo", name: "Bolivia", capital: "Sucre", continent: "Americas", population: 12200000, areaSqKm: 1098581, currency: "Bolivian Boliviano (BOB)", languages: ["Spanish", "Quechua", "Aymara"] },
+    { code: "ba", name: "Bosnia and Herzegovina", capital: "Sarajevo", continent: "Europe", population: 3200000, areaSqKm: 51197, currency: "Convertible Mark (BAM)", languages: ["Bosnian", "Croatian", "Serbian"] },
+    { code: "bw", name: "Botswana", capital: "Gaborone", continent: "Africa", population: 2630000, areaSqKm: 581730, currency: "Botswana Pula (BWP)", languages: ["English", "Tswana"] },
     { code: "br", name: "Brazil", capital: "Brasília", continent: "Americas", population: 215000000, areaSqKm: 8515767, currency: "Brazilian Real (BRL)", languages: ["Portuguese"] },
+    { code: "bn", name: "Brunei", capital: "Bandar Seri Begawan", continent: "Asia", population: 450000, areaSqKm: 5765, currency: "Brunei Dollar (BND)", languages: ["Malay", "English"] },
+    { code: "bg", name: "Bulgaria", capital: "Sofia", continent: "Europe", population: 6400000, areaSqKm: 110994, currency: "Bulgarian Lev (BGN)", languages: ["Bulgarian"] },
+    { code: "bf", name: "Burkina Faso", capital: "Ouagadougou", continent: "Africa", population: 22700000, areaSqKm: 274200, currency: "West African CFA franc (XOF)", languages: ["French"] },
+    { code: "bi", name: "Burundi", capital: "Gitega", continent: "Africa", population: 13000000, areaSqKm: 27834, currency: "Burundian Franc (BIF)", languages: ["Kirundi", "French", "English"] },
+    { code: "cv", name: "Cabo Verde", capital: "Praia", continent: "Africa", population: 590000, areaSqKm: 4033, currency: "Cape Verdean Escudo (CVE)", languages: ["Portuguese"] },
+    { code: "kh", name: "Cambodia", capital: "Phnom Penh", continent: "Asia", population: 16800000, areaSqKm: 181035, currency: "Cambodian Riel (KHR)", languages: ["Khmer"] },
+    { code: "cm", name: "Cameroon", capital: "Yaoundé", continent: "Africa", population: 28000000, areaSqKm: 475442, currency: "Central African CFA franc (XAF)", languages: ["French", "English"] },
     { code: "ca", name: "Canada", capital: "Ottawa", continent: "Americas", population: 40000000, areaSqKm: 9984670, currency: "Canadian Dollar (CAD)", languages: ["English", "French"] },
+    { code: "cf", name: "Central African Republic", capital: "Bangui", continent: "Africa", population: 5600000, areaSqKm: 622984, currency: "Central African CFA franc (XAF)", languages: ["Sango", "French"] },
+    { code: "td", name: "Chad", capital: "N'Djamena", continent: "Africa", population: 17700000, areaSqKm: 1284000, currency: "Central African CFA franc (XAF)", languages: ["French", "Arabic"] },
     { code: "cl", name: "Chile", capital: "Santiago", continent: "Americas", population: 19600000, areaSqKm: 756102, currency: "Chilean Peso (CLP)", languages: ["Spanish"] },
     { code: "cn", name: "China", capital: "Beijing", continent: "Asia", population: 1410000000, areaSqKm: 9596961, currency: "Chinese Yuan (CNY)", languages: ["Mandarin"] },
     { code: "co", name: "Colombia", capital: "Bogotá", continent: "Americas", population: 52000000, areaSqKm: 1141748, currency: "Colombian Peso (COP)", languages: ["Spanish"] },
+    { code: "km", name: "Comoros", capital: "Moroni", continent: "Africa", population: 836000, areaSqKm: 2235, currency: "Comorian Franc (KMF)", languages: ["Comorian", "Arabic", "French"] },
+    { code: "cg", name: "Congo (Brazzaville)", capital: "Brazzaville", continent: "Africa", population: 6000000, areaSqKm: 342000, currency: "Central African CFA franc (XAF)", languages: ["French", "Lingala"] },
+    { code: "cd", name: "Congo (Kinshasa)", capital: "Kinshasa", continent: "Africa", population: 99000000, areaSqKm: 2344858, currency: "Congolese Franc (CDF)", languages: ["French", "Lingala", "Swahili"] },
+    { code: "cr", name: "Costa Rica", capital: "San José", continent: "Americas", population: 5180000, areaSqKm: 51100, currency: "Costa Rican Colón (CRC)", languages: ["Spanish"] },
     { code: "hr", name: "Croatia", capital: "Zagreb", continent: "Europe", population: 3850000, areaSqKm: 56594, currency: "Euro (EUR)", languages: ["Croatian"] },
     { code: "cu", name: "Cuba", capital: "Havana", continent: "Americas", population: 11200000, areaSqKm: 109884, currency: "Cuban Peso (CUP)", languages: ["Spanish"] },
+    { code: "cy", name: "Cyprus", capital: "Nicosia", continent: "Asia", population: 1250000, areaSqKm: 9251, currency: "Euro (EUR)", languages: ["Greek", "Turkish"] },
     { code: "cz", name: "Czech Republic", capital: "Prague", continent: "Europe", population: 10900000, areaSqKm: 78867, currency: "Czech Koruna (CZK)", languages: ["Czech"] },
     { code: "dk", name: "Denmark", capital: "Copenhagen", continent: "Europe", population: 5930000, areaSqKm: 42933, currency: "Danish Krone (DKK)", languages: ["Danish"] },
+    { code: "dj", name: "Djibouti", capital: "Djibouti", continent: "Africa", population: 1100000, areaSqKm: 23200, currency: "Djiboutian Franc (DJF)", languages: ["Arabic", "French"] },
+    { code: "dm", name: "Dominica", capital: "Roseau", continent: "Americas", population: 72000, areaSqKm: 751, currency: "East Caribbean Dollar (XCD)", languages: ["English"] },
+    { code: "do", name: "Dominican Republic", capital: "Santo Domingo", continent: "Americas", population: 11200000, areaSqKm: 48671, currency: "Dominican Peso (DOP)", languages: ["Spanish"] },
+    { code: "ec", name: "Ecuador", capital: "Quito", continent: "Americas", population: 18000000, areaSqKm: 283561, currency: "United States Dollar (USD)", languages: ["Spanish", "Kichwa"] },
     { code: "eg", name: "Egypt", capital: "Cairo", continent: "Africa", population: 112000000, areaSqKm: 1002450, currency: "Egyptian Pound (EGP)", languages: ["Arabic"] },
+    { code: "sv", name: "El Salvador", capital: "San Salvador", continent: "Americas", population: 6300000, areaSqKm: 21041, currency: "United States Dollar (USD)", languages: ["Spanish"] },
+    { code: "gq", name: "Equatorial Guinea", capital: "Malabo", continent: "Africa", population: 1600000, areaSqKm: 28051, currency: "Central African CFA franc (XAF)", languages: ["Spanish", "French", "Portuguese"] },
+    { code: "er", name: "Eritrea", capital: "Asmara", continent: "Africa", population: 3600000, areaSqKm: 117600, currency: "Eritrean Nakfa (ERN)", languages: ["Tigrinya", "Arabic", "English"] },
+    { code: "ee", name: "Estonia", capital: "Tallinn", continent: "Europe", population: 1300000, areaSqKm: 45227, currency: "Euro (EUR)", languages: ["Estonian"] },
+    { code: "sz", name: "Eswatini", capital: "Mbabane", continent: "Africa", population: 1200000, areaSqKm: 17364, currency: "Swazi Lilangeni (SZL)", languages: ["Swazi", "English"] },
+    { code: "et", name: "Ethiopia", capital: "Addis Ababa", continent: "Africa", population: 123000000, areaSqKm: 1104300, currency: "Ethiopian Birr (ETB)", languages: ["Amharic"] },
+    { code: "fj", name: "Fiji", capital: "Suva", continent: "Oceania", population: 926000, areaSqKm: 18274, currency: "Fijian Dollar (FJD)", languages: ["English", "Fijian", "Hindustani"] },
     { code: "fi", name: "Finland", capital: "Helsinki", continent: "Europe", population: 5560000, areaSqKm: 338424, currency: "Euro (EUR)", languages: ["Finnish", "Swedish"] },
     { code: "fr", name: "France", capital: "Paris", continent: "Europe", population: 68000000, areaSqKm: 551695, currency: "Euro (EUR)", languages: ["French"] },
+    { code: "ga", name: "Gabon", capital: "Libreville", continent: "Africa", population: 2400000, areaSqKm: 267667, currency: "Central African CFA franc (XAF)", languages: ["French"] },
+    { code: "gm", name: "Gambia", capital: "Banjul", continent: "Africa", population: 2700000, areaSqKm: 10689, currency: "Gambian Dalasi (GMD)", languages: ["English"] },
+    { code: "ge", name: "Georgia", capital: "Tbilisi", continent: "Asia", population: 3700000, areaSqKm: 69700, currency: "Georgian Lari (GEL)", languages: ["Georgian"] },
     { code: "de", name: "Germany", capital: "Berlin", continent: "Europe", population: 84400000, areaSqKm: 357022, currency: "Euro (EUR)", languages: ["German"] },
     { code: "gh", name: "Ghana", capital: "Accra", continent: "Africa", population: 34000000, areaSqKm: 238533, currency: "Ghanaian Cedi (GHS)", languages: ["English"] },
     { code: "gr", name: "Greece", capital: "Athens", continent: "Europe", population: 10400000, areaSqKm: 131957, currency: "Euro (EUR)", languages: ["Greek"] },
+    { code: "gd", name: "Grenada", capital: "Saint George's", continent: "Americas", population: 125000, areaSqKm: 344, currency: "East Caribbean Dollar (XCD)", languages: ["English"] },
+    { code: "gt", name: "Guatemala", capital: "Guatemala City", continent: "Americas", population: 18000000, areaSqKm: 108889, currency: "Guatemalan Quetzal (GTQ)", languages: ["Spanish"] },
+    { code: "gn", name: "Guinea", capital: "Conakry", continent: "Africa", population: 13900000, areaSqKm: 245857, currency: "Guinean Franc (GNF)", languages: ["French"] },
+    { code: "gw", name: "Guinea-Bissau", capital: "Bissau", continent: "Africa", population: 2100000, areaSqKm: 36125, currency: "West African CFA franc (XOF)", languages: ["Portuguese"] },
+    { code: "gy", name: "Guyana", capital: "Georgetown", continent: "Americas", population: 800000, areaSqKm: 214969, currency: "Guyanese Dollar (GYD)", languages: ["English"] },
+    { code: "ht", name: "Haiti", capital: "Port-au-Prince", continent: "Americas", population: 11500000, areaSqKm: 27750, currency: "Haitian Gourde (HTG)", languages: ["French", "Haitian Creole"] },
+    { code: "hn", name: "Honduras", capital: "Tegucigalpa", continent: "Americas", population: 10400000, areaSqKm: 112492, currency: "Honduran Lempira (HNL)", languages: ["Spanish"] },
     { code: "hu", name: "Hungary", capital: "Budapest", continent: "Europe", population: 9600000, areaSqKm: 93028, currency: "Hungarian Forint (HUF)", languages: ["Hungarian"] },
     { code: "is", name: "Iceland", capital: "Reykjavik", continent: "Europe", population: 390000, areaSqKm: 103000, currency: "Icelandic Króna (ISK)", languages: ["Icelandic"] },
     { code: "in", name: "India", capital: "New Delhi", continent: "Asia", population: 1428000000, areaSqKm: 3287263, currency: "Indian Rupee (INR)", languages: ["Hindi", "English"] },
     { code: "id", name: "Indonesia", capital: "Jakarta", continent: "Asia", population: 277000000, areaSqKm: 1904569, currency: "Indonesian Rupiah (IDR)", languages: ["Indonesian"] },
+    { code: "ir", name: "Iran", capital: "Tehran", continent: "Asia", population: 88500000, areaSqKm: 1648195, currency: "Iranian Rial (IRR)", languages: ["Persian"] },
+    { code: "iq", name: "Iraq", capital: "Baghdad", continent: "Asia", population: 44500000, areaSqKm: 438317, currency: "Iraqi Dinar (IQD)", languages: ["Arabic", "Kurdish"] },
     { code: "ie", name: "Ireland", capital: "Dublin", continent: "Europe", population: 5200000, areaSqKm: 70273, currency: "Euro (EUR)", languages: ["English", "Irish"] },
+    { code: "il", name: "Israel", capital: "Jerusalem", continent: "Asia", population: 9700000, areaSqKm: 22072, currency: "Israeli New Shekel (ILS)", languages: ["Hebrew", "Arabic"] },
     { code: "it", name: "Italy", capital: "Rome", continent: "Europe", population: 58900000, areaSqKm: 301340, currency: "Euro (EUR)", languages: ["Italian"] },
+    { code: "ci", name: "Ivory Coast", capital: "Yamoussoukro", continent: "Africa", population: 28000000, areaSqKm: 322463, currency: "West African CFA franc (XOF)", languages: ["French"] },
+    { code: "jm", name: "Jamaica", capital: "Kingston", continent: "Americas", population: 2800000, areaSqKm: 10991, currency: "Jamaican Dollar (JMD)", languages: ["English"] },
     { code: "jp", name: "Japan", capital: "Tokyo", continent: "Asia", population: 124500000, areaSqKm: 377975, currency: "Japanese Yen (JPY)", languages: ["Japanese"] },
+    { code: "jo", name: "Jordan", capital: "Amman", continent: "Asia", population: 11300000, areaSqKm: 89342, currency: "Jordanian Dinar (JOD)", languages: ["Arabic"] },
+    { code: "kz", name: "Kazakhstan", capital: "Astana", continent: "Asia", population: 19800000, areaSqKm: 2724900, currency: "Kazakhstani Tenge (KZT)", languages: ["Kazakh", "Russian"] },
     { code: "ke", name: "Kenya", capital: "Nairobi", continent: "Africa", population: 55000000, areaSqKm: 580367, currency: "Kenyan Shilling (KES)", languages: ["Swahili", "English"] },
+    { code: "ki", name: "Kiribati", capital: "Tarawa", continent: "Oceania", population: 131000, areaSqKm: 811, currency: "Australian Dollar (AUD)", languages: ["English", "Gilbertese"] },
+    { code: "kp", name: "North Korea", capital: "Pyongyang", continent: "Asia", population: 26000000, areaSqKm: 120538, currency: "North Korean Won (KPW)", languages: ["Korean"] },
+    { code: "kr", name: "South Korea", capital: "Seoul", continent: "Asia", population: 51700000, areaSqKm: 100210, currency: "South Korean Won (KRW)", languages: ["Korean"] },
+    { code: "kw", name: "Kuwait", capital: "Kuwait City", continent: "Asia", population: 4300000, areaSqKm: 17818, currency: "Kuwaiti Dinar (KWD)", languages: ["Arabic"] },
+    { code: "kg", name: "Kyrgyzstan", capital: "Bishkek", continent: "Asia", population: 7000000, areaSqKm: 199951, currency: "Kyrgyzstani Som (KGS)", languages: ["Kyrgyz", "Russian"] },
+    { code: "la", name: "Laos", capital: "Vientiane", continent: "Asia", population: 7500000, areaSqKm: 236800, currency: "Lao Kip (LAK)", languages: ["Lao"] },
+    { code: "lv", name: "Latvia", capital: "Riga", continent: "Europe", population: 1880000, areaSqKm: 64589, currency: "Euro (EUR)", languages: ["Latvian"] },
+    { code: "lb", name: "Lebanon", capital: "Beirut", continent: "Asia", population: 5500000, areaSqKm: 10452, currency: "Lebanese Pound (LBP)", languages: ["Arabic"] },
+    { code: "ls", name: "Lesotho", capital: "Maseru", continent: "Africa", population: 2300000, areaSqKm: 30355, currency: "Lesotho Loti (LSL)", languages: ["Sesotho", "English"] },
+    { code: "lr", name: "Liberia", capital: "Monrovia", continent: "Africa", population: 5300000, areaSqKm: 111369, currency: "Liberian Dollar (LRD)", languages: ["English"] },
+    { code: "ly", name: "Libya", capital: "Tripoli", continent: "Africa", population: 6800000, areaSqKm: 1759540, currency: "Libyan Dinar (LYD)", languages: ["Arabic"] },
+    { code: "li", name: "Liechtenstein", capital: "Vaduz", continent: "Europe", population: 39000, areaSqKm: 160, currency: "Swiss Franc (CHF)", languages: ["German"] },
+    { code: "lt", name: "Lithuania", capital: "Vilnius", continent: "Europe", population: 2800000, areaSqKm: 65300, currency: "Euro (EUR)", languages: ["Lithuanian"] },
+    { code: "lu", name: "Luxembourg", capital: "Luxembourg City", continent: "Europe", population: 660000, areaSqKm: 2586, currency: "Euro (EUR)", languages: ["Luxembourgish", "French", "German"] },
+    { code: "mg", name: "Madagascar", capital: "Antananarivo", continent: "Africa", population: 29600000, areaSqKm: 587041, currency: "Malagasy Ariary (MGA)", languages: ["Malagasy", "French"] },
+    { code: "mw", name: "Malawi", capital: "Lilongwe", continent: "Africa", population: 20400000, areaSqKm: 118484, currency: "Malawian Kwacha (MWK)", languages: ["English", "Chewa"] },
+    { code: "my", name: "Malaysia", capital: "Kuala Lumpur", continent: "Asia", population: 33900000, areaSqKm: 329847, currency: "Malaysian Ringgit (MYR)", languages: ["Malay"] },
+    { code: "mv", name: "Maldives", capital: "Malé", continent: "Asia", population: 520000, areaSqKm: 298, currency: "Maldivian Rufiyaa (MVR)", languages: ["Dhivehi"] },
+    { code: "ml", name: "Mali", capital: "Bamako", continent: "Africa", population: 22600000, areaSqKm: 1240192, currency: "West African CFA franc (XOF)", languages: ["Bambara"] },
+    { code: "mt", name: "Malta", capital: "Valletta", continent: "Europe", population: 530000, areaSqKm: 316, currency: "Euro (EUR)", languages: ["Maltese", "English"] },
+    { code: "mh", name: "Marshall Islands", capital: "Majuro", continent: "Oceania", population: 42000, areaSqKm: 181, currency: "United States Dollar (USD)", languages: ["Marshallese", "English"] },
+    { code: "mr", name: "Mauritania", capital: "Nouakchott", continent: "Africa", population: 4700000, areaSqKm: 1030700, currency: "Mauritanian Ouguiya (MRU)", languages: ["Arabic"] },
+    { code: "mu", name: "Mauritius", capital: "Port Louis", continent: "Africa", population: 1300000, areaSqKm: 2040, currency: "Mauritian Rupee (MUR)", languages: ["English", "French", "Mauritian Creole"] },
     { code: "mx", name: "Mexico", capital: "Mexico City", continent: "Americas", population: 128000000, areaSqKm: 1964375, currency: "Mexican Peso (MXN)", languages: ["Spanish"] },
+    { code: "fm", name: "Micronesia", capital: "Palikir", continent: "Oceania", population: 114000, areaSqKm: 702, currency: "United States Dollar (USD)", languages: ["English"] },
+    { code: "md", name: "Moldova", capital: "Chisinau", continent: "Europe", population: 2500000, areaSqKm: 33846, currency: "Moldovan Leu (MDL)", languages: ["Romanian"] },
+    { code: "mc", name: "Monaco", capital: "Monaco", continent: "Europe", population: 39000, areaSqKm: 2, currency: "Euro (EUR)", languages: ["French"] },
+    { code: "mn", name: "Mongolia", capital: "Ulaanbaatar", continent: "Asia", population: 3400000, areaSqKm: 1564116, currency: "Mongolian Tögrög (MNT)", languages: ["Mongolian"] },
+    { code: "me", name: "Montenegro", capital: "Podgorica", continent: "Europe", population: 620000, areaSqKm: 13812, currency: "Euro (EUR)", languages: ["Montenegrin"] },
     { code: "ma", name: "Morocco", capital: "Rabat", continent: "Africa", population: 37800000, areaSqKm: 446550, currency: "Moroccan Dirham (MAD)", languages: ["Arabic", "Berber"] },
+    { code: "mz", name: "Mozambique", capital: "Maputo", continent: "Africa", population: 33000000, areaSqKm: 801590, currency: "Mozambican Metical (MZN)", languages: ["Portuguese"] },
+    { code: "mm", name: "Myanmar", capital: "Naypyidaw", continent: "Asia", population: 54000000, areaSqKm: 676578, currency: "Myanmar Kyat (MMK)", languages: ["Burmese"] },
+    { code: "na", name: "Namibia", capital: "Windhoek", continent: "Africa", population: 2600000, areaSqKm: 825615, currency: "Namibian Dollar (NAD)", languages: ["English"] },
+    { code: "nr", name: "Nauru", capital: "Yaren", continent: "Oceania", population: 11000, areaSqKm: 21, currency: "Australian Dollar (AUD)", languages: ["Nauruan", "English"] },
+    { code: "np", name: "Nepal", capital: "Kathmandu", continent: "Asia", population: 30000000, areaSqKm: 147181, currency: "Nepalese Rupee (NPR)", languages: ["Nepali"] },
     { code: "nl", name: "Netherlands", capital: "Amsterdam", continent: "Europe", population: 17900000, areaSqKm: 41850, currency: "Euro (EUR)", languages: ["Dutch"] },
     { code: "nz", name: "New Zealand", capital: "Wellington", continent: "Oceania", population: 5200000, areaSqKm: 268838, currency: "New Zealand Dollar (NZD)", languages: ["English", "Māori"] },
+    { code: "ni", name: "Nicaragua", capital: "Managua", continent: "Americas", population: 6900000, areaSqKm: 130375, currency: "Nicaraguan Córdoba (NIO)", languages: ["Spanish"] },
+    { code: "ne", name: "Niger", capital: "Niamey", continent: "Africa", population: 26000000, areaSqKm: 1267000, currency: "West African CFA franc (XOF)", languages: ["French"] },
     { code: "ng", name: "Nigeria", capital: "Abuja", continent: "Africa", population: 224000000, areaSqKm: 923768, currency: "Nigerian Naira (NGN)", languages: ["English"] },
+    { code: "mk", name: "North Macedonia", capital: "Skopje", continent: "Europe", population: 2000000, areaSqKm: 25713, currency: "Macedonian Denar (MKD)", languages: ["Macedonian"] },
     { code: "no", name: "Norway", capital: "Oslo", continent: "Europe", population: 5500000, areaSqKm: 385207, currency: "Norwegian Krone (NOK)", languages: ["Norwegian"] },
+    { code: "om", name: "Oman", capital: "Muscat", continent: "Asia", population: 4600000, areaSqKm: 309500, currency: "Omani Rial (OMR)", languages: ["Arabic"] },
+    { code: "pk", name: "Pakistan", capital: "Islamabad", continent: "Asia", population: 240000000, areaSqKm: 796095, currency: "Pakistani Rupee (PKR)", languages: ["Urdu", "English"] },
+    { code: "pw", name: "Palau", capital: "Ngerulmud", continent: "Oceania", population: 18000, areaSqKm: 459, currency: "United States Dollar (USD)", languages: ["Palauan", "English"] },
+    { code: "ps", name: "Palestine", capital: "Ramallah", continent: "Asia", population: 5200000, areaSqKm: 6020, currency: "Israeli New Shekel (ILS)", languages: ["Arabic"] },
+    { code: "pa", name: "Panama", capital: "Panama City", continent: "Americas", population: 4400000, areaSqKm: 75420, currency: "Panamanian Balboa (PAB)", languages: ["Spanish"] },
+    { code: "pg", name: "Papua New Guinea", capital: "Port Moresby", continent: "Oceania", population: 10100000, areaSqKm: 462840, currency: "Papua New Guinean Kina (PGK)", languages: ["English", "Tok Pisin", "Hiri Motu"] },
+    { code: "py", name: "Paraguay", capital: "Asunción", continent: "Americas", population: 6800000, areaSqKm: 406752, currency: "Paraguayan Guaraní (PYG)", languages: ["Spanish", "Guaraní"] },
     { code: "pe", name: "Peru", capital: "Lima", continent: "Americas", population: 34000000, areaSqKm: 1285216, currency: "Peruvian Sol (PEN)", languages: ["Spanish"] },
     { code: "ph", name: "Philippines", capital: "Manila", continent: "Asia", population: 117000000, areaSqKm: 300000, currency: "Philippine Peso (PHP)", languages: ["Filipino", "English"] },
     { code: "pl", name: "Poland", capital: "Warsaw", continent: "Europe", population: 37700000, areaSqKm: 312696, currency: "Polish Złoty (PLN)", languages: ["Polish"] },
     { code: "pt", name: "Portugal", capital: "Lisbon", continent: "Europe", population: 10400000, areaSqKm: 92212, currency: "Euro (EUR)", languages: ["Portuguese"] },
+    { code: "qa", name: "Qatar", capital: "Doha", continent: "Asia", population: 2700000, areaSqKm: 11586, currency: "Qatari Riyal (QAR)", languages: ["Arabic"] },
+    { code: "ro", name: "Romania", capital: "Bucharest", continent: "Europe", population: 19000000, areaSqKm: 238397, currency: "Romanian Leu (RON)", languages: ["Romanian"] },
+    { code: "ru", name: "Russia", capital: "Moscow", continent: "Europe", population: 146000000, areaSqKm: 17098246, currency: "Russian Ruble (RUB)", languages: ["Russian"] },
+    { code: "rw", name: "Rwanda", capital: "Kigali", continent: "Africa", population: 13800000, areaSqKm: 26338, currency: "Rwandan Franc (RWF)", languages: ["Kinyarwanda", "French", "English", "Swahili"] },
+    { code: "kn", name: "Saint Kitts and Nevis", capital: "Basseterre", continent: "Americas", population: 48000, areaSqKm: 261, currency: "East Caribbean Dollar (XCD)", languages: ["English"] },
+    { code: "lc", name: "Saint Lucia", capital: "Castries", continent: "Americas", population: 180000, areaSqKm: 616, currency: "East Caribbean Dollar (XCD)", languages: ["English"] },
+    { code: "vc", name: "Saint Vincent and the Grenadines", capital: "Kingstown", continent: "Americas", population: 104000, areaSqKm: 389, currency: "East Caribbean Dollar (XCD)", languages: ["English"] },
+    { code: "ws", name: "Samoa", capital: "Apia", continent: "Oceania", population: 222000, areaSqKm: 2831, currency: "Samoan Tālā (WST)", languages: ["Samoan", "English"] },
+    { code: "sm", name: "San Marino", capital: "San Marino", continent: "Europe", population: 34000, areaSqKm: 61, currency: "Euro (EUR)", languages: ["Italian"] },
+    { code: "st", name: "Sao Tome and Principe", capital: "São Tomé", continent: "Africa", population: 227000, areaSqKm: 964, currency: "Dobra (STN)", languages: ["Portuguese"] },
     { code: "sa", name: "Saudi Arabia", capital: "Riyadh", continent: "Asia", population: 36900000, areaSqKm: 2149690, currency: "Saudi Riyal (SAR)", languages: ["Arabic"] },
+    { code: "sn", name: "Senegal", capital: "Dakar", continent: "Africa", population: 17300000, areaSqKm: 196722, currency: "West African CFA franc (XOF)", languages: ["French", "Wolof"] },
+    { code: "rs", name: "Serbia", capital: "Belgrade", continent: "Europe", population: 6700000, areaSqKm: 88361, currency: "Serbian Dinar (RSD)", languages: ["Serbian"] },
+    { code: "sc", name: "Seychelles", capital: "Victoria", continent: "Africa", population: 100000, areaSqKm: 459, currency: "Seychellois Rupee (SCR)", languages: ["Seychellois Creole", "English", "French"] },
+    { code: "sl", name: "Sierra Leone", capital: "Freetown", continent: "Africa", population: 8600000, areaSqKm: 71740, currency: "Leone (SLE)", languages: ["English"] },
+    { code: "sg", name: "Singapore", capital: "Singapore", continent: "Asia", population: 5900000, areaSqKm: 734, currency: "Singapore Dollar (SGD)", languages: ["English", "Malay", "Mandarin", "Tamil"] },
+    { code: "sk", name: "Slovakia", capital: "Bratislava", continent: "Europe", population: 5400000, areaSqKm: 49035, currency: "Euro (EUR)", languages: ["Slovak"] },
+    { code: "si", name: "Slovenia", capital: "Ljubljana", continent: "Europe", population: 2100000, areaSqKm: 20273, currency: "Euro (EUR)", languages: ["Slovenian"] },
+    { code: "sb", name: "Solomon Islands", capital: "Honiara", continent: "Oceania", population: 720000, areaSqKm: 28896, currency: "Solomon Islands Dollar (SBD)", languages: ["English"] },
+    { code: "so", name: "Somalia", capital: "Mogadishu", continent: "Africa", population: 17600000, areaSqKm: 637657, currency: "Somali Shilling (SOS)", languages: ["Somali", "Arabic"] },
     { code: "za", name: "South Africa", capital: "Pretoria", continent: "Africa", population: 60400000, areaSqKm: 1221037, currency: "South African Rand (ZAR)", languages: ["Zulu", "Xhosa", "Afrikaans", "English"] },
-    { code: "kr", name: "South Korea", capital: "Seoul", continent: "Asia", population: 51700000, areaSqKm: 100210, currency: "South Korean Won (KRW)", languages: ["Korean"] },
+    { code: "ss", name: "South Sudan", capital: "Juba", continent: "Africa", population: 11000000, areaSqKm: 644329, currency: "South Sudanese Pound (SSP)", languages: ["English"] },
     { code: "es", name: "Spain", capital: "Madrid", continent: "Europe", population: 48000000, areaSqKm: 505990, currency: "Euro (EUR)", languages: ["Spanish"] },
+    { code: "lk", name: "Sri Lanka", capital: "Sri Jayawardenepura Kotte", continent: "Asia", population: 22000000, areaSqKm: 65610, currency: "Sri Lankan Rupee (LKR)", languages: ["Sinhala", "Tamil"] },
+    { code: "sd", name: "Sudan", capital: "Khartoum", continent: "Africa", population: 46000000, areaSqKm: 1861484, currency: "Sudanese Pound (SDG)", languages: ["Arabic", "English"] },
+    { code: "sr", name: "Suriname", capital: "Paramaribo", continent: "Americas", population: 618000, areaSqKm: 163820, currency: "Surinamese Dollar (SRD)", languages: ["Dutch"] },
     { code: "se", name: "Sweden", capital: "Stockholm", continent: "Europe", population: 10500000, areaSqKm: 450295, currency: "Swedish Krona (SEK)", languages: ["Swedish"] },
     { code: "ch", name: "Switzerland", capital: "Bern", continent: "Europe", population: 8900000, areaSqKm: 41285, currency: "Swiss Franc (CHF)", languages: ["German", "French", "Italian", "Romansh"] },
+    { code: "sy", name: "Syria", capital: "Damascus", continent: "Asia", population: 22000000, areaSqKm: 185180, currency: "Syrian Pound (SYP)", languages: ["Arabic"] },
+    { code: "tw", name: "Taiwan", capital: "Taipei", continent: "Asia", population: 23900000, areaSqKm: 36197, currency: "New Taiwan Dollar (TWD)", languages: ["Mandarin"] },
+    { code: "tj", name: "Tajikistan", capital: "Dushanbe", continent: "Asia", population: 10000000, areaSqKm: 143100, currency: "Tajikistani Somoni (TJS)", languages: ["Tajik", "Russian"] },
+    { code: "tz", name: "Tanzania", capital: "Dodoma", continent: "Africa", population: 65500000, areaSqKm: 947303, currency: "Tanzanian Shilling (TZS)", languages: ["Swahili", "English"] },
     { code: "th", name: "Thailand", capital: "Bangkok", continent: "Asia", population: 71800000, areaSqKm: 513120, currency: "Thai Baht (THB)", languages: ["Thai"] },
+    { code: "tl", name: "Timor-Leste", capital: "Dili", continent: "Asia", population: 1340000, areaSqKm: 15007, currency: "United States Dollar (USD)", languages: ["Tetum", "Portuguese"] },
+    { code: "tg", name: "Togo", capital: "Lomé", continent: "Africa", population: 8800000, areaSqKm: 56785, currency: "West African CFA franc (XOF)", languages: ["French"] },
+    { code: "to", name: "Tonga", capital: "Nukuʻalofa", continent: "Oceania", population: 106000, areaSqKm: 747, currency: "Tongan Paʻanga (TOP)", languages: ["Tongan", "English"] },
+    { code: "tt", name: "Trinidad and Tobago", capital: "Port of Spain", continent: "Americas", population: 1530000, areaSqKm: 5130, currency: "Trinidad and Tobago Dollar (TTD)", languages: ["English"] },
+    { code: "tn", name: "Tunisia", capital: "Tunis", continent: "Africa", population: 12300000, areaSqKm: 163610, currency: "Tunisian Dinar (TND)", languages: ["Arabic"] },
     { code: "tr", name: "Turkey", capital: "Ankara", continent: "Asia", population: 85300000, areaSqKm: 783562, currency: "Turkish Lira (TRY)", languages: ["Turkish"] },
+    { code: "tm", name: "Turkmenistan", capital: "Ashgabat", continent: "Asia", population: 6400000, areaSqKm: 488100, currency: "Turkmenistani Manat (TMT)", languages: ["Turkmen", "Russian"] },
+    { code: "tv", name: "Tuvalu", capital: "Funafuti", continent: "Oceania", population: 11000, areaSqKm: 26, currency: "Australian Dollar (AUD)", languages: ["Tuvaluan", "English"] },
+    { code: "ug", name: "Uganda", capital: "Kampala", continent: "Africa", population: 47200000, areaSqKm: 241038, currency: "Ugandan Shilling (UGX)", languages: ["English", "Swahili"] },
     { code: "ua", name: "Ukraine", capital: "Kyiv", continent: "Europe", population: 38000000, areaSqKm: 603550, currency: "Ukrainian Hryvnia (UAH)", languages: ["Ukrainian"] },
+    { code: "ae", name: "United Arab Emirates", capital: "Abu Dhabi", continent: "Asia", population: 9400000, areaSqKm: 83600, currency: "UAE Dirham (AED)", languages: ["Arabic"] },
     { code: "gb", name: "United Kingdom", capital: "London", continent: "Europe", population: 67700000, areaSqKm: 242495, currency: "British Pound (GBP)", languages: ["English"] },
     { code: "us", name: "United States", capital: "Washington, D.C.", continent: "Americas", population: 335000000, areaSqKm: 9833517, currency: "US Dollar (USD)", languages: ["English"] },
-    { code: "vn", name: "Vietnam", capital: "Hanoi", continent: "Asia", population: 98800000, areaSqKm: 331212, currency: "Vietnamese Dong (VND)", languages: ["Vietnamese"] }
+    { code: "uy", name: "Uruguay", capital: "Montevideo", continent: "Americas", population: 3400000, areaSqKm: 176215, currency: "Uruguayan Peso (UYU)", languages: ["Spanish"] },
+    { code: "uz", name: "Uzbekistan", capital: "Tashkent", continent: "Asia", population: 36000000, areaSqKm: 447400, currency: "Uzbekistani Som (UZS)", languages: ["Uzbek", "Russian"] },
+    { code: "vu", name: "Vanuatu", capital: "Port Vila", continent: "Oceania", population: 326000, areaSqKm: 12189, currency: "Vanuatu Vatu (VUV)", languages: ["Bislama", "English", "French"] },
+    { code: "va", name: "Vatican City", capital: "Vatican City", continent: "Europe", population: 800, areaSqKm: 0.49, currency: "Euro (EUR)", languages: ["Italian", "Latin"] },
+    { code: "ve", name: "Venezuela", capital: "Caracas", continent: "Americas", population: 28300000, areaSqKm: 916445, currency: "Venezuelan Bolívar (VES)", languages: ["Spanish"] },
+    { code: "vn", name: "Vietnam", capital: "Hanoi", continent: "Asia", population: 98800000, areaSqKm: 331212, currency: "Vietnamese Dong (VND)", languages: ["Vietnamese"] },
+    { code: "ye", name: "Yemen", capital: "Sanaa", continent: "Asia", population: 33600000, areaSqKm: 527968, currency: "Yemeni Rial (YER)", languages: ["Arabic"] },
+    { code: "zm", name: "Zambia", capital: "Lusaka", continent: "Africa", population: 20000000, areaSqKm: 752618, currency: "Zambian Kwacha (ZMW)", languages: ["English"] },
+    { code: "zw", name: "Zimbabwe", capital: "Harare", continent: "Africa", population: 16000000, areaSqKm: 390757, currency: "Zimbabwean Dollar (ZWL)", languages: ["English", "Shona", "Ndebele"] }
 ];
 
 export default function RandomCountryPicker() {
@@ -135,9 +282,9 @@ export default function RandomCountryPicker() {
 
     // Pick a new random country and generate options if quiz mode is active
     const generateNewPick = useCallback(() => {
-        const pool = filteredCountries.length >= 4 ? filteredCountries : COUNTRIES;
-        const mainIndex = getRandomIndex(pool.length);
-        const picked = pool[mainIndex];
+        const pickedPool = filteredCountries.length > 0 ? filteredCountries : COUNTRIES;
+        const mainIndex = getRandomIndex(pickedPool.length);
+        const picked = pickedPool[mainIndex];
 
         setCurrentCountry(picked);
         setSelectedAnswer(null);
@@ -145,12 +292,25 @@ export default function RandomCountryPicker() {
 
         // Build 4 random options (1 correct + 3 distinct distractors)
         const distractors: CountryData[] = [];
-        const poolCopy = [...pool].filter((c) => c.code !== picked.code);
 
-        while (distractors.length < 3 && poolCopy.length > 0) {
-            const dIndex = getRandomIndex(poolCopy.length);
-            distractors.push(poolCopy[dIndex]);
-            poolCopy.splice(dIndex, 1);
+        // 1. Grab distractors from the filtered continent pool first
+        const sameContinentPool = filteredCountries.filter((c) => c.code !== picked.code);
+        while (distractors.length < 3 && sameContinentPool.length > 0) {
+            const dIndex = getRandomIndex(sameContinentPool.length);
+            distractors.push(sameContinentPool[dIndex]);
+            sameContinentPool.splice(dIndex, 1);
+        }
+
+        // 2. If we still need more distractors (e.g. Oceania pool is too small), fill with global pool
+        if (distractors.length < 3) {
+            const globalPool = COUNTRIES.filter(
+                (c) => c.code !== picked.code && !distractors.some((d) => d.code === c.code)
+            );
+            while (distractors.length < 3 && globalPool.length > 0) {
+                const dIndex = getRandomIndex(globalPool.length);
+                distractors.push(globalPool[dIndex]);
+                globalPool.splice(dIndex, 1);
+            }
         }
 
         const options = [picked, ...distractors];
