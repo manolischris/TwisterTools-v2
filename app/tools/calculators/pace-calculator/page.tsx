@@ -21,13 +21,24 @@ export const metadata: Metadata = {
       "Calculate running pace, race finish time, splits, and distance with imperial and metric support.",
     url: "https://www.twistertools.com/tools/calculators/pace-calculator",
     siteName: "TwisterTools",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools/calculators/pace-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pace, Distance & Running Time Calculator on TwisterTools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pace, Distance & Running Time Calculator | TwisterTools",
     description:
-      "Calculate running pace, race finish time, splits, and distance with imperial and metric support."
+      "Calculate running pace, race finish time, splits, and distance with imperial and metric support.",
+    images: [
+      "https://www.twistertools.com/images/tools/calculators/pace-calculator.jpg",
+    ],
   },
   alternates: {
     canonical: "https://www.twistertools.com/tools/calculators/pace-calculator"

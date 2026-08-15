@@ -13,13 +13,24 @@ export const metadata: Metadata = {
       "Calculate estimated Blood Alcohol Concentration (BAC), time to sober, and driving safety limits using the Widmark formula.",
     url: "https://www.twistertools.com/tools/calculators/bac-calculator",
     siteName: "TwisterTools",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools/calculators/bac-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Blood Alcohol Content (BAC) Calculator on TwisterTools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blood Alcohol Content (BAC) Calculator | TwisterTools",
     description:
-      "Calculate estimated Blood Alcohol Concentration (BAC), time to sober, and driving safety limits using the Widmark formula."
+      "Calculate estimated Blood Alcohol Concentration (BAC), time to sober, and driving safety limits using the Widmark formula.",
+    images: [
+      "https://www.twistertools.com/images/tools/calculators/bac-calculator.jpg",
+    ],
   },
   alternates: {
     canonical: "https://www.twistertools.com/tools/calculators/bac-calculator"

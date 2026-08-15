@@ -21,13 +21,24 @@ export const metadata: Metadata = {
       "Calculate your estimated ovulation date, peak conception window, next period, and estimated due date.",
     url: "https://www.twistertools.com/tools/calculators/ovulation-calculator",
     siteName: "TwisterTools",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "https://www.twistertools.com/images/tools/calculators/ovulation-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ovulation & Fertile Window Calculator on TwisterTools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ovulation & Fertile Window Calculator | TwisterTools",
     description:
-      "Calculate your estimated ovulation date, peak conception window, next period, and estimated due date."
+      "Calculate your estimated ovulation date, peak conception window, next period, and estimated due date.",
+    images: [
+      "https://www.twistertools.com/images/tools/calculators/ovulation-calculator.jpg",
+    ],
   },
   alternates: {
     canonical: "https://www.twistertools.com/tools/calculators/ovulation-calculator"
