@@ -1596,5 +1596,32 @@
     "href": "/tools/developer-tools/css-gradient-generator",
     "iconName": "Palette",
     "isFeatured": false
+  },
+  {
+    "id": "css-border-radius-generator",
+    "title": "CSS Border Radius & Clip-Path Generator",
+    "description": "Visual 8-point organic blob creator, complex corner radius generator, and CSS polygon clip-path builder with instant Tailwind and cross-browser CSS export.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-border-radius-generator",
+    "iconName": "Shapes",
+    "isFeatured": false
+  },
+  {
+    "id": "css-flexbox-playground",
+    "title": "CSS Flexbox Layout Sandbox",
+    "description": "Visual interactive Flexbox layout builder and real-time CSS/Tailwind generator.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-flexbox-playground",
+    "iconName": "Layout",
+    "isFeatured": false
+  },
+  {
+    "id": "css-grid-generator",
+    "title": "CSS Grid Generator & Interactive Builder",
+    "description": "Design responsive 2D layouts visually with fractional tracks, minmax constraints, and instant CSS/Tailwind export.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-grid-generator",
+    "iconName": "LayoutGrid",
+    "isFeatured": false
   }
 ]

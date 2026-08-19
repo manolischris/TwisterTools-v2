@@ -98,7 +98,10 @@ import {
   Users,
   Shuffle,
   Pipette,
-  Sliders
+  Sliders,
+  Shapes,
+  Layout,
+  LayoutGrid
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -207,7 +210,10 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Users,
   Shuffle,
   Pipette,
-  Sliders
+  Sliders,
+  Shapes,
+  Layout,
+  LayoutGrid
 };
 
 /* ─────────────────────────────────────────────────────────

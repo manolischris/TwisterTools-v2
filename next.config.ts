@@ -70,6 +70,11 @@ const nextConfig: NextConfig = {
       { source: "/temperature-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/area-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/volume-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/temperature-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/weight-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/length-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/area-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/volume-converter", destination: "/tools/calculators/master-unit-converter" },
     ];
     for (const r of legacyRedirects) {
       // Avoid duplicate redirects if they're already loaded from url-map.json

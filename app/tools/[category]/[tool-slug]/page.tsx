@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
@@ -69,6 +69,9 @@ import DiceRoller from "@/components/tools/DiceRoller";
 import RandomAddressGenerator from "@/components/tools/RandomAddressGenerator";
 import RandomCountryPicker from "@/components/tools/RandomCountryPicker";
 import CssBoxShadowGenerator from "@/components/tools/CssBoxShadowGenerator";
+import CssBorderRadiusGenerator from "@/components/tools/CssBorderRadiusGenerator";
+import CssFlexboxPlayground from "@/components/tools/CssFlexboxPlayground";
+import CssGridGenerator from "@/components/tools/CssGridGenerator";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -160,6 +163,9 @@ const COMPLETED_TOOLS = [
   "random-address-generator",
   "random-country-picker",
   "css-box-shadow-generator",
+  "css-border-radius-generator",
+  "css-flexbox-playground",
+  "css-grid-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -212,6 +218,18 @@ function handleConsolidationRedirects(category: string, toolSlug: string) {
   ];
   if (category === "developer-tools" && xmlLegacySlugs.includes(toolSlug)) {
     permanentRedirect("/tools/developer-tools/xml-formatter-validator");
+  }
+
+  // Redirect unit converter slugs to the unified master-unit-converter
+  const unitConverterSlugs = [
+    "temperature-converter",
+    "weight-converter",
+    "length-converter",
+    "area-converter",
+    "volume-converter",
+  ];
+  if (category === "calculators" && unitConverterSlugs.includes(toolSlug)) {
+    permanentRedirect("/tools/calculators/master-unit-converter");
   }
 }
 
@@ -279,6 +297,10 @@ export async function generateMetadata({
 
   let title = `${tool.name}`;
   let description = tool.description;
+
+  if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
+    description = "Interactive visual CSS Flexbox playground. Test alignment, direction, order, and grow/shrink dynamics with instant CSS and Tailwind code generation.";
+  }
 
   if (category === "pdf-tools" && toolSlug === "text-to-pdf") {
     title = "Text to PDF Converter | Free Client-Side Tool";
@@ -400,6 +422,10 @@ export default async function ToolPage({
   // Fallback if still not found
   if (!tool) {
     permanentRedirect(`/tools/${category}`);
+  }
+
+  if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
+    tool.description = "Interactive visual CSS Flexbox playground. Test alignment, direction, order, and grow/shrink dynamics with instant CSS and Tailwind code generation.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -856,8 +882,14 @@ export default async function ToolPage({
                   <Dices className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "color-picker-contrast-checker" ? (
                   <Pipette className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "css-border-radius-generator" ? (
+                  <Shapes className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "css-box-shadow-generator" ? (
                   <Sliders className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "css-flexbox-playground" ? (
+                  <Layout className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "css-grid-generator" ? (
+                  <LayoutGrid className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1006,8 +1038,14 @@ export default async function ToolPage({
             <RandomCountryPicker />
           ) : category === "developer-tools" && toolSlug === "color-picker-contrast-checker" ? (
             <ColorPickerContrastChecker />
+          ) : category === "developer-tools" && toolSlug === "css-border-radius-generator" ? (
+            <CssBorderRadiusGenerator />
           ) : category === "developer-tools" && toolSlug === "css-box-shadow-generator" ? (
             <CssBoxShadowGenerator />
+          ) : category === "developer-tools" && toolSlug === "css-flexbox-playground" ? (
+            <CssFlexboxPlayground />
+          ) : category === "developer-tools" && toolSlug === "css-grid-generator" ? (
+            <CssGridGenerator />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

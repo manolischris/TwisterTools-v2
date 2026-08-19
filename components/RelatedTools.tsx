@@ -80,7 +80,10 @@ import {
   Users,
   Shuffle,
   Pipette,
-  Sliders
+  Sliders,
+  Shapes,
+  Layout,
+  LayoutGrid
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -167,7 +170,10 @@ const ICON_MAP: Record<string, any> = {
   Users,
   Shuffle,
   Pipette,
-  Sliders: Sliders
+  Sliders: Sliders,
+  Shapes,
+  Layout,
+  LayoutGrid
 };
 
 interface RelatedToolsProps {

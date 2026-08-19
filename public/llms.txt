@@ -27,6 +27,10 @@ Essential browser-based engineering utilities for tokenizing, formatting, minify
 - **Color Picker & Contrast Checker (WCAG)**: Real-time WCAG 2.1 AA/AAA compliance checker, color space converter, and color blindness simulator.
 - [CSS Box Shadow & Glow Generator](/tools/developer-tools/css-box-shadow-generator): Multi-layer CSS box shadow, inset depth, and neon glow generator with Tailwind output.
 - [CSS Gradient Generator](/tools/developer-tools/css-gradient-generator): Interactive generator for linear, radial, and conic gradients with code export.
+- CSS Border Radius & Clip-Path Generator: Visual 8-point organic blob generator, corner radius customizer, and CSS polygon clip-path generator with Tailwind export (/tools/developer-tools/css-border-radius-generator)
+- CSS Flexbox Layout Sandbox (/tools/developer-tools/css-flexbox-playground): Interactive visual CSS Flexbox sandbox with AST CSS and Tailwind generator.
+- [CSS Grid Generator](/tools/developer-tools/css-grid-generator): Visual 2D CSS grid layout builder and CSS/HTML/Tailwind code exporter.
+
 
 ### [Daily Essentials, Financial & Math Calculators](https://www.twistertools.com/tools/calculators)
 Privacy-first mathematical tools and financial calculators to simulate investments and compute business metrics with multi-currency formatting.
