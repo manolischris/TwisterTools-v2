@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
@@ -68,10 +68,12 @@ import TimezoneConverter from "@/components/tools/TimezoneConverter";
 import DiceRoller from "@/components/tools/DiceRoller";
 import RandomAddressGenerator from "@/components/tools/RandomAddressGenerator";
 import RandomCountryPicker from "@/components/tools/RandomCountryPicker";
+import CssBoxShadowGenerator from "@/components/tools/CssBoxShadowGenerator";
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
 const TextToPdfConverter = dynamic(() => import("@/components/tools/TextToPdfConverter"));
+const ColorPickerContrastChecker = dynamic(() => import("@/components/tools/ColorPickerContrastChecker"));
 
 // Type definitions for URL mapping
 interface Tool {
@@ -157,6 +159,7 @@ const COMPLETED_TOOLS = [
   "dice-roller",
   "random-address-generator",
   "random-country-picker",
+  "css-box-shadow-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -851,6 +854,10 @@ export default async function ToolPage({
                   <Fingerprint className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "dice-roller" ? (
                   <Dices className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "color-picker-contrast-checker" ? (
+                  <Pipette className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "css-box-shadow-generator" ? (
+                  <Sliders className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -997,6 +1004,10 @@ export default async function ToolPage({
             <RandomAddressGenerator />
           ) : category === "random-tools" && toolSlug === "random-country-picker" ? (
             <RandomCountryPicker />
+          ) : category === "developer-tools" && toolSlug === "color-picker-contrast-checker" ? (
+            <ColorPickerContrastChecker />
+          ) : category === "developer-tools" && toolSlug === "css-box-shadow-generator" ? (
+            <CssBoxShadowGenerator />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

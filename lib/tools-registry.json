@@ -1569,5 +1569,32 @@
     "href": "/tools/random-tools/random-country-picker",
     "iconName": "Globe2",
     "isFeatured": true
+  },
+  {
+    "id": "color-picker-contrast-checker",
+    "title": "Color Picker & Contrast Checker (WCAG)",
+    "description": "Inspect color contrast ratios against WCAG 2.1 and Section 508 accessibility guidelines with live HSL/RGB sliders and color vision deficiency simulations.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/color-picker-contrast-checker",
+    "iconName": "Pipette",
+    "isFeatured": false
+  },
+  {
+    "id": "css-box-shadow-generator",
+    "title": "CSS Box Shadow & Glow Generator",
+    "description": "Design multi-layer CSS box shadows, inset depth, neumorphism, and neon glow effects with instant Tailwind CSS and React export.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-box-shadow-generator",
+    "iconName": "Sliders",
+    "isFeatured": false
+  },
+  {
+    "id": "css-gradient-generator",
+    "title": "CSS Gradient Generator",
+    "description": "Design and export CSS linear, radial, and conic gradients with Tailwind support and 1080p image exports.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-gradient-generator",
+    "iconName": "Palette",
+    "isFeatured": false
   }
 ]

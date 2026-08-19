@@ -96,7 +96,9 @@ import {
   Moon,
   Dices,
   Users,
-  Shuffle
+  Shuffle,
+  Pipette,
+  Sliders
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -203,7 +205,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Moon,
   Dices,
   Users,
-  Shuffle
+  Shuffle,
+  Pipette,
+  Sliders
 };
 
 /* ─────────────────────────────────────────────────────────

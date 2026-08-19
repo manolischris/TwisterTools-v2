@@ -24,6 +24,9 @@ Essential browser-based engineering utilities for tokenizing, formatting, minify
 - **Regex Tester & Cheat Sheet**: Debug regular expressions in real-time with visual capturing groups.
 - **Unix Timestamp Converter**: Bi-directional epoch-to-date translations with a live ticker.
 - **Cron Expression Explainer**: Translate complex cron configurations into human-readable text.
+- **Color Picker & Contrast Checker (WCAG)**: Real-time WCAG 2.1 AA/AAA compliance checker, color space converter, and color blindness simulator.
+- [CSS Box Shadow & Glow Generator](/tools/developer-tools/css-box-shadow-generator): Multi-layer CSS box shadow, inset depth, and neon glow generator with Tailwind output.
+- [CSS Gradient Generator](/tools/developer-tools/css-gradient-generator): Interactive generator for linear, radial, and conic gradients with code export.
 
 ### [Daily Essentials, Financial & Math Calculators](https://www.twistertools.com/tools/calculators)
 Privacy-first mathematical tools and financial calculators to simulate investments and compute business metrics with multi-currency formatting.
