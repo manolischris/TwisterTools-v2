@@ -85,7 +85,10 @@ import {
   Layout,
   LayoutGrid,
   Triangle,
-  Table
+  Table,
+  Bot,
+  Terminal,
+  Shield
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -177,7 +180,10 @@ const ICON_MAP: Record<string, any> = {
   Layout,
   LayoutGrid,
   Triangle,
-  Table
+  Table,
+  Bot,
+  Terminal,
+  Shield
 };
 
 interface RelatedToolsProps {

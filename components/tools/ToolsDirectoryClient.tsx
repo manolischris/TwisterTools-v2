@@ -103,7 +103,10 @@ import {
   Layout,
   LayoutGrid,
   Triangle,
-  Table
+  Table,
+  Bot,
+  Terminal,
+  Shield
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -217,7 +220,10 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Layout,
   LayoutGrid,
   Triangle,
-  Table
+  Table,
+  Bot,
+  Terminal,
+  Shield
 };
 
 /* ─────────────────────────────────────────────────────────

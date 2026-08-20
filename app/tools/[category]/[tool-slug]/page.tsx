@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -78,6 +78,9 @@ import RelatedTools from "../../../../components/RelatedTools";
 
 const TextToPdfConverter = dynamic(() => import("@/components/tools/TextToPdfConverter"));
 const ColorPickerContrastChecker = dynamic(() => import("@/components/tools/ColorPickerContrastChecker"));
+const UserAgentParser = dynamic(() => import("@/components/tools/UserAgentParser"));
+const KeycodeInspector = dynamic(() => import("@/components/tools/KeycodeInspector"));
+const ChmodCalculator = dynamic(() => import("@/components/tools/ChmodCalculator"));
 
 // Type definitions for URL mapping
 interface Tool {
@@ -168,6 +171,9 @@ const COMPLETED_TOOLS = [
   "css-flexbox-playground",
   "css-grid-generator",
   "html-table-generator",
+  "user-agent-parser",
+  "javascript-keycode-finder",
+  "chmod-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -308,6 +314,10 @@ export async function generateMetadata({
     description = "Design, customize, and generate semantic HTML5 tables, Tailwind CSS classes, React TSX, Markdown, and CSS stylesheets with live preview and CSV import.";
   }
 
+  if (category === "developer-tools" && toolSlug === "chmod-calculator") {
+    description = "Calculate Linux and Unix file permissions visually with instant octal, symbolic, and binary conversion, SetUID/SetGID/Sticky bit modifiers, and production-ready CLI command generation.";
+  }
+
   if (category === "pdf-tools" && toolSlug === "text-to-pdf") {
     title = "Text to PDF Converter | Free Client-Side Tool";
     description = "Convert plain text content into formatted, paginated PDF documents directly in browser memory.";
@@ -432,6 +442,10 @@ export default async function ToolPage({
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
     tool.description = "Interactive visual CSS Flexbox playground. Test alignment, direction, order, and grow/shrink dynamics with instant CSS and Tailwind code generation.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "chmod-calculator") {
+    tool.description = "Calculate Linux and Unix file permissions visually with instant octal, symbolic, and binary conversion, SetUID/SetGID/Sticky bit modifiers, and production-ready CLI command generation.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -898,6 +912,12 @@ export default async function ToolPage({
                   <LayoutGrid className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "html-table-generator" ? (
                   <Table className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "user-agent-parser" ? (
+                  <Terminal className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "javascript-keycode-finder" ? (
+                  <Keyboard className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "chmod-calculator" ? (
+                  <Shield className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1056,6 +1076,12 @@ export default async function ToolPage({
             <CssFlexboxPlayground />
           ) : category === "developer-tools" && toolSlug === "css-grid-generator" ? (
             <CssGridGenerator />
+          ) : category === "developer-tools" && toolSlug === "user-agent-parser" ? (
+            <UserAgentParser />
+          ) : category === "developer-tools" && toolSlug === "javascript-keycode-finder" ? (
+            <KeycodeInspector />
+          ) : category === "developer-tools" && toolSlug === "chmod-calculator" ? (
+            <ChmodCalculator />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

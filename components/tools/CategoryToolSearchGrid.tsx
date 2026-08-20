@@ -96,7 +96,11 @@ import {
   Layout,
   LayoutGrid,
   Triangle,
-  Table
+  Table,
+  Bot,
+  Terminal,
+  Keyboard,
+  Shield
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -209,7 +213,11 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Layout,
   LayoutGrid,
   Triangle,
-  Table
+  Table,
+  Bot,
+  Terminal,
+  Keyboard,
+  Shield
 };
 
 export default function CategoryToolSearchGrid({

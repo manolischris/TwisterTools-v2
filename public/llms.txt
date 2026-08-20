@@ -33,7 +33,12 @@ Essential browser-based engineering utilities for tokenizing, formatting, minify
 * [CSS Triangle & Polygon Generator](/tools/developer-tools/css-triangle-generator): Interactive zero-pixel border triangles and GPU-accelerated CSS clip-path polygon generator with Tailwind and SCSS support.
 - HTML Table Code Generator (/tools/developer-tools/html-table-generator): Visual responsive HTML table builder with Tailwind CSS, React TSX, Markdown, and CSV import.
 - HTACCESS Generator: /tools/developer-tools/htaccess-generator - Production Apache server configuration and mod_rewrite generator.
-
+- [Robots.txt Generator & Validator](/tools/developer-tools/robots-txt-generator): Visual RFC 9309 robots.txt builder, AI crawler blocking presets, and real-time path testing engine.
+* User-Agent String Parser & Inspector: /tools/developer-tools/user-agent-parser (Inspect HTTP headers, decode browsers, operating systems, devices, and AI crawlers)
+- Screen Resolution Calculator (/tools/developer-tools/screen-resolution-calculator): Calculate screen resolutions, aspect ratios, proportional scaling dimensions, and PPI display density with CSS/Tailwind exports.
+- Pixels to REM / EM Converter: /tools/developer-tools/px-to-rem-converter - Bidirectional PX to REM/EM conversion utility and batch CSS processor.
+- Keycode & Keyboard Event Inspector (/tools/developer-tools/javascript-keycode-finder): Real-time JavaScript keyboard event inspector tracking event.key, event.code, modifier flags, and code generators.
+- Chmod Permissions Calculator (/tools/developer-tools/chmod-calculator): Linux and Unix file permissions calculator with octal, symbolic (rwx), binary conversions, and special bit modifiers.
 
 ### [Daily Essentials, Financial & Math Calculators](https://www.twistertools.com/tools/calculators)
 Privacy-first mathematical tools and financial calculators to simulate investments and compute business metrics with multi-currency formatting.

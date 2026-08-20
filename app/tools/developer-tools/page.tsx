@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Code, ShieldCheck, SearchCode, RefreshCw, HelpCircle, Palette, Cpu } from "lucide-react";
+import { Code, ShieldCheck, SearchCode, RefreshCw, HelpCircle, Palette, Cpu, ArrowRightLeft } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
 import path from "path";
@@ -141,6 +141,46 @@ export default function DeveloperToolsCategoryPage() {
           title: "HTACCESS Directives & Rewrite Rules Generator",
           description: "Generate production-ready Apache .htaccess rules with 301 redirects, HTTPS enforcement, GZIP, and security headers.",
           iconName: "FileCode"
+        };
+      }
+      if (tool.id === "robots-txt-generator") {
+        return {
+          ...tool,
+          title: "Robots.txt Generator & Validator",
+          description: "Generate RFC 9309 compliant robots.txt files, block AI scrapers, and test crawl URL paths in real time.",
+          iconName: "Bot"
+        };
+      }
+      if (tool.id === "screen-resolution-calculator") {
+        return {
+          ...tool,
+          title: "Screen Resolution & Aspect Ratio Calculator",
+          description: "Calculate display aspect ratios, custom dimension scaling, PPI density, and responsive CSS snippets.",
+          iconName: "Tv"
+        };
+      }
+      if (tool.id === "px-to-rem-converter") {
+        return {
+          ...tool,
+          title: "Pixels to REM / EM Converter",
+          description: "Convert CSS pixel dimensions to responsive REM and EM units with instant batch CSS replacement.",
+          iconName: "ArrowRightLeft"
+        };
+      }
+      if (tool.id === "javascript-keycode-finder") {
+        return {
+          ...tool,
+          title: "Keycode & Event Inspector",
+          description: "Real-time JavaScript keyboard event inspector with event.key, event.code, deprecated keycodes, and React code snippet generators.",
+          iconName: "Keyboard"
+        };
+      }
+      if (tool.id === "chmod-calculator") {
+        return {
+          ...tool,
+          title: "Chmod Permissions Calculator",
+          description: "Interactive Linux/Unix chmod permission calculator with octal, symbolic notation, special bit modifiers, and CLI generators.",
+          iconName: "Shield"
         };
       }
       return tool;

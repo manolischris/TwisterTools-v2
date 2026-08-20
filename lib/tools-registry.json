@@ -1650,5 +1650,59 @@
     "href": "/tools/developer-tools/htaccess-generator",
     "iconName": "FileCode",
     "isFeatured": false
+  },
+  {
+    "id": "robots-txt-generator",
+    "title": "Robots.txt Generator & Validator",
+    "description": "Generate RFC 9309 compliant robots.txt files, block AI scrapers, and test crawl URL paths in real time.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/robots-txt-generator",
+    "iconName": "Bot",
+    "isFeatured": false
+  },
+  {
+    "id": "user-agent-parser",
+    "title": "User-Agent String Parser & Inspector",
+    "description": "Decode browser versions, operating systems, hardware architecture, layout engines, and AI bot crawlers from HTTP User-Agent strings.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/user-agent-parser",
+    "iconName": "Terminal",
+    "isFeatured": false
+  },
+  {
+    "id": "screen-resolution-calculator",
+    "title": "Screen Resolution & Aspect Ratio Calculator",
+    "description": "Calculate display aspect ratios, custom dimension scaling, PPI density, and responsive CSS snippets.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/screen-resolution-calculator",
+    "iconName": "Tv",
+    "isFeatured": false
+  },
+  {
+    "id": "px-to-rem-converter",
+    "title": "Pixels to REM / EM Converter",
+    "description": "Convert Pixels (px) to REM, EM, Percentages, and Tailwind CSS spacing units in real time with batch stylesheet parsing.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/px-to-rem-converter",
+    "iconName": "ArrowRightLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "javascript-keycode-finder",
+    "title": "Keycode & Keyboard Event Inspector",
+    "description": "Inspect JavaScript KeyboardEvent attributes in real-time including event.key, event.code, which, location, and generate ready-to-use event handler snippets.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/javascript-keycode-finder",
+    "iconName": "Keyboard",
+    "isFeatured": false
+  },
+  {
+    "id": "chmod-calculator",
+    "title": "Chmod Permissions Calculator & Generator",
+    "description": "Calculate Linux and Unix chmod permissions visually with octal, symbolic, and binary conversions, SetUID/SetGID/Sticky bit support, and terminal command generation.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/chmod-calculator",
+    "iconName": "Shield",
+    "isFeatured": true
   }
 ]
