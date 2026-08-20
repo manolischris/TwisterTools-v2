@@ -94,7 +94,9 @@ import {
   Sliders,
   Shapes,
   Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -205,7 +207,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Sliders,
   Shapes,
   Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table
 };
 
 export default function CategoryToolSearchGrid({

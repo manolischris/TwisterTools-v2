@@ -3,75 +3,76 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
-import QrCodeGenerator from "../../../../components/tools/QrCodeGenerator";
-import Md5Generator from "../../../../components/tools/Md5Generator";
-import PasswordGenerator from "../../../../components/tools/PasswordGenerator";
-import PasswordStrengthChecker from "../../../../components/tools/PasswordStrengthChecker";
-import AgeCalculator from "../../../../components/tools/AgeCalculator";
-import PercentageCalculator from "../../../../components/tools/PercentageCalculator";
-import AverageCalculator from "../../../../components/tools/AverageCalculator";
-import CaseConverter from "../../../../components/tools/CaseConverter";
-import CommaSeparator from "../../../../components/tools/CommaSeparator";
-import BinaryConverter from "../../../../components/tools/BinaryConverter";
-import Base64Converter from "../../../../components/tools/Base64Converter";
-import UrlEncoderDecoder from "../../../../components/tools/UrlEncoderDecoder";
-import HtmlEncoderDecoder from "../../../../components/tools/HtmlEncoderDecoder";
-import JsonFormatterValidator from "../../../../components/tools/JsonFormatterValidator";
-import XmlFormatterValidator from "../../../../components/tools/XmlFormatterValidator";
-import JwtDecoder from "../../../../components/tools/JwtDecoder";
-import UuidGenerator from "../../../../components/tools/UuidGenerator";
-import StringHexConverter from "../../../../components/tools/StringHexConverter";
-import UnixTimestampConverter from "../../../../components/tools/UnixTimestampConverter";
-import ShaGenerator from "../../../../components/tools/ShaGenerator";
-import CronExpressionGenerator from "../../../../components/tools/CronExpressionGenerator";
-import ReverseTextGenerator from "../../../../components/tools/ReverseTextGenerator";
-import SqlFormatter from "../../../../components/tools/SqlFormatter";
-import RegexTester from "../../../../components/tools/RegexTester";
-import DiffChecker from "../../../../components/tools/DiffChecker";
-import MarkdownToHtmlConverter from "../../../../components/tools/MarkdownToHtmlConverter";
-import HtmlFormatter from "../../../../components/tools/HtmlFormatter";
-import CssFormatter from "../../../../components/tools/CssFormatter";
-import JavaScriptFormatter from "../../../../components/tools/JavaScriptFormatter";
-import JsonCsvConverter from "../../../../components/tools/JsonCsvConverter";
-import HtmlToMarkdown from "../../../../components/tools/HtmlToMarkdown";
-import HtmlCssMinifier from "../../../../components/tools/HtmlCssMinifier";
-import YamlJsonConverter from "../../../../components/tools/YamlJsonConverter";
-import MetaTagGenerator from "../../../../components/tools/MetaTagGenerator";
-import OpenGraphGenerator from "../../../../components/tools/OpenGraphGenerator";
-import DomainAgeChecker from "../../../../components/tools/DomainAgeChecker";
-import DomainToIpConverter from "../../../../components/tools/DomainToIpConverter";
-import IpLocation from "../../../../components/tools/IpLocation";
-import FindDnsRecord from "../../../../components/tools/FindDnsRecord";
-import SslChecker from "../../../../components/tools/SslChecker";
-import HttpHeadersInspector from "../../../../components/tools/HttpHeadersInspector";
-import SitemapGenerator from "../../../../components/tools/SitemapGenerator";
-import WordCombiner from "../../../../components/tools/WordCombiner";
-import SmallTextGenerator from "../../../../components/tools/SmallTextGenerator";
-import ArticleRewriter from "../../../../components/tools/ArticleRewriter";
-import OnlineTextEditor from "../../../../components/tools/OnlineTextEditor";
-import RgbToHex from "../../../../components/tools/RgbToHex";
-import CreditCardGenerator from "../../../../components/tools/CreditCardGenerator";
-import PngToJpgConverter from "../../../../components/tools/PngToJpgConverter";
-import FaviconGeneratorSuite from "../../../../components/tools/FaviconGeneratorSuite";
-import ImageCompressor from "../../../../components/tools/ImageCompressor";
-import SvgConverter from "../../../../components/tools/SvgConverter";
-import HeicToJpgConverter from "../../../../components/tools/HeicToJpgConverter";
-import PdfCompressorSuite from "../../../../components/tools/PdfCompressorSuite";
-import ExtractPdfImages from "@/components/tools/ExtractPdfImages";
-import PregnancyDueDateCalculator from "@/components/tools/PregnancyDueDateCalculator";
-import ScientificCalculator from "@/components/tools/ScientificCalculator";
-import LoremIpsumGenerator from "@/components/tools/LoremIpsumGenerator";
-import TimezoneConverter from "@/components/tools/TimezoneConverter";
-import DiceRoller from "@/components/tools/DiceRoller";
-import RandomAddressGenerator from "@/components/tools/RandomAddressGenerator";
-import RandomCountryPicker from "@/components/tools/RandomCountryPicker";
-import CssBoxShadowGenerator from "@/components/tools/CssBoxShadowGenerator";
-import CssBorderRadiusGenerator from "@/components/tools/CssBorderRadiusGenerator";
-import CssFlexboxPlayground from "@/components/tools/CssFlexboxPlayground";
-import CssGridGenerator from "@/components/tools/CssGridGenerator";
+const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
+const Md5Generator = dynamic(() => import("../../../../components/tools/Md5Generator"));
+const PasswordGenerator = dynamic(() => import("../../../../components/tools/PasswordGenerator"));
+const PasswordStrengthChecker = dynamic(() => import("../../../../components/tools/PasswordStrengthChecker"));
+const AgeCalculator = dynamic(() => import("../../../../components/tools/AgeCalculator"));
+const PercentageCalculator = dynamic(() => import("../../../../components/tools/PercentageCalculator"));
+const AverageCalculator = dynamic(() => import("../../../../components/tools/AverageCalculator"));
+const CaseConverter = dynamic(() => import("../../../../components/tools/CaseConverter"));
+const CommaSeparator = dynamic(() => import("../../../../components/tools/CommaSeparator"));
+const BinaryConverter = dynamic(() => import("../../../../components/tools/BinaryConverter"));
+const Base64Converter = dynamic(() => import("../../../../components/tools/Base64Converter"));
+const UrlEncoderDecoder = dynamic(() => import("../../../../components/tools/UrlEncoderDecoder"));
+const HtmlEncoderDecoder = dynamic(() => import("../../../../components/tools/HtmlEncoderDecoder"));
+const JsonFormatterValidator = dynamic(() => import("../../../../components/tools/JsonFormatterValidator"));
+const XmlFormatterValidator = dynamic(() => import("../../../../components/tools/XmlFormatterValidator"));
+const JwtDecoder = dynamic(() => import("../../../../components/tools/JwtDecoder"));
+const UuidGenerator = dynamic(() => import("../../../../components/tools/UuidGenerator"));
+const StringHexConverter = dynamic(() => import("../../../../components/tools/StringHexConverter"));
+const UnixTimestampConverter = dynamic(() => import("../../../../components/tools/UnixTimestampConverter"));
+const ShaGenerator = dynamic(() => import("../../../../components/tools/ShaGenerator"));
+const CronExpressionGenerator = dynamic(() => import("../../../../components/tools/CronExpressionGenerator"));
+const ReverseTextGenerator = dynamic(() => import("../../../../components/tools/ReverseTextGenerator"));
+const SqlFormatter = dynamic(() => import("../../../../components/tools/SqlFormatter"));
+const RegexTester = dynamic(() => import("../../../../components/tools/RegexTester"));
+const DiffChecker = dynamic(() => import("../../../../components/tools/DiffChecker"));
+const MarkdownToHtmlConverter = dynamic(() => import("../../../../components/tools/MarkdownToHtmlConverter"));
+const HtmlFormatter = dynamic(() => import("../../../../components/tools/HtmlFormatter"));
+const CssFormatter = dynamic(() => import("../../../../components/tools/CssFormatter"));
+const JavaScriptFormatter = dynamic(() => import("../../../../components/tools/JavaScriptFormatter"));
+const JsonCsvConverter = dynamic(() => import("../../../../components/tools/JsonCsvConverter"));
+const HtmlToMarkdown = dynamic(() => import("../../../../components/tools/HtmlToMarkdown"));
+const HtmlCssMinifier = dynamic(() => import("../../../../components/tools/HtmlCssMinifier"));
+const YamlJsonConverter = dynamic(() => import("../../../../components/tools/YamlJsonConverter"));
+const MetaTagGenerator = dynamic(() => import("../../../../components/tools/MetaTagGenerator"));
+const OpenGraphGenerator = dynamic(() => import("../../../../components/tools/OpenGraphGenerator"));
+const DomainAgeChecker = dynamic(() => import("../../../../components/tools/DomainAgeChecker"));
+const DomainToIpConverter = dynamic(() => import("../../../../components/tools/DomainToIpConverter"));
+const IpLocation = dynamic(() => import("../../../../components/tools/IpLocation"));
+const FindDnsRecord = dynamic(() => import("../../../../components/tools/FindDnsRecord"));
+const SslChecker = dynamic(() => import("../../../../components/tools/SslChecker"));
+const HttpHeadersInspector = dynamic(() => import("../../../../components/tools/HttpHeadersInspector"));
+const SitemapGenerator = dynamic(() => import("../../../../components/tools/SitemapGenerator"));
+const WordCombiner = dynamic(() => import("../../../../components/tools/WordCombiner"));
+const SmallTextGenerator = dynamic(() => import("../../../../components/tools/SmallTextGenerator"));
+const ArticleRewriter = dynamic(() => import("../../../../components/tools/ArticleRewriter"));
+const OnlineTextEditor = dynamic(() => import("../../../../components/tools/OnlineTextEditor"));
+const RgbToHex = dynamic(() => import("../../../../components/tools/RgbToHex"));
+const CreditCardGenerator = dynamic(() => import("../../../../components/tools/CreditCardGenerator"));
+const PngToJpgConverter = dynamic(() => import("../../../../components/tools/PngToJpgConverter"));
+const FaviconGeneratorSuite = dynamic(() => import("../../../../components/tools/FaviconGeneratorSuite"));
+const ImageCompressor = dynamic(() => import("../../../../components/tools/ImageCompressor"));
+const SvgConverter = dynamic(() => import("../../../../components/tools/SvgConverter"));
+const HeicToJpgConverter = dynamic(() => import("../../../../components/tools/HeicToJpgConverter"));
+const PdfCompressorSuite = dynamic(() => import("../../../../components/tools/PdfCompressorSuite"));
+const ExtractPdfImages = dynamic(() => import("@/components/tools/ExtractPdfImages"));
+const PregnancyDueDateCalculator = dynamic(() => import("@/components/tools/PregnancyDueDateCalculator"));
+const ScientificCalculator = dynamic(() => import("@/components/tools/ScientificCalculator"));
+const LoremIpsumGenerator = dynamic(() => import("@/components/tools/LoremIpsumGenerator"));
+const TimezoneConverter = dynamic(() => import("@/components/tools/TimezoneConverter"));
+const DiceRoller = dynamic(() => import("@/components/tools/DiceRoller"));
+const RandomAddressGenerator = dynamic(() => import("@/components/tools/RandomAddressGenerator"));
+const RandomCountryPicker = dynamic(() => import("@/components/tools/RandomCountryPicker"));
+const CssBoxShadowGenerator = dynamic(() => import("@/components/tools/CssBoxShadowGenerator"));
+const CssBorderRadiusGenerator = dynamic(() => import("@/components/tools/CssBorderRadiusGenerator"));
+const CssFlexboxPlayground = dynamic(() => import("@/components/tools/CssFlexboxPlayground"));
+const CssGridGenerator = dynamic(() => import("@/components/tools/CssGridGenerator"));
+const HtmlTableGenerator = dynamic(() => import("../../../../components/tools/HtmlTableGenerator"));
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -166,6 +167,7 @@ const COMPLETED_TOOLS = [
   "css-border-radius-generator",
   "css-flexbox-playground",
   "css-grid-generator",
+  "html-table-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -300,6 +302,10 @@ export async function generateMetadata({
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
     description = "Interactive visual CSS Flexbox playground. Test alignment, direction, order, and grow/shrink dynamics with instant CSS and Tailwind code generation.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "html-table-generator") {
+    description = "Design, customize, and generate semantic HTML5 tables, Tailwind CSS classes, React TSX, Markdown, and CSS stylesheets with live preview and CSV import.";
   }
 
   if (category === "pdf-tools" && toolSlug === "text-to-pdf") {
@@ -890,6 +896,8 @@ export default async function ToolPage({
                   <Layout className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "css-grid-generator" ? (
                   <LayoutGrid className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "html-table-generator" ? (
+                  <Table className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -914,7 +922,9 @@ export default async function ToolPage({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 md:py-6">
         <div className="max-w-6xl mx-auto space-y-8">
           {/* Interactive Tool Interface */}
-          {category === "developer-tools" && toolSlug === "md5-generator" ? (
+          {category === "developer-tools" && toolSlug === "html-table-generator" ? (
+            <HtmlTableGenerator />
+          ) : category === "developer-tools" && toolSlug === "md5-generator" ? (
             <Md5Generator />
           ) : category === "developer-tools" && toolSlug === "sha-generator" ? (
             <ShaGenerator />

@@ -83,7 +83,9 @@ import {
   Sliders,
   Shapes,
   Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -173,7 +175,9 @@ const ICON_MAP: Record<string, any> = {
   Sliders: Sliders,
   Shapes,
   Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table
 };
 
 interface RelatedToolsProps {

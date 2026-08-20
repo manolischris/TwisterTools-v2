@@ -91,7 +91,8 @@ import {
   Users,
   Pipette,
   Sliders,
-  LayoutGrid
+  LayoutGrid,
+  Triangle
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -192,7 +193,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Users,
   Pipette,
   Sliders,
-  LayoutGrid
+  LayoutGrid,
+  Triangle
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json

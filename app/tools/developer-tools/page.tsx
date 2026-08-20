@@ -127,6 +127,22 @@ export default function DeveloperToolsCategoryPage() {
           iconName: "Palette"
         };
       }
+      if (tool.id === "html-table-generator") {
+        return {
+          ...tool,
+          title: "HTML Table Code Generator",
+          description: "Interactive visual HTML table builder with Tailwind, CSS, React TSX, and Markdown export.",
+          iconName: "Table"
+        };
+      }
+      if (tool.id === "htaccess-generator") {
+        return {
+          ...tool,
+          title: "HTACCESS Directives & Rewrite Rules Generator",
+          description: "Generate production-ready Apache .htaccess rules with 301 redirects, HTTPS enforcement, GZIP, and security headers.",
+          iconName: "FileCode"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {

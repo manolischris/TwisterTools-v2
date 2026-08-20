@@ -30,6 +30,9 @@ Essential browser-based engineering utilities for tokenizing, formatting, minify
 - CSS Border Radius & Clip-Path Generator: Visual 8-point organic blob generator, corner radius customizer, and CSS polygon clip-path generator with Tailwind export (/tools/developer-tools/css-border-radius-generator)
 - CSS Flexbox Layout Sandbox (/tools/developer-tools/css-flexbox-playground): Interactive visual CSS Flexbox sandbox with AST CSS and Tailwind generator.
 - [CSS Grid Generator](/tools/developer-tools/css-grid-generator): Visual 2D CSS grid layout builder and CSS/HTML/Tailwind code exporter.
+* [CSS Triangle & Polygon Generator](/tools/developer-tools/css-triangle-generator): Interactive zero-pixel border triangles and GPU-accelerated CSS clip-path polygon generator with Tailwind and SCSS support.
+- HTML Table Code Generator (/tools/developer-tools/html-table-generator): Visual responsive HTML table builder with Tailwind CSS, React TSX, Markdown, and CSV import.
+- HTACCESS Generator: /tools/developer-tools/htaccess-generator - Production Apache server configuration and mod_rewrite generator.
 
 
 ### [Daily Essentials, Financial & Math Calculators](https://www.twistertools.com/tools/calculators)

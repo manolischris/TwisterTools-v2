@@ -101,7 +101,9 @@ import {
   Sliders,
   Shapes,
   Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -213,7 +215,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Sliders,
   Shapes,
   Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table
 };
 
 /* ─────────────────────────────────────────────────────────

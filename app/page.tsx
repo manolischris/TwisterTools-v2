@@ -102,8 +102,10 @@ import {
   Shuffle,
   Pipette,
   Sliders,
-  Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table,
+  Layout
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -209,7 +211,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Pipette,
   Sliders,
   Layout,
-  LayoutGrid
+  LayoutGrid,
+  Triangle,
+  Table
 };
 
 const CATEGORIES = [

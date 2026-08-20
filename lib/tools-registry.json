@@ -1623,5 +1623,32 @@
     "href": "/tools/developer-tools/css-grid-generator",
     "iconName": "LayoutGrid",
     "isFeatured": false
+  },
+  {
+    "id": "css-triangle-generator",
+    "title": "CSS Triangle & Polygon Generator",
+    "description": "Interactive pure CSS border triangle and CSS3 clip-path polygon generator with draggable vertices.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-triangle-generator",
+    "iconName": "Triangle",
+    "isFeatured": false
+  },
+  {
+    "id": "html-table-generator",
+    "title": "HTML Table Code Generator",
+    "description": "Visual responsive HTML table generator and editor with CSS, Tailwind, and Markdown export.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/html-table-generator",
+    "iconName": "Table",
+    "isFeatured": false
+  },
+  {
+    "id": "htaccess-generator",
+    "title": "HTACCESS Directives & Rewrite Rules Generator",
+    "description": "Generate production-ready Apache .htaccess rules with 301 redirects, HTTPS enforcement, GZIP compression, and security hardening headers.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/htaccess-generator",
+    "iconName": "FileCode",
+    "isFeatured": false
   }
 ]
