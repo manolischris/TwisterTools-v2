@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, CreditCard, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid, ArrowRightLeft, Home } from "lucide-react";
+import { Calculator, CreditCard, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid, ArrowRightLeft, Home, Wallet, Fuel, Zap } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -168,6 +168,30 @@ export default function CalculatorsCategoryPage() {
         title: "Car Lease vs Buy Calculator",
         description: "Calculate total cost of ownership, loan amortization vs lease payments, equity retention, and depreciation.",
         iconName: "Car"
+      };
+    }
+    if (tool.id === "subscription-cost-calculator") {
+      return {
+        ...tool,
+        title: "Subscription Audit & Expense Aggregator",
+        description: "Audit recurring SaaS, streaming, and membership fees to calculate annual spend leaks and opportunity cost.",
+        iconName: "Wallet"
+      };
+    }
+    if (tool.id === "freelance-rate-calculator") {
+      return {
+        ...tool,
+        title: "Freelance Rate & Overhead Calculator",
+        description: "Calculate sustainable hourly rates, day rates, monthly retainers, tax reserves, and overhead costs.",
+        iconName: "Calculator"
+      };
+    }
+    if (tool.id === "rent-vs-buy-calculator") {
+      return {
+        ...tool,
+        title: "Home Rent vs Buy Break-Even Calculator",
+        description: "Compare total homeownership costs against renting and index fund investing to find your exact wealth break-even year.",
+        iconName: "Scale"
       };
     }
     if (tool.id === "retirement-calculator") {
@@ -406,8 +430,48 @@ export default function CalculatorsCategoryPage() {
       return {
         ...tool,
         title: "Credit Card Payoff Calculator",
-        description: "Simulate credit card payoff schedules, eliminate debt traps, and calculate interest savings.",
+        description: "Simulate credit card payoff schedules, compare minimum payments vs accelerated plans, and calculate interest savings.",
         iconName: "CreditCard"
+      };
+    }
+    if (tool.id === "fuel-cost-calculator") {
+      return {
+        ...tool,
+        title: "Fuel Trip Cost & Mileage Expense Estimator",
+        description: "Calculate gas expenses, road trip costs, passenger fare splits, highway tolls, and standard tax mileage reimbursements.",
+        iconName: "Fuel"
+      };
+    }
+    if (tool.id === "electricity-cost-calculator") {
+      return {
+        ...tool,
+        title: "Electricity Appliance Running Cost & kWh Estimator",
+        description: "Calculate running costs, kilowatt-hour (kWh) electricity consumption, and utility bill impact for home appliances with customizable utility tariff rates.",
+        iconName: "Zap"
+      };
+    }
+    if (tool.id === "unit-price-calculator") {
+      return {
+        ...tool,
+        title: "Unit Price & Grocery Bulk Savings Calculator",
+        description: "Standardize weights, volumes, and multipacks to expose real grocery savings.",
+        iconName: "Scale"
+      };
+    }
+    if (tool.id === "rule-of-72-calculator") {
+      return {
+        ...tool,
+        title: "Rule of 72 Investment Doubling Time Calculator",
+        description: "Calculate how many years it takes to double your investment or find the required annual rate of return.",
+        iconName: "TrendingUp"
+      };
+    }
+    if (tool.id === "mortgage-refinance-calculator") {
+      return {
+        ...tool,
+        title: "Mortgage Refinance & Break-Even Calculator",
+        description: "Evaluate break-even timelines, monthly payment changes, and lifetime interest savings for home loan refinancing.",
+        iconName: "Home"
       };
     }
     return tool;

@@ -67,6 +67,15 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - Credit Card Payoff Calculator (/tools/calculators/credit-card-payoff-calculator): Calculate credit card payoff schedules, minimum payment traps, and accelerated debt payoff timelines.
 - Emergency Fund & Monthly Expense Buffer Calculator: Determine essential monthly burn rate, cash runway, and target emergency fund milestones.
 - `https://twistertools.com/tools/calculators/car-lease-vs-buy-calculator`: Car Lease vs Buy Financial Comparison Calculator (monthly loan amortization, lease money factors, depreciation schedules, and equity).
+- /tools/calculators/subscription-cost-calculator: Audit recurring subscriptions and calculate annual expense leaks and opportunity cost.
+- [Freelance Rate Calculator](/tools/calculators/freelance-rate-calculator): Calculate minimum hourly rates, day rates, tax provisions, overhead costs, and freelance profit margins.
+- Rent vs Buy Break-Even Calculator: Real estate opportunity cost, equity amortization, and break-even horizon simulator.
+- /tools/calculators/fuel-cost-calculator: Fuel Trip Cost & Mileage Expense Estimator - Real-time fuel economy, trip budgeting, passenger splitting, and business mileage deduction calculator.
+- /tools/calculators/electricity-cost-calculator: Electricity Appliance Running Cost & kWh Estimator - Real-time electrical wattage conversion, household utility billing forecasts, single appliance deep-dives, and whole-home energy audit calculator.
+- Unit Price Calculator (/tools/calculators/unit-price-calculator): Standardize grocery weights, volumes, and multipacks to uncover authentic bulk savings.
+- Daily Habit Savings & Compounding Planner: Calculate the future opportunity cost and compound returns of small recurring daily habits and expenses.
+- Rule of 72 Calculator (/tools/calculators/rule-of-72-calculator): Instant compound interest doubling time and required ROI rate calculator.
+- Mortgage Refinance Calculator (/tools/calculators/mortgage-refinance-calculator): Analyze break-even periods, monthly payment delta, and cumulative amortization schedules.
 
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.

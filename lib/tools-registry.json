@@ -1749,5 +1749,86 @@
     "href": "/tools/calculators/car-lease-vs-buy-calculator",
     "iconName": "Car",
     "isFeatured": false
+  },
+  {
+    "id": "subscription-cost-calculator",
+    "title": "Subscription Audit & Annual Expense Aggregator",
+    "description": "Audit recurring SaaS, streaming, and membership subscriptions. Calculate total annual cost leaks, category distributions, and compound investment opportunity costs.",
+    "category": "calculators",
+    "href": "/tools/calculators/subscription-cost-calculator",
+    "iconName": "Wallet",
+    "isFeatured": false
+  },
+  {
+    "id": "freelance-rate-calculator",
+    "title": "Freelance Hourly Billing Rate & Overhead Calculator",
+    "description": "Calculate sustainable hourly rates, day rates, monthly retainers, tax reserves, and overhead costs.",
+    "category": "calculators",
+    "href": "/tools/calculators/freelance-rate-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
+  },
+  {
+    "id": "rent-vs-buy-calculator",
+    "title": "Home Rent vs Buy Break-Even Calculator",
+    "description": "Compare total homeownership costs against renting and index fund investing to find your exact wealth break-even year.",
+    "category": "calculators",
+    "href": "/tools/calculators/rent-vs-buy-calculator",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "fuel-cost-calculator",
+    "title": "Fuel Trip Cost & Mileage Expense Estimator",
+    "description": "Calculate driving expenses, road trip gas budgets, group splits, and IRS standard mileage deductions with live unit and currency conversions.",
+    "category": "calculators",
+    "href": "/tools/calculators/fuel-cost-calculator",
+    "iconName": "Fuel",
+    "isFeatured": false
+  },
+  {
+    "id": "electricity-cost-calculator",
+    "title": "Electricity Appliance Running Cost & kWh Estimator",
+    "description": "Calculate appliance running costs, kilowatt-hour consumption, and annual utility bill impact with custom electricity tariffs and multi-device auditing.",
+    "category": "calculators",
+    "href": "/tools/calculators/electricity-cost-calculator",
+    "iconName": "Zap",
+    "isFeatured": false
+  },
+  {
+    "id": "unit-price-calculator",
+    "title": "Unit Price & Grocery Bulk Savings Comparator",
+    "description": "Compare cost per ounce, gram, pound, liter, and count across multiple grocery sizes, multipacks, and bulk deals to identify authentic savings.",
+    "category": "calculators",
+    "href": "/tools/calculators/unit-price-calculator",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "daily-habit-savings-calculator",
+    "title": "Coffee Savings & Compounding Habit Planner",
+    "description": "Calculate how skipping daily coffee or small micro-expenses compounds into massive long-term wealth over time.",
+    "category": "calculators",
+    "href": "/tools/calculators/daily-habit-savings-calculator",
+    "iconName": "Coffee",
+    "isFeatured": false
+  },
+  {
+    "id": "rule-of-72-calculator",
+    "title": "Rule of 72 Investment Doubling Time Calculator",
+    "description": "Calculate exact investment doubling times, compare Rule of 72 vs exact formulas, and analyze inflation drag.",
+    "category": "calculators",
+    "href": "/tools/calculators/rule-of-72-calculator",
+    "iconName": "TrendingUp",
+    "isFeatured": false
+  },
+  {
+    "id": "mortgage-refinance-calculator",
+    "title": "Refinance Break-Even & Interest Savings Calculator",
+    "description": "Calculate break-even timelines in months, evaluate monthly payment reductions, and compare lifetime interest savings for mortgage refinances.",
+    "category": "calculators",
+    "href": "/tools/calculators/mortgage-refinance-calculator",
+    "iconName": "Home",
+    "isFeatured": false
   }
 ]

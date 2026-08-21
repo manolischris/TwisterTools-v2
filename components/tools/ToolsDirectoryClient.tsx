@@ -107,7 +107,8 @@ import {
   Bot,
   Terminal,
   Shield,
-  Home
+  Home,
+  Wallet
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -225,7 +226,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Bot,
   Terminal,
   Shield,
-  Home
+  Home,
+  Wallet
 };
 
 /* ─────────────────────────────────────────────────────────

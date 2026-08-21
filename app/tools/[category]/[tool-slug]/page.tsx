@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -65,6 +65,14 @@ const PregnancyDueDateCalculator = dynamic(() => import("@/components/tools/Preg
 const ScientificCalculator = dynamic(() => import("@/components/tools/ScientificCalculator"));
 const EmergencyFundCalculator = dynamic(() => import("@/components/tools/EmergencyFundCalculator"));
 const CarLeaseVsBuyCalculator = dynamic(() => import("@/components/tools/CarLeaseVsBuyCalculator"));
+const SubscriptionCostCalculator = dynamic(() => import("@/components/tools/SubscriptionCostCalculator"));
+const FreelanceRateCalculator = dynamic(() => import("@/components/tools/FreelanceRateCalculator"));
+const RentVsBuyCalculator = dynamic(() => import("@/components/tools/RentVsBuyCalculator"));
+const FuelCostCalculator = dynamic(() => import("@/components/tools/FuelCostCalculator"));
+const ElectricityCostCalculator = dynamic(() => import("@/components/tools/ElectricityCostCalculator"));
+const UnitPriceCalculator = dynamic(() => import("@/components/tools/UnitPriceCalculator"));
+const DailyHabitSavingsCalculator = dynamic(() => import("@/components/tools/DailyHabitSavingsCalculator"));
+const RuleOf72Calculator = dynamic(() => import("@/components/tools/RuleOf72Calculator"));
 const LoremIpsumGenerator = dynamic(() => import("@/components/tools/LoremIpsumGenerator"));
 const TimezoneConverter = dynamic(() => import("@/components/tools/TimezoneConverter"));
 const DiceRoller = dynamic(() => import("@/components/tools/DiceRoller"));
@@ -177,6 +185,13 @@ const COMPLETED_TOOLS = [
   "user-agent-parser",
   "javascript-keycode-finder",
   "chmod-calculator",
+  "freelance-rate-calculator",
+  "rent-vs-buy-calculator",
+  "fuel-cost-calculator",
+  "electricity-cost-calculator",
+  "unit-price-calculator",
+  "daily-habit-savings-calculator",
+  "rule-of-72-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -336,6 +351,31 @@ export async function generateMetadata({
     description = "Compare total cost of ownership, monthly loan amortization, depreciation, lease fees, and residual equity.";
   }
 
+  if (category === "calculators" && toolSlug === "subscription-cost-calculator") {
+    title = "Subscription Audit & Annual Expense Aggregator";
+    description = "Audit recurring SaaS, streaming, and membership subscriptions. Calculate annual expense leaks and long-term opportunity cost.";
+  }
+
+  if (category === "calculators" && toolSlug === "freelance-rate-calculator") {
+    title = "Freelance Hourly Billing Rate & Overhead Calculator";
+    description = "Calculate your true hourly rate, day rate, tax provisions, overhead expenses, and profit margins to hit take-home income goals.";
+  }
+
+  if (category === "calculators" && toolSlug === "rent-vs-buy-calculator") {
+    title = "Home Rent vs Buy Break-Even Calculator";
+    description = "Calculate exact real estate break-even timelines, unrecoverable costs, mortgage amortization, and net wealth accumulation between renting and homeownership.";
+  }
+
+  if (category === "calculators" && toolSlug === "unit-price-calculator") {
+    title = "Unit Price & Grocery Bulk Savings Calculator";
+    description = "Compare cost per ounce, gram, liter, and count across multipacks and package sizes to calculate true grocery savings.";
+  }
+
+  if (category === "calculators" && toolSlug === "rule-of-72-calculator") {
+    title = "Rule of 72 Investment Doubling Time Calculator";
+    description = "Estimate how fast your money doubles with compound interest, exact logarithmic formulas, and inflation drag simulations.";
+  }
+
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -459,6 +499,11 @@ export default async function ToolPage({
 
   if (category === "developer-tools" && toolSlug === "chmod-calculator") {
     tool.description = "Calculate Linux and Unix file permissions visually with instant octal, symbolic, and binary conversion, SetUID/SetGID/Sticky bit modifiers, and production-ready CLI command generation.";
+  }
+
+  if (category === "calculators" && toolSlug === "rule-of-72-calculator") {
+    tool.name = "Rule of 72 Investment Doubling Time Calculator";
+    tool.description = "Estimate how fast your money doubles with compound interest, exact logarithmic formulas, and inflation drag simulations.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -819,7 +864,7 @@ export default async function ToolPage({
                   <CalendarClock className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "percentage-calculator" ? (
                   <Percent className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "average-calculator" ? (
+                ) : (toolSlug === "average-calculator" || toolSlug === "freelance-rate-calculator") ? (
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "case-converter" ? (
                   <Type className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -911,6 +956,20 @@ export default async function ToolPage({
                   <ShieldCheck className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "car-lease-vs-buy-calculator" ? (
                   <Car className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "subscription-cost-calculator" ? (
+                  <Wallet className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "rent-vs-buy-calculator" ? (
+                  <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "unit-price-calculator" ? (
+                  <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "daily-habit-savings-calculator" ? (
+                  <Coffee className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "rule-of-72-calculator" ? (
+                  <TrendingUp className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "fuel-cost-calculator" ? (
+                  <Fuel className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "electricity-cost-calculator" ? (
+                  <Zap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "uuid-generator" ? (
@@ -1079,6 +1138,22 @@ export default async function ToolPage({
             <EmergencyFundCalculator />
           ) : category === "calculators" && toolSlug === "car-lease-vs-buy-calculator" ? (
             <CarLeaseVsBuyCalculator />
+          ) : category === "calculators" && toolSlug === "subscription-cost-calculator" ? (
+            <SubscriptionCostCalculator />
+          ) : category === "calculators" && toolSlug === "freelance-rate-calculator" ? (
+            <FreelanceRateCalculator />
+          ) : category === "calculators" && toolSlug === "rent-vs-buy-calculator" ? (
+            <RentVsBuyCalculator />
+          ) : category === "calculators" && toolSlug === "fuel-cost-calculator" ? (
+            <FuelCostCalculator />
+          ) : category === "calculators" && toolSlug === "electricity-cost-calculator" ? (
+            <ElectricityCostCalculator />
+          ) : category === "calculators" && toolSlug === "unit-price-calculator" ? (
+            <UnitPriceCalculator />
+          ) : category === "calculators" && toolSlug === "daily-habit-savings-calculator" ? (
+            <DailyHabitSavingsCalculator />
+          ) : category === "calculators" && toolSlug === "rule-of-72-calculator" ? (
+            <RuleOf72Calculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
