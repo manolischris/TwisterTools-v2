@@ -94,7 +94,8 @@ import {
   LayoutGrid,
   Triangle,
   Bot,
-  Terminal
+  Terminal,
+  Home
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -198,7 +199,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   LayoutGrid,
   Triangle,
   Bot,
-  Terminal
+  Terminal,
+  Home
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json

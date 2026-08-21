@@ -1390,7 +1390,7 @@ $poly-shape: ${clipPathString};
 
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* Recipe 1 */}
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900">1. Tooltip Arrow Anchor (CSS Pseudo)</span>
                                 <span className="text-xs bg-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded-full">Pure CSS</span>
@@ -1415,7 +1415,7 @@ $poly-shape: ${clipPathString};
                         </div>
 
                         {/* Recipe 2 */}
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900">2. Responsive Tailwind Polygon Banner</span>
                                 <span className="text-xs bg-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded-full">Tailwind v3/v4</span>

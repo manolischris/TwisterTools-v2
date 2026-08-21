@@ -1023,7 +1023,7 @@ export default function ChmodCalculator() {
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6 mt-4">
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                 <FileCode className="w-4 h-4 text-indigo-600" /> 1. Octal (Absolute) Notation
                             </h3>
@@ -1039,7 +1039,7 @@ chmod -R 644 /var/www/html/*.html`}
                             </pre>
                         </div>
 
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                 <Sparkles className="w-4 h-4 text-indigo-600" /> 2. Symbolic (Relative) Notation
                             </h3>

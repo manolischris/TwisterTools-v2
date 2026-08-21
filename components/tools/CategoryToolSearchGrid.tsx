@@ -100,7 +100,8 @@ import {
   Bot,
   Terminal,
   Keyboard,
-  Shield
+  Shield,
+  Home
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -217,7 +218,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Bot,
   Terminal,
   Keyboard,
-  Shield
+  Shield,
+  Home
 };
 
 export default function CategoryToolSearchGrid({

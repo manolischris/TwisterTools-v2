@@ -88,7 +88,8 @@ import {
   Table,
   Bot,
   Terminal,
-  Shield
+  Shield,
+  Home
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -183,7 +184,8 @@ const ICON_MAP: Record<string, any> = {
   Table,
   Bot,
   Terminal,
-  Shield
+  Shield,
+  Home
 };
 
 interface RelatedToolsProps {

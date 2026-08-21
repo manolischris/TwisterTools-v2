@@ -979,7 +979,7 @@ export default function ScreenResolutionCalculator() {
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900">Modern CSS (W3C Spec)</span>
                                 <span className="text-xs bg-emerald-100 text-emerald-800 font-bold px-2 py-0.5 rounded-full">Recommended</span>
@@ -997,7 +997,7 @@ export default function ScreenResolutionCalculator() {
                             </p>
                         </div>
 
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900">Legacy Padding-Bottom Hack</span>
                                 <span className="text-xs bg-slate-200 text-slate-700 font-bold px-2 py-0.5 rounded-full">Fallback</span>

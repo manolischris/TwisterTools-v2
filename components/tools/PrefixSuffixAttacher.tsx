@@ -578,7 +578,7 @@ export default function PrefixSuffixAttacher() {
 
                     <div className="grid md:grid-cols-2 gap-6">
                         {/* Example 1: SQL IN Builder */}
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                     <Database className="w-4 h-4 text-indigo-600" /> 1. SQL Query IN () Clause
@@ -599,7 +599,7 @@ export default function PrefixSuffixAttacher() {
                         </div>
 
                         {/* Example 2: HTML List Wrapping */}
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                     <Terminal className="w-4 h-4 text-indigo-600" /> 2. HTML Semantic Markup
@@ -620,7 +620,7 @@ export default function PrefixSuffixAttacher() {
                         </div>
 
                         {/* Example 3: URL Constructor */}
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                     <Globe className="w-4 h-4 text-indigo-600" /> 3. Domain URL Normalization
@@ -641,7 +641,7 @@ export default function PrefixSuffixAttacher() {
                         </div>
 
                         {/* Example 4: JSON Array Construction */}
-                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3">
+                        <div className="p-5 border border-slate-200 rounded-xl bg-slate-50 space-y-3 min-w-0">
                             <div className="flex items-center justify-between border-b border-slate-200 pb-2">
                                 <span className="font-bold text-slate-900 text-sm flex items-center gap-2">
                                     <Layers className="w-4 h-4 text-indigo-600" /> 4. JSON String Array Items

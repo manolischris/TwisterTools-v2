@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid } from "lucide-react";
+import { Calculator, CreditCard, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid, ArrowRightLeft, Home } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -144,6 +144,30 @@ export default function CalculatorsCategoryPage() {
         title: "Loan Payoff & Debt Reduction Calculator",
         description: "Calculate payoff timelines, interest savings, and lump-sum impact to accelerate debt elimination.",
         iconName: "Calculator"
+      };
+    }
+    if (tool.id === "down-payment-calculator") {
+      return {
+        ...tool,
+        title: "Down Payment Savings & Timeline Planner",
+        description: "Calculate down payment targets, savings timelines, HYSA compound growth, and closing cost requirements.",
+        iconName: "Home"
+      };
+    }
+    if (tool.id === "emergency-fund-calculator") {
+      return {
+        ...tool,
+        title: "Emergency Fund & Monthly Expense Buffer Calculator",
+        description: "Determine your essential monthly burn rate, cash runway, and months to build a complete emergency fund.",
+        iconName: "ShieldCheck"
+      };
+    }
+    if (tool.id === "car-lease-vs-buy-calculator") {
+      return {
+        ...tool,
+        title: "Car Lease vs Buy Calculator",
+        description: "Calculate total cost of ownership, loan amortization vs lease payments, equity retention, and depreciation.",
+        iconName: "Car"
       };
     }
     if (tool.id === "retirement-calculator") {
@@ -368,6 +392,22 @@ export default function CalculatorsCategoryPage() {
         title: "Grade & Exam Score Needed Calculator",
         description: "Calculate the exact score needed on your final exam to reach your target class grade.",
         iconName: "GraduationCap"
+      };
+    }
+    if (tool.id === "apy-to-apr-calculator") {
+      return {
+        ...tool,
+        title: "APY to APR Calculator",
+        description: "Convert APY to APR and APR to APY across daily, monthly, quarterly, and continuous compounding schedules.",
+        iconName: "ArrowRightLeft"
+      };
+    }
+    if (tool.id === "credit-card-payoff-calculator") {
+      return {
+        ...tool,
+        title: "Credit Card Payoff Calculator",
+        description: "Simulate credit card payoff schedules, eliminate debt traps, and calculate interest savings.",
+        iconName: "CreditCard"
       };
     }
     return tool;

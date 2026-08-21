@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -63,6 +63,8 @@ const PdfCompressorSuite = dynamic(() => import("../../../../components/tools/Pd
 const ExtractPdfImages = dynamic(() => import("@/components/tools/ExtractPdfImages"));
 const PregnancyDueDateCalculator = dynamic(() => import("@/components/tools/PregnancyDueDateCalculator"));
 const ScientificCalculator = dynamic(() => import("@/components/tools/ScientificCalculator"));
+const EmergencyFundCalculator = dynamic(() => import("@/components/tools/EmergencyFundCalculator"));
+const CarLeaseVsBuyCalculator = dynamic(() => import("@/components/tools/CarLeaseVsBuyCalculator"));
 const LoremIpsumGenerator = dynamic(() => import("@/components/tools/LoremIpsumGenerator"));
 const TimezoneConverter = dynamic(() => import("@/components/tools/TimezoneConverter"));
 const DiceRoller = dynamic(() => import("@/components/tools/DiceRoller"));
@@ -162,6 +164,7 @@ const COMPLETED_TOOLS = [
   "extract-pdf-images",
   "pregnancy-due-date-calculator",
   "scientific-calculator",
+  "emergency-fund-calculator",
   "timezone-converter",
   "dice-roller",
   "random-address-generator",
@@ -323,6 +326,16 @@ export async function generateMetadata({
     description = "Convert plain text content into formatted, paginated PDF documents directly in browser memory.";
   }
 
+  if (category === "calculators" && toolSlug === "emergency-fund-calculator") {
+    title = "Emergency Fund & Monthly Expense Buffer Calculator";
+    description = "Calculate your ideal emergency fund reserve, bare-bones survival budget, savings runway, and high-yield interest trajectory with real-time financial math.";
+  }
+
+  if (category === "calculators" && toolSlug === "car-lease-vs-buy-calculator") {
+    title = "Car Lease vs Buy Calculator";
+    description = "Compare total cost of ownership, monthly loan amortization, depreciation, lease fees, and residual equity.";
+  }
+
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -336,7 +349,7 @@ export async function generateMetadata({
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
         (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
           ? title
-          : `${tool.name} | TwisterTools`,
+          : `${title} | TwisterTools`,
       description,
       url: toolUrl,
       siteName: "TwisterTools",
@@ -356,7 +369,7 @@ export async function generateMetadata({
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
         (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
           ? title
-          : `${tool.name} | TwisterTools`,
+          : `${title} | TwisterTools`,
       description,
       images: [ogImageUrl],
     },
@@ -894,6 +907,10 @@ export default async function ToolPage({
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "calculators" && toolSlug === "pregnancy-due-date-calculator" ? (
                   <Baby className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "emergency-fund-calculator" ? (
+                  <ShieldCheck className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "car-lease-vs-buy-calculator" ? (
+                  <Car className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "uuid-generator" ? (
@@ -1058,6 +1075,10 @@ export default async function ToolPage({
             <PregnancyDueDateCalculator />
           ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
             <ScientificCalculator />
+          ) : category === "calculators" && toolSlug === "emergency-fund-calculator" ? (
+            <EmergencyFundCalculator />
+          ) : category === "calculators" && toolSlug === "car-lease-vs-buy-calculator" ? (
+            <CarLeaseVsBuyCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (

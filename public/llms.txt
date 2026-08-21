@@ -49,6 +49,7 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - **Percentage & Average Calculators**: Solve standard growth, distribution, mean, median, mode, and standard deviation tasks.
 - **Age Calculator**: Determine exact age down to hours alongside milestones and birth countdowns.
 - **Auto Loan & Monthly Payment Estimator** (/tools/calculators/auto-loan-calculator): Estimate auto loan monthly payments, trade-in tax deductions, dealer fees, and amortization.
+- /tools/calculators/down-payment-calculator: Down Payment Savings & Timeline Planner – Calculate savings duration, HYSA yields, down payment milestones, and closing costs.
 - Retirement Savings & Nest Egg Planner (/tools/calculators/retirement-calculator): Project long-term compound savings, 401(k) matches, and safe retirement withdrawal income.
 - Break-Even Point & Profitability Calculator (/tools/calculators/break-even-calculator)
 - **Salary & Hourly Paycheck Converter** (`/tools/calculators/salary-calculator`): Real-time salary-to-hourly and net paycheck calculator.
@@ -63,6 +64,9 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - Ovulation & Fertile Window Calculator (/tools/calculators/ovulation-calculator): Calculate estimated ovulation dates, fertile windows, next period, and pregnancy test schedules.
 - **Fraction Calculator & Simplifier** (/tools/calculators/fraction-calculator): Perform addition, subtraction, multiplication, and division of fractions with automatic simplification and step-by-step output.
 - Ratio & Proportion Calculator: Solve proportions (solve for X), simplify ratios, scale multipliers, and partition total amounts.
+- Credit Card Payoff Calculator (/tools/calculators/credit-card-payoff-calculator): Calculate credit card payoff schedules, minimum payment traps, and accelerated debt payoff timelines.
+- Emergency Fund & Monthly Expense Buffer Calculator: Determine essential monthly burn rate, cash runway, and target emergency fund milestones.
+- `https://twistertools.com/tools/calculators/car-lease-vs-buy-calculator`: Car Lease vs Buy Financial Comparison Calculator (monthly loan amortization, lease money factors, depreciation schedules, and equity).
 
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.

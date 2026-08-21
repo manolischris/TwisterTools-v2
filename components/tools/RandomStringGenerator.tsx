@@ -947,7 +947,7 @@ export default function RandomStringGenerator() {
                             Integrating random key generation and hash calculation into modern cloud stacks requires following established security patterns. Below are recommended standard implementations across backend environments:
                         </p>
                         <div className="grid md:grid-cols-2 gap-4">
-                            <div className="bg-slate-900 text-slate-100 rounded-xl p-4 font-mono text-xs space-y-2">
+                            <div className="bg-slate-900 text-slate-100 rounded-xl p-4 font-mono text-xs space-y-2 min-w-0">
                                 <div className="text-indigo-400 font-bold flex items-center gap-2">
                                     <Terminal className="w-3.5 h-3.5" /> Node.js Crypto CSPRNG
                                 </div>
@@ -964,7 +964,7 @@ const hash = crypto.createHash('sha256')
                                 </pre>
                             </div>
 
-                            <div className="bg-slate-900 text-slate-100 rounded-xl p-4 font-mono text-xs space-y-2">
+                            <div className="bg-slate-900 text-slate-100 rounded-xl p-4 font-mono text-xs space-y-2 min-w-0">
                                 <div className="text-indigo-400 font-bold flex items-center gap-2">
                                     <Terminal className="w-3.5 h-3.5" /> Python Secrets Module
                                 </div>

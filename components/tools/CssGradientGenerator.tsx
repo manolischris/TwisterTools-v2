@@ -819,7 +819,7 @@ export default function CssGradientGenerator() {
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-4 text-xs font-mono">
-                        <div className="p-4 bg-slate-900 text-slate-200 rounded-xl space-y-2 border border-slate-800">
+                        <div className="p-4 bg-slate-900 text-slate-200 rounded-xl space-y-2 border border-slate-800 min-w-0">
                             <span className="text-indigo-400 font-bold uppercase block text-[10px]">Tailwind Config Theme Token</span>
                             <pre className="text-indigo-300 overflow-x-auto">
                                 {`// tailwind.config.js
@@ -835,7 +835,7 @@ module.exports = {
                             </pre>
                         </div>
 
-                        <div className="p-4 bg-slate-900 text-slate-200 rounded-xl space-y-2 border border-slate-800">
+                        <div className="p-4 bg-slate-900 text-slate-200 rounded-xl space-y-2 border border-slate-800 min-w-0">
                             <span className="text-indigo-400 font-bold uppercase block text-[10px]">Inline React Style Object</span>
                             <pre className="text-indigo-300 overflow-x-auto">
                                 {`const cardStyle: React.CSSProperties = {

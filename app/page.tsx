@@ -106,7 +106,8 @@ import {
   Triangle,
   Table,
   Layout,
-  Bot
+  Bot,
+  Home
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -215,7 +216,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   LayoutGrid,
   Triangle,
   Table,
-  Bot
+  Bot,
+  Home
 };
 
 const CATEGORIES = [

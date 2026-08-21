@@ -1703,6 +1703,51 @@
     "category": "developer-tools",
     "href": "/tools/developer-tools/chmod-calculator",
     "iconName": "Shield",
-    "isFeatured": true
+    "isFeatured": false
+  },
+  {
+    "id": "apy-to-apr-calculator",
+    "title": "APY to APR & Compound Yield Calculator",
+    "description": "Convert APY to APR and APR to APY instantly across all compounding intervals with dollar yield schedules.",
+    "category": "calculators",
+    "href": "/tools/calculators/apy-to-apr-calculator",
+    "iconName": "ArrowRightLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "credit-card-payoff-calculator",
+    "title": "Credit Card Payoff Calculator",
+    "description": "Simulate credit card payoff schedules, compare minimum payments vs accelerated plans, and calculate interest savings.",
+    "category": "calculators",
+    "href": "/tools/calculators/credit-card-payoff-calculator",
+    "iconName": "CreditCard",
+    "isFeatured": false
+  },
+  {
+    "id": "down-payment-calculator",
+    "title": "Down Payment Savings & Timeline Planner",
+    "description": "Calculate down payment targets, savings timelines, HYSA compound growth, and closing cost requirements.",
+    "category": "calculators",
+    "href": "/tools/calculators/down-payment-calculator",
+    "iconName": "Home",
+    "isFeatured": false
+  },
+  {
+    "id": "emergency-fund-calculator",
+    "title": "Emergency Fund & Monthly Expense Buffer Calculator",
+    "description": "Calculate your ideal emergency savings buffer, bare-bones survival expenses, and monthly runway.",
+    "category": "calculators",
+    "href": "/tools/calculators/emergency-fund-calculator",
+    "iconName": "ShieldCheck",
+    "isFeatured": false
+  },
+  {
+    "id": "car-lease-vs-buy-calculator",
+    "title": "Car Lease vs Buy Calculator",
+    "description": "Compare car leasing vs buying loan costs, depreciation, residual equity, and monthly cashflows.",
+    "category": "calculators",
+    "href": "/tools/calculators/car-lease-vs-buy-calculator",
+    "iconName": "Car",
+    "isFeatured": false
   }
 ]
