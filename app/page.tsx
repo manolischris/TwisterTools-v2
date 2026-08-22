@@ -108,7 +108,8 @@ import {
   Layout,
   Bot,
   Home,
-  Wallet
+  Wallet,
+  Footprints
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -219,7 +220,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Table,
   Bot,
   Home,
-  Wallet
+  Wallet,
+  Footprints
 };
 
 const CATEGORIES = [

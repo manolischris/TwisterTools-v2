@@ -1,17 +1,30 @@
 {
   "current_phase": "READY FOR PRODUCTION DEPLOYMENT",
-  "last_updated": "2026-08-21",
+  "last_updated": "2026-08-22",
   "last_build_update": "2026-08-19",
   "modules": {
     "informational_pages": "COMPLETED",
     "gdpr_consent_mode_v2_gtm_integration": "COMPLETED",
     "dynamic_internal_linking": "COMPLETED"
   },
-  "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 74 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
+  "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 75 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Idle",
-  "active_task_tracker": "Idle",
-  "completedTasksCount": 244,
+  "active_task_tracker": "Completed pet-calorie-calculator integration",
+  "completedTasksCount": 257,
   "completed_tasks": [
+    "Integrate Pet Daily Caloric Requirement (RER/MER) Calculator: verified component at components/tools/PetCalorieCalculator.tsx, created static route page app/tools/calculators/pet-calorie-calculator/page.tsx, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
+    "Integrate Cat Age to Human Years Feline Maturity Estimator: verified component at components/tools/CatAgeCalculator.tsx, registered dynamic page route in app/tools/[category]/[tool-slug]/page.tsx, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
+    "Integrate Dog Age to Human Years Biological Converter: verified component at components/tools/DogAgeCalculator.tsx, created static route page app/tools/calculators/dog-age-calculator/page.tsx with Dog hero icon and full SEO metadata, added category grid listing override mapping in app/tools/calculators/page.tsx, added Dog icon to CategoryToolSearchGrid.tsx import and ICON_MAP, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
+    "Integrate Quit Smoking Savings & Health Recovery Timeline Calculator: verified component at components/tools/QuitSmokingSavingsCalculator.tsx, created static route page app/tools/calculators/quit-smoking-savings-calculator/page.tsx with Flame hero icon and full SEO metadata, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
+    "Integrate Calorie Deficit & Target Weight Loss Date Estimator: verified component at components/tools/CalorieDeficitCalculator.tsx, registered dynamic page route in app/tools/[category]/[tool-slug]/page.tsx, configured page metadata, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
+    "Integrate Lean Body Mass (LBM) Boer & James Formula Calculator: verified component at components/tools/LeanBodyMassCalculator.tsx, created static route page app/tools/calculators/lean-body-mass-calculator/page.tsx, configured page metadata, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
+    "Integrate Target VO2 Max & Cardiovascular Fitness Estimator: verified raw component at components/tools/Vo2MaxCalculator.tsx, registered dynamic page route in app/tools/[category]/[tool-slug]/page.tsx, configured page metadata, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and synchronized project-state.json.",
+    "Integrate Running Split Times & Race Finish Pace Estimator: verified raw component at components/tools/RaceSplitPaceCalculator.tsx, created static route page app/tools/calculators/race-split-pace-calculator/page.tsx with Timer hero icon and full SEO metadata, updated calculators category page app/tools/calculators/page.tsx grid list, registered in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
+    "Integrate One Rep Max (1RM) Strength & Submax Weight Estimator: verified lucide-react package is installed, registered dynamic page route in app/tools/[category]/[tool-slug]/page.tsx, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, imported and mapped Dumbbell icon in CategoryToolSearchGrid and app/tools/[category]/[tool-slug]/page.tsx, incremented completedTasksCount, and synchronized project-state.json.",
+    "Integrate Caffeine Half-Life & Sleep Disruption Estimator: verified lucide-react package is installed, resolved component syntax errors in components/tools/CaffeineHalfLifeCalculator.tsx by escaping LaTeX brackets, dynamically imported and registered route in app/tools/[category]/[tool-slug]/page.tsx, registered page title and description metadata overrides, mapped Coffee icon, updated tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
+    "Integrate Intermittent Fasting Window & Meal Schedule Tracker: verified lucide-react dependency, created routing page app/tools/calculators/intermittent-fasting-calculator/page.tsx with Timer hero icon and full SEO metadata, updated calculators category page app/tools/calculators/page.tsx grid list, registered in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
+    "Integrate Sleep Cycle & Optimal Bedtime REM Calculator: verified lucide-react dependencies, verified component at components/tools/SleepCycleCalculator.tsx, registered dynamic page route mapping in app/tools/[category]/[tool-slug]/page.tsx, configured page metadata, resolved ReferenceError by scoping metadata title/description inside generateMetadata, resolved React state updates warning on unmounted components by adding a mounted state check, registered in tools registry at lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
+    "Integrate Daily Steps to Distance, Miles & Calories Converter: verified component at components/tools/StepsToCaloriesCalculator.tsx, created static page route at app/tools/calculators/steps-to-calories-calculator/page.tsx, added entry in app/tools/calculators/page.tsx category grid, registered in lib/tools-registry.json, updated public/llms.txt, synchronized Footprints icon mappings across all global map registries, incremented completedTasksCount, and synchronized project-state.json.",
     "Integrate Refinance Break-Even & Interest Savings Calculator: verified component at components/tools/MortgageRefinanceCalculator.tsx, created static page route at app/tools/calculators/mortgage-refinance-calculator/page.tsx, added entry in app/tools/calculators/page.tsx category grid, registered in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and synchronized project-state.json.",
     "Integrate Rule of 72 Investment Doubling Time Calculator: verified lucide-react package is installed, verified component at components/tools/RuleOf72Calculator.tsx, registered dynamic page route in app/tools/[category]/[tool-slug]/page.tsx, added entry in app/tools/calculators/page.tsx category grid, registered in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and synchronized project-state.json.",
     "Integrate Coffee Savings & Compounding Habit Planner: verified lucide-react package is installed, verified component at components/tools/DailyHabitSavingsCalculator.tsx, registered dynamic page route in app/tools/[category]/[tool-slug]/page.tsx, added entry in app/tools/calculators/page.tsx category grid, registered in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and synchronized project-state.json.",
@@ -313,11 +326,11 @@
     }
   },
   "url_mapping": {
-    "total_tools": 148,
+    "total_tools": 149,
     "modern_categories": 10,
     "legacy_categories": 17,
     "redirect_rules": 160,
-    "static_generation": "All 148 tool pages pre-rendered at build time"
+    "static_generation": "All 149 tool pages pre-rendered at build time"
   },
   "routing_architecture": {
     "dynamic_route": "app/tools/[category]/[tool-slug]/page.tsx",
@@ -326,8 +339,26 @@
     "seo_optimization": "Complete with generateMetadata for all pages"
   },
   "tools_completed": {
-    "total": 140,
+    "total": 142,
     "list": [
+      {
+        "name": "Pet Daily Caloric Requirement (RER/MER) Calculator",
+        "slug": "pet-calorie-calculator",
+        "category": "calculators",
+        "component": "components/tools/PetCalorieCalculator.tsx",
+        "url": "/tools/calculators/pet-calorie-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-22"
+      },
+      {
+        "name": "One Rep Max (1RM) Strength & Submax Weight Estimator",
+        "slug": "one-rep-max-calculator",
+        "category": "calculators",
+        "component": "components/tools/OneRepMaxCalculator.tsx",
+        "url": "/tools/calculators/one-rep-max-calculator",
+        "version": "1.0 - Production Release",
+        "completed_date": "2026-08-22"
+      },
       {
         "name": "Refinance Break-Even & Interest Savings Calculator",
         "slug": "mortgage-refinance-calculator",
@@ -1679,10 +1710,10 @@
     "version": "2.0.0",
     "launch_date": "2026-07-24",
     "commit_message": "feat(release): TwisterTools 2.0 production launch - 60 core tools, platform shell, GDPR consent mode v2, GTM integration, and 184/184 verified 301 redirects",
-    "tools_shipped": 181,
+    "tools_shipped": 189,
     "redirects_verified": "184/184 (100% pass rate)",
     "build_status": "CLEAN β€” zero TypeScript or ESLint errors",
-    "static_routes_prerendered": 175,
+    "static_routes_prerendered": 176,
     "gtm_container": "GTM-T6VQVF8K",
     "consent_mode": "v2 β€” GDPR compliant pre-hydration defaults"
   }

@@ -76,6 +76,19 @@ Privacy-first mathematical tools and financial calculators to simulate investmen
 - Daily Habit Savings & Compounding Planner: Calculate the future opportunity cost and compound returns of small recurring daily habits and expenses.
 - Rule of 72 Calculator (/tools/calculators/rule-of-72-calculator): Instant compound interest doubling time and required ROI rate calculator.
 - Mortgage Refinance Calculator (/tools/calculators/mortgage-refinance-calculator): Analyze break-even periods, monthly payment delta, and cumulative amortization schedules.
+- Daily Steps to Distance, Miles & Calories Converter (/tools/calculators/steps-to-calories-calculator): Convert daily pedometer step counts into miles, kilometers, active walking time, and caloric expenditure.
+- [Sleep Cycle Calculator](/tools/calculators/sleep-cycle-calculator): Optimize wake-up and bedtimes based on 90-minute REM ultradian sleep architecture.
+- [Intermittent Fasting Calculator](/tools/calculators/intermittent-fasting-calculator): Calculate daily fasting and eating windows, meal distribution checkpoints, and cellular autophagy stages for 16:8, 18:6, 20:4, and OMAD protocols.
+- [Caffeine Half-Life & Sleep Disruption Estimator](https://twistertools.com/tools/calculators/caffeine-half-life-calculator): Pharmacokinetic caffeine clearance and bedtime sleep disruption estimator.
+- One Rep Max (1RM) Calculator: Estimate 1RM strength and submaximal percentage training zones across 7 scientific formulas (/tools/calculators/one-rep-max-calculator)
+- `race-split-pace-calculator`: Running Split Times & Race Finish Pace Estimator - Calculate race splits, negative pacing, finish times, and pace zones for 5K to ultramarathon events.
+- https://twistertools.com/tools/calculators/vo2-max-calculator: Estimate maximal oxygen consumption (VO2 max), METs, and Karvonen target HR zones.
+- /tools/calculators/lean-body-mass-calculator: Lean Body Mass (LBM) Calculator using clinical Boer, James, and Hume formulas with FFMI and Katch-McArdle BMR calculations.
+- [Calorie Deficit & Target Weight Loss Date Estimator](/tools/calculators/calorie-deficit-calculator): Calculate precise daily calorie deficit targets, daily intake goals, and projected milestone dates to achieve target weight loss safely with Mifflin-St Jeor TDEE precision.
+- [Quit Smoking Savings & Health Recovery Timeline Calculator](/tools/calculators/quit-smoking-savings-calculator): Calculate money saved, cigarettes avoided, life expectancy regained, and health milestones.
+- [Dog Age Calculator](/tools/calculators/dog-age-calculator): Scientific canine biological age to human years converter utilizing UC San Diego DNA methylation models and AVMA size-adjusted standards.
+- Cat Age to Human Years Feline Maturity Estimator (/tools/calculators/cat-age-calculator): Convert cat years to human age equivalents with AAFP/ISFM life stage classifications.
+- [Pet Daily Caloric Requirement (RER/MER) Calculator](/tools/calculators/pet-calorie-calculator): Calculate clinical RER and MER daily calories and food portions for dogs and cats using veterinary allometric standards.
 
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calculator, CreditCard, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid, ArrowRightLeft, Home, Wallet, Fuel, Zap } from "lucide-react";
+import { Calculator, CreditCard, ShieldCheck, RefreshCw, Lock, Palette, HelpCircle, DollarSign, Percent, Scale, TrendingUp, Info, BookOpen, Building, Car, PiggyBank, Activity, Flame, Droplets, Heart, PieChart, Baby, Calendar, Wine, Binary, Grid, ArrowRightLeft, Home, Wallet, Fuel, Zap, Footprints, Timer, Dog, Cat } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -472,6 +472,94 @@ export default function CalculatorsCategoryPage() {
         title: "Mortgage Refinance & Break-Even Calculator",
         description: "Evaluate break-even timelines, monthly payment changes, and lifetime interest savings for home loan refinancing.",
         iconName: "Home"
+      };
+    }
+    if (tool.id === "steps-to-calories-calculator") {
+      return {
+        ...tool,
+        title: "Daily Steps to Distance, Miles & Calories Converter",
+        description: "Convert daily step counts into miles, km, walking time, and burned calories.",
+        iconName: "Footprints"
+      };
+    }
+    if (tool.id === "intermittent-fasting-calculator") {
+      return {
+        ...tool,
+        title: "Intermittent Fasting Window & Meal Schedule Tracker",
+        description: "Plan fasting & eating windows, meal schedules, and autophagy timelines across 16:8, 18:6, and OMAD protocols.",
+        iconName: "Timer"
+      };
+    }
+    if (tool.id === "one-rep-max-calculator") {
+      return {
+        ...tool,
+        title: "One Rep Max (1RM) Strength & Submax Weight Estimator",
+        description: "Estimate 1RM strength, submax loads, and training zones across 7 scientific powerlifting formulas.",
+        iconName: "Dumbbell"
+      };
+    }
+    if (tool.id === "race-split-pace-calculator") {
+      return {
+        ...tool,
+        title: "Running Split Times & Race Finish Pace Estimator",
+        description: "Calculate race split milestones, negative split pacing, marathon finish projections, and heart rate training zones.",
+        iconName: "Timer"
+      };
+    }
+    if (tool.id === "vo2-max-calculator") {
+      return {
+        ...tool,
+        title: "Target VO2 Max & Cardiovascular Fitness Estimator",
+        description: "Calculate VO2 max, aerobic fitness percentiles, MET capacity, and Karvonen heart rate zones.",
+        iconName: "Activity"
+      };
+    }
+    if (tool.id === "lean-body-mass-calculator") {
+      return {
+        ...tool,
+        title: "Lean Body Mass (LBM) Boer & James Formula Calculator",
+        description: "Calculate Lean Body Mass (LBM), FFMI, and metabolic baseline via Boer & James formulas.",
+        iconName: "Activity"
+      };
+    }
+    if (tool.id === "calorie-deficit-calculator") {
+      return {
+        ...tool,
+        title: "Calorie Deficit & Target Weight Loss Date Estimator",
+        description: "Calculate daily calorie budgets, energy deficits, and milestone completion dates using Mifflin-St Jeor TDEE precision.",
+        iconName: "Flame"
+      };
+    }
+    if (tool.id === "quit-smoking-savings-calculator") {
+      return {
+        ...tool,
+        title: "Quit Smoking Savings & Health Recovery Timeline Calculator",
+        description: "Track money saved, cigarettes avoided, life regained, and medical health milestones.",
+        iconName: "Flame"
+      };
+    }
+    if (tool.id === "pet-calorie-calculator") {
+      return {
+        ...tool,
+        title: "Pet Daily Caloric Requirement (RER/MER) Calculator",
+        description: "Calculate clinical Resting Energy (RER) and Maintenance Energy (MER) for dogs and cats using WSAVA formulas.",
+        iconName: "Dog"
+      };
+    }
+    if (tool.id === "dog-age-calculator") {
+      return {
+        ...tool,
+        title: "Dog Age to Human Years Biological Converter",
+        description: "Calculate biological canine age into human equivalents using Epigenetic DNA methylation and AVMA breed size metrics.",
+        iconName: "Dog"
+      };
+    }
+    if (tool.id === "cat-age-calculator") {
+      return {
+        ...tool,
+        title: "Cat Age to Human Years Feline Maturity Estimator",
+        description: "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.",
+        iconName: "Cat"
       };
     }
     return tool;

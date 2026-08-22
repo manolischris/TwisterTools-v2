@@ -108,7 +108,8 @@ import {
   Terminal,
   Shield,
   Home,
-  Wallet
+  Wallet,
+  Footprints
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -227,7 +228,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Terminal,
   Shield,
   Home,
-  Wallet
+  Wallet,
+  Footprints
 };
 
 /* ─────────────────────────────────────────────────────────

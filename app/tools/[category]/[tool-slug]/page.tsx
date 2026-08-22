@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -91,6 +91,12 @@ const ColorPickerContrastChecker = dynamic(() => import("@/components/tools/Colo
 const UserAgentParser = dynamic(() => import("@/components/tools/UserAgentParser"));
 const KeycodeInspector = dynamic(() => import("@/components/tools/KeycodeInspector"));
 const ChmodCalculator = dynamic(() => import("@/components/tools/ChmodCalculator"));
+const SleepCycleCalculator = dynamic(() => import("@/components/tools/SleepCycleCalculator"));
+const CaffeineHalfLifeCalculator = dynamic(() => import("@/components/tools/CaffeineHalfLifeCalculator"));
+const OneRepMaxCalculator = dynamic(() => import("@/components/tools/OneRepMaxCalculator"));
+const Vo2MaxCalculator = dynamic(() => import("../../../../components/tools/Vo2MaxCalculator"));
+const CalorieDeficitCalculator = dynamic(() => import("@/components/tools/CalorieDeficitCalculator"));
+const CatAgeCalculator = dynamic(() => import("@/components/tools/CatAgeCalculator"));
 
 // Type definitions for URL mapping
 interface Tool {
@@ -192,6 +198,12 @@ const COMPLETED_TOOLS = [
   "unit-price-calculator",
   "daily-habit-savings-calculator",
   "rule-of-72-calculator",
+  "sleep-cycle-calculator",
+  "caffeine-half-life-calculator",
+  "one-rep-max-calculator",
+  "vo2-max-calculator",
+  "calorie-deficit-calculator",
+  "cat-age-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -280,18 +292,18 @@ export async function generateMetadata({
   const regTool = toolsRegistry.find((t) => t.id === toolSlug);
   let tool = regTool
     ? {
-        id: regTool.id as any,
-        name: regTool.title,
-        legacy_url: "",
-        new_url: regTool.href,
-        new_category: regTool.category,
-        description: regTool.description,
-      }
+      id: regTool.id as any,
+      name: regTool.title,
+      legacy_url: "",
+      new_url: regTool.href,
+      new_category: regTool.category,
+      description: regTool.description,
+    }
     : urlMap.tools.find(
-        (t: Tool) =>
-          t.new_category === category &&
-          t.new_url === `/tools/${category}/${toolSlug}`
-      );
+      (t: Tool) =>
+        t.new_category === category &&
+        t.new_url === `/tools/${category}/${toolSlug}`
+    );
 
   if (category === "pdf-tools" && toolSlug === "extract-pdf-images") {
     tool = {
@@ -376,6 +388,36 @@ export async function generateMetadata({
     description = "Estimate how fast your money doubles with compound interest, exact logarithmic formulas, and inflation drag simulations.";
   }
 
+  if (category === "calculators" && toolSlug === "sleep-cycle-calculator") {
+    title = "Sleep Cycle & REM Bedtime Calculator";
+    description = "Calculate optimal bedtime schedules and wake-up times synced with 90-minute ultradian sleep cycles and personal sleep latency.";
+  }
+
+  if (category === "calculators" && toolSlug === "caffeine-half-life-calculator") {
+    title = "Caffeine Half-Life & Sleep Disruption Calculator";
+    description = "Calculate caffeine elimination half-life, active bloodstream retention at bedtime, CYP1A2 clearance velocity, and optimal sleep cutoff times.";
+  }
+
+  if (category === "calculators" && toolSlug === "one-rep-max-calculator") {
+    title = "One Rep Max (1RM) Strength & Submax Weight Estimator";
+    description = "Calculate your 1RM, strength-to-bodyweight ratio, and complete percentage training zones across 7 scientific formulas including Epley, Brzycki, and Lombardi.";
+  }
+
+  if (category === "calculators" && toolSlug === "vo2-max-calculator") {
+    title = "Target VO2 Max & Cardiovascular Fitness Estimator";
+    description = "Estimate your VO2 max, METs capacity, fitness age, and target Karvonen heart rate zones using resting heart rate, Cooper 12-min, or Rockport 1-mile tests.";
+  }
+
+  if (category === "calculators" && toolSlug === "calorie-deficit-calculator") {
+    title = "Calorie Deficit & Target Weight Loss Date Estimator";
+    description = "Calculate your exact daily calorie deficit, target intake budget, and projected completion date to reach your goal weight safely.";
+  }
+
+  if (category === "calculators" && toolSlug === "cat-age-calculator") {
+    title = "Cat Age to Human Years Feline Maturity Estimator";
+    description = "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.";
+  }
+
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -387,7 +429,7 @@ export async function generateMetadata({
     openGraph: {
       title:
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
-        (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
+          (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -407,7 +449,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title:
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
-        (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
+          (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -464,18 +506,18 @@ export default async function ToolPage({
   const regTool = toolsRegistry.find((t) => t.id === toolSlug);
   let tool = regTool
     ? {
-        id: regTool.id as any,
-        name: regTool.title,
-        legacy_url: "",
-        new_url: regTool.href,
-        new_category: regTool.category,
-        description: regTool.description,
-      }
+      id: regTool.id as any,
+      name: regTool.title,
+      legacy_url: "",
+      new_url: regTool.href,
+      new_category: regTool.category,
+      description: regTool.description,
+    }
     : urlMap.tools.find(
-        (t: Tool) =>
-          t.new_category === category &&
-          t.new_url === `/tools/${category}/${toolSlug}`
-      );
+      (t: Tool) =>
+        t.new_category === category &&
+        t.new_url === `/tools/${category}/${toolSlug}`
+    );
 
   if (category === "pdf-tools" && toolSlug === "extract-pdf-images") {
     tool = {
@@ -504,6 +546,26 @@ export default async function ToolPage({
   if (category === "calculators" && toolSlug === "rule-of-72-calculator") {
     tool.name = "Rule of 72 Investment Doubling Time Calculator";
     tool.description = "Estimate how fast your money doubles with compound interest, exact logarithmic formulas, and inflation drag simulations.";
+  }
+
+  if (category === "calculators" && toolSlug === "sleep-cycle-calculator") {
+    tool.name = "Sleep Cycle & REM Bedtime Calculator";
+    tool.description = "Calculate optimal bedtime schedules and wake-up times synced with 90-minute ultradian sleep cycles and personal sleep latency.";
+  }
+
+  if (category === "calculators" && toolSlug === "one-rep-max-calculator") {
+    tool.name = "One Rep Max (1RM) Strength & Submax Weight Estimator";
+    tool.description = "Calculate your 1RM, strength-to-bodyweight ratio, and complete percentage training zones across 7 scientific formulas including Epley, Brzycki, and Lombardi.";
+  }
+
+  if (category === "calculators" && toolSlug === "calorie-deficit-calculator") {
+    tool.name = "Calorie Deficit & Target Weight Loss Date Estimator";
+    tool.description = "Compute daily calorie targets, deficit velocity, and exact calendar dates to reach your target weight safely.";
+  }
+
+  if (category === "calculators" && toolSlug === "cat-age-calculator") {
+    tool.name = "Cat Age to Human Years Feline Maturity Estimator";
+    tool.description = "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -966,6 +1028,18 @@ export default async function ToolPage({
                   <Coffee className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "rule-of-72-calculator" ? (
                   <TrendingUp className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "sleep-cycle-calculator" ? (
+                  <Moon className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "caffeine-half-life-calculator" ? (
+                  <Coffee className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "one-rep-max-calculator" ? (
+                  <Dumbbell className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "vo2-max-calculator" ? (
+                  <Activity className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "calorie-deficit-calculator" ? (
+                  <Flame className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "cat-age-calculator" ? (
+                  <Cat className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "fuel-cost-calculator" ? (
                   <Fuel className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "electricity-cost-calculator" ? (
@@ -1154,6 +1228,18 @@ export default async function ToolPage({
             <DailyHabitSavingsCalculator />
           ) : category === "calculators" && toolSlug === "rule-of-72-calculator" ? (
             <RuleOf72Calculator />
+          ) : category === "calculators" && toolSlug === "sleep-cycle-calculator" ? (
+            <SleepCycleCalculator />
+          ) : category === "calculators" && toolSlug === "caffeine-half-life-calculator" ? (
+            <CaffeineHalfLifeCalculator />
+          ) : category === "calculators" && toolSlug === "one-rep-max-calculator" ? (
+            <OneRepMaxCalculator />
+          ) : category === "calculators" && toolSlug === "vo2-max-calculator" ? (
+            <Vo2MaxCalculator />
+          ) : category === "calculators" && toolSlug === "calorie-deficit-calculator" ? (
+            <CalorieDeficitCalculator />
+          ) : category === "calculators" && toolSlug === "cat-age-calculator" ? (
+            <CatAgeCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (

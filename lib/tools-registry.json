@@ -1830,5 +1830,122 @@
     "href": "/tools/calculators/mortgage-refinance-calculator",
     "iconName": "Home",
     "isFeatured": false
+  },
+  {
+    "id": "steps-to-calories-calculator",
+    "title": "Daily Steps to Distance, Miles & Calories Converter",
+    "description": "Convert daily pedometer steps into miles, kilometers, active duration, and calories burned using MET energy formulas.",
+    "category": "calculators",
+    "href": "/tools/calculators/steps-to-calories-calculator",
+    "iconName": "Footprints",
+    "isFeatured": false
+  },
+  {
+    "id": "sleep-cycle-calculator",
+    "title": "Sleep Cycle & REM Bedtime Calculator",
+    "description": "Calculate optimal bedtime schedules and wake-up times synced to 90-minute REM sleep cycles.",
+    "category": "calculators",
+    "href": "/tools/calculators/sleep-cycle-calculator",
+    "iconName": "Moon",
+    "isFeatured": false
+  },
+  {
+    "id": "intermittent-fasting-calculator",
+    "title": "Intermittent Fasting Window & Meal Schedule Tracker",
+    "description": "Calculate custom fasting and eating windows, meal timing schedules, hydration targets, and metabolic autophagy stages.",
+    "category": "calculators",
+    "href": "/tools/calculators/intermittent-fasting-calculator",
+    "iconName": "Timer",
+    "isFeatured": false
+  },
+  {
+    "id": "caffeine-half-life-calculator",
+    "title": "Caffeine Half-Life & Sleep Disruption Estimator",
+    "description": "Calculate caffeine elimination decay, bedtime bloodstream retention, and optimal intake cutoff times.",
+    "category": "calculators",
+    "href": "/tools/calculators/caffeine-half-life-calculator",
+    "iconName": "Coffee",
+    "isFeatured": false
+  },
+  {
+    "id": "one-rep-max-calculator",
+    "title": "One Rep Max (1RM) Strength & Submax Weight Estimator",
+    "description": "Calculate your 1RM, strength-to-bodyweight ratio, and complete percentage training zones across 7 scientific formulas.",
+    "category": "calculators",
+    "href": "/tools/calculators/one-rep-max-calculator",
+    "iconName": "Dumbbell",
+    "isFeatured": false
+  },
+  {
+    "id": "race-split-pace-calculator",
+    "title": "Running Split Times & Race Finish Pace Estimator",
+    "description": "Calculate race split milestones, negative split pacing, marathon finish projections, and heart rate training zones.",
+    "category": "calculators",
+    "href": "/tools/calculators/race-split-pace-calculator",
+    "iconName": "Timer",
+    "isFeatured": false
+  },
+  {
+    "id": "vo2-max-calculator",
+    "title": "Target VO2 Max & Cardiovascular Fitness Estimator",
+    "description": "Calculate VO2 max, aerobic fitness percentiles, MET capacity, and Karvonen heart rate zones.",
+    "category": "calculators",
+    "href": "/tools/calculators/vo2-max-calculator",
+    "iconName": "Activity",
+    "isFeatured": false
+  },
+  {
+    "id": "lean-body-mass-calculator",
+    "title": "Lean Body Mass (LBM) Boer & James Formula Calculator",
+    "description": "Calculate accurate Lean Body Mass (LBM), fat mass, Fat-Free Mass Index (FFMI), and Katch-McArdle BMR using clinical Boer, James, and Hume formulas.",
+    "category": "calculators",
+    "href": "/tools/calculators/lean-body-mass-calculator",
+    "iconName": "Activity",
+    "isFeatured": false
+  },
+  {
+    "id": "calorie-deficit-calculator",
+    "title": "Calorie Deficit & Target Weight Loss Date Estimator",
+    "description": "Calculate daily calorie budgets, energy deficits, and milestone completion dates using Mifflin-St Jeor TDEE precision.",
+    "category": "calculators",
+    "href": "/tools/calculators/calorie-deficit-calculator",
+    "iconName": "Flame",
+    "isFeatured": false
+  },
+  {
+    "id": "quit-smoking-savings-calculator",
+    "title": "Quit Smoking Savings & Health Recovery Timeline Calculator",
+    "description": "Calculate personal money saved, cigarettes avoided, life expectancy regained, and WHO clinical health recovery milestones after quitting smoking.",
+    "category": "calculators",
+    "href": "/tools/calculators/quit-smoking-savings-calculator",
+    "iconName": "Flame",
+    "isFeatured": false
+  },
+  {
+    "id": "dog-age-calculator",
+    "title": "Dog Age to Human Years Biological Converter",
+    "description": "Calculate biological canine age into human equivalents using Epigenetic DNA methylation and AVMA breed size metrics.",
+    "category": "calculators",
+    "href": "/tools/calculators/dog-age-calculator",
+    "iconName": "Dog",
+    "isFeatured": false
+  },
+  {
+    "id": "cat-age-calculator",
+    "title": "Cat Age to Human Years Feline Maturity Estimator",
+    "description": "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.",
+    "category": "calculators",
+    "href": "/tools/calculators/cat-age-calculator",
+    "iconName": "Cat",
+    "isFeatured": false
+  },
+  {
+    "id": "pet-calorie-calculator",
+    "title": "Pet Daily Caloric Requirement (RER/MER) Calculator",
+    "description": "Calculate clinical Resting Energy (RER) and Maintenance Energy (MER) for dogs and cats using WSAVA formulas.",
+    "category": "calculators",
+    "href": "/tools/calculators/pet-calorie-calculator",
+    "iconName": "Dog",
+    "isFeatured": false
   }
 ]
