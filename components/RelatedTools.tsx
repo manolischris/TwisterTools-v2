@@ -93,7 +93,9 @@ import {
   Wallet,
   Footprints,
   Dog,
-  Cat
+  Cat,
+  Coffee,
+  Dumbbell
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -193,7 +195,9 @@ const ICON_MAP: Record<string, any> = {
   Wallet,
   Footprints,
   Dog,
-  Cat
+  Cat,
+  Coffee,
+  Dumbbell
 };
 
 interface RelatedToolsProps {

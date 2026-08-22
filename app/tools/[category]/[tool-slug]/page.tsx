@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -1034,12 +1034,18 @@ export default async function ToolPage({
                   <Coffee className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "one-rep-max-calculator" ? (
                   <Dumbbell className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "vo2-max-calculator" ? (
+                ) : (toolSlug === "vo2-max-calculator" || toolSlug === "lean-body-mass-calculator") ? (
                   <Activity className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "calorie-deficit-calculator" ? (
+                ) : (toolSlug === "calorie-deficit-calculator" || toolSlug === "quit-smoking-savings-calculator") ? (
                   <Flame className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "cat-age-calculator" ? (
                   <Cat className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : (toolSlug === "dog-age-calculator" || toolSlug === "pet-calorie-calculator") ? (
+                  <Dog className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "steps-to-calories-calculator" ? (
+                  <Footprints className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : (toolSlug === "intermittent-fasting-calculator" || toolSlug === "race-split-pace-calculator") ? (
+                  <Timer className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "fuel-cost-calculator" ? (
                   <Fuel className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "electricity-cost-calculator" ? (

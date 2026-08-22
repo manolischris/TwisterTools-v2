@@ -109,7 +109,11 @@ import {
   Shield,
   Home,
   Wallet,
-  Footprints
+  Footprints,
+  Coffee,
+  Dumbbell,
+  Dog,
+  Cat
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -229,7 +233,11 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Shield,
   Home,
   Wallet,
-  Footprints
+  Footprints,
+  Coffee,
+  Dumbbell,
+  Dog,
+  Cat
 };
 
 /* ─────────────────────────────────────────────────────────
