@@ -1052,39 +1052,39 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                         {/* Hero Output Hydration Displays */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {/* True Hydration Card */}
-                            <div className="p-5 rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50/80 to-indigo-50/20 space-y-1">
-                                <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-indigo-900">
+                            <div className="p-5 rounded-2xl border border-emerald-200 bg-gradient-to-br from-emerald-50 to-teal-50/60 shadow-sm transition hover:shadow-md duration-300 space-y-1">
+                                <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-emerald-900">
                                     <span className="flex items-center gap-1">
-                                        <Droplets className="w-4 h-4 text-indigo-600" /> True Hydration
+                                        <Droplets className="w-4 h-4 text-emerald-600" /> True Hydration
                                     </span>
-                                    <span className="text-[11px] text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded-md font-bold">
+                                    <span className="text-[11px] text-emerald-800 bg-emerald-100/90 px-2 py-0.5 rounded-md font-bold">
                                         Includes Levain
                                     </span>
                                 </div>
-                                <div className="text-3xl sm:text-4xl font-black text-indigo-950 tracking-tight pt-1">
+                                <div className="text-3xl sm:text-4xl font-black text-emerald-950 tracking-tight pt-1">
                                     {calculations.trueHydration.toFixed(1)}%
                                 </div>
-                                <p className="text-xs font-medium text-slate-600">
-                                    Apparent (Dry Base): <strong>{calculations.apparentHydration.toFixed(1)}%</strong>
+                                <p className="text-xs font-medium text-emerald-800/80">
+                                    Apparent (Dry Base): <strong className="text-emerald-900">{calculations.apparentHydration.toFixed(1)}%</strong>
                                 </p>
                             </div>
 
                             {/* Total Batch Yield Card */}
-                            <div className="p-5 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100/50 space-y-1">
-                                <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-800">
+                            <div className="p-5 rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50 to-orange-50/60 shadow-sm transition hover:shadow-md duration-300 space-y-1">
+                                <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-amber-900">
                                     <span className="flex items-center gap-1">
-                                        <Scale className="w-4 h-4 text-indigo-600" /> Total Dough Yield
+                                        <Scale className="w-4 h-4 text-amber-600" /> Total Dough Yield
                                     </span>
-                                    <span className="text-[11px] text-slate-600 bg-slate-200 px-2 py-0.5 rounded-md font-bold">
+                                    <span className="text-[11px] text-amber-800 bg-amber-100/90 px-2 py-0.5 rounded-md font-bold">
                                         {calcMode === "target_dough" ? `${numberOfLoaves} Loaves` : "Single Batch"}
                                     </span>
                                 </div>
-                                <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight pt-1">
+                                <div className="text-3xl sm:text-4xl font-black text-amber-950 tracking-tight pt-1">
                                     {calculations.totalDoughWeight.toFixed(0)}
-                                    <span className="text-lg font-bold text-slate-500 ml-1">{unit}</span>
+                                    <span className="text-lg font-bold text-amber-600/80 ml-1">{unit}</span>
                                 </div>
-                                <p className="text-xs font-medium text-slate-600">
-                                    Per Loaf: <strong>{calculations.individualLoafWeight.toFixed(0)} {unit}</strong>
+                                <p className="text-xs font-medium text-amber-800/80">
+                                    Per Loaf: <strong className="text-amber-900">{calculations.individualLoafWeight.toFixed(0)} {unit}</strong>
                                 </p>
                             </div>
                         </div>
