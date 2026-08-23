@@ -17,6 +17,7 @@ import {
   RefreshCw,
   Calendar,
   Dices,
+  Home,
 } from "lucide-react";
 
 const categories = [
@@ -31,6 +32,7 @@ const categories = [
   { slug: "converter-tools", name: "Data & Number Base Converter Utilities", icon: RefreshCw, desc: "Base64, hex & binary converters" },
   { slug: "date-tools", name: "Date, Time & Scheduling Tools", icon: Calendar, desc: "Date differences, timezone conversions & countdowns" },
   { slug: "random-tools", name: "Randomization, Games & Decision Tools", icon: Dices, desc: "Random pickers, dice, coins & team generators" },
+  { slug: "home-tools", name: "Home, Garden & Kitchen Living Utilities", icon: Home, desc: "Home, DIY, kitchen & gardening calculations" },
 ];
 
 export default function Header() {

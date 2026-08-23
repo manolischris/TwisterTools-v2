@@ -10,8 +10,9 @@
   "migration_status": "COMPLETE - Master tools registry cleaned up to only contain the 75 active, fully-implemented tools. Sitemap and project status synchronized, and icon mapping updated on homepage.",
   "current_task": "Idle",
   "active_task_tracker": "Completed pet-calorie-calculator integration",
-  "completedTasksCount": 257,
+  "completedTasksCount": 258,
   "completed_tasks": [
+    "Performed full platform category registration for home-tools: registered category across categories page, header categories dropdown, footer, and homepage filters. Defined metadata entry in app/tools/[category]/page.tsx CATEGORIES_METADATA. Created static category landing page at app/tools/home-tools/page.tsx. Verified sitemap configuration and build completion.",
     "Integrate Pet Daily Caloric Requirement (RER/MER) Calculator: verified component at components/tools/PetCalorieCalculator.tsx, created static route page app/tools/calculators/pet-calorie-calculator/page.tsx, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, and updated project-state.json.",
     "Integrate Cat Age to Human Years Feline Maturity Estimator: verified component at components/tools/CatAgeCalculator.tsx, registered dynamic page route in app/tools/[category]/[tool-slug]/page.tsx, added category grid listing override mapping in app/tools/calculators/page.tsx, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
     "Integrate Dog Age to Human Years Biological Converter: verified component at components/tools/DogAgeCalculator.tsx, created static route page app/tools/calculators/dog-age-calculator/page.tsx with Dog hero icon and full SEO metadata, added category grid listing override mapping in app/tools/calculators/page.tsx, added Dog icon to CategoryToolSearchGrid.tsx import and ICON_MAP, registered the tool in lib/tools-registry.json, updated public/llms.txt, incremented completedTasksCount, incremented tools_shipped, and updated project-state.json.",
@@ -327,7 +328,7 @@
   },
   "url_mapping": {
     "total_tools": 149,
-    "modern_categories": 10,
+    "modern_categories": 12,
     "legacy_categories": 17,
     "redirect_rules": 160,
     "static_generation": "All 149 tool pages pre-rendered at build time"

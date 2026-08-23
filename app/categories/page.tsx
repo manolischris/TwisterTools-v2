@@ -20,6 +20,7 @@ import {
   ChevronRight,
   Calendar,
   Dices,
+  Home,
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -29,7 +30,7 @@ import toolsRegistry from "@/lib/tools-registry.json";
 export const metadata: Metadata = {
   title: "All Tool Categories",
   description:
-    "Browse all 11 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, Converter Tools, Date & Time Tools, and Randomization, Games & Decision Tools. Free, fast, and browser-based.",
+    "Browse all 12 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, Converter Tools, Date & Time Tools, Randomization, Games & Decision Tools, and Home, Garden & Kitchen Living Utilities. Free, fast, and browser-based.",
   alternates: { canonical: "https://www.twistertools.com/categories" },
   openGraph: {
     title: "All Tool Categories | TwisterTools",
@@ -229,6 +230,20 @@ const CATEGORIES: CategoryDef[] = [
       "team generator",
     ],
   },
+  {
+    slug: "home-tools",
+    name: "Home, Garden & Kitchen Living Utilities",
+    description:
+      "Fast, privacy-first everyday calculation engines and measurement tools for home improvement, culinary conversions, gardening, and DIY living.",
+    icon: Home,
+    accentClass: "bg-orange-100 text-orange-600",
+    keywords: [
+      "culinary conversions",
+      "gardening calculators",
+      "diy living tools",
+      "home improvement calculators",
+    ],
+  },
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -255,9 +270,9 @@ const SEO_CARDS: SeoCard[] = [
   },
   {
     icon: Layers,
-    title: "Ten Growing Specialist Categories",
+    title: "Twelve Growing Specialist Categories",
     content:
-      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and live network diagnostic tools, TwisterTools is organized into ten focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
+      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and live network diagnostic tools, TwisterTools is organized into twelve focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
   },
   {
     icon: Globe,
@@ -305,7 +320,7 @@ export default function CategoriesIndexPage() {
     "@type": "CollectionPage",
     name: "All Tool Categories — TwisterTools",
     description:
-      "Browse 11 curated categories of free browser-based online utilities on TwisterTools.",
+      "Browse 12 curated categories of free browser-based online utilities on TwisterTools.",
     url: "https://www.twistertools.com/categories",
     publisher: {
       "@type": "Organization",

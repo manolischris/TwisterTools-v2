@@ -704,6 +704,50 @@ const CATEGORIES_METADATA: Record<
         a: "Never. All list inputs, names, and generated teams exist purely in the temporary memory of your current browser session. Reloading the page clears all data."
       }
     ]
+  },
+  "home-tools": {
+    name: "Home, Garden & Kitchen Living Utilities",
+    icon: "Home",
+    description: "Fast, privacy-first everyday calculation engines and measurement tools for home improvement, culinary conversions, gardening, and DIY living.",
+    detailedGuide: "Perform home, kitchen, and garden calculations locally on your device with complete privacy and offline-first speed.",
+    seoDescription: "Fast, privacy-first everyday calculation engines and measurement tools for home improvement, culinary conversions, gardening, and DIY living.",
+    keywords: ["culinary conversions", "gardening calculators", "diy living tools", "home improvement calculators"],
+    cards: [
+      {
+        title: "100% Offline Culinary & DIY Conversions",
+        icon: "ShieldCheck",
+        content: "Every conversion, dilution ratio, and area calculation runs entirely inside your browser's runtime. We do not transmit recipe values, room dimensions, or DIY specifications to any remote server, keeping your daily living plans private."
+      },
+      {
+        title: "Culinary Conversions & Kitchen Scaling",
+        icon: "Coffee",
+        content: "Convert recipe measurements between volumetric (cups, tablespoons, milliliters) and weight-based (ounces, grams) metrics. Scale recipe portion counts dynamically without loss of precision."
+      },
+      {
+        title: "Home Improvement & Area Estimation",
+        icon: "Home",
+        content: "Compute tiling, flooring, paint volumes, or gardening soil requirements in seconds. Enter custom parameters to calculate raw materials needed for any DIY project."
+      },
+      {
+        title: "Gardening & Plant Care Calculators",
+        icon: "Sunrise",
+        content: "Calculate fertilizer dilution rates, plant spacing patterns, or watering volume requirements based on soil type and container sizes to optimize your green space."
+      }
+    ],
+    faqs: [
+      {
+        q: "Are my kitchen measurements or room dimensions sent to any server?",
+        a: "No. All calculations run entirely locally within your browser using client-side JavaScript. No details about your home or recipes are transmitted."
+      },
+      {
+        q: "Can I use these tools offline while working in the garden or garage?",
+        a: "Yes. Once the page is loaded, the calculation engines do not require an active internet connection to execute, making them ideal for offline use in any room or outdoor space."
+      },
+      {
+        q: "How precise are the culinary conversion calculators?",
+        a: "They use standard international food measurement standards. However, since densities can vary (e.g. flour vs water), weight-to-volume estimations are based on standard average densities."
+      }
+    ]
   }
 };
 

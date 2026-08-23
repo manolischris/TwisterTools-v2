@@ -244,6 +244,7 @@ const CATEGORIES = [
   { id: "web-tools", name: "Web Utilities", href: "/tools/web-tools", icon: Globe },
   { id: "date-tools", name: "Date & Time Tools", href: "/tools/date-tools", icon: Calendar },
   { id: "random-tools", name: "Random & Games", href: "/tools/random-tools", icon: Dices },
+  { id: "home-tools", name: "Home Tools", href: "/tools/home-tools", icon: Home },
 ];
 
 const ALL_TOOLS_REGISTRY: Tool[] = (toolsRegistryData as Tool[])

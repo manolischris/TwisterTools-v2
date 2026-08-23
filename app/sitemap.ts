@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Category pages (10 modern categories)
+  // Category pages (12 modern categories)
   const categoryPages: MetadataRoute.Sitemap = Object.keys(
     urlMap.modern_categories
   ).map((category) => ({

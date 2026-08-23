@@ -187,6 +187,14 @@ export default function Footer() {
                   Randomization, Games & Decision Tools
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/home-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Home, Garden & Kitchen Living Utilities
+                </Link>
+              </li>
             </ul>
           </div>
 
