@@ -97,7 +97,8 @@ import {
   Terminal,
   Home,
   Coffee,
-  Footprints
+  Footprints,
+  Wheat
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -204,7 +205,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Terminal,
   Home,
   Coffee,
-  Footprints
+  Footprints,
+  Wheat
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json

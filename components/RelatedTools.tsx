@@ -95,7 +95,8 @@ import {
   Dog,
   Cat,
   Coffee,
-  Dumbbell
+  Dumbbell,
+  Wheat
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -197,7 +198,8 @@ const ICON_MAP: Record<string, any> = {
   Dog,
   Cat,
   Coffee,
-  Dumbbell
+  Dumbbell,
+  Wheat
 };
 
 interface RelatedToolsProps {

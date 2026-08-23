@@ -113,7 +113,8 @@ import {
   Coffee,
   Dumbbell,
   Dog,
-  Cat
+  Cat,
+  Wheat
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -237,7 +238,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Coffee,
   Dumbbell,
   Dog,
-  Cat
+  Cat,
+  Wheat
 };
 
 /* ─────────────────────────────────────────────────────────

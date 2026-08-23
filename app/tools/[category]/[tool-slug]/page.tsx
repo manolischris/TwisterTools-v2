@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -97,6 +97,9 @@ const OneRepMaxCalculator = dynamic(() => import("@/components/tools/OneRepMaxCa
 const Vo2MaxCalculator = dynamic(() => import("../../../../components/tools/Vo2MaxCalculator"));
 const CalorieDeficitCalculator = dynamic(() => import("@/components/tools/CalorieDeficitCalculator"));
 const CatAgeCalculator = dynamic(() => import("@/components/tools/CatAgeCalculator"));
+const CakePanConverter = dynamic(() => import("@/components/tools/CakePanConverter"));
+const AirFryerConverter = dynamic(() => import("../../../../components/tools/AirFryerConverter"));
+const SourdoughHydrationCalculator = dynamic(() => import("../../../../components/tools/SourdoughHydrationCalculator"));
 
 // Type definitions for URL mapping
 interface Tool {
@@ -204,6 +207,9 @@ const COMPLETED_TOOLS = [
   "vo2-max-calculator",
   "calorie-deficit-calculator",
   "cat-age-calculator",
+  "cake-pan-converter",
+  "air-fryer-converter",
+  "sourdough-hydration-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -416,6 +422,21 @@ export async function generateMetadata({
   if (category === "calculators" && toolSlug === "cat-age-calculator") {
     title = "Cat Age to Human Years Feline Maturity Estimator";
     description = "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.";
+  }
+
+  if (category === "home-tools" && toolSlug === "cake-pan-converter") {
+    title = "Baking Pan Size & Volume Ratio Converter";
+    description = "Convert baking pan dimensions, calculate exact area and volume ratios, scale recipe ingredients, and adjust oven temperatures for round, square, bundt, and loaf pans.";
+  }
+
+  if (category === "home-tools" && toolSlug === "air-fryer-converter") {
+    title = "Air Fryer Time & Oven Temperature Conversion Matrix";
+    description = "Instantly convert conventional and convection oven cooking times and temperatures into perfect air fryer settings.";
+  }
+
+  if (category === "home-tools" && toolSlug === "sourdough-hydration-calculator") {
+    title = "Yeast & Sourdough Hydration Percentage Calculator";
+    description = "Calculate true hydration, baker's percentages, levain flour-water splits, and target batch scaling for sourdough and yeast breads.";
   }
 
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
@@ -1020,10 +1041,10 @@ export default async function ToolPage({
                   <Car className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "subscription-cost-calculator" ? (
                   <Wallet className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "rent-vs-buy-calculator" ? (
+                ) : (toolSlug === "rent-vs-buy-calculator" || toolSlug === "unit-price-calculator" || toolSlug === "cake-pan-converter") ? (
                   <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "unit-price-calculator" ? (
-                  <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "sourdough-hydration-calculator" ? (
+                  <Wheat className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "daily-habit-savings-calculator" ? (
                   <Coffee className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "rule-of-72-calculator" ? (
@@ -1036,7 +1057,7 @@ export default async function ToolPage({
                   <Dumbbell className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (toolSlug === "vo2-max-calculator" || toolSlug === "lean-body-mass-calculator") ? (
                   <Activity className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : (toolSlug === "calorie-deficit-calculator" || toolSlug === "quit-smoking-savings-calculator") ? (
+                ) : (toolSlug === "calorie-deficit-calculator" || toolSlug === "quit-smoking-savings-calculator" || toolSlug === "air-fryer-converter") ? (
                   <Flame className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "cat-age-calculator" ? (
                   <Cat className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1246,6 +1267,12 @@ export default async function ToolPage({
             <CalorieDeficitCalculator />
           ) : category === "calculators" && toolSlug === "cat-age-calculator" ? (
             <CatAgeCalculator />
+          ) : category === "home-tools" && toolSlug === "cake-pan-converter" ? (
+            <CakePanConverter />
+          ) : category === "home-tools" && toolSlug === "air-fryer-converter" ? (
+            <AirFryerConverter />
+          ) : category === "home-tools" && toolSlug === "sourdough-hydration-calculator" ? (
+            <SourdoughHydrationCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (

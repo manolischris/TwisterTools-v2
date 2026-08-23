@@ -1947,5 +1947,50 @@
     "href": "/tools/calculators/pet-calorie-calculator",
     "iconName": "Dog",
     "isFeatured": false
+  },
+  {
+    "id": "recipe-converter-scaler",
+    "title": "Recipe Ingredient Scaling & Baker's Percentage Adjuster",
+    "description": "Scale recipes by portion yields, baker's percentages, or baking pan volume adjustments with real-time dough hydration analytics.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/recipe-converter-scaler",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "cake-pan-converter",
+    "title": "Baking Pan Size & Volume Ratio Converter",
+    "description": "Calculate exact area ratios, volume capacities, ingredient scaling, and baking adjustments across round, square, rectangular, bundt, and loaf pans.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/cake-pan-converter",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "air-fryer-converter",
+    "title": "Air Fryer Time & Oven Temperature Conversion Matrix",
+    "description": "Convert conventional and convection oven cooking times and temperatures into precise air fryer settings with customized time reduction and halfway shake alerts.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/air-fryer-converter",
+    "iconName": "Flame",
+    "isFeatured": false
+  },
+  {
+    "id": "meat-cooking-time-calculator",
+    "title": "Meat Roasting & Internal Cooking Temperature Guide",
+    "description": "Calculate exact roasting times, internal thermometer pull temperatures, carryover heat, and dinner schedules for beef, poultry, pork, and lamb.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/meat-cooking-time-calculator",
+    "iconName": "Flame",
+    "isFeatured": false
+  },
+  {
+    "id": "sourdough-hydration-calculator",
+    "title": "Yeast & Sourdough Hydration Percentage Calculator",
+    "description": "Enterprise baker's percentage and sourdough hydration calculator with levain flour-water breakdown and loaf batch scaling.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/sourdough-hydration-calculator",
+    "iconName": "Wheat",
+    "isFeatured": false
   }
 ]

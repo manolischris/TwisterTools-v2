@@ -177,6 +177,14 @@ Interactive, client-side tools for quick decision making, chance games, and list
 - /tools/random-tools/random-address-generator: Synthetic address and GPS location generator with bounding box geocoding, multi-country postal formatting, and JSON/CSV bulk export.
 - Random Country & Flag Quiz Generator (/tools/random-tools/random-country-picker): Random sovereign nation generator with vector flags, capital data, and trivia challenge modes.
 
+### [Home, Garden & Kitchen Living Utilities](https://www.twistertools.com/tools/home-tools)
+Everyday calculations, measurements, and culinary converters.
+- Recipe Ingredient Scaling & Baker's Percentage Adjuster: /tools/home-tools/recipe-converter-scaler (Portion scaling, baker's math, pan volume converter, dough hydration)
+- [Baking Pan Size & Volume Ratio Converter](/tools/home-tools/cake-pan-converter): Scale recipes and convert volumes between round, square, rectangular, and bundt baking pans.
+- Air Fryer Time & Oven Temperature Conversion Matrix (/tools/home-tools/air-fryer-converter): Convert conventional oven temperatures and cook times into calibrated air fryer settings.
+- [Meat Roasting & Internal Cooking Temperature Guide](/tools/home-tools/meat-cooking-time-calculator): Meat roasting duration, internal pull temperature, and carryover resting calculator.
+- Yeast & Sourdough Hydration Percentage Calculator: /tools/home-tools/sourdough-hydration-calculator
+
 ## Other Resources
 
 - [All Categories Hub](https://www.twistertools.com/categories)

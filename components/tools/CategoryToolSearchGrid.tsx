@@ -107,7 +107,8 @@ import {
   Dumbbell,
   Dog,
   Cat,
-  Coffee
+  Coffee,
+  Wheat
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -231,7 +232,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Dumbbell,
   Dog,
   Cat,
-  Coffee
+  Coffee,
+  Wheat
 };
 
 export default function CategoryToolSearchGrid({
