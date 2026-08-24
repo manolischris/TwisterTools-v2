@@ -1928,7 +1928,7 @@
     "category": "calculators",
     "href": "/tools/calculators/dog-age-calculator",
     "iconName": "Dog",
-    "isFeatured": false
+    "isFeatured": true
   },
   {
     "id": "cat-age-calculator",
@@ -1991,6 +1991,51 @@
     "category": "home-tools",
     "href": "/tools/home-tools/sourdough-hydration-calculator",
     "iconName": "Wheat",
+    "isFeatured": false
+  },
+  {
+    "id": "paint-coverage-calculator",
+    "title": "Wall Paint Coverage & Gallon Volume Estimator",
+    "description": "Calculate exact paint gallons, liters, wall square footage, and project costs with custom window and door cutouts.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/paint-coverage-calculator",
+    "iconName": "PaintBucket",
+    "isFeatured": false
+  },
+  {
+    "id": "tile-flooring-calculator",
+    "title": "Flooring & Tile Area Square Footage Estimator",
+    "description": "Calculate square footage, pattern cut waste, total tile units, and box counts for home remodeling projects.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/tile-flooring-calculator",
+    "iconName": "Grid3X3",
+    "isFeatured": false
+  },
+  {
+    "id": "wallpaper-calculator",
+    "title": "Wallpaper Roll Count & Pattern Repeat Calculator",
+    "description": "Calculate exact wallpaper rolls, pattern repeat waste margins, strip cut yields, and room budgets.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/wallpaper-calculator",
+    "iconName": "ScrollText",
+    "isFeatured": false
+  },
+  {
+    "id": "soil-mulch-calculator",
+    "title": "Mulch, Soil & Gravel Cubic Yard Estimator",
+    "description": "Calculate cubic yards, tons, and bags for mulch, soil, gravel, and sand with bulk vs bagged cost comparisons.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/soil-mulch-calculator",
+    "iconName": "Shovel",
+    "isFeatured": false
+  },
+  {
+    "id": "concrete-volume-calculator",
+    "title": "Concrete Slab & Footing Volume Estimator",
+    "description": "Calculate cubic yards, cubic meters, ready-mix truck loads, and pre-mix bag quantities for slabs, footings, and piers.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/concrete-volume-calculator",
+    "iconName": "Boxes",
     "isFeatured": false
   }
 ]

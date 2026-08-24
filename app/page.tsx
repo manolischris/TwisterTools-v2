@@ -86,6 +86,7 @@ import {
   Calendar,
   Timer,
   Grid,
+  Grid3X3,
   GraduationCap,
   AlignLeft,
   ListFilter,
@@ -114,7 +115,11 @@ import {
   Dumbbell,
   Dog,
   Cat,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Boxes,
+  Shovel
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -146,6 +151,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   CalendarDays,
   Timer,
   Grid,
+  Grid3X3,
   GraduationCap,
   TrendingUp,
   Code2,
@@ -231,7 +237,11 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Dumbbell,
   Dog,
   Cat,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Boxes,
+  Shovel
 };
 
 const CATEGORIES = [

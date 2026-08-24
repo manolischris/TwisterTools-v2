@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -100,6 +100,9 @@ const CatAgeCalculator = dynamic(() => import("@/components/tools/CatAgeCalculat
 const CakePanConverter = dynamic(() => import("@/components/tools/CakePanConverter"));
 const AirFryerConverter = dynamic(() => import("../../../../components/tools/AirFryerConverter"));
 const SourdoughHydrationCalculator = dynamic(() => import("../../../../components/tools/SourdoughHydrationCalculator"));
+const TileFlooringCalculator = dynamic(() => import("../../../../components/tools/TileFlooringCalculator"));
+const WallpaperCalculator = dynamic(() => import("../../../../components/tools/WallpaperCalculator"));
+import ConcreteVolumeCalculator from "@/components/tools/ConcreteVolumeCalculator";
 
 // Type definitions for URL mapping
 interface Tool {
@@ -439,6 +442,21 @@ export async function generateMetadata({
     description = "Calculate true hydration, baker's percentages, levain flour-water splits, and target batch scaling for sourdough and yeast breads.";
   }
 
+  if (category === "home-tools" && toolSlug === "tile-flooring-calculator") {
+    title = "Flooring & Tile Area Square Footage Estimator";
+    description = "Calculate total square footage, pattern cut waste factors, tile piece counts, and packaging boxes with cost estimation.";
+  }
+
+  if (category === "home-tools" && toolSlug === "wallpaper-calculator") {
+    title = "Wallpaper Roll Count & Pattern Repeat Calculator";
+    description = "Calculate exact wallpaper rolls, pattern match waste, strip yields, and material budgets for residential and commercial walls.";
+  }
+
+  if (category === "home-tools" && toolSlug === "concrete-volume-calculator") {
+    title = "Concrete Slab & Footing Volume Estimator";
+    description = "Calculate required concrete volume in cubic yards, cubic meters, and 80lb/60lb pre-mix bag counts for slabs, footings, and post piers with waste buffer margins.";
+  }
+
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -589,6 +607,11 @@ export default async function ToolPage({
     tool.description = "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.";
   }
 
+  if (category === "home-tools" && toolSlug === "wallpaper-calculator") {
+    tool.name = "Wallpaper Roll Count & Pattern Repeat Calculator";
+    tool.description = "Calculate exact wallpaper rolls, pattern repeat waste margins, strip cut yields, and room budgets.";
+  }
+
   // Get category display name matching blueprint's modern taxonomies exactly
   const categoryDisplayNames: Record<string, string> = {
     "text-tools": "Text Analysis, List Comparison & Editing Tools",
@@ -603,11 +626,13 @@ export default async function ToolPage({
   };
 
   const categoryName =
-    categoryDisplayNames[category] ||
-    urlMap.modern_categories[
-    category as keyof typeof urlMap.modern_categories
-    ] ||
-    category;
+    category === "home-tools" && (toolSlug === "wallpaper-calculator" || toolSlug === "concrete-volume-calculator")
+      ? "Home, Garden & Kitchen Living Utilities"
+      : categoryDisplayNames[category] ||
+      urlMap.modern_categories[
+      category as keyof typeof urlMap.modern_categories
+      ] ||
+      category;
 
   return (
     <div className="min-h-screen bg-background">
@@ -1095,6 +1120,12 @@ export default async function ToolPage({
                   <Keyboard className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "chmod-calculator" ? (
                   <Shield className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "tile-flooring-calculator" ? (
+                  <Grid3X3 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "wallpaper-calculator" ? (
+                  <ScrollText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "concrete-volume-calculator" ? (
+                  <Boxes className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1273,6 +1304,12 @@ export default async function ToolPage({
             <AirFryerConverter />
           ) : category === "home-tools" && toolSlug === "sourdough-hydration-calculator" ? (
             <SourdoughHydrationCalculator />
+          ) : category === "home-tools" && toolSlug === "tile-flooring-calculator" ? (
+            <TileFlooringCalculator />
+          ) : category === "home-tools" && toolSlug === "wallpaper-calculator" ? (
+            <WallpaperCalculator />
+          ) : category === "home-tools" && toolSlug === "concrete-volume-calculator" ? (
+            <ConcreteVolumeCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (

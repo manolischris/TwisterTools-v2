@@ -96,7 +96,11 @@ import {
   Cat,
   Coffee,
   Dumbbell,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Shovel,
+  Boxes
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -199,7 +203,11 @@ const ICON_MAP: Record<string, any> = {
   Cat,
   Coffee,
   Dumbbell,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Shovel,
+  Boxes
 };
 
 interface RelatedToolsProps {

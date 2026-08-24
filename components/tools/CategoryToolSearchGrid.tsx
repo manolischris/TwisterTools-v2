@@ -74,6 +74,7 @@ import {
   Wine,
   Timer,
   Grid,
+  Grid3X3,
   GraduationCap,
   AtSign,
   Phone,
@@ -108,7 +109,11 @@ import {
   Dog,
   Cat,
   Coffee,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Shovel,
+  Boxes
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -140,6 +145,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Baby,
   Wine,
   Grid,
+  Grid3X3,
   Timer,
   Sparkles,
   Lock,
@@ -233,7 +239,11 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Dog,
   Cat,
   Coffee,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Shovel,
+  Boxes
 };
 
 export default function CategoryToolSearchGrid({

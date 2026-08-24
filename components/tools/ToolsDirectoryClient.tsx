@@ -114,7 +114,11 @@ import {
   Dumbbell,
   Dog,
   Cat,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Shovel,
+  Boxes
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -239,7 +243,11 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Dumbbell,
   Dog,
   Cat,
-  Wheat
+  Wheat,
+  PaintBucket,
+  ScrollText,
+  Shovel,
+  Boxes
 };
 
 /* ─────────────────────────────────────────────────────────

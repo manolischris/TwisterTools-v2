@@ -184,6 +184,12 @@ Everyday calculations, measurements, and culinary converters.
 - Air Fryer Time & Oven Temperature Conversion Matrix (/tools/home-tools/air-fryer-converter): Convert conventional oven temperatures and cook times into calibrated air fryer settings.
 - [Meat Roasting & Internal Cooking Temperature Guide](/tools/home-tools/meat-cooking-time-calculator): Meat roasting duration, internal pull temperature, and carryover resting calculator.
 - Yeast & Sourdough Hydration Percentage Calculator: /tools/home-tools/sourdough-hydration-calculator
+- paint-coverage-calculator: Estimate wall paint square footage, gallon volume, and material costs.
+- [Flooring & Tile Area Square Footage Estimator](/tools/home-tools/tile-flooring-calculator): Accurate square footage, waste percentage, tile unit, and carton calculator.
+- Wallpaper Roll Count & Pattern Repeat Calculator (/tools/home-tools/wallpaper-calculator): Compute precise wallpaper roll quantities, repeat matching offcuts, multi-wall strip yields, and project costs.
+- [Mulch, Soil & Gravel Cubic Yard Estimator](/tools/home-tools/soil-mulch-calculator): Calculate exact cubic yards, tons, and bag counts for mulch, soil, and gravel with multi-zone support.
+- Concrete Slab & Footing Volume Estimator (/tools/home-tools/concrete-volume-calculator): Calculate cubic yards, cubic meters, transit truck loads, and pre-mixed bags for slabs, footings, and piers.
+
 
 ## Other Resources
 
