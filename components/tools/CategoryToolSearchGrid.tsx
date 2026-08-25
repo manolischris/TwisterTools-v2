@@ -113,7 +113,10 @@ import {
   PaintBucket,
   ScrollText,
   Shovel,
-  Boxes
+  Boxes,
+  Sprout,
+  Fish,
+  Sun
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -243,7 +246,10 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   PaintBucket,
   ScrollText,
   Shovel,
-  Boxes
+  Boxes,
+  Sprout,
+  Fish,
+  Sun
 };
 
 export default function CategoryToolSearchGrid({

@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -103,6 +103,8 @@ const SourdoughHydrationCalculator = dynamic(() => import("../../../../component
 const TileFlooringCalculator = dynamic(() => import("../../../../components/tools/TileFlooringCalculator"));
 const WallpaperCalculator = dynamic(() => import("../../../../components/tools/WallpaperCalculator"));
 import ConcreteVolumeCalculator from "@/components/tools/ConcreteVolumeCalculator";
+const PlantWateringCalculator = dynamic(() => import("@/components/tools/PlantWateringCalculator"));
+const SolarPanelCalculator = dynamic(() => import("@/components/tools/SolarPanelCalculator"));
 
 // Type definitions for URL mapping
 interface Tool {
@@ -213,6 +215,8 @@ const COMPLETED_TOOLS = [
   "cake-pan-converter",
   "air-fryer-converter",
   "sourdough-hydration-calculator",
+  "plant-watering-calculator",
+  "solar-panel-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -626,7 +630,7 @@ export default async function ToolPage({
   };
 
   const categoryName =
-    category === "home-tools" && (toolSlug === "wallpaper-calculator" || toolSlug === "concrete-volume-calculator")
+    category === "home-tools" && (toolSlug === "wallpaper-calculator" || toolSlug === "concrete-volume-calculator" || toolSlug === "plant-watering-calculator" || toolSlug === "solar-panel-calculator")
       ? "Home, Garden & Kitchen Living Utilities"
       : categoryDisplayNames[category] ||
       urlMap.modern_categories[
@@ -1126,6 +1130,10 @@ export default async function ToolPage({
                   <ScrollText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "concrete-volume-calculator" ? (
                   <Boxes className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "plant-watering-calculator" ? (
+                  <Sprout className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "solar-panel-calculator" ? (
+                  <Sun className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1310,6 +1318,10 @@ export default async function ToolPage({
             <WallpaperCalculator />
           ) : category === "home-tools" && toolSlug === "concrete-volume-calculator" ? (
             <ConcreteVolumeCalculator />
+          ) : category === "home-tools" && toolSlug === "plant-watering-calculator" ? (
+            <PlantWateringCalculator />
+          ) : category === "home-tools" && toolSlug === "solar-panel-calculator" ? (
+            <SolarPanelCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (

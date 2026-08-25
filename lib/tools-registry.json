@@ -2037,5 +2037,41 @@
     "href": "/tools/home-tools/concrete-volume-calculator",
     "iconName": "Boxes",
     "isFeatured": false
+  },
+  {
+    "id": "lawn-seed-calculator",
+    "title": "Lawn Grass Seed & Fertilizer Spreading Rate Calculator",
+    "description": "Calculate exact grass seed pounds, N-P-K fertilizer spreading rates, bag quantities, and cross-hatch spreader calibrations for cool and warm season turfgrass.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/lawn-seed-calculator",
+    "iconName": "Sprout",
+    "isFeatured": false
+  },
+  {
+    "id": "aquarium-volume-calculator",
+    "title": "Aquarium Volume & Water Weight Calculator",
+    "description": "Calculate true net water volume, filled glass weight, substrate displacement, and floor load pressure.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/aquarium-volume-calculator",
+    "iconName": "Fish",
+    "isFeatured": false
+  },
+  {
+    "id": "plant-watering-calculator",
+    "title": "Plant Watering & Pot Volume Calculator",
+    "description": "Calculate exact watering schedules and container soil volumes tailored to houseplant species, pot material porosity, sunlight levels, and ambient humidity.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/plant-watering-calculator",
+    "iconName": "Sprout",
+    "isFeatured": false
+  },
+  {
+    "id": "solar-panel-calculator",
+    "title": "Solar Panel Array & Daily kWh Yield Estimator",
+    "description": "Calculate solar photovoltaic panel output, daily and annual kWh yields, roof surface area requirements, carbon offsets, and estimated utility bill savings.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/solar-panel-calculator",
+    "iconName": "Sun",
+    "isFeatured": false
   }
 ]

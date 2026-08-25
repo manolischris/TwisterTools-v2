@@ -189,6 +189,10 @@ Everyday calculations, measurements, and culinary converters.
 - Wallpaper Roll Count & Pattern Repeat Calculator (/tools/home-tools/wallpaper-calculator): Compute precise wallpaper roll quantities, repeat matching offcuts, multi-wall strip yields, and project costs.
 - [Mulch, Soil & Gravel Cubic Yard Estimator](/tools/home-tools/soil-mulch-calculator): Calculate exact cubic yards, tons, and bag counts for mulch, soil, and gravel with multi-zone support.
 - Concrete Slab & Footing Volume Estimator (/tools/home-tools/concrete-volume-calculator): Calculate cubic yards, cubic meters, transit truck loads, and pre-mixed bags for slabs, footings, and piers.
+- Lawn Grass Seed & Fertilizer Spreading Rate Calculator (/tools/home-tools/lawn-seed-calculator): Calculate exact grass seed pounds, N-P-K fertilizer spreading rates, bag quantities, and cross-hatch spreader calibrations for cool and warm season turfgrass.
+- [Aquarium Volume & Water Weight Calculator](/tools/home-tools/aquarium-volume-calculator): Calculate net gallons, liters, substrate displacement, and filled aquarium weights.
+- [Plant Watering & Pot Volume Calculator](/tools/home-tools/plant-watering-calculator): Calculate custom houseplant watering intervals and pot soil capacity based on species, dimensions, and environment.
+- Solar Panel Array & Yield Estimator: Photovoltaic daily/annual kWh generation, roof footprint, carbon offsets, and electric utility bill ROI calculator. (/tools/home-tools/solar-panel-calculator)
 
 
 ## Other Resources

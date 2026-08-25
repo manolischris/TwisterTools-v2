@@ -117,8 +117,10 @@ import {
   Wheat,
   PaintBucket,
   ScrollText,
-  Shovel,
-  Boxes
+  Boxes,
+  Sprout,
+  Fish,
+  Sun
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -246,8 +248,10 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Wheat,
   PaintBucket,
   ScrollText,
-  Shovel,
-  Boxes
+  Boxes,
+  Sprout,
+  Fish,
+  Sun
 };
 
 /* ─────────────────────────────────────────────────────────
