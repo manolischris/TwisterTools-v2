@@ -9,6 +9,17 @@ import path from "node:path";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const category = "math-tools";
+  const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
+  const webpCategoryPath = `${categoryImagePath}.webp`;
+  const jpgCategoryPath = `${categoryImagePath}.jpg`;
+  
+  const featuredImage = fs.existsSync(webpCategoryPath)
+    ? `https://www.twistertools.com/images/categories/${category}.webp`
+    : fs.existsSync(jpgCategoryPath)
+      ? `https://www.twistertools.com/images/categories/${category}.jpg`
+      : "https://www.twistertools.com/images/og-default.jpg";
+
   return {
     title: "Math, Geometry & STEM Science Utilities",
     description: "Interactive geometry solvers, physics mechanics formulas, thermodynamic atmospheric calculators, and precision STEM calculation engines.",
@@ -33,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: "https://www.twistertools.com/images/og-default.jpg",
+          url: featuredImage,
           width: 1200,
           height: 630,
           alt: "Math, Geometry & STEM Science Utilities"
@@ -44,7 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Math, Geometry & STEM Science Utilities - TwisterTools",
       description: "Interactive geometry solvers, physics mechanics formulas, thermodynamic atmospheric calculators, and precision STEM calculation engines.",
-      images: ["https://www.twistertools.com/images/og-default.jpg"]
+      images: [featuredImage]
     }
   };
 }

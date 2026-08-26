@@ -1,211 +1,269 @@
 # TwisterTools
 
-> 100% free, fast, privacy-first, browser-native online utilities and tools.
+> 100% free, fast, privacy-first, browser-native online utilities and calculation engines.
 
-TwisterTools is a developer-centric collection of 60+ online utilities and converters designed to execute entirely in the user's browser memory (RAM). By utilizing browser-side technologies like client-side JavaScript, WebAssembly, and native browser APIs (such as the Canvas API and Web Cryptography API), TwisterTools offers zero-latency operations without transmitting any user files, inputs, codes, or secrets to external servers.
+TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of client-side web tools, calculators, generators, and converters designed to execute entirely in the user's browser memory (RAM). By utilizing modern browser-side technologies—including native JavaScript, WebAssembly, HTML5 Canvas, and the Web Cryptography API—TwisterTools guarantees zero-latency execution without transmitting user files, sensitive data, code, or cryptographic keys to remote servers.
 
-## Core Value Proposition
+## Core Architecture & Privacy Principles
 
-- **100% Privacy & Security**: No databases tracking inputs, no server logs, and no external transmission of user data. Your sensitive files and information never leave your local machine.
-- **Zero Server Uploads**: PDF documents, images, formatting strings, and passwords are compiled, compressed, and converted entirely in browser RAM.
-- **Instant Client-Side Computation**: Execution speeds are bound only by the user's local hardware resources, removing the lag of network queueing and remote processing.
-- **Always Free, No Registration**: Every single tool in all categories is fully accessible without subscriptions, time-limited trials, paywalls, or registrations.
+- **100% Client-Side Privacy**: All processing runs locally in browser memory. No telemetry logs, no database persistence of inputs, and zero data uploads.
+- **Zero Server Uploads**: PDF manipulation, image conversions, cryptographic hashing, and code transformations happen entirely on the user's local CPU/GPU.
+- **Instant Execution**: Bound strictly by local device performance, completely eliminating network latency and server queue bottlenecks.
+- **Unrestricted Access**: Every utility across all 13 categories is accessible without subscriptions, usage limits, paywalls, or accounts.
 
-## Category Hubs
+## Category Hubs & Tool Directories
 
 ### [Developer, Code & Web Engineering Tools](https://www.twistertools.com/tools/developer-tools)
-Essential browser-based engineering utilities for tokenizing, formatting, minifying, validating, and converting code.
-- **JSON Formatter, Validator & Viewer**: Validate, beautify, compact, and inspect JSON structures.
-- **XML Formatter, Validator & Viewer**: Pretty-print, minify, and validate XML documents.
-- **SQL Formatter & Query Beautifier**: Format and clean SQL queries with MySQL, PostgreSQL, Standard SQL, and T-SQL dialect support.
-- **CSS/JS/HTML Formatters & Minifiers**: Lexical tokenization engines to shrink or format stylesheets, scripts, and markup.
-- **Base64 / URL / HTML Entity Encoder & Decoder**: Symmetrical data encoders and decoders.
-- **Diff Checker**: Symmetrical text comparison tool featuring unified/split views.
-- **Regex Tester & Cheat Sheet**: Debug regular expressions in real-time with visual capturing groups.
-- **Unix Timestamp Converter**: Bi-directional epoch-to-date translations with a live ticker.
-- **Cron Expression Explainer**: Translate complex cron configurations into human-readable text.
-- **Color Picker & Contrast Checker (WCAG)**: Real-time WCAG 2.1 AA/AAA compliance checker, color space converter, and color blindness simulator.
-- [CSS Box Shadow & Glow Generator](/tools/developer-tools/css-box-shadow-generator): Multi-layer CSS box shadow, inset depth, and neon glow generator with Tailwind output.
-- [CSS Gradient Generator](/tools/developer-tools/css-gradient-generator): Interactive generator for linear, radial, and conic gradients with code export.
-- CSS Border Radius & Clip-Path Generator: Visual 8-point organic blob generator, corner radius customizer, and CSS polygon clip-path generator with Tailwind export (/tools/developer-tools/css-border-radius-generator)
-- CSS Flexbox Layout Sandbox (/tools/developer-tools/css-flexbox-playground): Interactive visual CSS Flexbox sandbox with AST CSS and Tailwind generator.
-- [CSS Grid Generator](/tools/developer-tools/css-grid-generator): Visual 2D CSS grid layout builder and CSS/HTML/Tailwind code exporter.
-* [CSS Triangle & Polygon Generator](/tools/developer-tools/css-triangle-generator): Interactive zero-pixel border triangles and GPU-accelerated CSS clip-path polygon generator with Tailwind and SCSS support.
-- HTML Table Code Generator (/tools/developer-tools/html-table-generator): Visual responsive HTML table builder with Tailwind CSS, React TSX, Markdown, and CSV import.
-- HTACCESS Generator: /tools/developer-tools/htaccess-generator - Production Apache server configuration and mod_rewrite generator.
-- [Robots.txt Generator & Validator](/tools/developer-tools/robots-txt-generator): Visual RFC 9309 robots.txt builder, AI crawler blocking presets, and real-time path testing engine.
-* User-Agent String Parser & Inspector: /tools/developer-tools/user-agent-parser (Inspect HTTP headers, decode browsers, operating systems, devices, and AI crawlers)
-- Screen Resolution Calculator (/tools/developer-tools/screen-resolution-calculator): Calculate screen resolutions, aspect ratios, proportional scaling dimensions, and PPI display density with CSS/Tailwind exports.
-- Pixels to REM / EM Converter: /tools/developer-tools/px-to-rem-converter - Bidirectional PX to REM/EM conversion utility and batch CSS processor.
-- Keycode & Keyboard Event Inspector (/tools/developer-tools/javascript-keycode-finder): Real-time JavaScript keyboard event inspector tracking event.key, event.code, modifier flags, and code generators.
-- Chmod Permissions Calculator (/tools/developer-tools/chmod-calculator): Linux and Unix file permissions calculator with octal, symbolic (rwx), binary conversions, and special bit modifiers.
+- [JSON Formatter, Validator & Viewer](https://www.twistertools.com/tools/developer-tools/json-formatter-validator): Validate, beautify, minify, and inspect complex JSON structures.
+- [XML Formatter, Validator & Viewer](https://www.twistertools.com/tools/developer-tools/xml-formatter-validator): Pretty-print, compact, and validate XML documents in real-time.
+- [SQL Formatter & Query Beautifier](https://www.twistertools.com/tools/developer-tools/sql-formatter-validator): Clean and format SQL queries across MySQL, PostgreSQL, Standard SQL, and T-SQL.
+- [HTML & CSS Minifier & Unminifier Suite](https://www.twistertools.com/tools/developer-tools/html-css-minifier-unminifier): Pure client-side tokenization engines to compress or beautify HTML and CSS.
+- [JavaScript Formatter & Minifier](https://www.twistertools.com/tools/developer-tools/javascript-formatter-minifier): Format, unpack, or minify JavaScript code.
+- [HTML Entity Encoder / Decoder](https://www.twistertools.com/tools/developer-tools/html-entity-encoder-decoder): Encode special characters to named and numeric HTML entities and vice versa.
+- [Base64 Encoder / Decoder](https://www.twistertools.com/tools/developer-tools/base64-encode-decode): Encode and decode strings and assets to Base64 format.
+- [URL Encoder / Decoder](https://www.twistertools.com/tools/developer-tools/url-encoder-decoder): Encode and decode query strings, UTF-8 components, and web URIs.
+- [Diff Checker & Text Comparison Tool](https://www.twistertools.com/tools/developer-tools/diff-checker): Symmetrical text difference comparator featuring inline and split views.
+- [Regex Tester, Explainer & Cheat Sheet](https://www.twistertools.com/tools/developer-tools/regex-tester): Test regular expressions in real-time with visual capturing groups and AST explanations.
+- [Unix Timestamp Converter & Epoch Calculator](https://www.twistertools.com/tools/developer-tools/unix-timestamp-converter): Bidirectional epoch-to-date and date-to-epoch conversions with live time telemetry.
+- [Cron Expression Generator & Explainer](https://www.twistertools.com/tools/developer-tools/cron-expression-generator): Build and translate cron scheduling expressions into plain English.
+- [Color Picker & Contrast Checker (WCAG)](https://www.twistertools.com/tools/developer-tools/color-picker-contrast-checker): Real-time WCAG 2.1 AA/AAA compliance auditor and color space converter.
+- [CSS Box Shadow & Glow Generator](https://www.twistertools.com/tools/developer-tools/css-box-shadow-generator): Multi-layer CSS box shadow, inset lighting, and neon glow builder with Tailwind output.
+- [CSS Gradient Generator](https://www.twistertools.com/tools/developer-tools/css-gradient-generator): Visual generator for linear, radial, and conic CSS gradients.
+- [CSS Border Radius & Clip-Path Generator](https://www.twistertools.com/tools/developer-tools/css-border-radius-generator): Organic blob customizer and 8-point polygon clip-path builder.
+- [CSS Flexbox Layout Sandbox](https://www.twistertools.com/tools/developer-tools/css-flexbox-playground): Interactive Flexbox container sandbox with live Tailwind and CSS export.
+- [CSS Grid Generator](https://www.twistertools.com/tools/developer-tools/css-grid-generator): Visual 2D CSS grid layout builder and code exporter.
+- [CSS Triangle & Polygon Generator](https://www.twistertools.com/tools/developer-tools/css-triangle-generator): GPU-accelerated CSS clip-path polygon and pure CSS border triangle generator.
+- [HTML Table Code Generator](https://www.twistertools.com/tools/developer-tools/html-table-generator): Visual table creator with Markdown, TSX, and CSV import/export.
+- [HTACCESS Directives & Rewrite Rules Generator](https://www.twistertools.com/tools/developer-tools/htaccess-generator): Production Apache server configuration, SSL redirects, and rewrite rule generator.
+- [Robots.txt Generator & Validator](https://www.twistertools.com/tools/developer-tools/robots-txt-generator): Visual RFC 9309 robots.txt generator with AI crawler blocking presets.
+- [User-Agent String Parser & Inspector](https://www.twistertools.com/tools/developer-tools/user-agent-parser): Parse HTTP client headers, device architectures, operating systems, and bots.
+- [Screen Resolution & Aspect Ratio Calculator](https://www.twistertools.com/tools/developer-tools/screen-resolution-calculator): Calculate aspect ratios, proportional display scaling, and PPI density.
+- [Pixels to REM / EM Converter](https://www.twistertools.com/tools/developer-tools/px-to-rem-converter): Bidirectional CSS unit converter and batch ruleset processor.
+- [Keycode & Keyboard Event Inspector](https://www.twistertools.com/tools/developer-tools/javascript-keycode-finder): Real-time JavaScript keyboard event inspector tracking key values, codes, and modifier flags.
+- [Chmod Permissions Calculator](https://www.twistertools.com/tools/developer-tools/chmod-calculator): Linux/Unix permissions calculator with octal, symbolic (rwx), and binary conversions.
+- [MD5 Generator](https://www.twistertools.com/tools/developer-tools/md5-generator): Fast client-side MD5 hash checksum generator.
+- [SHA Hash Generator & Checksum Tool](https://www.twistertools.com/tools/developer-tools/sha-generator): Compute SHA-1, SHA-256, SHA-384, and SHA-512 cryptographic hashes using Web Crypto.
+- [JWT Decoder & Inspector](https://www.twistertools.com/tools/developer-tools/jwt-decoder): Decode, inspect, and verify JSON Web Token headers, payloads, and timestamps locally.
+- [Markdown to HTML Converter & Previewer](https://www.twistertools.com/tools/developer-tools/markdown-to-html): Bidirectional Markdown rendering engine with GitHub Flavored Markdown support.
+- [HTML to Markdown Converter](https://www.twistertools.com/tools/developer-tools/html-to-markdown): Convert raw HTML markup back to clean Markdown format.
+- [YAML to JSON & JSON to YAML Converter](https://www.twistertools.com/tools/developer-tools/yaml-to-json-converter): Bidirectional YAML/JSON data structure converter with tree visualization.
+- [JSON to CSV & CSV to JSON Converter](https://www.twistertools.com/tools/developer-tools/json-to-csv-converter): Tabular data converter supporting custom delimiters and nested structures.
+- [RGB to Hex & Hex to RGB Converter](https://www.twistertools.com/tools/developer-tools/rgb-to-hex): Bidirectional color format converter with HSL, HSV, and CMYK outputs.
 
-### [Daily Essentials, Financial & Math Calculators](https://www.twistertools.com/tools/calculators)
-Privacy-first mathematical tools and financial calculators to simulate investments and compute business metrics with multi-currency formatting.
-- **Simple Interest & Loan Calculator**: Calculate periodic interest, total payout, and amortization.
-- **Compound Interest & Growth Calculator**: Project capital appreciation over time with compound frequency.
-- **Investment Calculator**: Analyze periodic contributions, rates of return, and final balances.
-- **Sales Tax & Discount Calculators**: Compute VAT/sales tax components and promotional savings.
-- **Percentage & Average Calculators**: Solve standard growth, distribution, mean, median, mode, and standard deviation tasks.
-- **Age Calculator**: Determine exact age down to hours alongside milestones and birth countdowns.
-- **Auto Loan & Monthly Payment Estimator** (/tools/calculators/auto-loan-calculator): Estimate auto loan monthly payments, trade-in tax deductions, dealer fees, and amortization.
-- /tools/calculators/down-payment-calculator: Down Payment Savings & Timeline Planner – Calculate savings duration, HYSA yields, down payment milestones, and closing costs.
-- Retirement Savings & Nest Egg Planner (/tools/calculators/retirement-calculator): Project long-term compound savings, 401(k) matches, and safe retirement withdrawal income.
-- Break-Even Point & Profitability Calculator (/tools/calculators/break-even-calculator)
-- **Salary & Hourly Paycheck Converter** (`/tools/calculators/salary-calculator`): Real-time salary-to-hourly and net paycheck calculator.
-- BMI & Body Composition Calculator (/tools/calculators/bmi-calculator)
-- Calorie & Daily Energy Expenditure (TDEE) Calculator (/tools/calculators/tdee-calculator)
-- Body Fat Percentage & Lean Mass Calculator (/tools/calculators/body-fat-calculator)
-- Water Intake & Daily Hydration Calculator (/tools/calculators/water-intake-calculator)
-- Exponential Growth & Decay Calculator: Discrete & continuous exponential growth/decay, doubling time, half-life, and time series schedule calculations.
-- GPA & Grade Point Average Calculator (/tools/calculators/gpa-calculator): Calculate term and cumulative GPA across 4.0, 4.3, and 5.0 weighted scales.
-- Target Heart Rate Zone Calculator (/tools/calculators/heart-rate-calculator): Calculate personal target heart rate zones for fat loss, cardiovascular endurance, and athletic performance using Karvonen and Tanaka formulas.
-- Macro Ratio & Flexible Dieting Calculator (/tools/calculators/macro-calculator): Calculate accurate protein, carb, and fat macro ratios for fat loss, lean muscle gain, or keto diets.
-- Ovulation & Fertile Window Calculator (/tools/calculators/ovulation-calculator): Calculate estimated ovulation dates, fertile windows, next period, and pregnancy test schedules.
-- **Fraction Calculator & Simplifier** (/tools/calculators/fraction-calculator): Perform addition, subtraction, multiplication, and division of fractions with automatic simplification and step-by-step output.
-- Ratio & Proportion Calculator: Solve proportions (solve for X), simplify ratios, scale multipliers, and partition total amounts.
-- Credit Card Payoff Calculator (/tools/calculators/credit-card-payoff-calculator): Calculate credit card payoff schedules, minimum payment traps, and accelerated debt payoff timelines.
-- Emergency Fund & Monthly Expense Buffer Calculator: Determine essential monthly burn rate, cash runway, and target emergency fund milestones.
-- `https://twistertools.com/tools/calculators/car-lease-vs-buy-calculator`: Car Lease vs Buy Financial Comparison Calculator (monthly loan amortization, lease money factors, depreciation schedules, and equity).
-- /tools/calculators/subscription-cost-calculator: Audit recurring subscriptions and calculate annual expense leaks and opportunity cost.
-- [Freelance Rate Calculator](/tools/calculators/freelance-rate-calculator): Calculate minimum hourly rates, day rates, tax provisions, overhead costs, and freelance profit margins.
-- Rent vs Buy Break-Even Calculator: Real estate opportunity cost, equity amortization, and break-even horizon simulator.
-- /tools/calculators/fuel-cost-calculator: Fuel Trip Cost & Mileage Expense Estimator - Real-time fuel economy, trip budgeting, passenger splitting, and business mileage deduction calculator.
-- /tools/calculators/electricity-cost-calculator: Electricity Appliance Running Cost & kWh Estimator - Real-time electrical wattage conversion, household utility billing forecasts, single appliance deep-dives, and whole-home energy audit calculator.
-- Unit Price Calculator (/tools/calculators/unit-price-calculator): Standardize grocery weights, volumes, and multipacks to uncover authentic bulk savings.
-- Daily Habit Savings & Compounding Planner: Calculate the future opportunity cost and compound returns of small recurring daily habits and expenses.
-- Rule of 72 Calculator (/tools/calculators/rule-of-72-calculator): Instant compound interest doubling time and required ROI rate calculator.
-- Mortgage Refinance Calculator (/tools/calculators/mortgage-refinance-calculator): Analyze break-even periods, monthly payment delta, and cumulative amortization schedules.
-- Daily Steps to Distance, Miles & Calories Converter (/tools/calculators/steps-to-calories-calculator): Convert daily pedometer step counts into miles, kilometers, active walking time, and caloric expenditure.
-- [Sleep Cycle Calculator](/tools/calculators/sleep-cycle-calculator): Optimize wake-up and bedtimes based on 90-minute REM ultradian sleep architecture.
-- [Intermittent Fasting Calculator](/tools/calculators/intermittent-fasting-calculator): Calculate daily fasting and eating windows, meal distribution checkpoints, and cellular autophagy stages for 16:8, 18:6, 20:4, and OMAD protocols.
-- [Caffeine Half-Life & Sleep Disruption Estimator](https://twistertools.com/tools/calculators/caffeine-half-life-calculator): Pharmacokinetic caffeine clearance and bedtime sleep disruption estimator.
-- One Rep Max (1RM) Calculator: Estimate 1RM strength and submaximal percentage training zones across 7 scientific formulas (/tools/calculators/one-rep-max-calculator)
-- `race-split-pace-calculator`: Running Split Times & Race Finish Pace Estimator - Calculate race splits, negative pacing, finish times, and pace zones for 5K to ultramarathon events.
-- https://twistertools.com/tools/calculators/vo2-max-calculator: Estimate maximal oxygen consumption (VO2 max), METs, and Karvonen target HR zones.
-- /tools/calculators/lean-body-mass-calculator: Lean Body Mass (LBM) Calculator using clinical Boer, James, and Hume formulas with FFMI and Katch-McArdle BMR calculations.
-- [Calorie Deficit & Target Weight Loss Date Estimator](/tools/calculators/calorie-deficit-calculator): Calculate precise daily calorie deficit targets, daily intake goals, and projected milestone dates to achieve target weight loss safely with Mifflin-St Jeor TDEE precision.
-- [Quit Smoking Savings & Health Recovery Timeline Calculator](/tools/calculators/quit-smoking-savings-calculator): Calculate money saved, cigarettes avoided, life expectancy regained, and health milestones.
-- [Dog Age Calculator](/tools/calculators/dog-age-calculator): Scientific canine biological age to human years converter utilizing UC San Diego DNA methylation models and AVMA size-adjusted standards.
-- Cat Age to Human Years Feline Maturity Estimator (/tools/calculators/cat-age-calculator): Convert cat years to human age equivalents with AAFP/ISFM life stage classifications.
-- [Pet Daily Caloric Requirement (RER/MER) Calculator](/tools/calculators/pet-calorie-calculator): Calculate clinical RER and MER daily calories and food portions for dogs and cats using veterinary allometric standards.
+### [Daily Essentials, Financial & Health Calculators](https://www.twistertools.com/tools/calculators)
+- [Simple Interest & Loan Calculator](https://www.twistertools.com/tools/calculators/simple-interest-calculator): Calculate flat loan interest, payment splits, and amortization schedules.
+- [Compound Interest & Growth Calculator](https://www.twistertools.com/tools/calculators/compound-interest-calculator): Simulate capital growth across varying compounding frequencies.
+- [Investment Calculator](https://www.twistertools.com/tools/calculators/investment-calculator): Analyze recurring contributions, compound returns, and final portfolios.
+- [Mortgage Payment & Amortization Calculator](https://www.twistertools.com/tools/calculators/mortgage-calculator): Calculate principal, interest, taxes, PMI, and loan payoff tables.
+- [Mortgage Refinance Break-Even Calculator](https://www.twistertools.com/tools/calculators/mortgage-refinance-calculator): Analyze monthly payment savings and closing cost break-even timelines.
+- [Auto Loan Calculator](https://www.twistertools.com/tools/calculators/auto-loan-calculator): Estimate auto loan monthly payments, trade-in tax savings, and amortization.
+- [Car Lease vs Buy Calculator](https://www.twistertools.com/tools/calculators/car-lease-vs-buy-calculator): Financial comparison modeling money factors, depreciation, and equity.
+- [Loan Payoff & Debt Reduction Calculator](https://www.twistertools.com/tools/calculators/loan-payoff-calculator): Model accelerated debt payoff strategies and interest savings.
+- [Credit Card Payoff Calculator](https://www.twistertools.com/tools/calculators/credit-card-payoff-calculator): Calculate debt payoff timelines and minimum payment interest traps.
+- [Down Payment Savings & Timeline Planner](https://www.twistertools.com/tools/calculators/down-payment-calculator): Calculate savings duration, HYSA interest, and target milestones.
+- [Emergency Fund Calculator](https://www.twistertools.com/tools/calculators/emergency-fund-calculator): Determine essential monthly burn rate and runway reserve milestones.
+- [Retirement Savings & Nest Egg Planner](https://www.twistertools.com/tools/calculators/retirement-calculator): Project long-term savings, employer matches, and safe withdrawal rates.
+- [Inflation Rate & Purchasing Power Calculator](https://www.twistertools.com/tools/calculators/inflation-calculator): Measure historical and projected inflation on purchasing power.
+- [Return on Investment (ROI) Calculator](https://www.twistertools.com/tools/calculators/roi-calculator): Calculate annualized ROI, net profit margins, and investment efficiency.
+- [Break-Even Point & Profitability Calculator](https://www.twistertools.com/tools/calculators/break-even-calculator): Determine units and revenue required to cover fixed and variable overhead.
+- [Margin & Markup Calculator](https://www.twistertools.com/tools/calculators/margin-calculator): Calculate gross margins, markups, cost of goods, and sale prices.
+- [Salary & Hourly Paycheck Converter](https://www.twistertools.com/tools/calculators/salary-calculator): Convert salary between hourly, weekly, monthly, and annual amounts.
+- [Freelance Hourly Rate Calculator](https://www.twistertools.com/tools/calculators/freelance-rate-calculator): Calculate minimum billing rates accounting for self-employment tax and overhead.
+- [Home Rent vs Buy Break-Even Calculator](https://www.twistertools.com/tools/calculators/rent-vs-buy-calculator): Simulate real estate opportunity cost and equity crossover horizons.
+- [Subscription Audit & Expense Aggregator](https://www.twistertools.com/tools/calculators/subscription-cost-calculator): Aggregate recurring subscriptions and uncover annual expense leaks.
+- [Fuel Trip Cost Calculator](https://www.twistertools.com/tools/calculators/fuel-cost-calculator): Calculate route fuel consumption, trip costs, and passenger splits.
+- [Electricity Appliance Running Cost Calculator](https://www.twistertools.com/tools/calculators/electricity-cost-calculator): Estimate kilowatt-hour energy consumption and utility bills for appliances.
+- [Unit Price & Bulk Savings Comparator](https://www.twistertools.com/tools/calculators/unit-price-calculator): Standardize grocery weights and packaging to find true per-unit savings.
+- [Daily Habit Savings & Compounding Planner](https://www.twistertools.com/tools/calculators/daily-habit-savings-calculator): Project the long-term compound value of small recurring expense reductions.
+- [Rule of 72 Doubling Time Calculator](https://www.twistertools.com/tools/calculators/rule-of-72-calculator): Calculate compound interest doubling time and required ROI rates.
+- [APY to APR & Yield Calculator](https://www.twistertools.com/tools/calculators/apy-to-apr-calculator): Bidirectional conversion between nominal APR and effective annual yield (APY).
+- [Sales Tax Calculator](https://www.twistertools.com/tools/calculators/sales-tax-calculator): Compute gross price, net price, and sales tax or VAT components.
+- [Discount Calculator](https://www.twistertools.com/tools/calculators/discount-calculator): Calculate markdown savings, final sale prices, and stacked coupon discounts.
+- [AdSense Revenue Calculator](https://www.twistertools.com/tools/calculators/adsense-calculator): Estimate ad revenue based on page impressions, CTR, and RPM.
+- [Net Worth Calculator](https://www.twistertools.com/tools/calculators/net-worth-calculator): Tally total personal assets and liabilities to calculate net worth.
+- [Tip & Bill Splitter Calculator](https://www.twistertools.com/tools/calculators/tip-calculator): Calculate tip percentages, round totals, and split restaurant checks evenly.
+- [Universal Unit Converter Suite](https://www.twistertools.com/tools/calculators/master-unit-converter): Convert across length, weight, volume, temperature, speed, area, and energy units.
+- [BMI & Body Composition Calculator](https://www.twistertools.com/tools/calculators/bmi-calculator): Compute Body Mass Index, healthy weight ranges, and category percentiles.
+- [Calorie & TDEE Calculator](https://www.twistertools.com/tools/calculators/tdee-calculator): Calculate Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure.
+- [Calorie Deficit & Target Goal Calculator](https://www.twistertools.com/tools/calculators/calorie-deficit-calculator): Model daily calorie deficits and target weight loss completion dates.
+- [Body Fat Percentage Calculator](https://www.twistertools.com/tools/calculators/body-fat-calculator): Estimate body fat percentage and lean mass using US Navy circumference formulas.
+- [Lean Body Mass (LBM) Calculator](https://www.twistertools.com/tools/calculators/lean-body-mass-calculator): Compute lean tissue mass using Boer, James, and Hume clinical formulas.
+- [Ideal Body Weight Calculator](https://www.twistertools.com/tools/calculators/ideal-weight-calculator): Calculate ideal weight using Devine, Robinson, Miller, and Hamwi formulas.
+- [Water Intake Calculator](https://www.twistertools.com/tools/calculators/water-intake-calculator): Calculate optimal daily hydration based on body weight, climate, and exercise.
+- [Macro Ratio & Flexible Dieting Calculator](https://www.twistertools.com/tools/calculators/macro-calculator): Partition daily macronutrient calories across protein, carbohydrate, and fat grams.
+- [Target Heart Rate Zone Calculator](https://www.twistertools.com/tools/calculators/heart-rate-calculator): Calculate training heart rate zones using Karvonen and Tanaka formulas.
+- [One Rep Max (1RM) Calculator](https://www.twistertools.com/tools/calculators/one-rep-max-calculator): Estimate 1RM strength and submaximal percentages across 7 scientific formulas.
+- [Daily Steps to Distance & Calories Converter](https://www.twistertools.com/tools/calculators/steps-to-calories-calculator): Convert pedometer steps into miles, kilometers, and walking calories.
+- [Running Split Times & Pace Calculator](https://www.twistertools.com/tools/calculators/race-split-pace-calculator): Calculate race splits, negative pacing, and target finish times.
+- [Target VO2 Max Estimator](https://www.twistertools.com/tools/calculators/vo2-max-calculator): Estimate cardiorespiratory fitness using Rockport and Cooper protocols.
+- [Sleep Cycle Calculator](https://www.twistertools.com/tools/calculators/sleep-cycle-calculator): Optimize wake and sleep schedules based on 90-minute REM cycles.
+- [Intermittent Fasting Schedule Calculator](https://www.twistertools.com/tools/calculators/intermittent-fasting-calculator): Track eating and fasting intervals for 16:8, 18:6, 20:4, and OMAD routines.
+- [Caffeine Half-Life & Sleep Disruption Estimator](https://www.twistertools.com/tools/calculators/caffeine-half-life-calculator): Model metabolic caffeine clearance and bedtime sleep latency impact.
+- [Blood Alcohol Content (BAC) Calculator](https://www.twistertools.com/tools/calculators/bac-calculator): Estimate blood alcohol concentration and sober-up timelines using the Widmark formula.
+- [Quit Smoking Savings & Health Timeline](https://www.twistertools.com/tools/calculators/quit-smoking-savings-calculator): Calculate cumulative money saved, smoke-free hours, and WHO recovery milestones.
+- [Pregnancy Due Date Calculator](https://www.twistertools.com/tools/calculators/pregnancy-due-date-calculator): Calculate estimated due dates, gestational age, and developmental trimesters.
+- [Ovulation & Fertile Window Calculator](https://www.twistertools.com/tools/calculators/ovulation-calculator): Predict fertile windows, ovulation dates, and conception schedules.
+- [Dog Age to Human Years Converter](https://www.twistertools.com/tools/calculators/dog-age-calculator): Convert canine age using DNA methylation curves and weight-bracket scaling.
+- [Cat Age to Human Years Calculator](https://www.twistertools.com/tools/calculators/cat-age-calculator): Convert feline years to human equivalents using AAFP maturity guidelines.
+- [Pet Daily Caloric Requirement (RER/MER) Calculator](https://www.twistertools.com/tools/calculators/pet-calorie-calculator): Calculate veterinary energy requirements and feeding portions for dogs and cats.
+- [Age Calculator](https://www.twistertools.com/tools/calculators/age-calculator): Calculate exact age in years, months, days, hours, and minutes.
+- [Percentage Calculator](https://www.twistertools.com/tools/calculators/percentage-calculator): Calculate percentage changes, differences, proportions, and percentage of values.
+- [Average Calculator](https://www.twistertools.com/tools/calculators/average-calculator): Compute mean, median, mode, range, and standard deviation for number sets.
+- [GPA Calculator](https://www.twistertools.com/tools/calculators/gpa-calculator): Calculate term and cumulative Grade Point Average across 4.0, 4.3, and weighted scales.
+- [Final Grade Calculator](https://www.twistertools.com/tools/calculators/final-grade-calculator): Determine the exam score required to achieve a target final course grade.
 
-### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
-Zero-exposure cryptographic tools to audit password complexity and generate entropy-rich credentials.
-- **Strong Password & Passphrase Generator**: Generate cryptographically secure passwords and memorable multi-word passphrases using browser-native CSPRNG.
-- **Password Strength Checker & Cracking Time Analyzer**: Audit password complexity and estimate dictionary crack time entirely inside the local browser sandbox.
-
-### [Text Analysis, List Comparison & Editing Tools](https://www.twistertools.com/tools/text-tools)
-Robust utilities to manipulate, compare, count, and format text strings or structured list arrays.
-- **Case Converter**: Transform strings between UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and PascalCase.
-- **Comma Separator & List Delimiter**: Convert row listings or CSV data into custom delimited arrays.
-- **Word Counter & Text Analyzer** (/tools/text-tools/word-counter): Measure characters, words, sentences, reading times, and keyword densities.
-- **Reverse Text Generator**: Mirror, flip, or reverse text arrays.
-- **Small Text Generator**: Generate Unicode-styled fonts for social copy.
-- **Word Combiner**: Perform cartesian product phrase combinations for marketing and domain generation.
-- **Email Address Extractor & Scraper** (/tools/text-tools/email-extractor): Extract, clean, deduplicate, filter by domain, and sort email addresses from raw text, logs, or unstructured documents — 100% client-side.
-- **Duplicate Line Remover & Deduplicator** (/tools/text-tools/duplicate-line-remover): Scrape and clean duplicate lines with browser-native precision.
-- **Line Alphabetizer & Sort Suite** (/tools/text-tools/line-sorter): Client-side line sorting, natural numerical ordering, and deduplication tool.
-- **Text Line Counter & Blank Line Stripper** (/tools/text-tools/line-counter): Count total lines, strip blank lines, deduplicate entries, trim whitespace, and sort text lists online in real-time.
-- **Phone Number Extractor & Formatter** (/tools/text-tools/phone-number-extractor): Extract, deduplicate, and format phone numbers from raw text into E.164 or US national formats.
-- **Bulk Multi-URL Opener & Launch Sandbox** (/tools/text-tools/url-opener): Open multiple URLs.
-- **URL & Hyperlink Text Extractor** (/tools/text-tools/url-extractor): Extract URLs from text.
-- Text Replace & Pattern Substitution Tool: Client-side string replacement and Regex substitution engine.
-- [Slugify & URL Slug Generator](https://twistertools.com/tools/text-tools/slug-generator): Client-side tool to convert headlines into web-safe SEO permalinks.
-- Morse Code Translator & Audio Synthesizer: Real-time text-to-Morse and Morse-to-text converter with Web Audio tone playback.
-- NATO Phonetic Converter: Real-time text to ICAO/NATO phonetic alphabet converter with Web Speech audio playback and phonetic guides.
-- Strikethrough & Underline Font Styler (/tools/text-tools/strikethrough-text-generator): Generate Unicode strikethrough and underline text.
-
-### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
-Lossy and lossless graphic asset optimization performing pixel rendering directly in browser memory.
-- **Vector SVG Converter & Rasterizer**: Transform SVG vectors to raster PNG/JPG/WebP formats.
-- **PNG to JPG & Format Converter Suite**: Batch convert graphic files between major formats.
-- **Image Compressor**: Shrink image byte sizes using dynamic canvas-based compression ratios.
-- **Image Resizer**: Scale width/height pixel dimensions with aspect ratio preservation.
-- **HEIC to JPG Converter**: Decrypt and convert Apple HEIC photos to standard JPEG files locally.
-- **Favicon Generator**: Bundle multiple dimensions into standard ICO files.
-
-### [SEO, Domain & Network Inspector Tools](https://www.twistertools.com/tools/web-tools)
-Privacy-respecting diagnostics to analyze domains, crawl tags, inspect DNS tables, and verify web protocols.
-- **XML Sitemap Generator**: Client-side sitemap crawler conforming to Sitemaps.org standards.
-- **Meta Tag Generator & Social Previewer**: Draft SEO titles, descriptions, and preview search/social cards.
-- **Domain Age & WHOIS Checker**: Determine domain registration timestamps with native socket APIs and RDAP failovers.
-- **What Is My IP & Network Inspector**: Fetch ISP geolocation, browser headers, and evaluate TOR/VPN/Proxy exposure.
-- **DNS Record Finder**: Query A, AAAA, MX, TXT, NS, CNAME, SOA records using secure DNS-over-HTTPS.
-- **SSL Certificate Checker**: Check SSL expiry, issuer, algorithms, and chains.
-- **HTTP Headers Inspector**: Analyze response codes, security flags, and CORS parameters.
-
-### [PDF & Document Utilities](https://www.twistertools.com/tools/pdf-tools)
-Client-side PDF document manipulation engines running in browser memory with zero server uploads.
-- **PDF Compilers**: Symmetrical image-to-PDF, PNG-to-PDF, JPG-to-PDF, and Text-to-PDF converters.
-- **PDF Extractors**: Convert PDF structures back to Word documents, plain text, Markdown, or extract raster assets.
-- **PDF Split & Merge**: Combine multiple documents or slice and extract specific pages.
-- **PDF Grayscale & Watermark**: Convert pages to black-and-white or stamp text/image watermarks.
-- **PDF Lock & Unlock**: Encrypt PDF documents with passwords or decrypt password protections.
-- **PDF Page Numbers & Stampers**: Add running headers, footers, margins, and rotate/crop orientations.
-
-### [Random Data, Identity & Key Generators](https://www.twistertools.com/tools/generator-tools)
-Utilities for generating mock datasets, random credentials, and styled indicators with cryptographic precision.
-- **Custom QR Code Generator**: Build stylized vector QR codes with embedded custom brand logos.
-- **Bulk UUID/GUID Generator**: Generate bulk v1/v4 UUID strings using secure browser randomizers.
-- **Mock Identity & Test Credit Card Generator**: Generate non-live test payment cards and synthetic persona profiles for software testing.
-
-### [Data & Number Base Converter Utilities](https://www.twistertools.com/tools/converter-tools)
-Symmetrical encoders and decoders for computing byte size differences and base number conversions.
-- **Number Base Converter**: Shift digits between decimal, binary, octal, hexadecimal, and custom bases.
-- **String to Hex / Hex to String Converter**: Translate standard text strings to hexadecimal representations.
-- **Byte Converter**: Convert data capacities across bits, bytes, KB, MB, GB, and TB.
-
-### [Date, Time & Scheduling Tools](https://www.twistertools.com/tools/date-tools)
-Fast, precise, and privacy-first utilities for calculating date differences, timezone conversions, workdays, countdowns, and schedule planning.
-- **Days Between Dates & Span Calculator** (`/tools/date-tools/days-between-dates`): Calculate exact days between dates, working business days, total weeks, and perform date addition or subtraction.
-- [Time Duration & Hour Counter](/tools/date-tools/time-duration-calculator): Calculate exact days between dates, business days, and perform date arithmetic.
-- [World Clock & Timezone Converter Matrix](/tools/date-tools/timezone-converter): Convert live and scheduled time across multiple international time zones simultaneously.
-- Week Number Calculator (ISO-8601): Calculate ISO-8601 week numbers, week date ranges, and annual week metrics.
-- [Event Countdown Timer Generator](/tools/date-tools/countdown-timer-generator): Create customizable, embeddable countdown timers for launches, sales, and events.
-- Sunrise & Sunset Time Estimator (/tools/date-tools/sunrise-sunset-calculator): Calculate accurate sunrise, sunset, twilight phases, golden hour, and daylight duration for any coordinates.
-- [Moon Phase Calendar & Visualizer](/tools/date-tools/moon-phase-calculator): Calculate accurate lunar phases, illumination percentages, moon age, distance, and monthly lunar calendar views.
-
-### [Randomization, Games & Decision Tools](https://www.twistertools.com/tools/random-tools)
-Interactive, client-side tools for quick decision making, chance games, and list shuffling—featuring random pickers, dice rollers, coin flippers, and team generators.
-- Coin Flipper & Probability Simulator (/tools/random-tools/coin-flipper)
-- Dice Roller & Multi-Die Simulator: /tools/random-tools/dice-roller
-- Random Number Generator & Range Picker (/tools/random-tools/random-number-generator)
-- Random Name Picker & Winner Selector (/tools/random-tools/random-name-picker)
-- Spin the Wheel & Choice Picker (/tools/random-tools/spin-the-wheel): Interactive random choice wheel.
-- [Random Color & Palette Generator](https://twistertools.com/tools/random-tools/random-color-generator): Generate harmonious palettes, random HEX/RGB/HSL swatches, and WCAG accessibility contrast ratios.
-- /tools/random-tools/random-address-generator: Synthetic address and GPS location generator with bounding box geocoding, multi-country postal formatting, and JSON/CSV bulk export.
-- Random Country & Flag Quiz Generator (/tools/random-tools/random-country-picker): Random sovereign nation generator with vector flags, capital data, and trivia challenge modes.
+### [Math, Geometry & STEM Science Utilities](https://www.twistertools.com/tools/math-tools)
+- [Triangle Geometry Solver](https://www.twistertools.com/tools/math-tools/triangle-geometry-calculator): Solve SSS, SAS, ASA, AAS, and right triangles with Law of Cosines and SVG visualizer.
+- [Circle Geometry Calculator](https://www.twistertools.com/tools/math-tools/circle-geometry-calculator): Calculate circumference, radius, chord length, arc length, and sector area.
+- [3D Shapes Volume & Surface Area Calculator](https://www.twistertools.com/tools/math-tools/3d-volume-calculator): Compute volume, total area, and lateral surface area for 3D solids.
+- [Pythagorean Theorem & Distance Formula Calculator](https://www.twistertools.com/tools/math-tools/pythagorean-calculator): Solve right triangle hypotenuses, Pythagorean triples, and 2D/3D coordinate distances.
+- [Density, Mass & Volume Calculator](https://www.twistertools.com/tools/math-tools/density-mass-volume-calculator): Calculate material density, mass, and volumetric displacement with preset material tables.
+- [Velocity, Acceleration & Stopping Distance Calculator](https://www.twistertools.com/tools/math-tools/velocity-acceleration-calculator): Solve kinematic motion equations, braking friction distance, and G-force deceleration.
+- [Fraction Calculator & Simplifier](https://www.twistertools.com/tools/calculators/fraction-calculator): Perform arithmetic on proper, improper, and mixed fractions with step-by-step reduction.
+- [Ratio & Proportion Calculator](https://www.twistertools.com/tools/calculators/ratio-calculator): Solve equivalent proportions, simplify ratios, and partition total quantities.
+- [Exponential Growth & Decay Calculator](https://www.twistertools.com/tools/calculators/exponential-calculator): Model exponential functions, half-life decay, and continuous compounding.
+- [Matrix Mathematics Calculator](https://www.twistertools.com/tools/calculators/matrix-calculator): Compute matrix determinants, inverses, rank, matrix multiplication, and eigenvalues.
+- [Quadratic Equation Solver](https://www.twistertools.com/tools/calculators/quadratic-solver): Solve quadratic polynomials with discriminant breakdown and real/complex roots.
+- [Permutation & Combination Calculator](https://www.twistertools.com/tools/calculators/permutation-combination-calculator): Calculate nPr permutations and nCr combinations with factorial breakdowns.
+- [Standard Deviation & Variance Calculator](https://www.twistertools.com/tools/calculators/standard-deviation-calculator): Calculate sample/population variance, standard deviation, and Z-scores.
+- [Probability Calculator](https://www.twistertools.com/tools/calculators/probability-calculator): Calculate single, independent, dependent, and conditional event odds.
+- [Scientific Calculator](https://www.twistertools.com/tools/calculators/scientific-calculator): Browser-native scientific calculator with trigonometric, logarithmic, and algebraic functions.
 
 ### [Home, Garden & Kitchen Living Utilities](https://www.twistertools.com/tools/home-tools)
-Everyday calculations, measurements, and culinary converters.
-- Recipe Ingredient Scaling & Baker's Percentage Adjuster: /tools/home-tools/recipe-converter-scaler (Portion scaling, baker's math, pan volume converter, dough hydration)
-- [Baking Pan Size & Volume Ratio Converter](/tools/home-tools/cake-pan-converter): Scale recipes and convert volumes between round, square, rectangular, and bundt baking pans.
-- Air Fryer Time & Oven Temperature Conversion Matrix (/tools/home-tools/air-fryer-converter): Convert conventional oven temperatures and cook times into calibrated air fryer settings.
-- [Meat Roasting & Internal Cooking Temperature Guide](/tools/home-tools/meat-cooking-time-calculator): Meat roasting duration, internal pull temperature, and carryover resting calculator.
-- Yeast & Sourdough Hydration Percentage Calculator: /tools/home-tools/sourdough-hydration-calculator
-- paint-coverage-calculator: Estimate wall paint square footage, gallon volume, and material costs.
-- [Flooring & Tile Area Square Footage Estimator](/tools/home-tools/tile-flooring-calculator): Accurate square footage, waste percentage, tile unit, and carton calculator.
-- Wallpaper Roll Count & Pattern Repeat Calculator (/tools/home-tools/wallpaper-calculator): Compute precise wallpaper roll quantities, repeat matching offcuts, multi-wall strip yields, and project costs.
-- [Mulch, Soil & Gravel Cubic Yard Estimator](/tools/home-tools/soil-mulch-calculator): Calculate exact cubic yards, tons, and bag counts for mulch, soil, and gravel with multi-zone support.
-- Concrete Slab & Footing Volume Estimator (/tools/home-tools/concrete-volume-calculator): Calculate cubic yards, cubic meters, transit truck loads, and pre-mixed bags for slabs, footings, and piers.
-- Lawn Grass Seed & Fertilizer Spreading Rate Calculator (/tools/home-tools/lawn-seed-calculator): Calculate exact grass seed pounds, N-P-K fertilizer spreading rates, bag quantities, and cross-hatch spreader calibrations for cool and warm season turfgrass.
-- [Aquarium Volume & Water Weight Calculator](/tools/home-tools/aquarium-volume-calculator): Calculate net gallons, liters, substrate displacement, and filled aquarium weights.
-- [Plant Watering & Pot Volume Calculator](/tools/home-tools/plant-watering-calculator): Calculate custom houseplant watering intervals and pot soil capacity based on species, dimensions, and environment.
-- Solar Panel Array & Yield Estimator: Photovoltaic daily/annual kWh generation, roof footprint, carbon offsets, and electric utility bill ROI calculator. (/tools/home-tools/solar-panel-calculator)
+- [Recipe Ingredient Scaler & Baker's Percentage](https://www.twistertools.com/tools/home-tools/recipe-converter-scaler): Scale ingredient quantities, serving yields, and baker's hydration percentages.
+- [Baking Pan Size & Volume Converter](https://www.twistertools.com/tools/home-tools/cake-pan-converter): Convert baking pan surface areas and volume ratios between round and rectangular pans.
+- [Air Fryer Time & Oven Temperature Converter](https://www.twistertools.com/tools/home-tools/air-fryer-converter): Convert conventional oven recipes into calibrated air fryer cook times and temperatures.
+- [Meat Cooking Time & Internal Temp Guide](https://www.twistertools.com/tools/home-tools/meat-cooking-time-calculator): Calculate meat roasting times and target USDA safe internal pull temperatures.
+- [Sourdough Hydration Percentage Calculator](https://www.twistertools.com/tools/home-tools/sourdough-hydration-calculator): Compute total dough hydration accounting for starter levain and flour blends.
+- [Wall Paint Coverage & Gallon Volume Estimator](https://www.twistertools.com/tools/home-tools/paint-coverage-calculator): Calculate net wall square footage and required paint gallon containers.
+- [Flooring & Tile Square Footage Estimator](https://www.twistertools.com/tools/home-tools/tile-flooring-calculator): Calculate room square footage, tile carton units, and layout waste allowances.
+- [Wallpaper Roll Count & Repeat Calculator](https://www.twistertools.com/tools/home-tools/wallpaper-calculator): Compute wallpaper roll requirements factoring in vertical pattern repeat drop waste.
+- [Mulch, Soil & Gravel Volume Estimator](https://www.twistertools.com/tools/home-tools/soil-mulch-calculator): Calculate bulk cubic yards, cubic feet, and bag counts for landscaping beds.
+- [Concrete Slab & Footing Volume Estimator](https://www.twistertools.com/tools/home-tools/concrete-volume-calculator): Calculate cubic yards, concrete mixer loads, and pre-mixed bags for slabs and footings.
+- [Lawn Grass Seed & Fertilizer Calculator](https://www.twistertools.com/tools/home-tools/lawn-seed-calculator): Calculate grass seed weight, N-P-K fertilizer rates, and spreader passes for turfgrass.
+- [Aquarium Volume & Water Weight Calculator](https://www.twistertools.com/tools/home-tools/aquarium-volume-calculator): Compute net water volume and total filled tank weight for glass aquariums.
+- [Plant Watering & Pot Volume Calculator](https://www.twistertools.com/tools/home-tools/plant-watering-calculator): Estimate soil capacity and moisture depletion intervals based on pot size and light exposure.
+- [Solar Panel Array Yield Estimator](https://www.twistertools.com/tools/home-tools/solar-panel-calculator): Calculate daily/annual photovoltaic kWh generation, roof footprint, and electric bill offsets.
 
-### [Math Tools](https://www.twistertools.com/tools/math-tools)
-- [Triangle Geometry Solver](/tools/math-tools/triangle-geometry-calculator): Solve SSS, SAS, ASA, AAS, SSA, and right triangles with live SVG plotting and Law of Cosines.
-- Circle Circumference, Arc Length & Sector Area Calculator: /tools/math-tools/circle-geometry-calculator
-- 3d-volume-calculator: Cylinder, Cone & Sphere Volume and Surface Area Calculator.
-- [Pythagorean Theorem & Distance Formula Calculator](/tools/math-tools/pythagorean-calculator): Solve right triangle sides, angles, 2D/3D Cartesian distances, and Pythagorean triplets.
-- Density, Mass & Volume Calculator (/tools/math-tools/density-mass-volume-calculator): Scientific density, mass, volume, and hydrostatic buoyancy calculator.
-- [Velocity, Acceleration & Stopping Distance Calculator](/tools/math-tools/velocity-acceleration-calculator): Compute braking distance, deceleration G-force, reaction time, and kinetic energy dissipation across road friction conditions.
+### [PDF & Document Utilities](https://www.twistertools.com/tools/pdf-tools)
+- [Merge PDF Documents](https://www.twistertools.com/tools/pdf-tools/merge-pdf): Combine multiple PDF documents into a single consolidated file in browser memory.
+- [Compress PDF File Size](https://www.twistertools.com/tools/pdf-tools/compress-pdf): Reduce PDF document byte sizes with local stream optimization.
+- [Organize & Split PDF Pages](https://www.twistertools.com/tools/pdf-tools/organize-pdf): Reorder, rotate, split, and extract custom page ranges from PDF files.
+- [Lock PDF with Password Encryption](https://www.twistertools.com/tools/pdf-tools/lock-pdf): Encrypt PDF documents with secure passwords locally.
+- [Unlock PDF Password Remover](https://www.twistertools.com/tools/pdf-tools/unlock-pdf): Decrypt and remove password security from owned PDF documents in browser memory.
+- [Watermark PDF Document](https://www.twistertools.com/tools/pdf-tools/watermark-pdf): Stamp custom text or image watermarks across PDF document pages.
+- [Remove & Delete PDF Pages](https://www.twistertools.com/tools/pdf-tools/remove-pdf-pages): Selectively delete unwanted pages from PDF files.
+- [Grayscale PDF Converter](https://www.twistertools.com/tools/pdf-tools/grayscale-pdf): Convert full-color PDF documents into black-and-white monochromes.
+- [Rotate PDF Pages](https://www.twistertools.com/tools/pdf-tools/rotate-pdf): Rotate individual or all PDF pages 90, 180, or 270 degrees.
+- [Add PDF Page Numbers](https://www.twistertools.com/tools/pdf-tools/add-pdf-page-numbers): Stamp customizable running page numbers and headers/footers on PDF documents.
+- [Extract Images from PDF](https://www.twistertools.com/tools/pdf-tools/extract-pdf-images): Extract embedded raster images from PDF files without quality degradation.
+- [PDF Metadata Editor](https://www.twistertools.com/tools/pdf-tools/pdf-metadata-editor): View and edit PDF document title, author, subject, keywords, and creation metadata.
+- [Crop PDF Pages](https://www.twistertools.com/tools/pdf-tools/crop-pdf): Trim and crop document margins across all or selected PDF pages.
+- [Reorder & Reverse PDF Pages](https://www.twistertools.com/tools/pdf-tools/reorder-pdf-pages): Reorder, shuffle, or reverse page sequences in PDF files.
+- [PDF to Plain Text Extractor](https://www.twistertools.com/tools/pdf-tools/pdf-to-text): Extract readable plain text from PDF documents.
+- [PDF to Markdown Compiler](https://www.twistertools.com/tools/pdf-tools/pdf-to-markdown): Parse PDF formatting and extract text structured as Markdown.
+- [PDF to PNG Converter](https://www.twistertools.com/tools/pdf-tools/pdf-to-png): Render and export PDF pages as high-resolution PNG images.
+- [PDF to JPG Converter](https://www.twistertools.com/tools/pdf-tools/pdf-to-jpg): Convert PDF document pages into high-resolution JPEG images.
+- [PDF to Word Converter](https://www.twistertools.com/tools/pdf-tools/pdf-to-word): Convert PDF documents into editable Word (.docx) documents.
+- [Word to PDF Converter](https://www.twistertools.com/tools/pdf-tools/word-to-pdf): Convert DOCX Word documents into PDF files client-side.
+- [Image to PDF Universal Converter](https://www.twistertools.com/tools/pdf-tools/image-to-pdf): Compile multiple image files into a single standardized PDF document.
+- [PNG to PDF Converter](https://www.twistertools.com/tools/pdf-tools/png-to-pdf): Convert PNG graphics into printable PDF files.
+- [JPG to PDF Converter](https://www.twistertools.com/tools/pdf-tools/jpg-to-pdf): Convert JPEG photos into PDF format with page orientation options.
+- [Text to PDF Converter](https://www.twistertools.com/tools/pdf-tools/text-to-pdf): Convert raw plain text files into formatted PDF documents.
+- [HTML to PDF Webpage Compiler](https://www.twistertools.com/tools/pdf-tools/html-to-pdf): Render and compile HTML documents or web snippets into PDF format.
 
-## Other Resources
+### [Text Analysis, List Comparison & Editing Tools](https://www.twistertools.com/tools/text-tools)
+- [Word Counter & Text Analyzer](https://www.twistertools.com/tools/text-tools/word-counter): Measure characters, words, sentences, reading time, and speaking duration.
+- [Case Converter](https://www.twistertools.com/tools/text-tools/case-converter): Transform text between UPPERCASE, lowercase, Title Case, camelCase, and snake_case.
+- [Comma Separator & List Delimiter](https://www.twistertools.com/tools/text-tools/comma-separator): Convert line lists or CSV data into custom delimited arrays.
+- [Compare Two Lists & Set Difference Finder](https://www.twistertools.com/tools/text-tools/compare-two-lists): Find shared entries, unique lines, and differences between two lists.
+- [Duplicate Line Remover & Deduplicator](https://www.twistertools.com/tools/text-tools/duplicate-line-remover): Strip duplicate lines, trim whitespace, and sort text lists in real-time.
+- [Line Alphabetizer & Sort Suite](https://www.twistertools.com/tools/text-tools/line-sorter): Sort text lines alphabetically, numerically, case-sensitively, or in reverse.
+- [Text Line Counter & Blank Line Stripper](https://www.twistertools.com/tools/text-tools/line-counter): Count total lines, empty lines, and remove unwanted blank spacing.
+- [Character Frequency & Density Analyzer](https://www.twistertools.com/tools/text-tools/character-frequency-counter): Analyze character distribution, letter frequency counts, and occurrences.
+- [Reading Time & Speaking Pace Estimator](https://www.twistertools.com/tools/text-tools/reading-time-calculator): Calculate estimated reading and speech presentation duration across speaking speeds.
+- [Text Replace & Pattern Substitution Tool](https://www.twistertools.com/tools/text-tools/text-replacer): Perform multi-pattern string replacement and RegEx substitutions.
+- [Prefix and Suffix Text Attacher](https://www.twistertools.com/tools/text-tools/prefix-suffix-attacher): Append custom prefixes and suffixes to every line in a text list.
+- [Slugify & URL Slug Generator](https://www.twistertools.com/tools/text-tools/slug-generator): Convert headlines and titles into SEO-friendly, web-safe permalinks.
+- [Random String & Hash Key Generator](https://www.twistertools.com/tools/text-tools/random-string-generator): Generate entropy-rich cryptographic random strings and keys.
+- [Lorem Ipsum Placeholder Generator](https://www.twistertools.com/tools/text-tools/lorem-ipsum-generator): Generate dummy placeholder text paragraphs, sentences, and lists.
+- [Fake Word & Vocabulary Generator](https://www.twistertools.com/tools/text-tools/fake-word-generator): Generate phonotactically realistic synthetic words and nonsense vocabulary.
+- [Text Encryption & Decryption Suite](https://www.twistertools.com/tools/text-tools/text-encryptor): Encrypt and decrypt text using client-side AES-GCM and Caesar ciphers.
+- [Morse Code Translator & Synthesizer](https://www.twistertools.com/tools/text-tools/morse-code-translator): Translate text to International Morse Code with live Web Audio playback.
+- [NATO Phonetic Alphabet Converter](https://www.twistertools.com/tools/text-tools/nato-phonetic-converter): Convert text strings into ICAO/NATO phonetic spelling with audio synthesis.
+- [Zalgo Glitch Text Generator](https://www.twistertools.com/tools/text-tools/zalgo-text-generator): Add glitching Unicode combining diacritic marks to text.
+- [Strikethrough & Underline Font Styler](https://www.twistertools.com/tools/text-tools/strikethrough-text-generator): Generate Unicode strikethrough, underline, and slash formatting.
+- [Email Address Extractor & Scraper](https://www.twistertools.com/tools/text-tools/email-extractor): Extract and deduplicate email addresses from raw text and server logs.
+- [Phone Number Extractor & Formatter](https://www.twistertools.com/tools/text-tools/phone-number-extractor): Extract, clean, and format phone numbers into international E.164 format.
+- [URL & Hyperlink Text Extractor](https://www.twistertools.com/tools/text-tools/url-extractor): Extract HTTP/HTTPS hyperlinks from unstructured text or HTML.
+- [Bulk Multi-URL Opener](https://www.twistertools.com/tools/text-tools/url-opener): Open large lists of web URLs concurrently in separate browser tabs.
+- [Reverse Text Generator](https://www.twistertools.com/tools/text-tools/reverse-text-generator): Reverse text order, mirror words, and invert letter strings.
+- [Small Text Generator](https://www.twistertools.com/tools/text-tools/small-text-generator): Generate small caps, superscript, and subscript Unicode fonts.
+- [Word Combiner & Phrase Generator](https://www.twistertools.com/tools/text-tools/word-combiner): Compute Cartesian product phrase combinations for marketing and domain search.
+- [Article Rewriter & Text Paraphraser](https://www.twistertools.com/tools/text-tools/rewrite-article): Paraphrase sentences and substitute synonyms client-side.
+- [Online Text Editor & Formatting Sandbox](https://www.twistertools.com/tools/text-tools/online-text-editor): Rich WYSIWYG text editor with formatting controls and HTML export.
 
-- [All Categories Hub](https://www.twistertools.com/categories)
-- [About the Platform](https://www.twistertools.com/about)
-- [Privacy Policy](https://www.twistertools.com/privacy-policy)
-- [Terms of Service](https://www.twistertools.com/terms-of-service)
-- [Contact Support](https://www.twistertools.com/contact)
+### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
+- [Image Compressor & Quality Optimizer](https://www.twistertools.com/tools/image-tools/image-compressor): Compress JPEG, PNG, and WebP images client-side via HTML5 Canvas.
+- [Image Resizer & Dimensions Scaler](https://www.twistertools.com/tools/image-tools/image-resizer): Scale pixel dimensions and resize images with aspect ratio locking.
+- [PNG to JPG Format Converter](https://www.twistertools.com/tools/image-tools/png-to-jpg): Convert PNG images to standard JPEG files with custom background colors.
+- [Vector SVG Converter & Rasterizer](https://www.twistertools.com/tools/image-tools/svg-converter): Render SVG vectors to raster PNG, JPEG, and WebP formats at custom resolutions.
+- [Favicon Generator & Multi-Resolution Suite](https://www.twistertools.com/tools/image-tools/favicon-generator): Generate multi-layer ICO favicons and web application icons.
+- [HEIC & AVIF to JPG Converter](https://www.twistertools.com/tools/image-tools/heic-to-jpg): Convert Apple HEIC and AVIF photos to standard JPEG format in browser memory.
+
+### [SEO, Domain & Network Inspector Tools](https://www.twistertools.com/tools/web-tools)
+- [XML Sitemap Generator & URL Crawler](https://www.twistertools.com/tools/web-tools/sitemap-generator): Crawl links and generate valid Sitemaps.org XML and TXT sitemaps.
+- [Meta Tag Generator & Social Preview Suite](https://www.twistertools.com/tools/web-tools/meta-tag-generator): Draft SEO meta tags with live Google, Facebook, and Twitter card previews.
+- [Open Graph Generator](https://www.twistertools.com/tools/web-tools/open-graph-generator): Build standard Open Graph tags for Facebook, LinkedIn, and social platforms.
+- [Domain Age Checker & WHOIS Lookup](https://www.twistertools.com/tools/web-tools/domain-age-checker): Query domain registration age and expiration records via native WHOIS sockets and RDAP.
+- [Domain to IP Converter & DNS Inspector](https://www.twistertools.com/tools/web-tools/domain-to-ip): Resolve domain hostnames to IPv4/IPv6 addresses with IP geolocation.
+- [What Is My IP Address & Network Inspector](https://www.twistertools.com/tools/web-tools/what-is-my-ip): Detect client public IP, ISP provider, ASN, and VPN/Proxy indicators.
+- [IP Location Lookup & GeoIP Visualizer](https://www.twistertools.com/tools/web-tools/ip-location): Inspect geographic coordinates, city, and ISP data for any IP address.
+- [DNS Record Finder](https://www.twistertools.com/tools/web-tools/find-dns-record): Query A, AAAA, MX, TXT, NS, CNAME, and SOA DNS records via DNS-over-HTTPS.
+- [SSL Certificate Checker](https://www.twistertools.com/tools/web-tools/ssl-checker): Audit SSL/TLS certificate validity, issuer authority, and cipher expiration.
+- [HTTP Headers Inspector](https://www.twistertools.com/tools/web-tools/http-headers): Inspect HTTP response headers, status codes, security policies, and CORS headers.
+
+### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
+- [Strong Password Generator](https://www.twistertools.com/tools/password-tools/password-generator): Generate cryptographically secure random passwords and multi-word passphrases using browser CSPRNG.
+- [Password Strength Checker & Cracking Time Analyzer](https://www.twistertools.com/tools/password-tools/password-strength-checker): Analyze password entropy and estimate brute-force cracking resistance without sending data to servers.
+
+### [Random Data, Identity & Key Generators](https://www.twistertools.com/tools/generator-tools)
+- [Custom QR Code Generator](https://www.twistertools.com/tools/generator-tools/qr-code-generator): Generate customized vector QR codes with custom styling, dot shapes, colors, and embedded logos.
+- [Bulk UUID / GUID Generator](https://www.twistertools.com/tools/generator-tools/uuid-generator): Generate bulk RFC 4122 v4 and v1 UUIDs locally.
+- [Test Credit Card & Mock Identity Generator](https://www.twistertools.com/tools/generator-tools/credit-card-generator): Generate synthetic test payment card numbers (passing Luhn checks) and test personas for QA sandbox testing.
+
+### [Data & Number Base Converter Utilities](https://www.twistertools.com/tools/converter-tools)
+- [Binary & Base Converter](https://www.twistertools.com/tools/converter-tools/binary-converter): Convert numbers across binary, octal, decimal, hexadecimal, and custom numerical bases (Base 2 to 36).
+- [String to Hex & Hex to String Converter](https://www.twistertools.com/tools/converter-tools/string-to-hex): Translate text strings to hexadecimal byte sequences and reverse-decode hex strings.
+
+### [Date, Time & Scheduling Tools](https://www.twistertools.com/tools/date-tools)
+- [Days Between Dates & Span Calculator](https://www.twistertools.com/tools/date-tools/days-between-dates): Calculate calendar days, working business days, and date arithmetic spans.
+- [Time Duration & Hour Counter](https://www.twistertools.com/tools/date-tools/time-duration-calculator): Calculate precise durations between times, elapsed work hours, and time card totals.
+- [World Clock & Timezone Converter Matrix](https://www.twistertools.com/tools/date-tools/timezone-converter): Compare and convert schedules across international time zones simultaneously.
+- [Leap Year Checker & Calendar Auditor](https://www.twistertools.com/tools/date-tools/leap-year-checker): Check Gregorian leap years and view leap year schedules.
+- [Day of the Week Calculator](https://www.twistertools.com/tools/date-tools/day-of-week-calculator): Determine the exact day of the week for any past or future historical date.
+- [Week Number Calculator (ISO-8601)](https://www.twistertools.com/tools/date-tools/week-number-calculator): Calculate ISO-8601 week numbers and corresponding date intervals.
+- [Event Countdown Timer Generator](https://www.twistertools.com/tools/date-tools/countdown-timer-generator): Generate customized event countdown clocks for product launches and deadlines.
+- [Sunrise & Sunset Time Estimator](https://www.twistertools.com/tools/date-tools/sunrise-sunset-calculator): Calculate solar noon, twilight phases, and daylight duration for any GPS coordinates.
+- [Moon Phase Calendar & Visualizer](https://www.twistertools.com/tools/date-tools/moon-phase-calculator): Calculate lunar illumination percentages, moon age, and monthly phase cycles.
+
+### [Randomization, Games & Decision Tools](https://www.twistertools.com/tools/random-tools)
+- [Coin Flipper & Probability Simulator](https://www.twistertools.com/tools/random-tools/coin-flipper): Simulate 3D coin flips with statistical probability telemetry.
+- [Dice Roller & Multi-Die Simulator](https://www.twistertools.com/tools/random-tools/dice-roller): Roll multi-sided tabletop dice (D4, D6, D8, D10, D12, D20, D100) with outcome distributions.
+- [Random Number Generator & Range Picker](https://www.twistertools.com/tools/random-tools/random-number-generator): Generate random integers and non-repeating number sequences within custom min/max ranges.
+- [Random Name Picker & Winner Selector](https://www.twistertools.com/tools/random-tools/random-name-picker): Pick random winners from participant lists with weighted entries.
+- [Spin the Wheel & Choice Picker](https://www.twistertools.com/tools/random-tools/spin-the-wheel): Interactive customizable decision wheel for raffles, games, and choices.
+- [Random Team & Group Generator](https://www.twistertools.com/tools/random-tools/random-team-generator): Automatically balance and distribute participant rosters into equal teams.
+- [Playing Card Shuffler & Hand Generator](https://www.twistertools.com/tools/random-tools/random-card-drawer): Draw hands from standard 52-card decks with unbiased Fisher-Yates shuffling.
+- [Random Color & Palette Generator](https://www.twistertools.com/tools/random-tools/random-color-generator): Generate harmonious palettes with HEX/RGB/HSL values and WCAG contrast checks.
+- [Random Address & Location Picker](https://www.twistertools.com/tools/random-tools/random-address-generator): Generate synthetic test street addresses and GPS coordinates with interactive map previews.
+- [Random Country & Flag Quiz Generator](https://www.twistertools.com/tools/random-tools/random-country-picker): Explore 196 sovereign nations with high-res vector flags, capital cities, and trivia.
+
+## Platform Pages
+
+- [Categories Directory](https://www.twistertools.com/categories): Complete directory of all 13 tool categories on TwisterTools.
+- [All Tools Directory](https://www.twistertools.com/tools): Searchable and filterable master directory of all available online utilities.
+- [About TwisterTools](https://www.twistertools.com/about): Mission statement, privacy guarantees, and browser-native architecture background.
+- [Privacy Policy](https://www.twistertools.com/privacy-policy): Detailed privacy documentation verifying zero-server data transmission.
+- [Terms of Service](https://www.twistertools.com/terms-of-service): Terms and conditions for using TwisterTools utilities.
+- [Contact Support](https://www.twistertools.com/contact): Inquiries, feedback, and new tool requests.
