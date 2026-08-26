@@ -84,6 +84,7 @@ import {
   Shapes,
   Layout,
   LayoutGrid,
+  Circle,
   Triangle,
   Table,
   Bot,
@@ -102,7 +103,9 @@ import {
   Boxes,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -193,6 +196,7 @@ const ICON_MAP: Record<string, any> = {
   Shapes,
   Layout,
   LayoutGrid,
+  Circle,
   Triangle,
   Table,
   Bot,
@@ -211,7 +215,9 @@ const ICON_MAP: Record<string, any> = {
   Boxes,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 };
 
 interface RelatedToolsProps {

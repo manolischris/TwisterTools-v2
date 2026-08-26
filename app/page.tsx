@@ -104,6 +104,7 @@ import {
   Pipette,
   Sliders,
   LayoutGrid,
+  Circle,
   Triangle,
   Table,
   Layout,
@@ -122,7 +123,9 @@ import {
   Shovel,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -230,6 +233,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Sliders,
   Layout,
   LayoutGrid,
+  Circle,
   Triangle,
   Table,
   Bot,
@@ -247,7 +251,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Shovel,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 };
 
 const CATEGORIES = [
@@ -263,6 +269,7 @@ const CATEGORIES = [
   { id: "date-tools", name: "Date & Time Tools", href: "/tools/date-tools", icon: Calendar },
   { id: "random-tools", name: "Random & Games", href: "/tools/random-tools", icon: Dices },
   { id: "home-tools", name: "Home Tools", href: "/tools/home-tools", icon: Home },
+  { id: "math-tools", name: "Math & Science", href: "/tools/math-tools", icon: Binary },
 ];
 
 const ALL_TOOLS_REGISTRY: Tool[] = (toolsRegistryData as Tool[])

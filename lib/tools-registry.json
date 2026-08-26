@@ -2073,5 +2073,59 @@
     "href": "/tools/home-tools/solar-panel-calculator",
     "iconName": "Sun",
     "isFeatured": false
+  },
+  {
+    "id": "triangle-geometry-calculator",
+    "title": "Triangle Area, Hypotenuse & Law of Cosines Solver",
+    "description": "Solve SSS, SAS, ASA, AAS, SSA, and right triangles with live SVG geometry plotting and trigonometric proofs.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/triangle-geometry-calculator",
+    "iconName": "Triangle",
+    "isFeatured": false
+  },
+  {
+    "id": "circle-geometry-calculator",
+    "title": "Circle Circumference, Arc Length & Sector Area Calculator",
+    "description": "Solve circle radius, circumference, area, arc length, chord, and sector parameters with real-time vector visualization.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/circle-geometry-calculator",
+    "iconName": "Circle",
+    "isFeatured": false
+  },
+  {
+    "id": "3d-volume-calculator",
+    "title": "Cylinder, Cone & Sphere Volume and Surface Area Calculator",
+    "description": "Comprehensive 3D solid geometry engine computing volume, lateral surface area, total surface area, slant height, base circumference, and liquid capacity with real-time SVG rendering.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/3d-volume-calculator",
+    "iconName": "Box",
+    "isFeatured": false
+  },
+  {
+    "id": "pythagorean-calculator",
+    "title": "Pythagorean Theorem & Distance Formula Calculator",
+    "description": "Solve right triangle hypotenuse, legs, area, perimeter, and compute 2D/3D Euclidean coordinate distances with radical simplification.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/pythagorean-calculator",
+    "iconName": "Triangle",
+    "isFeatured": false
+  },
+  {
+    "id": "density-mass-volume-calculator",
+    "title": "Density, Mass & Volume Physical State Calculator",
+    "description": "Calculate density, mass, and volume with 40+ material presets, specific gravity, and buoyancy simulation.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/density-mass-volume-calculator",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "velocity-acceleration-calculator",
+    "title": "Velocity, Acceleration & Stopping Distance Calculator",
+    "description": "Kinematic stopping distance, deceleration G-force, and reaction time solver with road friction and grade slope modeling.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/velocity-acceleration-calculator",
+    "iconName": "Gauge",
+    "isFeatured": false
   }
 ]

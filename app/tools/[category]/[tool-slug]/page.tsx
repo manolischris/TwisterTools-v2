@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -63,6 +63,11 @@ const PdfCompressorSuite = dynamic(() => import("../../../../components/tools/Pd
 const ExtractPdfImages = dynamic(() => import("@/components/tools/ExtractPdfImages"));
 const PregnancyDueDateCalculator = dynamic(() => import("@/components/tools/PregnancyDueDateCalculator"));
 const ScientificCalculator = dynamic(() => import("@/components/tools/ScientificCalculator"));
+const TriangleGeometryCalculator = dynamic(() => import("@/components/tools/TriangleGeometryCalculator"));
+const CircleGeometryCalculator = dynamic(() => import("@/components/tools/CircleGeometryCalculator"));
+const VolumeCalculator3D = dynamic(() => import("@/components/tools/VolumeCalculator3D"));
+const PythagoreanCalculator = dynamic(() => import("@/components/tools/PythagoreanCalculator"));
+const DensityMassVolumeCalculator = dynamic(() => import("@/components/tools/DensityMassVolumeCalculator"));
 const EmergencyFundCalculator = dynamic(() => import("@/components/tools/EmergencyFundCalculator"));
 const CarLeaseVsBuyCalculator = dynamic(() => import("@/components/tools/CarLeaseVsBuyCalculator"));
 const SubscriptionCostCalculator = dynamic(() => import("@/components/tools/SubscriptionCostCalculator"));
@@ -217,6 +222,11 @@ const COMPLETED_TOOLS = [
   "sourdough-hydration-calculator",
   "plant-watering-calculator",
   "solar-panel-calculator",
+  "triangle-geometry-calculator",
+  "circle-geometry-calculator",
+  "3d-volume-calculator",
+  "pythagorean-calculator",
+  "density-mass-volume-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -460,7 +470,22 @@ export async function generateMetadata({
     title = "Concrete Slab & Footing Volume Estimator";
     description = "Calculate required concrete volume in cubic yards, cubic meters, and 80lb/60lb pre-mix bag counts for slabs, footings, and post piers with waste buffer margins.";
   }
-
+  if (category === "math-tools" && toolSlug === "triangle-geometry-calculator") {
+    title = "Triangle Area, Hypotenuse & Law of Cosines Solver";
+    description = "Solve SSS, SAS, ASA, AAS, SSA, and right triangles with real-time SVG geometry rendering, Heron's area formula, and inradius/circumradius analytics.";
+  }
+  if (category === "math-tools" && toolSlug === "circle-geometry-calculator") {
+    title = "Circle Circumference, Arc Length & Sector Area Calculator | TwisterTools";
+    description = "Free circle geometry calculator solving circumference, area, arc length, sector area, chord length, sagitta, and segment area with dynamic real-time SVG vector rendering.";
+  }
+  if (category === "math-tools" && toolSlug === "3d-volume-calculator") {
+    title = "Cylinder, Cone & Sphere Volume and Surface Area Calculator";
+    description = "Compute exact volume, lateral surface area, total surface area, slant height, base circumference, and liquid fluid capacity in liters and gallons with real-time 3D isometric SVG wireframe rendering.";
+  }
+  if (category === "math-tools" && toolSlug === "density-mass-volume-calculator") {
+    title = "Density, Mass & Volume Physical State Calculator";
+    description = "Free online density, mass, and volume calculator. Compute specific gravity, hydrostatic buoyancy, and unit conversions across 40+ material presets.";
+  }
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -616,8 +641,22 @@ export default async function ToolPage({
     tool.description = "Calculate exact wallpaper rolls, pattern repeat waste margins, strip cut yields, and room budgets.";
   }
 
+  if (category === "math-tools" && toolSlug === "triangle-geometry-calculator") {
+    tool.name = "Triangle Area, Hypotenuse & Law of Cosines Solver";
+    tool.description = "Solve SSS, SAS, ASA, AAS, SSA, and right triangles with real-time SVG geometry rendering, Heron's area formula, and inradius/circumradius analytics.";
+  }
+  if (category === "math-tools" && toolSlug === "circle-geometry-calculator") {
+    tool.name = "Circle Circumference, Arc Length & Sector Area Calculator";
+    tool.description = "Solve circle radius, circumference, area, arc length, chord, and sector parameters with real-time vector visualization.";
+  }
+  if (category === "math-tools" && toolSlug === "3d-volume-calculator") {
+    tool.name = "Cylinder, Cone & Sphere Volume and Surface Area Calculator";
+    tool.description = "Compute exact volume, lateral surface area, total surface area, slant height, base circumference, and liquid fluid capacity in liters and gallons with real-time 3D isometric SVG wireframe rendering.";
+  }
+
   // Get category display name matching blueprint's modern taxonomies exactly
   const categoryDisplayNames: Record<string, string> = {
+    "math-tools": "Math, Geometry & STEM Science Utilities",
     "text-tools": "Text Analysis, List Comparison & Editing Tools",
     "converter-tools": "Data & Number Base Converter Utilities",
     "web-tools": "SEO, Domain & Network Inspector Tools",
@@ -1134,6 +1173,16 @@ export default async function ToolPage({
                   <Sprout className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "solar-panel-calculator" ? (
                   <Sun className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "triangle-geometry-calculator" ? (
+                  <Triangle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "circle-geometry-calculator" ? (
+                  <Circle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "3d-volume-calculator" ? (
+                  <Box className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "pythagorean-calculator" ? (
+                  <Triangle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "density-mass-volume-calculator" ? (
+                  <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1322,6 +1371,16 @@ export default async function ToolPage({
             <PlantWateringCalculator />
           ) : category === "home-tools" && toolSlug === "solar-panel-calculator" ? (
             <SolarPanelCalculator />
+          ) : category === "math-tools" && toolSlug === "triangle-geometry-calculator" ? (
+            <TriangleGeometryCalculator />
+          ) : category === "math-tools" && toolSlug === "circle-geometry-calculator" ? (
+            <CircleGeometryCalculator />
+          ) : category === "math-tools" && toolSlug === "3d-volume-calculator" ? (
+            <VolumeCalculator3D />
+          ) : category === "math-tools" && toolSlug === "pythagorean-calculator" ? (
+            <PythagoreanCalculator />
+          ) : category === "math-tools" && toolSlug === "density-mass-volume-calculator" ? (
+            <DensityMassVolumeCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (

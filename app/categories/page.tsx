@@ -21,6 +21,7 @@ import {
   Calendar,
   Dices,
   Home,
+  Binary,
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -242,6 +243,21 @@ const CATEGORIES: CategoryDef[] = [
       "gardening calculators",
       "diy living tools",
       "home improvement calculators",
+    ],
+  },
+  {
+    slug: "math-tools",
+    name: "Math, Geometry & STEM Science Utilities",
+    description:
+      "Interactive geometry solvers, physics mechanics formulas, thermodynamic atmospheric calculators, and precision STEM calculation engines.",
+    icon: Binary,
+    accentClass: "bg-purple-100 text-purple-600",
+    keywords: [
+      "geometry calculator",
+      "physics formulas",
+      "thermodynamics calculator",
+      "stem math tools",
+      "scientific calculator",
     ],
   },
 ];

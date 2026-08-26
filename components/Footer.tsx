@@ -195,6 +195,14 @@ export default function Footer() {
                   Home, Garden & Kitchen Living Utilities
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/math-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Math, Geometry & STEM Science Utilities
+                </Link>
+              </li>
             </ul>
           </div>
 

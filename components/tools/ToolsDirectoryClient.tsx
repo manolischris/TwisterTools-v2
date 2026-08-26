@@ -120,7 +120,9 @@ import {
   Boxes,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -251,7 +253,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Boxes,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 };
 
 /* ─────────────────────────────────────────────────────────

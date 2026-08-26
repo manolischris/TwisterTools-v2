@@ -92,6 +92,7 @@ import {
   Pipette,
   Sliders,
   LayoutGrid,
+  Circle,
   Triangle,
   Bot,
   Terminal,
@@ -101,7 +102,9 @@ import {
   Wheat,
   PaintBucket,
   ScrollText,
-  Boxes
+  Boxes,
+  Box,
+  Gauge
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -203,6 +206,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Pipette,
   Sliders,
   LayoutGrid,
+  Circle,
   Triangle,
   Bot,
   Terminal,
@@ -212,7 +216,9 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Wheat,
   PaintBucket,
   ScrollText,
-  Boxes
+  Boxes,
+  Box,
+  Gauge
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json
@@ -754,6 +760,50 @@ const CATEGORIES_METADATA: Record<
       {
         q: "How precise are the culinary conversion calculators?",
         a: "They use standard international food measurement standards. However, since densities can vary (e.g. flour vs water), weight-to-volume estimations are based on standard average densities."
+      }
+    ]
+  },
+  "math-tools": {
+    name: "Math, Geometry & STEM Science Utilities",
+    icon: "Binary",
+    description: "Interactive geometry solvers, physics mechanics formulas, thermodynamic atmospheric calculators, and precision STEM calculation engines.",
+    detailedGuide: "Solve complex STEM problems, compute geometric properties, and run physics or thermodynamics formulas entirely in your browser with high-precision outputs.",
+    seoDescription: "Interactive geometry solvers, physics mechanics formulas, thermodynamic atmospheric calculators, and precision STEM calculation engines.",
+    keywords: ["geometry calculator", "physics formulas", "thermodynamics calculator", "stem math tools", "scientific calculator", "triangle solver", "vector calculator"],
+    cards: [
+      {
+        title: "Precision Geometry & Trigonometry Solvers",
+        icon: "Binary",
+        content: "Compute side lengths, angles, areas, perimeters, and volumes for all standard geometric shapes — triangles, circles, polygons, and 3D solids. All calculations use IEEE 754 double-precision arithmetic with up to 15 significant figures of accuracy, running entirely in your browser's JavaScript engine."
+      },
+      {
+        title: "Physics Mechanics & Kinematics Engines",
+        icon: "Sigma",
+        content: "Solve classical mechanics problems involving velocity, acceleration, force, torque, momentum, and energy. Enter known variables and instantly compute unknown quantities using fundamental Newtonian physics equations — no textbooks required."
+      },
+      {
+        title: "Thermodynamic & Atmospheric Calculators",
+        icon: "Zap",
+        content: "Calculate ideal gas laws, pressure-volume-temperature relationships, heat transfer coefficients, and standard atmospheric model values. Our calculators support both SI and imperial unit systems with automatic real-time unit conversion."
+      },
+      {
+        title: "100% Offline & Privacy-First Computation",
+        icon: "ShieldCheck",
+        content: "Every STEM formula, matrix operation, and numeric derivation runs locally on your own hardware using optimized client-side algorithms. No equations, variables, or computed results are transmitted to any server — making these tools safe for coursework, research, and confidential engineering work."
+      }
+    ],
+    faqs: [
+      {
+        q: "Are these tools suitable for university-level STEM coursework?",
+        a: "Yes. Our solvers handle college-level geometry, classical mechanics, and applied thermodynamics problems. All results are computed using high-precision floating-point arithmetic and display intermediate working steps where applicable."
+      },
+      {
+        q: "Can I convert between different unit systems (SI vs imperial)?",
+        a: "Yes. All physics and thermodynamics calculators support both SI (meters, Kelvin, Pascals) and imperial (feet, Fahrenheit, psi) units with automatic bidirectional conversion built into the input fields."
+      },
+      {
+        q: "Are my equations or calculation inputs sent anywhere?",
+        a: "Never. All STEM computation is performed entirely within your browser session using local JavaScript engines. No variables, formulas, or outputs leave your device."
       }
     ]
   }

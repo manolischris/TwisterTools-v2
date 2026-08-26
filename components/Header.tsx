@@ -18,6 +18,7 @@ import {
   Calendar,
   Dices,
   Home,
+  Binary,
 } from "lucide-react";
 
 const categories = [
@@ -33,6 +34,7 @@ const categories = [
   { slug: "date-tools", name: "Date, Time & Scheduling Tools", icon: Calendar, desc: "Date differences, timezone conversions & countdowns" },
   { slug: "random-tools", name: "Randomization, Games & Decision Tools", icon: Dices, desc: "Random pickers, dice, coins & team generators" },
   { slug: "home-tools", name: "Home, Garden & Kitchen Living Utilities", icon: Home, desc: "Home, DIY, kitchen & gardening calculations" },
+  { slug: "math-tools", name: "Math, Geometry & STEM Science Utilities", icon: Binary, desc: "Geometry solvers, physics & STEM calculation engines" },
 ];
 
 export default function Header() {

@@ -14,7 +14,8 @@
     "pdf-tools": "PDF & Document Utilities",
     "date-tools": "Date, Time & Scheduling Tools",
     "random-tools": "Randomization, Games & Decision Tools",
-    "home-tools": "Home, Garden & Kitchen Living Utilities"
+    "home-tools": "Home, Garden & Kitchen Living Utilities",
+    "math-tools": "Math, Geometry & STEM Science Utilities"
   },
   "redirects": [
     {

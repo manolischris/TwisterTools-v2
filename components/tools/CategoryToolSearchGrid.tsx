@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   Link as LinkIcon,
   Link2,
+  Circle,
   Search,
   X,
   ArrowRight,
@@ -116,7 +117,9 @@ import {
   Boxes,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -140,6 +143,7 @@ interface CategoryToolSearchGridProps {
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Link: LinkIcon,
   Link2,
+  Circle,
   Activity,
   Flame,
   Droplets,
@@ -249,7 +253,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Boxes,
   Sprout,
   Fish,
-  Sun
+  Sun,
+  Box,
+  Gauge
 };
 
 export default function CategoryToolSearchGrid({

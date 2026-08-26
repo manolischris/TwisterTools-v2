@@ -194,6 +194,13 @@ Everyday calculations, measurements, and culinary converters.
 - [Plant Watering & Pot Volume Calculator](/tools/home-tools/plant-watering-calculator): Calculate custom houseplant watering intervals and pot soil capacity based on species, dimensions, and environment.
 - Solar Panel Array & Yield Estimator: Photovoltaic daily/annual kWh generation, roof footprint, carbon offsets, and electric utility bill ROI calculator. (/tools/home-tools/solar-panel-calculator)
 
+### [Math Tools](https://www.twistertools.com/tools/math-tools)
+- [Triangle Geometry Solver](/tools/math-tools/triangle-geometry-calculator): Solve SSS, SAS, ASA, AAS, SSA, and right triangles with live SVG plotting and Law of Cosines.
+- Circle Circumference, Arc Length & Sector Area Calculator: /tools/math-tools/circle-geometry-calculator
+- 3d-volume-calculator: Cylinder, Cone & Sphere Volume and Surface Area Calculator.
+- [Pythagorean Theorem & Distance Formula Calculator](/tools/math-tools/pythagorean-calculator): Solve right triangle sides, angles, 2D/3D Cartesian distances, and Pythagorean triplets.
+- Density, Mass & Volume Calculator (/tools/math-tools/density-mass-volume-calculator): Scientific density, mass, volume, and hydrostatic buoyancy calculator.
+- [Velocity, Acceleration & Stopping Distance Calculator](/tools/math-tools/velocity-acceleration-calculator): Compute braking distance, deceleration G-force, reaction time, and kinetic energy dissipation across road friction conditions.
 
 ## Other Resources
 
