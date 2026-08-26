@@ -15,12 +15,12 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "All Online Utilities & Tools",
   description:
-    "Browse 50+ free online utilities: developer tools, calculators, converters, password tools, image tools, text tools, web tools, and generators — most run entirely in your browser.",
+    "Browse hundreds of free, privacy-first online tools, calculators, and converters. Fast, browser-native utilities that run 100% in your local memory with zero data uploads.",
   alternates: { canonical: "https://www.twistertools.com/tools" },
   openGraph: {
     title: "All Online Utilities & Tools | TwisterTools",
     description:
-      "50+ free online tools for developers, designers, and power users. Most tools run entirely in your browser — fast, private, and free.",
+      "Browse hundreds of free, privacy-first online tools, calculators, and converters. Fast, browser-native utilities that run 100% in your local memory with zero data uploads.",
     url: "https://www.twistertools.com/tools",
     siteName: "TwisterTools",
     type: "website",

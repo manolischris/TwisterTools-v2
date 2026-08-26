@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -16,33 +18,43 @@ import {
     CheckCircle2
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: 'Privacy Policy | TwisterTools',
-    description: 'Learn how TwisterTools protects your privacy through 100% local client-side execution, zero-retention server processing, and transparent data handling practices across all 117+ tools.',
-    alternates: {
-        canonical: 'https://www.twistertools.com/privacy-policy',
-    },
-    openGraph: {
-        title: 'Privacy Policy | TwisterTools',
-        description: 'Learn how TwisterTools protects your privacy through 100% local client-side execution, zero-retention server processing, and transparent data handling practices.',
-        type: 'website',
-        url: 'https://www.twistertools.com/privacy-policy',
-        siteName: 'TwisterTools',
-        images: [
-            {
-                url: 'https://www.twistertools.com/images/og-default.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'TwisterTools Privacy Policy',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Privacy Policy | TwisterTools',
-        description: 'Learn how TwisterTools protects your privacy through 100% local client-side execution, zero-retention server processing, and transparent data handling practices.',
-    },
-};
+export async function generateMetadata(): Promise<Metadata> {
+    const imageBase = path.join(process.cwd(), 'public', 'images', 'privacy-policy');
+    const ogImageUrl = fs.existsSync(`${imageBase}.webp`)
+        ? 'https://www.twistertools.com/images/privacy-policy.webp'
+        : fs.existsSync(`${imageBase}.jpg`)
+            ? 'https://www.twistertools.com/images/privacy-policy.jpg'
+            : 'https://www.twistertools.com/images/og-default.jpg';
+
+    return {
+        title: 'Privacy Policy',
+        description: 'Learn how TwisterTools protects your privacy through 100% local client-side execution, zero-retention server processing, and transparent data handling practices across all 117+ tools.',
+        alternates: {
+            canonical: 'https://www.twistertools.com/privacy-policy',
+        },
+        openGraph: {
+            title: 'Privacy Policy | TwisterTools',
+            description: 'Learn how TwisterTools protects your privacy through 100% local client-side execution, zero-retention server processing, and transparent data handling practices.',
+            type: 'website',
+            url: 'https://www.twistertools.com/privacy-policy',
+            siteName: 'TwisterTools',
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: 'TwisterTools Privacy Policy',
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: 'Privacy Policy | TwisterTools',
+            description: 'Learn how TwisterTools protects your privacy through 100% local client-side execution, zero-retention server processing, and transparent data handling practices.',
+            images: [ogImageUrl],
+        },
+    };
+}
 
 export default function PrivacyPolicyPage() {
     const jsonLd = {

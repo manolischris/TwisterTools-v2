@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import fs from 'node:fs';
+import path from 'node:path';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -16,33 +18,43 @@ import {
     ShieldCheck
 } from 'lucide-react';
 
-export const metadata: Metadata = {
-    title: 'Terms of Service | TwisterTools',
-    description: 'Read the terms, acceptable use guidelines, client-side liability disclaimers, and service policies for utilizing TwisterTools utilities.',
-    alternates: {
-        canonical: 'https://www.twistertools.com/terms-of-service',
-    },
-    openGraph: {
-        title: 'Terms of Service | TwisterTools',
+export async function generateMetadata(): Promise<Metadata> {
+    const imageBase = path.join(process.cwd(), 'public', 'images', 'terms-of-service');
+    const ogImageUrl = fs.existsSync(`${imageBase}.webp`)
+        ? 'https://www.twistertools.com/images/terms-of-service.webp'
+        : fs.existsSync(`${imageBase}.jpg`)
+            ? 'https://www.twistertools.com/images/terms-of-service.jpg'
+            : 'https://www.twistertools.com/images/og-default.jpg';
+
+    return {
+        title: 'Terms of Service',
         description: 'Read the terms, acceptable use guidelines, client-side liability disclaimers, and service policies for utilizing TwisterTools utilities.',
-        type: 'website',
-        url: 'https://www.twistertools.com/terms-of-service',
-        siteName: 'TwisterTools',
-        images: [
-            {
-                url: 'https://www.twistertools.com/images/og-default.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'TwisterTools Terms of Service',
-            },
-        ],
-    },
-    twitter: {
-        card: 'summary_large_image',
-        title: 'Terms of Service | TwisterTools',
-        description: 'Read the terms, acceptable use guidelines, client-side liability disclaimers, and service policies for utilizing TwisterTools utilities.',
-    },
-};
+        alternates: {
+            canonical: 'https://www.twistertools.com/terms-of-service',
+        },
+        openGraph: {
+            title: 'Terms of Service | TwisterTools',
+            description: 'Read the terms, acceptable use guidelines, client-side liability disclaimers, and service policies for utilizing TwisterTools utilities.',
+            type: 'website',
+            url: 'https://www.twistertools.com/terms-of-service',
+            siteName: 'TwisterTools',
+            images: [
+                {
+                    url: ogImageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: 'TwisterTools Terms of Service',
+                },
+            ],
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: 'Terms of Service | TwisterTools',
+            description: 'Read the terms, acceptable use guidelines, client-side liability disclaimers, and service policies for utilizing TwisterTools utilities.',
+            images: [ogImageUrl],
+        },
+    };
+}
 
 export default function TermsOfServicePage() {
     const jsonLd = {
