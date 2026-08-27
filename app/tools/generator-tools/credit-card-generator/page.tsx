@@ -71,7 +71,7 @@ const CreditCardGeneratorPage: NextPage = () => {
                 href="/tools/generator-tools"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate"
               >
-                Generator Tools
+                Random Data, Identity & Key Generators
               </a>
               <span>/</span>
               <span className="text-slate-900 dark:text-white max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
