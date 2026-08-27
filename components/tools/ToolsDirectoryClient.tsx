@@ -313,6 +313,18 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
     label: "Randomization, Games & Decision Tools",
     color: "bg-pink-600 text-white",
   },
+  "home-tools": {
+    label: "Home, Garden & Kitchen Living Utilities",
+    color: "bg-orange-600 text-white",
+  },
+  "math-tools": {
+    label: "Math, Geometry & STEM Science Utilities",
+    color: "bg-purple-600 text-white",
+  },
+  "health-tools": {
+    label: "Health, Fitness & Biological Utilities",
+    color: "bg-emerald-600 text-white",
+  },
 };
 
 /* Category pill inactive colors */

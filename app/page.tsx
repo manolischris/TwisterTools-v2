@@ -276,6 +276,7 @@ const CATEGORIES = [
   { id: "random-tools", name: "Random & Games", href: "/tools/random-tools", icon: Dices },
   { id: "home-tools", name: "Home Tools", href: "/tools/home-tools", icon: Home },
   { id: "math-tools", name: "Math & Science", href: "/tools/math-tools", icon: Binary },
+  { id: "health-tools", name: "Health & Wellness", href: "/tools/health-tools", icon: Activity },
 ];
 
 const ALL_TOOLS_REGISTRY: Tool[] = (toolsRegistryData as Tool[])
