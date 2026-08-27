@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -68,6 +68,10 @@ const CircleGeometryCalculator = dynamic(() => import("@/components/tools/Circle
 const VolumeCalculator3D = dynamic(() => import("@/components/tools/VolumeCalculator3D"));
 const PythagoreanCalculator = dynamic(() => import("@/components/tools/PythagoreanCalculator"));
 const DensityMassVolumeCalculator = dynamic(() => import("@/components/tools/DensityMassVolumeCalculator"));
+const HeatIndexCalculator = dynamic(() => import("@/components/tools/HeatIndexCalculator"));
+const WindChillCalculator = dynamic(() => import("@/components/tools/WindChillCalculator"));
+const DewPointCalculator = dynamic(() => import("../../../../components/tools/DewPointCalculator"));
+const LightningDistanceCalculator = dynamic(() => import("@/components/tools/LightningDistanceCalculator"));
 const EmergencyFundCalculator = dynamic(() => import("@/components/tools/EmergencyFundCalculator"));
 const CarLeaseVsBuyCalculator = dynamic(() => import("@/components/tools/CarLeaseVsBuyCalculator"));
 const SubscriptionCostCalculator = dynamic(() => import("@/components/tools/SubscriptionCostCalculator"));
@@ -227,6 +231,10 @@ const COMPLETED_TOOLS = [
   "3d-volume-calculator",
   "pythagorean-calculator",
   "density-mass-volume-calculator",
+  "heat-index-calculator",
+  "wind-chill-calculator",
+  "dew-point-calculator",
+  "lightning-distance-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -486,6 +494,23 @@ export async function generateMetadata({
     title = "Density, Mass & Volume Physical State Calculator";
     description = "Free online density, mass, and volume calculator. Compute specific gravity, hydrostatic buoyancy, and unit conversions across 40+ material presets.";
   }
+  if (category === "math-tools" && toolSlug === "heat-index-calculator") {
+    title = "Heat Index, Humidity & Real-Feel Temperature Estimator";
+    description = "Calculate NOAA heat index, apparent real-feel temperature, dew points, and biometeorological thermal safety risk tiers with thermodynamic precision.";
+  }
+  if (category === "math-tools" && toolSlug === "wind-chill-calculator") {
+    title = "Wind Chill Factor & Frostbite Risk Estimator";
+    description = "Calculate perceived wind chill temperatures, convective skin heat loss, and time-to-frostbite using NOAA and Australian standards.";
+  }
+  if (category === "math-tools" && toolSlug === "dew-point-calculator") {
+    title = "Dew Point & Relative Humidity Equilibrium Calculator";
+    description = "Thermodynamic solver for dew point, relative humidity, vapor pressure deficit (VPD), absolute humidity, enthalpy, and surface condensation thresholds using Arden Buck and Magnus-Tetens equations.";
+  }
+
+  if (category === "math-tools" && toolSlug === "lightning-distance-calculator") {
+    title = "Lightning Distance & Thunder Storm Delay Calculator";
+    description = "Calculate exact lightning strike distance from thunder delay using thermodynamic sound speed adjustments, interactive stopwatch, and 30/30 storm safety analysis.";
+  }
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -652,6 +677,23 @@ export default async function ToolPage({
   if (category === "math-tools" && toolSlug === "3d-volume-calculator") {
     tool.name = "Cylinder, Cone & Sphere Volume and Surface Area Calculator";
     tool.description = "Compute exact volume, lateral surface area, total surface area, slant height, base circumference, and liquid fluid capacity in liters and gallons with real-time 3D isometric SVG wireframe rendering.";
+  }
+  if (category === "math-tools" && toolSlug === "heat-index-calculator") {
+    tool.name = "Heat Index, Humidity & Real-Feel Temperature Estimator";
+    tool.description = "Calculate NOAA heat index, apparent real-feel temperature, dew points, and biometeorological thermal safety risk tiers with thermodynamic precision.";
+  }
+  if (category === "math-tools" && toolSlug === "wind-chill-calculator") {
+    tool.name = "Wind Chill Factor & Frostbite Risk Estimator";
+    tool.description = "Calculate perceived wind chill temperatures, convective skin heat loss, and time-to-frostbite using NOAA and Australian standards.";
+  }
+  if (category === "math-tools" && toolSlug === "dew-point-calculator") {
+    tool.name = "Dew Point & Relative Humidity Equilibrium Calculator";
+    tool.description = "Thermodynamic solver for dew point, relative humidity, vapor pressure deficit (VPD), absolute humidity, enthalpy, and surface condensation thresholds using Arden Buck and Magnus-Tetens equations.";
+  }
+
+  if (category === "math-tools" && toolSlug === "lightning-distance-calculator") {
+    tool.name = "Lightning Distance & Thunder Storm Delay Calculator";
+    tool.description = "Calculate exact lightning strike distance from thunder delay using thermodynamic sound speed adjustments, interactive stopwatch, and 30/30 storm safety analysis.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -1125,7 +1167,7 @@ export default async function ToolPage({
                   <Dumbbell className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (toolSlug === "vo2-max-calculator" || toolSlug === "lean-body-mass-calculator") ? (
                   <Activity className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : (toolSlug === "calorie-deficit-calculator" || toolSlug === "quit-smoking-savings-calculator" || toolSlug === "air-fryer-converter") ? (
+                ) : (toolSlug === "calorie-deficit-calculator" || toolSlug === "quit-smoking-savings-calculator" || toolSlug === "air-fryer-converter" || toolSlug === "heat-index-calculator") ? (
                   <Flame className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "cat-age-calculator" ? (
                   <Cat className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1183,6 +1225,12 @@ export default async function ToolPage({
                   <Triangle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "density-mass-volume-calculator" ? (
                   <Scale className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "wind-chill-calculator" ? (
+                  <Wind className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "dew-point-calculator" ? (
+                  <Droplets className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "lightning-distance-calculator" ? (
+                  <Zap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
 
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1381,6 +1429,14 @@ export default async function ToolPage({
             <PythagoreanCalculator />
           ) : category === "math-tools" && toolSlug === "density-mass-volume-calculator" ? (
             <DensityMassVolumeCalculator />
+          ) : category === "math-tools" && toolSlug === "heat-index-calculator" ? (
+            <HeatIndexCalculator />
+          ) : category === "math-tools" && toolSlug === "wind-chill-calculator" ? (
+            <WindChillCalculator />
+          ) : category === "math-tools" && toolSlug === "dew-point-calculator" ? (
+            <DewPointCalculator />
+          ) : category === "math-tools" && toolSlug === "lightning-distance-calculator" ? (
+            <LightningDistanceCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (

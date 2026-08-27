@@ -2127,5 +2127,50 @@
     "href": "/tools/math-tools/velocity-acceleration-calculator",
     "iconName": "Gauge",
     "isFeatured": false
+  },
+  {
+    "id": "heat-index-calculator",
+    "title": "Heat Index, Humidity & Real-Feel Temperature Estimator",
+    "description": "Calculate NOAA apparent heat index, Canadian Humidex, dew point, and thermal stress danger categories.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/heat-index-calculator",
+    "iconName": "Flame",
+    "isFeatured": false
+  },
+  {
+    "id": "wind-chill-calculator",
+    "title": "Wind Chill Factor & Frostbite Risk Estimator",
+    "description": "Calculate feels-like wind chill temperature, convective skin heat loss rates, and frostbite risk windows.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/wind-chill-calculator",
+    "iconName": "Wind",
+    "isFeatured": false
+  },
+  {
+    "id": "dew-point-calculator",
+    "title": "Dew Point & Relative Humidity Equilibrium Calculator",
+    "description": "Calculate equilibrium dew point, relative humidity, vapor pressure deficit (VPD), absolute humidity, enthalpy, and condensation thresholds.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/dew-point-calculator",
+    "iconName": "Droplets",
+    "isFeatured": false
+  },
+  {
+    "id": "decibel-attenuation-calculator",
+    "title": "Sound Decibel (dB) Distance & Attenuation Calculator",
+    "description": "Compute decibel attenuation (dB SPL), sound intensity, pressure in Pascals, and OSHA noise exposure limits across distances.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/decibel-attenuation-calculator",
+    "iconName": "Volume2",
+    "isFeatured": false
+  },
+  {
+    "id": "lightning-distance-calculator",
+    "title": "Lightning Distance & Thunder Storm Delay Calculator",
+    "description": "Calculate lightning strike distance from thunder delay with live stopwatch, temperature sound speed tuning, and 30/30 storm safety protocols.",
+    "category": "math-tools",
+    "href": "/tools/math-tools/lightning-distance-calculator",
+    "iconName": "Zap",
+    "isFeatured": false
   }
 ]

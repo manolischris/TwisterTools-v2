@@ -105,7 +105,9 @@ import {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind,
+  Volume2
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -217,7 +219,9 @@ const ICON_MAP: Record<string, any> = {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind,
+  Volume2
 };
 
 interface RelatedToolsProps {

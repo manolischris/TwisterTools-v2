@@ -119,7 +119,9 @@ import {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind,
+  Volume2
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -255,7 +257,9 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind,
+  Volume2
 };
 
 export default function CategoryToolSearchGrid({

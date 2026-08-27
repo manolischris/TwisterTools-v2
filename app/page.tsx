@@ -125,7 +125,9 @@ import {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind,
+  Volume2
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -253,7 +255,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind,
+  Volume2
 };
 
 const CATEGORIES = [

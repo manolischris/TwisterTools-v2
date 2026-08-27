@@ -149,6 +149,46 @@ export default function MathToolsCategoryPage() {
           iconName: "Gauge"
         };
       }
+      if (tool.id === "heat-index-calculator") {
+        return {
+          ...tool,
+          title: "Heat Index, Humidity & Real-Feel Temperature Estimator",
+          description: "Calculate NOAA apparent heat index, Canadian Humidex, dew point, and thermal stress danger categories.",
+          iconName: "Flame"
+        };
+      }
+      if (tool.id === "wind-chill-calculator") {
+        return {
+          ...tool,
+          title: "Wind Chill & Frostbite Estimator",
+          description: "Compute feels-like wind chill index, skin convective heat loss rate, and frostbite onset windows.",
+          iconName: "Wind"
+        };
+      }
+      if (tool.id === "dew-point-calculator") {
+        return {
+          ...tool,
+          title: "Dew Point & Relative Humidity Equilibrium Calculator",
+          description: "Thermodynamic solver for dew point, relative humidity, vapor pressure deficit (VPD), enthalpy, and surface condensation thresholds.",
+          iconName: "Droplets"
+        };
+      }
+      if (tool.id === "decibel-attenuation-calculator") {
+        return {
+          ...tool,
+          title: "Sound Decibel (dB) Distance & Attenuation Calculator",
+          description: "Compute decibel attenuation (dB SPL), sound intensity, pressure in Pascals, and OSHA noise exposure limits across distances.",
+          iconName: "Volume2"
+        };
+      }
+      if (tool.id === "lightning-distance-calculator") {
+        return {
+          ...tool,
+          title: "Lightning Distance & Thunder Storm Delay Calculator",
+          description: "Calculate lightning strike distance from thunder delay with live stopwatch, temperature sound speed tuning, and 30/30 storm safety protocols.",
+          iconName: "Zap"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {

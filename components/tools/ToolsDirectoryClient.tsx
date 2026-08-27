@@ -122,7 +122,9 @@ import {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind,
+  Volume2
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -247,6 +249,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Dumbbell,
   Dog,
   Cat,
+  Volume2,
   Wheat,
   PaintBucket,
   ScrollText,
@@ -255,7 +258,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Fish,
   Sun,
   Box,
-  Gauge
+  Gauge,
+  Wind
 };
 
 /* ─────────────────────────────────────────────────────────
