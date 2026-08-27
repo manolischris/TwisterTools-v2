@@ -107,7 +107,8 @@ import {
   Box,
   Gauge,
   Wind,
-  Volume2
+  Volume2,
+  Plane
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -127,6 +128,7 @@ const ICON_MAP: Record<string, any> = {
   CalendarClock,
   CalendarDays,
   Car,
+  Plane,
   Clock,
   Code,
   Columns,

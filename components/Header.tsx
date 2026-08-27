@@ -19,6 +19,7 @@ import {
   Dices,
   Home,
   Binary,
+  Activity,
 } from "lucide-react";
 
 const categories = [
@@ -35,6 +36,7 @@ const categories = [
   { slug: "random-tools", name: "Randomization, Games & Decision Tools", icon: Dices, desc: "Random pickers, dice, coins & team generators" },
   { slug: "home-tools", name: "Home, Garden & Kitchen Living Utilities", icon: Home, desc: "Home, DIY, kitchen & gardening calculations" },
   { slug: "math-tools", name: "Math, Geometry & STEM Science Utilities", icon: Binary, desc: "Geometry solvers, physics & STEM calculation engines" },
+  { slug: "health-tools", name: "Health, Fitness & Biological Utilities", icon: Activity, desc: "Body composition, metabolic & athletic performance estimators" },
 ];
 
 export default function Header() {

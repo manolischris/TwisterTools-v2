@@ -121,7 +121,8 @@ import {
   Box,
   Gauge,
   Wind,
-  Volume2
+  Volume2,
+  Plane
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -259,7 +260,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Box,
   Gauge,
   Wind,
-  Volume2
+  Volume2,
+  Plane
 };
 
 export default function CategoryToolSearchGrid({

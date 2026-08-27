@@ -124,7 +124,8 @@ import {
   Box,
   Gauge,
   Wind,
-  Volume2
+  Volume2,
+  Plane
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -197,6 +198,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   TrendingUp,
   Building,
   Car,
+  Plane,
   PiggyBank,
   GraduationCap,
   QrCode,

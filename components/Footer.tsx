@@ -203,6 +203,14 @@ export default function Footer() {
                   Math, Geometry & STEM Science Utilities
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/health-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Health, Fitness & Biological Utilities
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -15,7 +15,8 @@
     "date-tools": "Date, Time & Scheduling Tools",
     "random-tools": "Randomization, Games & Decision Tools",
     "home-tools": "Home, Garden & Kitchen Living Utilities",
-    "math-tools": "Math, Geometry & STEM Science Utilities"
+    "math-tools": "Math, Geometry & STEM Science Utilities",
+    "health-tools": "Health, Fitness & Biological Utilities"
   },
   "redirects": [
     {

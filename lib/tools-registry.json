@@ -2172,5 +2172,14 @@
     "href": "/tools/math-tools/lightning-distance-calculator",
     "iconName": "Zap",
     "isFeatured": false
+  },
+  {
+    "id": "carbon-footprint-calculator",
+    "title": "Carbon Footprint Flight & Commute Emissions Estimator",
+    "description": "Calculate greenhouse gas emissions for airline flights and daily vehicle or public transit commutes with rigorous DEFRA and IPCC scientific factors.",
+    "category": "home-tools",
+    "href": "/tools/home-tools/carbon-footprint-calculator",
+    "iconName": "Plane",
+    "isFeatured": false
   }
 ]

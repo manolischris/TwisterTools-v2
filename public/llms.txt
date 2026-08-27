@@ -149,6 +149,7 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Aquarium Volume & Water Weight Calculator](https://www.twistertools.com/tools/home-tools/aquarium-volume-calculator): Compute net water volume and total filled tank weight for glass aquariums.
 - [Plant Watering & Pot Volume Calculator](https://www.twistertools.com/tools/home-tools/plant-watering-calculator): Estimate soil capacity and moisture depletion intervals based on pot size and light exposure.
 - [Solar Panel Array Yield Estimator](https://www.twistertools.com/tools/home-tools/solar-panel-calculator): Calculate daily/annual photovoltaic kWh generation, roof footprint, and electric bill offsets.
+- [Carbon Footprint Flight & Commute Emissions Estimator](https://www.twistertools.com/tools/home-tools/carbon-footprint-calculator): Calculate greenhouse gas emissions for airline flights and daily vehicle or public transit commutes with rigorous DEFRA and IPCC scientific factors.
 
 ### [PDF & Document Utilities](https://www.twistertools.com/tools/pdf-tools)
 - [Merge PDF Documents](https://www.twistertools.com/tools/pdf-tools/merge-pdf): Combine multiple PDF documents into a single consolidated file in browser memory.

@@ -22,6 +22,7 @@ import {
   Dices,
   Home,
   Binary,
+  Activity,
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -31,12 +32,12 @@ import toolsRegistry from "@/lib/tools-registry.json";
 export const metadata: Metadata = {
   title: "All Tool Categories",
   description:
-    "Browse all 12 TwisterTools categories — Developer Tools, Calculators, Password Tools, Text Tools, Image Tools, PDF Tools, Web Tools, Generator Tools, Converter Tools, Date & Time Tools, Randomization, Games & Decision Tools, and Home, Garden & Kitchen Living Utilities. Free, fast, and browser-based.",
+    "Browse all 14 TwisterTools categories — Developer Tools, Calculators, Passwords, Text, Images, PDFs, Web/SEO, Generators, Converters, Date & Time, Randomization, Home Living, Math & STEM, and Health, Fitness & Biological Utilities. Free, fast, and browser-based.",
   alternates: { canonical: "https://www.twistertools.com/categories" },
   openGraph: {
     title: "All Tool Categories | TwisterTools",
     description:
-      "Discover 11 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
+      "Discover 14 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
     url: "https://www.twistertools.com/categories",
     siteName: "TwisterTools",
     type: "website",
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "All Tool Categories | TwisterTools",
     description:
-      "11 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and more.",
+      "14 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and health utilities.",
     images: ["https://www.twistertools.com/images/categories.jpg"],
   },
 };
@@ -260,6 +261,22 @@ const CATEGORIES: CategoryDef[] = [
       "scientific calculator",
     ],
   },
+  {
+    slug: "health-tools",
+    name: "Health, Fitness & Biological Utilities",
+    description:
+      "Fast, privacy-first body composition calculators, athletic performance estimators, sleep and metabolic trackers, and clinical wellness utilities.",
+    icon: Activity,
+    accentClass: "bg-emerald-100 text-emerald-600",
+    keywords: [
+      "bmi calculator",
+      "tdee calculator",
+      "calorie deficit",
+      "body fat percentage",
+      "target heart rate zones",
+      "sleep cycle tracker",
+    ],
+  },
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -286,9 +303,9 @@ const SEO_CARDS: SeoCard[] = [
   },
   {
     icon: Layers,
-    title: "Twelve Growing Specialist Categories",
+    title: "Fourteen Growing Specialist Categories",
     content:
-      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and live network diagnostic tools, TwisterTools is organized into twelve focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
+      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and health and fitness estimators, TwisterTools is organized into fourteen focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
   },
   {
     icon: Globe,
@@ -336,7 +353,7 @@ export default function CategoriesIndexPage() {
     "@type": "CollectionPage",
     name: "All Tool Categories — TwisterTools",
     description:
-      "Browse 12 curated categories of free browser-based online utilities on TwisterTools.",
+      "Browse 14 curated categories of free browser-based online utilities on TwisterTools.",
     url: "https://www.twistertools.com/categories",
     publisher: {
       "@type": "Organization",
