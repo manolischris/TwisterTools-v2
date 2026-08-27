@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     "public",
     "images",
     "tools",
-    "calculators",
+    "math-tools",
     "quadratic-solver"
   );
   const webpPath = `${imageBasePath}.webp`;
