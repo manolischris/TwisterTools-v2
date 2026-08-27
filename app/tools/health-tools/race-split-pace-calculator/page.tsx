@@ -11,21 +11,21 @@ const TOOL_SLUG = "race-split-pace-calculator";
 const TOOL_DESCRIPTION = "Calculate race split times, pacing strategies, 5K to marathon finish projections, training pace zones, and VDOT aerobic metrics.";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const canonicalUrl = `https://www.twistertools.com/tools/calculators/${TOOL_SLUG}`;
+  const canonicalUrl = `https://www.twistertools.com/tools/health-tools/${TOOL_SLUG}`;
   const imageBasePath = path.join(
     process.cwd(),
     "public",
     "images",
     "tools",
-    "calculators",
+    "health-tools",
     TOOL_SLUG
   );
   const webpPath = `${imageBasePath}.webp`;
   const jpgPath = `${imageBasePath}.jpg`;
   const ogImageUrl = fs.existsSync(webpPath)
-    ? `https://www.twistertools.com/images/tools/calculators/${TOOL_SLUG}.webp`
+    ? `https://www.twistertools.com/images/tools/health-tools/${TOOL_SLUG}.webp`
     : fs.existsSync(jpgPath)
-      ? `https://www.twistertools.com/images/tools/calculators/${TOOL_SLUG}.jpg`
+      ? `https://www.twistertools.com/images/tools/health-tools/${TOOL_SLUG}.jpg`
       : "https://www.twistertools.com/images/og-default.jpg";
 
   return {

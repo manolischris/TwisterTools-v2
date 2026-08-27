@@ -11,21 +11,21 @@ const TOOL_DESCRIPTION =
   "Calculate discrete and continuous exponential growth, decay, doubling time, half-life, and timeline trajectories.";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const canonicalUrl = `https://www.twistertools.com/tools/calculators/${TOOL_SLUG}`;
+  const canonicalUrl = `https://www.twistertools.com/tools/math-tools/${TOOL_SLUG}`;
   const imageBasePath = path.join(
     process.cwd(),
     "public",
     "images",
     "tools",
-    "calculators",
+    "math-tools",
     TOOL_SLUG
   );
   const webpPath = `${imageBasePath}.webp`;
   const jpgPath = `${imageBasePath}.jpg`;
   const ogImageUrl = fs.existsSync(webpPath)
-    ? `https://www.twistertools.com/images/tools/calculators/${TOOL_SLUG}.webp`
+    ? `https://www.twistertools.com/images/tools/math-tools/${TOOL_SLUG}.webp`
     : fs.existsSync(jpgPath)
-      ? `https://www.twistertools.com/images/tools/calculators/${TOOL_SLUG}.jpg`
+      ? `https://www.twistertools.com/images/tools/math-tools/${TOOL_SLUG}.jpg`
       : "https://www.twistertools.com/images/og-default.jpg";
 
   return {
