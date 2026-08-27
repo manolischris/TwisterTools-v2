@@ -65,7 +65,7 @@ const IdealWeightCalculatorPage: NextPage = () => {
                 href="/tools/health-tools"
                 className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate"
               >
-                Daily Essentials, Financial &amp; Math Calculators
+                Health, Fitness & Biological Utilities
               </a>
               <span>/</span>
               <span className="text-slate-900 dark:text-white max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
