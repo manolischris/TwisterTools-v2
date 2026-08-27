@@ -156,6 +156,210 @@
       "to": "/tools/pdf-tools",
       "type": "301",
       "reason": "Redirect legacy PPT to PDF tool"
+    },
+    {
+      "from": "/tools/calculators/fraction-calculator",
+      "to": "/tools/math-tools/fraction-calculator",
+      "type": "301",
+      "reason": "Migrated fraction-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/ratio-calculator",
+      "to": "/tools/math-tools/ratio-calculator",
+      "type": "301",
+      "reason": "Migrated ratio-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/matrix-calculator",
+      "to": "/tools/math-tools/matrix-calculator",
+      "type": "301",
+      "reason": "Migrated matrix-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/quadratic-solver",
+      "to": "/tools/math-tools/quadratic-solver",
+      "type": "301",
+      "reason": "Migrated quadratic-solver from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/permutation-combination-calculator",
+      "to": "/tools/math-tools/permutation-combination-calculator",
+      "type": "301",
+      "reason": "Migrated permutation-combination-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/standard-deviation-calculator",
+      "to": "/tools/math-tools/standard-deviation-calculator",
+      "type": "301",
+      "reason": "Migrated standard-deviation-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/exponential-calculator",
+      "to": "/tools/math-tools/exponential-calculator",
+      "type": "301",
+      "reason": "Migrated exponential-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/scientific-calculator",
+      "to": "/tools/math-tools/scientific-calculator",
+      "type": "301",
+      "reason": "Migrated scientific-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/percentage-calculator",
+      "to": "/tools/math-tools/percentage-calculator",
+      "type": "301",
+      "reason": "Migrated percentage-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/average-calculator",
+      "to": "/tools/math-tools/average-calculator",
+      "type": "301",
+      "reason": "Migrated average-calculator from calculators to math-tools category"
+    },
+    {
+      "from": "/tools/calculators/bmi-calculator",
+      "to": "/tools/health-tools/bmi-calculator",
+      "type": "301",
+      "reason": "Migrated bmi-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/tdee-calculator",
+      "to": "/tools/health-tools/tdee-calculator",
+      "type": "301",
+      "reason": "Migrated tdee-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/body-fat-calculator",
+      "to": "/tools/health-tools/body-fat-calculator",
+      "type": "301",
+      "reason": "Migrated body-fat-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/water-intake-calculator",
+      "to": "/tools/health-tools/water-intake-calculator",
+      "type": "301",
+      "reason": "Migrated water-intake-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/ideal-weight-calculator",
+      "to": "/tools/health-tools/ideal-weight-calculator",
+      "type": "301",
+      "reason": "Migrated ideal-weight-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/heart-rate-calculator",
+      "to": "/tools/health-tools/heart-rate-calculator",
+      "type": "301",
+      "reason": "Migrated heart-rate-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/macro-calculator",
+      "to": "/tools/health-tools/macro-calculator",
+      "type": "301",
+      "reason": "Migrated macro-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/pregnancy-due-date-calculator",
+      "to": "/tools/health-tools/pregnancy-due-date-calculator",
+      "type": "301",
+      "reason": "Migrated pregnancy-due-date-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/ovulation-calculator",
+      "to": "/tools/health-tools/ovulation-calculator",
+      "type": "301",
+      "reason": "Migrated ovulation-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/bac-calculator",
+      "to": "/tools/health-tools/bac-calculator",
+      "type": "301",
+      "reason": "Migrated bac-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/pace-calculator",
+      "to": "/tools/health-tools/pace-calculator",
+      "type": "301",
+      "reason": "Migrated pace-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/steps-to-calories-calculator",
+      "to": "/tools/health-tools/steps-to-calories-calculator",
+      "type": "301",
+      "reason": "Migrated steps-to-calories-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/sleep-cycle-calculator",
+      "to": "/tools/health-tools/sleep-cycle-calculator",
+      "type": "301",
+      "reason": "Migrated sleep-cycle-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/intermittent-fasting-calculator",
+      "to": "/tools/health-tools/intermittent-fasting-calculator",
+      "type": "301",
+      "reason": "Migrated intermittent-fasting-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/caffeine-half-life-calculator",
+      "to": "/tools/health-tools/caffeine-half-life-calculator",
+      "type": "301",
+      "reason": "Migrated caffeine-half-life-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/one-rep-max-calculator",
+      "to": "/tools/health-tools/one-rep-max-calculator",
+      "type": "301",
+      "reason": "Migrated one-rep-max-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/race-split-pace-calculator",
+      "to": "/tools/health-tools/race-split-pace-calculator",
+      "type": "301",
+      "reason": "Migrated race-split-pace-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/vo2-max-calculator",
+      "to": "/tools/health-tools/vo2-max-calculator",
+      "type": "301",
+      "reason": "Migrated vo2-max-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/lean-body-mass-calculator",
+      "to": "/tools/health-tools/lean-body-mass-calculator",
+      "type": "301",
+      "reason": "Migrated lean-body-mass-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/calorie-deficit-calculator",
+      "to": "/tools/health-tools/calorie-deficit-calculator",
+      "type": "301",
+      "reason": "Migrated calorie-deficit-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/quit-smoking-savings-calculator",
+      "to": "/tools/health-tools/quit-smoking-savings-calculator",
+      "type": "301",
+      "reason": "Migrated quit-smoking-savings-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/dog-age-calculator",
+      "to": "/tools/health-tools/dog-age-calculator",
+      "type": "301",
+      "reason": "Migrated dog-age-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/cat-age-calculator",
+      "to": "/tools/health-tools/cat-age-calculator",
+      "type": "301",
+      "reason": "Migrated cat-age-calculator from calculators to health-tools category"
+    },
+    {
+      "from": "/tools/calculators/pet-calorie-calculator",
+      "to": "/tools/health-tools/pet-calorie-calculator",
+      "type": "301",
+      "reason": "Migrated pet-calorie-calculator from calculators to health-tools category"
     }
   ],
   "tools": [
@@ -203,16 +407,16 @@
       "id": 6,
       "name": "Multi-Mode Percentage Calculator & Growth Suite",
       "legacy_url": "/percentage-calculator",
-      "new_url": "/tools/calculators/percentage-calculator",
-      "new_category": "calculators",
+      "new_url": "/tools/math-tools/percentage-calculator",
+      "new_category": "math-tools",
       "description": "Calculate percentage changes, value distributions, markups, discounts, and reverse percentages instantly with dynamic step-by-step math breakdowns."
     },
     {
       "id": 7,
       "name": "Average Calculator — Mean, Median, Mode & Std Dev",
       "legacy_url": "/average-calculator",
-      "new_url": "/tools/calculators/average-calculator",
-      "new_category": "calculators",
+      "new_url": "/tools/math-tools/average-calculator",
+      "new_category": "math-tools",
       "description": "Compute statistical Mean, Median, Mode, Range, Variance, and Standard Deviation for custom numeric datasets instantly with visual statistical summaries."
     },
     {
@@ -1483,16 +1687,16 @@
       "id": 169,
       "name": "Pregnancy Due Date & Conception Calculator",
       "legacy_url": "/pregnancy-due-date-calculator",
-      "new_url": "/tools/calculators/pregnancy-due-date-calculator",
-      "new_category": "calculators",
+      "new_url": "/tools/health-tools/pregnancy-due-date-calculator",
+      "new_category": "health-tools",
       "description": "Calculate estimated pregnancy due date, conception window, trimester milestones, and gestational age using LMP, ultrasound, or IVF transfer dates."
     },
     {
       "id": 170,
       "name": "Scientific Calculator & Function Suite",
       "legacy_url": "/scientific-calculator",
-      "new_url": "/tools/calculators/scientific-calculator",
-      "new_category": "calculators",
+      "new_url": "/tools/math-tools/scientific-calculator",
+      "new_category": "math-tools",
       "description": "A powerful, browser-native scientific calculator supporting trigonometry, logarithms, powers, factorials, and configurable precision."
     },
     {

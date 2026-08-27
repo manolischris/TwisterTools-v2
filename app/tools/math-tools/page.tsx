@@ -189,6 +189,64 @@ export default function MathToolsCategoryPage() {
           iconName: "Zap"
         };
       }
+
+      if (tool.id === "ratio-calculator") {
+        return {
+          ...tool,
+          title: "Ratio & Proportion Calculator",
+          description: "Solve proportion equations (solve for X), simplify ratios, scale recipe factors, and partition total values.",
+          iconName: "Scale"
+        };
+      }
+      if (tool.id === "standard-deviation-calculator") {
+        return {
+          ...tool,
+          title: "Standard Deviation & Variance Calculator",
+          description: "Compute sample and population standard deviation, variance, mean, sum of squares, and step-by-step derivations.",
+          iconName: "Sigma"
+        };
+      }
+      if (tool.id === "fraction-calculator") {
+        return {
+          ...tool,
+          title: "Fraction Calculator & Simplifier",
+          description: "Perform fraction arithmetic (addition, subtraction, multiplication, division) and simplification with full step-by-step explanations.",
+          iconName: "Calculator"
+        };
+      }
+      if (tool.id === "permutation-combination-calculator") {
+        return {
+          ...tool,
+          title: "Permutation & Combination Calculator",
+          description: "Calculate permutations (nPr) and combinations (nCr) with exact BigInt precision, step-by-step math derivations, and repetition toggles.",
+          iconName: "Binary"
+        };
+      }
+      if (tool.id === "quadratic-solver") {
+        return {
+          ...tool,
+          title: "Quadratic Equation Solver",
+          description: "Solve quadratic equations instantly with real and complex roots, discriminant analysis, vertex details, and interactive 2D parabola graph visualization.",
+          iconName: "Calculator"
+        };
+      }
+      if (tool.id === "matrix-calculator") {
+        return {
+          ...tool,
+          title: "Matrix Mathematics & Determinant Calculator",
+          description: "Solve determinants, matrix inversions, transpositions, and scalar multiplication with step-by-step proofs.",
+          iconName: "Grid"
+        };
+      }
+      if (tool.id === "exponential-calculator") {
+        return {
+          ...tool,
+          title: "Exponential Growth & Decay Calculator",
+          description: "Calculate discrete and continuous exponential growth, decay, doubling time, half-life, and timeline trajectories.",
+          iconName: "TrendingUp"
+        };
+      }
+
       return tool;
     })
     .sort((a, b) => {

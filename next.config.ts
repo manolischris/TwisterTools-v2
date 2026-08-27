@@ -14,6 +14,62 @@ const nextConfig: NextConfig = {
     // Force config reload for cache clearance
     const redirects = [];
 
+    // Math tools redirects (from calculators to math-tools)
+    const migratedMathTools = [
+      "fraction-calculator",
+      "ratio-calculator",
+      "matrix-calculator",
+      "quadratic-solver",
+      "permutation-combination-calculator",
+      "standard-deviation-calculator",
+      "exponential-calculator",
+      "scientific-calculator",
+      "percentage-calculator",
+      "average-calculator",
+    ];
+    for (const slug of migratedMathTools) {
+      redirects.push({
+        source: `/tools/calculators/${slug}`,
+        destination: `/tools/math-tools/${slug}`,
+        permanent: true,
+      });
+    }
+
+    // Health tools redirects (from calculators to health-tools)
+    const migratedHealthTools = [
+      "bmi-calculator",
+      "tdee-calculator",
+      "body-fat-calculator",
+      "water-intake-calculator",
+      "ideal-weight-calculator",
+      "heart-rate-calculator",
+      "macro-calculator",
+      "pregnancy-due-date-calculator",
+      "ovulation-calculator",
+      "bac-calculator",
+      "pace-calculator",
+      "steps-to-calories-calculator",
+      "sleep-cycle-calculator",
+      "intermittent-fasting-calculator",
+      "caffeine-half-life-calculator",
+      "one-rep-max-calculator",
+      "race-split-pace-calculator",
+      "vo2-max-calculator",
+      "lean-body-mass-calculator",
+      "calorie-deficit-calculator",
+      "quit-smoking-savings-calculator",
+      "dog-age-calculator",
+      "cat-age-calculator",
+      "pet-calorie-calculator",
+    ];
+    for (const slug of migratedHealthTools) {
+      redirects.push({
+        source: `/tools/calculators/${slug}`,
+        destination: `/tools/health-tools/${slug}`,
+        permanent: true,
+      });
+    }
+
     // Category-level redirects (14 legacy categories → modern categories)
     for (const redirect of urlMap.redirects) {
       redirects.push({

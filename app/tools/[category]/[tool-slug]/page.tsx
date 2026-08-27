@@ -419,32 +419,32 @@ export async function generateMetadata({
     description = "Estimate how fast your money doubles with compound interest, exact logarithmic formulas, and inflation drag simulations.";
   }
 
-  if (category === "calculators" && toolSlug === "sleep-cycle-calculator") {
+  if (category === "health-tools" && toolSlug === "sleep-cycle-calculator") {
     title = "Sleep Cycle & REM Bedtime Calculator";
     description = "Calculate optimal bedtime schedules and wake-up times synced with 90-minute ultradian sleep cycles and personal sleep latency.";
   }
 
-  if (category === "calculators" && toolSlug === "caffeine-half-life-calculator") {
+  if (category === "health-tools" && toolSlug === "caffeine-half-life-calculator") {
     title = "Caffeine Half-Life & Sleep Disruption Calculator";
     description = "Calculate caffeine elimination half-life, active bloodstream retention at bedtime, CYP1A2 clearance velocity, and optimal sleep cutoff times.";
   }
 
-  if (category === "calculators" && toolSlug === "one-rep-max-calculator") {
+  if (category === "health-tools" && toolSlug === "one-rep-max-calculator") {
     title = "One Rep Max (1RM) Strength & Submax Weight Estimator";
     description = "Calculate your 1RM, strength-to-bodyweight ratio, and complete percentage training zones across 7 scientific formulas including Epley, Brzycki, and Lombardi.";
   }
 
-  if (category === "calculators" && toolSlug === "vo2-max-calculator") {
+  if (category === "health-tools" && toolSlug === "vo2-max-calculator") {
     title = "Target VO2 Max & Cardiovascular Fitness Estimator";
     description = "Estimate your VO2 max, METs capacity, fitness age, and target Karvonen heart rate zones using resting heart rate, Cooper 12-min, or Rockport 1-mile tests.";
   }
 
-  if (category === "calculators" && toolSlug === "calorie-deficit-calculator") {
+  if (category === "health-tools" && toolSlug === "calorie-deficit-calculator") {
     title = "Calorie Deficit & Target Weight Loss Date Estimator";
     description = "Calculate your exact daily calorie deficit, target intake budget, and projected completion date to reach your goal weight safely.";
   }
 
-  if (category === "calculators" && toolSlug === "cat-age-calculator") {
+  if (category === "health-tools" && toolSlug === "cat-age-calculator") {
     title = "Cat Age to Human Years Feline Maturity Estimator";
     description = "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.";
   }
@@ -641,22 +641,22 @@ export default async function ToolPage({
     tool.description = "Estimate how fast your money doubles with compound interest, exact logarithmic formulas, and inflation drag simulations.";
   }
 
-  if (category === "calculators" && toolSlug === "sleep-cycle-calculator") {
+  if (category === "health-tools" && toolSlug === "sleep-cycle-calculator") {
     tool.name = "Sleep Cycle & REM Bedtime Calculator";
     tool.description = "Calculate optimal bedtime schedules and wake-up times synced with 90-minute ultradian sleep cycles and personal sleep latency.";
   }
 
-  if (category === "calculators" && toolSlug === "one-rep-max-calculator") {
+  if (category === "health-tools" && toolSlug === "one-rep-max-calculator") {
     tool.name = "One Rep Max (1RM) Strength & Submax Weight Estimator";
     tool.description = "Calculate your 1RM, strength-to-bodyweight ratio, and complete percentage training zones across 7 scientific formulas including Epley, Brzycki, and Lombardi.";
   }
 
-  if (category === "calculators" && toolSlug === "calorie-deficit-calculator") {
+  if (category === "health-tools" && toolSlug === "calorie-deficit-calculator") {
     tool.name = "Calorie Deficit & Target Weight Loss Date Estimator";
     tool.description = "Compute daily calorie targets, deficit velocity, and exact calendar dates to reach your target weight safely.";
   }
 
-  if (category === "calculators" && toolSlug === "cat-age-calculator") {
+  if (category === "health-tools" && toolSlug === "cat-age-calculator") {
     tool.name = "Cat Age to Human Years Feline Maturity Estimator";
     tool.description = "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.";
   }
@@ -1181,7 +1181,7 @@ export default async function ToolPage({
                   <Fuel className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "electricity-cost-calculator" ? (
                   <Zap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
+                ) : category === "math-tools" && toolSlug === "scientific-calculator" ? (
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "uuid-generator" ? (
                   <Fingerprint className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1367,9 +1367,9 @@ export default async function ToolPage({
             <TextToPdfConverter />
           ) : category === "pdf-tools" && toolSlug === "extract-pdf-images" ? (
             <ExtractPdfImages />
-          ) : category === "calculators" && toolSlug === "pregnancy-due-date-calculator" ? (
+          ) : category === "health-tools" && toolSlug === "pregnancy-due-date-calculator" ? (
             <PregnancyDueDateCalculator />
-          ) : category === "calculators" && toolSlug === "scientific-calculator" ? (
+          ) : category === "math-tools" && toolSlug === "scientific-calculator" ? (
             <ScientificCalculator />
           ) : category === "calculators" && toolSlug === "emergency-fund-calculator" ? (
             <EmergencyFundCalculator />
@@ -1391,17 +1391,17 @@ export default async function ToolPage({
             <DailyHabitSavingsCalculator />
           ) : category === "calculators" && toolSlug === "rule-of-72-calculator" ? (
             <RuleOf72Calculator />
-          ) : category === "calculators" && toolSlug === "sleep-cycle-calculator" ? (
+          ) : category === "health-tools" && toolSlug === "sleep-cycle-calculator" ? (
             <SleepCycleCalculator />
-          ) : category === "calculators" && toolSlug === "caffeine-half-life-calculator" ? (
+          ) : category === "health-tools" && toolSlug === "caffeine-half-life-calculator" ? (
             <CaffeineHalfLifeCalculator />
-          ) : category === "calculators" && toolSlug === "one-rep-max-calculator" ? (
+          ) : category === "health-tools" && toolSlug === "one-rep-max-calculator" ? (
             <OneRepMaxCalculator />
-          ) : category === "calculators" && toolSlug === "vo2-max-calculator" ? (
+          ) : category === "health-tools" && toolSlug === "vo2-max-calculator" ? (
             <Vo2MaxCalculator />
-          ) : category === "calculators" && toolSlug === "calorie-deficit-calculator" ? (
+          ) : category === "health-tools" && toolSlug === "calorie-deficit-calculator" ? (
             <CalorieDeficitCalculator />
-          ) : category === "calculators" && toolSlug === "cat-age-calculator" ? (
+          ) : category === "health-tools" && toolSlug === "cat-age-calculator" ? (
             <CatAgeCalculator />
           ) : category === "home-tools" && toolSlug === "cake-pan-converter" ? (
             <CakePanConverter />

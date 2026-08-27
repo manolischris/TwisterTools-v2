@@ -97,6 +97,185 @@ export default function HealthToolsCategoryPage() {
   const categoryTools = toolsRegistry
     .map((tool, idx) => ({ ...tool, originalIndex: idx }))
     .filter((tool) => tool.category === "health-tools")
+    .map((tool) => {
+      if (tool.id === "bmi-calculator") {
+        return {
+          ...tool,
+          title: "BMI & Body Composition Calculator",
+          description: "Calculate BMI, ideal weight targets, estimated body fat %, BMR, and TDEE.",
+          iconName: "Activity"
+        };
+      }
+      if (tool.id === "tdee-calculator") {
+        return {
+          ...tool,
+          title: "Calorie & Daily Energy Expenditure (TDEE) Calculator",
+          description: "Calculate your Total Daily Energy Expenditure (TDEE), Basal Metabolic Rate (BMR), and custom caloric goals.",
+          iconName: "Flame"
+        };
+      }
+      if (tool.id === "body-fat-calculator") {
+        return {
+          ...tool,
+          title: "Body Fat Percentage & Lean Mass Calculator",
+          description: "Calculate body fat percentage, lean body mass, and ACE fitness categories with tape measurements.",
+          iconName: "Percent"
+        };
+      }
+      if (tool.id === "water-intake-calculator") {
+        return {
+          ...tool,
+          title: "Water Intake & Hydration Calculator",
+          description: "Calculate personalized daily water intake in liters and fl oz based on weight, exercise, climate, and health factors.",
+          iconName: "Droplets"
+        };
+      }
+      if (tool.id === "ideal-weight-calculator") {
+        return {
+          ...tool,
+          title: "Ideal Body Weight Calculator",
+          description: "Calculate clinical ideal body weight using Devine, Robinson, Miller, and Hamwi formulas with healthy BMI ranges.",
+          iconName: "Scale"
+        };
+      }
+      if (tool.id === "heart-rate-calculator") {
+        return {
+          ...tool,
+          title: "Target Heart Rate Zone Calculator",
+          description: "Calculate personal target heart rate zones for fat loss, cardiovascular endurance, and athletic performance using Karvonen and Tanaka formulas.",
+          iconName: "Heart"
+        };
+      }
+      if (tool.id === "macro-calculator") {
+        return {
+          ...tool,
+          title: "Macro Ratio & Flexible Dieting Calculator",
+          description: "Calculate accurate macro ratios (protein, carbs, fats) for fat loss, muscle gain, or ketogenic diets.",
+          iconName: "PieChart"
+        };
+      }
+      if (tool.id === "pregnancy-due-date-calculator") {
+        return {
+          ...tool,
+          title: "Pregnancy Due Date & Conception Calculator",
+          description: "Calculate estimated pregnancy due date, conception window, trimester milestones, and gestational age using LMP, ultrasound, or IVF transfer dates.",
+          iconName: "Baby"
+        };
+      }
+      if (tool.id === "ovulation-calculator") {
+        return {
+          ...tool,
+          title: "Ovulation Calculator",
+          description: "Calculate your estimated ovulation date, peak conception window, next period, and estimated due date.",
+          iconName: "Calendar"
+        };
+      }
+      if (tool.id === "bac-calculator") {
+        return {
+          ...tool,
+          title: "Blood Alcohol Content (BAC) Calculator",
+          description: "Calculate estimated BAC percentage, metabolic clearance time, and impairment thresholds based on body weight and drinks consumed.",
+          iconName: "Wine"
+        };
+      }
+      if (tool.id === "pace-calculator") {
+        return {
+          ...tool,
+          title: "Pace, Distance & Running Time Calculator",
+          description: "Calculate running pace, race finish time, splits, and distance with imperial and metric support.",
+          iconName: "Timer"
+        };
+      }
+      if (tool.id === "steps-to-calories-calculator") {
+        return {
+          ...tool,
+          title: "Daily Steps to Distance, Miles & Calories Converter",
+          description: "Convert daily step counts into miles, km, walking time, and burned calories.",
+          iconName: "Footprints"
+        };
+      }
+      if (tool.id === "intermittent-fasting-calculator") {
+        return {
+          ...tool,
+          title: "Intermittent Fasting Window & Meal Schedule Tracker",
+          description: "Plan fasting & eating windows, meal schedules, and autophagy timelines across 16:8, 18:6, and OMAD protocols.",
+          iconName: "Timer"
+        };
+      }
+      if (tool.id === "one-rep-max-calculator") {
+        return {
+          ...tool,
+          title: "One Rep Max (1RM) Strength & Submax Weight Estimator",
+          description: "Estimate 1RM strength, submax loads, and training zones across 7 scientific powerlifting formulas.",
+          iconName: "Dumbbell"
+        };
+      }
+      if (tool.id === "race-split-pace-calculator") {
+        return {
+          ...tool,
+          title: "Running Split Times & Race Finish Pace Estimator",
+          description: "Calculate race split milestones, negative split pacing, marathon finish projections, and heart rate training zones.",
+          iconName: "Timer"
+        };
+      }
+      if (tool.id === "vo2-max-calculator") {
+        return {
+          ...tool,
+          title: "Target VO2 Max & Cardiovascular Fitness Estimator",
+          description: "Calculate VO2 max, aerobic fitness percentiles, MET capacity, and Karvonen heart rate zones.",
+          iconName: "Activity"
+        };
+      }
+      if (tool.id === "lean-body-mass-calculator") {
+        return {
+          ...tool,
+          title: "Lean Body Mass (LBM) Boer & James Formula Calculator",
+          description: "Calculate Lean Body Mass (LBM), FFMI, and metabolic baseline via Boer & James formulas.",
+          iconName: "Activity"
+        };
+      }
+      if (tool.id === "calorie-deficit-calculator") {
+        return {
+          ...tool,
+          title: "Calorie Deficit & Target Weight Loss Date Estimator",
+          description: "Calculate daily calorie budgets, energy deficits, and milestone completion dates using Mifflin-St Jeor TDEE precision.",
+          iconName: "Flame"
+        };
+      }
+      if (tool.id === "quit-smoking-savings-calculator") {
+        return {
+          ...tool,
+          title: "Quit Smoking Savings & Health Recovery Timeline Calculator",
+          description: "Track money saved, cigarettes avoided, life regained, and medical health milestones.",
+          iconName: "Flame"
+        };
+      }
+      if (tool.id === "pet-calorie-calculator") {
+        return {
+          ...tool,
+          title: "Pet Daily Caloric Requirement (RER/MER) Calculator",
+          description: "Calculate clinical Resting Energy (RER) and Maintenance Energy (MER) for dogs and cats using WSAVA formulas.",
+          iconName: "Dog"
+        };
+      }
+      if (tool.id === "dog-age-calculator") {
+        return {
+          ...tool,
+          title: "Dog Age to Human Years Biological Converter",
+          description: "Calculate biological canine age into human equivalents using Epigenetic DNA methylation and AVMA breed size metrics.",
+          iconName: "Dog"
+        };
+      }
+      if (tool.id === "cat-age-calculator") {
+        return {
+          ...tool,
+          title: "Cat Age to Human Years Feline Maturity Estimator",
+          description: "Calculate your cat's exact equivalent human age, feline life stage classification, and veterinary wellness schedule based on AAFP standards.",
+          iconName: "Cat"
+        };
+      }
+      return tool;
+    })
     .sort((a, b) => {
       const aFeatured = a.isFeatured ? 1 : 0;
       const bFeatured = b.isFeatured ? 1 : 0;
