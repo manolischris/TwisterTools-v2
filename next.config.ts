@@ -131,6 +131,8 @@ const nextConfig: NextConfig = {
       { source: "/tools/calculators/length-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/tools/calculators/area-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/tools/calculators/volume-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/power-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/pressure-converter", destination: "/tools/calculators/master-unit-converter" },
     ];
     for (const r of legacyRedirects) {
       // Avoid duplicate redirects if they're already loaded from url-map.json

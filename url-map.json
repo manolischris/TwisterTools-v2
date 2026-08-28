@@ -519,7 +519,7 @@
       "id": 20,
       "name": "Power Converter",
       "legacy_url": "/power-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different power units"
     },
@@ -583,7 +583,7 @@
       "id": 28,
       "name": "Pressure Converter",
       "legacy_url": "/pressure-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different pressure units"
     },
