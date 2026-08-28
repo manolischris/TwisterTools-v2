@@ -2181,5 +2181,50 @@
     "href": "/tools/home-tools/carbon-footprint-calculator",
     "iconName": "Plane",
     "isFeatured": false
+  },
+  {
+    "id": "pomodoro-timer",
+    "title": "Pomodoro Interval Timer & Work Sprint Visualizer",
+    "description": "Circadian focus sprint intervals, task batching, and flow state ergonomics.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/pomodoro-timer",
+    "iconName": "Timer",
+    "isFeatured": false
+  },
+  {
+    "id": "meeting-timezone-scheduler",
+    "title": "Meeting Overlap & Multi-Timezone Scheduler",
+    "description": "Find perfect cross-timezone meeting overlaps, schedule remote team calls across international working hours, and export ICS calendar invites.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/meeting-timezone-scheduler",
+    "iconName": "Globe",
+    "isFeatured": false
+  },
+  {
+    "id": "employee-timesheet-calculator",
+    "title": "Employee Timesheet & Overtime Pay Calculator",
+    "description": "Calculate daily and weekly work hours, lunch break deductions, overtime (1.5x), California double time (2.0x), and export payroll CSVs.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/employee-timesheet-calculator",
+    "iconName": "Clock",
+    "isFeatured": false
+  },
+  {
+    "id": "fte-calculator",
+    "title": "Work Hours to Full-Time Equivalent (FTE) Calculator",
+    "description": "Calculate Full-Time Equivalent (FTE) metrics from aggregate hours, part-time employee schedules, and department payroll rosters.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/fte-calculator",
+    "iconName": "Calculator",
+    "isFeatured": false
+  },
+  {
+    "id": "solar-noon-angle-calculator",
+    "title": "Solar Noon, Solar Zenith & Sun Path Angle Estimator",
+    "description": "High-precision solar position, solar culmination, solar zenith angle, azimuth, and sun path calculator using standard NOAA astronomical algorithms.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/solar-noon-angle-calculator",
+    "iconName": "Sun",
+    "isFeatured": false
   }
 ]

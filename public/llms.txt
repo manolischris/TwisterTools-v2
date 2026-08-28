@@ -241,6 +241,11 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Event Countdown Timer Generator](https://www.twistertools.com/tools/date-tools/countdown-timer-generator): Generate customized event countdown clocks for product launches and deadlines.
 - [Sunrise & Sunset Time Estimator](https://www.twistertools.com/tools/date-tools/sunrise-sunset-calculator): Calculate solar noon, twilight phases, and daylight duration for any GPS coordinates.
 - [Moon Phase Calendar & Visualizer](https://www.twistertools.com/tools/date-tools/moon-phase-calculator): Calculate lunar illumination percentages, moon age, and monthly phase cycles.
+- /tools/date-tools/pomodoro-timer: Pomodoro Interval Timer & Work Sprint Visualizer - Circadian focus sprint intervals, task batching, custom presets, and daily flow state ergonomics.
+- Meeting Overlap & Multi-Timezone Scheduler: Calculate international working hour overlaps, visualize 24-hour heatmaps, and export ICS calendar invites.
+- employee-timesheet-calculator: Employee timesheet and overtime pay calculator supporting federal FLSA, California daily double time, break deductions, tax estimations, and CSV export.
+- Work Hours to Full-Time Equivalent (FTE) Calculator: /tools/date-tools/fte-calculator - Standardize employee hours, part-time shifts, and ACA compliance metrics into Full-Time Equivalency.
+- /tools/date-tools/solar-noon-angle-calculator: High-precision astronomical tool calculating exact solar noon culmination, solar zenith angle, altitude elevation, azimuth heading, and daylight ephemeris.
 ### [Randomization, Games & Decision Tools](https://www.twistertools.com/tools/random-tools)
 - [Coin Flipper & Probability Simulator](https://www.twistertools.com/tools/random-tools/coin-flipper): Simulate 3D coin flips with statistical probability telemetry.
 - [Dice Roller & Multi-Die Simulator](https://www.twistertools.com/tools/random-tools/dice-roller): Roll multi-sided tabletop dice (D4, D6, D8, D10, D12, D20, D100) with outcome distributions.

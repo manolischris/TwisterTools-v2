@@ -92,6 +92,9 @@ const CssBorderRadiusGenerator = dynamic(() => import("@/components/tools/CssBor
 const CssFlexboxPlayground = dynamic(() => import("@/components/tools/CssFlexboxPlayground"));
 const CssGridGenerator = dynamic(() => import("@/components/tools/CssGridGenerator"));
 const HtmlTableGenerator = dynamic(() => import("../../../../components/tools/HtmlTableGenerator"));
+const PomodoroTimer = dynamic(() => import("../../../../components/tools/PomodoroTimer"));
+const MeetingTimezoneScheduler = dynamic(() => import("@/components/tools/MeetingTimezoneScheduler"));
+const FteCalculator = dynamic(() => import("@/components/tools/FteCalculator"));
 import CopyLinkButton from "../../../../components/CopyLinkButton";
 import RelatedTools from "../../../../components/RelatedTools";
 
@@ -114,6 +117,8 @@ const WallpaperCalculator = dynamic(() => import("../../../../components/tools/W
 import ConcreteVolumeCalculator from "@/components/tools/ConcreteVolumeCalculator";
 const PlantWateringCalculator = dynamic(() => import("@/components/tools/PlantWateringCalculator"));
 const SolarPanelCalculator = dynamic(() => import("@/components/tools/SolarPanelCalculator"));
+const SolarNoonCalculator = dynamic(() => import("@/components/tools/SolarNoonCalculator"));
+
 
 // Type definitions for URL mapping
 interface Tool {
@@ -235,6 +240,9 @@ const COMPLETED_TOOLS = [
   "wind-chill-calculator",
   "dew-point-calculator",
   "lightning-distance-calculator",
+  "meeting-timezone-scheduler",
+  "fte-calculator",
+  "solar-noon-angle-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -511,6 +519,16 @@ export async function generateMetadata({
     title = "Lightning Distance & Thunder Storm Delay Calculator";
     description = "Calculate exact lightning strike distance from thunder delay using thermodynamic sound speed adjustments, interactive stopwatch, and 30/30 storm safety analysis.";
   }
+
+  if (category === "date-tools" && toolSlug === "meeting-timezone-scheduler") {
+    title = "Meeting Overlap & Multi-Timezone Scheduler";
+    description = "Find perfect cross-timezone meeting overlaps, schedule remote team calls across international working hours, and export ICS calendar invites.";
+  }
+
+  if (category === "date-tools" && toolSlug === "solar-noon-angle-calculator") {
+    title = "Solar Noon, Solar Zenith & Sun Path Angle Estimator";
+    description = "Calculate exact solar noon, solar culmination time, solar zenith, altitude, azimuth, and sun path angles for any latitude and longitude.";
+  }
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -694,6 +712,16 @@ export default async function ToolPage({
   if (category === "math-tools" && toolSlug === "lightning-distance-calculator") {
     tool.name = "Lightning Distance & Thunder Storm Delay Calculator";
     tool.description = "Calculate exact lightning strike distance from thunder delay using thermodynamic sound speed adjustments, interactive stopwatch, and 30/30 storm safety analysis.";
+  }
+
+  if (category === "date-tools" && toolSlug === "meeting-timezone-scheduler") {
+    tool.name = "Meeting Overlap & Multi-Timezone Scheduler";
+    tool.description = "Find perfect cross-timezone meeting overlaps, schedule remote team calls across international working hours, and export ICS calendar invites.";
+  }
+
+  if (category === "date-tools" && toolSlug === "solar-noon-angle-calculator") {
+    tool.name = "Solar Noon, Solar Zenith & Sun Path Angle Estimator";
+    tool.description = "Calculate exact solar noon, solar culmination time, solar zenith, altitude, azimuth, and sun path angles for any latitude and longitude.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -1057,7 +1085,7 @@ export default async function ToolPage({
                   <CalendarClock className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "percentage-calculator" ? (
                   <Percent className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : (toolSlug === "average-calculator" || toolSlug === "freelance-rate-calculator") ? (
+                ) : (toolSlug === "average-calculator" || toolSlug === "freelance-rate-calculator" || toolSlug === "fte-calculator") ? (
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "case-converter" ? (
                   <Type className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1113,7 +1141,7 @@ export default async function ToolPage({
                   <Server className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "ssl-checker" ? (
                   <ShieldCheck className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : (toolSlug === "sitemap-generator" || toolSlug === "timezone-converter") ? (
+                ) : (toolSlug === "sitemap-generator" || toolSlug === "timezone-converter" || toolSlug === "meeting-timezone-scheduler") ? (
                   <Globe className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "yaml-to-json-converter" ? (
                   <ArrowRightLeft className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1175,7 +1203,7 @@ export default async function ToolPage({
                   <Dog className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "steps-to-calories-calculator" ? (
                   <Footprints className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : (toolSlug === "intermittent-fasting-calculator" || toolSlug === "race-split-pace-calculator") ? (
+                ) : (toolSlug === "intermittent-fasting-calculator" || toolSlug === "race-split-pace-calculator" || toolSlug === "pomodoro-timer") ? (
                   <Timer className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "fuel-cost-calculator" ? (
                   <Fuel className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1213,7 +1241,7 @@ export default async function ToolPage({
                   <Boxes className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "plant-watering-calculator" ? (
                   <Sprout className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "solar-panel-calculator" ? (
+                ) : (toolSlug === "solar-panel-calculator" || toolSlug === "solar-noon-angle-calculator") ? (
                   <Sun className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "triangle-geometry-calculator" ? (
                   <Triangle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1439,6 +1467,14 @@ export default async function ToolPage({
             <LightningDistanceCalculator />
           ) : category === "date-tools" && toolSlug === "timezone-converter" ? (
             <TimezoneConverter />
+          ) : category === "date-tools" && toolSlug === "pomodoro-timer" ? (
+            <PomodoroTimer />
+          ) : category === "date-tools" && toolSlug === "meeting-timezone-scheduler" ? (
+            <MeetingTimezoneScheduler />
+          ) : category === "date-tools" && toolSlug === "fte-calculator" ? (
+            <FteCalculator />
+          ) : category === "date-tools" && toolSlug === "solar-noon-angle-calculator" ? (
+            <SolarNoonCalculator />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
             <DiceRoller />
           ) : category === "random-tools" && toolSlug === "random-address-generator" ? (

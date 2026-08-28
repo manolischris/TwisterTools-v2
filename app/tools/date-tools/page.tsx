@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, ShieldCheck, Timer, Clock, Layers, HelpCircle, CalendarDays, Hash, Sunrise, Moon } from "lucide-react";
+import { Calendar, ShieldCheck, Timer, Clock, Layers, HelpCircle, CalendarDays, Hash, Sunrise, Moon, Globe } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -144,6 +144,46 @@ export default function DateToolsCategoryPage() {
           title: "Moon Phase Calendar & Visualizer",
           description: "Calculate accurate lunar phases, illumination percentages, moon age, distance, and monthly lunar calendar views.",
           iconName: "Moon",
+        };
+      }
+      if (tool.id === "pomodoro-timer") {
+        return {
+          ...tool,
+          title: "Pomodoro Interval Timer & Work Sprint Visualizer",
+          description: "Circadian focus sprint intervals, task batching, and flow state ergonomics.",
+          iconName: "Timer",
+        };
+      }
+      if (tool.id === "meeting-timezone-scheduler") {
+        return {
+          ...tool,
+          title: "Meeting Overlap & Multi-Timezone Scheduler",
+          description: "Find perfect cross-timezone meeting overlaps, schedule remote team calls across international working hours, and export ICS calendar invites.",
+          iconName: "Globe",
+        };
+      }
+      if (tool.id === "employee-timesheet-calculator") {
+        return {
+          ...tool,
+          title: "Employee Timesheet & Overtime Pay Calculator",
+          description: "Calculate daily and weekly work hours, lunch break deductions, overtime (1.5x), California daily double time (2.0x), and export payroll CSVs.",
+          iconName: "Clock",
+        };
+      }
+      if (tool.id === "fte-calculator") {
+        return {
+          ...tool,
+          title: "Work Hours to Full-Time Equivalent (FTE) Calculator",
+          description: "Convert part-time hours, shifts, and team rosters into standardized Full-Time Equivalents (FTE), ACA employer mandates, and payroll metrics.",
+          iconName: "Calculator",
+        };
+      }
+      if (tool.id === "solar-noon-angle-calculator") {
+        return {
+          ...tool,
+          title: "Solar Noon, Solar Zenith & Sun Path Angle Estimator",
+          description: "Calculate exact solar noon culmination time, solar zenith, altitude, azimuth angles, and daylight hours with NOAA precision.",
+          iconName: "Sun",
         };
       }
       return tool;
