@@ -5,10 +5,10 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/40 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 items-start">
-          
-          {/* Column 1: Brand Identity & Privacy Badge */}
-          <div className="lg:col-span-2 flex flex-col gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-8 lg:gap-10 items-start">
+
+          {/* Column 1: Brand Identity & Trust Pledge */}
+          <div className="flex flex-col gap-4">
             <Link
               href="/"
               className="flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-lg select-none w-fit"
@@ -38,12 +38,12 @@ export default function Footer() {
                 </span>
               </span>
             </Link>
-            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-md">
-              Fast, private, and 100% browser-native digital utilities. All operations execute locally in your browser memory with zero data tracking.
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+              Fast, privacy-first, browser-native digital utilities. All operations execute locally in memory with zero data uploads.
             </p>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-medium w-fit">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 text-indigo-700 dark:text-indigo-300 text-xs font-medium w-fit mt-1">
               <ShieldCheck className="w-4 h-4 text-indigo-600" />
-              <span>100% Client-Side • Zero Data Uploads</span>
+              <span>100% Client-Side • Zero Uploads</span>
             </div>
             <div className="flex items-center gap-4 mt-2">
               <a
@@ -113,223 +113,215 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Tool Categories (2-Column Matrix) */}
-          <div className="lg:col-span-2">
+          {/* Column 2: Core Categories */}
+          <div>
             <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
-              Tool Categories
+              Core Utilities
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 text-sm">
-              <Link
-                href="/tools/calculators"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Calculators & Finance
-              </Link>
-              <Link
-                href="/tools/developer-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Developer & Code
-              </Link>
-              <Link
-                href="/tools/math-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Math & STEM Science
-              </Link>
-              <Link
-                href="/tools/health-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Health & Fitness
-              </Link>
-              <Link
-                href="/tools/pdf-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                PDF & Documents
-              </Link>
-              <Link
-                href="/tools/image-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Image & Graphics
-              </Link>
-              <Link
-                href="/tools/text-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Text & Content
-              </Link>
-              <Link
-                href="/tools/web-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Web & SEO Tools
-              </Link>
-              <Link
-                href="/tools/date-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Date & Scheduling
-              </Link>
-              <Link
-                href="/tools/home-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Home, Kitchen & DIY
-              </Link>
-              <Link
-                href="/tools/random-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Random & Games
-              </Link>
-              <Link
-                href="/tools/password-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Password & Security
-              </Link>
-              <Link
-                href="/tools/converter-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Data Converters
-              </Link>
-              <Link
-                href="/tools/generator-tools"
-                className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Generators & Keys
-              </Link>
-            </div>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link
+                  href="/tools/calculators"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Calculators & Finance
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/developer-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Developer & Code
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/math-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Math & STEM Science
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/health-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Health & Fitness
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/pdf-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  PDF & Documents
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/image-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Image & Graphics
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/text-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Text & Content
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* Column 3: Essentials & Company */}
-          <div className="lg:col-span-1 flex flex-col gap-6">
-            {/* Sub-group A: Popular Tools */}
-            <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
-                Popular Tools
-              </h3>
-              <ul className="space-y-2.5 text-sm">
-                <li>
-                  <Link
-                    href="/tools/generator-tools/qr-code-generator"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    QR Code Generator
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/tools/password-tools/password-generator"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Password Generator
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/tools/image-tools/image-compressor"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Image Compressor
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/tools/developer-tools/json-formatter-validator"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    JSON Formatter
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/tools/pdf-tools/merge-pdf"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Merge PDF
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/tools/math-tools/velocity-acceleration-calculator"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Velocity Calculator
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          {/* Column 3: Specialty Categories */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              More Categories
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link
+                  href="/tools/web-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Web & SEO Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/home-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Home, Kitchen & DIY
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/date-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Date & Scheduling
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/random-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Random & Games
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/password-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Password & Security
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/converter-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Data Converters
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/generator-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Generators & Keys
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-            {/* Sub-group B: Platform */}
-            <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-3">
-                Platform
-              </h3>
-              <ul className="space-y-2.5 text-sm">
-                <li>
-                  <Link
-                    href="/tools"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    All Tools Directory
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/categories"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Categories
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/about"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/privacy-policy"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/terms-of-service"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/contact"
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          {/* Column 4: Popular Tools & Explore */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white mb-4">
+              Popular Tools
+            </h3>
+            <ul className="space-y-2.5 text-sm">
+              <li>
+                <Link
+                  href="/tools/generator-tools/qr-code-generator"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  QR Code Generator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/password-tools/password-generator"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Password Generator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/image-tools/image-compressor"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Image Compressor
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/developer-tools/json-formatter-validator"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  JSON Formatter
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/pdf-tools/merge-pdf"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Merge PDF
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools/math-tools/velocity-acceleration-calculator"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Velocity Calculator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tools"
+                  className="font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                >
+                  Explore All Tools →
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom Copyright & Legal Bar */}
         <div className="border-t border-slate-200 dark:border-slate-800/80 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
           <div>
-            Copyright &copy; 2026 TwisterTools. All rights reserved.
+            Copyright © 2026 TwisterTools. All rights reserved.
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+            <Link
+              href="/about"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              About Us
+            </Link>
+            <span className="text-slate-300 dark:text-slate-700 select-none">•</span>
             <Link
               href="/privacy-policy"
               className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
@@ -345,10 +337,10 @@ export default function Footer() {
             </Link>
             <span className="text-slate-300 dark:text-slate-700 select-none">•</span>
             <Link
-              href="/sitemap.xml"
+              href="/categories"
               className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
-              Sitemap
+              Categories
             </Link>
             <span className="text-slate-300 dark:text-slate-700 select-none">•</span>
             <Link

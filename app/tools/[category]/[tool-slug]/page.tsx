@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -118,6 +118,10 @@ import ConcreteVolumeCalculator from "@/components/tools/ConcreteVolumeCalculato
 const PlantWateringCalculator = dynamic(() => import("@/components/tools/PlantWateringCalculator"));
 const SolarPanelCalculator = dynamic(() => import("@/components/tools/SolarPanelCalculator"));
 const SolarNoonCalculator = dynamic(() => import("@/components/tools/SolarNoonCalculator"));
+const JulianDateConverter = dynamic(() => import("@/components/tools/JulianDateConverter"));
+const HabitStreakCalculator = dynamic(() => import("@/components/tools/HabitStreakCalculator"));
+const GraduationDateCalculator = dynamic(() => import("@/components/tools/GraduationDateCalculator"));
+
 
 
 // Type definitions for URL mapping
@@ -243,6 +247,9 @@ const COMPLETED_TOOLS = [
   "meeting-timezone-scheduler",
   "fte-calculator",
   "solar-noon-angle-calculator",
+  "julian-date-converter",
+  "habit-streak-calculator",
+  "graduation-date-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -529,6 +536,10 @@ export async function generateMetadata({
     title = "Solar Noon, Solar Zenith & Sun Path Angle Estimator";
     description = "Calculate exact solar noon, solar culmination time, solar zenith, altitude, azimuth, and sun path angles for any latitude and longitude.";
   }
+  if (category === "date-tools" && toolSlug === "graduation-date-calculator") {
+    title = "School Semester & College Graduation Date Estimator";
+    description = "Calculate your college graduation date, semester roadmap, remaining credits, and degree completion timeline across semester, quarter, and trimester academic systems.";
+  }
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -722,6 +733,10 @@ export default async function ToolPage({
   if (category === "date-tools" && toolSlug === "solar-noon-angle-calculator") {
     tool.name = "Solar Noon, Solar Zenith & Sun Path Angle Estimator";
     tool.description = "Calculate exact solar noon, solar culmination time, solar zenith, altitude, azimuth, and sun path angles for any latitude and longitude.";
+  }
+  if (category === "date-tools" && toolSlug === "graduation-date-calculator") {
+    tool.name = "School Semester & College Graduation Date Estimator";
+    tool.description = "Calculate your college graduation date, semester roadmap, remaining credits, and degree completion timeline across semester, quarter, and trimester academic systems.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -1241,7 +1256,11 @@ export default async function ToolPage({
                   <Boxes className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "plant-watering-calculator" ? (
                   <Sprout className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : (toolSlug === "solar-panel-calculator" || toolSlug === "solar-noon-angle-calculator") ? (
+                ) : toolSlug === "habit-streak-calculator" ? (
+                  <Flame className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "graduation-date-calculator" ? (
+                  <GraduationCap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : (toolSlug === "solar-panel-calculator" || toolSlug === "solar-noon-angle-calculator" || toolSlug === "julian-date-converter") ? (
                   <Sun className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "triangle-geometry-calculator" ? (
                   <Triangle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1475,6 +1494,12 @@ export default async function ToolPage({
             <FteCalculator />
           ) : category === "date-tools" && toolSlug === "solar-noon-angle-calculator" ? (
             <SolarNoonCalculator />
+          ) : category === "date-tools" && toolSlug === "julian-date-converter" ? (
+            <JulianDateConverter />
+          ) : category === "date-tools" && toolSlug === "habit-streak-calculator" ? (
+            <HabitStreakCalculator />
+          ) : category === "date-tools" && toolSlug === "graduation-date-calculator" ? (
+            <GraduationDateCalculator />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
             <DiceRoller />
           ) : category === "random-tools" && toolSlug === "random-address-generator" ? (

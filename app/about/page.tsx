@@ -262,11 +262,11 @@ export default function AboutPage() {
                             <div className="text-xs text-slate-400">Ephemeral Storage</div>
                         </div>
                         <div className="space-y-1">
-                            <div className="text-3xl font-extrabold text-indigo-400">60+</div>
+                            <div className="text-3xl font-extrabold text-indigo-400">230+</div>
                             <div className="text-xs text-slate-400">Active Live Utilities</div>
                         </div>
                         <div className="space-y-1">
-                            <div className="text-3xl font-extrabold text-indigo-400">9</div>
+                            <div className="text-3xl font-extrabold text-indigo-400">14</div>
                             <div className="text-xs text-slate-400">Core Categories</div>
                         </div>
                     </div>

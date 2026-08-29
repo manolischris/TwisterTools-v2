@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, ShieldCheck, Timer, Clock, Layers, HelpCircle, CalendarDays, Hash, Sunrise, Moon, Globe } from "lucide-react";
+import { Calendar, ShieldCheck, Timer, Clock, Layers, HelpCircle, CalendarDays, Hash, Sunrise, Moon, Globe, Flame, GraduationCap, Sun } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -183,6 +183,46 @@ export default function DateToolsCategoryPage() {
           ...tool,
           title: "Solar Noon, Solar Zenith & Sun Path Angle Estimator",
           description: "Calculate exact solar noon culmination time, solar zenith, altitude, azimuth angles, and daylight hours with NOAA precision.",
+          iconName: "Sun",
+        };
+      }
+      if (tool.id === "julian-date-converter") {
+        return {
+          ...tool,
+          title: "Julian Day & Astronomical Modified Julian Date Converter",
+          description: "Convert between calendar dates, Julian Day (JD), Modified Julian Date (MJD), Reduced Julian Date (RJD), and Sidereal Time (GMST) with precision astronomical epoch calculations.",
+          iconName: "Sun",
+        };
+      }
+      if (tool.id === "habit-streak-calculator") {
+        return {
+          ...tool,
+          title: "Habit Tracker Streak & Target Goal Probability Calculator",
+          description: "Forecast habit streak durability, calculate target milestone probabilities, and track 66-day automaticity metrics using UCL behavioral modeling.",
+          iconName: "Flame",
+        };
+      }
+      if (tool.id === "recurring-bill-calculator") {
+        return {
+          ...tool,
+          title: "Bill Due Date & Recurring Cycle Schedule Calculator",
+          description: "Forecast future bill due dates, weekend business-day shifts, and annualized cash flow for subscriptions and recurring payments.",
+          iconName: "CalendarDays",
+        };
+      }
+      if (tool.id === "graduation-date-calculator") {
+        return {
+          ...tool,
+          title: "School Semester & College Graduation Date Estimator",
+          description: "Estimate degree completion dates, credit roadmaps, and semester pacing for college and school.",
+          iconName: "GraduationCap",
+        };
+      }
+      if (tool.id === "solar-lunar-eclipse-finder") {
+        return {
+          ...tool,
+          title: "Next Solar & Lunar Eclipse Visibility Explorer",
+          description: "Interactive astronomical trajectory explorer for upcoming solar and lunar eclipses, totality paths, and visibility zones.",
           iconName: "Sun",
         };
       }

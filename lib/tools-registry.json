@@ -2226,5 +2226,50 @@
     "href": "/tools/date-tools/solar-noon-angle-calculator",
     "iconName": "Sun",
     "isFeatured": false
+  },
+  {
+    "id": "julian-date-converter",
+    "title": "Julian Day & Astronomical Modified Julian Date Converter",
+    "description": "Convert between calendar dates, Julian Day (JD), Modified Julian Date (MJD), Reduced Julian Date (RJD), and Sidereal Time (GMST) with precision astronomical epoch calculations.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/julian-date-converter",
+    "iconName": "Sun",
+    "isFeatured": false
+  },
+  {
+    "id": "habit-streak-calculator",
+    "title": "Habit Tracker Streak & Target Goal Probability Calculator",
+    "description": "Scientific habit streak calculator and target goal probability engine based on UCL automaticity research and binomial consistency modeling.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/habit-streak-calculator",
+    "iconName": "Flame",
+    "isFeatured": false
+  },
+  {
+    "id": "recurring-bill-calculator",
+    "title": "Bill Due Date & Recurring Cycle Schedule Calculator",
+    "description": "Forecast future bill due dates, weekend business-day shifts, and annualized cash flow for subscriptions and recurring payments.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/recurring-bill-calculator",
+    "iconName": "CalendarDays",
+    "isFeatured": false
+  },
+  {
+    "id": "graduation-date-calculator",
+    "title": "School Semester & College Graduation Date Estimator",
+    "description": "Calculate your college graduation date, semester roadmap, remaining credits, and degree completion timeline across semester, quarter, and trimester academic systems.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/graduation-date-calculator",
+    "iconName": "GraduationCap",
+    "isFeatured": false
+  },
+  {
+    "id": "solar-lunar-eclipse-finder",
+    "title": "Next Solar & Lunar Eclipse Visibility Explorer",
+    "description": "Interactive astronomical trajectory explorer for upcoming solar and lunar eclipses, totality paths, and visibility zones.",
+    "category": "date-tools",
+    "href": "/tools/date-tools/solar-lunar-eclipse-finder",
+    "iconName": "Sun",
+    "isFeatured": false
   }
 ]
