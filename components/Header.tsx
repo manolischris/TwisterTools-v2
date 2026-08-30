@@ -276,7 +276,7 @@ export default function Header() {
       <div
         className={`absolute ${
           position === "desktop"
-            ? "top-full right-0 mt-2 w-80 sm:w-96"
+            ? "top-full left-0 mt-2 w-full"
             : "top-full left-0 right-0 mt-1"
         } z-50 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden`}
       >
@@ -324,8 +324,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background/95 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo & Branding */}
-          <div className="flex items-center">
+          {/* Left Block: Logo & Desktop Search Widget */}
+          <div className="flex items-center gap-6">
             <Link
               href="/"
               className="flex items-center gap-2 py-1.5 px-0.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 transition-all select-none"
@@ -355,12 +355,9 @@ export default function Header() {
                 </span>
               </span>
             </Link>
-          </div>
 
-          {/* ── Desktop: Search + Navigation ── */}
-          <div className="hidden md:flex items-center gap-4">
-            {/* Expandable Search Widget */}
-            <div ref={desktopSearchRef} className="relative">
+            {/* Desktop Expandable Search Widget */}
+            <div ref={desktopSearchRef} className="hidden md:block relative">
               {!isSearchOpen ? (
                 <button
                   onClick={openDesktopSearch}
@@ -372,7 +369,7 @@ export default function Header() {
                 </button>
               ) : (
                 <div className="relative flex items-center">
-                  <div className="relative transition-all duration-300 ease-out w-64 lg:w-80">
+                  <div className="relative transition-all duration-300 ease-out w-80 lg:w-[420px]">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
                     <input
                       ref={desktopInputRef}
@@ -397,81 +394,81 @@ export default function Header() {
                 </div>
               )}
             </div>
-
-            {/* Desktop Navigation Links */}
-            <nav className="flex items-center gap-8">
-              <Link
-                href="/tools"
-                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                All Tools
-              </Link>
-
-              {/* Categories Dropdown Container */}
-              <div
-                className="relative"
-                onMouseEnter={() => setIsDropdownOpen(true)}
-                onMouseLeave={() => setIsDropdownOpen(false)}
-              >
-                <Link
-                  href="/categories"
-                  className="flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors py-2"
-                  onClick={() => setIsDropdownOpen(false)}
-                >
-                  Categories
-                  <ChevronDown
-                    className={`h-4 w-4 transition-transform duration-200 ${
-                      isDropdownOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </Link>
-
-                {/* Dropdown Menu Panel */}
-                {isDropdownOpen && (
-                  <div className="absolute right-0 md:left-1/2 md:-translate-x-1/2 top-full pt-1 w-[560px] z-50">
-                    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-4 grid grid-cols-2 gap-2">
-                      {categories.map((cat) => {
-                        const Icon = cat.icon;
-                        return (
-                          <Link
-                            key={cat.slug}
-                            href={`/tools/${cat.slug}`}
-                            className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
-                            onClick={() => setIsDropdownOpen(false)}
-                          >
-                            <div className="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/60 transition-colors shrink-0">
-                              <Icon className="h-5 w-5" />
-                            </div>
-                            <div className="flex flex-col justify-center">
-                              <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                {cat.name}
-                              </span>
-                              <span className="text-xs text-slate-500 dark:text-slate-505 line-clamp-1">
-                                {cat.desc}
-                              </span>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <Link
-                href="/about"
-                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-              >
-                Contact
-              </Link>
-            </nav>
           </div>
+
+          {/* Right Block: Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-8">
+            <Link
+              href="/tools"
+              className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              All Tools
+            </Link>
+
+            {/* Categories Dropdown Container */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
+              <Link
+                href="/categories"
+                className="flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors py-2"
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                Categories
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </Link>
+
+              {/* Dropdown Menu Panel */}
+              {isDropdownOpen && (
+                <div className="absolute right-0 md:left-1/2 md:-translate-x-1/2 top-full pt-1 w-[560px] z-50">
+                  <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-4 grid grid-cols-2 gap-2">
+                    {categories.map((cat) => {
+                      const Icon = cat.icon;
+                      return (
+                        <Link
+                          key={cat.slug}
+                          href={`/tools/${cat.slug}`}
+                          className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+                          onClick={() => setIsDropdownOpen(false)}
+                        >
+                          <div className="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/60 transition-colors shrink-0">
+                            <Icon className="h-5 w-5" />
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                              {cat.name}
+                            </span>
+                            <span className="text-xs text-slate-500 dark:text-slate-550 line-clamp-1">
+                              {cat.desc}
+                            </span>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/about"
+              className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              Contact
+            </Link>
+          </nav>
 
           {/* ── Mobile: Search + Hamburger ── */}
           <div className="flex md:hidden items-center gap-1">
