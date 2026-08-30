@@ -285,9 +285,18 @@ export default function Header() {
             {searchResults.map((tool) => {
               const ToolIcon = ICON_MAP[tool.iconName] || Code2;
               return (
-                <button
+                <Link
                   key={`hdr-${tool.id}`}
-                  onClick={() => navigateToResult(tool.href)}
+                  href={tool.href}
+                  onMouseDown={(e) => {
+                    // Prevent layout shifting on mobile before link triggers
+                    e.preventDefault();
+                  }}
+                  onClick={() => {
+                    setSearchQuery("");
+                    setIsSearchOpen(false);
+                    setIsMobileSearchOpen(false);
+                  }}
                   className="w-full flex items-center gap-3 p-2.5 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800/60 transition-colors text-left group"
                 >
                   <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-indigo-600 group-hover:text-white text-slate-600 dark:text-slate-400 transition-colors shrink-0">
@@ -302,7 +311,7 @@ export default function Header() {
                     </div>
                   </div>
                   <ChevronRight className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 shrink-0" />
-                </button>
+                </Link>
               );
             })}
             <div className="mt-1 px-3 py-1.5 flex items-center justify-end">
