@@ -110,7 +110,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">Contact Us</h1>
-                            <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-2xl leading-relaxed">
+                            <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-3xl leading-relaxed">
                                 Have questions, feature requests, or technical feedback? We are here to help.
                             </p>
                         </div>

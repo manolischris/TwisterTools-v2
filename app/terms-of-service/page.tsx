@@ -103,7 +103,7 @@ export default function TermsOfServicePage() {
                         </div>
                         <div>
                             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">Terms of Service</h1>
-                            <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-2xl leading-relaxed">
+                            <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-3xl leading-relaxed">
                                 Last Updated: August 2026 | Platform Terms, Acceptable Use & Operational Policies
                             </p>
                         </div>

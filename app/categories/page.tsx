@@ -443,7 +443,7 @@ export default function CategoriesIndexPage() {
             </div>
             <div>
               <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">Browse by Category</h1>
-              <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-2xl leading-relaxed">
+              <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-3xl leading-relaxed">
                 {totalTools} free tools across {CATEGORIES.length} categories — most run entirely in your browser, no account needed.
               </p>
             </div>

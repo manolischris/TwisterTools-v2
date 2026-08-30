@@ -137,7 +137,7 @@ export default function ToolsDirectoryPage() {
             </div>
             <div>
               <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">All Online Utilities & Tools</h1>
-              <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-2xl leading-relaxed">
+              <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-3xl leading-relaxed">
                 {totalTools} free online tools — most run entirely in your browser, with no account required to get started.
               </p>
             </div>

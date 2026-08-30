@@ -106,7 +106,7 @@ export default function AboutPage() {
                         </div>
                         <div>
                             <h1 className="text-2xl sm:text-4xl font-extrabold tracking-tight">About TwisterTools</h1>
-                            <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-2xl leading-relaxed">
+                            <p className="mt-2 text-sm sm:text-base text-indigo-100 max-w-3xl leading-relaxed">
                                 Engineered for extreme speed, complete data isolation, and frictionless workflows.
                             </p>
                         </div>
