@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import {
   Menu,
   X,
@@ -178,7 +178,7 @@ const ALL_TOOLS: SearchableTool[] = toolsRegistryData as SearchableTool[];
    ───────────────────────────────────────────────────────── */
 
 export default function Header() {
-  const router = useRouter();
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileCategoriesOpen, setIsMobileCategoriesOpen] = useState(false);
@@ -187,6 +187,18 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    /* eslint-disable react-hooks/set-state-in-effect */
+    setIsSearchOpen(false);
+    setIsMobileSearchOpen(false);
+    setIsMobileMenuOpen(false);
+    setSearchQuery("");
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, [pathname]);
 
   const desktopSearchRef = useRef<HTMLDivElement>(null);
   const desktopInputRef = useRef<HTMLInputElement>(null);
@@ -226,22 +238,25 @@ export default function Header() {
   // ── Click-outside detection ──
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as Node;
       if (
         desktopSearchRef.current &&
-        !desktopSearchRef.current.contains(e.target as Node)
+        !desktopSearchRef.current.contains(target)
       ) {
         closeDesktopSearch();
       }
       if (
         mobileSearchRef.current &&
-        !mobileSearchRef.current.contains(e.target as Node)
+        !mobileSearchRef.current.contains(target)
       ) {
         setIsMobileSearchOpen(false);
         setSearchQuery("");
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, [closeDesktopSearch]);
 
   // ── Esc key handler ──
@@ -277,20 +292,17 @@ export default function Header() {
               const ToolIcon = ICON_MAP[tool.iconName] || Code2;
               return (
                 <Link
-                  key={`hdr-${tool.id}`}
                   href={tool.href}
-                  onMouseDown={(e) => {
-                    // Prevent layout shifting on mobile before link triggers
+                  key={`hdr-${tool.id}`}
+                  onPointerDown={(e) => {
+                    // Prevents default blur race-conditions on touch devices
                     e.preventDefault();
+                    router.push(tool.href);
+                    setIsSearchOpen(false);
+                    setIsMobileSearchOpen(false);
+                    setSearchQuery("");
                   }}
-                  onClick={() => {
-                    setTimeout(() => {
-                      setSearchQuery("");
-                      setIsSearchOpen(false);
-                      setIsMobileSearchOpen(false);
-                    }, 150);
-                  }}
-                  className="w-full flex items-center gap-3 p-2.5 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800/60 transition-colors text-left group"
+                  className="w-full flex items-center gap-3 p-2.5 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800/60 transition-colors text-left group cursor-pointer"
                 >
                   <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 group-hover:bg-indigo-600 group-hover:text-white text-slate-600 dark:text-slate-400 transition-colors shrink-0">
                     <ToolIcon className="w-4 h-4" />
