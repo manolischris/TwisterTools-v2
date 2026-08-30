@@ -108,7 +108,8 @@ import {
   Gauge,
   Wind,
   Volume2,
-  Plane
+  Plane,
+  Eraser
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -140,6 +141,7 @@ const ICON_MAP: Record<string, any> = {
   DollarSign,
   Droplets,
   Edit3,
+  Eraser,
   FileCode,
   FileImage,
   FileJson,

@@ -2271,5 +2271,50 @@
     "href": "/tools/date-tools/solar-lunar-eclipse-finder",
     "iconName": "Sun",
     "isFeatured": false
+  },
+  {
+    "id": "markdown-table-generator",
+    "title": "Markdown Table Generator & Visual Spreadsheet Exporter",
+    "description": "Interactive visual spreadsheet editor to build, align, and export clean Markdown, CSV, TSV, HTML, and JSON tables.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/markdown-table-generator",
+    "iconName": "Table",
+    "isFeatured": false
+  },
+  {
+    "id": "ascii-art-generator",
+    "title": "Text to ASCII Art & Banner Typography Generator",
+    "description": "Generate multi-line ASCII banner typography, FIGlet lettering, Unicode fonts, and framed comment blocks with real-time preview.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/ascii-art-generator",
+    "iconName": "Terminal",
+    "isFeatured": false
+  },
+  {
+    "id": "text-pii-redactor",
+    "title": "Text Anonymizer & PII Redactor",
+    "description": "Client-side PII sanitizer and text anonymizer to scrub emails, SSNs, credit cards, IPs, and API secrets before LLM ingestion.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/text-pii-redactor",
+    "iconName": "ShieldCheck",
+    "isFeatured": false
+  },
+  {
+    "id": "title-case-converter",
+    "title": "Title Case Converter for Capitalization Standards",
+    "description": "Convert headlines and titles into APA 7th, Chicago Manual of Style, MLA 9th, and AP guidelines with brand case preservation.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/title-case-converter",
+    "iconName": "Type",
+    "isFeatured": false
+  },
+  {
+    "id": "zero-width-space-cleaner",
+    "title": "Invisible Whitespace & Zero-Width Space Cleaner",
+    "description": "Detect, visualize, and strip hidden Unicode characters, zero-width spaces, BOM markers, and BiDi overrides in real time.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/zero-width-space-cleaner",
+    "iconName": "Eraser",
+    "isFeatured": false
   }
 ]

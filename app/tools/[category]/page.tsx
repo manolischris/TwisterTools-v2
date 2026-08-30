@@ -105,7 +105,9 @@ import {
   Boxes,
   Box,
   Gauge,
-  Plane
+  Plane,
+  Eraser,
+  Table
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -143,6 +145,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   DollarSign,
   Droplets,
   Edit3,
+  Eraser,
   FileCode,
   FileImage,
   FileJson,
@@ -220,7 +223,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   ScrollText,
   Boxes,
   Box,
-  Gauge
+  Gauge,
+  Table
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json

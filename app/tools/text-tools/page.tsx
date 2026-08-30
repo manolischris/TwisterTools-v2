@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace, ArrowRightLeft, Key, Radio, Zap, Strikethrough } from "lucide-react";
+import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace, ArrowRightLeft, Key, Radio, Zap, Strikethrough, Table, Terminal, ShieldCheck, Eraser } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
 import path from "path";
@@ -228,6 +228,46 @@ export default function TextToolsCategoryPage() {
           description:
             "Generate cross-platform strikethrough, underline, and overline text styles using native Unicode combining characters.",
           iconName: "Strikethrough"
+        };
+      }
+      if (tool.id === "markdown-table-generator") {
+        return {
+          ...tool,
+          title: "Markdown Table Generator & Visual Spreadsheet Exporter",
+          description: "Interactive visual spreadsheet editor to build, align, and export clean Markdown, CSV, TSV, HTML, and JSON tables.",
+          iconName: "Table"
+        };
+      }
+      if (tool.id === "ascii-art-generator") {
+        return {
+          ...tool,
+          title: "Text to ASCII Art & Banner Typography Generator",
+          description: "Generate FIGlet banners, Unicode fonts, and framed source code comments.",
+          iconName: "Terminal"
+        };
+      }
+      if (tool.id === "text-pii-redactor") {
+        return {
+          ...tool,
+          title: "Text Anonymizer & PII Redactor",
+          description: "Scrub emails, SSNs, credit cards, IP addresses, and API credentials from raw text with client-side zero-leakage masking.",
+          iconName: "ShieldCheck"
+        };
+      }
+      if (tool.id === "title-case-converter") {
+        return {
+          ...tool,
+          title: "Title Case Converter",
+          description: "Format headlines and academic citations into APA, Chicago, MLA, AP, and NYT guidelines with custom acronym preservation.",
+          iconName: "Type"
+        };
+      }
+      if (tool.id === "zero-width-space-cleaner") {
+        return {
+          ...tool,
+          title: "Invisible Whitespace & Zero-Width Space Cleaner",
+          description: "Detect, visualize, and strip hidden Unicode characters, zero-width spaces, BOM markers, and BiDi overrides in real time.",
+          iconName: "Eraser"
         };
       }
       return tool;

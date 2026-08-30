@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { rankTools } from "@/lib/search-utils";
 import {
   Link as LinkIcon,
   Link2,
@@ -126,7 +127,8 @@ import {
   Gauge,
   Wind,
   Volume2,
-  Plane
+  Plane,
+  Eraser
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -263,7 +265,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Sun,
   Box,
   Gauge,
-  Wind
+  Wind,
+  Eraser
 };
 
 /* ─────────────────────────────────────────────────────────
@@ -470,19 +473,17 @@ export default function ToolsDirectoryClient({
     return ["all", ...cats];
   }, [tools]);
 
-  /* Filtered + searched list */
+  /* Filtered + searched list (weighted ranking when query is active) */
   const filteredTools = useMemo(() => {
-    const q = searchQuery.toLowerCase().trim();
-    return tools.filter((tool) => {
-      const matchesCategory =
-        activeCategory === "all" || tool.category === activeCategory;
-      const matchesSearch =
-        !q ||
-        tool.title.toLowerCase().includes(q) ||
-        tool.description.toLowerCase().includes(q) ||
-        tool.id.toLowerCase().includes(q);
-      return matchesCategory && matchesSearch;
-    });
+    const categoryFiltered =
+      activeCategory === "all"
+        ? tools
+        : tools.filter((tool) => tool.category === activeCategory);
+
+    const q = searchQuery.trim();
+    if (!q) return categoryFiltered;
+
+    return rankTools(categoryFiltered, q);
   }, [tools, searchQuery, activeCategory]);
 
   /* Pagination */

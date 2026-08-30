@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -121,6 +121,8 @@ const SolarNoonCalculator = dynamic(() => import("@/components/tools/SolarNoonCa
 const JulianDateConverter = dynamic(() => import("@/components/tools/JulianDateConverter"));
 const HabitStreakCalculator = dynamic(() => import("@/components/tools/HabitStreakCalculator"));
 const GraduationDateCalculator = dynamic(() => import("@/components/tools/GraduationDateCalculator"));
+const MarkdownTableGenerator = dynamic(() => import("@/components/tools/MarkdownTableGenerator"));
+const ZeroWidthSpaceCleaner = dynamic(() => import("@/components/tools/ZeroWidthSpaceCleaner"));
 
 
 
@@ -250,6 +252,8 @@ const COMPLETED_TOOLS = [
   "julian-date-converter",
   "habit-streak-calculator",
   "graduation-date-calculator",
+  "markdown-table-generator",
+  "zero-width-space-cleaner",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -540,6 +544,13 @@ export async function generateMetadata({
     title = "School Semester & College Graduation Date Estimator";
     description = "Calculate your college graduation date, semester roadmap, remaining credits, and degree completion timeline across semester, quarter, and trimester academic systems.";
   }
+  if (category === "text-tools" && toolSlug === "markdown-table-generator") {
+    title = "Markdown Table Generator & Visual Spreadsheet Exporter";
+  }
+  if (category === "text-tools" && toolSlug === "zero-width-space-cleaner") {
+    title = "Invisible Whitespace & Zero-Width Space Cleaner";
+    description = "Detect, visualize, and sanitize zero-width spaces (ZWSP, ZWNJ, ZWJ), non-breaking spaces (NBSP), BOM, and invisible Unicode characters.";
+  }
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
   }
@@ -551,7 +562,8 @@ export async function generateMetadata({
     openGraph: {
       title:
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
-          (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
+          (category === "text-tools" && toolSlug === "lorem-ipsum-generator") ||
+          (category === "text-tools" && toolSlug === "zero-width-space-cleaner")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -571,7 +583,8 @@ export async function generateMetadata({
       card: "summary_large_image",
       title:
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
-          (category === "text-tools" && toolSlug === "lorem-ipsum-generator")
+          (category === "text-tools" && toolSlug === "lorem-ipsum-generator") ||
+          (category === "text-tools" && toolSlug === "zero-width-space-cleaner")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -1240,7 +1253,7 @@ export default async function ToolPage({
                   <Layout className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "css-grid-generator" ? (
                   <LayoutGrid className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "html-table-generator" ? (
+                ) : (toolSlug === "html-table-generator" || toolSlug === "markdown-table-generator") ? (
                   <Table className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "user-agent-parser" ? (
                   <Terminal className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1260,6 +1273,8 @@ export default async function ToolPage({
                   <Flame className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "graduation-date-calculator" ? (
                   <GraduationCap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "zero-width-space-cleaner" ? (
+                  <Eraser className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (toolSlug === "solar-panel-calculator" || toolSlug === "solar-noon-angle-calculator" || toolSlug === "julian-date-converter") ? (
                   <Sun className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "triangle-geometry-calculator" ? (
@@ -1500,6 +1515,10 @@ export default async function ToolPage({
             <HabitStreakCalculator />
           ) : category === "date-tools" && toolSlug === "graduation-date-calculator" ? (
             <GraduationDateCalculator />
+          ) : category === "text-tools" && toolSlug === "markdown-table-generator" ? (
+            <MarkdownTableGenerator />
+          ) : category === "text-tools" && toolSlug === "zero-width-space-cleaner" ? (
+            <ZeroWidthSpaceCleaner />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
             <DiceRoller />
           ) : category === "random-tools" && toolSlug === "random-address-generator" ? (

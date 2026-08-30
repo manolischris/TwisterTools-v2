@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import { rankTools } from "@/lib/search-utils";
 import {
   Link as LinkIcon,
   Link2,
@@ -122,7 +123,8 @@ import {
   Gauge,
   Wind,
   Volume2,
-  Plane
+  Plane,
+  Eraser
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -261,7 +263,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Gauge,
   Wind,
   Volume2,
-  Plane
+  Plane,
+  Eraser
 };
 
 export default function CategoryToolSearchGrid({
@@ -270,16 +273,12 @@ export default function CategoryToolSearchGrid({
 }: CategoryToolSearchGridProps) {
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Case-insensitive filtering
-  const filteredTools = tools.filter((tool) => {
-    const query = searchQuery.toLowerCase().trim();
-    if (!query) return true;
-    return (
-      tool.title.toLowerCase().includes(query) ||
-      tool.description.toLowerCase().includes(query) ||
-      tool.id.toLowerCase().includes(query)
-    );
-  });
+  // Weighted relevance ranking when a query is active
+  const filteredTools = useMemo(() => {
+    const q = searchQuery.trim();
+    if (!q) return tools;
+    return rankTools(tools, q);
+  }, [tools, searchQuery]);
 
   return (
     <div className="space-y-8">

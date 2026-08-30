@@ -203,6 +203,11 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Word Combiner & Phrase Generator](https://www.twistertools.com/tools/text-tools/word-combiner): Compute Cartesian product phrase combinations for marketing and domain search.
 - [Article Rewriter & Text Paraphraser](https://www.twistertools.com/tools/text-tools/rewrite-article): Paraphrase sentences and substitute synonyms client-side.
 - [Online Text Editor & Formatting Sandbox](https://www.twistertools.com/tools/text-tools/online-text-editor): Rich WYSIWYG text editor with formatting controls and HTML export.
+- [Markdown Table Generator](https://www.twistertools.com/tools/text-tools/markdown-table-generator): Visual spreadsheet matrix editor with multi-format export (Markdown, CSV, TSV, HTML, JSON).
+- Text to ASCII Art & Banner Typography Generator (/tools/text-tools/ascii-art-generator): Convert text into multi-line FIGlet banners, Unicode typography, and framed code comments.
+- Text Anonymizer & PII Redactor: Client-side tool to redact emails, SSNs, credit cards, IPs, and API secrets before LLM ingestion (/tools/text-tools/text-pii-redactor)
+- [Title Case Converter for Capitalization Standards](/tools/text-tools/title-case-converter): Capitalize headlines and references to APA, Chicago, MLA, AP, and NYT style standards.
+- [Invisible Whitespace & Zero-Width Space Cleaner](https://twistertools.com/tools/text-tools/zero-width-space-cleaner): Detect, visualize, and strip hidden Unicode characters, zero-width spaces, BOM markers, and BiDi overrides.
 ### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
 - [Image Compressor & Quality Optimizer](https://www.twistertools.com/tools/image-tools/image-compressor): Compress JPEG, PNG, and WebP images client-side via HTML5 Canvas.
 - [Image Resizer & Dimensions Scaler](https://www.twistertools.com/tools/image-tools/image-resizer): Scale pixel dimensions and resize images with aspect ratio locking.

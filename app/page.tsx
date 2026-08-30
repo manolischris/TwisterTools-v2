@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { rankTools } from "@/lib/search-utils";
 import {
   Link as LinkIcon,
   Link2,
@@ -129,7 +130,8 @@ import {
   Gauge,
   Wind,
   Volume2,
-  Plane
+  Plane,
+  Eraser
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -261,7 +263,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Gauge,
   Wind,
   Volume2,
-  Plane
+  Plane,
+  Eraser
 };
 
 const CATEGORIES = [
@@ -368,16 +371,10 @@ export default function HomePage() {
     });
   }, [selectedCategory]);
 
-  // Autocomplete live search across ALL registry tools
+  // Autocomplete live search across ALL registry tools (weighted ranking)
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
-    const query = searchQuery.toLowerCase().trim();
-    return ALL_TOOLS_REGISTRY.filter(
-      (tool) =>
-        tool.title.toLowerCase().includes(query) ||
-        tool.description.toLowerCase().includes(query) ||
-        tool.category.toLowerCase().includes(query)
-    ).slice(0, 6);
+    return rankTools(ALL_TOOLS_REGISTRY, searchQuery).slice(0, 6);
   }, [searchQuery]);
 
   const displayedTools = useMemo(() => {
