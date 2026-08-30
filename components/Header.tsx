@@ -257,16 +257,7 @@ export default function Header() {
     return () => document.removeEventListener("keydown", handleEsc);
   }, [closeDesktopSearch]);
 
-  // ── Navigate to a search result ──
-  const navigateToResult = useCallback(
-    (href: string) => {
-      setSearchQuery("");
-      setIsSearchOpen(false);
-      setIsMobileSearchOpen(false);
-      router.push(href);
-    },
-    [router]
-  );
+
 
   /* ── Shared results dropdown ── */
   const renderResultsDropdown = (position: "desktop" | "mobile") => {
@@ -293,9 +284,11 @@ export default function Header() {
                     e.preventDefault();
                   }}
                   onClick={() => {
-                    setSearchQuery("");
-                    setIsSearchOpen(false);
-                    setIsMobileSearchOpen(false);
+                    setTimeout(() => {
+                      setSearchQuery("");
+                      setIsSearchOpen(false);
+                      setIsMobileSearchOpen(false);
+                    }, 150);
                   }}
                   className="w-full flex items-center gap-3 p-2.5 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-800/60 transition-colors text-left group"
                 >
