@@ -208,6 +208,12 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - Text Anonymizer & PII Redactor: Client-side tool to redact emails, SSNs, credit cards, IPs, and API secrets before LLM ingestion (/tools/text-tools/text-pii-redactor)
 - [Title Case Converter for Capitalization Standards](/tools/text-tools/title-case-converter): Capitalize headlines and references to APA, Chicago, MLA, AP, and NYT style standards.
 - [Invisible Whitespace & Zero-Width Space Cleaner](https://twistertools.com/tools/text-tools/zero-width-space-cleaner): Detect, visualize, and strip hidden Unicode characters, zero-width spaces, BOM markers, and BiDi overrides.
+- [Text Column Extractor](/tools/text-tools/text-column-extractor): Parse, isolate, reorder, and convert delimited text columns, CSV, TSV, and server logs into structured JSON, SQL, or clean CSV.
+- [Line Number Adder](/tools/text-tools/line-number-adder): Prepend customizable line numbers, zero-padding, and delimiters to text and source code.
+* [Plain Text to Single-Line Minifier](https://twistertools.com/tools/text-tools/text-single-line-converter): Flatten and minify multi-line text into clean single-line strings with custom delimiters and quotation wrapping.
+- Subscript & Superscript Unicode Formatter (/tools/text-tools/subscript-superscript-generator): Convert text, mathematical formulas, and chemical equations into universal Unicode subscript and superscript symbols.
+- [Text Syllable Counter & Lexical Density Analyzer](https://twistertools.com/tools/text-tools/syllable-counter): Real-time syllable counter, lexical density scanner, phonetic inspector, and readability grade estimator.
+- Readability Score Calculator: Compute Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, and ARI reading scores.
 ### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
 - [Image Compressor & Quality Optimizer](https://www.twistertools.com/tools/image-tools/image-compressor): Compress JPEG, PNG, and WebP images client-side via HTML5 Canvas.
 - [Image Resizer & Dimensions Scaler](https://www.twistertools.com/tools/image-tools/image-resizer): Scale pixel dimensions and resize images with aspect ratio locking.

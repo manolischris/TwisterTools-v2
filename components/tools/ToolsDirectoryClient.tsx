@@ -128,7 +128,8 @@ import {
   Wind,
   Volume2,
   Plane,
-  Eraser
+  Eraser,
+  Baseline
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -243,6 +244,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Shapes,
   Layout,
   LayoutGrid,
+  Baseline,
   Triangle,
   Table,
   Bot,

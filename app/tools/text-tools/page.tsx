@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace, ArrowRightLeft, Key, Radio, Zap, Strikethrough, Table, Terminal, ShieldCheck, Eraser } from "lucide-react";
+import { FileText, Type, RefreshCw, Layers, HelpCircle, AlignLeft, Replace, ArrowRightLeft, Key, Radio, Zap, Strikethrough, Table, Terminal, ShieldCheck, Eraser, Columns, ListOrdered, Baseline, Scale, Gauge } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
 import path from "path";
@@ -268,6 +268,56 @@ export default function TextToolsCategoryPage() {
           title: "Invisible Whitespace & Zero-Width Space Cleaner",
           description: "Detect, visualize, and strip hidden Unicode characters, zero-width spaces, BOM markers, and BiDi overrides in real time.",
           iconName: "Eraser"
+        };
+      }
+      if (tool.id === "text-column-extractor") {
+        return {
+          ...tool,
+          title: "Text Column Extraction & CSV Delimiter Splitter",
+          description: "Extract specific column indexes, split custom CSV/TSV delimiters, and convert tabular data to JSON, SQL, or clean CSV.",
+          iconName: "Columns"
+        };
+      }
+      if (tool.id === "line-number-adder") {
+        return {
+          ...tool,
+          title: "Line Number Adder & Source Code Formatter",
+          description: "Add customizable line numbers, zero-padding, custom delimiters, hex offsets, and formatting prefixes to source code and text listings.",
+          iconName: "ListOrdered"
+        };
+      }
+      if (tool.id === "text-single-line-converter") {
+        return {
+          ...tool,
+          title: "Plain Text to Single-Line Minifier",
+          description: "Condense multi-line text, SQL queries, and code blocks into compact single-line strings with custom delimiters.",
+          iconName: "AlignLeft"
+        };
+      }
+      if (tool.id === "subscript-superscript-generator") {
+        return {
+          ...tool,
+          title: "Subscript & Superscript Unicode Formatter",
+          description: "Convert regular text, mathematical exponents, and chemical formulas into universal Unicode sub and superscripts.",
+          iconName: "Baseline"
+        };
+      }
+      if (tool.id === "syllable-counter") {
+        return {
+          ...tool,
+          title: "Text Syllable Counter & Lexical Density Analyzer",
+          description:
+            "Count syllables, analyze lexical density, inspect phonetic word lengths, and calculate readability scores.",
+          iconName: "Scale"
+        };
+      }
+      if (tool.id === "readability-score-calculator") {
+        return {
+          ...tool,
+          title: "Readability Score Calculator",
+          description:
+            "Calculate Flesch Reading Ease, Flesch-Kincaid Grade Level, Gunning Fog, and readability indices in real time.",
+          iconName: "Gauge"
         };
       }
       return tool;

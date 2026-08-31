@@ -124,7 +124,8 @@ import {
   Wind,
   Volume2,
   Plane,
-  Eraser
+  Eraser,
+  Baseline
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -238,6 +239,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Shapes,
   Layout,
   LayoutGrid,
+  Baseline,
   Triangle,
   Table,
   Bot,

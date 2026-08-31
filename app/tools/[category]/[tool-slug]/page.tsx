@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -123,6 +123,10 @@ const HabitStreakCalculator = dynamic(() => import("@/components/tools/HabitStre
 const GraduationDateCalculator = dynamic(() => import("@/components/tools/GraduationDateCalculator"));
 const MarkdownTableGenerator = dynamic(() => import("@/components/tools/MarkdownTableGenerator"));
 const ZeroWidthSpaceCleaner = dynamic(() => import("@/components/tools/ZeroWidthSpaceCleaner"));
+const TextColumnExtractor = dynamic(() => import("@/components/tools/TextColumnExtractor"));
+const LineNumberAdder = dynamic(() => import("@/components/tools/LineNumberAdder"));
+const SubscriptSuperscriptGenerator = dynamic(() => import("@/components/tools/SubscriptSuperscriptGenerator"));
+const ReadabilityScoreCalculator = dynamic(() => import("@/components/tools/ReadabilityScoreCalculator"));
 
 
 
@@ -254,6 +258,10 @@ const COMPLETED_TOOLS = [
   "graduation-date-calculator",
   "markdown-table-generator",
   "zero-width-space-cleaner",
+  "text-column-extractor",
+  "line-number-adder",
+  "subscript-superscript-generator",
+  "readability-score-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -553,6 +561,10 @@ export async function generateMetadata({
   }
   if (category === "text-tools" && toolSlug === "lorem-ipsum-generator") {
     title = "Lorem Ipsum Generator - Free Placeholder Text Utility";
+  }
+  if (category === "text-tools" && toolSlug === "readability-score-calculator") {
+    title = "Readability Index Calculator (Flesch-Kincaid & Gunning Fog)";
+    description = "Calculate Flesch Reading Ease, Flesch-Kincaid Grade Level, Gunning Fog Index, Coleman-Liau, SMOG, and ARI scores instantly with client-side text analytics.";
   }
 
   return {
@@ -1139,7 +1151,7 @@ export default async function ToolPage({
                   <Database className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "regex-tester" ? (
                   <SearchCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "diff-checker" ? (
+                ) : (toolSlug === "diff-checker" || toolSlug === "text-column-extractor") ? (
                   <Columns className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "markdown-to-html" ? (
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1275,6 +1287,12 @@ export default async function ToolPage({
                   <GraduationCap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "zero-width-space-cleaner" ? (
                   <Eraser className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "line-number-adder" ? (
+                  <ListOrdered className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "subscript-superscript-generator" ? (
+                  <Baseline className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "readability-score-calculator" ? (
+                  <Gauge className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (toolSlug === "solar-panel-calculator" || toolSlug === "solar-noon-angle-calculator" || toolSlug === "julian-date-converter") ? (
                   <Sun className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "triangle-geometry-calculator" ? (
@@ -1519,6 +1537,14 @@ export default async function ToolPage({
             <MarkdownTableGenerator />
           ) : category === "text-tools" && toolSlug === "zero-width-space-cleaner" ? (
             <ZeroWidthSpaceCleaner />
+          ) : category === "text-tools" && toolSlug === "text-column-extractor" ? (
+            <TextColumnExtractor />
+          ) : category === "text-tools" && toolSlug === "line-number-adder" ? (
+            <LineNumberAdder />
+          ) : category === "text-tools" && toolSlug === "subscript-superscript-generator" ? (
+            <SubscriptSuperscriptGenerator />
+          ) : category === "text-tools" && toolSlug === "readability-score-calculator" ? (
+            <ReadabilityScoreCalculator />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
             <DiceRoller />
           ) : category === "random-tools" && toolSlug === "random-address-generator" ? (

@@ -131,7 +131,8 @@ import {
   Wind,
   Volume2,
   Plane,
-  Eraser
+  Eraser,
+  Baseline
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -204,6 +205,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   CalendarClock,
   Type,
   ListStart,
+  Baseline,
   Binary,
   Code,
   FileJson,

@@ -2316,5 +2316,59 @@
     "href": "/tools/text-tools/zero-width-space-cleaner",
     "iconName": "Eraser",
     "isFeatured": false
+  },
+  {
+    "id": "text-column-extractor",
+    "title": "Text Column Extraction & CSV Delimiter Splitter",
+    "description": "Extract specific column indexes, split custom CSV/TSV delimiters, and convert tabular data to JSON, SQL, or clean CSV.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/text-column-extractor",
+    "iconName": "Columns",
+    "isFeatured": false
+  },
+  {
+    "id": "line-number-adder",
+    "title": "Line Number Adder & Source Code Formatter",
+    "description": "Add customizable line numbers, zero-padding, custom delimiters, hex offsets, and formatting prefixes to source code and text listings.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/line-number-adder",
+    "iconName": "ListOrdered",
+    "isFeatured": false
+  },
+  {
+    "id": "text-single-line-converter",
+    "title": "Plain Text to Single-Line Minifier",
+    "description": "Condense multi-line text, SQL queries, and code blocks into compact single-line strings with custom delimiters.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/text-single-line-converter",
+    "iconName": "AlignLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "subscript-superscript-generator",
+    "title": "Subscript & Superscript Unicode Formatter",
+    "description": "Convert regular text, mathematical exponents, and chemical formulas into universal Unicode sub and superscripts.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/subscript-superscript-generator",
+    "iconName": "Baseline",
+    "isFeatured": false
+  },
+  {
+    "id": "syllable-counter",
+    "title": "Text Syllable Counter & Lexical Density Analyzer",
+    "description": "Calculate exact syllable counts, lexical density percentages, and readability grades with interactive phonetic breakdowns.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/syllable-counter",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "readability-score-calculator",
+    "title": "Readability Score Calculator",
+    "description": "Calculate Flesch Reading Ease, Flesch-Kincaid Grade Level, Gunning Fog, and readability indices in real time.",
+    "category": "text-tools",
+    "href": "/tools/text-tools/readability-score-calculator",
+    "iconName": "Gauge",
+    "isFeatured": false
   }
 ]

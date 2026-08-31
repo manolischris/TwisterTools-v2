@@ -109,7 +109,8 @@ import {
   Wind,
   Volume2,
   Plane,
-  Eraser
+  Eraser,
+  Baseline
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -122,6 +123,7 @@ const ICON_MAP: Record<string, any> = {
   ArrowRightLeft,
   ArrowUpDown,
   Baby,
+  Baseline,
   Binary,
   Building,
   Calculator,

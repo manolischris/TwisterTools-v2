@@ -107,7 +107,8 @@ import {
   Gauge,
   Plane,
   Eraser,
-  Table
+  Table,
+  Baseline
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -128,6 +129,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   ArrowRightLeft,
   ArrowUpDown,
   Baby,
+  Baseline,
   Binary,
   Building,
   Calculator,
