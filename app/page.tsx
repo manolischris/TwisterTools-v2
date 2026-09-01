@@ -132,7 +132,9 @@ import {
   Volume2,
   Plane,
   Eraser,
-  Baseline
+  Baseline,
+  Gift,
+  Trophy
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -176,6 +178,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   FileText,
   Globe,
   Globe2,
+  Gift,
+  Trophy,
   Calculator,
   Terminal,
   FileCheck2,

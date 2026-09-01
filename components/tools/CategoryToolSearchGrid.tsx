@@ -125,7 +125,9 @@ import {
   Volume2,
   Plane,
   Eraser,
-  Baseline
+  Baseline,
+  Gift,
+  Trophy
 } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -168,6 +170,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   RefreshCw,
   Globe,
   Globe2,
+  Gift,
+  Trophy,
   Database,
   Code,
   Code2,

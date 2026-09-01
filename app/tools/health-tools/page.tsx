@@ -323,7 +323,7 @@ export default function HealthToolsCategoryPage() {
               <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white leading-tight">
                 {healthMetadata.name}
               </h1>
-              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-3xl leading-relaxed">
+              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-full leading-relaxed">
                 {healthMetadata.description}
               </p>
             </div>

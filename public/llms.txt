@@ -273,6 +273,11 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Random Color & Palette Generator](https://www.twistertools.com/tools/random-tools/random-color-generator): Generate harmonious palettes with HEX/RGB/HSL values and WCAG contrast checks.
 - [Random Address & Location Picker](https://www.twistertools.com/tools/random-tools/random-address-generator): Generate synthetic test street addresses and GPS coordinates with interactive map previews.
 - [Random Country & Flag Quiz Generator](https://www.twistertools.com/tools/random-tools/random-country-picker): Explore 196 sovereign nations with high-res vector flags, capital cities, and trivia.
+- [Secret Santa Generator](/tools/random-tools/secret-santa-generator): Match gift exchange participants with custom exclusion rules and private assignments.
+- [Random List Randomizer & Shuffler](/tools/random-tools/list-randomizer-shuffler): Cryptographically secure Fisher-Yates list randomizer and array shuffler with custom delimiters, group splitting, and ranking.
+- [Random Letter & Alphabet Picker](/tools/random-tools/random-letter-picker): Pick random characters across English, Greek, Cyrillic, and custom sets with cryptographic entropy.
+- [Tournament Bracket & Seeding Generator](/tools/random-tools/tournament-bracket-generator): Interactive tournament bracket generator supporting power-of-2 matchmaking, crypto shuffling, ranked seeding, and CSV exports.
+- [Truth or Dare Card Prompt Generator](/tools/random-tools/truth-or-dare-generator): Interactive card prompt generator with 5 curated game modes, custom deck injection, and player score tracking.
 ## Platform Pages
 
 - [Categories Directory](https://www.twistertools.com/categories): Complete directory of all 13 tool categories on TwisterTools.

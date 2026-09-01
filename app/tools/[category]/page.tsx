@@ -108,7 +108,8 @@ import {
   Plane,
   Eraser,
   Table,
-  Baseline
+  Baseline,
+  Trophy
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -191,6 +192,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Timer,
   TrendingUp,
   Type,
+  Trophy,
   Unlock,
   Wine,
   Sparkles,
@@ -1070,7 +1072,7 @@ export default async function CategoryDirectoryPage({
               <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white leading-tight">
                 {categoryData.name}
               </h1>
-              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-3xl leading-relaxed">
+              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-full leading-relaxed">
                 {categoryData.description}
               </p>
             </div>

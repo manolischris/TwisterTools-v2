@@ -110,7 +110,9 @@ import {
   Volume2,
   Plane,
   Eraser,
-  Baseline
+  Baseline,
+  Gift,
+  Trophy
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -155,6 +157,8 @@ const ICON_MAP: Record<string, any> = {
   FolderArchive,
   Globe,
   Globe2,
+  Gift,
+  Trophy,
   GraduationCap,
   Grid,
   Hash,

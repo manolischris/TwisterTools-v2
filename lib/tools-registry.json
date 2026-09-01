@@ -2370,5 +2370,50 @@
     "href": "/tools/text-tools/readability-score-calculator",
     "iconName": "Gauge",
     "isFeatured": false
+  },
+  {
+    "id": "secret-santa-generator",
+    "title": "Secret Santa & Holiday Gift Exchange Matcher",
+    "description": "Generate fair, collision-free Secret Santa pairings with custom exclusions, budget limits, wishlists, and private reveal cards.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/secret-santa-generator",
+    "iconName": "Gift",
+    "isFeatured": false
+  },
+  {
+    "id": "list-randomizer-shuffler",
+    "title": "Random List Randomizer & Array Shuffler",
+    "description": "Cryptographically secure item shuffler, list randomizer, and array order generator utilizing modern Fisher-Yates algorithms and Web Crypto API hardware entropy.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/list-randomizer-shuffler",
+    "iconName": "Shuffle",
+    "isFeatured": false
+  },
+  {
+    "id": "random-letter-picker",
+    "title": "Random Letter & Alphabet Picker",
+    "description": "Generate unbiased random letters from multiple international alphabets or custom character pools with replacement controls.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/random-letter-picker",
+    "iconName": "Type",
+    "isFeatured": false
+  },
+  {
+    "id": "tournament-bracket-generator",
+    "title": "Tournament Bracket & Seeding Generator",
+    "description": "Generate customizable tournament brackets with cryptographic random shuffling, ranked seeding, automatic bye calculations, and interactive match score tracking.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/tournament-bracket-generator",
+    "iconName": "Trophy",
+    "isFeatured": true
+  },
+  {
+    "id": "truth-or-dare-generator",
+    "title": "Truth or Dare Card Prompt Generator",
+    "description": "Interactive, browser-native Truth or Dare card generator with curated game modes, custom deck creator, and player turn tracker.",
+    "category": "random-tools",
+    "href": "/tools/random-tools/truth-or-dare-generator",
+    "iconName": "Flame",
+    "isFeatured": false
   }
 ]

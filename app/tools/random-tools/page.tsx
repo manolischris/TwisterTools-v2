@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Dices, ShieldCheck, Layers, Cpu, HelpCircle, MapPin, Globe2 } from "lucide-react";
+import { Dices, ShieldCheck, Layers, Cpu, HelpCircle, MapPin, Globe2, Gift, Shuffle, Type } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -179,6 +179,46 @@ export default function RandomToolsCategoryPage() {
           iconName: "Globe2"
         };
       }
+      if (tool.id === "secret-santa-generator") {
+        return {
+          ...tool,
+          title: "Secret Santa & Holiday Gift Exchange Matcher",
+          description: "Generate fair, collision-free Secret Santa pairings with custom exclusions, budget limits, wishlists, and private reveal cards.",
+          iconName: "Gift"
+        };
+      }
+      if (tool.id === "list-randomizer-shuffler") {
+        return {
+          ...tool,
+          title: "Random List Randomizer & Array Shuffler",
+          description: "Shuffle array items and randomize lists with cryptographic Fisher-Yates entropy, grouping, and duplicate removal.",
+          iconName: "Shuffle"
+        };
+      }
+      if (tool.id === "random-letter-picker") {
+        return {
+          ...tool,
+          title: "Random Letter & Alphabet Picker",
+          description: "Generate unbiased random letters from multiple international alphabets or custom character pools.",
+          iconName: "Type"
+        };
+      }
+      if (tool.id === "tournament-bracket-generator") {
+        return {
+          ...tool,
+          title: "Tournament Bracket Generator",
+          description: "Generate custom tournament brackets with seeded pairings, crypto random shuffling, automatic byes, and live score tracking.",
+          iconName: "Trophy"
+        };
+      }
+      if (tool.id === "truth-or-dare-generator") {
+        return {
+          ...tool,
+          title: "Truth or Dare Card Prompt Generator",
+          description: "Interactive, browser-native Truth or Dare card generator with curated game modes, custom deck creator, and player turn tracker.",
+          iconName: "Flame"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {
@@ -234,7 +274,7 @@ export default function RandomToolsCategoryPage() {
               <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white leading-tight">
                 {randomMetadata.name}
               </h1>
-              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-3xl leading-relaxed">
+              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-full leading-relaxed">
                 {randomMetadata.description}
               </p>
             </div>

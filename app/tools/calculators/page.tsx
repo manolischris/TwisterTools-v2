@@ -378,7 +378,7 @@ export default function CalculatorsCategoryPage() {
               <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white leading-tight">
                 {calculatorMetadata.name}
               </h1>
-              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-3xl leading-relaxed">
+              <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-full leading-relaxed">
                 {calculatorMetadata.description}
               </p>
             </div>

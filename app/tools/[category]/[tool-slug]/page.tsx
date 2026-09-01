@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -127,6 +127,8 @@ const TextColumnExtractor = dynamic(() => import("@/components/tools/TextColumnE
 const LineNumberAdder = dynamic(() => import("@/components/tools/LineNumberAdder"));
 const SubscriptSuperscriptGenerator = dynamic(() => import("@/components/tools/SubscriptSuperscriptGenerator"));
 const ReadabilityScoreCalculator = dynamic(() => import("@/components/tools/ReadabilityScoreCalculator"));
+const ListRandomizerShuffler = dynamic(() => import("@/components/tools/ListRandomizerShuffler"));
+const RandomLetterPicker = dynamic(() => import("@/components/tools/RandomLetterPicker"));
 
 
 
@@ -262,6 +264,8 @@ const COMPLETED_TOOLS = [
   "line-number-adder",
   "subscript-superscript-generator",
   "readability-score-calculator",
+  "list-randomizer-shuffler",
+  "random-letter-picker",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -565,6 +569,16 @@ export async function generateMetadata({
   if (category === "text-tools" && toolSlug === "readability-score-calculator") {
     title = "Readability Index Calculator (Flesch-Kincaid & Gunning Fog)";
     description = "Calculate Flesch Reading Ease, Flesch-Kincaid Grade Level, Gunning Fog Index, Coleman-Liau, SMOG, and ARI scores instantly with client-side text analytics.";
+  }
+
+  if (category === "random-tools" && toolSlug === "list-randomizer-shuffler") {
+    title = "Random List Randomizer & Array Shuffler";
+    description = "Shuffle lists, randomize arrays, and pick random items with cryptographic Fisher-Yates randomness.";
+  }
+
+  if (category === "random-tools" && toolSlug === "random-letter-picker") {
+    title = "Random Letter & Alphabet Picker (A-Z)";
+    description = "Pick random letters from English (A-Z), Greek, Cyrillic, and custom alphabets. Includes replacement mode, vowel/consonant filters, and CSV export.";
   }
 
   return {
@@ -1253,6 +1267,10 @@ export default async function ToolPage({
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "uuid-generator" ? (
                   <Fingerprint className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "list-randomizer-shuffler" ? (
+                  <Shuffle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "random-letter-picker" ? (
+                  <Type className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "dice-roller" ? (
                   <Dices className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "color-picker-contrast-checker" ? (
@@ -1545,6 +1563,10 @@ export default async function ToolPage({
             <SubscriptSuperscriptGenerator />
           ) : category === "text-tools" && toolSlug === "readability-score-calculator" ? (
             <ReadabilityScoreCalculator />
+          ) : category === "random-tools" && toolSlug === "list-randomizer-shuffler" ? (
+            <ListRandomizerShuffler />
+          ) : category === "random-tools" && toolSlug === "random-letter-picker" ? (
+            <RandomLetterPicker />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
             <DiceRoller />
           ) : category === "random-tools" && toolSlug === "random-address-generator" ? (
