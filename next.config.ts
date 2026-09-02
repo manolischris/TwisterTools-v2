@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 import urlMap from "./url-map.json";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
   images: {
     remotePatterns: [
       {

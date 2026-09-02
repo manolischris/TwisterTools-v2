@@ -3,8 +3,7 @@
 import React, { useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { rankTools } from "@/lib/search-utils";
-import {
-  Link as LinkIcon,
+import { Link as LinkIcon,
   Link2,
   Search,
   X,
@@ -131,8 +130,7 @@ import {
   Eraser,
   Baseline,
   Gift,
-  Trophy
-} from "lucide-react";
+  Trophy, PenTool, Smile, Gamepad2 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
    Types
@@ -151,6 +149,9 @@ interface RegistryTool {
    Icon Map
  ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Gamepad2,
+  Smile,
+  PenTool,
   Link: LinkIcon,
   Link2,
   Activity,

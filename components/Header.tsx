@@ -128,6 +128,9 @@ import {
   Shapes,
   Trophy,
   ChevronRight,
+  Smile,
+  Gamepad2,
+  MapPin,
 } from "lucide-react";
 import toolsRegistryData from "@/lib/tools-registry.json";
 import { rankTools, type SearchableTool } from "@/lib/search-utils";
@@ -154,6 +157,9 @@ const categories = [
 ];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  MapPin,
+  Gamepad2,
+  Smile,
   Link: LinkIcon, Link2, Activity, Flame, Droplets, PieChart, Wine,
   Fingerprint, Building, Heart, Baby, Calendar, CalendarDays, Timer, Grid,
   Grid3X3, GraduationCap, TrendingUp, Code2, Sparkles, ImageIcon, RefreshCw,

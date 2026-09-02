@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -114,7 +114,7 @@ const AirFryerConverter = dynamic(() => import("../../../../components/tools/Air
 const SourdoughHydrationCalculator = dynamic(() => import("../../../../components/tools/SourdoughHydrationCalculator"));
 const TileFlooringCalculator = dynamic(() => import("../../../../components/tools/TileFlooringCalculator"));
 const WallpaperCalculator = dynamic(() => import("../../../../components/tools/WallpaperCalculator"));
-import ConcreteVolumeCalculator from "@/components/tools/ConcreteVolumeCalculator";
+const ConcreteVolumeCalculator = dynamic(() => import("@/components/tools/ConcreteVolumeCalculator"));
 const PlantWateringCalculator = dynamic(() => import("@/components/tools/PlantWateringCalculator"));
 const SolarPanelCalculator = dynamic(() => import("@/components/tools/SolarPanelCalculator"));
 const SolarNoonCalculator = dynamic(() => import("@/components/tools/SolarNoonCalculator"));
@@ -129,6 +129,10 @@ const SubscriptSuperscriptGenerator = dynamic(() => import("@/components/tools/S
 const ReadabilityScoreCalculator = dynamic(() => import("@/components/tools/ReadabilityScoreCalculator"));
 const ListRandomizerShuffler = dynamic(() => import("@/components/tools/ListRandomizerShuffler"));
 const RandomLetterPicker = dynamic(() => import("@/components/tools/RandomLetterPicker"));
+const WouldYouRatherGenerator = dynamic(() => import("@/components/tools/WouldYouRatherGenerator"));
+const WritingPromptGenerator = dynamic(() => import("@/components/tools/WritingPromptGenerator"));
+const LotteryNumberGenerator = dynamic(() => import("@/components/tools/LotteryNumberGenerator"));
+import RandomEmojiGenerator from "@/components/tools/RandomEmojiGenerator";
 
 
 
@@ -266,6 +270,10 @@ const COMPLETED_TOOLS = [
   "readability-score-calculator",
   "list-randomizer-shuffler",
   "random-letter-picker",
+  "would-you-rather-generator",
+  "writing-prompt-generator",
+  "lottery-number-generator",
+  "random-emoji-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -581,6 +589,26 @@ export async function generateMetadata({
     description = "Pick random letters from English (A-Z), Greek, Cyrillic, and custom alphabets. Includes replacement mode, vowel/consonant filters, and CSV export.";
   }
 
+  if (category === "random-tools" && toolSlug === "would-you-rather-generator") {
+    title = "Would You Rather Dilemma & Debate Card Generator";
+    description = "Explore hundreds of curated Would You Rather dilemmas with live community vote ratios, 15-second speed debate timers, and custom dilemma builders across 8 themes.";
+  }
+
+  if (category === "random-tools" && toolSlug === "writing-prompt-generator") {
+    title = "Random Writing Prompt & Story Hook Generator";
+    description = "Generate narrative writing prompts, deep character dilemmas, opening line hooks, and unexpected story twists across all literary genres.";
+  }
+
+  if (category === "random-tools" && toolSlug === "lottery-number-generator") {
+    title = "Lottery Number Picker & Multi-Ball Draw Simulator";
+    description = "Cryptographically secure lottery quick pick generator and multi-ball draw simulator for US Powerball, Mega Millions, EuroMillions, and custom games.";
+  }
+
+  if (category === "random-tools" && toolSlug === "random-emoji-generator") {
+    title = "Random Emoji & Emoticon Combination Generator";
+    description = "Generate cryptographically randomized emoji combinations, aesthetic Kaomoji emoticons, and custom Unicode character sets with advanced export formatting.";
+  }
+
   return {
     title,
     description,
@@ -589,7 +617,9 @@ export async function generateMetadata({
       title:
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
           (category === "text-tools" && toolSlug === "lorem-ipsum-generator") ||
-          (category === "text-tools" && toolSlug === "zero-width-space-cleaner")
+          (category === "text-tools" && toolSlug === "zero-width-space-cleaner") ||
+          (category === "random-tools" && toolSlug === "would-you-rather-generator") ||
+          (category === "random-tools" && toolSlug === "writing-prompt-generator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -610,7 +640,9 @@ export async function generateMetadata({
       title:
         (category === "pdf-tools" && toolSlug === "text-to-pdf") ||
           (category === "text-tools" && toolSlug === "lorem-ipsum-generator") ||
-          (category === "text-tools" && toolSlug === "zero-width-space-cleaner")
+          (category === "text-tools" && toolSlug === "zero-width-space-cleaner") ||
+          (category === "random-tools" && toolSlug === "would-you-rather-generator") ||
+          (category === "random-tools" && toolSlug === "writing-prompt-generator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -776,6 +808,21 @@ export default async function ToolPage({
   if (category === "date-tools" && toolSlug === "graduation-date-calculator") {
     tool.name = "School Semester & College Graduation Date Estimator";
     tool.description = "Calculate your college graduation date, semester roadmap, remaining credits, and degree completion timeline across semester, quarter, and trimester academic systems.";
+  }
+
+  if (category === "random-tools" && toolSlug === "writing-prompt-generator") {
+    tool.name = "Random Writing Prompt & Story Hook Generator";
+    tool.description = "Generate narrative writing prompts, deep character dilemmas, opening line hooks, and unexpected story twists across all literary genres.";
+  }
+
+  if (category === "random-tools" && toolSlug === "lottery-number-generator") {
+    tool.name = "Lottery Number Picker & Multi-Ball Draw Simulator";
+    tool.description = "Cryptographically secure lottery quick pick generator and multi-ball draw simulator for US Powerball, Mega Millions, EuroMillions, and custom games.";
+  }
+
+  if (category === "random-tools" && toolSlug === "random-emoji-generator") {
+    tool.name = "Random Emoji & Emoticon Combination Generator";
+    tool.description = "Generate cryptographically randomized emoji combinations, aesthetic Kaomoji emoticons, and custom Unicode character sets with advanced export formatting.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -1267,8 +1314,12 @@ export default async function ToolPage({
                   <Calculator className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "uuid-generator" ? (
                   <Fingerprint className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "list-randomizer-shuffler" ? (
+                ) : (toolSlug === "list-randomizer-shuffler" || toolSlug === "would-you-rather-generator" || toolSlug === "lottery-number-generator") ? (
                   <Shuffle className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "writing-prompt-generator" ? (
+                  <PenTool className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "random-emoji-generator" ? (
+                  <Smile className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "random-letter-picker" ? (
                   <Type className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "dice-roller" ? (
@@ -1567,6 +1618,14 @@ export default async function ToolPage({
             <ListRandomizerShuffler />
           ) : category === "random-tools" && toolSlug === "random-letter-picker" ? (
             <RandomLetterPicker />
+          ) : category === "random-tools" && toolSlug === "would-you-rather-generator" ? (
+            <WouldYouRatherGenerator />
+          ) : category === "random-tools" && toolSlug === "writing-prompt-generator" ? (
+            <WritingPromptGenerator />
+          ) : category === "random-tools" && toolSlug === "lottery-number-generator" ? (
+            <LotteryNumberGenerator />
+          ) : category === "random-tools" && toolSlug === "random-emoji-generator" ? (
+            <RandomEmojiGenerator />
           ) : category === "random-tools" && toolSlug === "dice-roller" ? (
             <DiceRoller />
           ) : category === "random-tools" && toolSlug === "random-address-generator" ? (

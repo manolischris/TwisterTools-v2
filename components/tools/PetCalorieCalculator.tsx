@@ -315,7 +315,7 @@ Primary Diet Calorie Target (90%): ${calculation.mainDietCal} kcal/day
 Max Treat Allowance (10% Cap): ${calculation.treatAllowanceCal} kcal/day
 Daily Food Portions (@ ${foodCalorieDensity} kcal/unit): ${calculation.foodPortionTotal} units (${calculation.foodPortionPerMeal} units per meal × ${feedingsPerDay} meals)
 ----------------------------------------
-Calculated at twistertools.com/tools/calculators/pet-calorie-calculator`;
+Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
 
         navigator.clipboard.writeText(summaryText);
         setCopied(true);
@@ -361,7 +361,7 @@ Calculated at twistertools.com/tools/calculators/pet-calorie-calculator`;
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "Pet Daily Caloric Requirement (RER/MER) Calculator",
-        "url": "https://twistertools.com/tools/calculators/pet-calorie-calculator",
+        "url": "https://twistertools.com/tools/health-tools/pet-calorie-calculator",
         "description": "Calculate clinical Resting Energy Requirements (RER) and Daily Maintenance Energy Requirements (MER) for dogs and cats using WSAVA and AAHA veterinary standards.",
         "applicationCategory": "HealthApplication",
         "operatingSystem": "All",

@@ -3,8 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { rankTools } from "@/lib/search-utils";
-import {
-  Link as LinkIcon,
+import { Link as LinkIcon,
   Link2,
   Circle,
   Search,
@@ -127,8 +126,7 @@ import {
   Eraser,
   Baseline,
   Gift,
-  Trophy
-} from "lucide-react";
+  Trophy, PenTool, Smile, Gamepad2, MapPin } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
 interface RegistryTool {
@@ -149,6 +147,10 @@ interface CategoryToolSearchGridProps {
 
 // Icon mapping dictionary to resolve icon strings dynamically
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
+  MapPin,
+  Gamepad2,
+  Smile,
+  PenTool,
   Link: LinkIcon,
   Link2,
   Circle,

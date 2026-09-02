@@ -1,6 +1,5 @@
 import Link from "next/link";
-import {
-  Link as LinkIcon,
+import { Link as LinkIcon,
   Link2,
   Activity,
   ArrowLeftRight,
@@ -112,17 +111,13 @@ import {
   Eraser,
   Baseline,
   Gift,
-  Trophy
-} from "lucide-react";
+  Trophy, PenTool, Smile, Gamepad2 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
 // Map string icon names from registry to Lucide SVG components
 const ICON_MAP: Record<string, any> = {
-  Link: LinkIcon,
-  Link2,
-  Activity,
-  ArrowLeftRight,
-  ArrowRightLeft,
+  Gamepad2,
+  Smile,
   ArrowUpDown,
   Baby,
   Baseline,

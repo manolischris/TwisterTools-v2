@@ -241,7 +241,7 @@ export default function TournamentBracketGenerator() {
     };
 
     // Auto-generate on initial render or when participants/seeding change
-    useMemo(() => {
+    React.useEffect(() => {
         generateBracket();
     }, [seedingMethod, bracketSize, rawInput]);
 
@@ -623,7 +623,16 @@ export default function TournamentBracketGenerator() {
                         {/* Generate Shuffle CTA */}
                         <button
                             type="button"
-                            onClick={generateBracket}
+                            onClick={() => {
+                                const list = [...participants];
+                                const array = new Uint32Array(list.length);
+                                crypto.getRandomValues(array);
+                                for (let i = list.length - 1; i > 0; i--) {
+                                    const j = array[i] % (i + 1);
+                                    [list[i], list[j]] = [list[j], list[i]];
+                                }
+                                setRawInput(list.join("\n"));
+                            }}
                             className="w-full py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm transition shadow-sm flex items-center justify-center gap-2 cursor-pointer"
                         >
                             <Shuffle className="w-4 h-4" />
@@ -650,11 +659,10 @@ export default function TournamentBracketGenerator() {
 
                 {/* Right Panel: Interactive Tournament Bracket Canvas (7 Cols / Modal Fullscreen) */}
                 <div
-                    className={`${
-                        isFullScreen
-                            ? "fixed inset-4 z-50 bg-white border border-slate-300 rounded-2xl shadow-2xl flex flex-col justify-between overflow-hidden p-6"
-                            : "lg:col-span-7 bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 flex flex-col justify-between min-w-0 p-4 sm:p-6"
-                    }`}
+                    className={`${isFullScreen
+                        ? "fixed inset-4 z-50 bg-white border border-slate-300 rounded-2xl shadow-2xl flex flex-col justify-between overflow-hidden p-6"
+                        : "lg:col-span-7 bg-white border border-slate-200 rounded-2xl shadow-sm space-y-4 flex flex-col justify-between min-w-0 p-4 sm:p-6"
+                        }`}
                 >
                     <div className={`min-w-0 flex-1 flex flex-col ${isFullScreen ? "min-h-0 space-y-4" : "space-y-4"}`}>
                         <div className="flex flex-wrap items-center justify-between border-b border-slate-100 pb-3 gap-2">
@@ -691,9 +699,8 @@ export default function TournamentBracketGenerator() {
                         {/* Interactive Tournament Canvas with horizontal scroll */}
                         <div
                             ref={bracketContainerRef}
-                            className={`w-full overflow-x-auto pb-4 pt-2 select-none scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent ${
-                                isFullScreen ? "flex-1 overflow-y-auto min-h-[500px]" : "min-h-[480px]"
-                            }`}
+                            className={`w-full overflow-x-auto pb-4 pt-2 select-none scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent ${isFullScreen ? "flex-1 overflow-y-auto min-h-[500px]" : "min-h-[480px]"
+                                }`}
                         >
                             {participantCount < 2 ? (
                                 <div className="h-64 flex flex-col items-center justify-center text-center p-6 border border-dashed border-slate-200 rounded-xl">
@@ -702,7 +709,7 @@ export default function TournamentBracketGenerator() {
                                     <p className="text-xs text-slate-400 mt-1">Enter team names in the left workspace panel to generate your bracket tree.</p>
                                 </div>
                             ) : (
-                                <div className="flex flex-nowrap justify-center items-stretch gap-6 min-w-max w-full px-2 min-h-full py-2">
+                                <div className="flex flex-nowrap items-stretch gap-6 w-max m-auto px-0 min-h-full py-0">
                                     {Array.from({ length: totalRounds }, (_, roundIdx) => {
                                         const roundNum = roundIdx + 1;
                                         const matchesInRound = bracketSize / Math.pow(2, roundNum);
@@ -741,11 +748,10 @@ export default function TournamentBracketGenerator() {
                                                         return (
                                                             <div
                                                                 key={matchId}
-                                                                className={`rounded-xl border transition-all duration-200 shadow-xs relative overflow-hidden ${
-                                                                    isCompleted
-                                                                        ? "border-indigo-200 bg-indigo-50/20"
-                                                                        : "border-slate-200 bg-white"
-                                                                }`}
+                                                                className={`rounded-xl border transition-all duration-200 shadow-xs relative overflow-hidden ${isCompleted
+                                                                    ? "border-indigo-200 bg-indigo-50/20"
+                                                                    : "border-slate-200 bg-white"
+                                                                    }`}
                                                             >
                                                                 {/* Match Number Tag */}
                                                                 <div className="bg-slate-50 border-b border-slate-100 px-3 py-1 text-[10px] font-bold text-slate-400 flex items-center justify-between">
@@ -762,20 +768,18 @@ export default function TournamentBracketGenerator() {
                                                                     onClick={() =>
                                                                         match.team1 && !match.isBye && handlePickWinner(matchId, match.team1)
                                                                     }
-                                                                    className={`p-2.5 flex items-center justify-between gap-2 border-b border-slate-100 transition cursor-pointer ${
-                                                                        match.winner === match.team1 && match.team1
-                                                                            ? "bg-indigo-600 text-white font-bold"
-                                                                            : "hover:bg-slate-50 text-slate-800"
-                                                                    }`}
+                                                                    className={`p-2.5 flex items-center justify-between gap-2 border-b border-slate-100 transition cursor-pointer ${match.winner === match.team1 && match.team1
+                                                                        ? "bg-indigo-600 text-white font-bold"
+                                                                        : "hover:bg-slate-50 text-slate-800"
+                                                                        }`}
                                                                 >
                                                                     <div className="flex items-center gap-1.5 min-w-0 truncate">
                                                                         {match.team1Seed && (
                                                                             <span
-                                                                                className={`text-[10px] font-mono px-1 rounded ${
-                                                                                    match.winner === match.team1
-                                                                                        ? "bg-indigo-700 text-white"
-                                                                                        : "bg-slate-200 text-slate-600"
-                                                                                }`}
+                                                                                className={`text-[10px] font-mono px-1 rounded ${match.winner === match.team1
+                                                                                    ? "bg-indigo-700 text-white"
+                                                                                    : "bg-slate-200 text-slate-600"
+                                                                                    }`}
                                                                             >
                                                                                 #{match.team1Seed}
                                                                             </span>
@@ -794,11 +798,10 @@ export default function TournamentBracketGenerator() {
                                                                                 handleScoreChange(matchId, "team1Score", e.target.value)
                                                                             }
                                                                             placeholder="-"
-                                                                            className={`w-8 h-6 text-center text-xs font-bold rounded border outline-none ${
-                                                                                match.winner === match.team1
-                                                                                    ? "bg-indigo-700 text-white border-indigo-500 placeholder-indigo-300"
-                                                                                    : "bg-white text-slate-900 border-slate-200"
-                                                                            }`}
+                                                                            className={`w-8 h-6 text-center text-xs font-bold rounded border outline-none ${match.winner === match.team1
+                                                                                ? "bg-indigo-700 text-white border-indigo-500 placeholder-indigo-300"
+                                                                                : "bg-white text-slate-900 border-slate-200"
+                                                                                }`}
                                                                         />
                                                                     )}
                                                                 </div>
@@ -808,22 +811,20 @@ export default function TournamentBracketGenerator() {
                                                                     onClick={() =>
                                                                         match.team2 && !match.isBye && handlePickWinner(matchId, match.team2)
                                                                     }
-                                                                    className={`p-2.5 flex items-center justify-between gap-2 transition cursor-pointer ${
-                                                                        match.winner === match.team2 && match.team2
-                                                                            ? "bg-indigo-600 text-white font-bold"
-                                                                            : match.isBye
-                                                                                ? "bg-slate-50/50 text-slate-400 italic"
-                                                                                : "hover:bg-slate-50 text-slate-800"
-                                                                    }`}
+                                                                    className={`p-2.5 flex items-center justify-between gap-2 transition cursor-pointer ${match.winner === match.team2 && match.team2
+                                                                        ? "bg-indigo-600 text-white font-bold"
+                                                                        : match.isBye
+                                                                            ? "bg-slate-50/50 text-slate-400 italic"
+                                                                            : "hover:bg-slate-50 text-slate-800"
+                                                                        }`}
                                                                 >
                                                                     <div className="flex items-center gap-1.5 min-w-0 truncate">
                                                                         {match.team2Seed && (
                                                                             <span
-                                                                                className={`text-[10px] font-mono px-1 rounded ${
-                                                                                    match.winner === match.team2
-                                                                                        ? "bg-indigo-700 text-white"
-                                                                                        : "bg-slate-200 text-slate-600"
-                                                                                }`}
+                                                                                className={`text-[10px] font-mono px-1 rounded ${match.winner === match.team2
+                                                                                    ? "bg-indigo-700 text-white"
+                                                                                    : "bg-slate-200 text-slate-600"
+                                                                                    }`}
                                                                             >
                                                                                 #{match.team2Seed}
                                                                             </span>
@@ -842,11 +843,10 @@ export default function TournamentBracketGenerator() {
                                                                                 handleScoreChange(matchId, "team2Score", e.target.value)
                                                                             }
                                                                             placeholder="-"
-                                                                            className={`w-8 h-6 text-center text-xs font-bold rounded border outline-none ${
-                                                                                match.winner === match.team2
-                                                                                    ? "bg-indigo-700 text-white border-indigo-500 placeholder-indigo-300"
-                                                                                    : "bg-white text-slate-900 border-slate-200"
-                                                                            }`}
+                                                                            className={`w-8 h-6 text-center text-xs font-bold rounded border outline-none ${match.winner === match.team2
+                                                                                ? "bg-indigo-700 text-white border-indigo-500 placeholder-indigo-300"
+                                                                                : "bg-white text-slate-900 border-slate-200"
+                                                                                }`}
                                                                         />
                                                                     )}
                                                                 </div>

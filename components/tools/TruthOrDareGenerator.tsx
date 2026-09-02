@@ -55,60 +55,145 @@ interface HistoryItem {
 }
 
 const DEFAULT_PROMPTS: PromptItem[] = [
-    // Classic - Truth
+    // ==========================================
+    // CLASSIC MODE - TRUTH (10)
+    // ==========================================
     { id: "c-t-1", type: "truth", mode: "classic", intensity: "mild", text: "What is the most embarrassing fashion trend you proudly followed?", tags: ["nostalgia", "fun"] },
     { id: "c-t-2", type: "truth", mode: "classic", intensity: "mild", text: "Have you ever told a white lie to get out of a dinner or party invitation?", tags: ["honesty", "social"] },
-    { id: "c-t-3", type: "truth", mode: "classic", intensity: "medium", text: "What is one secret skill or hobby you have never shown anyone in this room?", tags: ["secrets", "talents"] },
-    { id: "c-t-4", type: "truth", mode: "classic", intensity: "medium", text: "What is the weirdest habit you indulge in only when you are completely alone at home?", tags: ["habits", "lifestyle"] },
-    { id: "c-t-5", type: "truth", mode: "classic", intensity: "extreme", text: "What is your biggest irrational fear that you know makes zero logical sense?", tags: ["fears", "deep"] },
+    { id: "c-t-3", type: "truth", mode: "classic", intensity: "mild", text: "What is your ultimate comfort food combination that everyone else finds bizarre?", tags: ["food", "habits"] },
+    { id: "c-t-4", type: "truth", mode: "classic", intensity: "mild", text: "What childhood cartoon or movie character did you genuinely wish was real?", tags: ["childhood", "memories"] },
+    { id: "c-t-5", type: "truth", mode: "classic", intensity: "medium", text: "What is one secret skill or hobby you have never shown anyone in this room?", tags: ["secrets", "talents"] },
+    { id: "c-t-6", type: "truth", mode: "classic", intensity: "medium", text: "What is the weirdest habit you indulge in only when you are completely alone at home?", tags: ["habits", "lifestyle"] },
+    { id: "c-t-7", type: "truth", mode: "classic", intensity: "medium", text: "What was the most awkward misinterpretation of a text message you ever had?", tags: ["texting", "awkward"] },
+    { id: "c-t-8", type: "truth", mode: "classic", intensity: "medium", text: "If your browser search history from age 14 went public, what would be the most cringe topic?", tags: ["cringe", "history"] },
+    { id: "c-t-9", type: "truth", mode: "classic", intensity: "extreme", text: "What is your biggest irrational fear that you know makes zero logical sense?", tags: ["fears", "deep"] },
+    { id: "c-t-10", type: "truth", mode: "classic", intensity: "extreme", text: "Have you ever accidentally damaged someone else's property and never admitted it was you?", tags: ["secrets", "confession"] },
 
-    // Classic - Dare
+    // ==========================================
+    // CLASSIC MODE - DARE (10)
+    // ==========================================
     { id: "c-d-1", type: "dare", mode: "classic", intensity: "mild", text: "Imitate your favorite celebrity or cartoon character for the next 45 seconds without breaking character.", tags: ["acting", "humor"] },
     { id: "c-d-2", type: "dare", mode: "classic", intensity: "mild", text: "Attempt to balance a spoon or small object on your nose for a full 30 seconds.", tags: ["physical", "silly"] },
-    { id: "c-d-3", type: "dare", mode: "classic", intensity: "medium", text: "Let the person to your right restyle your hair however they want for the next 3 rounds.", tags: ["appearance", "friends"] },
-    { id: "c-d-4", type: "dare", mode: "classic", intensity: "medium", text: "Speak entirely in rhymes or Shakespearean dialogue until your next turn arrives.", tags: ["speech", "creative"] },
-    { id: "c-d-5", type: "dare", mode: "classic", intensity: "extreme", text: "Do your absolute best 60-second stand-up comedy routine addressing the group right now.", tags: ["comedy", "bold"] },
+    { id: "c-d-3", type: "dare", mode: "classic", intensity: "mild", text: "Recite the entire alphabet backwards starting from Z as quickly as you can.", tags: ["brain", "speed"] },
+    { id: "c-d-4", type: "dare", mode: "classic", intensity: "mild", text: "Do your best robotic impression while delivering a serious weather report to the group.", tags: ["acting", "improv"] },
+    { id: "c-d-5", type: "dare", mode: "classic", intensity: "medium", text: "Let the person to your right restyle your hair however they want for the next 3 rounds.", tags: ["appearance", "friends"] },
+    { id: "c-d-6", type: "dare", mode: "classic", intensity: "medium", text: "Speak entirely in rhymes or Shakespearean dialogue until your next turn arrives.", tags: ["speech", "creative"] },
+    { id: "c-d-7", type: "dare", mode: "classic", intensity: "medium", text: "Do 15 clean push-ups or 20 air squats while counting out loud in an accent chosen by the group.", tags: ["fitness", "fun"] },
+    { id: "c-d-8", type: "dare", mode: "classic", intensity: "medium", text: "Let the person across from you draw a small decorative mustache or star on your cheek with a washable pen.", tags: ["silly", "face"] },
+    { id: "c-d-9", type: "dare", mode: "classic", intensity: "extreme", text: "Do your absolute best 60-second stand-up comedy routine addressing the group right now.", tags: ["comedy", "bold"] },
+    { id: "c-d-10", type: "dare", mode: "classic", intensity: "extreme", text: "Call a pizza shop or local bakery and sincerely ask if they sell freshly baked shoe laces.", tags: ["prank", "bold"] },
 
-    // Party - Truth
+    // ==========================================
+    // PARTY MODE - TRUTH (10)
+    // ==========================================
     { id: "p-t-1", type: "truth", mode: "party", intensity: "mild", text: "What song is your ultimate guilty pleasure that you blast with the windows down?", tags: ["music", "vibes"] },
-    { id: "p-t-2", type: "truth", mode: "party", intensity: "medium", text: "If you had to trade lives with someone in this room for 24 hours, who would it be and why?", tags: ["hypothetical", "friends"] },
-    { id: "p-t-3", type: "truth", mode: "party", intensity: "medium", text: "What was your absolute worst encounter on a first date or public outing?", tags: ["dating", "stories"] },
-    { id: "p-t-4", type: "truth", mode: "party", intensity: "extreme", text: "What is the wildest thing you have ever purchased impulsively online late at night?", tags: ["shopping", "regrets"] },
+    { id: "p-t-2", type: "truth", mode: "party", intensity: "mild", text: "What is the worst haircut or dye job you ever endured right before a major event?", tags: ["looks", "disaster"] },
+    { id: "p-t-3", type: "truth", mode: "party", intensity: "mild", text: "What is the longest streak you spent binge-watching a television series without leaving bed?", tags: ["binge", "tv"] },
+    { id: "p-t-4", type: "truth", mode: "party", intensity: "medium", text: "If you had to trade lives with someone in this room for 24 hours, who would it be and why?", tags: ["hypothetical", "friends"] },
+    { id: "p-t-5", type: "truth", mode: "party", intensity: "medium", text: "What was your absolute worst encounter on a first date or public outing?", tags: ["dating", "stories"] },
+    { id: "p-t-6", type: "truth", mode: "party", intensity: "medium", text: "Have you ever pretended to recognize an acquaintance whose name you completely forgot?", tags: ["awkward", "social"] },
+    { id: "p-t-7", type: "truth", mode: "party", intensity: "medium", text: "What is the silliest excuse you gave a boss or teacher to explain being late?", tags: ["excuses", "work"] },
+    { id: "p-t-8", type: "truth", mode: "party", intensity: "extreme", text: "What is the wildest thing you have ever purchased impulsively online late at night?", tags: ["shopping", "regrets"] },
+    { id: "p-t-9", type: "truth", mode: "party", intensity: "extreme", text: "What is one rumor you heard about yourself that turned out to be completely false?", tags: ["rumors", "drama"] },
+    { id: "p-t-10", type: "truth", mode: "party", intensity: "extreme", text: "Who in this room would survive the shortest amount of time in a zombie apocalypse?", tags: ["survival", "banter"] },
 
-    // Party - Dare
+    // ==========================================
+    // PARTY MODE - DARE (10)
+    // ==========================================
     { id: "p-d-1", type: "dare", mode: "party", intensity: "mild", text: "Show the last photo currently saved in your camera roll to everyone at the table.", tags: ["phone", "candid"] },
-    { id: "p-d-2", type: "dare", mode: "party", intensity: "medium", text: "Perform a dramatic slow-motion dance solo to whatever background sound is currently playing.", tags: ["dance", "silly"] },
-    { id: "p-d-3", type: "dare", mode: "party", intensity: "medium", text: "Put your playlist on shuffle and passionately lip-sync whatever song plays first.", tags: ["music", "karaoke"] },
-    { id: "p-d-4", type: "dare", mode: "party", intensity: "extreme", text: "Let the group compose a ridiculous one-sentence status update and post it to your favorite social platform.", tags: ["social", "cringe"] },
+    { id: "p-d-2", type: "dare", mode: "party", intensity: "mild", text: "Take a sip of a non-alcoholic concoction mixed together by the two players to your left.", tags: ["mixology", "dare"] },
+    { id: "p-d-3", type: "dare", mode: "party", intensity: "mild", text: "Deliver your best opera singing rendition of 'Happy Birthday' to whoever has the closest upcoming birthday.", tags: ["singing", "party"] },
+    { id: "p-d-4", type: "dare", mode: "party", intensity: "medium", text: "Perform a dramatic slow-motion dance solo to whatever background sound is currently playing.", tags: ["dance", "silly"] },
+    { id: "p-d-5", type: "dare", mode: "party", intensity: "medium", text: "Put your playlist on shuffle and passionately lip-sync whatever song plays first.", tags: ["music", "karaoke"] },
+    { id: "p-d-6", type: "dare", mode: "party", intensity: "medium", text: "Let the group compose a text message to your closest mutual friend saying only: 'The eagle has landed.'", tags: ["texting", "mischief"] },
+    { id: "p-d-7", type: "dare", mode: "party", intensity: "medium", text: "Attempt to moonwalk across the room while maintaining eye contact with a player of the group's choice.", tags: ["dance", "funny"] },
+    { id: "p-d-8", type: "dare", mode: "party", intensity: "extreme", text: "Let the group compose a ridiculous one-sentence status update and post it to your favorite social platform for 10 minutes.", tags: ["social", "cringe"] },
+    { id: "p-d-9", type: "dare", mode: "party", intensity: "extreme", text: "Eat a teaspoon of mustard, hot sauce, or straight lemon juice without making a single facial reaction.", tags: ["taste", "endurance"] },
+    { id: "p-d-10", type: "dare", mode: "party", intensity: "extreme", text: "Swap shoes with the player sitting directly opposite you for the next two rounds of the game.", tags: ["swap", "silly"] },
 
-    // Couples - Truth
+    // ==========================================
+    // COUPLES MODE - TRUTH (10)
+    // ==========================================
     { id: "cp-t-1", type: "truth", mode: "couples", intensity: "mild", text: "What was the very first thought that crossed your mind the moment you met your partner?", tags: ["romance", "memories"] },
-    { id: "cp-t-2", type: "truth", mode: "couples", intensity: "medium", text: "What tiny everyday quirk of your partner makes you smile when nobody else is watching?", tags: ["quirks", "sweet"] },
-    { id: "cp-t-3", type: "truth", mode: "couples", intensity: "extreme", text: "What is one dream vacation or adventure you have been dying to share together?", tags: ["travel", "future"] },
+    { id: "cp-t-2", type: "truth", mode: "couples", intensity: "mild", text: "What is your partner's signature meal or cooking specialty that you genuinely crave?", tags: ["food", "appreciation"] },
+    { id: "cp-t-3", type: "truth", mode: "couples", intensity: "mild", text: "Which movie or series always reminds you of the early days of your relationship?", tags: ["nostalgia", "media"] },
+    { id: "cp-t-4", type: "truth", mode: "couples", intensity: "medium", text: "What tiny everyday quirk of your partner makes you smile when nobody else is watching?", tags: ["quirks", "sweet"] },
+    { id: "cp-t-5", type: "truth", mode: "couples", intensity: "medium", text: "What is one outfit or style your partner wears that you find completely irresistible?", tags: ["style", "attraction"] },
+    { id: "cp-t-6", type: "truth", mode: "couples", intensity: "medium", text: "When did you first realize you were developing serious, lasting feelings for your partner?", tags: ["love", "milestones"] },
+    { id: "cp-t-7", type: "truth", mode: "couples", intensity: "medium", text: "What is a minor pet peeve about your partner that you find secretly endearing anyway?", tags: ["petpeeve", "humor"] },
+    { id: "cp-t-8", type: "truth", mode: "couples", intensity: "extreme", text: "What is one dream vacation or life adventure you have been dying to share together?", tags: ["travel", "future"] },
+    { id: "cp-t-9", type: "truth", mode: "couples", intensity: "extreme", text: "What was the most nervous moment you experienced when introducing your partner to your circle?", tags: ["dating", "vulnerability"] },
+    { id: "cp-t-10", type: "truth", mode: "couples", intensity: "extreme", text: "What is one aspiration for our shared future that you have not voiced out loud yet?", tags: ["future", "intimacy"] },
 
-    // Couples - Dare
+    // ==========================================
+    // COUPLES MODE - DARE (10)
+    // ==========================================
     { id: "cp-d-1", type: "dare", mode: "couples", intensity: "mild", text: "Maintain unbroken eye contact with your partner for 45 seconds without laughing or speaking.", tags: ["intimacy", "focus"] },
-    { id: "cp-d-2", type: "dare", mode: "couples", intensity: "medium", text: "Give your partner an impromptu, sincere 60-second tribute highlighting 3 things you admire about them.", tags: ["compliments", "wholesome"] },
-    { id: "cp-d-3", type: "dare", mode: "couples", intensity: "extreme", text: "Recreate the iconic dance or signature pose from your favorite romantic movie together.", tags: ["acting", "fun"] },
+    { id: "cp-d-2", type: "dare", mode: "couples", intensity: "mild", text: "Slow dance with your partner for 60 seconds with no background music playing at all.", tags: ["romance", "dance"] },
+    { id: "cp-d-3", type: "dare", mode: "couples", intensity: "mild", text: "Give your partner a gentle 60-second hand or neck massage right now.", tags: ["touch", "care"] },
+    { id: "cp-d-4", type: "dare", mode: "couples", intensity: "medium", text: "Give your partner an impromptu, sincere 60-second tribute highlighting 3 things you admire about them.", tags: ["compliments", "wholesome"] },
+    { id: "cp-d-5", type: "dare", mode: "couples", intensity: "medium", text: "Recreate your very first conversation with your partner as if you just crossed paths today.", tags: ["roleplay", "nostalgia"] },
+    { id: "cp-d-6", type: "dare", mode: "couples", intensity: "medium", text: "Whisper your favorite shared memory together into your partner's ear in under 20 seconds.", tags: ["whisper", "sweet"] },
+    { id: "cp-d-7", type: "dare", mode: "couples", intensity: "medium", text: "Let your partner feed you a snack or drink blindfolded while you guess what it is.", tags: ["sensory", "fun"] },
+    { id: "cp-d-8", type: "dare", mode: "couples", intensity: "extreme", text: "Recreate the iconic dance or signature pose from your favorite romantic movie together.", tags: ["acting", "fun"] },
+    { id: "cp-d-9", type: "dare", mode: "couples", intensity: "extreme", text: "Compose a 4-line rhyming poem professing your love for your partner and recite it theatrically.", tags: ["poetry", "creative"] },
+    { id: "cp-d-10", type: "dare", mode: "couples", intensity: "extreme", text: "Let your partner unlock your camera roll and pick their favorite candid photo of you to set as your lockscreen.", tags: ["phone", "trust"] },
 
-    // Spicy - Truth
-    { id: "s-t-1", type: "truth", mode: "spicy", intensity: "medium", text: "What is your biggest romantic green flag that instantly catches your attention?", tags: ["attraction", "flirt"] },
-    { id: "s-t-2", type: "truth", mode: "spicy", intensity: "extreme", text: "Who was your very first celebrity crush and do you still find them attractive today?", tags: ["crush", "revealing"] },
-    { id: "s-t-3", type: "truth", mode: "spicy", intensity: "extreme", text: "What is the cheesiest or smoothest pickup line anyone has ever attempted on you?", tags: ["dating", "flirting"] },
+    // ==========================================
+    // SPICY MODE - TRUTH (10)
+    // ==========================================
+    { id: "s-t-1", type: "truth", mode: "spicy", intensity: "mild", text: "What is your biggest romantic green flag that instantly catches your attention?", tags: ["attraction", "flirt"] },
+    { id: "s-t-2", type: "truth", mode: "spicy", intensity: "mild", text: "What fragrance, scent, or perfume notes do you find overwhelmingly attractive on someone?", tags: ["scent", "attraction"] },
+    { id: "s-t-3", type: "truth", mode: "spicy", intensity: "medium", text: "Who was your very first celebrity crush and do you still find them attractive today?", tags: ["crush", "revealing"] },
+    { id: "s-t-4", type: "truth", mode: "spicy", intensity: "medium", text: "What is the cheesiest or smoothest pickup line anyone has ever attempted on you?", tags: ["dating", "flirting"] },
+    { id: "s-t-5", type: "truth", mode: "spicy", intensity: "medium", text: "What physical attribute or personality trait do you notice first when meeting someone new?", tags: ["traits", "dating"] },
+    { id: "s-t-6", type: "truth", mode: "spicy", intensity: "medium", text: "Have you ever had an unexpected crush on someone you previously couldn't stand?", tags: ["crushes", "secrets"] },
+    { id: "s-t-7", type: "truth", mode: "spicy", intensity: "extreme", text: "What is your honest definition of a 10/10 date night from start to finish?", tags: ["dating", "romance"] },
+    { id: "s-t-8", type: "truth", mode: "spicy", intensity: "extreme", text: "What is a bold flirtatious move someone pulled on you that actually worked instantly?", tags: ["flirt", "confidence"] },
+    { id: "s-t-9", type: "truth", mode: "spicy", intensity: "extreme", text: "If you had to pick one person in this room to go on a romantic blind date with, who would it be?", tags: ["daring", "room"] },
+    { id: "s-t-10", type: "truth", mode: "spicy", intensity: "extreme", text: "What is one romantic fantasy or scenario you have never confided to anyone?", tags: ["secrets", "intimacy"] },
 
-    // Spicy - Dare
-    { id: "s-d-1", type: "dare", mode: "spicy", intensity: "medium", text: "Whisper an elaborate, overly dramatic secret into the ear of the person to your left.", tags: ["whisper", "tease"] },
-    { id: "s-d-2", type: "dare", mode: "spicy", intensity: "extreme", text: "Give your most persuasive runway model catwalk across the room and strike a pose.", tags: ["confidence", "runway"] },
-    { id: "s-d-3", type: "dare", mode: "spicy", intensity: "extreme", text: "Send a sweet, unexpected compliment text message to someone in your recent chat list.", tags: ["kindness", "daring"] },
+    // ==========================================
+    // SPICY MODE - DARE (10)
+    // ==========================================
+    { id: "s-d-1", type: "dare", mode: "spicy", intensity: "mild", text: "Give the player to your right a genuine, ultra-specific compliment regarding their style or charisma.", tags: ["compliments", "flirt"] },
+    { id: "s-d-2", type: "dare", mode: "spicy", intensity: "mild", text: "Deliver your best smoldering, cinematic glance directly at the camera or the center of the table.", tags: ["acting", "smolder"] },
+    { id: "s-d-3", type: "dare", mode: "spicy", intensity: "medium", text: "Whisper an elaborate, overly dramatic secret into the ear of the person to your left.", tags: ["whisper", "tease"] },
+    { id: "s-d-4", type: "dare", mode: "spicy", intensity: "medium", text: "Demonstrate your best pickup line on the player sitting directly opposite you.", tags: ["acting", "pickuplines"] },
+    { id: "s-d-5", type: "dare", mode: "spicy", intensity: "medium", text: "Send a sweet, unexpected compliment text message to someone in your recent chat list right now.", tags: ["kindness", "daring"] },
+    { id: "s-d-6", type: "dare", mode: "spicy", intensity: "medium", text: "Read the last sent romantic or flirty message on your phone out loud with full emotional gravitas.", tags: ["phone", "candid"] },
+    { id: "s-d-7", type: "dare", mode: "spicy", intensity: "extreme", text: "Give your most persuasive runway model catwalk across the room and strike a dramatic pose.", tags: ["confidence", "runway"] },
+    { id: "s-d-8", type: "dare", mode: "spicy", intensity: "extreme", text: "Hold hands with the player to your left for the duration of the entire next round.", tags: ["touch", "connection"] },
+    { id: "s-d-9", type: "dare", mode: "spicy", intensity: "extreme", text: "Maintain unwavering eye contact with another player while biting slowly into a fruit or piece of food.", tags: ["bold", "humor"] },
+    { id: "s-d-10", type: "dare", mode: "spicy", intensity: "extreme", text: "Whisper a compliment into the ear of every single player in the room sequentially.", tags: ["flirt", "group"] },
 
-    // Deep - Truth
-    { id: "dp-t-1", type: "truth", mode: "deep", intensity: "medium", text: "What personal core value will you never compromise on, no matter the circumstances?", tags: ["values", "philosophy"] },
-    { id: "dp-t-2", type: "truth", mode: "deep", intensity: "medium", text: "What piece of advice received in your younger years completely changed how you live today?", tags: ["wisdom", "growth"] },
-    { id: "dp-t-3", type: "truth", mode: "deep", intensity: "extreme", text: "If you could witness one future milestone in humanity 100 years from now, what would it be?", tags: ["future", "existential"] },
+    // ==========================================
+    // DEEP MODE - TRUTH (10)
+    // ==========================================
+    { id: "dp-t-1", type: "truth", mode: "deep", intensity: "mild", text: "What book, documentary, or speech permanently shifted the way you view the world?", tags: ["books", "perspective"] },
+    { id: "dp-t-2", type: "truth", mode: "deep", intensity: "mild", text: "What is one skill you admire in others that you have struggled to cultivate yourself?", tags: ["humility", "growth"] },
+    { id: "dp-t-3", type: "truth", mode: "deep", intensity: "mild", text: "What simple pleasure in life gives you the deepest sense of peace and contentment?", tags: ["gratitude", "peace"] },
+    { id: "dp-t-4", type: "truth", mode: "deep", intensity: "medium", text: "What personal core value will you never compromise on, no matter the circumstances?", tags: ["values", "philosophy"] },
+    { id: "dp-t-5", type: "truth", mode: "deep", intensity: "medium", text: "What piece of advice received in your younger years completely changed how you live today?", tags: ["wisdom", "growth"] },
+    { id: "dp-t-6", type: "truth", mode: "deep", intensity: "medium", text: "What is a decision you made that seemed terrifying at the time but turned out to be the best choice?", tags: ["courage", "decisions"] },
+    { id: "dp-t-7", type: "truth", mode: "deep", intensity: "medium", text: "If you could apologize to one person from your past with guaranteed forgiveness, who would it be?", tags: ["forgiveness", "healing"] },
+    { id: "dp-t-8", type: "truth", mode: "deep", intensity: "extreme", text: "If you could witness one future milestone in humanity 100 years from now, what would it be?", tags: ["future", "existential"] },
+    { id: "dp-t-9", type: "truth", mode: "deep", intensity: "extreme", text: "What is the biggest personal insecurity you are actively working to overcome right now?", tags: ["vulnerability", "self"] },
+    { id: "dp-t-10", type: "truth", mode: "deep", intensity: "extreme", text: "When you look back on your life in old age, what would make you feel your time was truly well-spent?", tags: ["legacy", "purpose"] },
 
-    // Deep - Dare
-    { id: "dp-d-1", type: "dare", mode: "deep", intensity: "medium", text: "Share a 60-second summary of a major challenge you overcame that shaped who you are today.", tags: ["storytelling", "vulnerability"] },
-    { id: "dp-d-2", type: "dare", mode: "deep", intensity: "extreme", text: "Identify one thing you are holding onto that no longer serves you, and verbalize letting it go to the group.", tags: ["reflection", "courage"] }
+    // ==========================================
+    // DEEP MODE - DARE (10)
+    // ==========================================
+    { id: "dp-d-1", type: "dare", mode: "deep", intensity: "mild", text: "Name one quality you genuinely admire in every single person in this room right now.", tags: ["appreciation", "connection"] },
+    { id: "dp-d-2", type: "dare", mode: "deep", intensity: "mild", text: "Take 3 deep synchronized group breaths together in silence to reset the room's energy.", tags: ["mindfulness", "zen"] },
+    { id: "dp-d-3", type: "dare", mode: "deep", intensity: "mild", text: "Share the title of one song that reliably pulls you out of a downhearted mood.", tags: ["music", "comfort"] },
+    { id: "dp-d-4", type: "dare", mode: "deep", intensity: "medium", text: "Share a 60-second summary of a major challenge you overcame that shaped who you are today.", tags: ["storytelling", "vulnerability"] },
+    { id: "dp-d-5", type: "dare", mode: "deep", intensity: "medium", text: "Give a sincere shoutout to a mentor, friend, or family member who believed in you when you didn't.", tags: ["gratitude", "mentors"] },
+    { id: "dp-d-6", type: "dare", mode: "deep", intensity: "medium", text: "Text someone in your life whom you haven't spoken to in months just to tell them you appreciate them.", tags: ["reconnect", "kindness"] },
+    { id: "dp-d-7", type: "dare", mode: "deep", intensity: "medium", text: "Articulate your personal life mission or definition of success in exactly 3 sentences or less.", tags: ["philosophy", "clarity"] },
+    { id: "dp-d-8", type: "dare", mode: "deep", intensity: "extreme", text: "Identify one thing you are holding onto that no longer serves you, and verbalize letting it go to the group.", tags: ["reflection", "courage"] },
+    { id: "dp-d-9", type: "dare", mode: "deep", intensity: "extreme", text: "Admit one mistake you made in the past year that taught you an invaluable, humbling lesson.", tags: ["humility", "growth"] },
+    { id: "dp-d-10", type: "dare", mode: "deep", intensity: "extreme", text: "Look around the room and ask another player one unscripted, deep philosophical question that you've always wondered about them.", tags: ["inquiry", "bonding"] },
 ];
 
 export default function TruthOrDareGenerator() {

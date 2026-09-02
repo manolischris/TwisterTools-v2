@@ -278,6 +278,12 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Random Letter & Alphabet Picker](/tools/random-tools/random-letter-picker): Pick random characters across English, Greek, Cyrillic, and custom sets with cryptographic entropy.
 - [Tournament Bracket & Seeding Generator](/tools/random-tools/tournament-bracket-generator): Interactive tournament bracket generator supporting power-of-2 matchmaking, crypto shuffling, ranked seeding, and CSV exports.
 - [Truth or Dare Card Prompt Generator](/tools/random-tools/truth-or-dare-generator): Interactive card prompt generator with 5 curated game modes, custom deck injection, and player score tracking.
+- Would You Rather Dilemma & Debate Card Generator (/tools/random-tools/would-you-rather-generator): Curated moral, philosophical, workplace, and party dilemmas with live vote tracking and debate timers.
+- [Random Writing Prompt & Story Hook Generator](/tools/random-tools/writing-prompt-generator): Generate narrative writing prompts, deep character dilemmas, opening line hooks, and unexpected story twists across all literary genres.
+- /tools/random-tools/lottery-number-generator: Cryptographic lottery quick pick generator and dual-drum simulator for Powerball, Mega Millions, EuroMillions, and custom lotto configurations.
+- Random Emoji & Emoticon Combination Generator: /tools/random-tools/random-emoji-generator - Cryptographically secure randomized Unicode emoji palettes and Kaomoji generator.
+- Charades & Game Night Word Generator (/tools/random-tools/charades-word-generator): Interactive random prompt engine with countdown timer buzzer, team scoreboard, and custom word injection.
+- [Random Time & Hour Generator](https://www.twistertools.com/tools/random-tools/random-time-generator): Generate cryptographically secure random times, timestamps, and clock hours with customizable ranges and formatting.
 ## Platform Pages
 
 - [Categories Directory](https://www.twistertools.com/categories): Complete directory of all 13 tool categories on TwisterTools.

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Dices, ShieldCheck, Layers, Cpu, HelpCircle, MapPin, Globe2, Gift, Shuffle, Type } from "lucide-react";
+import { Dices, ShieldCheck, Layers, Cpu, HelpCircle, MapPin, Globe2, Gift, Shuffle, Type, Smile, Gamepad2 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -217,6 +217,55 @@ export default function RandomToolsCategoryPage() {
           title: "Truth or Dare Card Prompt Generator",
           description: "Interactive, browser-native Truth or Dare card generator with curated game modes, custom deck creator, and player turn tracker.",
           iconName: "Flame"
+        };
+      }
+      if (tool.id === "would-you-rather-generator") {
+        return {
+          ...tool,
+          title: "Would You Rather Dilemma & Debate Card Generator",
+          description: "Generate thought-provoking binary dilemmas, debate prompts, and live community vote analytics.",
+          iconName: "Shuffle"
+        };
+      }
+      if (tool.id === "writing-prompt-generator") {
+        return {
+          ...tool,
+          title: "Random Writing Prompt & Story Hook Generator",
+          description: "Generate narrative writing prompts, deep character dilemmas, opening line hooks, and unexpected story twists across all literary genres.",
+          iconName: "PenTool"
+        };
+      }
+      if (tool.id === "lottery-number-generator") {
+        return {
+          ...tool,
+          title: "Lottery Number Picker & Multi-Ball Draw Simulator",
+          description: "Cryptographically secure lottery quick pick generator and multi-ball draw simulator for US Powerball, Mega Millions, EuroMillions, and custom games.",
+          iconName: "Shuffle",
+          isFeatured: true
+        };
+      }
+      if (tool.id === "random-emoji-generator") {
+        return {
+          ...tool,
+          title: "Random Emoji & Emoticon Combination Generator",
+          description: "Generate randomized emoji strings, Kaomoji Japanese emoticons, and aesthetic text palettes with custom delimiters and Unicode exports.",
+          iconName: "Smile"
+        };
+      }
+      if (tool.id === "charades-word-generator") {
+        return {
+          ...tool,
+          title: "Charades & Game Night Word Generator",
+          description: "Generate random game-night ideas across movies, animals, actions, and idioms with built-in countdown buzzer and team scoring.",
+          iconName: "Gamepad2"
+        };
+      }
+      if (tool.id === "random-time-generator") {
+        return {
+          ...tool,
+          title: "Random Time & Hour Generator",
+          description: "Generate cryptographically secure random times, clock hours, and timestamps within custom intervals, timezones, and discrete step intervals.",
+          iconName: "Clock"
         };
       }
       return tool;

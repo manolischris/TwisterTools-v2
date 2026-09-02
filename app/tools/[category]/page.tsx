@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import {
-  Link as LinkIcon,
+import { Link as LinkIcon,
   Link2,
   Activity,
   ArrowLeftRight,
@@ -109,8 +108,8 @@ import {
   Eraser,
   Table,
   Baseline,
-  Trophy
-} from "lucide-react";
+  Trophy,
+  Shuffle, PenTool, Smile, Gamepad2 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -123,6 +122,9 @@ type Params = Promise<{ category: string }>;
 
 // Map icon strings to Lucide components for the Server Page
 const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
+  Gamepad2,
+  Smile,
+  PenTool,
   Link: LinkIcon,
   Link2,
   Activity,
@@ -228,7 +230,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Boxes,
   Box,
   Gauge,
-  Table
+  Table,
+  Shuffle
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json

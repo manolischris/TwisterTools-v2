@@ -226,7 +226,7 @@ export default function OnlineTextEditor() {
   return (
     <div className="w-full space-y-8">
       {/* ── Main Workspace Grid (50/50 Split) ── */}
-      <div className={`grid ${isFullScreen ? "fixed inset-4 z-50 bg-slate-900 rounded-2xl shadow-2xl overflow-y-auto" : "lg:grid-cols-[3fr_2fr]"} gap-6 items-start p-4 sm:p-6`}>
+      <div className={`grid ${isFullScreen ? "fixed inset-4 z-50 bg-slate-900 rounded-2xl shadow-2xl overflow-y-auto" : "lg:grid-cols-[3fr_2fr]"} gap-6 items-start`}>
 
         {/* ══════════════════ LEFT PANEL: EDITOR CONTROLS & VISUAL WORKSPACE ══════════════════ */}
         <div className="space-y-4 w-full">

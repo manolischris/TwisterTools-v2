@@ -4,8 +4,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { rankTools } from "@/lib/search-utils";
-import {
-  Link as LinkIcon,
+import { Link as LinkIcon,
   Link2,
   Search,
   Bookmark,
@@ -134,8 +133,7 @@ import {
   Eraser,
   Baseline,
   Gift,
-  Trophy
-} from "lucide-react";
+  Trophy, PenTool, Smile, Gamepad2 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
 import toolsRegistryData from "@/lib/tools-registry.json";
@@ -151,6 +149,9 @@ interface Tool {
 }
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Gamepad2,
+  Smile,
+  PenTool,
   Link: LinkIcon,
   Link2,
   Activity,
