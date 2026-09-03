@@ -380,17 +380,19 @@ export default function CssTriangleGenerator() {
     ]);
 
     const generatedTailwind = useMemo(() => {
+        const bracketOpen = "[";
+        const bracketClose = "]";
         if (engineMode === "border") {
             const b = borderStyleCalculation;
             return `<!-- Tailwind Arbitrary Utility Classes -->
-<div class="w-0 h-0 border-solid border-t-[${b.borderTopWidth}] border-r-[${b.borderRightWidth}] border-b-[${b.borderBottomWidth}] border-l-[${b.borderLeftWidth}] border-t-[${b.borderTopColor}] border-r-[${b.borderRightColor}] border-b-[${b.borderBottomColor}] border-l-[${b.borderLeftColor}]"></div>`;
+<div class="w-0 h-0 border-solid border-t-${bracketOpen}${b.borderTopWidth}${bracketClose} border-r-${bracketOpen}${b.borderRightWidth}${bracketClose} border-b-${bracketOpen}${b.borderBottomWidth}${bracketClose} border-l-${bracketOpen}${b.borderLeftWidth}${bracketClose} border-t-${bracketOpen}${b.borderTopColor}${bracketClose} border-r-${bracketOpen}${b.borderRightColor}${bracketClose} border-b-${bracketOpen}${b.borderBottomColor}${bracketClose} border-l-${bracketOpen}${b.borderLeftColor}${bracketClose}"></div>`;
         } else {
             const bgClass =
                 polyBgType === "gradient"
-                    ? `bg-gradient-to-br from-[${polyColor}] to-[${polyGradientColorEnd}]`
-                    : `bg-[${polyColor}]`;
+                    ? `bg-gradient-to-br from-${bracketOpen}${polyColor}${bracketClose} to-${bracketOpen}${polyGradientColorEnd}${bracketClose}`
+                    : `bg-${bracketOpen}${polyColor}${bracketClose}`;
             return `<!-- Tailwind Arbitrary Clip-Path Utility -->
-<div class="w-[${polyWidth}px] h-[${polyHeight}px] ${bgClass} [clip-path:${clipPathString.replace(/\s+/g, "_")}]"></div>`;
+<div class="w-${bracketOpen}${polyWidth}px${bracketClose} h-${bracketOpen}${polyHeight}px${bracketClose} ${bgClass} ${bracketOpen}clip-path:${clipPathString.replace(/\s+/g, "_")}${bracketClose}"></div>`;
         }
     }, [engineMode, borderStyleCalculation, polyWidth, polyHeight, polyBgType, polyColor, polyGradientColorEnd, clipPathString]);
 

@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -132,7 +132,12 @@ const RandomLetterPicker = dynamic(() => import("@/components/tools/RandomLetter
 const WouldYouRatherGenerator = dynamic(() => import("@/components/tools/WouldYouRatherGenerator"));
 const WritingPromptGenerator = dynamic(() => import("@/components/tools/WritingPromptGenerator"));
 const LotteryNumberGenerator = dynamic(() => import("@/components/tools/LotteryNumberGenerator"));
-import RandomEmojiGenerator from "@/components/tools/RandomEmojiGenerator";
+const RandomEmojiGenerator = dynamic(() => import("@/components/tools/RandomEmojiGenerator"));
+const ImageAspectRatioScaler = dynamic(() => import("@/components/tools/ImageAspectRatioScaler"));
+const ImageColorExtractor = dynamic(() => import("@/components/tools/ImageColorExtractor"));
+const SvgPathVisualizer = dynamic(() => import("@/components/tools/SvgPathVisualizer"));
+const SvgToCssConverter = dynamic(() => import("@/components/tools/SvgToCssConverter"));
+const SvgToJsxConverter = dynamic(() => import("@/components/tools/SvgToJsxConverter"));
 
 
 
@@ -274,6 +279,11 @@ const COMPLETED_TOOLS = [
   "writing-prompt-generator",
   "lottery-number-generator",
   "random-emoji-generator",
+  "image-aspect-ratio-scaler",
+  "image-color-extractor",
+  "svg-path-visualizer",
+  "svg-to-css-converter",
+  "svg-to-jsx-converter",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -405,6 +415,26 @@ export async function generateMetadata({
 
   let title = `${tool.name}`;
   let description = tool.description;
+
+  if (category === "image-tools" && toolSlug === "image-aspect-ratio-scaler") {
+    title = "Aspect Ratio Scaler & Missing Dimension Calculator";
+    description = "Calculate missing image dimensions, resize proportional aspect ratios (16:9, 4:3, 1:1, 9:16), and export responsive CSS code.";
+  }
+
+  if (category === "image-tools" && toolSlug === "svg-path-visualizer") {
+    title = "SVG Path Visualizer & Anchor Point Inspector";
+    description = "Visualize SVG path commands, inspect Bézier curve control points, and examine anchor coordinates in real time.";
+  }
+
+  if (category === "image-tools" && toolSlug === "svg-to-css-converter") {
+    title = "SVG to Pure CSS Background Code Formatter";
+    description = "Convert, optimize, and encode raw SVG markup into pure CSS background-image Data URIs, Tailwind arbitrary utilities, and Base64 declarations.";
+  }
+
+  if (category === "image-tools" && toolSlug === "svg-to-jsx-converter") {
+    title = "SVG to React JSX Functional Component Converter";
+    description = "Convert raw SVG vector files into clean, production-ready React JSX/TSX functional components with TypeScript interfaces, forwardRef, and prop spreading.";
+  }
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
     description = "Interactive visual CSS Flexbox playground. Test alignment, direction, order, and grow/shrink dynamics with instant CSS and Tailwind code generation.";
@@ -730,6 +760,16 @@ export default async function ToolPage({
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
     tool.description = "Interactive visual CSS Flexbox playground. Test alignment, direction, order, and grow/shrink dynamics with instant CSS and Tailwind code generation.";
+  }
+
+  if (category === "image-tools" && toolSlug === "svg-path-visualizer") {
+    tool.name = "SVG Path Visualizer & Anchor Point Inspector";
+    tool.description = "Visualize SVG path commands, inspect Bézier curve control points, and examine anchor coordinates in real time.";
+  }
+
+  if (category === "image-tools" && toolSlug === "svg-to-jsx-converter") {
+    tool.name = "SVG to React JSX Functional Component Converter";
+    tool.description = "Convert raw SVG vector files into clean, production-ready React JSX/TSX functional components with TypeScript interfaces, forwardRef, and prop spreading.";
   }
 
   if (category === "developer-tools" && toolSlug === "chmod-calculator") {
@@ -1254,14 +1294,18 @@ export default async function ToolPage({
                   <RefreshCw className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "text-tools" && toolSlug === "online-text-editor" ? (
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : category === "developer-tools" && toolSlug === "rgb-to-hex" ? (
+                ) : category === "image-tools" && toolSlug === "image-color-extractor" ? (
                   <Palette className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "image-tools" && toolSlug === "svg-path-visualizer" ? (
+                  <VectorSquare className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "generator-tools" && toolSlug === "credit-card-generator" ? (
                   <CreditCard className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "png-to-jpg" ? (
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "image-compressor" ? (
                   <Minimize2 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "image-tools" && toolSlug === "image-aspect-ratio-scaler" ? (
+                  <Maximize2 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "favicon-generator" ? (
                   <Globe className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "svg-converter" ? (
@@ -1380,8 +1424,11 @@ export default async function ToolPage({
                   <Droplets className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "lightning-distance-calculator" ? (
                   <Zap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "image-tools" && toolSlug === "svg-to-css-converter" ? (
+                  <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "image-tools" && toolSlug === "svg-to-jsx-converter" ? (
+                  <Code2 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
-
                   <Binary className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (
                   <QrCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1504,6 +1551,16 @@ export default async function ToolPage({
             <PngToJpgConverter />
           ) : category === "image-tools" && toolSlug === "image-compressor" ? (
             <ImageCompressor />
+          ) : category === "image-tools" && toolSlug === "image-aspect-ratio-scaler" ? (
+            <ImageAspectRatioScaler />
+          ) : category === "image-tools" && toolSlug === "image-color-extractor" ? (
+            <ImageColorExtractor />
+          ) : category === "image-tools" && toolSlug === "svg-path-visualizer" ? (
+            <SvgPathVisualizer />
+          ) : category === "image-tools" && toolSlug === "svg-to-css-converter" ? (
+            <SvgToCssConverter />
+          ) : category === "image-tools" && toolSlug === "svg-to-jsx-converter" ? (
+            <SvgToJsxConverter />
           ) : category === "image-tools" && toolSlug === "favicon-generator" ? (
             <FaviconGeneratorSuite />
           ) : category === "image-tools" && toolSlug === "svg-converter" ? (

@@ -131,6 +131,7 @@ import {
   Smile,
   Gamepad2,
   MapPin,
+  VectorSquare,
 } from "lucide-react";
 import toolsRegistryData from "@/lib/tools-registry.json";
 import { rankTools, type SearchableTool } from "@/lib/search-utils";
@@ -157,6 +158,7 @@ const categories = [
 ];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  VectorSquare,
   MapPin,
   Gamepad2,
   Smile,

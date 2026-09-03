@@ -170,7 +170,7 @@ export default function CssGradientGenerator() {
     }, [includeVendorPrefixes, gradientType, angle, radialShape, radialPosition, sortedStops, cssGradientValue]);
 
     const tailwindArbitraryClass = useMemo(() => {
-        return `bg-[${cssGradientValue.replace(/\s+/g, "_")}]`;
+        return "bg-" + "[" + cssGradientValue.replace(/\s+/g, "_") + "]";
     }, [cssGradientValue]);
 
     const handleAddStop = () => {

@@ -2469,6 +2469,52 @@
     "href": "/tools/random-tools/random-time-generator",
     "iconName": "Clock",
     "isFeatured": false
+  },
+  {
+    "id": "image-aspect-ratio-scaler",
+    "title": "Aspect Ratio Scaler & Missing Dimension Calculator",
+    "description": "Calculate missing dimensions, scale image proportions without distortion, and convert between standard display ratios.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-aspect-ratio-scaler",
+    "iconName": "Maximize2",
+    "isFeatured": false
+  },
+  {
+    "id": "image-color-extractor",
+    "title": "Image Color Palette & Dominant Hex Extractor",
+    "description": "Extract dominant colors, calculate hex, RGB, HSL, and CMYK swatches, sample pixels with interactive eyedropper, and export design palettes.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-color-extractor",
+    "iconName": "Palette",
+    "isFeatured": false
+  },
+  {
+    "id": "svg-path-visualizer",
+    "title": "SVG Path Visualizer & Anchor Point Inspector",
+    "description": "Deconstruct SVG path commands, inspect Bézier handles, and verify anchor coordinates in real time.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/svg-path-visualizer",
+    "iconName": "VectorSquare",
+    "isFeatured": false
+  },
+  {
+    "id": "svg-to-css-converter",
+    "title": "SVG to Pure CSS Background Code Formatter",
+    "description": "Convert, optimize, and encode raw SVG markup into zero-latency CSS background Data URIs and Tailwind classes.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/svg-to-css-converter",
+    "iconName": "FileCode",
+    "isFeatured": false
+  },
+  {
+    "id": "svg-to-jsx-converter",
+    "title": "SVG to React JSX Functional Component Converter",
+    "description": "Convert raw SVG vector files into optimized, production-ready React JSX and TypeScript TSX functional components.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/svg-to-jsx-converter",
+    "iconName": "Code2",
+    "isFeatured": false
   }
 ]
+
 

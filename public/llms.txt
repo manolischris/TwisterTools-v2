@@ -221,6 +221,11 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Vector SVG Converter & Rasterizer](https://www.twistertools.com/tools/image-tools/svg-converter): Render SVG vectors to raster PNG, JPEG, and WebP formats at custom resolutions.
 - [Favicon Generator & Multi-Resolution Suite](https://www.twistertools.com/tools/image-tools/favicon-generator): Generate multi-layer ICO favicons and web application icons.
 - [HEIC & AVIF to JPG Converter](https://www.twistertools.com/tools/image-tools/heic-to-jpg): Convert Apple HEIC and AVIF photos to standard JPEG format in browser memory.
+- [Aspect Ratio Scaler](/tools/image-tools/image-aspect-ratio-scaler): Browser-native proportional dimension resizer, missing side calculator, standard resolution converter, and CSS aspect-ratio generator.
+- Image Color Palette & Dominant Hex Extractor (/tools/image-tools/image-color-extractor): Browser-based color quantization and palette generation tool with real-time eyedropper and CSS/JSON/SVG export.
+- SVG Path Visualizer (/tools/image-tools/svg-path-visualizer): Real-time SVG path command deconstructor, Bézier control handle inspector, and coordinate visualizer.
+* SVG to CSS Background Converter (/tools/image-tools/svg-to-css-converter): Convert SVG vector markup into URL-encoded or Base64 CSS Data URIs and Tailwind classes.
+* SVG to React JSX Converter (/tools/image-tools/svg-to-jsx-converter): Transform raw SVG vector markup into optimized React JSX/TSX components with forwardRef, TypeScript interfaces, and camelCase attributes.
 ### [SEO, Domain & Network Inspector Tools](https://www.twistertools.com/tools/web-tools)
 - [XML Sitemap Generator & URL Crawler](https://www.twistertools.com/tools/web-tools/sitemap-generator): Crawl links and generate valid Sitemaps.org XML and TXT sitemaps.
 - [Meta Tag Generator & Social Preview Suite](https://www.twistertools.com/tools/web-tools/meta-tag-generator): Draft SEO meta tags with live Google, Facebook, and Twitter card previews.
