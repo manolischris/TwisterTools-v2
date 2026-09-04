@@ -26,6 +26,7 @@
     "iconName": "Hash",
     "isFeatured": false
   },
+
   {
     "id": "password-generator",
     "title": "Strong Password & Passphrase Generator",
@@ -2514,7 +2515,53 @@
     "href": "/tools/image-tools/svg-to-jsx-converter",
     "iconName": "Code2",
     "isFeatured": false
+  },
+  {
+    "id": "base64-to-image-converter",
+    "title": "Base64 to Image Decoder & Instant PNG/JPG Exporter",
+    "description": "Decode base64 strings and data URIs into high-resolution PNG, JPG, or WebP files.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/base64-to-image-converter",
+    "iconName": "FileCode",
+    "isFeatured": false
+  },
+  {
+    "id": "image-to-base64-converter",
+    "title": "Image to Base64 String Data URI Encoder",
+    "description": "Convert PNG, JPG, WebP, SVG, and GIF images into RFC 4648 Base64 strings and Data URIs with zero server uploads.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-to-base64-converter",
+    "iconName": "FileCode",
+    "isFeatured": false
+  },
+  {
+    "id": "image-dpi-print-calculator",
+    "title": "Image DPI to Physical Print Dimension Calculator",
+    "description": "Calculate exact physical print dimensions from pixel resolution and DPI, with prepress paper presets and viewing distance acuity modeling.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-dpi-print-calculator",
+    "iconName": "Printer",
+    "isFeatured": false
+  },
+  {
+    "id": "gradient-wallpaper-generator",
+    "title": "Canvas Color Gradient Generator & High-Res PNG Exporter",
+    "description": "Design custom linear, radial, and conic color gradients with multi-stop color distribution and export crystal-clear PNG wallpapers in up to 4K resolution natively in your browser.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/gradient-wallpaper-generator",
+    "iconName": "Palette",
+    "isFeatured": false
+  },
+  {
+    "id": "css-clamp-calculator",
+    "title": "Responsive CSS Clamp() & Fluid Typography Calculator",
+    "description": "Calculate precision fluid typography and dynamic CSS clamp() linear interpolation rules with live preview.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-clamp-calculator",
+    "iconName": "Maximize2",
+    "isFeatured": false
   }
 ]
+
 
 

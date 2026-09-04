@@ -48,6 +48,7 @@ import { Link as LinkIcon,
   Lock,
   MapPin,
   Minimize2,
+  Maximize2,
   Palette,
   Percent,
   PieChart,
@@ -109,7 +110,7 @@ import { Link as LinkIcon,
   Table,
   Baseline,
   Trophy,
-  Shuffle, PenTool, Smile, Gamepad2, VectorSquare, Code2 } from "lucide-react";
+  Shuffle, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -122,6 +123,8 @@ type Params = Promise<{ category: string }>;
 
 // Map icon strings to Lucide components for the Server Page
 const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
+  Maximize2,
+  Printer,
   Code2,
   VectorSquare,
   Gamepad2,

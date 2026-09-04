@@ -30,6 +30,7 @@ import {
   Globe2,
   Database,
   Minimize2,
+  Maximize2,
   CreditCard,
   FileCode,
   Clock,
@@ -132,6 +133,7 @@ import {
   Gamepad2,
   MapPin,
   VectorSquare,
+  Printer,
 } from "lucide-react";
 import toolsRegistryData from "@/lib/tools-registry.json";
 import { rankTools, type SearchableTool } from "@/lib/search-utils";
@@ -158,6 +160,7 @@ const categories = [
 ];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Printer,
   VectorSquare,
   MapPin,
   Gamepad2,
@@ -166,7 +169,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Fingerprint, Building, Heart, Baby, Calendar, CalendarDays, Timer, Grid,
   Grid3X3, GraduationCap, TrendingUp, Code2, Sparkles, ImageIcon, RefreshCw,
   Lock, Database, FileText, Globe, Globe2, Calculator, Terminal, FileCheck2,
-  Shield, Zap, Strikethrough, Minimize2, CreditCard, FileImage, FileCode,
+  Shield, Zap, Strikethrough, Minimize2, Maximize2, CreditCard, FileImage, FileCode,
   DollarSign, Percent, Scale, Sigma, Scaling, Cpu, Combine, Layers, Scissors,
   Hash, Edit3, ListOrdered, PiggyBank, QrCode, ShieldAlert, CalendarClock,
   Type, ListStart, Binary, Code, FileJson, ArrowLeftRight, ArrowRightLeft,

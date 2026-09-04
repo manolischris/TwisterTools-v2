@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -138,6 +138,9 @@ const ImageColorExtractor = dynamic(() => import("@/components/tools/ImageColorE
 const SvgPathVisualizer = dynamic(() => import("@/components/tools/SvgPathVisualizer"));
 const SvgToCssConverter = dynamic(() => import("@/components/tools/SvgToCssConverter"));
 const SvgToJsxConverter = dynamic(() => import("@/components/tools/SvgToJsxConverter"));
+const Base64ToImageConverter = dynamic(() => import("@/components/tools/Base64ToImageConverter"));
+const ImageDpiPrintCalculator = dynamic(() => import("@/components/tools/ImageDpiPrintCalculator"));
+const CssClampCalculator = dynamic(() => import("@/components/tools/CssClampCalculator"));
 
 
 
@@ -284,6 +287,9 @@ const COMPLETED_TOOLS = [
   "svg-path-visualizer",
   "svg-to-css-converter",
   "svg-to-jsx-converter",
+  "base64-to-image-converter",
+  "image-dpi-print-calculator",
+  "css-clamp-calculator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -403,15 +409,18 @@ export async function generateMetadata({
   const toolUrl = `https://www.twistertools.com${tool.new_url}`;
   const toolName = tool.name;
 
-  // Prefer .webp featured images, then fallback to .jpg, then default OG image.
+  // Prefer .webp featured images, then fallback to .jpg, .png, then default OG image.
   const imageBasePath = path.join(process.cwd(), "public", "images", "tools", category, toolSlug);
   const webpPath = `${imageBasePath}.webp`;
   const jpgPath = `${imageBasePath}.jpg`;
+  const pngPath = `${imageBasePath}.png`;
   const ogImageUrl = fs.existsSync(webpPath)
     ? `https://www.twistertools.com/images/tools/${category}/${toolSlug}.webp`
     : fs.existsSync(jpgPath)
       ? `https://www.twistertools.com/images/tools/${category}/${toolSlug}.jpg`
-      : "https://www.twistertools.com/images/og-default.jpg";
+      : fs.existsSync(pngPath)
+        ? `https://www.twistertools.com/images/tools/${category}/${toolSlug}.png`
+        : "https://www.twistertools.com/images/og-default.jpg";
 
   let title = `${tool.name}`;
   let description = tool.description;
@@ -434,6 +443,21 @@ export async function generateMetadata({
   if (category === "image-tools" && toolSlug === "svg-to-jsx-converter") {
     title = "SVG to React JSX Functional Component Converter";
     description = "Convert raw SVG vector files into clean, production-ready React JSX/TSX functional components with TypeScript interfaces, forwardRef, and prop spreading.";
+  }
+
+  if (category === "image-tools" && toolSlug === "base64-to-image-converter") {
+    title = "Base64 to Image Decoder & Instant PNG/JPG Exporter";
+    description = "Decode raw Base64 strings and Data URIs into full-resolution PNG, JPG, and WebP images with instant browser-side raster export.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-dpi-print-calculator") {
+    title = "Image DPI to Physical Print Dimension Calculator";
+    description = "Calculate physical print dimensions (inches, cm, mm) from image pixel resolution and DPI. Model viewing distance acuity and prepress paper sizes.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "css-clamp-calculator") {
+    title = "Responsive CSS Clamp() & Fluid Typography Calculator";
+    description = "Calculate precision fluid typography and dynamic CSS clamp() rules with real-time responsive viewport simulation, REM/PX conversions, and Tailwind export.";
   }
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
@@ -649,7 +673,9 @@ export async function generateMetadata({
           (category === "text-tools" && toolSlug === "lorem-ipsum-generator") ||
           (category === "text-tools" && toolSlug === "zero-width-space-cleaner") ||
           (category === "random-tools" && toolSlug === "would-you-rather-generator") ||
-          (category === "random-tools" && toolSlug === "writing-prompt-generator")
+          (category === "random-tools" && toolSlug === "writing-prompt-generator") ||
+          (category === "image-tools" && toolSlug === "image-dpi-print-calculator") ||
+          (category === "developer-tools" && toolSlug === "css-clamp-calculator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -672,7 +698,9 @@ export async function generateMetadata({
           (category === "text-tools" && toolSlug === "lorem-ipsum-generator") ||
           (category === "text-tools" && toolSlug === "zero-width-space-cleaner") ||
           (category === "random-tools" && toolSlug === "would-you-rather-generator") ||
-          (category === "random-tools" && toolSlug === "writing-prompt-generator")
+          (category === "random-tools" && toolSlug === "writing-prompt-generator") ||
+          (category === "image-tools" && toolSlug === "image-dpi-print-calculator") ||
+          (category === "developer-tools" && toolSlug === "css-clamp-calculator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -770,6 +798,16 @@ export default async function ToolPage({
   if (category === "image-tools" && toolSlug === "svg-to-jsx-converter") {
     tool.name = "SVG to React JSX Functional Component Converter";
     tool.description = "Convert raw SVG vector files into clean, production-ready React JSX/TSX functional components with TypeScript interfaces, forwardRef, and prop spreading.";
+  }
+
+  if (category === "image-tools" && toolSlug === "base64-to-image-converter") {
+    tool.name = "Base64 to Image Decoder & Instant PNG/JPG Exporter";
+    tool.description = "Decode raw Base64 strings and Data URIs into full-resolution PNG, JPG, and WebP images with instant browser-side raster export.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-dpi-print-calculator") {
+    tool.name = "Image DPI to Physical Print Dimension Calculator";
+    tool.description = "Calculate physical print dimensions (inches, cm, mm) from image pixel resolution and DPI. Model viewing distance acuity and prepress paper sizes.";
   }
 
   if (category === "developer-tools" && toolSlug === "chmod-calculator") {
@@ -1304,10 +1342,14 @@ export default async function ToolPage({
                   <FileImage className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "image-compressor" ? (
                   <Minimize2 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : category === "image-tools" && toolSlug === "image-aspect-ratio-scaler" ? (
+                ) : (category === "image-tools" && toolSlug === "image-aspect-ratio-scaler") || toolSlug === "css-clamp-calculator" ? (
                   <Maximize2 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "favicon-generator" ? (
                   <Globe className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : category === "image-tools" && toolSlug === "image-dpi-print-calculator" ? (
+                  <Printer className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "base64-to-image-converter" ? (
+                  <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "svg-converter" ? (
                   <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "heic-to-jpg" ? (
@@ -1561,6 +1603,12 @@ export default async function ToolPage({
             <SvgToCssConverter />
           ) : category === "image-tools" && toolSlug === "svg-to-jsx-converter" ? (
             <SvgToJsxConverter />
+          ) : category === "image-tools" && toolSlug === "base64-to-image-converter" ? (
+            <Base64ToImageConverter />
+          ) : category === "image-tools" && toolSlug === "image-dpi-print-calculator" ? (
+            <ImageDpiPrintCalculator />
+          ) : category === "developer-tools" && toolSlug === "css-clamp-calculator" ? (
+            <CssClampCalculator />
           ) : category === "image-tools" && toolSlug === "favicon-generator" ? (
             <FaviconGeneratorSuite />
           ) : category === "image-tools" && toolSlug === "svg-converter" ? (

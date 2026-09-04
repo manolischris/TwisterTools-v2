@@ -34,6 +34,7 @@ import { Link as LinkIcon,
   Terminal,
   X,
   Minimize2,
+  Maximize2,
   MapPin,
   CreditCard,
   FileImage,
@@ -133,7 +134,7 @@ import { Link as LinkIcon,
   Eraser,
   Baseline,
   Gift,
-  Trophy, PenTool, Smile, Gamepad2, VectorSquare } from "lucide-react";
+  Trophy, PenTool, Smile, Gamepad2, VectorSquare, Printer } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
 import toolsRegistryData from "@/lib/tools-registry.json";
@@ -149,6 +150,7 @@ interface Tool {
 }
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Printer,
   VectorSquare,
   Gamepad2,
   Smile,
@@ -189,6 +191,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Zap,
   Strikethrough,
   Minimize2,
+  Maximize2,
   MapPin,
   CreditCard,
   FileImage,

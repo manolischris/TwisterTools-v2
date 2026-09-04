@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Code, ShieldCheck, SearchCode, RefreshCw, HelpCircle, Palette, Cpu, ArrowRightLeft } from "lucide-react";
+import { Image as ImageIcon, ShieldCheck, Minimize2, Palette, Globe, HelpCircle, FileCode } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
 import path from "path";
@@ -9,7 +9,7 @@ import path from "path";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const category = "developer-tools";
+  const category = "image-tools";
   const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
   const webpCategoryPath = `${categoryImagePath}.webp`;
   const jpgCategoryPath = `${categoryImagePath}.jpg`;
@@ -21,27 +21,26 @@ export async function generateMetadata(): Promise<Metadata> {
       : "https://www.twistertools.com/images/og-default.jpg";
 
   return {
-    title: "Developer, Code & Web Engineering Tools",
+    title: "Image Editing, Compression & Conversion Tools",
     description:
-      "Essential browser-based utilities for developers: JSON formatters, CSS generators, SQL sanitizers, and encoding suites.",
+      "Convert HEIC/SVG/PNG graphics, scale pixel dimensions, generate favicons, and compress images locally in browser RAM.",
     keywords: [
-      "json formatter",
-      "css gradient generator",
-      "regex tester",
-      "base64 encoder",
-      "jwt decoder",
-      "developer tools",
-      "web engineering tools",
+      "image compressor",
+      "image resizer",
+      "heic to jpg",
+      "svg converter",
+      "favicon generator",
+      "base64 to image converter",
       "twistertools"
     ],
     alternates: {
-      canonical: "https://www.twistertools.com/tools/developer-tools"
+      canonical: "https://www.twistertools.com/tools/image-tools"
     },
     openGraph: {
-      title: "Developer, Code & Web Engineering Tools - TwisterTools",
+      title: "Image Editing, Compression & Conversion Tools - TwisterTools",
       description:
-        "Essential browser-based utilities for developers: JSON formatters, CSS generators, SQL sanitizers, and encoding suites.",
-      url: "https://www.twistertools.com/tools/developer-tools",
+        "Convert HEIC/SVG/PNG graphics, scale pixel dimensions, generate favicons, and compress images locally in browser RAM.",
+      url: "https://www.twistertools.com/tools/image-tools",
       siteName: "TwisterTools",
       type: "website",
       images: [
@@ -49,146 +48,106 @@ export async function generateMetadata(): Promise<Metadata> {
           url: featuredImage,
           width: 1200,
           height: 630,
-          alt: "Developer, Code & Web Engineering Tools",
+          alt: "Image Editing, Compression & Conversion Tools",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Developer, Code & Web Engineering Tools - TwisterTools",
+      title: "Image Editing, Compression & Conversion Tools - TwisterTools",
       description:
-        "Essential browser-based utilities for developers: JSON formatters, CSS generators, SQL sanitizers, and encoding suites.",
+        "Convert HEIC/SVG/PNG graphics, scale pixel dimensions, generate favicons, and compress images locally in browser RAM.",
       images: [featuredImage],
     },
   };
 }
 
-const developerMetadata = {
-  name: "Developer, Code & Web Engineering Tools",
+const imageMetadata = {
+  name: "Image Editing, Compression & Conversion Tools",
   description:
-    "Essential browser-based utilities for developers: JSON formatters, CSS generators, SQL sanitizers, and encoding suites.",
+    "Convert HEIC/SVG/PNG graphics, scale pixel dimensions, generate favicons, and compress images locally in browser RAM.",
   detailedGuide:
-    "Accelerate your debugging and development workflow with client-safe developer engines. No data entered ever leaves your device.",
+    "Crop, resize, compress, and check aspect ratios locally on your device without upload delays.",
   cards: [
     {
-      title: "Client-Safe Syntax Formatting",
-      icon: "Code",
+      title: "100% Private Local Image Processing",
+      icon: "Image",
       content:
-        "Analyze and clean your code structures safely. Our formatters parse JSON, XML, SQL, HTML, CSS, and JavaScript using local TypeScript tokenizers. Clean nested syntax, minify stylesheets, or parse complex databases instantly."
+        "We run all graphic operations inside your browser's HTML5 Canvas, WebGL, or WebAssembly sandbox. This means your images are never sent to a cloud server, ensuring privacy for personal photos."
     },
     {
-      title: "Cryptographic Integrity Auditing",
-      icon: "ShieldCheck",
+      title: "High-Ratio Image Compression",
+      icon: "Minimize2",
       content:
-        "Generate MD5, SHA-1, SHA-256, SHA-512, or SHA-3 hashes in real-time. Verify files or text checksums against software packages directly. The entire process runs client-side, making it ideal for checking proprietary files."
+        "Reduce image file sizes for PNG, JPG, WebP, and GIF formats. Adjust quality scales, compare file sizes in real-time, and download compressed files with maximum visual clarity."
     },
     {
-      title: "Regular Expression & Logic Testing",
-      icon: "SearchCode",
+      title: "SVG Vector Converter & Rasterizer",
+      icon: "Palette",
       content:
-        "Test your expressions using live JavaScript RegExp engines. View match highlighting, capturing groups, and execution speeds instantly, supported by a comprehensive syntax cheat sheet to build complex parameters."
+        "Convert SVG vector files into high-resolution PNG, JPG, or WebP raster formats. Or vectorize simple images into clean vector paths using local canvas edge detection."
     },
     {
-      title: "Data Format Conversion Suite",
-      icon: "RefreshCw",
+      title: "Favicon & PWA Asset Generator",
+      icon: "Globe",
       content:
-        "Symmetrically convert between YAML and JSON, or JSON and CSV in a split-screen workspace. Adjust delimiters, flatten object hierarchies, and export files directly with single-click triggers."
+        "Create favicon files (.ico) and PWA icon sets from any image. Export multi-resolution sizes from 16x16 up to 512x512 with proper manifest files in a single zip package."
     }
   ],
   faqs: [
     {
-      q: "Is it safe to format proprietary JSON or XML code here?",
-      a: "Yes, 100% safe. The formatting and linting operations happen locally. No network requests are sent with your code, keeping your intellectual property completely secure."
+      q: "Are my uploaded photos safe?",
+      a: "Absolutely. Images are processed locally on your hardware. We do not run image storage backends, meaning your files are never uploaded or stored online."
     },
     {
-      q: "How does the JWT Decoder handle secure tokens?",
-      a: "The decoder splits the JSON Web Token structure (header, payload, signature) using client-side base64 url-decoding. No keys or tokens are stored or sent anywhere."
+      q: "What is HEIC and can I convert it here?",
+      a: "HEIC is Apple's high-efficiency image format. Yes, our HEIC-to-JPG tool translates these files directly in the browser so they can be viewed on non-Apple devices."
     },
     {
-      q: "Does the SQL Formatter support multiple dialects?",
-      a: "Yes, you can format queries tailored for Standard SQL, PostgreSQL, MySQL, and Microsoft SQL Server (T-SQL) with customized indentation spacing."
+      q: "Does compressing images reduce their dimensions?",
+      a: "Not by default. Compression optimizes color palettes and reduces metadata. However, you can use our Image Resizer card if you wish to adjust the pixel width and height."
     }
   ]
 };
 
-export default function DeveloperToolsCategoryPage() {
+export default function ImageToolsCategoryPage() {
   const registryPath = path.join(process.cwd(), "lib", "tools-registry.json");
   const toolsRegistry = JSON.parse(fs.readFileSync(registryPath, "utf-8")) as Array<any>;
 
   const categoryTools = toolsRegistry
     .map((tool, idx) => ({ ...tool, originalIndex: idx }))
-    .filter((tool) => tool.category === "developer-tools")
+    .filter((tool) => tool.category === "image-tools")
     .map((tool) => {
-      if (tool.id === "css-gradient-generator") {
+      if (tool.id === "gradient-wallpaper-generator") {
         return {
           ...tool,
-          title: "CSS Gradient Generator",
-          description: "Design and export CSS linear, radial, and conic gradients with Tailwind support and 1080p image exports.",
+          title: "Canvas Color Gradient Generator & High-Res PNG Exporter",
+          description: "Design linear, radial, and conic gradients with custom stops and export uncompressed 4K UHD PNG wallpapers.",
           iconName: "Palette"
         };
       }
-      if (tool.id === "html-table-generator") {
+      if (tool.id === "image-dpi-print-calculator") {
         return {
           ...tool,
-          title: "HTML Table Code Generator",
-          description: "Interactive visual HTML table builder with Tailwind, CSS, React TSX, and Markdown export.",
-          iconName: "Table"
+          title: "Image DPI to Physical Print Dimension Calculator",
+          description: "Convert pixel resolutions to physical paper dimensions across custom DPI densities and human viewing distance thresholds.",
+          iconName: "Printer"
         };
       }
-      if (tool.id === "htaccess-generator") {
+      if (tool.id === "base64-to-image-converter") {
         return {
           ...tool,
-          title: "HTACCESS Directives & Rewrite Rules Generator",
-          description: "Generate production-ready Apache .htaccess rules with 301 redirects, HTTPS enforcement, GZIP, and security headers.",
+          title: "Base64 to Image Decoder & Instant PNG/JPG Exporter",
+          description: "Decode base64 strings and data URIs into high-resolution PNG, JPG, or WebP files.",
           iconName: "FileCode"
         };
       }
-      if (tool.id === "robots-txt-generator") {
+      if (tool.id === "image-to-base64-converter") {
         return {
           ...tool,
-          title: "Robots.txt Generator & Validator",
-          description: "Generate RFC 9309 compliant robots.txt files, block AI scrapers, and test crawl URL paths in real time.",
-          iconName: "Bot"
-        };
-      }
-      if (tool.id === "screen-resolution-calculator") {
-        return {
-          ...tool,
-          title: "Screen Resolution & Aspect Ratio Calculator",
-          description: "Calculate display aspect ratios, custom dimension scaling, PPI density, and responsive CSS snippets.",
-          iconName: "Tv"
-        };
-      }
-      if (tool.id === "px-to-rem-converter") {
-        return {
-          ...tool,
-          title: "Pixels to REM / EM Converter",
-          description: "Convert CSS pixel dimensions to responsive REM and EM units with instant batch CSS replacement.",
-          iconName: "ArrowRightLeft"
-        };
-      }
-      if (tool.id === "javascript-keycode-finder") {
-        return {
-          ...tool,
-          title: "Keycode & Event Inspector",
-          description: "Real-time JavaScript keyboard event inspector with event.key, event.code, deprecated keycodes, and React code snippet generators.",
-          iconName: "Keyboard"
-        };
-      }
-      if (tool.id === "chmod-calculator") {
-        return {
-          ...tool,
-          title: "Chmod Permissions Calculator",
-          description: "Interactive Linux/Unix chmod permission calculator with octal, symbolic notation, special bit modifiers, and CLI generators.",
-          iconName: "Shield"
-        };
-      }
-      if (tool.id === "css-clamp-calculator") {
-        return {
-          ...tool,
-          title: "Responsive CSS Clamp() & Fluid Typography Calculator",
-          description: "Calculate precision fluid typography and dynamic CSS clamp() linear interpolation rules with live preview.",
-          iconName: "Maximize2"
+          title: "Image to Base64 String Data URI Encoder",
+          description: "Encode PNG, JPG, WebP, SVG, and GIF images into RFC 4648 Base64 strings and Data URIs with zero server uploads.",
+          iconName: "FileCode"
         };
       }
       return tool;
@@ -233,21 +192,21 @@ export default function DeveloperToolsCategoryPage() {
             </Link>
             <span>/</span>
             <span className="text-white font-semibold max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
-              {developerMetadata.name}
+              {imageMetadata.name}
             </span>
           </div>
 
           {/* Title Block */}
           <div className="flex items-start gap-4 mt-6">
             <div className="bg-white/20 backdrop-blur-sm p-3.5 flex items-center justify-center text-white shadow-lg rounded-2xl w-14 h-14 flex-shrink-0">
-              <Code className="w-8 h-8" />
+              <ImageIcon className="w-8 h-8" />
             </div>
             <div className="flex-1 min-w-0">
               <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white leading-tight">
-                {developerMetadata.name}
+                {imageMetadata.name}
               </h1>
               <p className="text-sm md:text-base text-indigo-100 mt-2 max-w-full leading-relaxed">
-                {developerMetadata.description}
+                {imageMetadata.description}
               </p>
             </div>
           </div>
@@ -259,21 +218,21 @@ export default function DeveloperToolsCategoryPage() {
         {/* Dynamic Search grid component */}
         <CategoryToolSearchGrid
           tools={categoryTools}
-          categorySlug="developer-tools"
+          categorySlug="image-tools"
         />
 
         {/* Below-The-Fold SEO Content Layout */}
         <div className="border-t border-slate-200 dark:border-slate-800 pt-12 space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {developerMetadata.cards.map((card, idx) => {
+            {imageMetadata.cards.map((card, idx) => {
               const CardIcon =
-                card.icon === "Code"
-                  ? Code
-                  : card.icon === "ShieldCheck"
-                  ? ShieldCheck
-                  : card.icon === "SearchCode"
-                  ? SearchCode
-                  : RefreshCw;
+                card.icon === "Image"
+                  ? ImageIcon
+                  : card.icon === "Minimize2"
+                  ? Minimize2
+                  : card.icon === "Palette"
+                  ? Palette
+                  : Globe;
 
               return (
                 <div
@@ -307,7 +266,7 @@ export default function DeveloperToolsCategoryPage() {
               </h2>
             </div>
             <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-              {developerMetadata.faqs.map((faq, idx) => (
+              {imageMetadata.faqs.map((faq, idx) => (
                 <div key={idx} className="space-y-2">
                   <dt className="font-semibold text-slate-900 dark:text-white text-sm">
                     {faq.q}

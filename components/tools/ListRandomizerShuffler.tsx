@@ -611,7 +611,7 @@ export default function ListRandomizerShuffler() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        A list randomizer is a stochastic combinatorics engine designed to transform an ordered finite set of $n$ elements into one of its $n!$ possible permutations with uniform probability[cite: 3]. For any list permutation sequence $\pi$, strict mathematical fairness dictates that every distinct outcome possesses an identical probability density[cite: 3]:
+                        A list randomizer is a stochastic combinatorics engine designed to transform an ordered finite set of $n$ elements into one of its $n!$ possible permutations with uniform probability. For any list permutation sequence $\pi$, strict mathematical fairness dictates that every distinct outcome possesses an identical probability density:
                     </p>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed text-center font-mono">
@@ -619,7 +619,7 @@ export default function ListRandomizerShuffler() {
                     </p>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        The original pencil-and-paper algorithm proposed by Ronald Fisher and Frank Yates in 1938 operated by writing down numbers from 1 to $n$, picking a remaining number at random, writing it down on a separate sheet, and crossing it off the original list[cite: 3]. In computer science, this naive approach suffers from an $O(n^2)$ time penalty due to element deletion and array compaction costs[cite: 3].
+                        The original pencil-and-paper algorithm proposed by Ronald Fisher and Frank Yates in 1938 operated by writing down numbers from 1 to $n$, picking a remaining number at random, writing it down on a separate sheet, and crossing it off the original list. In computer science, this naive approach suffers from an $O(n^2)$ time penalty due to element deletion and array compaction costs.
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-4 mt-4">
@@ -628,7 +628,7 @@ export default function ListRandomizerShuffler() {
                                 <Terminal className="w-4 h-4 text-indigo-600" /> Durstenfeld In-Place Algorithm (1964)
                             </h3>
                             <p className="text-xs text-slate-700 leading-relaxed">
-                                Richard Durstenfeld modernized the algorithm into an optimal $O(n)$ in-place method by swapping chosen items into the tail of the array, avoiding auxiliary allocation[cite: 3]:
+                                Richard Durstenfeld modernized the algorithm into an optimal $O(n)$ in-place method by swapping chosen items into the tail of the array, avoiding auxiliary allocation:
                             </p>
                             <div className="bg-slate-900 text-indigo-300 p-3 rounded-lg font-mono text-xs overflow-x-auto leading-relaxed">
                                 {"// In-Place O(n) Array Permutation\nfor i from n - 1 down to 1 do:\n    j = random_integer(0 ≤ j ≤ i)\n    swap(array[i], array[j])"}
@@ -640,7 +640,7 @@ export default function ListRandomizerShuffler() {
                                 <Cpu className="w-4 h-4 text-indigo-600" /> Cryptographic Web Crypto API RNG
                             </h3>
                             <p className="text-xs text-slate-700 leading-relaxed">
-                                Instead of standard pseudo-random number generators (PRNGs) like <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">Math.random()</code> that repeat sequences due to low entropy seeds, our tool uses operating system hardware entropy[cite: 3]:
+                                Instead of standard pseudo-random number generators (PRNGs) like <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">Math.random()</code> that repeat sequences due to low entropy seeds, our tool uses operating system hardware entropy:
                             </p>
                             <div className="bg-slate-900 text-indigo-300 p-3 rounded-lg font-mono text-xs overflow-x-auto leading-relaxed">
                                 {"// OS Kernel CSPRNG Buffer\nconst entropy = new Uint32Array(n);\nwindow.crypto.getRandomValues(entropy);\nconst j = entropy[i] % (i + 1);"}
@@ -661,7 +661,7 @@ export default function ListRandomizerShuffler() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        A widespread shortcut in software development is shuffling arrays using <code className="bg-slate-100 text-indigo-700 px-1.5 py-0.5 rounded font-mono text-xs">array.sort(() =&gt; Math.random() - 0.5)</code>[cite: 3]. While brief, this method introduces severe statistical bias and violates core mathematical sorting axioms[cite: 3].
+                        A widespread shortcut in software development is shuffling arrays using <code className="bg-slate-100 text-indigo-700 px-1.5 py-0.5 rounded font-mono text-xs">array.sort(() =&gt; Math.random() - 0.5)</code>. While brief, this method introduces severe statistical bias and violates core mathematical sorting axioms.
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-4">
@@ -670,7 +670,7 @@ export default function ListRandomizerShuffler() {
                                 <Scale className="w-4 h-4 text-rose-600" /> Transitivity Violation
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                Sorting algorithms require transitivity: if $A &gt; B$ and $B &gt; C$, then $A &gt; C$ must be true[cite: 3]. Random comparators return non-deterministic values, breaking sorting invariants and causing undefined element order[cite: 3].
+                                Sorting algorithms require transitivity: if $A &gt; B$ and $B &gt; C$, then $A &gt; C$ must be true. Random comparators return non-deterministic values, breaking sorting invariants and causing undefined element order.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
@@ -678,7 +678,7 @@ export default function ListRandomizerShuffler() {
                                 <BarChart3 className="w-4 h-4 text-rose-600" /> Non-Uniform Probabilities
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                In modern V8 engines (using Timsort or QuickSort), elements are compared an unequal number of times depending on their starting index[cite: 3]. Items near the beginning stay near the beginning far more often than $1/n!$[cite: 3].
+                                In modern V8 engines (using Timsort or QuickSort), elements are compared an unequal number of times depending on their starting index. Items near the beginning stay near the beginning far more often than $1/n!$.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
@@ -686,7 +686,7 @@ export default function ListRandomizerShuffler() {
                                 <Zap className="w-4 h-4 text-indigo-600" /> Durstenfeld Uniformity
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                The Durstenfeld Fisher-Yates algorithm guarantees each element has an exact $1/n$ probability of being swapped into any index, completely eliminating positional bias[cite: 3].
+                                The Durstenfeld Fisher-Yates algorithm guarantees each element has an exact $1/n$ probability of being swapped into any index, completely eliminating positional bias.
                             </p>
                         </div>
                     </div>
@@ -753,7 +753,7 @@ export default function ListRandomizerShuffler() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        Factorial growth accelerates at an astronomical rate[cite: 3]. For example, a standard deck of 52 playing cards has $52! \\approx 8.0658 \\times 10^{67}$ possible orderings[cite: 3]. When you shuffle a 52-card list with an unbiased engine, it is mathematically almost certain that the resulting sequence has never existed before in human history[cite: 3].
+                        Factorial growth accelerates at an astronomical rate. For example, a standard deck of 52 playing cards has $52! \\approx 8.0658 \\times 10^{67}$ possible orderings. When you shuffle a 52-card list with an unbiased engine, it is mathematically almost certain that the resulting sequence has never existed before in human history.
                     </p>
 
                     <div className="overflow-x-auto border border-slate-200 rounded-xl">
@@ -832,7 +832,7 @@ export default function ListRandomizerShuffler() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        Learn how to leverage delimiters, group chunking, duplicate sanitization, and output sampling for everyday technical and organizational tasks[cite: 3]:
+                        Learn how to leverage delimiters, group chunking, duplicate sanitization, and output sampling for everyday technical and organizational tasks:
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -845,11 +845,11 @@ export default function ListRandomizerShuffler() {
                                 <span className="text-xs bg-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded-full">Grouping Mode</span>
                             </div>
                             <ul className="text-xs text-slate-700 space-y-2 leading-relaxed">
-                                <li><strong>Goal:</strong> Divide 16 participant names into 4 fair teams of 4 members each[cite: 3].</li>
-                                <li><strong>Step 1:</strong> Paste names into the input box (separated by New Line)[cite: 3].</li>
-                                <li><strong>Step 2:</strong> Check <em>Trim item whitespace</em> and <em>Remove duplicate items</em>[cite: 3].</li>
-                                <li><strong>Step 3:</strong> Set <em>Group Items by Size</em> to <code className="bg-slate-200 px-1 py-0.5 rounded">4</code>[cite: 3].</li>
-                                <li><strong>Step 4:</strong> Click <strong>Randomize & Shuffle List</strong> to generate formatted <em>--- Group 1 ---</em> through <em>--- Group 4 ---</em> outputs[cite: 3].</li>
+                                <li><strong>Goal:</strong> Divide 16 participant names into 4 fair teams of 4 members each.</li>
+                                <li><strong>Step 1:</strong> Paste names into the input box (separated by New Line).</li>
+                                <li><strong>Step 2:</strong> Check <em>Trim item whitespace</em> and <em>Remove duplicate items</em>.</li>
+                                <li><strong>Step 3:</strong> Set <em>Group Items by Size</em> to <code className="bg-slate-200 px-1 py-0.5 rounded">4</code>.</li>
+                                <li><strong>Step 4:</strong> Click <strong>Randomize & Shuffle List</strong> to generate formatted <em>--- Group 1 ---</em> through <em>--- Group 4 ---</em> outputs.</li>
                             </ul>
                         </div>
 
@@ -862,11 +862,11 @@ export default function ListRandomizerShuffler() {
                                 <span className="text-xs bg-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded-full">Sampling Mode</span>
                             </div>
                             <ul className="text-xs text-slate-700 space-y-2 leading-relaxed">
-                                <li><strong>Goal:</strong> Select exactly 3 unique winners from a list of 250 contest entries[cite: 3].</li>
-                                <li><strong>Step 1:</strong> Paste all 250 contestant names or email addresses[cite: 3].</li>
-                                <li><strong>Step 2:</strong> Check <em>Remove duplicate items</em> to ensure fair single-entry odds[cite: 3].</li>
-                                <li><strong>Step 3:</strong> Set <em>Limit Output Sample</em> to <code className="bg-slate-200 px-1 py-0.5 rounded">3</code> and enable <em>Prefix numbered rank</em>[cite: 3].</li>
-                                <li><strong>Step 4:</strong> Click <strong>Randomize & Shuffle List</strong> to instantly draw ranked winners: 1st, 2nd, and 3rd place[cite: 3].</li>
+                                <li><strong>Goal:</strong> Select exactly 3 unique winners from a list of 250 contest entries.</li>
+                                <li><strong>Step 1:</strong> Paste all 250 contestant names or email addresses.</li>
+                                <li><strong>Step 2:</strong> Check <em>Remove duplicate items</em> to ensure fair single-entry odds.</li>
+                                <li><strong>Step 3:</strong> Set <em>Limit Output Sample</em> to <code className="bg-slate-200 px-1 py-0.5 rounded">3</code> and enable <em>Prefix numbered rank</em>.</li>
+                                <li><strong>Step 4:</strong> Click <strong>Randomize & Shuffle List</strong> to instantly draw ranked winners: 1st, 2nd, and 3rd place.</li>
                             </ul>
                         </div>
                     </div>
@@ -884,7 +884,7 @@ export default function ListRandomizerShuffler() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        Browser-native list randomizers are essential utilities across multiple engineering, scientific research, and operational workflows[cite: 3]:
+                        Browser-native list randomizers are essential utilities across multiple engineering, scientific research, and operational workflows:
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-4">
@@ -893,7 +893,7 @@ export default function ListRandomizerShuffler() {
                                 <Code2 className="w-4 h-4 text-indigo-600" /> A/B Testing & Clinical Trials
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                Randomize cohort assignments and experimental trial treatments without server latency or database bias[cite: 3].
+                                Randomize cohort assignments and experimental trial treatments without server latency or database bias.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
@@ -901,7 +901,7 @@ export default function ListRandomizerShuffler() {
                                 <Binary className="w-4 h-4 text-indigo-600" /> Machine Learning Dataset Splitting
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                Shuffle training datasets, validation samples, and feature matrices prior to cross-validation batching[cite: 3].
+                                Shuffle training datasets, validation samples, and feature matrices prior to cross-validation batching.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
@@ -909,7 +909,7 @@ export default function ListRandomizerShuffler() {
                                 <Compass className="w-4 h-4 text-indigo-600" /> Exam Question & Survey Randomization
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                Prevent academic cheating and survey order fatigue by randomizing question blocks and multiple-choice options[cite: 3].
+                                Prevent academic cheating and survey order fatigue by randomizing question blocks and multiple-choice options.
                             </p>
                         </div>
                     </div>
@@ -932,7 +932,7 @@ export default function ListRandomizerShuffler() {
                                 Why is the Fisher-Yates algorithm mathematically unbiased?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                The Fisher-Yates (Knuth) shuffle guarantees that every one of the $n!$ possible permutations has an exact, uniform probability of $1/n!$[cite: 3]. Unlike naive sorting with random comparator functions, which suffer from positional bias, Fisher-Yates swaps each element exactly once with an independently chosen random remaining index[cite: 3].
+                                The Fisher-Yates (Knuth) shuffle guarantees that every one of the $n!$ possible permutations has an exact, uniform probability of $1/n!$. Unlike naive sorting with random comparator functions, which suffer from positional bias, Fisher-Yates swaps each element exactly once with an independently chosen random remaining index.
                             </p>
                         </div>
 
@@ -941,7 +941,7 @@ export default function ListRandomizerShuffler() {
                                 How does hardware cryptographic entropy prevent predictability?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                Standard pseudo-random number generators like <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">Math.random()</code> rely on deterministic internal seed states[cite: 3]. This tool integrates the browser Web Crypto API (<code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">crypto.getRandomValues</code>), utilizing low-level operating system hardware entropy for cryptographically secure, unguessable shuffling[cite: 3].
+                                Standard pseudo-random number generators like <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">Math.random()</code> rely on deterministic internal seed states. This tool integrates the browser Web Crypto API (<code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">crypto.getRandomValues</code>), utilizing low-level operating system hardware entropy for cryptographically secure, unguessable shuffling.
                             </p>
                         </div>
 
@@ -950,7 +950,7 @@ export default function ListRandomizerShuffler() {
                                 What is the computational complexity of the Durstenfeld Fisher-Yates shuffle?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                The in-place Durstenfeld modernization of Fisher-Yates operates in strict $O(n)$ linear time complexity and $O(1)$ auxiliary space complexity, processing tens of thousands of list items in single-digit milliseconds[cite: 3].
+                                The in-place Durstenfeld modernization of Fisher-Yates operates in strict $O(n)$ linear time complexity and $O(1)$ auxiliary space complexity, processing tens of thousands of list items in single-digit milliseconds.
                             </p>
                         </div>
 
@@ -959,7 +959,7 @@ export default function ListRandomizerShuffler() {
                                 Why is arr.sort(() =&gt; Math.random() - 0.5) considered harmful?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                Sorting with <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">Math.random() - 0.5</code> violates the transitivity and consistency axioms required by sorting algorithms like QuickSort or Timsort[cite: 3]. This causes non-uniform permutation distributions where elements tend to remain near their initial indices, leading to severe statistical bias[cite: 3].
+                                Sorting with <code className="bg-slate-200 px-1 py-0.5 rounded text-xs font-mono">Math.random() - 0.5</code> violates the transitivity and consistency axioms required by sorting algorithms like QuickSort or Timsort. This causes non-uniform permutation distributions where elements tend to remain near their initial indices, leading to severe statistical bias.
                             </p>
                         </div>
 
@@ -968,7 +968,7 @@ export default function ListRandomizerShuffler() {
                                 Can I split a shuffled list into random teams or equal groups?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                Yes. Set the "Group Items by Size" option to your desired subgroup size (e.g., 4 players per team)[cite: 3]. The engine randomizes the full pool and formats the output into organized numbered chunks automatically[cite: 3].
+                                Yes. Set the "Group Items by Size" option to your desired subgroup size (e.g., 4 players per team). The engine randomizes the full pool and formats the output into organized numbered chunks automatically.
                             </p>
                         </div>
 
@@ -977,7 +977,7 @@ export default function ListRandomizerShuffler() {
                                 Does this tool transmit my list data to external servers?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                No. 100% of data processing, sanitization, parsing, and random array mutation occurs entirely client-side in your local browser memory thread[cite: 3]. Zero bytes of your list data are uploaded or logged[cite: 3].
+                                No. 100% of data processing, sanitization, parsing, and random array mutation occurs entirely client-side in your local browser memory thread. Zero bytes of your list data are uploaded or logged.
                             </p>
                         </div>
                     </div>

@@ -46,6 +46,7 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [YAML to JSON & JSON to YAML Converter](https://www.twistertools.com/tools/developer-tools/yaml-to-json-converter): Bidirectional YAML/JSON data structure converter with tree visualization.
 - [JSON to CSV & CSV to JSON Converter](https://www.twistertools.com/tools/developer-tools/json-to-csv-converter): Tabular data converter supporting custom delimiters and nested structures.
 - [RGB to Hex & Hex to RGB Converter](https://www.twistertools.com/tools/developer-tools/rgb-to-hex): Bidirectional color format converter with HSL, HSV, and CMYK outputs.
+- [Responsive CSS Clamp() & Fluid Typography Calculator](https://twistertools.com/tools/developer-tools/css-clamp-calculator): Fluid typography & CSS clamp() linear interpolation calculator with real-time viewport simulation and Tailwind export.
 ### [Daily Essentials, Financial & Health Calculators](https://www.twistertools.com/tools/calculators)
 - [Simple Interest & Loan Calculator](https://www.twistertools.com/tools/calculators/simple-interest-calculator): Calculate flat loan interest, payment splits, and amortization schedules.
 - [Compound Interest & Growth Calculator](https://www.twistertools.com/tools/calculators/compound-interest-calculator): Simulate capital growth across varying compounding frequencies.
@@ -226,6 +227,10 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - SVG Path Visualizer (/tools/image-tools/svg-path-visualizer): Real-time SVG path command deconstructor, Bézier control handle inspector, and coordinate visualizer.
 * SVG to CSS Background Converter (/tools/image-tools/svg-to-css-converter): Convert SVG vector markup into URL-encoded or Base64 CSS Data URIs and Tailwind classes.
 * SVG to React JSX Converter (/tools/image-tools/svg-to-jsx-converter): Transform raw SVG vector markup into optimized React JSX/TSX components with forwardRef, TypeScript interfaces, and camelCase attributes.
+* `base64-to-image-converter`: Client-side Base64 string and Data URI decoder with instant PNG, JPG, and WebP raster export.
+* [Image to Base64 String Data URI Encoder](/tools/image-tools/image-to-base64-converter): Client-side image to RFC 4648 Base64 string and Data URI converter with format transformation controls.
+- Image DPI to Physical Print Dimension Calculator: Bidirectional pixel-to-dimension rendering, viewing distance acuity, and prepress density matrix (/tools/image-tools/image-dpi-print-calculator)
+- `/tools/image-tools/gradient-wallpaper-generator`: Canvas Color Gradient Generator & High-Res PNG Exporter (linear, radial, and conic gradients with 4K PNG export).
 ### [SEO, Domain & Network Inspector Tools](https://www.twistertools.com/tools/web-tools)
 - [XML Sitemap Generator & URL Crawler](https://www.twistertools.com/tools/web-tools/sitemap-generator): Crawl links and generate valid Sitemaps.org XML and TXT sitemaps.
 - [Meta Tag Generator & Social Preview Suite](https://www.twistertools.com/tools/web-tools/meta-tag-generator): Draft SEO meta tags with live Google, Facebook, and Twitter card previews.

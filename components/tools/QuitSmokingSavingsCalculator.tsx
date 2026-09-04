@@ -901,7 +901,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                 </div>
             </div>
 
-            {/* FIRST MANDATORY MEDICAL & FINANCIAL DISCLAIMER BANNER[cite: 1] */}
+            {/* FIRST MANDATORY MEDICAL & FINANCIAL DISCLAIMER BANNER */}
             <div className="bg-amber-50 border border-amber-200/80 rounded-2xl p-4 flex items-start gap-3 shadow-xs">
                 <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                 <p className="text-xs text-amber-800 leading-relaxed">
@@ -909,10 +909,10 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                 </p>
             </div>
 
-            {/* BELOW-THE-FOLD HIGH-VALUE CONTENT & SEO OPTIMIZATION[cite: 1] */}
+            {/* BELOW-THE-FOLD HIGH-VALUE CONTENT & SEO OPTIMIZATION */}
             <div className="space-y-6">
 
-                {/* Card 1: Medical Mechanics & Physiological Restoration Timeline[cite: 1] */}
+                {/* Card 1: Medical Mechanics & Physiological Restoration Timeline */}
                 <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -946,7 +946,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                         </div>
                     </div>
 
-                    {/* Mathematical Formula Box[cite: 1] */}
+                    {/* Mathematical Formula Box */}
                     <div className="bg-slate-900 text-white rounded-xl space-y-3 p-4 sm:p-6">
                         <h3 className="text-sm font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-2">
                             <Calculator className="w-4 h-4" /> Quantitative Savings & Life Expectancy Formulas
@@ -963,7 +963,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                     </div>
                 </section>
 
-                {/* Card 2: Detailed Recovery Benchmark Matrix[cite: 1] */}
+                {/* Card 2: Detailed Recovery Benchmark Matrix */}
                 <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -1033,7 +1033,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                     </div>
                 </section>
 
-                {/* Card 3: Financial Windfall & Wealth Accumulation Case Studies[cite: 1] */}
+                {/* Card 3: Financial Windfall & Wealth Accumulation Case Studies */}
                 <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -1079,7 +1079,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                     </div>
                 </section>
 
-                {/* Card 4: Practical Behavioral Tactics for Nicotine Withdrawal[cite: 1] */}
+                {/* Card 4: Practical Behavioral Tactics for Nicotine Withdrawal */}
                 <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -1122,7 +1122,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                     </div>
                 </section>
 
-                {/* Card 5: Frequently Asked Questions (FAQ)[cite: 1] */}
+                {/* Card 5: Frequently Asked Questions (FAQ) */}
                 <section className="bg-white border border-slate-200 rounded-2xl shadow-sm space-y-6 min-w-0 p-4 sm:p-6 md:p-8">
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -1181,7 +1181,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                     </div>
                 </section>
 
-                {/* SECOND MANDATORY MEDICAL & FINANCIAL DISCLAIMER CARD[cite: 1] */}
+                {/* SECOND MANDATORY MEDICAL & FINANCIAL DISCLAIMER CARD */}
                 <section className="bg-slate-50 border border-slate-200 rounded-2xl shadow-sm space-y-2 text-xs text-slate-600 p-4 sm:p-6">
                     <h3 className="font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                         <ShieldCheck className="w-4 h-4 text-amber-600" /> Mandatory Health & Financial Disclaimer

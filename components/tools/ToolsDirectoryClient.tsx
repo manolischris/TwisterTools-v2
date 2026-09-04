@@ -130,7 +130,7 @@ import { Link as LinkIcon,
   Eraser,
   Baseline,
   Gift,
-  Trophy, PenTool, Smile, Gamepad2, Palette, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare } from "lucide-react";
+  Trophy, PenTool, Smile, Gamepad2, Palette, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
    Types
@@ -149,6 +149,7 @@ interface RegistryTool {
    Icon Map
  ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Printer,
   VectorSquare,
   Gamepad2,
   Smile,
