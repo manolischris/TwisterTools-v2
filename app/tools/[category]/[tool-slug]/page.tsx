@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -141,6 +141,12 @@ const SvgToJsxConverter = dynamic(() => import("@/components/tools/SvgToJsxConve
 const Base64ToImageConverter = dynamic(() => import("@/components/tools/Base64ToImageConverter"));
 const ImageDpiPrintCalculator = dynamic(() => import("@/components/tools/ImageDpiPrintCalculator"));
 const CssClampCalculator = dynamic(() => import("@/components/tools/CssClampCalculator"));
+const GlassmorphismGenerator = dynamic(() => import("@/components/tools/GlassmorphismGenerator"));
+const CssNeumorphismGenerator = dynamic(() => import("@/components/tools/CssNeumorphismGenerator"));
+const TailwindColorGenerator = dynamic(() => import("@/components/tools/TailwindColorGenerator"));
+const CssAnimationGenerator = dynamic(() => import("@/components/tools/CssAnimationGenerator"));
+const JsonToTypescriptConverter = dynamic(() => import("@/components/tools/JsonToTypescriptConverter"));
+
 
 
 
@@ -290,6 +296,11 @@ const COMPLETED_TOOLS = [
   "base64-to-image-converter",
   "image-dpi-print-calculator",
   "css-clamp-calculator",
+  "css-glassmorphism-generator",
+  "css-neumorphism-generator",
+  "tailwind-color-generator",
+  "css-animation-generator",
+  "json-to-typescript-converter",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -351,6 +362,10 @@ function handleConsolidationRedirects(category: string, toolSlug: string) {
     "length-converter",
     "area-converter",
     "volume-converter",
+    "torque-converter",
+    "power-converter",
+    "pressure-converter",
+    "voltage-converter",
   ];
   if (category === "calculators" && unitConverterSlugs.includes(toolSlug)) {
     permanentRedirect("/tools/calculators/master-unit-converter");
@@ -458,6 +473,31 @@ export async function generateMetadata({
   if (category === "developer-tools" && toolSlug === "css-clamp-calculator") {
     title = "Responsive CSS Clamp() & Fluid Typography Calculator";
     description = "Calculate precision fluid typography and dynamic CSS clamp() rules with real-time responsive viewport simulation, REM/PX conversions, and Tailwind export.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "css-glassmorphism-generator") {
+    title = "CSS Glassmorphism & Backdrop Blur Generator";
+    description = "Generate modern frosted glassmorphism CSS and Tailwind utilities with real-time backdrop-filter previews.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "css-neumorphism-generator") {
+    title = "CSS Neumorphism Soft UI Generator";
+    description = "Interactive Soft UI and Neumorphism CSS generator. Design extruded surfaces, convex shapes, and dual-shadow physics.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "tailwind-color-generator") {
+    title = "Tailwind CSS Color Palette Generator & Config Exporter";
+    description = "Generate custom 11-stop color palettes from any base hex. Export instant config code for Tailwind CSS v3, Tailwind CSS v4 @theme, CSS variables, and JSON design tokens.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "css-animation-generator") {
+    title = "CSS Keyframe Animation Visualizer & Code Exporter";
+    description = "Interactive visual CSS keyframe animation generator, timeline studio, and code exporter. Create smooth 60 FPS GPU-accelerated CSS and Tailwind animations.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "json-to-typescript-converter") {
+    title = "JSON to TypeScript Interface Generator";
+    description = "Convert raw JSON sample payloads into production-grade TypeScript interfaces and types.";
   }
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
@@ -675,7 +715,8 @@ export async function generateMetadata({
           (category === "random-tools" && toolSlug === "would-you-rather-generator") ||
           (category === "random-tools" && toolSlug === "writing-prompt-generator") ||
           (category === "image-tools" && toolSlug === "image-dpi-print-calculator") ||
-          (category === "developer-tools" && toolSlug === "css-clamp-calculator")
+          (category === "developer-tools" && toolSlug === "css-clamp-calculator") ||
+          (category === "developer-tools" && toolSlug === "tailwind-color-generator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -700,7 +741,8 @@ export async function generateMetadata({
           (category === "random-tools" && toolSlug === "would-you-rather-generator") ||
           (category === "random-tools" && toolSlug === "writing-prompt-generator") ||
           (category === "image-tools" && toolSlug === "image-dpi-print-calculator") ||
-          (category === "developer-tools" && toolSlug === "css-clamp-calculator")
+          (category === "developer-tools" && toolSlug === "css-clamp-calculator") ||
+          (category === "developer-tools" && toolSlug === "tailwind-color-generator")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -812,6 +854,16 @@ export default async function ToolPage({
 
   if (category === "developer-tools" && toolSlug === "chmod-calculator") {
     tool.description = "Calculate Linux and Unix file permissions visually with instant octal, symbolic, and binary conversion, SetUID/SetGID/Sticky bit modifiers, and production-ready CLI command generation.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "css-animation-generator") {
+    tool.name = "CSS Keyframe Animation Visualizer & Code Exporter";
+    tool.description = "Interactive visual CSS keyframe animation generator, timeline studio, and code exporter. Create smooth 60 FPS GPU-accelerated CSS and Tailwind animations.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "json-to-typescript-converter") {
+    tool.name = "JSON to TypeScript Interface Generator";
+    tool.description = "Convert raw JSON sample payloads into production-grade TypeScript interfaces and types.";
   }
 
   if (category === "calculators" && toolSlug === "rule-of-72-calculator") {
@@ -1294,8 +1346,8 @@ export default async function ToolPage({
                   <Columns className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "markdown-to-html" ? (
                   <FileText className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "html-formatter-validator" || toolSlug === "css-formatter-validator" || toolSlug === "javascript-formatter-minifier" ? (
-                  <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : (toolSlug === "html-formatter-validator" || toolSlug === "css-formatter-validator" || toolSlug === "javascript-formatter-minifier" || toolSlug === "json-to-typescript-converter") ? (
+                  <FileCode2 className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "json-to-csv-converter" ? (
                   <ArrowRightLeft className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "html-to-markdown" ? (
@@ -1466,6 +1518,14 @@ export default async function ToolPage({
                   <Droplets className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "lightning-distance-calculator" ? (
                   <Zap className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "css-glassmorphism-generator" ? (
+                  <Layers className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "css-neumorphism-generator" ? (
+                  <Box className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "tailwind-color-generator" ? (
+                  <Palette className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "css-animation-generator" ? (
+                  <Sparkles className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "svg-to-css-converter" ? (
                   <FileCode className="w-10 h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "svg-to-jsx-converter" ? (
@@ -1609,6 +1669,16 @@ export default async function ToolPage({
             <ImageDpiPrintCalculator />
           ) : category === "developer-tools" && toolSlug === "css-clamp-calculator" ? (
             <CssClampCalculator />
+          ) : category === "developer-tools" && toolSlug === "css-glassmorphism-generator" ? (
+            <GlassmorphismGenerator />
+          ) : category === "developer-tools" && toolSlug === "css-neumorphism-generator" ? (
+            <CssNeumorphismGenerator />
+          ) : category === "developer-tools" && toolSlug === "tailwind-color-generator" ? (
+            <TailwindColorGenerator />
+          ) : category === "developer-tools" && toolSlug === "css-animation-generator" ? (
+            <CssAnimationGenerator />
+          ) : category === "developer-tools" && toolSlug === "json-to-typescript-converter" ? (
+            <JsonToTypescriptConverter />
           ) : category === "image-tools" && toolSlug === "favicon-generator" ? (
             <FaviconGeneratorSuite />
           ) : category === "image-tools" && toolSlug === "svg-converter" ? (

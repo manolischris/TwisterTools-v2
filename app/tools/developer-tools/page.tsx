@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Code, ShieldCheck, SearchCode, RefreshCw, HelpCircle, Palette, Cpu, ArrowRightLeft } from "lucide-react";
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
+import toolsRegistry from "@/lib/tools-registry.json";
 import fs from "fs";
 import path from "path";
 
@@ -112,10 +113,7 @@ const developerMetadata = {
 };
 
 export default function DeveloperToolsCategoryPage() {
-  const registryPath = path.join(process.cwd(), "lib", "tools-registry.json");
-  const toolsRegistry = JSON.parse(fs.readFileSync(registryPath, "utf-8")) as Array<any>;
-
-  const categoryTools = toolsRegistry
+  const categoryTools = (toolsRegistry as Array<any>)
     .map((tool, idx) => ({ ...tool, originalIndex: idx }))
     .filter((tool) => tool.category === "developer-tools")
     .map((tool) => {
@@ -189,6 +187,39 @@ export default function DeveloperToolsCategoryPage() {
           title: "Responsive CSS Clamp() & Fluid Typography Calculator",
           description: "Calculate precision fluid typography and dynamic CSS clamp() linear interpolation rules with live preview.",
           iconName: "Maximize2"
+        };
+      }
+      if (tool.id === "css-glassmorphism-generator") {
+        return {
+          ...tool,
+          title: "CSS Glassmorphism & Backdrop Blur Generator",
+          description: "Interactive frosted glass backdrop-filter generator with instant CSS and Tailwind utility export.",
+          iconName: "Layers"
+        };
+      }
+      if (tool.id === "css-animation-generator") {
+        return {
+          ...tool,
+          title: "CSS Keyframe Animation Visualizer & Code Exporter",
+          description: "Visual keyframe animation timeline builder with real-time preview and CSS/Tailwind export.",
+          iconName: "Sparkles"
+        };
+      }
+      if (tool.id === "json-to-json-schema") {
+        return {
+          ...tool,
+          title: "JSON Schema Generator from Mock JSON Data",
+          description: "Infer Draft-07 and Draft 2020-12 validation schemas from mock JSON data.",
+          href: "/tools/developer-tools/json-to-json-schema",
+          iconName: "FileJson"
+        };
+      }
+      if (tool.id === "json-to-typescript-converter") {
+        return {
+          ...tool,
+          title: "JSON to TypeScript Converter",
+          description: "Instantly convert JSON objects and mock responses into clean, fully-typed TypeScript interfaces and type aliases.",
+          iconName: "FileCode2"
         };
       }
       return tool;

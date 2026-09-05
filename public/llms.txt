@@ -47,6 +47,12 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [JSON to CSV & CSV to JSON Converter](https://www.twistertools.com/tools/developer-tools/json-to-csv-converter): Tabular data converter supporting custom delimiters and nested structures.
 - [RGB to Hex & Hex to RGB Converter](https://www.twistertools.com/tools/developer-tools/rgb-to-hex): Bidirectional color format converter with HSL, HSV, and CMYK outputs.
 - [Responsive CSS Clamp() & Fluid Typography Calculator](https://twistertools.com/tools/developer-tools/css-clamp-calculator): Fluid typography & CSS clamp() linear interpolation calculator with real-time viewport simulation and Tailwind export.
+- [CSS Glassmorphism & Backdrop Blur Generator](/tools/developer-tools/css-glassmorphism-generator): Real-time optical backdrop-filter and glass UI code generator for CSS and Tailwind.
+- [CSS Neumorphism Soft UI Generator](/tools/developer-tools/css-neumorphism-generator): Generate tactile soft UI surfaces, dual box-shadow extrusions, and Tailwind CSS code.
+- Tailwind CSS Color Palette Generator & Config Exporter: /tools/developer-tools/tailwind-color-generator - Interactive 11-stop color palette ramp generator with Tailwind v3, v4 @theme, and CSS variables exporter.
+- [CSS Keyframe Animation Visualizer & Code Exporter](/tools/developer-tools/css-animation-generator): Interactive browser-native timeline animation studio with real-time GPU previews, cubic-bezier easing, and CSS/Tailwind exports.
+- [JSON Schema Generator from Mock JSON Data](https://www.twistertools.com/tools/developer-tools/json-to-json-schema): Infer JSON Schema (Draft-07 and Draft 2020-12) from mock JSON data with automatic format detection and validation hardening.
+- JSON to TypeScript Converter (/tools/developer-tools/json-to-typescript-converter): Generate clean TypeScript interfaces and types from sample JSON payloads.
 ### [Daily Essentials, Financial & Health Calculators](https://www.twistertools.com/tools/calculators)
 - [Simple Interest & Loan Calculator](https://www.twistertools.com/tools/calculators/simple-interest-calculator): Calculate flat loan interest, payment splits, and amortization schedules.
 - [Compound Interest & Growth Calculator](https://www.twistertools.com/tools/calculators/compound-interest-calculator): Simulate capital growth across varying compounding frequencies.

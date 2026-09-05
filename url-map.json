@@ -543,7 +543,7 @@
       "id": 23,
       "name": "Voltage Converter",
       "legacy_url": "/voltage-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different voltage units"
     },
@@ -607,7 +607,7 @@
       "id": 31,
       "name": "Torque Converter",
       "legacy_url": "/torque-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different torque units"
     },

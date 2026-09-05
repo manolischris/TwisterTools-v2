@@ -33,6 +33,7 @@ import {
   Maximize2,
   CreditCard,
   FileCode,
+  FileCode2,
   Clock,
   SearchCode,
   ShieldCheck,
@@ -160,6 +161,7 @@ const categories = [
 ];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  FileCode2,
   Printer,
   VectorSquare,
   MapPin,

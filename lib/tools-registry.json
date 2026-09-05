@@ -2560,8 +2560,63 @@
     "href": "/tools/developer-tools/css-clamp-calculator",
     "iconName": "Maximize2",
     "isFeatured": false
+  },
+  {
+    "id": "css-glassmorphism-generator",
+    "title": "CSS Glassmorphism & Backdrop Blur Generator",
+    "description": "Generate modern frosted glassmorphism CSS and Tailwind utilities with real-time backdrop-filter previews.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-glassmorphism-generator",
+    "iconName": "Layers",
+    "isFeatured": false
+  },
+  {
+    "id": "css-neumorphism-generator",
+    "title": "CSS Neumorphism Soft UI Generator",
+    "description": "Interactive Soft UI and Neumorphism CSS generator. Design extruded surfaces, convex shapes, and dual-shadow physics with CSS and Tailwind output.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-neumorphism-generator",
+    "iconName": "Box",
+    "isFeatured": false
+  },
+  {
+    "id": "tailwind-color-generator",
+    "title": "Tailwind CSS Color Palette Generator & Config Exporter",
+    "description": "Generate harmonious 11-stop color scales and export configuration code for Tailwind CSS v3, v4 @theme, and CSS custom properties.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/tailwind-color-generator",
+    "iconName": "Palette",
+    "isFeatured": false
+  },
+  {
+    "id": "css-animation-generator",
+    "title": "CSS Keyframe Animation Visualizer & Code Exporter",
+    "description": "Visual CSS keyframe generator and timeline animator. Create 60 FPS GPU-accelerated keyframe rules with pure CSS and Tailwind config exports.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-animation-generator",
+    "iconName": "Sparkles",
+    "isFeatured": false
+  },
+  {
+    "id": "json-to-json-schema",
+    "title": "JSON Schema Generator from Mock JSON Data",
+    "description": "Convert raw JSON documents into Draft-07 or Draft 2020-12 validation schemas automatically.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/json-to-json-schema",
+    "iconName": "FileJson",
+    "isFeatured": false
+  },
+  {
+    "id": "json-to-typescript-converter",
+    "title": "JSON to TypeScript Interface Generator",
+    "description": "Convert raw JSON sample documents into clean, production-ready TypeScript interfaces and type definitions instantly.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/json-to-typescript-converter",
+    "iconName": "FileCode2",
+    "isFeatured": false
   }
 ]
+
 
 
 

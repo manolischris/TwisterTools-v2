@@ -136,6 +136,10 @@ const nextConfig: NextConfig = {
       { source: "/tools/calculators/volume-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/tools/calculators/power-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/tools/calculators/pressure-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/torque-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/torque-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/voltage-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/voltage-converter", destination: "/tools/calculators/master-unit-converter" },
     ];
     for (const r of legacyRedirects) {
       // Avoid duplicate redirects if they're already loaded from url-map.json
