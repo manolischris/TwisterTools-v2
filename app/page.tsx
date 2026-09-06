@@ -135,6 +135,8 @@ import { Link as LinkIcon,
   Baseline,
   Gift,
   FileCode2,
+  KeyRound,
+  Network,
   Trophy, PenTool, Smile, Gamepad2, VectorSquare, Printer } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -151,6 +153,8 @@ interface Tool {
 }
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Network,
+  KeyRound,
   FileCode2,
   Printer,
   VectorSquare,

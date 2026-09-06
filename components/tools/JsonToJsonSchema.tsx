@@ -917,7 +917,7 @@ export default function JsonToJsonSchema() {
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2">
+                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2 min-w-0">
                             <h3 className="text-xs font-bold text-indigo-400 font-mono uppercase">Node.js (TypeScript / Ajv)</h3>
                             <pre className="text-[11px] font-mono text-indigo-200 overflow-x-auto leading-relaxed">
                                 {`import Ajv from "ajv";
@@ -937,7 +937,7 @@ if (!valid) {
                             </pre>
                         </div>
 
-                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2">
+                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2 min-w-0">
                             <h3 className="text-xs font-bold text-emerald-400 font-mono uppercase">Python 3 (jsonschema)</h3>
                             <pre className="text-[11px] font-mono text-emerald-200 overflow-x-auto leading-relaxed">
                                 {`import json

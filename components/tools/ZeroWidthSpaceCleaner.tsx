@@ -926,7 +926,7 @@ export default function ZeroWidthSpaceCleaner() {
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-4">
-                        <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
+                        <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2 min-w-0">
                             <span className="text-xs font-black uppercase text-indigo-600 tracking-wider">JavaScript / TypeScript</span>
                             <div className="bg-slate-900 text-slate-100 p-3 rounded-lg font-mono text-[11px] overflow-x-auto border border-slate-800">
                                 <pre>{`export function cleanText(str) {
@@ -941,7 +941,7 @@ export default function ZeroWidthSpaceCleaner() {
                             </div>
                         </div>
 
-                        <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
+                        <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2 min-w-0">
                             <span className="text-xs font-black uppercase text-indigo-600 tracking-wider">Python 3 (Regex)</span>
                             <div className="bg-slate-900 text-slate-100 p-3 rounded-lg font-mono text-[11px] overflow-x-auto border border-slate-800">
                                 <pre>{`import re
@@ -955,7 +955,7 @@ def sanitize_unicode(text: str) -> str:
                             </div>
                         </div>
 
-                        <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
+                        <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2 min-w-0">
                             <span className="text-xs font-black uppercase text-indigo-600 tracking-wider">PostgreSQL (SQL)</span>
                             <div className="bg-slate-900 text-slate-100 p-3 rounded-lg font-mono text-[11px] overflow-x-auto border border-slate-800">
                                 <pre>{`-- Clean column data in PostgreSQL

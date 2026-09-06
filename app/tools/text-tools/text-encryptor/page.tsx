@@ -78,10 +78,10 @@ export default function TextEncryptorPage() {
     <div className="min-h-screen bg-background">
       {/* Page Header Strip */}
       <div className="border-b border-slate-200 bg-linear-to-r from-slate-50/80 via-white to-indigo-50/70 dark:border-slate-700 dark:from-slate-900/50 dark:via-slate-950 dark:to-indigo-950/40">
-        <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 md:px-8 md:py-3">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4">
           <div className="mx-auto max-w-6xl">
             {/* Breadcrumb */}
-            <div className="scrollbar-none mb-1.5 flex flex-wrap items-center gap-1 overflow-x-auto whitespace-nowrap text-sm text-slate-600 dark:text-slate-400">
+            <div className="scrollbar-none mb-2 flex flex-wrap items-center gap-1 overflow-x-auto whitespace-nowrap text-xs text-slate-600 dark:text-slate-400 truncate">
               <Link
                 href="/"
                 className="max-w-32.5 truncate transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 sm:max-w-50 md:max-w-none"
@@ -102,15 +102,15 @@ export default function TextEncryptorPage() {
             </div>
 
             {/* Tool Title Row */}
-            <div className="flex items-start gap-4">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-indigo-50/70 shadow-sm dark:bg-slate-800">
-                <Lock className="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-14 sm:h-14 p-1 sm:p-2 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
+                <Lock className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
               </div>
               <div className="min-w-0 flex-1">
-                <h1 className="mb-0.5 text-xl font-bold leading-tight text-slate-900 dark:text-white md:text-2xl">
+                <h1 className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
                   {TOOL_TITLE}
                 </h1>
-                <p className="text-base leading-snug text-slate-600 dark:text-slate-400">
+                <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 sm:line-clamp-none">
                   {TOOL_DESCRIPTION}
                 </p>
               </div>

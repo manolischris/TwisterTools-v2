@@ -589,27 +589,31 @@ Calculated at twistertools.com/tools/calculators/dog-age-calculator`;
                                 <BarChart3 className="w-5 h-5 text-indigo-600" />
                                 Biological Age Conversion
                             </h2>
-                            <div className="flex items-center gap-2">
-                                <span className="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100 hidden sm:inline-flex">
-                                    UCSD Epigenetic v2.6
-                                </span>
-                                <div className="flex items-center bg-slate-100 p-1 rounded-lg">
-                                    <button
-                                        onClick={() => setActiveTab("overview")}
-                                        className={`px-3 py-1 rounded-md text-xs font-semibold transition ${activeTab === "overview" ? "bg-white text-indigo-600 shadow-sm" : "text-slate-600"
-                                            }`}
-                                    >
-                                        Overview
-                                    </button>
-                                    <button
-                                        onClick={() => setActiveTab("matrix")}
-                                        className={`px-3 py-1 rounded-md text-xs font-semibold transition ${activeTab === "matrix" ? "bg-white text-indigo-600 shadow-sm" : "text-slate-600"
-                                            }`}
-                                    >
-                                        Scientific Matrix
-                                    </button>
-                                </div>
-                            </div>
+                            <span className="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100">
+                                UCSD Epigenetic v2.6
+                            </span>
+                        </div>
+
+                        {/* Full-width Overview / Scientific Matrix Tab Selector */}
+                        <div className="w-full bg-slate-100 p-1 rounded-xl grid grid-cols-2 gap-1">
+                            <button
+                                onClick={() => setActiveTab("overview")}
+                                className={`w-full py-2 rounded-lg text-xs sm:text-sm font-semibold transition ${activeTab === "overview"
+                                        ? "bg-white text-indigo-600 shadow-sm"
+                                        : "text-slate-600 hover:text-slate-900"
+                                    }`}
+                            >
+                                Overview
+                            </button>
+                            <button
+                                onClick={() => setActiveTab("matrix")}
+                                className={`w-full py-2 rounded-lg text-xs sm:text-sm font-semibold transition ${activeTab === "matrix"
+                                        ? "bg-white text-indigo-600 shadow-sm"
+                                        : "text-slate-600 hover:text-slate-900"
+                                    }`}
+                            >
+                                Scientific Matrix
+                            </button>
                         </div>
 
                         {/* Primary Result Hero Box */}

@@ -53,6 +53,8 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [CSS Keyframe Animation Visualizer & Code Exporter](/tools/developer-tools/css-animation-generator): Interactive browser-native timeline animation studio with real-time GPU previews, cubic-bezier easing, and CSS/Tailwind exports.
 - [JSON Schema Generator from Mock JSON Data](https://www.twistertools.com/tools/developer-tools/json-to-json-schema): Infer JSON Schema (Draft-07 and Draft 2020-12) from mock JSON data with automatic format detection and validation hardening.
 - JSON to TypeScript Converter (/tools/developer-tools/json-to-typescript-converter): Generate clean TypeScript interfaces and types from sample JSON payloads.
+- BCRYPT Password Hash Generator & Salt Verifier: /tools/developer-tools/bcrypt-hash-generator - Client-side Blowfish password hashing and verification with configurable cost factor.
+- URL Query Parameter Parser (/tools/developer-tools/url-query-parameter-parser): Deconstruct URL query strings into structured JSON objects and TypeScript interfaces.
 ### [Daily Essentials, Financial & Health Calculators](https://www.twistertools.com/tools/calculators)
 - [Simple Interest & Loan Calculator](https://www.twistertools.com/tools/calculators/simple-interest-calculator): Calculate flat loan interest, payment splits, and amortization schedules.
 - [Compound Interest & Growth Calculator](https://www.twistertools.com/tools/calculators/compound-interest-calculator): Simulate capital growth across varying compounding frequencies.
@@ -248,6 +250,8 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [DNS Record Finder](https://www.twistertools.com/tools/web-tools/find-dns-record): Query A, AAAA, MX, TXT, NS, CNAME, and SOA DNS records via DNS-over-HTTPS.
 - [SSL Certificate Checker](https://www.twistertools.com/tools/web-tools/ssl-checker): Audit SSL/TLS certificate validity, issuer authority, and cipher expiration.
 - [HTTP Headers Inspector](https://www.twistertools.com/tools/web-tools/http-headers): Inspect HTTP response headers, status codes, security policies, and CORS headers.
+- Subnet Mask & IPv4 CIDR Range Calculator: /tools/web-tools/subnet-cidr-calculator
+- [IPv6 to IPv4 & Hexadecimal Address Expander](/tools/web-tools/ipv6-address-converter): Client-side IPv6 RFC 4291 expansion, RFC 5952 canonical compression, dual-stack IPv4 extraction, 128-bit binary mapping, and ip6.arpa PTR reverse DNS generation.
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 - [Strong Password Generator](https://www.twistertools.com/tools/password-tools/password-generator): Generate cryptographically secure random passwords and multi-word passphrases using browser CSPRNG.
 - [Password Strength Checker & Cracking Time Analyzer](https://www.twistertools.com/tools/password-tools/password-strength-checker): Analyze password entropy and estimate brute-force cracking resistance without sending data to servers.

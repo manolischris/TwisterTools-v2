@@ -2614,6 +2614,51 @@
     "href": "/tools/developer-tools/json-to-typescript-converter",
     "iconName": "FileCode2",
     "isFeatured": false
+  },
+  {
+    "id": "bcrypt-hash-generator",
+    "title": "BCRYPT Password Hash Generator & Salt Verifier",
+    "description": "Client-side Blowfish key-derivation engine with real-time salt breakdown and constant-time equality check.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/bcrypt-hash-generator",
+    "iconName": "KeyRound",
+    "isFeatured": false
+  },
+  {
+    "id": "subnet-cidr-calculator",
+    "title": "Subnet Mask & IPv4 CIDR Range Calculator",
+    "description": "Calculate IPv4 network ranges, broadcast addresses, usable IP spans, wildcard masks, and VLSM subnets client-side.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/subnet-cidr-calculator",
+    "iconName": "Network",
+    "isFeatured": false
+  },
+  {
+    "id": "ipv6-address-converter",
+    "title": "IPv6 to IPv4 & Hexadecimal Address Expander",
+    "description": "Enterprise-grade IPv6 address expander, RFC 5952 compressor, IPv4-mapped address extractor, 128-bit binary visualizer, and ip6.arpa reverse DNS PTR generator.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/ipv6-address-converter",
+    "iconName": "ArrowRightLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "url-query-parameter-parser",
+    "title": "URL Query Parameter Parser & Object Builder",
+    "description": "Parse, edit, inspect, and transform URL query strings into JSON, TypeScript interfaces, and encoded URLs client-side.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/url-query-parameter-parser",
+    "iconName": "Link2",
+    "isFeatured": false
+  },
+  {
+    "id": "csp-header-generator",
+    "title": "Content Security Policy (CSP) Header Generator",
+    "description": "Generate hardened Content Security Policy Level 3 headers with presets for Next.js, WordPress, and zero-trust security.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/csp-header-generator",
+    "iconName": "ShieldCheck",
+    "isFeatured": false
   }
 ]
 

@@ -953,7 +953,7 @@ export default function JsonToTypescriptConverter() {
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-4">
-                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2">
+                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2 min-w-0">
                             <h3 className="text-xs font-bold text-indigo-400 font-mono uppercase">1. Type Assertion (Zero Runtime Overhead)</h3>
                             <pre className="text-[11px] font-mono text-indigo-200 overflow-x-auto leading-relaxed">
                                 {`import type { RootObject } from "./types";
@@ -973,7 +973,7 @@ export async function fetchUserSession(): Promise<RootObject> {
                             </pre>
                         </div>
 
-                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2">
+                        <div className="bg-slate-900 text-white rounded-xl p-4 space-y-2 min-w-0">
                             <h3 className="text-xs font-bold text-emerald-400 font-mono uppercase">2. Runtime Zod Schema Guard</h3>
                             <pre className="text-[11px] font-mono text-emerald-200 overflow-x-auto leading-relaxed">
                                 {`import { z } from "zod";
