@@ -422,8 +422,7 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                 {rooms.map((room, idx) => (
                                     <div key={room.id} className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
                                         <div className="flex items-center justify-between">
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={room.name}
                                                 onChange={(e) => updateRoom(room.id, "name", e.target.value)}
                                                 className="text-xs font-bold text-slate-800 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-indigo-500 outline-none pb-0.5"
@@ -432,7 +431,7 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                                 <button
                                                     type="button"
                                                     onClick={() => removeRoom(room.id)}
-                                                    className="text-slate-400 hover:text-rose-600 transition cursor-pointer p-1"
+                                                    className="text-slate-600 dark:text-slate-300 hover:text-rose-600 transition cursor-pointer p-1"
                                                     title="Remove section"
                                                 >
                                                     <Trash2 className="w-4 h-4" />
@@ -444,7 +443,7 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                             <div>
                                                 <span className="block text-[11px] font-semibold text-slate-500 mb-1">Length ({dimUnit})</span>
                                                 <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                                    <input
+                                                    <input aria-label="Length ({dimUnit})"
                                                         type="number"
                                                         min={0.1}
                                                         step={0.5}
@@ -460,14 +459,14 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                                         }}
                                                         className="w-full text-right font-bold text-slate-900 text-sm outline-none bg-transparent"
                                                     />
-                                                    <span className="text-xs font-bold text-slate-400">{dimUnit}</span>
+                                                    <span className="text-xs font-bold text-slate-600 dark:text-slate-300">{dimUnit}</span>
                                                 </div>
                                             </div>
 
                                             <div>
                                                 <span className="block text-[11px] font-semibold text-slate-500 mb-1">Width ({dimUnit})</span>
                                                 <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                                    <input
+                                                    <input aria-label="Width ({dimUnit})"
                                                         type="number"
                                                         min={0.1}
                                                         step={0.5}
@@ -483,7 +482,7 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                                         }}
                                                         className="w-full text-right font-bold text-slate-900 text-sm outline-none bg-transparent"
                                                     />
-                                                    <span className="text-xs font-bold text-slate-400">{dimUnit}</span>
+                                                    <span className="text-xs font-bold text-slate-600 dark:text-slate-300">{dimUnit}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -529,7 +528,7 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                             {/* Custom Waste Override */}
                             <div className="pt-1 flex items-center justify-between text-xs">
                                 <label className="flex items-center gap-2 cursor-pointer text-slate-600 font-medium">
-                                    <input
+                                    <input aria-label="Custom Waste"
                                         type="checkbox"
                                         checked={isCustomWaste}
                                         onChange={(e) => setIsCustomWaste(e.target.checked)}
@@ -539,8 +538,7 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                 </label>
                                 {isCustomWaste && (
                                     <div className="flex items-center gap-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             max={50}
                                             value={customWastePct === 0 ? "" : customWastePct}
@@ -579,27 +577,27 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                 <div>
                                     <span className="block text-[11px] font-semibold text-slate-500 mb-1">Tile Width ({tileDimUnit})</span>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <input
+                                        <input aria-label="Tile Width ({tileDimUnit})"
                                             type="number"
                                             min={1}
                                             value={tileWidth === 0 ? "" : tileWidth}
                                             onChange={(e) => handleNumberInput(e, setTileWidth)}
                                             className="w-full text-right font-bold text-slate-900 text-sm outline-none bg-transparent"
                                         />
-                                        <span className="text-xs font-bold text-slate-400">{tileDimUnit}</span>
+                                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">{tileDimUnit}</span>
                                     </div>
                                 </div>
                                 <div>
                                     <span className="block text-[11px] font-semibold text-slate-500 mb-1">Tile Length ({tileDimUnit})</span>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <input
+                                        <input aria-label="Tile Length ({tileDimUnit})"
                                             type="number"
                                             min={1}
                                             value={tileHeight === 0 ? "" : tileHeight}
                                             onChange={(e) => handleNumberInput(e, setTileHeight)}
                                             className="w-full text-right font-bold text-slate-900 text-sm outline-none bg-transparent"
                                         />
-                                        <span className="text-xs font-bold text-slate-400">{tileDimUnit}</span>
+                                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">{tileDimUnit}</span>
                                     </div>
                                 </div>
                             </div>
@@ -625,22 +623,21 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                 <div>
                                     <span className="block text-[11px] font-semibold text-slate-500 mb-1">Number of Tiles per Box</span>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <input
+                                        <input aria-label="Number of Tiles per Box"
                                             type="number"
                                             min={1}
                                             value={tilesPerBox === 0 ? "" : tilesPerBox}
                                             onChange={(e) => handleNumberInput(e, setTilesPerBox)}
                                             className="w-full text-right font-bold text-slate-900 text-sm outline-none bg-transparent"
                                         />
-                                        <span className="text-xs font-bold text-slate-400">tiles/ctn</span>
+                                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">tiles/ctn</span>
                                     </div>
                                 </div>
                             ) : (
                                 <div>
                                     <span className="block text-[11px] font-semibold text-slate-500 mb-1">Coverage Area per Box ({unitLabel})</span>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0.1}
                                             step={0.5}
                                             value={boxCoverage === 0 ? "" : boxCoverage}
@@ -655,7 +652,7 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                             }}
                                             className="w-full text-right font-bold text-slate-900 text-sm outline-none bg-transparent"
                                         />
-                                        <span className="text-xs font-bold text-slate-400">{unitLabel}/box</span>
+                                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">{unitLabel}/box</span>
                                     </div>
                                 </div>
                             )}
@@ -672,9 +669,8 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                 <div>
                                     <span className="block text-[11px] font-semibold text-slate-500 mb-1">Tile Price / {unitLabel}</span>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <span className="text-xs font-bold text-slate-400">$</span>
-                                        <input
-                                            type="number"
+                                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">$</span>
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             step={0.25}
                                             value={materialCostPerUnit === 0 ? "" : materialCostPerUnit}
@@ -695,9 +691,8 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                                 <div>
                                     <span className="block text-[11px] font-semibold text-slate-500 mb-1">Labor / {unitLabel}</span>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <span className="text-xs font-bold text-slate-400">$</span>
-                                        <input
-                                            type="number"
+                                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300">$</span>
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             step={0.50}
                                             value={installationCostPerUnit === 0 ? "" : installationCostPerUnit}
@@ -793,15 +788,15 @@ Calculated via twistertools.com/tools/home-tools/tile-flooring-calculator`;
                             </div>
                             <div className="grid grid-cols-3 gap-2 pt-1 text-center">
                                 <div className="bg-white p-2 rounded-lg border border-slate-200">
-                                    <span className="text-[10px] font-bold text-slate-400 block uppercase">Net Cut Field</span>
+                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Net Cut Field</span>
                                     <span className="text-sm font-bold text-slate-800">{calculation.netIndividualTiles}</span>
                                 </div>
                                 <div className="bg-white p-2 rounded-lg border border-slate-200">
-                                    <span className="text-[10px] font-bold text-slate-400 block uppercase">Waste & Attic</span>
+                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Waste & Attic</span>
                                     <span className="text-sm font-bold text-amber-600">+{calculation.wasteIndividualTiles}</span>
                                 </div>
                                 <div className="bg-white p-2 rounded-lg border border-slate-200">
-                                    <span className="text-[10px] font-bold text-slate-400 block uppercase">Single Area</span>
+                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Single Area</span>
                                     <span className="text-sm font-bold text-slate-800">{calculation.singleTileArea.toFixed(2)} {unitLabel}</span>
                                 </div>
                             </div>

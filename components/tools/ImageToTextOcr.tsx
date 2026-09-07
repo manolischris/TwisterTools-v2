@@ -450,7 +450,7 @@ export default function ImageToTextOcr() {
                                     <ShieldCheck className="w-3.5 h-3.5" />
                                     100% Client-Side • Local Memory Sandbox
                                 </div>
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="image/*"
@@ -469,7 +469,7 @@ export default function ImageToTextOcr() {
                                     <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-lg border border-slate-700 text-white text-xs font-mono flex items-center gap-2">
                                         <FileText className="w-3.5 h-3.5 text-indigo-400" />
                                         <span className="truncate max-w-[180px]">{fileName}</span>
-                                        <span className="text-slate-400">({fileSize})</span>
+                                        <span className="text-slate-600 dark:text-slate-300">({fileSize})</span>
                                     </div>
                                     <button
                                         type="button"
@@ -479,7 +479,7 @@ export default function ImageToTextOcr() {
                                         Replace Image
                                     </button>
                                 </div>
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="image/*"
@@ -496,8 +496,7 @@ export default function ImageToTextOcr() {
                                     <Languages className="w-4 h-4 text-indigo-600" />
                                     Recognition Language
                                 </label>
-                                <select
-                                    value={selectedLanguage}
+                                <select aria-label="Select option" value={selectedLanguage}
                                     onChange={(e) => setSelectedLanguage(e.target.value as LanguageCode)}
                                     className="w-full bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                 >
@@ -515,7 +514,7 @@ export default function ImageToTextOcr() {
                                     Text Pre-Filter Contrast
                                 </label>
                                 <div className="flex items-center gap-3 bg-slate-50 border border-slate-300 rounded-xl px-3 py-1.5">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="50"
                                         max="180"
@@ -533,7 +532,7 @@ export default function ImageToTextOcr() {
                         {/* Preprocessing Toggles */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-100">
                             <label className="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50/60 cursor-pointer hover:bg-slate-100/60 transition">
-                                <input
+                                <input aria-label="Auto Binarize"
                                     type="checkbox"
                                     checked={autoBinarize}
                                     onChange={(e) => setAutoBinarize(e.target.checked)}
@@ -546,8 +545,7 @@ export default function ImageToTextOcr() {
                             </label>
 
                             <label className="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 bg-slate-50/60 cursor-pointer hover:bg-slate-100/60 transition">
-                                <input
-                                    type="checkbox"
+                                <input type="checkbox"
                                     checked={stripLineBreaks}
                                     onChange={(e) => setStripLineBreaks(e.target.checked)}
                                     className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
@@ -594,7 +592,7 @@ export default function ImageToTextOcr() {
                             disabled={!selectedImage || isProcessing}
                             onClick={executeOcr}
                             className={`w-full py-3.5 px-5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-sm transition cursor-pointer ${!selectedImage || isProcessing
-                                    ? "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                    ? "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                     : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:shadow-indigo-300"
                                 }`}
                         >
@@ -635,7 +633,7 @@ export default function ImageToTextOcr() {
                                     <span>{currentStats.lines} lines</span>
                                 </div>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={extractedText}
                                 onChange={(e) => setExtractedText(e.target.value)}
                                 placeholder="Extracted text will appear here once the OCR analysis executes. You can also paste, edit, or format the text directly in this area..."
@@ -674,7 +672,7 @@ export default function ImageToTextOcr() {
                             </div>
                         ) : (
                             <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl flex items-center gap-3 text-xs text-slate-600">
-                                <Eye className="w-5 h-5 text-slate-400 flex-shrink-0" />
+                                <Eye className="w-5 h-5 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                 <span>
                                     No extraction completed yet. Select or drop an image and click <strong>Extract Text with OCR</strong> to trigger client-side optical character decoding.
                                 </span>
@@ -697,7 +695,7 @@ export default function ImageToTextOcr() {
                             disabled={!extractedText}
                             onClick={handleCopy}
                             className={`flex-1 w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition cursor-pointer ${!extractedText
-                                    ? "bg-slate-100 text-slate-400 cursor-not-allowed"
+                                    ? "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                     : "bg-slate-900 hover:bg-slate-800 text-white shadow-xs"
                                 }`}
                         >
@@ -709,7 +707,7 @@ export default function ImageToTextOcr() {
                             disabled={!extractedText}
                             onClick={handleDownloadTxt}
                             className={`flex-1 w-full py-3 px-4 rounded-xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2 border transition cursor-pointer ${!extractedText
-                                    ? "bg-slate-50 border-slate-200 text-slate-400 cursor-not-allowed"
+                                    ? "bg-slate-50 border-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                     : "border-slate-300 bg-white hover:bg-slate-50 text-slate-700 shadow-xs"
                                 }`}
                         >

@@ -425,7 +425,7 @@ export default function SvgPathMinifier() {
                         )}
 
                         {/* File Uploader & Drag and Drop Zone */}
-                        <input
+                        <input aria-label="Upload file"
                             type="file"
                             ref={fileInputRef}
                             accept=".svg,image/svg+xml"
@@ -481,7 +481,7 @@ export default function SvgPathMinifier() {
                                     Load Sample
                                 </button>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawInput}
                                 onChange={(e) => {
                                     setRawInput(e.target.value);
@@ -504,7 +504,7 @@ export default function SvgPathMinifier() {
                                 <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                     <label htmlFor={precisionInputId}>Decimal Precision Places:</label>
                                     <div className="flex items-center gap-1">
-                                        <input
+                                        <input aria-label="Decimal Precision Places"
                                             id={precisionInputId}
                                             type="number"
                                             min="0"
@@ -515,10 +515,10 @@ export default function SvgPathMinifier() {
                                             }
                                             className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-white focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-slate-400 font-normal">pts</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-normal">pts</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="6"
@@ -527,7 +527,7 @@ export default function SvgPathMinifier() {
                                     onChange={(e) => setPrecision(Number(e.target.value))}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                                     <span>0 (Int)</span>
                                     <span>1 (Recommended for Icons)</span>
                                     <span>2 (Balanced)</span>
@@ -538,7 +538,7 @@ export default function SvgPathMinifier() {
                             {/* Checkbox Toggles */}
                             <div className="space-y-2 pt-2 border-t border-slate-200/60">
                                 <label className="flex items-center gap-2.5 cursor-pointer text-xs font-semibold text-slate-700 select-none">
-                                    <input
+                                    <input aria-label="Remove Leading Zero"
                                         type="checkbox"
                                         checked={removeLeadingZero}
                                         onChange={(e) => setRemoveLeadingZero(e.target.checked)}
@@ -548,7 +548,7 @@ export default function SvgPathMinifier() {
                                 </label>
 
                                 <label className="flex items-center gap-2.5 cursor-pointer text-xs font-semibold text-slate-700 select-none">
-                                    <input
+                                    <input aria-label="0.25 → .25"
                                         type="checkbox"
                                         checked={collapseDelimiters}
                                         onChange={(e) => setCollapseDelimiters(e.target.checked)}
@@ -559,8 +559,7 @@ export default function SvgPathMinifier() {
 
                                 {!isFullSvgDoc && (
                                     <label className="flex items-center gap-2.5 cursor-pointer text-xs font-semibold text-slate-700 select-none">
-                                        <input
-                                            type="checkbox"
+                                        <input type="checkbox"
                                             checked={autoWrapSvg}
                                             onChange={(e) => setAutoWrapSvg(e.target.checked)}
                                             className="w-4 h-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 accent-indigo-600"
@@ -620,7 +619,7 @@ export default function SvgPathMinifier() {
                                 <div className="flex items-center gap-3 bg-slate-50 border border-slate-200/80 px-2.5 py-1 rounded-lg">
                                     {isFullSvgDoc && (
                                         <label className="flex items-center gap-1 text-[11px] text-slate-600 cursor-pointer select-none">
-                                            <input
+                                            <input aria-label="Override Colors"
                                                 type="checkbox"
                                                 checked={overrideColors}
                                                 onChange={(e) => setOverrideColors(e.target.checked)}
@@ -634,7 +633,7 @@ export default function SvgPathMinifier() {
                                         <>
                                             <div className="flex items-center gap-1">
                                                 <span className="text-[11px] text-slate-500">Fill:</span>
-                                                <input
+                                                <input aria-label="Select color"
                                                     type="color"
                                                     value={previewFill}
                                                     onChange={(e) => setPreviewFill(e.target.value)}
@@ -644,7 +643,7 @@ export default function SvgPathMinifier() {
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <span className="text-[11px] text-slate-500">Stroke:</span>
-                                                <input
+                                                <input aria-label="Select color"
                                                     type="color"
                                                     value={previewStroke}
                                                     onChange={(e) => setPreviewStroke(e.target.value)}
@@ -654,7 +653,7 @@ export default function SvgPathMinifier() {
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <span className="text-[11px] text-slate-500">Width:</span>
-                                                <select
+                                                <select aria-label="Select Width"
                                                     value={previewStrokeWidth}
                                                     onChange={(e) => setPreviewStrokeWidth(Number(e.target.value))}
                                                     className="text-[11px] font-mono px-1 py-0.5 rounded border border-slate-200 bg-white"
@@ -717,7 +716,7 @@ export default function SvgPathMinifier() {
                             </div>
 
                             <div className="relative">
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     readOnly
                                     value={fullMinifiedSvgOutput}
                                     className="w-full h-36 p-3 font-mono text-xs border border-slate-200 rounded-xl bg-slate-900 text-emerald-400 focus:outline-none resize-none leading-relaxed"
@@ -729,13 +728,13 @@ export default function SvgPathMinifier() {
                                 <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 flex flex-col justify-between">
                                     <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Raw Size</span>
                                     <span className="text-sm sm:text-base font-black text-slate-900 font-mono mt-0.5">
-                                        {stats.rawLength} <span className="text-[10px] font-normal text-slate-400">bytes</span>
+                                        {stats.rawLength} <span className="text-[10px] font-normal text-slate-600 dark:text-slate-300">bytes</span>
                                     </span>
                                 </div>
                                 <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 flex flex-col justify-between">
                                     <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Minified Size</span>
                                     <span className="text-sm sm:text-base font-black text-indigo-600 font-mono mt-0.5">
-                                        {stats.minifiedLength} <span className="text-[10px] font-normal text-slate-400">bytes</span>
+                                        {stats.minifiedLength} <span className="text-[10px] font-normal text-slate-600 dark:text-slate-300">bytes</span>
                                     </span>
                                 </div>
                                 <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-2.5 flex flex-col justify-between">
@@ -756,7 +755,7 @@ export default function SvgPathMinifier() {
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <span className="text-xs text-slate-500 flex items-center gap-1 font-mono">
-                            <Cpu className="w-3.5 h-3.5 text-slate-400" />
+                            <Cpu className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             Saved {stats.savedBytes} bytes ({stats.reductionPercentage}%)
                         </span>
                         <button

@@ -309,7 +309,7 @@ export default function PdfToPngConverter() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -322,7 +322,7 @@ export default function PdfToPngConverter() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop your PDF file here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Supports documents up to 20 MB</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Supports documents up to 20 MB</p>
                             </div>
 
                             {errorMessage && (
@@ -360,7 +360,7 @@ export default function PdfToPngConverter() {
                                     <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                         <Layers3 className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-700">No PDF Loaded</p>
-                                        <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                             Upload a document above to preview and convert pages into lossless PNG graphics.
                                         </p>
                                     </div>
@@ -405,7 +405,7 @@ export default function PdfToPngConverter() {
                                                     </button>
                                                 </div>
 
-                                                <p className="text-[10px] text-slate-400 font-mono mt-1.5">
+                                                <p className="text-[10px] text-slate-600 dark:text-slate-300 font-mono mt-1.5">
                                                     {page.width} × {page.height} px
                                                 </p>
                                             </div>
@@ -529,7 +529,7 @@ export default function PdfToPngConverter() {
                                 disabled={pages.filter((p) => p.selected).length === 0 || isProcessing}
                                 className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${pages.filter((p) => p.selected).length > 0 && !isProcessing
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (
@@ -563,7 +563,7 @@ export default function PdfToPngConverter() {
                             <span className="text-xs font-bold text-slate-800">Page Preview</span>
                             <button
                                 onClick={() => setPreviewUrl(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>

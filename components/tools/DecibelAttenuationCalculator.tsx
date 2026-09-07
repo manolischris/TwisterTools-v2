@@ -512,7 +512,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="30"
                                         max="150"
@@ -521,8 +521,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                         onChange={(e) => setL1Input(parseFloat(e.target.value) || 0)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="200"
                                         step="any"
@@ -540,8 +539,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                         Reference Distance (r₁)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0.01"
                                             step="any"
                                             value={r1Input === 0 ? "" : r1Input}
@@ -549,7 +547,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                             className="w-full px-3 py-2 text-sm font-bold text-slate-900 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none pr-10"
                                             placeholder="e.g. 1"
                                         />
-                                        <span className="absolute right-3 top-2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             {distanceUnit}
                                         </span>
                                     </div>
@@ -560,8 +558,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                         Target Distance (r₂)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0.01"
                                             step="any"
                                             value={r2Input === 0 ? "" : r2Input}
@@ -569,7 +566,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                             className="w-full px-3 py-2 text-sm font-bold text-slate-900 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none pr-10"
                                             placeholder="e.g. 10"
                                         />
-                                        <span className="absolute right-3 top-2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             {distanceUnit}
                                         </span>
                                     </div>
@@ -583,8 +580,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                         <Flame className="w-3.5 h-3.5 text-amber-500" />
                                         Include Atmospheric Air Absorption (ISO 9613-1)
                                     </label>
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Air Abs" type="checkbox"
                                         checked={includeAirAbs}
                                         onChange={(e) => setIncludeAirAbs(e.target.checked)}
                                         className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500 cursor-pointer"
@@ -690,7 +686,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
 
                         {/* Wave Dispersion & Vector Propagation Graphic */}
                         <div className="w-full bg-slate-900 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-800 relative overflow-hidden min-h-[220px]">
-                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-600 dark:text-slate-300 flex items-center gap-1">
                                 <Maximize2 className="w-3.5 h-3.5 text-indigo-400" /> Sound Wave Energy Divergence (2D Projection)
                             </div>
 
@@ -868,7 +864,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                                     <div className="p-3 bg-slate-900 text-white rounded-xl space-y-1 text-xs">
                                         <div className="font-bold text-indigo-300 uppercase tracking-wider flex items-center justify-between">
                                             <span>Sound Power Level (Lw / SWL)</span>
-                                            <span className="text-[10px] text-slate-400 font-mono">Source Energy</span>
+                                            <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">Source Energy</span>
                                         </div>
                                         <div className="flex items-center justify-between pt-1">
                                             <span className="text-slate-300 text-xs">
@@ -894,7 +890,7 @@ Generated via TwisterTools Decibel Attenuation Calculator`;
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                     ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                    : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                    : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

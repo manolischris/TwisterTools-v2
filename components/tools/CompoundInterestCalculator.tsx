@@ -338,8 +338,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                             Currency
                         </label>
-                        <select
-                            value={currency}
+                        <select aria-label="Select option" value={currency}
                             onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                             className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-semibold text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                         >
@@ -358,11 +357,10 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                                 Initial Principal Balance ({currencySymbol})
                             </label>
                             <div className="relative">
-                                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 font-semibold text-sm">
+                                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300 font-semibold text-sm">
                                     {currencySymbol}
                                 </div>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     step="500"
                                     value={initialInvestment === 0 ? "" : initialInvestment}
@@ -378,11 +376,10 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                                 Monthly Contribution Deposit ({currencySymbol})
                             </label>
                             <div className="relative">
-                                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 font-semibold text-sm">
+                                <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300 font-semibold text-sm">
                                     {currencySymbol}
                                 </div>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     step="50"
                                     value={monthlyContribution === 0 ? "" : monthlyContribution}
@@ -399,11 +396,10 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                                     Nominal Rate / APR (%)
                                 </label>
                                 <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                         <Percent className="w-4 h-4" />
                                     </div>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="100"
                                         step="0.1"
@@ -419,11 +415,10 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                                     Compounding Horizon (Yrs)
                                 </label>
                                 <div className="relative">
-                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+                                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                         <Calendar className="w-4 h-4" />
                                     </div>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="100"
                                         value={years === 0 ? "" : years}
@@ -439,8 +434,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                 Compounding Frequency Interval
                             </label>
-                            <select
-                                value={compoundFrequency}
+                            <select aria-label="Select option" value={compoundFrequency}
                                 onChange={(e) => setCompoundFrequency(Number(e.target.value))}
                                 className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl font-semibold text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all text-sm"
                             >
@@ -476,8 +470,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                                         <label className="block text-xs font-medium text-slate-600 mb-1">
                                             Expected Annual Inflation Rate (%)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="30"
                                             step="0.1"
@@ -497,7 +490,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                     {/* Header Summary Cards */}
                     <div className="grid grid-cols-3 gap-3">
                         <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 text-center">
-                            <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                            <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                 Accrued Balance
                             </span>
                             <span className="text-lg md:text-xl font-black text-indigo-600 tracking-tight">
@@ -505,7 +498,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                             </span>
                         </div>
                         <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 text-center">
-                            <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                            <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                 Total Principal
                             </span>
                             <span className="text-sm md:text-base font-bold text-slate-700">
@@ -513,7 +506,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                             </span>
                         </div>
                         <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 text-center">
-                            <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                            <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                 Compound Yield
                             </span>
                             <span className="text-sm md:text-base font-bold text-emerald-600">
@@ -603,7 +596,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0 text-xs">
                                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200/60">
-                                    <span className="text-slate-400 font-medium">Growth Factor</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-medium">Growth Factor</span>
                                     <div className="text-slate-700 font-bold mt-0.5">
                                         {(
                                             calculationResults.futureValue /
@@ -612,7 +605,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                                     </div>
                                 </div>
                                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-200/60">
-                                    <span className="text-slate-400 font-medium">Doubling Benchmark</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-medium">Doubling Benchmark</span>
                                     <div className="text-slate-700 font-bold mt-0.5">
                                         ~{(72 / (calculationResults.apy || 1)).toFixed(1)} years (Rule of 72)
                                     </div>
@@ -687,7 +680,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                         <div className="p-3 bg-slate-950 rounded-lg font-mono text-xs md:text-sm text-indigo-300 border border-slate-800 overflow-x-auto">
                             A = P × (1 + r / n)^(n × t) + PMT × [ ((1 + r / n)^(n × t) - 1) / (r / n) ]
                         </div>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-[11px] text-slate-400 pt-1">
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-[11px] text-slate-600 dark:text-slate-300 pt-1">
                             <div><strong>A:</strong> Total Future Balance</div>
                             <div><strong>P:</strong> Starting Capital Principal</div>
                             <div><strong>PMT:</strong> Monthly Deposit Amount</div>
@@ -729,7 +722,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
                                     <td className="p-3">1</td>
                                     <td className="p-3">8.000%</td>
                                     <td className="p-3 font-bold text-slate-900">$79,304</td>
-                                    <td className="p-3 text-slate-400">$0 (Baseline)</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300">$0 (Baseline)</td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-3 font-semibold text-slate-900">Quarterly</td>
@@ -846,7 +839,7 @@ Calculated at twistertools.com/tools/calculators/compound-interest-calculator`;
 
                 {/* CARD 5: FINANCIAL DISCLAIMER */}
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl flex items-start space-x-4 p-4 sm:p-6">
-                    <ShieldAlert className="w-6 h-6 text-slate-400 flex-shrink-0 mt-1" />
+                    <ShieldAlert className="w-6 h-6 text-slate-600 dark:text-slate-300 flex-shrink-0 mt-1" />
                     <div className="space-y-1">
                         <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                             Financial & Mathematical Disclaimer

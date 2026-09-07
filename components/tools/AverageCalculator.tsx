@@ -423,7 +423,7 @@ export default function AverageCalculator() {
                   <button
                     type="button"
                     onClick={() => copyValue(formatResult(calculations.mean), "mean")}
-                    className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 text-slate-400 hover:text-indigo-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+                    className="absolute top-3 right-3 w-10 h-10 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
                     aria-label="Copy Mean"
                   >
                     {copiedStates["mean"] ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
@@ -472,7 +472,7 @@ export default function AverageCalculator() {
                       <button
                         type="button"
                         onClick={() => copyValue(value, key)}
-                        className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 text-slate-400 hover:text-indigo-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+                        className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
                         aria-label={`Copy ${label}`}
                       >
                         {copiedStates[key] ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
@@ -512,7 +512,7 @@ export default function AverageCalculator() {
                       <button
                         type="button"
                         onClick={() => copyValue(formatResult(calculations.geoMean.value), "geomean")}
-                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-indigo-600"
+                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedStates["geomean"] ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -536,7 +536,7 @@ export default function AverageCalculator() {
                       <button
                         type="button"
                         onClick={() => copyValue(formatResult(calculations.harmonicMean.value), "harmonic")}
-                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-indigo-600"
+                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedStates["harmonic"] ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -562,7 +562,7 @@ export default function AverageCalculator() {
                       <button
                         type="button"
                         onClick={() => copyValue(formatResult(calculations.populationSD), "popsd")}
-                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-indigo-600"
+                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedStates["popsd"] ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -581,7 +581,7 @@ export default function AverageCalculator() {
                       <button
                         type="button"
                         onClick={() => copyValue(formatResult(calculations.sampleSD), "samplesd")}
-                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-400 hover:text-indigo-600"
+                        className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedStates["samplesd"] ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>

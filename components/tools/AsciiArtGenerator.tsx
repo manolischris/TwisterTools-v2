@@ -743,12 +743,11 @@ export default function AsciiArtGenerator() {
                                     <Type className="w-4 h-4 text-indigo-600" />
                                     Source Text to Convert
                                 </span>
-                                <span className="text-[11px] font-mono text-slate-400">
+                                <span className="text-[11px] font-mono text-slate-600 dark:text-slate-300">
                                     {inputText.length} chars
                                 </span>
                             </label>
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Type banner text here..."
@@ -824,7 +823,7 @@ export default function AsciiArtGenerator() {
                                                 }`}
                                         >
                                             <span className="text-xs font-bold block truncate">{frm.name.split(" ")[0]}</span>
-                                            <span className="text-[10px] text-slate-400 font-mono block truncate">{frm.id}</span>
+                                            <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono block truncate">{frm.id}</span>
                                         </button>
                                     );
                                 })}
@@ -838,7 +837,7 @@ export default function AsciiArtGenerator() {
                                     <SlidersHorizontal className="w-3.5 h-3.5 text-indigo-500" />
                                     Layout, Spacing & Padding
                                 </span>
-                                <span className="text-[11px] text-slate-400">Realtime Math</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300">Realtime Math</span>
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -847,7 +846,7 @@ export default function AsciiArtGenerator() {
                                         <span>Letter Spacing</span>
                                         <span className="font-mono text-indigo-600 font-black">{letterSpacing}</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={0}
                                         max={4}
@@ -863,7 +862,7 @@ export default function AsciiArtGenerator() {
                                         <span>Horizontal Pad</span>
                                         <span className="font-mono text-indigo-600 font-black">{horizontalPadding}</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={0}
                                         max={8}
@@ -879,7 +878,7 @@ export default function AsciiArtGenerator() {
                                         <span>Vertical Pad</span>
                                         <span className="font-mono text-indigo-600 font-black">{verticalPadding}</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={0}
                                         max={3}
@@ -1046,21 +1045,21 @@ export default function AsciiArtGenerator() {
                                 <span className="text-lg sm:text-xl font-black text-indigo-600 font-mono">
                                     {finalFormattedOutput ? finalFormattedOutput.split("\n").length : 0}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">vertical rows</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">vertical rows</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Max Width</span>
                                 <span className="text-lg sm:text-xl font-black text-slate-800 font-mono">
                                     {finalFormattedOutput ? Math.max(...finalFormattedOutput.split("\n").map((l) => l.length)) : 0}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">characters</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">characters</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Total Size</span>
                                 <span className="text-lg sm:text-xl font-black text-emerald-600 font-mono">
                                     {finalFormattedOutput ? new Blob([finalFormattedOutput]).size : 0} B
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">UTF-8 payload</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">UTF-8 payload</span>
                             </div>
                         </div>
 

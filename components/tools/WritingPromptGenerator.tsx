@@ -478,7 +478,7 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                     <Layers className="w-4 h-4 text-indigo-600" />
                                     Narrative Architecture Slots
                                 </label>
-                                <span className="text-[11px] text-slate-400 font-medium">Pin elements to lock them</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">Pin elements to lock them</span>
                             </div>
 
                             {/* Slot 1: Core Premise */}
@@ -497,10 +497,10 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                         </button>
                                         <button
                                             onClick={() => toggleLock("premise")}
-                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.premise ? "text-indigo-600 bg-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.premise ? "text-indigo-600 bg-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                             title={lockedSlots.premise ? "Unlock" : "Lock in place"}
                                         >
-                                            {lockedSlots.premise ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-400" />}
+                                            {lockedSlots.premise ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />}
                                         </button>
                                     </div>
                                 </div>
@@ -525,10 +525,10 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                         </button>
                                         <button
                                             onClick={() => toggleLock("protagonist")}
-                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.protagonist ? "text-indigo-600 bg-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.protagonist ? "text-indigo-600 bg-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                             title={lockedSlots.protagonist ? "Unlock" : "Lock in place"}
                                         >
-                                            {lockedSlots.protagonist ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-400" />}
+                                            {lockedSlots.protagonist ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />}
                                         </button>
                                     </div>
                                 </div>
@@ -553,10 +553,10 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                         </button>
                                         <button
                                             onClick={() => toggleLock("setting")}
-                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.setting ? "text-indigo-600 bg-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.setting ? "text-indigo-600 bg-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                             title={lockedSlots.setting ? "Unlock" : "Lock in place"}
                                         >
-                                            {lockedSlots.setting ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-400" />}
+                                            {lockedSlots.setting ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />}
                                         </button>
                                     </div>
                                 </div>
@@ -581,10 +581,10 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                         </button>
                                         <button
                                             onClick={() => toggleLock("conflict")}
-                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.conflict ? "text-indigo-600 bg-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.conflict ? "text-indigo-600 bg-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                             title={lockedSlots.conflict ? "Unlock" : "Lock in place"}
                                         >
-                                            {lockedSlots.conflict ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-400" />}
+                                            {lockedSlots.conflict ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />}
                                         </button>
                                     </div>
                                 </div>
@@ -609,10 +609,10 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                         </button>
                                         <button
                                             onClick={() => toggleLock("twist")}
-                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.twist ? "text-indigo-600 bg-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                            className={`p-1 rounded transition cursor-pointer ${lockedSlots.twist ? "text-indigo-600 bg-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                             title={lockedSlots.twist ? "Unlock" : "Lock in place"}
                                         >
-                                            {lockedSlots.twist ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-400" />}
+                                            {lockedSlots.twist ? <Lock className="w-3.5 h-3.5" /> : <Unlock className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />}
                                         </button>
                                     </div>
                                 </div>
@@ -741,8 +741,7 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                     <RotateCcw className="w-3.5 h-3.5" />
                                 </button>
 
-                                <select
-                                    value={sprintDuration}
+                                <select aria-label="Select option" value={sprintDuration}
                                     onChange={(e) => {
                                         const secs = Number(e.target.value);
                                         setSprintDuration(secs);
@@ -765,14 +764,12 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                             <div className="flex items-center justify-between text-xs font-bold">
                                 <span className="text-slate-700 flex items-center gap-1">
                                     Target:
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="50"
                                         max="50000"
                                         value={wordCountTarget === 0 ? "" : wordCountTarget}
                                         onChange={handleNumberInput}
-                                        className="w-16 px-1.5 py-0.5 border border-slate-200 rounded text-slate-900 font-bold text-xs ml-1"
-                                    />
+                                        className="w-16 px-1.5 py-0.5 border border-slate-200 rounded text-slate-900 font-bold text-xs ml-1"/>
                                     words
                                 </span>
                                 <span className={progressPct >= 100 ? "text-emerald-600 font-extrabold" : "text-indigo-600 font-bold"}>
@@ -793,7 +790,7 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                 <span>Private Local Scratchpad</span>
                                 <span>100% In-Browser & Secure</span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={scratchpadText}
                                 onChange={(e) => setScratchpadText(e.target.value)}
                                 placeholder="Paste your first line here and write uninterrupted until the sprint timer completes..."
@@ -811,7 +808,7 @@ ${activeModifier ? `CONSTRAINT: ${activeModifier}\n` : ""}`;
                                     </span>
                                     <button
                                         onClick={() => setSavedDossiers([])}
-                                        className="text-slate-400 hover:text-red-500 text-[11px] font-semibold cursor-pointer"
+                                        className="text-slate-600 dark:text-slate-300 hover:text-red-500 text-[11px] font-semibold cursor-pointer"
                                     >
                                         Clear All
                                     </button>

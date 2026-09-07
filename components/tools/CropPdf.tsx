@@ -480,7 +480,7 @@ export default function CropPdf() {
                                         : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -493,7 +493,7 @@ export default function CropPdf() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop your PDF file here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Supports documents up to 20 MB</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Supports documents up to 20 MB</p>
                             </div>
 
                             {errorMessage && (
@@ -531,7 +531,7 @@ export default function CropPdf() {
                                     <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                         <Layers3 className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-700">No PDF Loaded</p>
-                                        <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                             Upload a PDF above to preview pages, trim margins, and crop custom areas.
                                         </p>
                                     </div>
@@ -629,7 +629,7 @@ export default function CropPdf() {
                                     <div className="h-[280px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                         <Crop className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-700">No Canvas Active</p>
-                                        <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                             Upload a PDF document to activate interactive visual cropping handles.
                                         </p>
                                     </div>
@@ -707,7 +707,7 @@ export default function CropPdf() {
 
                                 <div className="space-y-1">
                                     <label className="text-xs font-bold text-slate-800">Aspect Ratio Preset</label>
-                                    <select
+                                    <select aria-label="Select Aspect Ratio Preset"
                                         value={aspectRatio}
                                         onChange={(e) => handleAspectRatioChange(e.target.value as AspectRatioOption)}
                                         className="w-full text-xs rounded-xl border border-slate-200 bg-slate-50/50 p-2.5 text-slate-800 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[42px]"
@@ -752,8 +752,7 @@ export default function CropPdf() {
                                     ].map(({ label, val, setter }) => (
                                         <div key={label} className="space-y-1">
                                             <span className="text-[10px] font-semibold text-slate-500">{label}</span>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0}
                                                 max={200}
                                                 value={val}
@@ -781,7 +780,7 @@ export default function CropPdf() {
                                 disabled={pages.filter((p) => p.selected).length === 0 || isProcessing}
                                 className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${pages.filter((p) => p.selected).length > 0 && !isProcessing
                                         ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                        : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (
@@ -816,7 +815,7 @@ export default function CropPdf() {
                             <button
                                 type="button"
                                 onClick={() => setPreviewUrl(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>

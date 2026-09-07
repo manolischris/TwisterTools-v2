@@ -500,16 +500,14 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                 </label>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                                     <div>
-                                        <input
-                                            type="date"
+                                        <input aria-label="Input value" type="date"
                                             value={quitDateStr}
                                             onChange={(e) => setQuitDateStr(e.target.value)}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                         />
                                     </div>
                                     <div>
-                                        <input
-                                            type="time"
+                                        <input aria-label="Input value" type="time"
                                             value={quitTimeStr}
                                             onChange={(e) => setQuitTimeStr(e.target.value)}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
@@ -524,8 +522,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <Wind className="w-3.5 h-3.5 text-indigo-600" /> Cigarettes Smoked / Day
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="150"
                                         value={cigsPerDay === 0 ? "" : cigsPerDay}
@@ -539,15 +536,14 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                         <DollarSign className="w-3.5 h-3.5 text-indigo-600" /> Pack Price ({curr.symbol})
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.25"
                                             min="0"
                                             value={costPerPack === 0 ? "" : costPerPack}
                                             onChange={(e) => { handleNumberInput(e, (val) => setCostPerPack(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-8 pr-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">{curr.symbol}</span>
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">{curr.symbol}</span>
                                     </div>
                                 </div>
                             </div>
@@ -558,8 +554,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                     <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Cigs in a Pack
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="50"
                                         value={cigsPerPack === 0 ? "" : cigsPerPack}
@@ -572,8 +567,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                     <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Years Smoked
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="70"
                                         value={yearsSmoked === 0 ? "" : yearsSmoked}
@@ -586,8 +580,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                     <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Currency
                                     </label>
-                                    <select
-                                        value={currency}
+                                    <select aria-label="Select option" value={currency}
                                         onChange={(e) => setCurrency(e.target.value as Currency)}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     >
@@ -607,7 +600,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                     </label>
                                     <span className="text-xs font-bold text-indigo-600">{investmentReturnRate}% p.a.</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="15"
@@ -616,7 +609,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                     onChange={(e) => setInvestmentReturnRate(parseFloat(e.target.value))}
                                     className="w-full accent-indigo-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
                                 />
-                                <div className="flex justify-between text-[10px] text-slate-400 font-medium mt-1">
+                                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-medium mt-1">
                                     <span>0% (Cash Stash)</span>
                                     <span>7% (S&P 500 Avg)</span>
                                     <span>15% (Aggressive)</span>
@@ -627,7 +620,7 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                         {/* PRESET PROFILES */}
                         <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Consumption Presets
                                 </span>
                                 {activePresetId && (
@@ -761,14 +754,14 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                         <p className="text-lg font-extrabold text-slate-900 mt-1">
                                             {curr.symbol}{calculations.weeklyCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                         </p>
-                                        <p className="text-[10px] text-slate-400 mt-0.5">{Math.round(cigsPerDay * 7)} cigarettes</p>
+                                        <p className="text-[10px] text-slate-600 dark:text-slate-300 mt-0.5">{Math.round(cigsPerDay * 7)} cigarettes</p>
                                     </div>
                                     <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
                                         <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Monthly Burn</div>
                                         <p className="text-lg font-extrabold text-slate-900 mt-1">
                                             {curr.symbol}{calculations.monthlyCost.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                         </p>
-                                        <p className="text-[10px] text-slate-400 mt-0.5">~30.4 days cycle</p>
+                                        <p className="text-[10px] text-slate-600 dark:text-slate-300 mt-0.5">~30.4 days cycle</p>
                                     </div>
                                     <div className="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-100">
                                         <div className="text-[11px] font-bold text-indigo-900 uppercase tracking-wider">Annual Burn</div>
@@ -789,13 +782,13 @@ Generated at twistertools.com/tools/calculators/quit-smoking-savings-calculator`
                                     </div>
                                     <div className="grid grid-cols-2 gap-3 pt-2 text-xs">
                                         <div>
-                                            <span className="text-slate-400">Total Money Spent:</span>
+                                            <span className="text-slate-600 dark:text-slate-300">Total Money Spent:</span>
                                             <p className="text-base font-black text-rose-400 mt-0.5">
                                                 {curr.symbol}{calculations.historicalLifetimeCost.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                                             </p>
                                         </div>
                                         <div>
-                                            <span className="text-slate-400">Est. Life Subtracted:</span>
+                                            <span className="text-slate-600 dark:text-slate-300">Est. Life Subtracted:</span>
                                             <p className="text-base font-black text-amber-400 mt-0.5">
                                                 -{calculations.historicalLifeLostDays.toFixed(0)} days (~{(calculations.historicalLifeLostDays / 365.25).toFixed(1)} yrs)
                                             </p>

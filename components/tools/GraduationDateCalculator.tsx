@@ -440,7 +440,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="space-y-1.5">
                                 <label className="text-xs font-bold text-slate-700">Academic Calendar System</label>
-                                <select
+                                <select aria-label="Select Academic Calendar System"
                                     value={academicSystem}
                                     onChange={(e) => setAcademicSystem(e.target.value as AcademicSystem)}
                                     className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -454,7 +454,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                             <div className="grid grid-cols-2 gap-2">
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-bold text-slate-700">Next Term</label>
-                                    <select
+                                    <select aria-label="Select Next Term"
                                         value={startTermSeason}
                                         onChange={(e) => setStartTermSeason(e.target.value)}
                                         className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs sm:text-sm font-semibold bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -466,7 +466,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                 </div>
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-bold text-slate-700">Start Year</label>
-                                    <input
+                                    <input aria-label="Start Year"
                                         type="number"
                                         min={2024}
                                         max={2040}
@@ -490,8 +490,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                         <span>Total Degree Credits</span>
                                         <span className="text-indigo-600 font-mono">{totalCreditsRequired}</span>
                                     </div>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         max={300}
                                         value={totalCreditsRequired}
@@ -505,7 +504,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                         <span>Credits Completed</span>
                                         <span className="text-emerald-600 font-mono">{completedCredits} ({progressPercentage}%)</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Credits Completed"
                                         type="number"
                                         min={0}
                                         max={totalCreditsRequired}
@@ -537,7 +536,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                     <span>Regular Term Course Load</span>
                                     <span className="text-indigo-600 font-mono font-black">{creditsPerRegularTerm} credits/term</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={3}
                                     max={24}
@@ -546,7 +545,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                     onChange={(e) => setCreditsPerRegularTerm(Number(e.target.value))}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[10px] text-slate-400 font-medium">
+                                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-medium">
                                     <span>Part-Time (6-9)</span>
                                     <span>Full-Time (12-15)</span>
                                     <span>Accelerated (18+)</span>
@@ -560,7 +559,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                         <Sparkles className="w-4 h-4 text-amber-500" />
                                         <span className="text-xs font-bold text-slate-800">Enroll in Summer Semesters</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Enroll in Summer Semesters"
                                         type="checkbox"
                                         checked={includeSummerTerms}
                                         onChange={(e) => setIncludeSummerTerms(e.target.checked)}
@@ -574,7 +573,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                             <span>Summer Credit Load</span>
                                             <span className="text-amber-600 font-mono">{summerCredits} credits</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min={1}
                                             max={12}
@@ -627,15 +626,15 @@ Generated via TwisterTools Graduation Date Estimator`;
 
                             <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800 text-center">
                                 <div className="p-2 bg-slate-800/60 rounded-xl">
-                                    <span className="text-[10px] text-slate-400 block font-semibold uppercase">Terms Left</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-semibold uppercase">Terms Left</span>
                                     <span className="text-lg font-bold font-mono text-emerald-400">{totalTermsRequired}</span>
                                 </div>
                                 <div className="p-2 bg-slate-800/60 rounded-xl">
-                                    <span className="text-[10px] text-slate-400 block font-semibold uppercase">Years Left</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-semibold uppercase">Years Left</span>
                                     <span className="text-lg font-bold font-mono text-indigo-300">~{academicYearsRemaining}</span>
                                 </div>
                                 <div className="p-2 bg-slate-800/60 rounded-xl">
-                                    <span className="text-[10px] text-slate-400 block font-semibold uppercase">Credits Left</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-semibold uppercase">Credits Left</span>
                                     <span className="text-lg font-bold font-mono text-amber-400">{remainingCredits}</span>
                                 </div>
                             </div>
@@ -655,7 +654,7 @@ Generated via TwisterTools Graduation Date Estimator`;
 
                             <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
                                 {schedule.length === 0 ? (
-                                    <div className="p-6 text-center text-slate-400 space-y-2">
+                                    <div className="p-6 text-center text-slate-600 dark:text-slate-300 space-y-2">
                                         <CheckCircle2 className="w-8 h-8 text-emerald-500 mx-auto" />
                                         <p className="text-xs font-semibold">Degree requirements completed! You are ready to graduate.</p>
                                     </div>
@@ -704,7 +703,7 @@ Generated via TwisterTools Graduation Date Estimator`;
                                                     <span className="text-xs font-mono font-bold text-indigo-600 block">
                                                         +{term.creditsEarned} credits
                                                     </span>
-                                                    <span className="text-[10px] text-slate-400 font-mono">
+                                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                                                         {term.cumulativeCredits} / {totalCreditsRequired} total
                                                     </span>
                                                 </div>

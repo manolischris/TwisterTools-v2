@@ -430,8 +430,7 @@ Calculated with TwisterTools Moon Phase Calculator`;
                             >
                                 <ChevronLeft className="w-4 h-4" />
                             </button>
-                            <input
-                                type="date"
+                            <input aria-label="Input value" type="date"
                                 value={selectedDate}
                                 onChange={(e) => setSelectedDate(e.target.value)}
                                 className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
@@ -452,8 +451,7 @@ Calculated with TwisterTools Moon Phase Calculator`;
                             Search City or Country
                         </label>
                         <div className="relative">
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={searchQuery}
                                 onChange={(e) => {
                                     setSearchQuery(e.target.value);
@@ -463,7 +461,7 @@ Calculated with TwisterTools Moon Phase Calculator`;
                                 placeholder="Type city or country (e.g., Tokyo, Athens, London)..."
                                 className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3.5 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
                             />
-                            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                            <Search className="w-4 h-4 text-slate-600 dark:text-slate-300 absolute left-3 top-3" />
                         </div>
 
                         {isDropdownOpen && (
@@ -477,7 +475,7 @@ Calculated with TwisterTools Moon Phase Calculator`;
                                             className="w-full text-left px-4 py-2 hover:bg-indigo-50 transition flex items-center justify-between text-xs group"
                                         >
                                             <span className="font-bold text-slate-800 group-hover:text-indigo-600">{city.name}, {city.country}</span>
-                                            <span className="font-mono text-slate-400">{city.lat > 0 ? `${city.lat}°N` : `${Math.abs(city.lat)}°S`}</span>
+                                            <span className="font-mono text-slate-600 dark:text-slate-300">{city.lat > 0 ? `${city.lat}°N` : `${Math.abs(city.lat)}°S`}</span>
                                         </button>
                                     ))
                                 ) : (
@@ -516,25 +514,21 @@ Calculated with TwisterTools Moon Phase Calculator`;
                             <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider block mb-1">
                                 Latitude (-90 to 90)
                             </label>
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={latInput}
                                 onChange={handleLatChange}
                                 placeholder="e.g. 40.7128"
-                                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            />
+                                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
                         </div>
                         <div>
                             <label className="text-xs font-semibold text-slate-700 uppercase tracking-wider block mb-1">
                                 Longitude (-180 to 180)
                             </label>
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={lngInput}
                                 onChange={handleLngChange}
                                 placeholder="e.g. -74.0060"
-                                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            />
+                                className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
                         </div>
                     </div>
 
@@ -574,7 +568,7 @@ Calculated with TwisterTools Moon Phase Calculator`;
                         <div className="flex flex-col items-center sm:items-start space-y-1">
                             <span className="text-xs font-semibold text-indigo-300 uppercase tracking-widest">Current Phase</span>
                             <h3 className="text-2xl font-extrabold text-white">{moonData.phaseName}</h3>
-                            <p className="text-xs text-slate-400 font-mono">
+                            <p className="text-xs text-slate-600 dark:text-slate-300 font-mono">
                                 Age: {moonData.ageDays} / 29.53 Days
                             </p>
                         </div>
@@ -627,7 +621,7 @@ Calculated with TwisterTools Moon Phase Calculator`;
 
                 <div className="grid grid-cols-7 gap-1.5 sm:gap-2 text-center">
                     {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((day) => (
-                        <div key={day} className="text-[11px] font-bold text-slate-400 uppercase py-1">
+                        <div key={day} className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase py-1">
                             {day}
                         </div>
                     ))}

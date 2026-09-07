@@ -379,8 +379,7 @@ export default function RandomNamePicker() {
                                     <label className="block text-xs font-bold text-slate-600">
                                         Number of Winners
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="1000"
                                         value={winnersCount === 0 ? "" : winnersCount}
@@ -391,7 +390,7 @@ export default function RandomNamePicker() {
 
                                 <div className="space-y-2 pt-1">
                                     <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-slate-700">
-                                        <input
+                                        <input aria-label="Allow Duplicates"
                                             type="checkbox"
                                             checked={allowDuplicates}
                                             onChange={(e) => setAllowDuplicates(e.target.checked)}
@@ -400,8 +399,7 @@ export default function RandomNamePicker() {
                                         Allow Duplicate Winners
                                     </label>
                                     <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-slate-700">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Remove On Win" type="checkbox"
                                             checked={removeOnWin}
                                             onChange={(e) => setRemoveOnWin(e.target.checked)}
                                             className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
@@ -459,7 +457,7 @@ export default function RandomNamePicker() {
                                             {currentWinners.length === 1 ? currentWinners[0] : `${currentWinners.length} Winners Selected`}
                                         </span>
                                     ) : (
-                                        <span className="text-slate-400 text-sm font-normal">Click "Pick Winners" to begin</span>
+                                        <span className="text-slate-600 dark:text-slate-300 text-sm font-normal">Click "Pick Winners" to begin</span>
                                     )}
                                 </div>
                             </div>
@@ -473,7 +471,7 @@ export default function RandomNamePicker() {
                                 </div>
                                 <div className="max-h-[220px] overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100 bg-slate-50/50">
                                     {currentWinners.length === 0 ? (
-                                        <p className="p-6 text-center text-xs text-slate-400">No winners drawn in this session yet.</p>
+                                        <p className="p-6 text-center text-xs text-slate-600 dark:text-slate-300">No winners drawn in this session yet.</p>
                                     ) : (
                                         currentWinners.map((winner, idx) => (
                                             <div key={idx} className="p-3.5 flex items-center justify-between text-sm hover:bg-white transition">
@@ -500,7 +498,7 @@ export default function RandomNamePicker() {
                                 </div>
                                 <div className="max-h-[220px] overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100 bg-slate-50/50">
                                     {drawHistory.length === 0 ? (
-                                        <p className="p-6 text-center text-xs text-slate-400">No draw history recorded yet.</p>
+                                        <p className="p-6 text-center text-xs text-slate-600 dark:text-slate-300">No draw history recorded yet.</p>
                                     ) : (
                                         drawHistory.map((item) => (
                                             <div key={item.id} className="p-3 text-xs space-y-1 hover:bg-white transition">

@@ -421,8 +421,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Event / Group Name
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={eventName}
                                     onChange={(e) => setEventName(e.target.value)}
                                     placeholder="e.g. Engineering Team Gift Swap"
@@ -435,8 +434,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                     Spending Budget
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <select
-                                        value={currencySymbol}
+                                    <select aria-label="Select option" value={currencySymbol}
                                         onChange={(e) => setCurrencySymbol(e.target.value)}
                                         className="px-2 py-2 border border-slate-300 rounded-xl text-sm font-bold text-slate-700 bg-slate-50 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                     >
@@ -447,7 +445,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                         <option value="C$">C$ CAD</option>
                                         <option value="A$">A$ AUD</option>
                                     </select>
-                                    <input
+                                    <input aria-label="A$ AUD"
                                         type="number"
                                         min={1}
                                         max={10000}
@@ -462,8 +460,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Exchange Date
                                 </label>
-                                <input
-                                    type="date"
+                                <input aria-label="Input value" type="date"
                                     value={exchangeDate}
                                     onChange={(e) => setExchangeDate(e.target.value)}
                                     className="w-full px-3 py-2 border border-slate-300 rounded-xl text-sm font-medium text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -478,7 +475,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                 Add Participant
                             </h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                <input
+                                <input aria-label="Name"
                                     type="text"
                                     placeholder="Name (Required)"
                                     value={newName}
@@ -486,7 +483,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                     onKeyDown={(e) => e.key === "Enter" && handleAddParticipant()}
                                     className="px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                 />
-                                <input
+                                <input aria-label="Email"
                                     type="email"
                                     placeholder="Email (Optional)"
                                     value={newEmail}
@@ -495,7 +492,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                     className="px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                 />
                                 <div className="sm:col-span-2 flex gap-2">
-                                    <input
+                                    <input aria-label="Wishlist hints or preferences"
                                         type="text"
                                         placeholder="Wishlist hints or preferences (Optional)"
                                         value={newWishlist}
@@ -520,7 +517,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                 <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Active Participants ({participants.length})
                                 </span>
-                                <span className="text-[11px] text-slate-400">Click &apos;Exclusions&apos; to prevent pairings</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300">Click &apos;Exclusions&apos; to prevent pairings</span>
                             </div>
 
                             <div className="space-y-2 max-h-[320px] overflow-y-auto pr-1">
@@ -536,7 +533,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                                     <div className="flex items-center gap-2">
                                                         <span className="font-bold text-slate-900 text-sm truncate">{p.name}</span>
                                                         {p.email && (
-                                                            <span className="text-[11px] text-slate-400 truncate max-w-[130px]">({p.email})</span>
+                                                            <span className="text-[11px] text-slate-600 dark:text-slate-300 truncate max-w-[130px]">({p.email})</span>
                                                         )}
                                                     </div>
                                                     {p.wishlist && (
@@ -560,7 +557,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                                     <button
                                                         type="button"
                                                         onClick={() => handleRemoveParticipant(p.id)}
-                                                        className="p-1.5 text-slate-400 hover:text-rose-600 transition rounded-md hover:bg-rose-50 cursor-pointer"
+                                                        className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition rounded-md hover:bg-rose-50 cursor-pointer"
                                                         title="Remove participant"
                                                     >
                                                         <Trash2 className="w-4 h-4" />
@@ -578,13 +575,13 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                                         <button
                                                             type="button"
                                                             onClick={() => setSelectedParticipantModal(null)}
-                                                            className="text-slate-400 hover:text-slate-600 text-[11px] underline cursor-pointer"
+                                                            className="text-slate-600 dark:text-slate-300 hover:text-slate-600 text-[11px] underline cursor-pointer"
                                                         >
                                                             Done
                                                         </button>
                                                     </div>
                                                     {otherParticipants.length === 0 ? (
-                                                        <p className="text-slate-400 italic">No other participants to exclude yet.</p>
+                                                        <p className="text-slate-600 dark:text-slate-300 italic">No other participants to exclude yet.</p>
                                                     ) : (
                                                         <div className="grid grid-cols-2 gap-1.5">
                                                             {otherParticipants.map((other) => {
@@ -595,8 +592,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                                                         className={`flex items-center gap-2 p-1.5 rounded border transition cursor-pointer ${isExcluded ? "bg-rose-50 border-rose-200 text-rose-800" : "bg-white border-slate-200 text-slate-700"
                                                                             }`}
                                                                     >
-                                                                        <input
-                                                                            type="checkbox"
+                                                                        <input aria-label="Excluded" type="checkbox"
                                                                             checked={isExcluded}
                                                                             onChange={() => handleToggleExclusion(p.id, other.id)}
                                                                             className="rounded text-indigo-600 focus:ring-indigo-500"
@@ -620,7 +616,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Group Guidelines / Notes
                             </label>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 rows={2}
                                 value={additionalRules}
                                 onChange={(e) => setAdditionalRules(e.target.value)}
@@ -717,7 +713,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                                         {idx + 1}
                                                     </span>
                                                     <span className="font-bold text-slate-900 text-sm">{match.giver.name}</span>
-                                                    <span className="text-xs text-slate-400">gives to ➔</span>
+                                                    <span className="text-xs text-slate-600 dark:text-slate-300">gives to ➔</span>
                                                 </div>
 
                                                 <button
@@ -740,7 +736,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                             {/* Receiver Reveal Container */}
                                             <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
                                                 <div className="min-w-0">
-                                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                                                    <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                                         Assigned Recipient
                                                     </span>
                                                     {match.revealed ? (
@@ -755,7 +751,7 @@ Generated via twistertools.com/tools/random-tools/secret-santa-generator`;
                                                             )}
                                                         </div>
                                                     ) : (
-                                                        <p className="font-mono text-xs text-slate-400 flex items-center gap-1.5 py-1">
+                                                        <p className="font-mono text-xs text-slate-600 dark:text-slate-300 flex items-center gap-1.5 py-1">
                                                             <Lock className="w-3.5 h-3.5" /> •••••••••••••• (Click Reveal)
                                                         </p>
                                                     )}

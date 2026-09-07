@@ -549,8 +549,7 @@ export default function JsonToJsonSchema() {
                         <label htmlFor={draftSelectId} className="text-xs font-bold text-slate-700 block">
                             Specification Dialect
                         </label>
-                        <select
-                            id={draftSelectId}
+                        <select aria-label="Select option" id={draftSelectId}
                             value={options.schemaDraft}
                             onChange={(e) => setOptions((p) => ({ ...p, schemaDraft: e.target.value as SchemaDraft }))}
                             className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-indigo-500 text-slate-800 font-medium outline-none"
@@ -566,8 +565,7 @@ export default function JsonToJsonSchema() {
                         <label htmlFor={titleInputId} className="text-xs font-bold text-slate-700 block">
                             Root Schema Title
                         </label>
-                        <input
-                            id={titleInputId}
+                        <input aria-label="Input value" id={titleInputId}
                             type="text"
                             value={options.title}
                             onChange={(e) => setOptions((p) => ({ ...p, title: e.target.value }))}
@@ -579,7 +577,7 @@ export default function JsonToJsonSchema() {
                     {/* Checkbox Toggles Group 1 */}
                     <div className="space-y-2 pt-1 sm:pt-0">
                         <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                            <input
+                            <input aria-label="Require All Fields"
                                 type="checkbox"
                                 checked={options.requireAllFields}
                                 onChange={(e) => setOptions((p) => ({ ...p, requireAllFields: e.target.checked }))}
@@ -588,8 +586,7 @@ export default function JsonToJsonSchema() {
                             Require Discovered Properties
                         </label>
                         <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Detect Formats" type="checkbox"
                                 checked={options.detectFormats}
                                 onChange={(e) => setOptions((p) => ({ ...p, detectFormats: e.target.checked }))}
                                 className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -601,8 +598,7 @@ export default function JsonToJsonSchema() {
                     {/* Checkbox Toggles Group 2 */}
                     <div className="space-y-2 pt-1 sm:pt-0">
                         <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                            <input
-                                type="checkbox"
+                            <input type="checkbox"
                                 checked={options.strictNumbers}
                                 onChange={(e) => setOptions((p) => ({ ...p, strictNumbers: e.target.checked }))}
                                 className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -610,8 +606,7 @@ export default function JsonToJsonSchema() {
                             Distinguish Integer vs Number
                         </label>
                         <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Allow Additional Properties" type="checkbox"
                                 checked={options.allowAdditionalProperties}
                                 onChange={(e) => setOptions((p) => ({ ...p, allowAdditionalProperties: e.target.checked }))}
                                 className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -654,7 +649,7 @@ export default function JsonToJsonSchema() {
                         )}
 
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawJson}
                                 onChange={(e) => setRawJson(e.target.value)}
                                 placeholder="Paste your raw JSON payload here..."
@@ -667,7 +662,7 @@ export default function JsonToJsonSchema() {
 
                     <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
                         <span className="flex items-center gap-1">
-                            <Boxes className="w-4 h-4 text-slate-400" />
+                            <Boxes className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                             Client-Side JSON Engine
                         </span>
                         <span className="font-mono text-slate-600">
@@ -738,7 +733,7 @@ export default function JsonToJsonSchema() {
                             <CheckCircle2 className="w-4 h-4" />
                             Valid Schema Dialect: {options.schemaDraft}
                         </span>
-                        <span className="text-slate-400">RFC 7159 & RFC 8259 Compliant</span>
+                        <span className="text-slate-600 dark:text-slate-300">RFC 7159 & RFC 8259 Compliant</span>
                     </div>
                 </div>
             </div>

@@ -373,8 +373,7 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Currency Symbol
                                 </label>
-                                <select
-                                    value={currency}
+                                <select aria-label="Select option" value={currency}
                                     onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-xs transition bg-slate-50"
                                 >
@@ -397,8 +396,7 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                         <Navigation className="w-4 h-4 text-indigo-600" /> Trip Distance ({unitSystem === "imperial" ? "Miles" : "Kilometers"})
                                     </label>
                                     <label className="inline-flex items-center gap-1.5 cursor-pointer text-xs font-semibold text-slate-600 hover:text-indigo-600">
-                                        <input
-                                            type="checkbox"
+                                        <input type="checkbox"
                                             checked={isRoundTrip}
                                             onChange={(e) => setIsRoundTrip(e.target.checked)}
                                             className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-4 h-4 accent-indigo-600"
@@ -407,15 +405,14 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                     </label>
                                 </div>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         step="10"
                                         value={distance === 0 ? "" : distance}
                                         onChange={(e) => handleNumberInput(e, (val) => setDistance(Math.max(0, val)))}
                                         className="w-full pl-3 pr-16 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">
                                         {unitSystem === "imperial" ? "mi" : "km"} {isRoundTrip && "(One Way)"}
                                     </span>
                                 </div>
@@ -428,8 +425,7 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                         <Car className="w-4 h-4 text-indigo-600" /> Fuel Economy
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             step="0.5"
                                             value={fuelEfficiency === 0 ? "" : fuelEfficiency}
@@ -439,7 +435,7 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                             }}
                                             className="w-full pl-3 pr-20 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">
                                             {unitSystem === "imperial" ? "MPG" : "L/100km"}
                                         </span>
                                     </div>
@@ -450,16 +446,15 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                         <Fuel className="w-4 h-4 text-indigo-600" /> Gas / Fuel Price
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currSym}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currSym}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="0.05"
                                             value={fuelPrice === 0 ? "" : fuelPrice}
                                             onChange={(e) => handleNumberInput(e, (val) => setFuelPrice(Math.max(0, val)))}
                                             className="w-full pl-7 pr-16 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">
                                             /{unitSystem === "imperial" ? "gal" : "L"}
                                         </span>
                                     </div>
@@ -478,9 +473,8 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                     <div>
                                         <label className="block text-xs font-medium text-slate-600 mb-1">Highway Tolls</label>
                                         <div className="relative">
-                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">{currSym}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs">{currSym}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="5"
                                                 value={tollFees === 0 ? "" : tollFees}
@@ -493,9 +487,8 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                     <div>
                                         <label className="block text-xs font-medium text-slate-600 mb-1">Parking Fees</label>
                                         <div className="relative">
-                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">{currSym}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs">{currSym}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="5"
                                                 value={parkingFees === 0 ? "" : parkingFees}
@@ -508,9 +501,8 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                     <div>
                                         <label className="block text-xs font-medium text-slate-600 mb-1">Other Costs</label>
                                         <div className="relative">
-                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">{currSym}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs">{currSym}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="5"
                                                 value={otherExpenses === 0 ? "" : otherExpenses}
@@ -528,8 +520,7 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                     <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
                                         <Users className="w-3.5 h-3.5 text-indigo-600" /> Vehicle Occupants (Split)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="60"
                                         value={passengers === 0 ? "" : passengers}
@@ -543,16 +534,15 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                                         <Coins className="w-3.5 h-3.5 text-indigo-600" /> Standard Mileage Rate
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs">{currSym}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs">{currSym}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="0.01"
                                             value={irsStandardRate === 0 ? "" : irsStandardRate}
                                             onChange={(e) => handleNumberInput(e, (val) => setIrsStandardRate(Math.max(0, val)))}
                                             className="w-full pl-6 pr-14 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs transition"
                                         />
-                                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] font-semibold">
+                                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-[10px] font-semibold">
                                             /{unitSystem === "imperial" ? "mi" : "km"}
                                         </span>
                                     </div>
@@ -563,7 +553,7 @@ Calculated at twistertools.com/tools/calculators/fuel-cost-calculator`;
                         {/* Vehicle Quick-Fill Presets */}
                         <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Vehicle Fuel Economy Presets
                                 </span>
                                 {activePresetId && (

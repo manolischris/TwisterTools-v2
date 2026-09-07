@@ -268,7 +268,7 @@ export default function MergePdfDocumentJoiner() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                 }`}
                         >
-                            <input
+                            <input aria-label="Upload file"
                                 ref={fileInputRef}
                                 type="file"
                                 multiple
@@ -283,7 +283,7 @@ export default function MergePdfDocumentJoiner() {
                             <p className="text-xs font-semibold text-slate-800 mb-0.5">
                                 Drop PDF files here, or <span className="text-indigo-600">click to browse</span>
                             </p>
-                            <p className="text-[11px] text-slate-400">Select multiple PDF documents (Max 20 MB per file)</p>
+                            <p className="text-[11px] text-slate-600 dark:text-slate-300">Select multiple PDF documents (Max 20 MB per file)</p>
                         </div>
 
                         {errorMessage && (
@@ -317,7 +317,7 @@ export default function MergePdfDocumentJoiner() {
                             <div className="h-[280px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                 <FileSearch className="w-10 h-10 text-slate-300 mb-2" />
                                 <p className="text-sm font-semibold text-slate-700">Queue is Empty</p>
-                                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                     Upload PDF documents using the drop area above to arrange merge sequence.
                                 </p>
                             </div>
@@ -421,7 +421,7 @@ export default function MergePdfDocumentJoiner() {
                             disabled={pdfItems.length < 2 || isProcessing}
                             className={`w-full py-3 px-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all shadow-sm ${pdfItems.length >= 2 && !isProcessing
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-100"
-                                    : "bg-slate-100 text-slate-400 cursor-not-allowed border border-slate-200"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed border border-slate-200"
                                 }`}
                         >
                             {isProcessing ? (
@@ -477,7 +477,7 @@ export default function MergePdfDocumentJoiner() {
                             <button
                                 type="button"
                                 onClick={() => setPreviewModalItem(null)}
-                                className="text-slate-400 hover:text-white p-1"
+                                className="text-slate-600 dark:text-slate-300 hover:text-white p-1"
                             >
                                 <X className="w-5 h-5" />
                             </button>

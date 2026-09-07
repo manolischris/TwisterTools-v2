@@ -550,15 +550,13 @@ export default function TailwindColorGenerator() {
                                     Base 500 Color (Hex)
                                 </label>
                                 <div className="flex items-center gap-2">
-                                    <input
+                                    <input aria-label="Select color"
                                         type="color"
                                         value={verifiedBaseHex}
                                         onChange={(e) => setBaseHexInput(e.target.value)}
                                         className="w-9 h-9 rounded-lg border border-slate-200 cursor-pointer p-0.5 bg-white shrink-0"
-                                        aria-label="Color Picker"
                                     />
-                                    <input
-                                        id={baseHexId}
+                                    <input aria-label="Input value" id={baseHexId}
                                         type="text"
                                         value={baseHexInput}
                                         maxLength={7}
@@ -574,11 +572,10 @@ export default function TailwindColorGenerator() {
                                     Theme Variable Slug
                                 </label>
                                 <div className="flex items-center gap-2">
-                                    <span className="text-xs font-mono text-slate-400 bg-slate-100 px-2 py-1.5 rounded-lg border border-slate-200">
+                                    <span className="text-xs font-mono text-slate-600 dark:text-slate-300 bg-slate-100 px-2 py-1.5 rounded-lg border border-slate-200">
                                         color-
                                     </span>
-                                    <input
-                                        id={colorNameId}
+                                    <input aria-label="Input value" id={colorNameId}
                                         type="text"
                                         value={colorName}
                                         maxLength={24}
@@ -598,8 +595,7 @@ export default function TailwindColorGenerator() {
                                     Optical Hue Shift (Highlight/Shadow Angle):
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        id={hueShiftId}
+                                    <input aria-label="Input value" id={hueShiftId}
                                         type="number"
                                         min="-60"
                                         max="60"
@@ -607,10 +603,10 @@ export default function TailwindColorGenerator() {
                                         onChange={(e) => sanitizeInteger(e, setHueShift, -60, 60)}
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">°</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">°</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="-60"
                                 max="60"
@@ -619,7 +615,7 @@ export default function TailwindColorGenerator() {
                                 onChange={(e) => setHueShift(Number(e.target.value))}
                                 className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                             />
-                            <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                            <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                                 <span>-60° (Cool shadows)</span>
                                 <span>0° (Uniform hue)</span>
                                 <span>+60° (Warm shadows)</span>
@@ -634,8 +630,7 @@ export default function TailwindColorGenerator() {
                                     Perceptual Saturation Gradient Curve:
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        id={saturationShiftId}
+                                    <input aria-label="Input value" id={saturationShiftId}
                                         type="number"
                                         min="-50"
                                         max="50"
@@ -643,10 +638,10 @@ export default function TailwindColorGenerator() {
                                         onChange={(e) => sanitizeInteger(e, setSaturationShift, -50, 50)}
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">%</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">%</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="-50"
                                 max="50"
@@ -655,7 +650,7 @@ export default function TailwindColorGenerator() {
                                 onChange={(e) => setSaturationShift(Number(e.target.value))}
                                 className="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                             />
-                            <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                            <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                                 <span>-50% (Muted extremes)</span>
                                 <span>0% (Standard)</span>
                                 <span>+50% (High dynamic punch)</span>
@@ -666,7 +661,7 @@ export default function TailwindColorGenerator() {
                         <div className="space-y-2 pt-2">
                             <div className="flex items-center justify-between">
                                 <span className="text-xs font-bold text-slate-700">Interactive Palette Strip</span>
-                                <span className="text-[11px] text-slate-400">Click any stop to inspect & copy</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300">Click any stop to inspect & copy</span>
                             </div>
                             <div className="grid grid-cols-11 gap-1 rounded-xl p-1.5 bg-slate-100 border border-slate-200">
                                 {paletteShades.map((shade) => (
@@ -738,19 +733,19 @@ export default function TailwindColorGenerator() {
 
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-200/60 text-[11px] font-mono text-slate-600">
                                 <div>
-                                    <span className="text-slate-400 block text-[9px] uppercase font-sans font-semibold">
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[9px] uppercase font-sans font-semibold">
                                         RGB
                                     </span>
                                     {activePreviewShade.rgb}
                                 </div>
                                 <div>
-                                    <span className="text-slate-400 block text-[9px] uppercase font-sans font-semibold">
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[9px] uppercase font-sans font-semibold">
                                         HSL
                                     </span>
                                     {activePreviewShade.hsl}
                                 </div>
                                 <div>
-                                    <span className="text-slate-400 block text-[9px] uppercase font-sans font-semibold">
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[9px] uppercase font-sans font-semibold">
                                         vs White
                                     </span>
                                     <span
@@ -764,7 +759,7 @@ export default function TailwindColorGenerator() {
                                     </span>
                                 </div>
                                 <div>
-                                    <span className="text-slate-400 block text-[9px] uppercase font-sans font-semibold">
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[9px] uppercase font-sans font-semibold">
                                         vs Black
                                     </span>
                                     <span
@@ -982,7 +977,7 @@ export default function TailwindColorGenerator() {
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <span className="text-xs text-slate-500 flex items-center gap-1">
-                            <FileCode className="w-3.5 h-3.5 text-slate-400" />
+                            <FileCode className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             Production Build Ready
                         </span>
                         <button
@@ -1187,7 +1182,7 @@ export default function TailwindColorGenerator() {
                     </p>
 
                     <div className="bg-slate-900 text-indigo-300 p-4 rounded-xl font-mono text-xs overflow-x-auto space-y-2 border border-slate-800">
-                        <div className="text-slate-400">// Invert semantic role mappings between light and dark themes:</div>
+                        <div className="text-slate-600 dark:text-slate-300">// Invert semantic role mappings between light and dark themes:</div>
                         <div>Light Mode:  Surface = brand-50  |  Text = brand-900  |  Border = brand-200</div>
                         <div>Dark Mode:   Surface = brand-950 |  Text = brand-100  |  Border = brand-800</div>
                     </div>

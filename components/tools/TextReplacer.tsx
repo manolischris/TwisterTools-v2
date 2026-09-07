@@ -330,7 +330,7 @@ export default function TextReplacer() {
                                 Source Input & Search Configuration
                             </h2>
                             <div className="flex items-center gap-2">
-                                <input
+                                <input aria-label="Upload file"
                                     type="file"
                                     ref={fileInputRef}
                                     onChange={handleFileUpload}
@@ -347,7 +347,7 @@ export default function TextReplacer() {
                                 <button
                                     type="button"
                                     onClick={handleReset}
-                                    className="p-1 text-slate-400 hover:text-rose-600 transition"
+                                    className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition"
                                     title="Clear All Inputs"
                                 >
                                     <Trash2 className="w-4 h-4" />
@@ -362,8 +362,7 @@ export default function TextReplacer() {
                                     Find String / Pattern
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={findText}
                                         onChange={(e) => {
                                             setFindText(e.target.value);
@@ -372,7 +371,7 @@ export default function TextReplacer() {
                                         placeholder="Text or Regex pattern..."
                                         className="w-full pl-3 pr-8 py-2 text-xs font-mono rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                     />
-                                    <Search className="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2" />
+                                    <Search className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300 absolute right-2.5 top-1/2 -translate-y-1/2" />
                                 </div>
                             </div>
 
@@ -381,8 +380,7 @@ export default function TextReplacer() {
                                     Replace With
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={replaceText}
                                         onChange={(e) => {
                                             setReplaceText(e.target.value);
@@ -391,7 +389,7 @@ export default function TextReplacer() {
                                         placeholder="Replacement string..."
                                         className="w-full pl-3 pr-8 py-2 text-xs font-mono rounded-xl border border-slate-200 text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                     />
-                                    <ArrowRightLeft className="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-1/2 -translate-y-1/2" />
+                                    <ArrowRightLeft className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300 absolute right-2.5 top-1/2 -translate-y-1/2" />
                                 </div>
                             </div>
                         </div>
@@ -403,7 +401,7 @@ export default function TextReplacer() {
                             </div>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                                 <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer font-medium">
-                                    <input
+                                    <input aria-label="Regex"
                                         type="checkbox"
                                         checked={useRegex}
                                         onChange={(e) => setUseRegex(e.target.checked)}
@@ -412,7 +410,7 @@ export default function TextReplacer() {
                                     <span>Regex Mode</span>
                                 </label>
                                 <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer font-medium">
-                                    <input
+                                    <input aria-label="Regex Mode"
                                         type="checkbox"
                                         checked={caseSensitive}
                                         onChange={(e) => setCaseSensitive(e.target.checked)}
@@ -421,7 +419,7 @@ export default function TextReplacer() {
                                     <span>Match Case</span>
                                 </label>
                                 <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer font-medium">
-                                    <input
+                                    <input aria-label="Match Case"
                                         type="checkbox"
                                         checked={globalMatch}
                                         onChange={(e) => setGlobalMatch(e.target.checked)}
@@ -430,7 +428,7 @@ export default function TextReplacer() {
                                     <span>Replace All</span>
                                 </label>
                                 <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer font-medium">
-                                    <input
+                                    <input aria-label="Replace All"
                                         type="checkbox"
                                         checked={multiline}
                                         onChange={(e) => setMultiline(e.target.checked)}
@@ -450,7 +448,7 @@ export default function TextReplacer() {
 
                         {/* Presets Horizontal Scroll */}
                         <div className="space-y-1.5">
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                 <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Substitutions
                             </span>
                             <div className="w-full overflow-x-auto pb-1 flex items-center gap-2 scrollbar-thin scrollbar-thumb-slate-200">
@@ -481,7 +479,7 @@ export default function TextReplacer() {
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                 Input Raw Text
                             </label>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 rows={8}
@@ -515,7 +513,7 @@ export default function TextReplacer() {
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                 Transformed Text Output
                             </label>
-                            <textarea
+                            <textarea aria-label="Transformed result will appear here live"
                                 value={outputText}
                                 readOnly
                                 rows={14}

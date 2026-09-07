@@ -313,8 +313,7 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency Symbol
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -338,9 +337,8 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={initialAmount === 0 ? "" : initialAmount}
@@ -357,8 +355,7 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                         <Percent className="w-4 h-4 text-indigo-600" /> Inflation Rate (CPI)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="50"
                                             step="0.1"
@@ -366,7 +363,7 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setInflationRate(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
 
@@ -374,8 +371,7 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                     <label className="block text-sm font-semibold text-slate-800 mb-1.5 flex items-center gap-1">
                                         <Calendar className="w-4 h-4 text-indigo-600" /> Time Horizon
                                     </label>
-                                    <select
-                                        value={years}
+                                    <select aria-label="Select option" value={years}
                                         onChange={(e) => {
                                             setYears(Number(e.target.value));
                                             setActivePresetId(null);
@@ -403,8 +399,7 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                         Expected Annual Return %
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="50"
                                             step="0.5"
@@ -413,9 +408,9 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                                             placeholder="e.g. 7.0% stock portfolio"
                                             className="w-full pl-3 pr-8 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
-                                    <p className="text-[11px] text-slate-400 mt-1">Simulate how your capital fares against inflation when invested.</p>
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Simulate how your capital fares against inflation when invested.</p>
                                 </div>
                             </div>
                         </div>
@@ -423,7 +418,7 @@ Calculated at twistertools.com/tools/calculators/inflation-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Clock className="w-3.5 h-3.5 text-indigo-500" /> Preset Scenarios
                                 </span>
                                 {activePresetId && (

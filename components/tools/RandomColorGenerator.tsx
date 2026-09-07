@@ -515,8 +515,7 @@ export default function RandomColorGenerator() {
                         {/* Harmony Rule Selector */}
                         <div className="flex items-center gap-2">
                             <Compass className="w-4 h-4 text-indigo-600 hidden sm:inline-block" />
-                            <select
-                                value={harmonyMode}
+                            <select aria-label="Select option" value={harmonyMode}
                                 onChange={(e) => setHarmonyMode(e.target.value as HarmonyMode)}
                                 className="px-3 py-2 rounded-xl border border-slate-200 bg-white text-slate-800 text-xs font-semibold focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                             >
@@ -616,8 +615,7 @@ export default function RandomColorGenerator() {
                                         onClick={(e) => e.stopPropagation()}
                                         className="relative cursor-pointer group/picker inline-block"
                                     >
-                                        <input
-                                            type="color"
+                                        <input aria-label="Select color" type="color"
                                             value={item.hex}
                                             onChange={(e) => updateColorHex(item.id, e.target.value.toUpperCase())}
                                             className="sr-only"
@@ -691,7 +689,7 @@ export default function RandomColorGenerator() {
                         {/* Color Space Matrix */}
                         <div className="grid grid-cols-3 gap-3">
                             <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                     HEX
                                 </span>
                                 <p className="font-mono font-bold text-sm text-slate-900">
@@ -699,7 +697,7 @@ export default function RandomColorGenerator() {
                                 </p>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                     RGB
                                 </span>
                                 <p className="font-mono font-bold text-xs text-slate-900 truncate">
@@ -707,7 +705,7 @@ export default function RandomColorGenerator() {
                                 </p>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                     HSL
                                 </span>
                                 <p className="font-mono font-bold text-xs text-slate-900 truncate">
@@ -1059,7 +1057,7 @@ export default function RandomColorGenerator() {
                                 <span className="text-xs font-black text-indigo-700 bg-indigo-100 px-2.5 py-1 rounded-full uppercase tracking-wider">
                                     60% Canvas
                                 </span>
-                                <span className="text-xs font-bold text-slate-400">Dominant Base</span>
+                                <span className="text-xs font-bold text-slate-600 dark:text-slate-300">Dominant Base</span>
                             </div>
                             <h3 className="font-bold text-slate-900 text-base">Background Architecture</h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
@@ -1072,7 +1070,7 @@ export default function RandomColorGenerator() {
                                 <span className="text-xs font-black text-indigo-700 bg-indigo-100 px-2.5 py-1 rounded-full uppercase tracking-wider">
                                     30% Structure
                                 </span>
-                                <span className="text-xs font-bold text-slate-400">Secondary Hierarchy</span>
+                                <span className="text-xs font-bold text-slate-600 dark:text-slate-300">Secondary Hierarchy</span>
                             </div>
                             <h3 className="font-bold text-slate-900 text-base">Cards, Navbars & Forms</h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
@@ -1085,7 +1083,7 @@ export default function RandomColorGenerator() {
                                 <span className="text-xs font-black text-indigo-700 bg-indigo-100 px-2.5 py-1 rounded-full uppercase tracking-wider">
                                     10% Accent
                                 </span>
-                                <span className="text-xs font-bold text-slate-400">High-Impact Focal</span>
+                                <span className="text-xs font-bold text-slate-600 dark:text-slate-300">High-Impact Focal</span>
                             </div>
                             <h3 className="font-bold text-slate-900 text-base">Primary Conversion & Alerts</h3>
                             <p className="text-xs text-slate-600 leading-relaxed">

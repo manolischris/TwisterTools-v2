@@ -460,8 +460,7 @@ export default function CssFlexboxPlayground() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <ArrowRightLeft className="w-3.5 h-3.5 text-indigo-600" /> flex-direction
                                 </label>
-                                <select
-                                    value={flexDirection}
+                                <select aria-label="Select option" value={flexDirection}
                                     onChange={(e) => setFlexDirection(e.target.value as FlexDirection)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs sm:text-sm bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -477,8 +476,7 @@ export default function CssFlexboxPlayground() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <Layers className="w-3.5 h-3.5 text-indigo-600" /> flex-wrap
                                 </label>
-                                <select
-                                    value={flexWrap}
+                                <select aria-label="Select option" value={flexWrap}
                                     onChange={(e) => setFlexWrap(e.target.value as FlexWrap)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs sm:text-sm bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -493,8 +491,7 @@ export default function CssFlexboxPlayground() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <Compass className="w-3.5 h-3.5 text-indigo-600" /> justify-content (Main Axis)
                                 </label>
-                                <select
-                                    value={justifyContent}
+                                <select aria-label="Select option" value={justifyContent}
                                     onChange={(e) => setJustifyContent(e.target.value as JustifyContent)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs sm:text-sm bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -512,8 +509,7 @@ export default function CssFlexboxPlayground() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <MoveVertical className="w-3.5 h-3.5 text-indigo-600" /> align-items (Cross Axis)
                                 </label>
-                                <select
-                                    value={alignItems}
+                                <select aria-label="Select option" value={alignItems}
                                     onChange={(e) => setAlignItems(e.target.value as AlignItems)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs sm:text-sm bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -530,11 +526,10 @@ export default function CssFlexboxPlayground() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <Grid className="w-3.5 h-3.5 text-indigo-600" /> align-content (Multi-line)
                                 </label>
-                                <select
-                                    value={alignContent}
+                                <select aria-label="Select option" value={alignContent}
                                     disabled={flexWrap === "nowrap"}
                                     onChange={(e) => setAlignContent(e.target.value as AlignContent)}
-                                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs sm:text-sm bg-white disabled:bg-slate-100 disabled:text-slate-400 focus:ring-2 focus:ring-indigo-500 outline-none"
+                                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs sm:text-sm bg-white disabled:bg-slate-100 disabled:text-slate-600 dark:text-slate-300 focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
                                     <option value="stretch">stretch</option>
                                     <option value="flex-start">flex-start</option>
@@ -553,7 +548,7 @@ export default function CssFlexboxPlayground() {
                                         gap: {gap}px
                                     </label>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="64"
@@ -626,7 +621,7 @@ export default function CssFlexboxPlayground() {
                                         {/* flex-grow */}
                                         <div className="space-y-1">
                                             <label className="text-[11px] font-bold text-slate-600 block">flex-grow</label>
-                                            <input
+                                            <input aria-label="flex-grow"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -641,7 +636,7 @@ export default function CssFlexboxPlayground() {
                                         {/* flex-shrink */}
                                         <div className="space-y-1">
                                             <label className="text-[11px] font-bold text-slate-600 block">flex-shrink</label>
-                                            <input
+                                            <input aria-label="flex-shrink"
                                                 type="number"
                                                 min="0"
                                                 max="10"
@@ -656,7 +651,7 @@ export default function CssFlexboxPlayground() {
                                         {/* flex-basis */}
                                         <div className="space-y-1">
                                             <label className="text-[11px] font-bold text-slate-600 block">flex-basis</label>
-                                            <select
+                                            <select aria-label="Select flex-basis"
                                                 value={selectedItem.flexBasis}
                                                 onChange={(e) => updateSelectedItem("flexBasis", e.target.value)}
                                                 className="w-full px-2 py-1.5 rounded-lg border border-slate-200 text-xs font-medium bg-white"
@@ -674,7 +669,7 @@ export default function CssFlexboxPlayground() {
                                         {/* order */}
                                         <div className="space-y-1">
                                             <label className="text-[11px] font-bold text-slate-600 block">order</label>
-                                            <input
+                                            <input aria-label="order"
                                                 type="number"
                                                 min="-5"
                                                 max="10"
@@ -690,7 +685,7 @@ export default function CssFlexboxPlayground() {
                                     {/* align-self */}
                                     <div className="space-y-1">
                                         <label className="text-[11px] font-bold text-slate-600 block">align-self</label>
-                                        <select
+                                        <select aria-label="Select align-self"
                                             value={selectedItem.alignSelf}
                                             onChange={(e) => updateSelectedItem("alignSelf", e.target.value)}
                                             className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-medium bg-white"
@@ -720,7 +715,7 @@ export default function CssFlexboxPlayground() {
                             </h2>
                             <div className="flex items-center gap-2">
                                 <label className="text-[11px] font-bold text-slate-500 uppercase">Height:</label>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="240"
                                     max="500"
@@ -903,15 +898,15 @@ export default function CssFlexboxPlayground() {
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">flex-direction: row</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">flex-direction: row</span>
                                 <strong className="text-indigo-300 text-sm">Main: X-Axis (L → R)<br />Cross: Y-Axis (T → B)</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">flex-direction: column</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">flex-direction: column</span>
                                 <strong className="text-indigo-300 text-sm">Main: Y-Axis (T → B)<br />Cross: X-Axis (L → R)</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">flex-direction: row-rev</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">flex-direction: row-rev</span>
                                 <strong className="text-indigo-300 text-sm">Main: X-Axis (R → L)<br />Cross: Y-Axis (T → B)</strong>
                             </div>
                         </div>

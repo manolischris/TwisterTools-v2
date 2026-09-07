@@ -675,7 +675,7 @@ export default function SvgConverter() {
                   : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
               }`}
             >
-              <input
+              <input aria-label="Upload file"
                 ref={fileInputRef}
                 type="file"
                 multiple
@@ -751,7 +751,7 @@ export default function SvgConverter() {
                       <label className="font-medium text-slate-700">Raster Compression Quality</label>
                       <span className="font-mono font-bold text-indigo-600">{quality}%</span>
                     </div>
-                    <input
+                    <input aria-label="Adjust slider value"
                       type="range"
                       min="10"
                       max="100"
@@ -768,14 +768,13 @@ export default function SvgConverter() {
                       Alpha Channel Fill Color (Replaces Transparency)
                     </label>
                     <div className="flex items-center gap-3">
-                      <input
+                      <input aria-label="Select color"
                         type="color"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         className="w-9 h-9 rounded-lg border border-slate-200 cursor-pointer p-0 bg-transparent"
                       />
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         className="text-xs font-mono border border-slate-200 rounded-lg px-3 py-2 text-slate-800 uppercase focus:outline-none focus:ring-2 focus:ring-indigo-500 w-28"
@@ -787,14 +786,14 @@ export default function SvgConverter() {
                 <div className="space-y-2 pt-2 border-t border-slate-100">
                   <label className="text-xs font-medium text-slate-700 block">Custom Pixel Dimensions Override (px)</label>
                   <div className="grid grid-cols-2 gap-3">
-                    <input
+                    <input aria-label="Width"
                       type="number"
                       placeholder="Width (e.g. 1920)"
                       value={customWidth}
                       onChange={(e) => setCustomWidth(e.target.value)}
                       className="w-full text-xs border border-slate-200 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                     />
-                    <input
+                    <input aria-label="Height"
                       type="number"
                       placeholder="Height (e.g. 1080)"
                       value={customHeight}
@@ -815,7 +814,7 @@ export default function SvgConverter() {
                     </label>
                     <span className="font-mono font-bold text-indigo-600">{colorCount} Colors</span>
                   </div>
-                  <input
+                  <input aria-label="Adjust slider value"
                     type="range"
                     min="2"
                     max="32"
@@ -836,7 +835,7 @@ export default function SvgConverter() {
                     </label>
                     <span className="font-mono font-bold text-indigo-600">{simplification} px</span>
                   </div>
-                  <input
+                  <input aria-label="Adjust slider value"
                     type="range"
                     min="1"
                     max="6"
@@ -881,7 +880,7 @@ export default function SvgConverter() {
               <div className="h-[430px] border border-dashed border-slate-200 rounded-xl bg-slate-50/50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                 <ImageIcon className="w-10 h-10 text-slate-300 mb-2" />
                 <p className="text-sm font-medium text-slate-600">No assets in workspace queue</p>
-                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                   Upload files on the left panel to trigger local browser processing.
                 </p>
               </div>
@@ -913,7 +912,7 @@ export default function SvgConverter() {
                           )}
                         </p>
                         {item.originalWidth > 0 && (
-                          <p className="text-[10px] text-slate-400 font-mono">
+                          <p className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                             {item.originalWidth} × {item.originalHeight} px
                           </p>
                         )}
@@ -952,7 +951,7 @@ export default function SvgConverter() {
                       )}
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="p-2 hover:bg-rose-100 text-slate-400 hover:text-rose-600 rounded-lg transition-all"
+                        className="p-2 hover:bg-rose-100 text-slate-600 dark:text-slate-300 hover:text-rose-600 rounded-lg transition-all"
                         title="Remove Asset"
                       >
                         <Trash2 className="w-4 h-4" />

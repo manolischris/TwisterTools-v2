@@ -470,8 +470,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Exercise Discipline
                                 </label>
-                                <select
-                                    value={liftType}
+                                <select aria-label="Select option" value={liftType}
                                     onChange={(e) => { setLiftType(e.target.value as LiftType); setActivePresetId(null); }}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                 >
@@ -487,8 +486,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Primary 1RM Formula
                                 </label>
-                                <select
-                                    value={selectedFormula}
+                                <select aria-label="Select option" value={selectedFormula}
                                     onChange={(e) => setSelectedFormula(e.target.value as FormulaKey)}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                 >
@@ -508,8 +506,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                     <Scale className="w-3.5 h-3.5 text-indigo-600" /> Weight Lifted ({unit})
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="2000"
                                         step="0.5"
@@ -518,7 +515,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                         className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         placeholder="e.g. 225"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">{unit}</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">{unit}</span>
                                 </div>
                             </div>
 
@@ -527,8 +524,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                     <Activity className="w-3.5 h-3.5 text-indigo-600" /> Reps Performed (1–20)
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="20"
                                         value={reps === 0 ? "" : reps}
@@ -536,7 +532,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                         className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         placeholder="e.g. 5"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">reps</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">reps</span>
                                 </div>
                             </div>
                         </div>
@@ -552,8 +548,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                         RPE {rpe} ({10 - rpe === 0 ? "Max Effort" : `${10 - rpe} RIR`})
                                     </span>
                                 </label>
-                                <select
-                                    value={rpe}
+                                <select aria-label="Select option" value={rpe}
                                     onChange={(e) => setRpe(parseFloat(e.target.value))}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                 >
@@ -574,8 +569,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                     <Scale className="w-3.5 h-3.5 text-indigo-600" /> Bodyweight ({unit})
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="40"
                                         max="600"
                                         step="0.5"
@@ -584,7 +578,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                         className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         placeholder="e.g. 185"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">{unit}</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">{unit}</span>
                                 </div>
                             </div>
                         </div>
@@ -592,7 +586,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                         {/* Reference Presets Carousel */}
                         <div className="pt-3 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Benchmark Presets
                                 </span>
                                 {activePresetId && (
@@ -699,15 +693,15 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                             {/* Secondary Stat Chips */}
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-4 pt-3 border-t border-indigo-100/70">
                                 <div className="p-2 rounded-lg bg-white border border-slate-200/80">
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Ensemble Average</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Ensemble Average</span>
                                     <span className="text-sm font-extrabold text-slate-800">{average1RM} {unit}</span>
                                 </div>
                                 <div className="p-2 rounded-lg bg-white border border-slate-200/80">
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Strength / BW</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Strength / BW</span>
                                     <span className="text-sm font-extrabold text-slate-800">{strengthRatio > 0 ? `${strengthRatio}x` : "--"}</span>
                                 </div>
                                 <div className="p-2 rounded-lg bg-white border border-slate-200/80 col-span-2 sm:col-span-1">
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Calculated Effort</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Calculated Effort</span>
                                     <span className="text-sm font-extrabold text-indigo-700">{effectiveReps} Virtual Reps</span>
                                 </div>
                             </div>
@@ -737,7 +731,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                             </div>
                                             <div className="text-right">
                                                 <span className="text-sm font-black text-slate-900">{b.weight}</span>
-                                                <span className="text-[10px] font-bold text-slate-400 ml-1">{unit}</span>
+                                                <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 ml-1">{unit}</span>
                                             </div>
                                         </div>
                                     ))}
@@ -795,7 +789,7 @@ Calculated at twistertools.com/tools/calculators/one-rep-max-calculator`;
                                             </div>
                                             <div className="text-right flex-shrink-0 ml-3">
                                                 <span className="text-sm font-black text-slate-900">{val}</span>
-                                                <span className="text-[10px] text-slate-400 font-bold ml-1">{unit}</span>
+                                                <span className="text-[10px] text-slate-600 dark:text-slate-300 font-bold ml-1">{unit}</span>
                                             </div>
                                         </div>
                                     );

@@ -554,8 +554,7 @@ Calculated with TwisterTools Sunrise & Sunset Estimator`;
                             Search City or Location
                         </label>
                         <div className="relative">
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={searchQuery}
                                 onChange={(e) => {
                                     setSearchQuery(e.target.value);
@@ -565,7 +564,7 @@ Calculated with TwisterTools Sunrise & Sunset Estimator`;
                                 placeholder="Type city or country (e.g., Athens, Tokyo, Berlin)..."
                                 className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3.5 py-2.5 text-sm text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
                             />
-                            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                            <Search className="w-4 h-4 text-slate-600 dark:text-slate-300 absolute left-3 top-3" />
                         </div>
 
                         {/* Search Filter Dropdown Menu */}
@@ -585,7 +584,7 @@ Calculated with TwisterTools Sunrise & Sunset Estimator`;
                                                 </p>
                                                 <p className="text-xs text-slate-500">{city.country}</p>
                                             </div>
-                                            <span className="text-xs font-mono text-slate-400 group-hover:text-indigo-600">
+                                            <span className="text-xs font-mono text-slate-600 dark:text-slate-300 group-hover:text-indigo-600">
                                                 {city.lat > 0 ? `${city.lat}°N` : `${Math.abs(city.lat)}°S`},{" "}
                                                 {city.lng > 0 ? `${city.lng}°E` : `${Math.abs(city.lng)}°W`}
                                             </span>
@@ -628,14 +627,12 @@ Calculated with TwisterTools Sunrise & Sunset Estimator`;
                                 Latitude (-90 to 90)
                             </label>
                             <div className="relative">
-                                <input
-                                    type="text"
+                                <input aria-label="°N" type="text"
                                     value={latInput}
                                     onChange={handleLatChange}
                                     placeholder="e.g. 40.7128"
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-                                />
-                                <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">°N</span>
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"/>
+                                <span className="absolute right-3 top-2.5 text-xs text-slate-600 dark:text-slate-300 font-mono">°N</span>
                             </div>
                         </div>
 
@@ -644,14 +641,12 @@ Calculated with TwisterTools Sunrise & Sunset Estimator`;
                                 Longitude (-180 to 180)
                             </label>
                             <div className="relative">
-                                <input
-                                    type="text"
+                                <input aria-label="°E" type="text"
                                     value={lngInput}
                                     onChange={handleLngChange}
                                     placeholder="e.g. -74.0060"
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-                                />
-                                <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">°E</span>
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"/>
+                                <span className="absolute right-3 top-2.5 text-xs text-slate-600 dark:text-slate-300 font-mono">°E</span>
                             </div>
                         </div>
                     </div>
@@ -663,8 +658,7 @@ Calculated with TwisterTools Sunrise & Sunset Estimator`;
                                 Calculation Date
                             </label>
                             <div className="relative">
-                                <input
-                                    type="date"
+                                <input aria-label="Input value" type="date"
                                     value={dateInput}
                                     onChange={(e) => setDateInput(e.target.value)}
                                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
@@ -677,14 +671,12 @@ Calculated with TwisterTools Sunrise & Sunset Estimator`;
                                 UTC Timezone Offset (Hours)
                             </label>
                             <div className="relative">
-                                <input
-                                    type="text"
+                                <input aria-label="HRS" type="text"
                                     value={utcOffsetInput}
                                     onChange={handleOffsetChange}
                                     placeholder="e.g. -5 or +2"
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
-                                />
-                                <span className="absolute right-3 top-2.5 text-xs text-slate-400 font-mono">HRS</span>
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-sm font-mono text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"/>
+                                <span className="absolute right-3 top-2.5 text-xs text-slate-600 dark:text-slate-300 font-mono">HRS</span>
                             </div>
                         </div>
                     </div>

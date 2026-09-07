@@ -396,8 +396,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                         <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                             Diameter ({unit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.25"
                                             min="1"
                                             value={Number((origDiameter * displayMultiplier).toFixed(2)) || ""}
@@ -411,8 +410,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                             <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                                 Width ({unit})
                                             </label>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 step="0.25"
                                                 min="1"
                                                 value={Number((origWidth * displayMultiplier).toFixed(2)) || ""}
@@ -425,8 +423,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                                     Length ({unit})
                                                 </label>
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     step="0.25"
                                                     min="1"
                                                     value={Number((origLength * displayMultiplier).toFixed(2)) || ""}
@@ -441,8 +438,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Depth ({unit})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.25"
                                         min="0.5"
                                         value={Number((origDepth * displayMultiplier).toFixed(2)) || ""}
@@ -503,8 +499,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                         <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                             Diameter ({unit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.25"
                                             min="1"
                                             value={Number((targetDiameter * displayMultiplier).toFixed(2)) || ""}
@@ -518,8 +513,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                             <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                                 Width ({unit})
                                             </label>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 step="0.25"
                                                 min="1"
                                                 value={Number((targetWidth * displayMultiplier).toFixed(2)) || ""}
@@ -532,8 +526,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                                     Length ({unit})
                                                 </label>
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     step="0.25"
                                                     min="1"
                                                     value={Number((targetLength * displayMultiplier).toFixed(2)) || ""}
@@ -548,8 +541,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Depth ({unit})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.25"
                                         min="0.5"
                                         value={Number((targetDepth * displayMultiplier).toFixed(2)) || ""}
@@ -690,7 +682,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
                             <div className="grid grid-cols-3 gap-3">
                                 <div className="p-2.5 rounded-lg bg-white border border-indigo-100 shadow-xs">
                                     <label className="block text-[10px] font-bold text-slate-500 uppercase">Flour (g)</label>
-                                    <input
+                                    <input aria-label="Flour (g)"
                                         type="number"
                                         min="0"
                                         value={sampleFlourGrams || ""}
@@ -704,7 +696,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
 
                                 <div className="p-2.5 rounded-lg bg-white border border-indigo-100 shadow-xs">
                                     <label className="block text-[10px] font-bold text-slate-500 uppercase">Sugar (Cups)</label>
-                                    <input
+                                    <input aria-label="Sugar (Cups)"
                                         type="number"
                                         step="0.25"
                                         min="0"
@@ -719,7 +711,7 @@ Calculated with twistertools.com/tools/home-tools/cake-pan-converter`;
 
                                 <div className="p-2.5 rounded-lg bg-white border border-indigo-100 shadow-xs">
                                     <label className="block text-[10px] font-bold text-slate-500 uppercase">Whole Eggs</label>
-                                    <input
+                                    <input aria-label="Whole Eggs"
                                         type="number"
                                         step="0.5"
                                         min="0"

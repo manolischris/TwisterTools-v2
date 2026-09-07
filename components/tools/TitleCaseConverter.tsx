@@ -521,7 +521,7 @@ export default function TitleCaseConverter() {
                     <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-4 pt-4 animate-in fade-in duration-200">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium text-slate-700">
                             <label className="flex items-center gap-2 cursor-pointer">
-                                <input
+                                <input aria-label="Capitalize Hyphenated"
                                     type="checkbox"
                                     checked={capitalizeHyphenated}
                                     onChange={(e) => setCapitalizeHyphenated(e.target.checked)}
@@ -531,8 +531,7 @@ export default function TitleCaseConverter() {
                             </label>
 
                             <label className="flex items-center gap-2 cursor-pointer">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Capitalize After Colon" type="checkbox"
                                     checked={capitalizeAfterColon}
                                     onChange={(e) => setCapitalizeAfterColon(e.target.checked)}
                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -541,8 +540,7 @@ export default function TitleCaseConverter() {
                             </label>
 
                             <label className="flex items-center gap-2 cursor-pointer">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Preserve Acronyms" type="checkbox"
                                     checked={preserveAcronyms}
                                     onChange={(e) => setPreserveAcronyms(e.target.checked)}
                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -554,10 +552,9 @@ export default function TitleCaseConverter() {
                         <div className="space-y-1.5 pt-2 border-t border-slate-200">
                             <div className="flex justify-between text-xs font-bold text-slate-700">
                                 <span>Custom Preserved Acronyms / Proper Nouns (Comma separated)</span>
-                                <span className="text-slate-400 font-normal">e.g., iPhone, DevOps, Web3, SaaS</span>
+                                <span className="text-slate-600 dark:text-slate-300 font-normal">e.g., iPhone, DevOps, Web3, SaaS</span>
                             </div>
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={customExceptionsText}
                                 onChange={(e) => setCustomExceptionsText(e.target.value)}
                                 placeholder="iPhone, DevOps, Web3, AWS, PostgreSQL"
@@ -602,7 +599,7 @@ export default function TitleCaseConverter() {
                         </div>
 
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Type or paste your titles, headlines, or paper references here (one per line)..."
@@ -652,7 +649,7 @@ export default function TitleCaseConverter() {
                         </div>
 
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Capitalized results will render here instantaneously"
                                 readOnly
                                 value={convertedText}
                                 placeholder="Capitalized results will render here instantaneously..."

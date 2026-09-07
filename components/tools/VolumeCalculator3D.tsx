@@ -330,7 +330,7 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                         >
                                             <IconComponent className={`w-5 h-5 ${isSelected ? "text-white" : "text-indigo-600"}`} />
                                             <span className="font-extrabold text-xs">{item.label}</span>
-                                            <span className={`text-[10px] font-mono ${isSelected ? "text-indigo-100" : "text-slate-400"}`}>
+                                            <span className={`text-[10px] font-mono ${isSelected ? "text-indigo-100" : "text-slate-600 dark:text-slate-300"}`}>
                                                 {item.desc}
                                             </span>
                                         </button>
@@ -390,7 +390,7 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                         <span className="text-indigo-600 font-mono">{radiusInput} {unit}</span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0.5"
                                             max="100"
@@ -400,15 +400,14 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                         />
                                         <div className="relative w-28 flex-shrink-0">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0.001"
                                                 step="any"
                                                 value={radiusInput === 0 ? "" : radiusInput}
                                                 onChange={(e) => handleNumberInput(e, setRadiusInput)}
                                                 className="w-full px-2.5 py-1.5 text-xs font-bold text-slate-900 bg-white border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 pr-8"
                                             />
-                                            <span className="absolute right-2.5 top-1.5 text-xs font-semibold text-slate-400">{unit}</span>
+                                            <span className="absolute right-2.5 top-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300">{unit}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -419,7 +418,7 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                         <span className="text-indigo-600 font-mono">{diameterInput} {unit}</span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="1"
                                             max="200"
@@ -429,15 +428,14 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                         />
                                         <div className="relative w-28 flex-shrink-0">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0.001"
                                                 step="any"
                                                 value={diameterInput === 0 ? "" : diameterInput}
                                                 onChange={(e) => handleNumberInput(e, setDiameterInput)}
                                                 className="w-full px-2.5 py-1.5 text-xs font-bold text-slate-900 bg-white border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 pr-8"
                                             />
-                                            <span className="absolute right-2.5 top-1.5 text-xs font-semibold text-slate-400">{unit}</span>
+                                            <span className="absolute right-2.5 top-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300">{unit}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -450,7 +448,7 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                         <span className="text-indigo-600 font-mono">{heightInput} {unit}</span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0.5"
                                             max="150"
@@ -460,15 +458,14 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                         />
                                         <div className="relative w-28 flex-shrink-0">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0.001"
                                                 step="any"
                                                 value={heightInput === 0 ? "" : heightInput}
                                                 onChange={(e) => handleNumberInput(e, setHeightInput)}
                                                 className="w-full px-2.5 py-1.5 text-xs font-bold text-slate-900 bg-white border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 pr-8"
                                             />
-                                            <span className="absolute right-2.5 top-1.5 text-xs font-semibold text-slate-400">{unit}</span>
+                                            <span className="absolute right-2.5 top-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300">{unit}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -544,7 +541,7 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
 
                         {/* Real-time Dynamic 3D Solid SVG Visualizer */}
                         <div className="w-full bg-slate-900 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-800 relative overflow-hidden min-h-[220px]">
-                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-600 dark:text-slate-300 flex items-center gap-1">
                                 <Maximize2 className="w-3.5 h-3.5 text-indigo-400" /> 3D Isometric Orthographic Wireframe
                             </div>
 
@@ -690,7 +687,7 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                                 <div className="p-3 bg-slate-900 text-white rounded-xl space-y-2 text-xs">
                                     <div className="font-bold text-indigo-300 uppercase tracking-wider flex items-center justify-between">
                                         <span>Geometric Dimensions Summary</span>
-                                        <span className="text-[10px] text-slate-400 font-mono">Precision: {precision}dp</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">Precision: {precision}dp</span>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px] text-slate-300">
                                         <div>Radius: <strong className="text-white">{formatNum(m.radius)} {unit}</strong></div>
@@ -713,7 +710,7 @@ Generated via TwisterTools 3D Volume and Surface Area Calculator`;
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

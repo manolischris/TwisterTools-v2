@@ -367,7 +367,7 @@ export default function DiffChecker() {
               {originalText.length} chars
             </span>
           </div>
-          <textarea
+          <textarea aria-label="Input text content"
             value={originalText}
             onChange={(e) => setOriginalText(e.target.value)}
             placeholder="Paste original text here..."
@@ -387,7 +387,7 @@ export default function DiffChecker() {
               {modifiedText.length} chars
             </span>
           </div>
-          <textarea
+          <textarea aria-label="Input text content"
             value={modifiedText}
             onChange={(e) => setModifiedText(e.target.value)}
             placeholder="Paste modified text here..."
@@ -518,7 +518,7 @@ export default function DiffChecker() {
                           : ""
                     }`}
                   >
-                    <span className="w-10 flex-shrink-0 text-right pr-2 py-1 text-slate-400 select-none border-r border-slate-100">
+                    <span className="w-10 flex-shrink-0 text-right pr-2 py-1 text-slate-600 dark:text-slate-300 select-none border-r border-slate-100">
                       {row.original ? row.lineNumber : ""}
                     </span>
                     <span className={`w-4 flex-shrink-0 text-center py-1 select-none ${
@@ -526,7 +526,7 @@ export default function DiffChecker() {
                         ? "text-rose-500"
                         : row.original?.type === "added"
                           ? "text-emerald-500"
-                          : "text-slate-400"
+                          : "text-slate-600 dark:text-slate-300"
                     }`}>
                       {row.original ? getLinePrefix(row.original.type) : ""}
                     </span>
@@ -544,7 +544,7 @@ export default function DiffChecker() {
                   </div>
                 ))}
                 {splitViewData.length === 0 && (
-                  <div className="text-center text-sm text-slate-400 p-4 sm:p-6 md:p-8">
+                  <div className="text-center text-sm text-slate-600 dark:text-slate-300 p-4 sm:p-6 md:p-8">
                     No content to compare
                   </div>
                 )}
@@ -563,7 +563,7 @@ export default function DiffChecker() {
                           : ""
                     }`}
                   >
-                    <span className="w-10 flex-shrink-0 text-right pr-2 py-1 text-slate-400 select-none border-r border-slate-100">
+                    <span className="w-10 flex-shrink-0 text-right pr-2 py-1 text-slate-600 dark:text-slate-300 select-none border-r border-slate-100">
                       {row.modified ? row.lineNumber : ""}
                     </span>
                     <span className={`w-4 flex-shrink-0 text-center py-1 select-none ${
@@ -571,7 +571,7 @@ export default function DiffChecker() {
                         ? "text-emerald-500"
                         : row.modified?.type === "removed"
                           ? "text-rose-500"
-                          : "text-slate-400"
+                          : "text-slate-600 dark:text-slate-300"
                     }`}>
                       {row.modified ? getLinePrefix(row.modified.type) : ""}
                     </span>
@@ -589,7 +589,7 @@ export default function DiffChecker() {
                   </div>
                 ))}
                 {splitViewData.length === 0 && (
-                  <div className="text-center text-sm text-slate-400 p-4 sm:p-6 md:p-8">
+                  <div className="text-center text-sm text-slate-600 dark:text-slate-300 p-4 sm:p-6 md:p-8">
                     No content to compare
                   </div>
                 )}
@@ -616,7 +616,7 @@ export default function DiffChecker() {
                       ? "text-emerald-500"
                       : seg.type === "removed"
                         ? "text-rose-500"
-                        : "text-slate-400"
+                        : "text-slate-600 dark:text-slate-300"
                   }`}>
                     {getLinePrefix(seg.type)}
                   </span>
@@ -632,7 +632,7 @@ export default function DiffChecker() {
                 </div>
               ))}
               {unifiedViewData.length === 0 && (
-                <div className="text-center text-sm text-slate-400 p-4 sm:p-6 md:p-8">
+                <div className="text-center text-sm text-slate-600 dark:text-slate-300 p-4 sm:p-6 md:p-8">
                   No content to compare
                 </div>
               )}
@@ -649,7 +649,7 @@ export default function DiffChecker() {
                   ? copied
                     ? "bg-green-500 text-white shadow-md shadow-green-200"
                     : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                  : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                  : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
               }`}
             >
               {copied ? (

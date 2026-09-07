@@ -380,7 +380,7 @@ export default function ImageCompressor() {
                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                   }`}
               >
-                <input
+                <input aria-label="Upload file"
                   ref={fileInputRef}
                   type="file"
                   multiple
@@ -452,7 +452,7 @@ export default function ImageCompressor() {
                         {quality}%
                       </span>
                     </div>
-                    <input
+                    <input aria-label="Adjust slider value"
                       type="range"
                       min="10"
                       max="100"
@@ -461,7 +461,7 @@ export default function ImageCompressor() {
                       onChange={(e) => setQuality(parseInt(e.target.value, 10))}
                       className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                     />
-                    <div className="flex justify-between text-[10px] font-medium text-slate-400">
+                    <div className="flex justify-between text-[10px] font-medium text-slate-600 dark:text-slate-300">
                       <span>Maximum Compression</span>
                       <span>Balanced</span>
                       <span>Lossless Visuals</span>
@@ -481,14 +481,13 @@ export default function ImageCompressor() {
                       Alpha Channel Fill Color
                     </label>
                     <div className="flex items-center gap-3">
-                      <input
+                      <input aria-label="Select color"
                         type="color"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         className="w-9 h-9 rounded-lg border border-slate-200 cursor-pointer p-0 bg-transparent"
                       />
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         className="text-xs font-mono border border-slate-200 rounded-lg px-3 py-2 text-slate-800 uppercase focus:outline-none focus:ring-2 focus:ring-indigo-500 w-28 bg-white"
@@ -502,14 +501,14 @@ export default function ImageCompressor() {
                 <div className="space-y-2 pt-1 border-t border-slate-200">
                   <label className="text-xs font-semibold text-slate-700 block">Optional Max Dimensions (px)</label>
                   <div className="grid grid-cols-2 gap-3">
-                    <input
+                    <input aria-label="Max Width"
                       type="number"
                       placeholder="Max Width (e.g. 1920)"
                       value={customWidth}
                       onChange={(e) => setCustomWidth(e.target.value)}
                       className="w-full text-xs border border-slate-200 rounded-lg px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
                     />
-                    <input
+                    <input aria-label="Max Height"
                       type="number"
                       placeholder="Max Height (e.g. 1080)"
                       value={customHeight}
@@ -555,7 +554,7 @@ export default function ImageCompressor() {
                 <div className="h-[430px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                   <ImageIcon className="w-12 h-12 text-slate-300 mb-3" />
                   <p className="text-sm font-semibold text-slate-700">No images in processing queue</p>
-                  <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                     Upload images using the drag-and-drop zone to begin real-time browser compression.
                   </p>
                 </div>
@@ -587,7 +586,7 @@ export default function ImageCompressor() {
                             )}
                           </p>
                           {item.compressedWidth > 0 && (
-                            <p className="text-[10px] text-slate-400 font-mono">
+                            <p className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                               {item.compressedWidth} × {item.compressedHeight} px
                             </p>
                           )}
@@ -611,7 +610,7 @@ export default function ImageCompressor() {
                         )}
                         <button
                           onClick={() => removeItem(item.id)}
-                          className="p-2 hover:bg-rose-100 text-slate-400 hover:text-rose-600 rounded-lg transition-all"
+                          className="p-2 hover:bg-rose-100 text-slate-600 dark:text-slate-300 hover:text-rose-600 rounded-lg transition-all"
                           title="Remove File"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -625,15 +624,15 @@ export default function ImageCompressor() {
               {/* Dynamic Metrics Bar */}
               <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-100">
                 <div className="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-center">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Queue Total</p>
+                  <p className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Queue Total</p>
                   <p className="text-xs font-mono font-bold text-slate-800">{items.length} Assets</p>
                 </div>
                 <div className="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-center">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Original Size</p>
+                  <p className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Original Size</p>
                   <p className="text-xs font-mono font-bold text-slate-800">{formatBytes(totalOriginalBytes)}</p>
                 </div>
                 <div className="bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-center">
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Compressed</p>
+                  <p className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Compressed</p>
                   <p className="text-xs font-mono font-bold text-indigo-600">{formatBytes(totalCompressedBytes)}</p>
                 </div>
               </div>

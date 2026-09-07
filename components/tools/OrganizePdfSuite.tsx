@@ -400,7 +400,7 @@ export default function OrganizePdfSuite() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                 }`}
                         >
-                            <input
+                            <input aria-label="Upload file"
                                 ref={fileInputRef}
                                 type="file"
                                 accept="application/pdf"
@@ -433,7 +433,7 @@ export default function OrganizePdfSuite() {
                                     <p className="text-xs font-semibold text-slate-800 mb-0.5">
                                         Drop PDF document here, or <span className="text-indigo-600">click to browse</span>
                                     </p>
-                                    <p className="text-[11px] text-slate-400">Maximum file size limit: 20 MB</p>
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300">Maximum file size limit: 20 MB</p>
                                 </>
                             )}
                         </div>
@@ -526,7 +526,7 @@ export default function OrganizePdfSuite() {
                             <div className="h-[360px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                 <Layers3 className="w-10 h-10 text-slate-300 mb-2" />
                                 <p className="text-sm font-semibold text-slate-700">No PDF Loaded</p>
-                                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                     Upload a PDF document above to display, reorder, rotate, and extract pages.
                                 </p>
                             </div>
@@ -549,8 +549,7 @@ export default function OrganizePdfSuite() {
                                         >
                                             {/* Page Header Bar */}
                                             <div className="w-full flex items-center justify-between mb-1.5 px-0.5">
-                                                <input
-                                                    type="checkbox"
+                                                <input aria-label="Selected" type="checkbox"
                                                     checked={page.selected}
                                                     onChange={() => toggleSelectPage(index)}
                                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5 cursor-pointer"
@@ -648,7 +647,7 @@ export default function OrganizePdfSuite() {
                                             : "bg-slate-50/50 border-slate-200 hover:bg-slate-100/50"
                                         }`}
                                 >
-                                    <input
+                                    <input aria-label="Splitmode"
                                         type="radio"
                                         name="splitMode"
                                         checked={splitMode === id}
@@ -667,14 +666,14 @@ export default function OrganizePdfSuite() {
                         {splitMode === "range" && (
                             <div className="space-y-1.5 pt-1">
                                 <label className="text-xs font-semibold text-slate-700">Enter Page Numbers / Ranges</label>
-                                <input
+                                <input aria-label="Enter Page Numbers / Ranges"
                                     type="text"
                                     value={rangeInput}
                                     onChange={(e) => setRangeInput(e.target.value)}
                                     placeholder="e.g. 1-3, 5, 7-10"
                                     className="w-full text-xs font-mono border border-slate-200 rounded-xl p-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                 />
-                                <p className="text-[10px] text-slate-400">
+                                <p className="text-[10px] text-slate-600 dark:text-slate-300">
                                     Total pages available in active sequence: {pages.length}
                                 </p>
                             </div>
@@ -709,7 +708,7 @@ export default function OrganizePdfSuite() {
                             disabled={pages.length === 0 || isExporting}
                             className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${pages.length > 0 && !isExporting
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                 }`}
                         >
                             {isExporting ? (
@@ -744,7 +743,7 @@ export default function OrganizePdfSuite() {
                             <span className="text-xs font-bold text-slate-800">Page Preview</span>
                             <button
                                 onClick={() => setPreviewPageUrl(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>

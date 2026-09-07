@@ -462,7 +462,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                 <div className="grid grid-cols-3 gap-3">
                                     <div>
                                         <span className="text-[10px] text-slate-500 font-semibold block mb-1">Hours</span>
-                                        <input
+                                        <input aria-label="Hours"
                                             type="number"
                                             min="0"
                                             max="99"
@@ -474,7 +474,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                     </div>
                                     <div>
                                         <span className="text-[10px] text-slate-500 font-semibold block mb-1">Minutes</span>
-                                        <input
+                                        <input aria-label="Minutes"
                                             type="number"
                                             min="0"
                                             max="59"
@@ -486,7 +486,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                     </div>
                                     <div>
                                         <span className="text-[10px] text-slate-500 font-semibold block mb-1">Seconds</span>
-                                        <input
+                                        <input aria-label="Seconds"
                                             type="number"
                                             min="0"
                                             max="59"
@@ -507,8 +507,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                         Distance ({unit === "imperial" ? "Miles" : "Kilometers"})
                                     </label>
                                 </div>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     step="0.01"
                                     min="0.1"
                                     disabled={target === "distance"}
@@ -542,7 +541,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                 <div className="grid grid-cols-2 gap-3">
                                     <div>
                                         <span className="text-[10px] text-slate-500 font-semibold block mb-1">Minutes</span>
-                                        <input
+                                        <input aria-label="Minutes"
                                             type="number"
                                             min="0"
                                             max="59"
@@ -554,7 +553,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                     </div>
                                     <div>
                                         <span className="text-[10px] text-slate-500 font-semibold block mb-1">Seconds</span>
-                                        <input
+                                        <input aria-label="Seconds"
                                             type="number"
                                             min="0"
                                             max="59"
@@ -573,8 +572,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                     <Flame className="w-3.5 h-3.5 text-rose-500" />
                                     Body Weight ({unit === "imperial" ? "lbs" : "kg"})
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="30"
                                     max="500"
                                     value={weight === 0 ? "" : weight}
@@ -587,7 +585,7 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                         {/* Presets Bar */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Popular Race Benchmarks
                                 </span>
                                 {activePresetId && (
@@ -697,13 +695,13 @@ Calculated at twistertools.com/tools/calculators/pace-calculator`;
                                                     {idx + 1}
                                                 </span>
                                                 <span className="font-semibold text-slate-800">{s.splitNum}</span>
-                                                <span className="text-slate-400 text-[10px]">({s.distanceLabel})</span>
+                                                <span className="text-slate-600 dark:text-slate-300 text-[10px]">({s.distanceLabel})</span>
                                             </div>
                                             <span className="font-mono font-bold text-indigo-600">{s.cumulativeTime}</span>
                                         </div>
                                     ))
                                 ) : (
-                                    <div className="p-8 text-center text-xs text-slate-400">
+                                    <div className="p-8 text-center text-xs text-slate-600 dark:text-slate-300">
                                         Enter time and distance to generate milestone splits.
                                     </div>
                                 )}

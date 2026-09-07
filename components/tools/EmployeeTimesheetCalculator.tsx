@@ -500,11 +500,10 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                         Base Hourly Rate
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-2.5 text-xs font-bold text-slate-400">
+                                        <span className="absolute left-3 top-2.5 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             {currencySymbol}
                                         </span>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.25"
                                             min={0}
                                             max={500}
@@ -519,8 +518,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                     <label className="text-xs font-bold text-slate-700 block mb-1">
                                         Currency Symbol
                                     </label>
-                                    <select
-                                        value={currencySymbol}
+                                    <select aria-label="Select option" value={currencySymbol}
                                         onChange={(e) => setCurrencySymbol(e.target.value)}
                                         className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm font-semibold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                     >
@@ -537,8 +535,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                     <label className="text-xs font-bold text-slate-700 block mb-1">
                                         Overtime Rule
                                     </label>
-                                    <select
-                                        value={overtimeRule}
+                                    <select aria-label="Select option" value={overtimeRule}
                                         onChange={(e) => setOvertimeRule(e.target.value as OvertimeRule)}
                                         className="w-full px-2 py-2 bg-white border border-slate-300 rounded-lg text-xs sm:text-sm font-semibold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none truncate"
                                     >
@@ -568,8 +565,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                             <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                 Employee Name
                                             </label>
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={employeeName}
                                                 onChange={(e) => setEmployeeName(e.target.value)}
                                                 className="w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-medium text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -580,8 +576,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                             <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                 Period Ending
                                             </label>
-                                            <input
-                                                type="date"
+                                            <input aria-label="Input value" type="date"
                                                 value={payPeriodEnding}
                                                 onChange={(e) => setPayPeriodEnding(e.target.value)}
                                                 className="w-full px-2 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-medium text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -592,8 +587,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                             <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                 OT Rate Multiplier
                                             </label>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 step="0.1"
                                                 min={1}
                                                 max={5}
@@ -607,8 +601,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                             <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                 Est. Tax Withhold (%)
                                             </label>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 step="0.5"
                                                 min={0}
                                                 max={60}
@@ -651,15 +644,13 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                     >
                                         <div className="flex items-center justify-between gap-2">
                                             <div className="flex items-center gap-2">
-                                                <input
-                                                    type="text"
+                                                <input aria-label="Input value" type="text"
                                                     value={shift.day}
                                                     onChange={(e) => updateShift(shift.id, "day", e.target.value)}
                                                     className="w-24 sm:w-28 font-bold text-xs bg-white border border-slate-300 rounded-md px-2 py-1 text-slate-800 focus:ring-1 focus:ring-indigo-500 outline-none"
                                                     placeholder="Day"
                                                 />
-                                                <input
-                                                    type="date"
+                                                <input aria-label="Input value" type="date"
                                                     value={shift.date}
                                                     onChange={(e) => updateShift(shift.id, "date", e.target.value)}
                                                     className="w-28 sm:w-32 text-[11px] bg-white border border-slate-300 rounded-md px-1.5 py-1 text-slate-600 focus:ring-1 focus:ring-indigo-500 outline-none"
@@ -674,7 +665,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                                     type="button"
                                                     onClick={() => removeShift(shift.id)}
                                                     disabled={shifts.length <= 1}
-                                                    className={`p-1 text-slate-400 hover:text-rose-600 rounded transition cursor-pointer ${shifts.length <= 1 ? "opacity-30 cursor-not-allowed" : ""}`}
+                                                    className={`p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 rounded transition cursor-pointer ${shifts.length <= 1 ? "opacity-30 cursor-not-allowed" : ""}`}
                                                     title="Delete Shift"
                                                 >
                                                     <Trash2 className="w-3.5 h-3.5" />
@@ -688,8 +679,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                                 <label className="text-[10px] font-bold text-slate-500 block mb-0.5">
                                                     Start Time
                                                 </label>
-                                                <input
-                                                    type="time"
+                                                <input aria-label="Input value" type="time"
                                                     value={shift.startTime}
                                                     onChange={(e) => updateShift(shift.id, "startTime", e.target.value)}
                                                     className="w-full text-xs font-medium bg-white border border-slate-300 rounded-md px-2 py-1 text-slate-800 focus:ring-1 focus:ring-indigo-500 outline-none"
@@ -700,8 +690,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                                 <label className="text-[10px] font-bold text-slate-500 block mb-0.5">
                                                     End Time
                                                 </label>
-                                                <input
-                                                    type="time"
+                                                <input aria-label="Input value" type="time"
                                                     value={shift.endTime}
                                                     onChange={(e) => updateShift(shift.id, "endTime", e.target.value)}
                                                     className="w-full text-xs font-medium bg-white border border-slate-300 rounded-md px-2 py-1 text-slate-800 focus:ring-1 focus:ring-indigo-500 outline-none"
@@ -712,7 +701,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                                 <label className="text-[10px] font-bold text-slate-500 block mb-0.5 flex items-center justify-between">
                                                     <span>Break (mins)</span>
                                                 </label>
-                                                <input
+                                                <input aria-label="Break (mins)"
                                                     type="number"
                                                     min={0}
                                                     max={240}
@@ -770,7 +759,7 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                                     </h3>
                                 </div>
                                 <div className="text-right">
-                                    <span className="text-[10px] font-bold text-slate-400 block uppercase">
+                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">
                                         Total Cumulative Hours
                                     </span>
                                     <span className="text-2xl sm:text-3xl font-black font-mono text-emerald-400">
@@ -782,27 +771,27 @@ Generated with TwisterTools Timesheet & Overtime Pay Calculator`;
                             {/* Net Take-Home Calculation Preview */}
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1">
                                 <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-                                    <span className="text-[10px] font-bold text-slate-400 block uppercase">Estimated Net Pay</span>
+                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Estimated Net Pay</span>
                                     <span className="text-lg font-black font-mono text-emerald-400">
                                         {formatCurrency(payrollMetrics.estimatedNetPay, currencySymbol)}
                                     </span>
-                                    <span className="text-[10px] text-slate-400 block">after {taxWithholdingRate}% tax</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block">after {taxWithholdingRate}% tax</span>
                                 </div>
 
                                 <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
-                                    <span className="text-[10px] font-bold text-slate-400 block uppercase">Effective Rate</span>
+                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Effective Rate</span>
                                     <span className="text-lg font-black font-mono text-indigo-300">
                                         {formatCurrency(payrollMetrics.effectiveHourlyRate, currencySymbol)}/h
                                     </span>
-                                    <span className="text-[10px] text-slate-400 block">blended average</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block">blended average</span>
                                 </div>
 
                                 <div className="p-3 bg-slate-900/80 rounded-xl border border-slate-800 col-span-2 sm:col-span-1">
-                                    <span className="text-[10px] font-bold text-slate-400 block uppercase">Tax Withheld</span>
+                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Tax Withheld</span>
                                     <span className="text-lg font-black font-mono text-amber-300">
                                         -{formatCurrency(payrollMetrics.estimatedTaxWithheld, currencySymbol)}
                                     </span>
-                                    <span className="text-[10px] text-slate-400 block">estimated total</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block">estimated total</span>
                                 </div>
                             </div>
                         </div>

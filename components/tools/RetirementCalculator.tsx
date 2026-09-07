@@ -408,8 +408,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -428,8 +427,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                     <label className="block text-sm font-semibold text-slate-800 mb-1.5 flex items-center gap-1">
                                         <Calendar className="w-4 h-4 text-indigo-600" /> Current Age
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="18"
                                         max="90"
                                         value={currentAge === 0 ? "" : currentAge}
@@ -446,8 +444,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                     <label className="block text-sm font-semibold text-slate-800 mb-1.5 flex items-center gap-1">
                                         <Target className="w-4 h-4 text-indigo-600" /> Target Retire Age
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={currentAge + 1}
                                         max="100"
                                         value={retirementAge === 0 ? "" : retirementAge}
@@ -464,9 +461,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                         <Wallet className="w-4 h-4 text-indigo-600" /> Current Savings
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="1000"
                                             value={currentSavings === 0 ? "" : currentSavings}
@@ -480,9 +476,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                         <TrendingUp className="w-4 h-4 text-indigo-600" /> Monthly Save
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="50"
                                             value={monthlyContribution === 0 ? "" : monthlyContribution}
@@ -500,8 +495,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                         <Percent className="w-4 h-4 text-indigo-600" /> Expected Return
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="25"
                                             step="0.1"
@@ -509,7 +503,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setAnnualReturn(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
                                 <div>
@@ -517,8 +511,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                         <Flame className="w-4 h-4 text-indigo-600" /> Est. Inflation
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="15"
                                             step="0.1"
@@ -526,7 +519,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             onChange={(e) => handleNumberInput(e, (val) => setInflationRate(Math.max(0, val)))}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
                             </div>
@@ -543,9 +536,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             <Briefcase className="w-3.5 h-3.5 text-indigo-500" /> Annual Salary
                                         </label>
                                         <div className="relative">
-                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="1000"
                                                 value={annualSalary === 0 ? "" : annualSalary}
@@ -560,8 +552,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                             Employer Match %
                                         </label>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="15"
                                                 step="0.5"
@@ -569,7 +560,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setEmployerMatchPercent(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -579,9 +570,8 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                                         <Award className="w-3.5 h-3.5 text-indigo-500" /> Desired Monthly Retirement Income
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="500"
                                             value={desiredMonthlyIncome === 0 ? "" : desiredMonthlyIncome}
@@ -596,7 +586,7 @@ Calculated at twistertools.com/tools/calculators/retirement-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Sample Career Paths
                                 </span>
                                 {activePresetId && (

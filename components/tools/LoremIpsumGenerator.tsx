@@ -331,7 +331,7 @@ export default function LoremIpsumGenerator() {
                                     className="text-xs font-semibold text-slate-700 uppercase tracking-wider flex items-center justify-between"
                                 >
                                     <span>Quantity Count</span>
-                                    <span className="text-slate-400 font-normal lowercase">(Max 1000)</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal lowercase">(Max 1000)</span>
                                 </label>
                                 <input
                                     id="quantity-input"
@@ -348,7 +348,7 @@ export default function LoremIpsumGenerator() {
                             {/* Toggle Options */}
                             <div className="pt-2 space-y-3 border-t border-slate-100">
                                 <label className="flex items-center gap-3 cursor-pointer select-none">
-                                    <input
+                                    <input aria-label="Start With Lorem"
                                         type="checkbox"
                                         checked={startWithLorem}
                                         onChange={(e) => setStartWithLorem(e.target.checked)}
@@ -360,8 +360,7 @@ export default function LoremIpsumGenerator() {
                                 </label>
 
                                 <label className="flex items-center gap-3 cursor-pointer select-none">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Html Markup" type="checkbox"
                                         checked={htmlMarkup}
                                         onChange={(e) => setHtmlMarkup(e.target.checked)}
                                         className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500"
@@ -408,7 +407,7 @@ export default function LoremIpsumGenerator() {
                         <div className="p-5 space-y-4 flex-1 flex flex-col">
                             {/* Output Display Container */}
                             <div className="relative flex-1 min-w-0">
-                                <textarea
+                                <textarea aria-label="Generated placeholder text will appear here"
                                     readOnly
                                     value={output}
                                     placeholder="Generated placeholder text will appear here..."

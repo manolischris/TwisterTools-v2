@@ -285,7 +285,7 @@ export default function WordCounter() {
                         </div>
 
                         <div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
                                 placeholder="Type or paste your text here to analyze words, characters, readability, and platform limits..."
@@ -417,7 +417,7 @@ export default function WordCounter() {
                                     ))}
                                 </div>
                             ) : (
-                                <p className="text-xs text-slate-400 italic">Type more text to generate keyword density insights.</p>
+                                <p className="text-xs text-slate-600 dark:text-slate-300 italic">Type more text to generate keyword density insights.</p>
                             )}
                         </div>
 

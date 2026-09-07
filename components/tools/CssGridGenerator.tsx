@@ -550,8 +550,7 @@ export default function CssGridGenerator() {
                                         <label className="block text-xs font-semibold text-slate-600 mb-1">
                                             Area Label
                                         </label>
-                                        <input
-                                            type="text"
+                                        <input aria-label="Input value" type="text"
                                             value={selectedItem.name}
                                             onChange={(e) => updateSelectedItem({ name: e.target.value })}
                                             className="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none font-medium"
@@ -581,8 +580,7 @@ export default function CssGridGenerator() {
                                         <label className="block text-[11px] font-bold text-slate-600 uppercase">
                                             Col Start
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max={cols.length}
                                             value={selectedItem.colStart === 0 ? "" : selectedItem.colStart}
@@ -600,8 +598,7 @@ export default function CssGridGenerator() {
                                         <label className="block text-[11px] font-bold text-slate-600 uppercase">
                                             Col End
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={selectedItem.colStart + 1}
                                             max={cols.length + 1}
                                             value={selectedItem.colEnd === 0 ? "" : selectedItem.colEnd}
@@ -619,8 +616,7 @@ export default function CssGridGenerator() {
                                         <label className="block text-[11px] font-bold text-slate-600 uppercase">
                                             Row Start
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max={rows.length}
                                             value={selectedItem.rowStart === 0 ? "" : selectedItem.rowStart}
@@ -638,8 +634,7 @@ export default function CssGridGenerator() {
                                         <label className="block text-[11px] font-bold text-slate-600 uppercase">
                                             Row End
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={selectedItem.rowStart + 1}
                                             max={rows.length + 1}
                                             value={selectedItem.rowEnd === 0 ? "" : selectedItem.rowEnd}
@@ -726,8 +721,7 @@ export default function CssGridGenerator() {
                                         className="flex items-center gap-2 bg-slate-50 p-2 rounded-xl border border-slate-200/80"
                                     >
                                         <span className="text-xs font-bold text-slate-500 w-6">Col {idx + 1}</span>
-                                        <select
-                                            value={col.unit}
+                                        <select aria-label="Select option" value={col.unit}
                                             onChange={(e) => {
                                                 const u = e.target.value as UnitType;
                                                 setCols(
@@ -747,7 +741,7 @@ export default function CssGridGenerator() {
                                             <option value="minmax">minmax()</option>
                                         </select>
                                         {col.unit !== "auto" && col.unit !== "minmax" && (
-                                            <input
+                                            <input aria-label="minmax()"
                                                 type="text"
                                                 value={col.value}
                                                 onChange={(e) => {
@@ -759,7 +753,7 @@ export default function CssGridGenerator() {
                                         )}
                                         {col.unit === "minmax" && (
                                             <div className="flex items-center gap-1">
-                                                <input
+                                                <input aria-label="min"
                                                     type="text"
                                                     placeholder="min (100px)"
                                                     value={col.min || ""}
@@ -769,7 +763,7 @@ export default function CssGridGenerator() {
                                                     }}
                                                     className="w-20 px-2 py-1 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 font-semibold"
                                                 />
-                                                <input
+                                                <input aria-label="max"
                                                     type="text"
                                                     placeholder="max (1fr)"
                                                     value={col.max || ""}
@@ -784,7 +778,7 @@ export default function CssGridGenerator() {
                                         <button
                                             onClick={() => removeColumn(idx)}
                                             disabled={cols.length <= 1}
-                                            className="ml-auto text-slate-400 hover:text-red-600 disabled:opacity-20 cursor-pointer p-1"
+                                            className="ml-auto text-slate-600 dark:text-slate-300 hover:text-red-600 disabled:opacity-20 cursor-pointer p-1"
                                         >
                                             <Trash2 className="w-3.5 h-3.5" />
                                         </button>
@@ -815,8 +809,7 @@ export default function CssGridGenerator() {
                                         className="flex items-center gap-2 bg-slate-50 p-2 rounded-xl border border-slate-200/80"
                                     >
                                         <span className="text-xs font-bold text-slate-500 w-6">Row {idx + 1}</span>
-                                        <select
-                                            value={row.unit}
+                                        <select aria-label="Select option" value={row.unit}
                                             onChange={(e) => {
                                                 const u = e.target.value as UnitType;
                                                 setRows(
@@ -836,7 +829,7 @@ export default function CssGridGenerator() {
                                             <option value="minmax">minmax()</option>
                                         </select>
                                         {row.unit !== "auto" && row.unit !== "minmax" && (
-                                            <input
+                                            <input aria-label="minmax()"
                                                 type="text"
                                                 value={row.value}
                                                 onChange={(e) => {
@@ -848,7 +841,7 @@ export default function CssGridGenerator() {
                                         )}
                                         {row.unit === "minmax" && (
                                             <div className="flex items-center gap-1">
-                                                <input
+                                                <input aria-label="min"
                                                     type="text"
                                                     placeholder="min (100px)"
                                                     value={row.min || ""}
@@ -858,7 +851,7 @@ export default function CssGridGenerator() {
                                                     }}
                                                     className="w-20 px-2 py-1 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 font-semibold"
                                                 />
-                                                <input
+                                                <input aria-label="max"
                                                     type="text"
                                                     placeholder="max (1fr)"
                                                     value={row.max || ""}
@@ -873,7 +866,7 @@ export default function CssGridGenerator() {
                                         <button
                                             onClick={() => removeRow(idx)}
                                             disabled={rows.length <= 1}
-                                            className="ml-auto text-slate-400 hover:text-red-600 disabled:opacity-20 cursor-pointer p-1"
+                                            className="ml-auto text-slate-600 dark:text-slate-300 hover:text-red-600 disabled:opacity-20 cursor-pointer p-1"
                                         >
                                             <Trash2 className="w-3.5 h-3.5" />
                                         </button>
@@ -888,8 +881,7 @@ export default function CssGridGenerator() {
                                 <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
                                     Column Gap
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     max="100"
                                     value={gapX === 0 ? "" : gapX}
@@ -901,8 +893,7 @@ export default function CssGridGenerator() {
                                 <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
                                     Row Gap
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     max="100"
                                     value={gapY === 0 ? "" : gapY}
@@ -914,8 +905,7 @@ export default function CssGridGenerator() {
                                 <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
                                     Justify Items
                                 </label>
-                                <select
-                                    value={justifyItems}
+                                <select aria-label="Select option" value={justifyItems}
                                     onChange={(e) => setJustifyItems(e.target.value as any)}
                                     className="w-full px-2 py-1 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 font-semibold"
                                 >
@@ -929,8 +919,7 @@ export default function CssGridGenerator() {
                                 <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
                                     Align Items
                                 </label>
-                                <select
-                                    value={alignItems}
+                                <select aria-label="Select option" value={alignItems}
                                     onChange={(e) => setAlignItems(e.target.value as any)}
                                     className="w-full px-2 py-1 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 font-semibold"
                                 >

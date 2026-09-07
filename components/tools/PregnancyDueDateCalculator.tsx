@@ -484,8 +484,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                             <Calendar className="w-3.5 h-3.5 text-indigo-600" /> First Day of Last Menstrual Period (LMP)
                                         </label>
-                                        <input
-                                            type="date"
+                                        <input aria-label="Input value" type="date"
                                             value={inputDate}
                                             onChange={(e) => setInputDate(e.target.value)}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
@@ -501,7 +500,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                                 {cycleLength} Days
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="20"
                                             max="45"
@@ -509,7 +508,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                             onChange={(e) => { setCycleLength(parseInt(e.target.value)); setActivePresetId(null); }}
                                             className="w-full accent-indigo-600 h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer"
                                         />
-                                        <div className="flex justify-between text-[10px] text-slate-400 font-semibold mt-1">
+                                        <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-semibold mt-1">
                                             <span>20 Days</span>
                                             <span>28 Days (Standard)</span>
                                             <span>45 Days</span>
@@ -523,8 +522,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <Heart className="w-3.5 h-3.5 text-indigo-600" /> Known / Estimated Conception Date
                                     </label>
-                                    <input
-                                        type="date"
+                                    <input aria-label="Input value" type="date"
                                         value={inputDate}
                                         onChange={(e) => setInputDate(e.target.value)}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
@@ -541,8 +539,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                             <Stethoscope className="w-3.5 h-3.5 text-indigo-600" /> Date of Ultrasound Scan
                                         </label>
-                                        <input
-                                            type="date"
+                                        <input aria-label="Input value" type="date"
                                             value={inputDate}
                                             onChange={(e) => setInputDate(e.target.value)}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
@@ -555,18 +552,17 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                         </label>
                                         <div className="grid grid-cols-2 gap-3 min-w-0">
                                             <div className="relative">
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min="3"
                                                     max="42"
                                                     value={usGestationWeeks === 0 ? "" : usGestationWeeks}
                                                     onChange={(e) => handleNumberInput(e, setUsGestationWeeks)}
                                                     className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                                 />
-                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">weeks</span>
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">weeks</span>
                                             </div>
                                             <div className="relative">
-                                                <input
+                                                <input aria-label="weeks"
                                                     type="number"
                                                     min="0"
                                                     max="6"
@@ -574,7 +570,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                                     onChange={(e) => handleNumberInput(e, setUsGestationDays)}
                                                     className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                                 />
-                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">days</span>
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">days</span>
                                             </div>
                                         </div>
                                     </div>
@@ -587,8 +583,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                             <CalendarDays className="w-3.5 h-3.5 text-indigo-600" /> IVF Embryo Transfer Date
                                         </label>
-                                        <input
-                                            type="date"
+                                        <input aria-label="Input value" type="date"
                                             value={inputDate}
                                             onChange={(e) => setInputDate(e.target.value)}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
@@ -630,7 +625,7 @@ Calculated at twistertools.com/tools/calculators/pregnancy-due-date-calculator`;
                         {method === "lmp" && (
                             <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                    <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                         <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Cycle Length Presets
                                     </span>
                                     {activePresetId && (

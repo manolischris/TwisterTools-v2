@@ -470,8 +470,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                             Length ({unitSystem === "imperial" ? "ft" : "m"})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             value={length === 0 ? "" : length}
                                             onChange={(e) => handleNumberInput(e, setLength)}
@@ -482,8 +481,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                             Width ({unitSystem === "imperial" ? "ft" : "m"})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             value={width === 0 ? "" : width}
                                             onChange={(e) => handleNumberInput(e, setWidth)}
@@ -498,8 +496,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                         Radius ({unitSystem === "imperial" ? "ft" : "m"})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         value={radius === 0 ? "" : radius}
                                         onChange={(e) => handleNumberInput(e, setRadius)}
@@ -514,8 +511,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                             Base ({unitSystem === "imperial" ? "ft" : "m"})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             value={base === 0 ? "" : base}
                                             onChange={(e) => handleNumberInput(e, setBase)}
@@ -526,8 +522,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                             Height ({unitSystem === "imperial" ? "ft" : "m"})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             value={height === 0 ? "" : height}
                                             onChange={(e) => handleNumberInput(e, setHeight)}
@@ -542,8 +537,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                         Total Known Area ({unitSystem === "imperial" ? "sq ft" : "sq meters"})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         value={manualArea === 0 ? "" : manualArea}
                                         onChange={(e) => handleNumberInput(e, setManualArea)}
@@ -560,8 +554,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Turf Species
                                     </label>
-                                    <select
-                                        value={species}
+                                    <select aria-label="Select option" value={species}
                                         onChange={(e) => setSpecies(e.target.value as GrassSpecies)}
                                         className="w-full px-3 py-2 bg-white border border-slate-300 rounded-xl text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                     >
@@ -612,8 +605,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <label className="block text-[11px] font-bold text-indigo-950 mb-1">
                                         Custom Seeding Rate (lbs per 1,000 sq ft)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.1"
                                         min={0.1}
                                         value={customSeedRate === 0 ? "" : customSeedRate}
@@ -629,8 +621,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                         Seed Bag Size (lbs)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         value={seedBagSize === 0 ? "" : seedBagSize}
                                         onChange={(e) => handleNumberInput(e, setSeedBagSize)}
@@ -641,8 +632,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                         Cost Per Bag ($)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.01"
                                         min={0}
                                         value={seedBagCost === 0 ? "" : seedBagCost}
@@ -674,7 +664,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <div className="grid grid-cols-4 gap-2">
                                         <div className="col-span-1">
                                             <label className="block text-[10px] font-bold text-slate-500 uppercase">N (%)</label>
-                                            <input
+                                            <input aria-label="N (%)"
                                                 type="number"
                                                 min={0}
                                                 max={100}
@@ -685,7 +675,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         </div>
                                         <div className="col-span-1">
                                             <label className="block text-[10px] font-bold text-slate-500 uppercase">P (%)</label>
-                                            <input
+                                            <input aria-label="P (%)"
                                                 type="number"
                                                 min={0}
                                                 max={100}
@@ -696,7 +686,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         </div>
                                         <div className="col-span-1">
                                             <label className="block text-[10px] font-bold text-slate-500 uppercase">K (%)</label>
-                                            <input
+                                            <input aria-label="K (%)"
                                                 type="number"
                                                 min={0}
                                                 max={100}
@@ -707,7 +697,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         </div>
                                         <div className="col-span-1">
                                             <label className="block text-[10px] font-bold text-slate-500 uppercase">Target N</label>
-                                            <input
+                                            <input aria-label="Target N"
                                                 type="number"
                                                 step="0.05"
                                                 min={0.1}
@@ -721,7 +711,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                     <div className="grid grid-cols-2 gap-3">
                                         <div>
                                             <label className="block text-[10px] font-semibold text-slate-500">Fertilizer Bag Lbs</label>
-                                            <input
+                                            <input aria-label="Fertilizer Bag Lbs"
                                                 type="number"
                                                 min={1}
                                                 value={fertBagWeight === 0 ? "" : fertBagWeight}
@@ -731,7 +721,7 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-[10px] font-semibold text-slate-500">Bag Price ($)</label>
-                                            <input
+                                            <input aria-label="Bag Price ($)"
                                                 type="number"
                                                 step="0.01"
                                                 min={0}
@@ -862,15 +852,15 @@ Calculated via twistertools.com/tools/home-tools/lawn-seed-calculator`;
                                 </div>
                                 <div className="grid grid-cols-3 gap-2 text-[11px] pt-1">
                                     <div>
-                                        <span className="text-slate-400 block font-semibold">Germination:</span>
+                                        <span className="text-slate-600 dark:text-slate-300 block font-semibold">Germination:</span>
                                         <span className="font-bold text-slate-800">{GRASS_DATABASE[species].germinationDays}</span>
                                     </div>
                                     <div>
-                                        <span className="text-slate-400 block font-semibold">Mow Height:</span>
+                                        <span className="text-slate-600 dark:text-slate-300 block font-semibold">Mow Height:</span>
                                         <span className="font-bold text-slate-800">{GRASS_DATABASE[species].mowingHeightInches}</span>
                                     </div>
                                     <div>
-                                        <span className="text-slate-400 block font-semibold">Sunlight:</span>
+                                        <span className="text-slate-600 dark:text-slate-300 block font-semibold">Sunlight:</span>
                                         <span className="font-bold text-slate-800 truncate block">{GRASS_DATABASE[species].sunRequirement}</span>
                                     </div>
                                 </div>

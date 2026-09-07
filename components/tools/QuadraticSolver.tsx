@@ -387,8 +387,7 @@ export default function QuadraticSolver() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                     Coeff (a)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={valA}
                                     onChange={(e) => { handleNumberInput(e, setValA); setActivePresetId(null); }}
                                     placeholder="1"
@@ -401,8 +400,7 @@ export default function QuadraticSolver() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                     Coeff (b)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={valB}
                                     onChange={(e) => { handleNumberInput(e, setValB); setActivePresetId(null); }}
                                     placeholder="-5"
@@ -415,8 +413,7 @@ export default function QuadraticSolver() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                     Coeff (c)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={valC}
                                     onChange={(e) => { handleNumberInput(e, setValC); setActivePresetId(null); }}
                                     placeholder="6"
@@ -429,7 +426,7 @@ export default function QuadraticSolver() {
                         {/* Quick Presets */}
                         <div className="space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Presets & Sample Equations
                                 </span>
                                 {activePresetId && (
@@ -525,13 +522,13 @@ export default function QuadraticSolver() {
 
                                     <div className="grid grid-cols-2 gap-4 pt-1">
                                         <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                                            <span className="text-[10px] font-bold text-slate-400 block uppercase">Root 1 (x₁)</span>
+                                            <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Root 1 (x₁)</span>
                                             <span className="text-xl sm:text-2xl font-black text-indigo-300 font-mono">
                                                 {calculation.root1Text}
                                             </span>
                                         </div>
                                         <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                                            <span className="text-[10px] font-bold text-slate-400 block uppercase">Root 2 (x₂)</span>
+                                            <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Root 2 (x₂)</span>
                                             <span className="text-xl sm:text-2xl font-black text-indigo-300 font-mono">
                                                 {calculation.root2Text}
                                             </span>

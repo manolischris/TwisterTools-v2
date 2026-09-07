@@ -261,7 +261,7 @@ export default function HtmlTableGenerator() {
             code += `<div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">\n`;
         }
 
-        code += `<table style="${collapseStyle} ${borderStyle}"${includeAria ? ` role="table" aria-label="${caption || "Data Table"}"` : ""}>\n`;
+        code += `<table style="${collapseStyle} ${borderStyle}"${includeAria ? ` role="table" aria-label="${caption || 'Data Table'}"` : ""}>\n`;
 
         if (caption.trim()) {
             code += `  <caption style="caption-side: top; text-align: left; font-weight: bold; margin-bottom: 8px; color: #334155;">\n    ${caption}\n  </caption>\n`;
@@ -330,7 +330,7 @@ export default function HtmlTableGenerator() {
             code += `<div class="overflow-x-auto w-full rounded-xl border border-slate-200 shadow-xs">\n`;
         }
 
-        code += `  <table class="min-w-full divide-y divide-slate-200 text-left text-sm text-slate-700 font-sans"${includeAria ? ` aria-label="${caption || "Data Table"}"` : ""}>\n`;
+        code += `  <table class="min-w-full divide-y divide-slate-200 text-left text-sm text-slate-700 font-sans"${includeAria ? ` aria-label="${caption || 'Data Table'}"` : ""}>\n`;
 
         if (caption.trim()) {
             code += `    <caption class="text-left font-bold text-slate-900 px-4 py-2 bg-slate-50 border-b border-slate-200">\n      ${caption}\n    </caption>\n`;
@@ -506,7 +506,7 @@ ${isHoverable ? `.custom-table tbody tr:hover {
 export default function CustomDataTable() {
   return (
     <div className="w-full overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
-      <table className="w-full text-left text-sm border-collapse" aria-label="${caption || "Data Table"}">
+      <table className="w-full text-left text-sm border-collapse" aria-label="${caption || 'Data Table'}">
         ${caption ? `<caption className="text-left font-bold text-slate-800 p-3 bg-slate-50 border-b border-slate-200">
           ${caption}
         </caption>` : ""}
@@ -690,8 +690,7 @@ export default function CustomDataTable() {
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Table Caption & Title
                             </label>
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={caption}
                                 onChange={(e) => setCaption(e.target.value)}
                                 placeholder="Enter table caption (e.g., Annual Sales Summary)"
@@ -705,20 +704,19 @@ export default function CustomDataTable() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Interactive Grid ({rows.length} Rows × {headers.length} Cols)
                                 </label>
-                                <span className="text-[11px] text-slate-400">Directly edit cell contents</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300">Directly edit cell contents</span>
                             </div>
 
                             <div className="border border-slate-200 rounded-xl overflow-x-auto max-h-[360px] bg-slate-50/30">
                                 <table className="min-w-full divide-y divide-slate-200 text-xs border-collapse">
                                     <thead className="bg-slate-100 sticky top-0 z-10">
                                         <tr>
-                                            <th className="p-2 w-10 text-center text-slate-400 font-medium">#</th>
+                                            <th className="p-2 w-10 text-center text-slate-600 dark:text-slate-300 font-medium">#</th>
                                             {headers.map((h, colIdx) => (
                                                 <th key={colIdx} className="p-2 min-w-[130px]">
                                                     <div className="space-y-1.5">
                                                         <div className="flex items-center justify-between gap-1">
-                                                            <input
-                                                                type="text"
+                                                            <input aria-label="Input value" type="text"
                                                                 value={h}
                                                                 onChange={(e) => updateHeader(colIdx, e.target.value)}
                                                                 className="w-full px-2 py-1 font-bold rounded border border-slate-300 bg-white text-slate-900 outline-none focus:border-indigo-500"
@@ -727,7 +725,7 @@ export default function CustomDataTable() {
                                                             <button
                                                                 onClick={() => removeColumn(colIdx)}
                                                                 disabled={headers.length <= 1}
-                                                                className="p-1 text-slate-400 hover:text-rose-600 disabled:opacity-30 cursor-pointer"
+                                                                className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 disabled:opacity-30 cursor-pointer"
                                                                 title="Delete Column"
                                                             >
                                                                 <Trash2 className="w-3.5 h-3.5" />
@@ -738,7 +736,7 @@ export default function CustomDataTable() {
                                                             <button
                                                                 type="button"
                                                                 onClick={() => updateAlignment(colIdx, "left")}
-                                                                className={`p-0.5 rounded ${alignments[colIdx] === "left" ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-slate-700"}`}
+                                                                className={`p-0.5 rounded ${alignments[colIdx] === "left" ? "bg-indigo-600 text-white" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                                                 title="Align Left"
                                                             >
                                                                 <AlignLeft className="w-3 h-3" />
@@ -746,7 +744,7 @@ export default function CustomDataTable() {
                                                             <button
                                                                 type="button"
                                                                 onClick={() => updateAlignment(colIdx, "center")}
-                                                                className={`p-0.5 rounded ${alignments[colIdx] === "center" ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-slate-700"}`}
+                                                                className={`p-0.5 rounded ${alignments[colIdx] === "center" ? "bg-indigo-600 text-white" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                                                 title="Align Center"
                                                             >
                                                                 <AlignCenter className="w-3 h-3" />
@@ -754,7 +752,7 @@ export default function CustomDataTable() {
                                                             <button
                                                                 type="button"
                                                                 onClick={() => updateAlignment(colIdx, "right")}
-                                                                className={`p-0.5 rounded ${alignments[colIdx] === "right" ? "bg-indigo-600 text-white" : "text-slate-400 hover:text-slate-700"}`}
+                                                                className={`p-0.5 rounded ${alignments[colIdx] === "right" ? "bg-indigo-600 text-white" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                                                 title="Align Right"
                                                             >
                                                                 <AlignRight className="w-3 h-3" />
@@ -763,19 +761,18 @@ export default function CustomDataTable() {
                                                     </div>
                                                 </th>
                                             ))}
-                                            <th className="p-2 w-10 text-center text-slate-400">Action</th>
+                                            <th className="p-2 w-10 text-center text-slate-600 dark:text-slate-300">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody className="divide-y divide-slate-200 bg-white">
                                         {rows.map((row, rIdx) => (
                                             <tr key={rIdx} className="hover:bg-slate-50/80">
-                                                <td className="p-2 text-center text-slate-400 font-mono text-[10px]">
+                                                <td className="p-2 text-center text-slate-600 dark:text-slate-300 font-mono text-[10px]">
                                                     {rIdx + 1}
                                                 </td>
                                                 {row.map((cell, cIdx) => (
                                                     <td key={cIdx} className="p-1.5">
-                                                        <input
-                                                            type="text"
+                                                        <input aria-label="Input value" type="text"
                                                             value={cell}
                                                             onChange={(e) => updateCell(rIdx, cIdx, e.target.value)}
                                                             className={`w-full px-2 py-1 rounded border border-slate-200 text-slate-800 outline-none focus:border-indigo-500 text-${alignments[cIdx]}`}
@@ -787,7 +784,7 @@ export default function CustomDataTable() {
                                                     <button
                                                         onClick={() => removeRow(rIdx)}
                                                         disabled={rows.length <= 1}
-                                                        className="p-1 text-slate-400 hover:text-rose-600 disabled:opacity-30 cursor-pointer"
+                                                        className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 disabled:opacity-30 cursor-pointer"
                                                         title="Delete Row"
                                                     >
                                                         <Trash2 className="w-3.5 h-3.5" />
@@ -801,7 +798,7 @@ export default function CustomDataTable() {
                                                 <td className="p-2 text-center text-slate-500 font-mono text-[10px]">Foot</td>
                                                 {footerValues.map((fVal, cIdx) => (
                                                     <td key={cIdx} className="p-1.5">
-                                                        <input
+                                                        <input aria-label="Foot"
                                                             type="text"
                                                             value={fVal}
                                                             onChange={(e) => updateFooter(cIdx, e.target.value)}
@@ -848,7 +845,7 @@ export default function CustomDataTable() {
                         {/* Toggle Switches */}
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
                             <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                <input
+                                <input aria-label="Header"
                                     type="checkbox"
                                     checked={hasHeader}
                                     onChange={(e) => setHasHeader(e.target.checked)}
@@ -858,8 +855,7 @@ export default function CustomDataTable() {
                             </label>
 
                             <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Footer" type="checkbox"
                                     checked={hasFooter}
                                     onChange={(e) => setHasFooter(e.target.checked)}
                                     className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
@@ -868,8 +864,7 @@ export default function CustomDataTable() {
                             </label>
 
                             <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Striped" type="checkbox"
                                     checked={isStriped}
                                     onChange={(e) => setIsStriped(e.target.checked)}
                                     className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
@@ -878,8 +873,7 @@ export default function CustomDataTable() {
                             </label>
 
                             <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Bordered" type="checkbox"
                                     checked={isBordered}
                                     onChange={(e) => setIsBordered(e.target.checked)}
                                     className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
@@ -888,8 +882,7 @@ export default function CustomDataTable() {
                             </label>
 
                             <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Hoverable" type="checkbox"
                                     checked={isHoverable}
                                     onChange={(e) => setIsHoverable(e.target.checked)}
                                     className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
@@ -898,8 +891,7 @@ export default function CustomDataTable() {
                             </label>
 
                             <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Responsive Wrap" type="checkbox"
                                     checked={isResponsiveWrap}
                                     onChange={(e) => setIsResponsiveWrap(e.target.checked)}
                                     className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
@@ -915,7 +907,7 @@ export default function CustomDataTable() {
                                     <span>Cell Padding</span>
                                     <span>{cellPadding}px</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="4"
                                     max="24"
@@ -930,7 +922,7 @@ export default function CustomDataTable() {
                                     <span>Border Thickness</span>
                                     <span>{borderWidth}px</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="4"
@@ -1133,7 +1125,7 @@ export default function CustomDataTable() {
                                         </table>
                                     </div>
                                 </div>
-                                <p className="text-center text-[11px] text-slate-400">
+                                <p className="text-center text-[11px] text-slate-600 dark:text-slate-300">
                                     Simulating {previewDevice.toUpperCase()} viewport dimensions. Scroll horizontally if needed.
                                 </p>
                             </div>
@@ -1156,7 +1148,7 @@ export default function CustomDataTable() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Paste CSV, TSV, or Markdown Table Data
                                 </label>
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={importRawText}
                                     onChange={(e) => setImportRawText(e.target.value)}
                                     rows={8}

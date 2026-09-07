@@ -314,7 +314,7 @@ export default function PxToRemConverter() {
                         <h2 className="text-sm font-bold text-white uppercase tracking-wider">
                             Base Conversion Parameters
                         </h2>
-                        <p className="text-xs text-slate-400">
+                        <p className="text-xs text-slate-600 dark:text-slate-300">
                             Configure root HTML element base font size and float decimal rounding
                         </p>
                     </div>
@@ -336,7 +336,7 @@ export default function PxToRemConverter() {
                             onChange={handleBasePxChange}
                             className="w-16 bg-slate-900 border border-slate-700 rounded-lg px-2 py-1 text-xs font-mono font-bold text-indigo-400 text-center outline-none focus:border-indigo-500"
                         />
-                        <span className="text-xs font-mono text-slate-400">px</span>
+                        <span className="text-xs font-mono text-slate-600 dark:text-slate-300">px</span>
                     </div>
 
                     {/* Quick Base Presets */}
@@ -344,7 +344,7 @@ export default function PxToRemConverter() {
                         <button
                             type="button"
                             onClick={() => setBasePx(16)}
-                            className={`px-2.5 py-1 text-xs font-bold rounded-lg transition cursor-pointer ${basePx === 16 ? "bg-indigo-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
+                            className={`px-2.5 py-1 text-xs font-bold rounded-lg transition cursor-pointer ${basePx === 16 ? "bg-indigo-600 text-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-white"
                                 }`}
                         >
                             16px (Default)
@@ -352,7 +352,7 @@ export default function PxToRemConverter() {
                         <button
                             type="button"
                             onClick={() => setBasePx(10)}
-                            className={`px-2.5 py-1 text-xs font-bold rounded-lg transition cursor-pointer ${basePx === 10 ? "bg-indigo-600 text-white shadow-xs" : "text-slate-400 hover:text-white"
+                            className={`px-2.5 py-1 text-xs font-bold rounded-lg transition cursor-pointer ${basePx === 10 ? "bg-indigo-600 text-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-white"
                                 }`}
                         >
                             10px (62.5%)
@@ -712,7 +712,7 @@ export default function PxToRemConverter() {
                             Paste full CSS stylesheets, style rules, or shorthand definitions. All pixel values (e.g., <code>16px</code>) will be automatically detected and converted to <code>rem</code> based on your <strong>{basePx}px</strong> root.
                         </p>
 
-                        <textarea
+                        <textarea aria-label="Input text content"
                             value={batchInput}
                             onChange={(e) => setBatchInput(e.target.value)}
                             rows={12}
@@ -734,7 +734,7 @@ export default function PxToRemConverter() {
                                 </span>
                             </div>
 
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 readOnly
                                 value={batchConvertedCSS}
                                 rows={12}
@@ -985,15 +985,15 @@ export default function PxToRemConverter() {
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Pixels to REM:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Pixels to REM:</span>
                                 <strong className="text-indigo-300 text-sm">REM = PX / Root_Base_PX</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">REM to Pixels:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">REM to Pixels:</span>
                                 <strong className="text-indigo-300 text-sm">PX = REM × Root_Base_PX</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">REM to Percentage (%):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">REM to Percentage (%):</span>
                                 <strong className="text-indigo-300 text-sm">% = (PX / Root_Base_PX) × 100</strong>
                             </div>
                         </div>

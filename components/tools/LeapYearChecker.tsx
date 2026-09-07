@@ -409,8 +409,7 @@ Verified at twistertools.com/tools/date-tools/leap-year-checker`;
                                         <CalendarDays className="w-3.5 h-3.5 text-indigo-600" /> Enter Target Year
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="9999"
                                             value={targetYear === 0 ? "" : targetYear}
@@ -421,7 +420,7 @@ Verified at twistertools.com/tools/date-tools/leap-year-checker`;
                                             placeholder="e.g. 2024"
                                             className="w-full pl-3 pr-12 py-3 rounded-xl border border-slate-200 text-slate-900 text-base font-bold focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             A.D. / CE
                                         </span>
                                     </div>
@@ -433,7 +432,7 @@ Verified at twistertools.com/tools/date-tools/leap-year-checker`;
                                 {/* Reference Presets */}
                                 <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                                     <div className="flex items-center justify-between">
-                                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                        <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                             <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Milestone Benchmarks
                                         </span>
                                         {activePresetId && (
@@ -477,8 +476,7 @@ Verified at twistertools.com/tools/date-tools/leap-year-checker`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                             Start Year
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="9999"
                                             value={rangeStart === 0 ? "" : rangeStart}
@@ -490,8 +488,7 @@ Verified at twistertools.com/tools/date-tools/leap-year-checker`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                             End Year
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="9999"
                                             value={rangeEnd === 0 ? "" : rangeEnd}
@@ -582,21 +579,21 @@ Verified at twistertools.com/tools/date-tools/leap-year-checker`;
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
                                         <span className="text-[11px] font-bold text-slate-500 block">Divisible by 4</span>
-                                        <span className={`text-base font-extrabold ${singleAudit.divisibleBy4 ? "text-emerald-600" : "text-slate-400"}`}>
+                                        <span className={`text-base font-extrabold ${singleAudit.divisibleBy4 ? "text-emerald-600" : "text-slate-600 dark:text-slate-300"}`}>
                                             {singleAudit.divisibleBy4 ? "YES (÷4)" : "NO"}
                                         </span>
                                     </div>
 
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
                                         <span className="text-[11px] font-bold text-slate-500 block">Divisible by 100</span>
-                                        <span className={`text-base font-extrabold ${singleAudit.divisibleBy100 ? "text-amber-600" : "text-slate-400"}`}>
+                                        <span className={`text-base font-extrabold ${singleAudit.divisibleBy100 ? "text-amber-600" : "text-slate-600 dark:text-slate-300"}`}>
                                             {singleAudit.divisibleBy100 ? "YES (Century)" : "NO"}
                                         </span>
                                     </div>
 
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
                                         <span className="text-[11px] font-bold text-slate-500 block">Divisible by 400</span>
-                                        <span className={`text-base font-extrabold ${singleAudit.divisibleBy400 ? "text-indigo-600" : "text-slate-400"}`}>
+                                        <span className={`text-base font-extrabold ${singleAudit.divisibleBy400 ? "text-indigo-600" : "text-slate-600 dark:text-slate-300"}`}>
                                             {singleAudit.divisibleBy400 ? "YES (Quad-Cent)" : "NO"}
                                         </span>
                                     </div>
@@ -661,7 +658,7 @@ Verified at twistertools.com/tools/date-tools/leap-year-checker`;
                                                         )}
                                                     </td>
                                                     <td className="p-2.5 text-slate-700">{item.febDays} Days</td>
-                                                    <td className="p-2.5 text-slate-400">{item.era}</td>
+                                                    <td className="p-2.5 text-slate-600 dark:text-slate-300">{item.era}</td>
                                                 </tr>
                                             ))}
                                         </tbody>

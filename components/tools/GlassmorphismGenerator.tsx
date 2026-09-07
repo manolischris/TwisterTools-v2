@@ -329,8 +329,7 @@ box-shadow: ${boxShadowValue};`;
                                     Backdrop Blur Radius:
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        id={blurInputId}
+                                    <input aria-label="Input value" id={blurInputId}
                                         type="number"
                                         min="0"
                                         max="40"
@@ -340,10 +339,10 @@ box-shadow: ${boxShadowValue};`;
                                         }
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">px</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">px</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="0"
                                 max="40"
@@ -361,8 +360,7 @@ box-shadow: ${boxShadowValue};`;
                                     Surface Tint Opacity:
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        id={opacityInputId}
+                                    <input aria-label="Input value" id={opacityInputId}
                                         type="number"
                                         min="0"
                                         max="100"
@@ -372,10 +370,10 @@ box-shadow: ${boxShadowValue};`;
                                         }
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">%</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">%</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="0"
                                 max="100"
@@ -393,8 +391,7 @@ box-shadow: ${boxShadowValue};`;
                                     Backdrop Color Saturation:
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        id={saturationInputId}
+                                    <input aria-label="Input value" id={saturationInputId}
                                         type="number"
                                         min="50"
                                         max="250"
@@ -404,10 +401,10 @@ box-shadow: ${boxShadowValue};`;
                                         }
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">%</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">%</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="50"
                                 max="250"
@@ -423,14 +420,13 @@ box-shadow: ${boxShadowValue};`;
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-slate-700 block">Tint Base Color</label>
                                 <div className="flex items-center gap-2">
-                                    <input
+                                    <input aria-label="Select color"
                                         type="color"
                                         value={config.tintColor}
                                         onChange={(e) => setConfig((p) => ({ ...p, tintColor: e.target.value }))}
                                         className="w-8 h-8 rounded-lg border border-slate-200 cursor-pointer p-0.5 bg-white"
                                     />
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={config.tintColor}
                                         onChange={(e) => setConfig((p) => ({ ...p, tintColor: e.target.value }))}
                                         className="flex-1 px-2.5 py-1 text-xs font-mono border border-slate-200 rounded-lg bg-slate-50 text-slate-800"
@@ -440,14 +436,13 @@ box-shadow: ${boxShadowValue};`;
                             <div className="space-y-2">
                                 <label className="text-xs font-bold text-slate-700 block">Border Base Color</label>
                                 <div className="flex items-center gap-2">
-                                    <input
+                                    <input aria-label="Select color"
                                         type="color"
                                         value={config.borderColor}
                                         onChange={(e) => setConfig((p) => ({ ...p, borderColor: e.target.value }))}
                                         className="w-8 h-8 rounded-lg border border-slate-200 cursor-pointer p-0.5 bg-white"
                                     />
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={config.borderColor}
                                         onChange={(e) => setConfig((p) => ({ ...p, borderColor: e.target.value }))}
                                         className="flex-1 px-2.5 py-1 text-xs font-mono border border-slate-200 rounded-lg bg-slate-50 text-slate-800"
@@ -463,7 +458,7 @@ box-shadow: ${boxShadowValue};`;
                                     <label htmlFor={borderWidthInputId}>Border Width:</label>
                                     <span className="font-mono text-slate-600">{config.borderWidth}px</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     id={borderWidthInputId}
                                     type="range"
                                     min="0"
@@ -479,7 +474,7 @@ box-shadow: ${boxShadowValue};`;
                                     <label htmlFor={borderOpacityInputId}>Border Opacity:</label>
                                     <span className="font-mono text-slate-600">{config.borderOpacity}%</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     id={borderOpacityInputId}
                                     type="range"
                                     min="0"
@@ -499,7 +494,7 @@ box-shadow: ${boxShadowValue};`;
                                     <label htmlFor={radiusInputId}>Corner Radius:</label>
                                     <span className="font-mono text-slate-600">{config.borderRadius}px</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     id={radiusInputId}
                                     type="range"
                                     min="0"
@@ -515,7 +510,7 @@ box-shadow: ${boxShadowValue};`;
                                     <label htmlFor={shadowElevationInputId}>Shadow Elevation:</label>
                                     <span className="font-mono text-slate-600">{config.shadowElevation}px</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     id={shadowElevationInputId}
                                     type="range"
                                     min="0"
@@ -534,7 +529,7 @@ box-shadow: ${boxShadowValue};`;
                                 <label htmlFor={shadowOpacityInputId}>Shadow Darkness (Opacity):</label>
                                 <span className="font-mono text-slate-600">{config.shadowOpacity}%</span>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 id={shadowOpacityInputId}
                                 type="range"
                                 min="0"
@@ -671,7 +666,7 @@ box-shadow: ${boxShadowValue};`;
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <span className="text-xs text-slate-500 flex items-center gap-1">
-                            <Cpu className="w-3.5 h-3.5 text-slate-400" />
+                            <Cpu className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             CSS Compositing Level 2 Spec
                         </span>
                         <button

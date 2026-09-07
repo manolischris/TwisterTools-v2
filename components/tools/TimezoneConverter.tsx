@@ -353,7 +353,7 @@ export default function TimezoneConverter() {
                         <div className="text-2xl sm:text-3xl font-black text-white tracking-tight mt-0.5">
                             {localTimeData.timeStr}
                         </div>
-                        <div className="text-xs text-slate-400 font-medium">
+                        <div className="text-xs text-slate-600 dark:text-slate-300 font-medium">
                             {localTimeData.dateStr} • Zone: <span className="text-indigo-300 font-mono">{userLocalZone}</span>
                         </div>
                     </div>
@@ -365,7 +365,7 @@ export default function TimezoneConverter() {
                         onClick={() => setClockDisplayMode("digital")}
                         className={`px-4 py-2 rounded-lg text-xs font-bold transition ${clockDisplayMode === "digital"
                             ? "bg-indigo-600 text-white shadow-sm"
-                            : "text-slate-400 hover:text-white"
+                            : "text-slate-600 dark:text-slate-300 hover:text-white"
                             }`}
                     >
                         Digital Clock
@@ -374,7 +374,7 @@ export default function TimezoneConverter() {
                         onClick={() => setClockDisplayMode("analog")}
                         className={`px-4 py-2 rounded-lg text-xs font-bold transition ${clockDisplayMode === "analog"
                             ? "bg-indigo-600 text-white shadow-sm"
-                            : "text-slate-400 hover:text-white"
+                            : "text-slate-600 dark:text-slate-300 hover:text-white"
                             }`}
                     >
                         Analog Clock
@@ -443,8 +443,7 @@ export default function TimezoneConverter() {
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <Calendar className="w-3.5 h-3.5 text-indigo-600" /> Target Date
                                     </label>
-                                    <input
-                                        type="date"
+                                    <input aria-label="Input value" type="date"
                                         value={customDate}
                                         onChange={(e) => setCustomDate(e.target.value)}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-sm bg-white"
@@ -454,8 +453,7 @@ export default function TimezoneConverter() {
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <Clock className="w-3.5 h-3.5 text-indigo-600" /> Target Time
                                     </label>
-                                    <input
-                                        type="time"
+                                    <input aria-label="Input value" type="time"
                                         value={customTime}
                                         onChange={(e) => setCustomTime(e.target.value)}
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-sm bg-white"
@@ -470,14 +468,14 @@ export default function TimezoneConverter() {
                                 <Search className="w-3.5 h-3.5 text-indigo-600" /> Add City / Timezone
                             </label>
                             <div className="relative">
-                                <input
+                                <input aria-label="Search city"
                                     type="text"
                                     placeholder="Search city (e.g. London, Tokyo, Dubai)..."
                                     value={searchQuery}
                                     onChange={(e) => setSearchQuery(e.target.value)}
                                     className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
                                 />
-                                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                                <Search className="w-4 h-4 text-slate-600 dark:text-slate-300 absolute left-3 top-1/2 -translate-y-1/2" />
                             </div>
 
                             {filteredSearchResults.length > 0 && (
@@ -561,7 +559,7 @@ export default function TimezoneConverter() {
                                         {selectedCities.length > 1 && (
                                             <button
                                                 onClick={() => removeCity(city.id)}
-                                                className="text-slate-400 hover:text-rose-600 p-1 rounded-lg transition"
+                                                className="text-slate-600 dark:text-slate-300 hover:text-rose-600 p-1 rounded-lg transition"
                                                 title="Remove city"
                                             >
                                                 <Trash2 className="w-4 h-4" />

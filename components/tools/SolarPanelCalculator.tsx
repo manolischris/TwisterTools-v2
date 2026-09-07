@@ -292,8 +292,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                         Single Panel Wattage Rating
                                     </label>
                                     <div className="flex items-center gap-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={200}
                                             max={700}
                                             step={5}
@@ -304,7 +303,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                         <span className="text-sm font-bold text-slate-600">W</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={300}
                                     max={600}
@@ -313,7 +312,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                     onChange={(e) => setPanelWattage(Number(e.target.value))}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                     <span>330W (Standard)</span>
                                     <span>420W (High-Yield Mono)</span>
                                     <span>550W+ (Commercial Bifacial)</span>
@@ -327,8 +326,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                         Total Number of Panels
                                     </label>
                                     <div className="flex items-center gap-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             max={200}
                                             value={panelCount === 0 ? "" : panelCount}
@@ -338,7 +336,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                         <span className="text-sm font-bold text-slate-600">units</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={4}
                                     max={60}
@@ -347,7 +345,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                     onChange={(e) => setPanelCount(Number(e.target.value))}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                     <span>6 Panels (~2.5 kW)</span>
                                     <span>18 Panels (~7.5 kW)</span>
                                     <span>36 Panels (~15 kW)</span>
@@ -388,8 +386,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                 <Compass className="w-4 h-4 text-indigo-600" />
                                 Roof Orientation & Shading Factor
                             </label>
-                            <select
-                                value={orientation}
+                            <select aria-label="Select option" value={orientation}
                                 onChange={(e) => setOrientation(e.target.value as SystemOrientation)}
                                 className="w-full px-3 py-2.5 border border-slate-300 rounded-xl bg-white text-slate-800 text-sm font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                             >
@@ -424,7 +421,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                         <div className="space-y-1">
                                             <label className="text-xs font-bold text-slate-700">Electricity Rate ($/€ per kWh)</label>
                                             <div className="flex items-center gap-1">
-                                                <input
+                                                <input aria-label="Electricity Rate ($/€ per kWh)"
                                                     type="number"
                                                     min={0.01}
                                                     max={1.5}
@@ -439,7 +436,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                         <div className="space-y-1">
                                             <label className="text-xs font-bold text-slate-700">Estimated Turnkey Cost ($/€)</label>
                                             <div className="flex items-center gap-1">
-                                                <input
+                                                <input aria-label="Estimated Turnkey Cost ($/€)"
                                                     type="number"
                                                     min={500}
                                                     max={150000}
@@ -457,7 +454,7 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                                             <span className="font-bold text-slate-700">System Inefficiency / Loss Derate:</span>
                                             <span className="font-mono font-bold text-indigo-600">{systemLossPct}%</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min={5}
                                             max={30}
@@ -558,17 +555,17 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Array Footprint</span>
                                 <span className="text-base sm:text-lg font-black text-indigo-600">{calculations.totalAreaSqMeters.toFixed(0)} m²</span>
-                                <span className="text-[10px] text-slate-400 block font-medium">({calculations.totalAreaSqFt.toFixed(0)} sq ft)</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-medium">({calculations.totalAreaSqFt.toFixed(0)} sq ft)</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Carbon Offset</span>
                                 <span className="text-base sm:text-lg font-black text-emerald-600">{calculations.annualCo2SavedTons.toFixed(1)} t/yr</span>
-                                <span className="text-[10px] text-slate-400 block font-medium">CO2 Avoided</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-medium">CO2 Avoided</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">25-Yr Value</span>
                                 <span className="text-base sm:text-lg font-black text-slate-900">${(calculations.twentyFiveYearSavings / 1000).toFixed(1)}k</span>
-                                <span className="text-[10px] text-slate-400 block font-medium">Net Lifetime Yield</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-medium">Net Lifetime Yield</span>
                             </div>
                         </div>
 
@@ -719,11 +716,11 @@ Generated via twistertools.com/tools/home-tools/solar-panel-calculator`;
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Daily Yield Formula:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Daily Yield Formula:</span>
                                 <strong className="text-indigo-300 text-sm">{"$$E_{\\text{daily}} = P_{\\text{DC}} \\times \\text{PSH} \\times \\prod \\eta_{\\text{derate}}$$"}</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Total System Derate:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Total System Derate:</span>
                                 <strong className="text-indigo-300 text-sm">{"$$\\prod \\eta = \\eta_{\\text{inv}} \\times \\eta_{\\text{therm}} \\times \\eta_{\\text{soil}} \\times \\eta_{\\text{wire}}$$"}</strong>
                             </div>
                         </div>

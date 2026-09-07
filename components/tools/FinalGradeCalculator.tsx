@@ -481,8 +481,7 @@ export default function FinalGradeCalculator() {
                                     <label className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                                         <Percent className="w-4 h-4 text-indigo-600" /> Current Overall Grade (%)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="150"
                                         value={currentGrade}
@@ -497,8 +496,7 @@ export default function FinalGradeCalculator() {
                                     <label className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                                         <Target className="w-4 h-4 text-indigo-600" /> Target Class Grade (%)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="100"
                                         value={targetGrade}
@@ -513,8 +511,7 @@ export default function FinalGradeCalculator() {
                                     <label className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                                         <Award className="w-4 h-4 text-indigo-600" /> Final Exam Weight (%)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="99"
                                         value={finalWeight}
@@ -535,8 +532,7 @@ export default function FinalGradeCalculator() {
                                         <label className="block text-[11px] font-bold text-slate-800 uppercase tracking-wider">
                                             Target Grade (%)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             value={weightedTarget}
                                             onChange={(e) => { setWeightedTarget(sanitizeInput(e.target.value)); setActivePresetId(null); }}
                                             className="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-xs bg-white"
@@ -546,8 +542,7 @@ export default function FinalGradeCalculator() {
                                         <label className="block text-[11px] font-bold text-slate-800 uppercase tracking-wider">
                                             Final Exam Weight (%)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             value={weightedFinalWeight}
                                             onChange={(e) => { setWeightedFinalWeight(sanitizeInput(e.target.value)); setActivePresetId(null); }}
                                             className="w-full px-2.5 py-1.5 rounded-lg border border-slate-300 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-xs bg-white"
@@ -572,38 +567,35 @@ export default function FinalGradeCalculator() {
                                     <div className="space-y-2 max-h-60 overflow-y-auto pr-1">
                                         {categories.map((cat, idx) => (
                                             <div key={cat.id} className="p-2.5 bg-slate-50 rounded-xl border border-slate-200 flex items-center gap-2">
-                                                <input
-                                                    type="text"
+                                                <input aria-label="Input value" type="text"
                                                     value={cat.name}
                                                     onChange={(e) => updateCategory(cat.id, "name", e.target.value)}
                                                     placeholder={`Category ${idx + 1}`}
                                                     className="flex-2 min-w-0 px-2 py-1 rounded-md border border-slate-300 text-xs font-semibold text-slate-800 bg-white"
                                                 />
                                                 <div className="flex-1 min-w-0 flex items-center gap-1">
-                                                    <input
-                                                        type="number"
+                                                    <input aria-label="Input value" type="number"
                                                         value={cat.weight}
                                                         onChange={(e) => updateCategory(cat.id, "weight", e.target.value)}
                                                         placeholder="W%"
                                                         className="w-full px-2 py-1 rounded-md border border-slate-300 text-xs font-bold text-slate-800 bg-white text-center"
                                                     />
-                                                    <span className="text-[10px] font-bold text-slate-400">%</span>
+                                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300">%</span>
                                                 </div>
                                                 <div className="flex-1 min-w-0 flex items-center gap-1">
-                                                    <input
-                                                        type="number"
+                                                    <input aria-label="Input value" type="number"
                                                         value={cat.score}
                                                         onChange={(e) => updateCategory(cat.id, "score", e.target.value)}
                                                         placeholder="Score%"
                                                         className="w-full px-2 py-1 rounded-md border border-slate-300 text-xs font-bold text-slate-800 bg-white text-center"
                                                     />
-                                                    <span className="text-[10px] font-bold text-slate-400">%</span>
+                                                    <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300">%</span>
                                                 </div>
                                                 {categories.length > 1 && (
                                                     <button
                                                         type="button"
                                                         onClick={() => removeCategory(cat.id)}
-                                                        className="text-slate-400 hover:text-rose-500 p-1 cursor-pointer"
+                                                        className="text-slate-600 dark:text-slate-300 hover:text-rose-500 p-1 cursor-pointer"
                                                     >
                                                         <Trash2 className="w-3.5 h-3.5" />
                                                     </button>
@@ -618,7 +610,7 @@ export default function FinalGradeCalculator() {
                         {/* Quick Presets Section */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Syllabus Templates
                                 </span>
                                 {activePresetId && (

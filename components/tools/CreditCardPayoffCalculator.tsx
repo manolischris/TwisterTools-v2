@@ -541,8 +541,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -566,9 +565,8 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="250"
                                         value={balance === 0 ? "" : balance}
@@ -590,8 +588,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                     <span className="text-sm font-bold text-indigo-600">{apr}%</span>
                                 </div>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0.1"
                                         max="99.9"
                                         step="0.1"
@@ -602,7 +599,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                         })}
                                         className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                 </div>
                             </div>
 
@@ -613,8 +610,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                         Min Payment (% of Balance)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="10"
                                             step="0.5"
@@ -625,7 +621,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                             })}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
 
@@ -634,9 +630,8 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                         Minimum Floor Amount ({currencySymbol})
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="10"
                                             step="5"
                                             value={minPaymentFloor === 0 ? "" : minPaymentFloor}
@@ -665,9 +660,8 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                         Additional cash applied directly to the principal on top of your required minimum payment.
                                     </p>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="25"
                                             value={extraMonthlyPayment === 0 ? "" : extraMonthlyPayment}
@@ -685,7 +679,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                         {/* Presets Bar */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Card Scenarios
                                 </span>
                                 {activePresetId && (
@@ -873,7 +867,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                             }}
                                         />
                                     </div>
-                                    <div className="flex justify-between text-[11px] text-slate-400">
+                                    <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-300">
                                         <span>Original Balance</span>
                                         <span>Total Finance Charges</span>
                                     </div>
@@ -1005,7 +999,7 @@ Calculated at twistertools.com/tools/calculators/credit-card-payoff-calculator`;
                                     <td className="p-3 font-bold text-slate-900">24 Years, 2 Months</td>
                                     <td className="p-3 text-rose-600 font-bold">$12,185</td>
                                     <td className="p-3 font-bold text-slate-900">$20,185</td>
-                                    <td className="p-3 text-slate-400 font-medium">$0 (Baseline)</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300 font-medium">$0 (Baseline)</td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-3 font-semibold text-slate-800">2. Fixed Initial Minimum ($160/mo)</td>

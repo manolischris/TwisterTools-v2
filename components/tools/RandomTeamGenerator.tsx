@@ -313,7 +313,7 @@ export default function RandomTeamGenerator() {
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                                 Enter Names (One per line)
                             </label>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawText}
                                 onChange={(e) => setRawText(e.target.value)}
                                 placeholder="Alex Rivera&#10;Jordan Lee&#10;Taylor Swift..."
@@ -362,8 +362,7 @@ export default function RandomTeamGenerator() {
                                 <label className="text-xs font-semibold text-slate-700 min-w-[120px]">
                                     {generationMode === "numTeams" ? "Number of Teams:" : "Members per Team:"}
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     max="1000"
                                     value={targetValue === 0 ? "" : targetValue}
@@ -377,8 +376,7 @@ export default function RandomTeamGenerator() {
                                 <label className="text-xs font-semibold text-slate-700 min-w-[120px]">
                                     Naming Format:
                                 </label>
-                                <select
-                                    value={namingFormat}
+                                <select aria-label="Select option" value={namingFormat}
                                     onChange={(e) => setNamingFormat(e.target.value as "numbered" | "alpha" | "fun")}
                                     className="flex-1 px-3 py-2 rounded-xl border border-slate-200 text-slate-900 text-xs font-semibold bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -390,7 +388,7 @@ export default function RandomTeamGenerator() {
 
                             {/* Skill Balancing Checkbox */}
                             <label className="flex items-center gap-2.5 cursor-pointer pt-1">
-                                <input
+                                <input aria-label="Balancing"
                                     type="checkbox"
                                     checked={enableBalancing}
                                     onChange={(e) => setEnableBalancing(e.target.checked)}
@@ -445,7 +443,7 @@ export default function RandomTeamGenerator() {
                             <div className="py-16 text-center border-2 border-dashed border-slate-200 rounded-2xl bg-slate-50 space-y-3">
                                 <Users className="w-10 h-10 text-slate-300 mx-auto" />
                                 <p className="text-sm font-semibold text-slate-500">No teams generated yet.</p>
-                                <p className="text-xs text-slate-400 max-w-xs mx-auto">
+                                <p className="text-xs text-slate-600 dark:text-slate-300 max-w-xs mx-auto">
                                     Add your member names on the left panel and click &quot;Generate Random Teams&quot;.
                                 </p>
                             </div>
@@ -474,7 +472,7 @@ export default function RandomTeamGenerator() {
                                                         <li key={m.id} className="truncate font-medium">
                                                             {m.name}
                                                             {enableBalancing && (
-                                                                <span className="text-[10px] text-slate-400 ml-1">
+                                                                <span className="text-[10px] text-slate-600 dark:text-slate-300 ml-1">
                                                                     (★{m.skill || 3})
                                                                 </span>
                                                             )}

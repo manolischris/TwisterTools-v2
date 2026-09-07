@@ -596,7 +596,7 @@ export default function SvgPathVisualizer() {
                                     {rawPath.length} chars
                                 </span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawPath}
                                 onChange={(e) => setRawPath(e.target.value)}
                                 placeholder="Paste SVG path d-string, e.g., M10 80 Q 95 10 180 80"
@@ -615,8 +615,7 @@ export default function SvgPathVisualizer() {
                                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Canvas ViewBox
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={viewBoxStr}
                                     onChange={(e) => setViewBoxStr(e.target.value)}
                                     placeholder="minX minY width height"
@@ -627,8 +626,7 @@ export default function SvgPathVisualizer() {
                                 <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Render Stroke Width ({strokeWidth}px)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     max="20"
                                     value={strokeWidth}
@@ -650,7 +648,7 @@ export default function SvgPathVisualizer() {
 
                             <div className="h-48 overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100 bg-slate-50/50">
                                 {parsedCommands.length === 0 ? (
-                                    <p className="p-4 text-center text-xs text-slate-400">No path commands detected.</p>
+                                    <p className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">No path commands detected.</p>
                                 ) : (
                                     parsedCommands.map((cmd, idx) => {
                                         const isSelected = selectedCmdIndex === idx;

@@ -235,7 +235,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
               <label className="block text-sm font-semibold text-slate-700">
                 {activeTab === "string-to-hex" ? "Plain Text String Input" : "Hexadecimal String Input"}
               </label>
-              <textarea
+              <textarea aria-label="Input text content"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={
@@ -250,7 +250,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
 
           {/* Engineering Options Toolbar */}
           <div className="border-t border-slate-100 pt-5 mt-6 space-y-5">
-            <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Engineering Configuration</h4>
+            <h4 className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Engineering Configuration</h4>
 
             {activeTab === "hex-to-string" ? (
               <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 flex gap-3 text-xs text-slate-600">
@@ -266,8 +266,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
                   <label className="block text-xs font-semibold text-slate-600">
                     Delimiter / Separator Type
                   </label>
-                  <select
-                    value={delimiter}
+                  <select aria-label="Select option" value={delimiter}
                     onChange={(e) => setDelimiter(e.target.value)}
                     className="w-full h-11 px-3.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all cursor-pointer"
                   >
@@ -281,8 +280,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
 
                   {/* Custom delimiter text box */}
                   {delimiter === "custom" && (
-                    <input
-                      type="text"
+                    <input aria-label="Input value" type="text"
                       maxLength={10}
                       value={customDelimiter}
                       onChange={(e) => setCustomDelimiter(e.target.value)}
@@ -400,7 +398,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
                 </div>
               )}
 
-              <textarea
+              <textarea aria-label="Output will appear here"
                 readOnly
                 value={output}
                 placeholder="Output will appear here..."
@@ -418,7 +416,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
                   <FileText className="w-4 h-4 text-slate-500" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wide leading-none">Input Size</div>
+                  <div className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wide leading-none">Input Size</div>
                   <div className="text-xs font-bold text-slate-800 font-mono mt-1">
                     {input.length} <span className="text-[10px] font-normal text-slate-500">chars</span>
                   </div>
@@ -430,7 +428,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
                   <Binary className="w-4 h-4 text-slate-500" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wide leading-none">Byte Size</div>
+                  <div className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wide leading-none">Byte Size</div>
                   <div className="text-xs font-bold text-slate-800 font-mono mt-1">
                     {byteSize} <span className="text-[10px] font-normal text-slate-500">bytes</span>
                   </div>
@@ -461,7 +459,7 @@ export default function StringHexConverter({ initialSlug }: StringHexConverterPr
                 className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold transition-all duration-200 shadow-sm focus:outline-none ${copied
                     ? "bg-emerald-600 text-white shadow-emerald-100"
                     : !output || !!validationError
-                      ? "bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed shadow-none"
+                      ? "bg-slate-100 border border-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed shadow-none"
                       : "bg-indigo-600 text-white hover:bg-indigo-700 hover:shadow-indigo-100"
                   }`}
                 style={{ minHeight: "44px" }}

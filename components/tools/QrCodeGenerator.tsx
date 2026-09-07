@@ -738,8 +738,7 @@ export default function QrCodeGenerator() {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Website URL
                     </label>
-                    <input
-                      type="url"
+                    <input aria-label="Input value" type="url"
                       value={inputText}
                       onChange={(e) => setInputText(e.target.value)}
                       placeholder="https://example.com"
@@ -753,7 +752,7 @@ export default function QrCodeGenerator() {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Plain Text
                     </label>
-                    <textarea
+                    <textarea aria-label="Input text content"
                       value={inputText}
                       onChange={(e) => setInputText(e.target.value)}
                       placeholder="Enter any text..."
@@ -769,8 +768,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Network Name (SSID)
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={wifiSSID}
                         onChange={(e) => setWifiSSID(e.target.value)}
                         placeholder="MyWiFiNetwork"
@@ -781,8 +779,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Password
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={wifiPassword}
                         onChange={(e) => setWifiPassword(e.target.value)}
                         placeholder="WiFiPassword123"
@@ -793,8 +790,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Encryption
                       </label>
-                      <select
-                        value={wifiEncryption}
+                      <select aria-label="Select option" value={wifiEncryption}
                         onChange={(e) => setWifiEncryption(e.target.value)}
                         className="w-full px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer transition-all"
                       >
@@ -812,8 +808,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Full Name *
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={vcardName}
                         onChange={(e) => setVcardName(e.target.value)}
                         placeholder="John Doe"
@@ -824,8 +819,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Phone Number
                       </label>
-                      <input
-                        type="tel"
+                      <input aria-label="Input value" type="tel"
                         value={vcardPhone}
                         onChange={(e) => setVcardPhone(e.target.value)}
                         placeholder="+1234567890"
@@ -836,8 +830,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Email
                       </label>
-                      <input
-                        type="email"
+                      <input aria-label="Input value" type="email"
                         value={vcardEmail}
                         onChange={(e) => setVcardEmail(e.target.value)}
                         placeholder="john@example.com"
@@ -848,8 +841,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Organization
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={vcardOrg}
                         onChange={(e) => setVcardOrg(e.target.value)}
                         placeholder="Company Name"
@@ -865,8 +857,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Email Address
                       </label>
-                      <input
-                        type="email"
+                      <input aria-label="Input value" type="email"
                         value={emailAddress}
                         onChange={(e) => setEmailAddress(e.target.value)}
                         placeholder="contact@example.com"
@@ -877,8 +868,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Subject (Optional)
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={emailSubject}
                         onChange={(e) => setEmailSubject(e.target.value)}
                         placeholder="Hello!"
@@ -894,8 +884,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Phone Number
                       </label>
-                      <input
-                        type="tel"
+                      <input aria-label="Input value" type="tel"
                         value={smsPhone}
                         onChange={(e) => setSmsPhone(e.target.value)}
                         placeholder="+1234567890"
@@ -906,7 +895,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Message (Optional)
                       </label>
-                      <textarea
+                      <textarea aria-label="Input text content"
                         value={smsMessage}
                         onChange={(e) => setSmsMessage(e.target.value)}
                         placeholder="Hello! I'd like to..."
@@ -923,8 +912,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Full Name *
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={businessName}
                         onChange={(e) => setBusinessName(e.target.value)}
                         placeholder="John Smith"
@@ -935,8 +923,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Job Title
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={businessTitle}
                         onChange={(e) => setBusinessTitle(e.target.value)}
                         placeholder="CEO & Founder"
@@ -947,8 +934,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Phone Number
                       </label>
-                      <input
-                        type="tel"
+                      <input aria-label="Input value" type="tel"
                         value={businessPhone}
                         onChange={(e) => setBusinessPhone(e.target.value)}
                         placeholder="+1 (555) 123-4567"
@@ -959,8 +945,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Email Address
                       </label>
-                      <input
-                        type="email"
+                      <input aria-label="Input value" type="email"
                         value={businessEmail}
                         onChange={(e) => setBusinessEmail(e.target.value)}
                         placeholder="john@company.com"
@@ -971,8 +956,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Website
                       </label>
-                      <input
-                        type="url"
+                      <input aria-label="Input value" type="url"
                         value={businessWebsite}
                         onChange={(e) => setBusinessWebsite(e.target.value)}
                         placeholder="https://company.com"
@@ -983,8 +967,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Business Address
                       </label>
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={businessAddress}
                         onChange={(e) => setBusinessAddress(e.target.value)}
                         placeholder="123 Main St, City, Country"
@@ -1000,8 +983,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Phone Number (with country code)
                       </label>
-                      <input
-                        type="tel"
+                      <input aria-label="Input value" type="tel"
                         value={whatsappPhone}
                         onChange={(e) => setWhatsappPhone(e.target.value)}
                         placeholder="+1234567890"
@@ -1012,7 +994,7 @@ export default function QrCodeGenerator() {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Pre-filled Message (Optional)
                       </label>
-                      <textarea
+                      <textarea aria-label="Input text content"
                         value={whatsappMessage}
                         onChange={(e) => setWhatsappMessage(e.target.value)}
                         placeholder="Hello! I'd like to connect..."
@@ -1028,8 +1010,7 @@ export default function QrCodeGenerator() {
                     <label className="block text-sm font-medium text-foreground mb-2">
                       Phone Number
                     </label>
-                    <input
-                      type="tel"
+                    <input aria-label="Input value" type="tel"
                       value={phoneNumber}
                       onChange={(e) => setPhoneNumber(e.target.value)}
                       placeholder="+1 (555) 123-4567"
@@ -1067,7 +1048,7 @@ export default function QrCodeGenerator() {
               <div className="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700">
                 <label className="flex items-center justify-between cursor-pointer">
                   <span className="text-sm font-medium text-foreground">Use Linear Gradient</span>
-                  <input
+                  <input aria-label="Gradient"
                     type="checkbox"
                     checked={useGradient}
                     onChange={(e) => setUseGradient(e.target.checked)}
@@ -1084,14 +1065,13 @@ export default function QrCodeGenerator() {
                       Foreground Color
                     </label>
                     <div className="flex items-center gap-3">
-                      <input
+                      <input aria-label="Select color"
                         type="color"
                         value={foregroundColor}
                         onChange={(e) => setForegroundColor(e.target.value)}
                         className="w-14 h-14 flex-shrink-0 cursor-pointer overflow-hidden border-2 border-slate-200 dark:border-slate-600"
                       />
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={foregroundColor}
                         onChange={(e) => setForegroundColor(e.target.value)}
                         className="flex-1 px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-900 dark:text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"
@@ -1105,15 +1085,14 @@ export default function QrCodeGenerator() {
                       Background Color
                     </label>
                     <div className="flex items-center gap-3">
-                      <input
+                      <input aria-label="Select color"
                         type="color"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         disabled={transparentBackground}
                         className="w-14 h-14 flex-shrink-0 cursor-pointer overflow-hidden border-2 border-slate-200 dark:border-slate-600 disabled:opacity-50 disabled:cursor-not-allowed"
                       />
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         disabled={transparentBackground}
@@ -1123,7 +1102,7 @@ export default function QrCodeGenerator() {
                     </div>
                     <div className="mt-3">
                       <label className="flex items-center gap-2 cursor-pointer">
-                        <input
+                        <input aria-label="Transparent Background"
                           type="checkbox"
                           checked={transparentBackground}
                           onChange={(e) => setTransparentBackground(e.target.checked)}
@@ -1146,14 +1125,13 @@ export default function QrCodeGenerator() {
                         Gradient Start Color
                       </label>
                       <div className="flex items-center gap-3">
-                        <input
+                        <input aria-label="Select color"
                           type="color"
                           value={gradientStartColor}
                           onChange={(e) => setGradientStartColor(e.target.value)}
                           className="w-14 h-14 flex-shrink-0 cursor-pointer overflow-hidden border-2 border-slate-200 dark:border-slate-600"
                         />
-                        <input
-                          type="text"
+                        <input aria-label="Input value" type="text"
                           value={gradientStartColor}
                           onChange={(e) => setGradientStartColor(e.target.value)}
                           className="flex-1 px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-900 dark:text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"
@@ -1167,14 +1145,13 @@ export default function QrCodeGenerator() {
                         Gradient End Color
                       </label>
                       <div className="flex items-center gap-3">
-                        <input
+                        <input aria-label="Select color"
                           type="color"
                           value={gradientEndColor}
                           onChange={(e) => setGradientEndColor(e.target.value)}
                           className="w-14 h-14 flex-shrink-0 cursor-pointer overflow-hidden border-2 border-slate-200 dark:border-slate-600"
                         />
-                        <input
-                          type="text"
+                        <input aria-label="Input value" type="text"
                           value={gradientEndColor}
                           onChange={(e) => setGradientEndColor(e.target.value)}
                           className="flex-1 px-4 py-3 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-lg text-slate-900 dark:text-white font-mono text-sm focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent transition-all"
@@ -1190,15 +1167,14 @@ export default function QrCodeGenerator() {
                       Background Color
                     </label>
                     <div className="flex items-center gap-3">
-                      <input
+                      <input aria-label="Select color"
                         type="color"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         disabled={transparentBackground}
                         className="w-14 h-14 flex-shrink-0 cursor-pointer overflow-hidden border-2 border-slate-200 dark:border-slate-600 disabled:opacity-50 disabled:cursor-not-allowed"
                       />
-                      <input
-                        type="text"
+                      <input aria-label="Input value" type="text"
                         value={backgroundColor}
                         onChange={(e) => setBackgroundColor(e.target.value)}
                         disabled={transparentBackground}
@@ -1208,7 +1184,7 @@ export default function QrCodeGenerator() {
                     </div>
                     <div className="mt-3">
                       <label className="flex items-center gap-2 cursor-pointer">
-                        <input
+                        <input aria-label="Transparent Background"
                           type="checkbox"
                           checked={transparentBackground}
                           onChange={(e) => setTransparentBackground(e.target.checked)}
@@ -1290,8 +1266,7 @@ export default function QrCodeGenerator() {
                 <label className="block text-sm font-medium text-foreground mb-3">
                   Error Correction Level
                 </label>
-                <select
-                  value={errorCorrectionLevel}
+                <select aria-label="Select option" value={errorCorrectionLevel}
                   onChange={(e) =>
                     setErrorCorrectionLevel(e.target.value as ErrorCorrectionLevel)
                   }
@@ -1335,7 +1310,7 @@ export default function QrCodeGenerator() {
                 <p className="text-sm text-muted-foreground mb-4">
                   Upload your logo to brand your QR code. Use High (H) error correction for best results.
                 </p>
-                <input
+                <input aria-label="Upload file"
                   ref={logoInputRef}
                   type="file"
                   accept="image/*"
@@ -1428,7 +1403,7 @@ export default function QrCodeGenerator() {
               <label className="block text-sm font-medium text-slate-900 dark:text-white mb-3">
                 Export Size: {exportSize}px
               </label>
-              <input
+              <input aria-label="Adjust slider value"
                 type="range"
                 min="400"
                 max="1200"

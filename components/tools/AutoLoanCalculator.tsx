@@ -354,8 +354,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -379,9 +378,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={vehiclePrice === 0 ? "" : vehiclePrice}
@@ -398,9 +396,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                         <PiggyBank className="w-3.5 h-3.5 text-indigo-600" /> Down Payment
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="500"
                                             value={downPayment === 0 ? "" : downPayment}
@@ -415,9 +412,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                         <Car className="w-3.5 h-3.5 text-indigo-600" /> Trade-In Value
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="500"
                                             value={tradeInValue === 0 ? "" : tradeInValue}
@@ -435,8 +431,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                         <Percent className="w-3.5 h-3.5 text-indigo-600" /> Interest Rate (APR)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="30"
                                             step="0.1"
@@ -444,7 +439,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setAnnualRate(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
 
@@ -452,8 +447,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                     <label className="block text-xs font-semibold text-slate-800 mb-1 flex items-center gap-1">
                                         <Calendar className="w-3.5 h-3.5 text-indigo-600" /> Loan Term
                                     </label>
-                                    <select
-                                        value={loanMonths}
+                                    <select aria-label="Select option" value={loanMonths}
                                         onChange={(e) => {
                                             setLoanMonths(Number(e.target.value));
                                             setActivePresetId(null);
@@ -472,7 +466,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
 
                             {/* Taxes, Fees & Extra Payment */}
                             <div className="pt-3 border-t border-slate-100 space-y-3">
-                                <h3 className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Taxes & Dealer Fees</h3>
+                                <h3 className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Taxes & Dealer Fees</h3>
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                                     <div>
@@ -480,8 +474,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                             Sales Tax Rate
                                         </label>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="25"
                                                 step="0.1"
@@ -489,7 +482,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setSalesTaxRate(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-6 py-1.5 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
-                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">%</span>
+                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">%</span>
                                         </div>
                                     </div>
 
@@ -498,9 +491,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                             Doc / Title Fees
                                         </label>
                                         <div className="relative">
-                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="50"
                                                 value={titleFees === 0 ? "" : titleFees}
@@ -516,9 +508,8 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                                         <TrendingDown className="w-3.5 h-3.5 text-indigo-500" /> Extra Monthly Principal Payment
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="25"
                                             value={extraMonthlyPayment === 0 ? "" : extraMonthlyPayment}
@@ -534,7 +525,7 @@ Calculated at twistertools.com/tools/calculators/auto-loan-calculator`;
                         {/* Presets Bar */}
                         <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Popular Financing Scenarios
                                 </span>
                                 {activePresetId && (

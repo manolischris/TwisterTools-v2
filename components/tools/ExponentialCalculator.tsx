@@ -500,8 +500,7 @@ export default function ExponentialCalculator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                     Initial Value (N₀)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={initialValue}
                                     onChange={(e) => { handleNumberInput(e, setInitialValue); setActivePresetId(null); }}
                                     placeholder="1000"
@@ -514,8 +513,7 @@ export default function ExponentialCalculator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                     Rate (%)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={rate}
                                     onChange={(e) => { handleNumberInput(e, setRate); setActivePresetId(null); }}
                                     placeholder="5"
@@ -528,8 +526,7 @@ export default function ExponentialCalculator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                     Time (t)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={time}
                                     onChange={(e) => { handleNumberInput(e, setTime); setActivePresetId(null); }}
                                     placeholder="10"
@@ -542,7 +539,7 @@ export default function ExponentialCalculator() {
                         {/* Presets Bar */}
                         <div className="space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Presets & Examples
                                 </span>
                                 {activePresetId && (
@@ -635,13 +632,13 @@ export default function ExponentialCalculator() {
 
                                     <div className="grid grid-cols-2 gap-4 pt-1">
                                         <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                                            <span className="text-[10px] font-bold text-slate-400 block uppercase">Final Value N({calculation.time})</span>
+                                            <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Final Value N({calculation.time})</span>
                                             <span className="text-xl sm:text-2xl font-black text-indigo-300 font-mono">
                                                 {calculation.finalValue.toLocaleString(undefined, { maximumFractionDigits: 4 })}
                                             </span>
                                         </div>
                                         <div className="bg-white/5 border border-white/10 p-3 rounded-xl">
-                                            <span className="text-[10px] font-bold text-slate-400 block uppercase">
+                                            <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">
                                                 {calculation.type === "growth" ? "Doubling Time" : "Half-Life"}
                                             </span>
                                             <span className="text-xl sm:text-2xl font-black text-emerald-400 font-mono">

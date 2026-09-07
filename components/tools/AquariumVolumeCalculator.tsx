@@ -490,8 +490,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Outer Diameter ({dimUnit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             max={500}
                                             value={diameter === 0 ? "" : diameter}
@@ -503,8 +502,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Tank Height ({dimUnit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             max={500}
                                             value={height === 0 ? "" : height}
@@ -519,8 +517,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Length / Front ({dimUnit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             max={500}
                                             value={length === 0 ? "" : length}
@@ -532,8 +529,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Side Width / Depth ({dimUnit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             max={500}
                                             value={width === 0 ? "" : width}
@@ -545,8 +541,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Height ({dimUnit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             max={500}
                                             value={height === 0 ? "" : height}
@@ -562,8 +557,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                         Center Bulge Depth ({dimUnit})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={width}
                                         max={500}
                                         value={fullWidth === 0 ? "" : fullWidth}
@@ -618,7 +612,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                                 <span>Water Rim Gap ({dimUnit})</span>
                                                 <span className="font-bold text-indigo-600">{waterGap} {dimUnit}</span>
                                             </label>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min={0}
                                                 max={isImperial ? 4 : 10}
@@ -634,7 +628,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                                 <span>Substrate Depth ({dimUnit})</span>
                                                 <span className="font-bold text-indigo-600">{substrateDepth} {dimUnit}</span>
                                             </label>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min={0}
                                                 max={isImperial ? 5 : 12}
@@ -651,7 +645,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                             <span>Hardscape Displacement (Rock / Driftwood)</span>
                                             <span className="font-bold text-indigo-600">{hardscapeDisplacementPct}% of volume</span>
                                         </label>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min={0}
                                             max={30}
@@ -741,25 +735,25 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                             </h3>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
                                 <div className="p-2.5 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Water Weight</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Water Weight</span>
                                     <span className="text-sm font-black text-slate-800">
                                         {isImperial ? `${calculations.waterWeightLbs} lbs` : `${calculations.waterWeightKg} kg`}
                                     </span>
                                 </div>
                                 <div className="p-2.5 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Glass/Structure</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Glass/Structure</span>
                                     <span className="text-sm font-black text-slate-800">
                                         {isImperial ? `${calculations.emptyTankWeightLbs} lbs` : `${calculations.emptyTankWeightKg} kg`}
                                     </span>
                                 </div>
                                 <div className="p-2.5 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Substrate</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Substrate</span>
                                     <span className="text-sm font-black text-slate-800">
                                         {isImperial ? `${calculations.substrateWeightLbs} lbs` : `${calculations.substrateWeightKg} kg`}
                                     </span>
                                 </div>
                                 <div className="p-2.5 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Hardscape</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Hardscape</span>
                                     <span className="text-sm font-black text-slate-800">
                                         {isImperial ? `${calculations.hardscapeWeightLbs} lbs` : `${calculations.hardscapeWeightKg} kg`}
                                     </span>
@@ -796,7 +790,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                 <span className="text-base font-black text-white block">
                                     {isImperial ? `${calculations.minFilterGph} - ${calculations.maxFilterGph} GPH` : `${calculations.minFilterLph} - ${calculations.maxFilterLph} L/h`}
                                 </span>
-                                <span className="text-[10px] text-slate-400">4x to 10x hourly turnover</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300">4x to 10x hourly turnover</span>
                             </div>
 
                             <div className="p-3 bg-slate-900 text-white rounded-xl space-y-1">
@@ -806,7 +800,7 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                                 <span className="text-base font-black text-white block">
                                     {calculations.minHeaterWatts}W – {calculations.maxHeaterWatts}W
                                 </span>
-                                <span className="text-[10px] text-slate-400">3 to 5 watts per gallon</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300">3 to 5 watts per gallon</span>
                             </div>
                         </div>
                     </div>
@@ -955,19 +949,19 @@ Calculated via twistertools.com/tools/home-tools/aquarium-volume-calculator`;
                         </h3>
                         <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 space-y-1">
-                                <span className="text-slate-400 block font-sans">Rectangular Prism:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block font-sans">Rectangular Prism:</span>
                                 <strong className="text-indigo-300 text-sm">V = (Length × Width × Height) / 231</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 space-y-1">
-                                <span className="text-slate-400 block font-sans">Cylinder / Column:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block font-sans">Cylinder / Column:</span>
                                 <strong className="text-indigo-300 text-sm">V = (π × (Diameter/2)² × Height) / 231</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 space-y-1">
-                                <span className="text-slate-400 block font-sans">Hexagonal Tank:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block font-sans">Hexagonal Tank:</span>
                                 <strong className="text-indigo-300 text-sm">V = ((3√3 / 2) × Side² × Height) / 231</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 space-y-1">
-                                <span className="text-slate-400 block font-sans">Bowfront Prism:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block font-sans">Bowfront Prism:</span>
                                 <strong className="text-indigo-300 text-sm">V = (L×W + 0.667×L×(Bow - W)) × H / 231</strong>
                             </div>
                         </div>

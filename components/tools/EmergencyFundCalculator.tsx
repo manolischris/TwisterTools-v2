@@ -435,8 +435,7 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                 Monthly Essentials & Parameters
                             </h2>
                             <div className="flex items-center gap-2">
-                                <select
-                                    value={currency}
+                                <select aria-label="Select option" value={currency}
                                     onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                     className="px-2.5 py-1.5 rounded-lg border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 text-xs bg-slate-50 outline-none"
                                 >
@@ -488,7 +487,7 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
 
                         {/* Itemized Survival Expense Inputs */}
                         <div className="space-y-3.5">
-                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                            <h3 className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                 Non-Negotiable Monthly Living Expenses
                             </h3>
 
@@ -499,9 +498,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         <Home className="w-3.5 h-3.5 text-indigo-500" /> Rent or Mortgage
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={housing === 0 ? "" : housing}
                                             onChange={(e) => handleNumberInput(e, (val) => { setHousing(val); setActivePresetId(null); })}
@@ -516,9 +514,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         <Zap className="w-3.5 h-3.5 text-indigo-500" /> Utilities, Water & Web
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={utilities === 0 ? "" : utilities}
                                             onChange={(e) => handleNumberInput(e, (val) => { setUtilities(val); setActivePresetId(null); })}
@@ -533,9 +530,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         <ShoppingBag className="w-3.5 h-3.5 text-indigo-500" /> Groceries & Basic Food
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={groceries === 0 ? "" : groceries}
                                             onChange={(e) => handleNumberInput(e, (val) => { setGroceries(val); setActivePresetId(null); })}
@@ -550,9 +546,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         <HeartPulse className="w-3.5 h-3.5 text-indigo-500" /> Health & Insurances
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={healthcare === 0 ? "" : healthcare}
                                             onChange={(e) => handleNumberInput(e, (val) => { setHealthcare(val); setActivePresetId(null); })}
@@ -567,9 +562,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         <Car className="w-3.5 h-3.5 text-indigo-500" /> Transport & Fuel
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={transportation === 0 ? "" : transportation}
                                             onChange={(e) => handleNumberInput(e, (val) => { setTransportation(val); setActivePresetId(null); })}
@@ -584,9 +578,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         <CreditCard className="w-3.5 h-3.5 text-indigo-500" /> Min Debt Obligations
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={debtPayments === 0 ? "" : debtPayments}
                                             onChange={(e) => handleNumberInput(e, (val) => { setDebtPayments(val); setActivePresetId(null); })}
@@ -599,7 +592,7 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
 
                         {/* Current Balance & Savings Velocity */}
                         <div className="mt-5 pt-4 border-t border-slate-100 space-y-3">
-                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                            <h3 className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                 Current Cash & Accumulation Velocity
                             </h3>
 
@@ -609,9 +602,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         Current Liquid Cash
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={currentSavings === 0 ? "" : currentSavings}
                                             onChange={(e) => handleNumberInput(e, (val) => { setCurrentSavings(val); setActivePresetId(null); })}
@@ -625,9 +617,8 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         Monthly Savings Add
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             value={monthlyContribution === 0 ? "" : monthlyContribution}
                                             onChange={(e) => handleNumberInput(e, (val) => { setMonthlyContribution(val); setActivePresetId(null); })}
@@ -641,8 +632,7 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                         HYSA Rate (APY %)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="15"
                                             step="0.05"
@@ -650,7 +640,7 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                             onChange={(e) => handleNumberInput(e, (val) => { setHysaApy(val); setActivePresetId(null); })}
                                             className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">%</span>
                                     </div>
                                 </div>
                             </div>
@@ -659,7 +649,7 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                         {/* Fast Risk Presets */}
                         <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Household Risk Presets
                                 </span>
                             </div>
@@ -827,7 +817,7 @@ Calculated at twistertools.com/tools/calculators/emergency-fund-calculator`;
                                                         {isAchieved ? (
                                                             <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                                                         ) : (
-                                                            <Clock className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                                            <Clock className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                                         )}
                                                         <span className="font-semibold">{tier.label}</span>
                                                     </div>

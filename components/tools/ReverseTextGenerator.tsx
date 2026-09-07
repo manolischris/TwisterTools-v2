@@ -303,7 +303,7 @@ export default function ReverseTextGenerator() {
                     onClick={handleCopy}
                     disabled={!transformedText}
                     className={`w-full py-2.5 px-4 rounded-xl font-semibold text-sm flex items-center justify-center gap-2 min-h-[44px] transition-all duration-200 border ${!transformedText
-                        ? "bg-slate-100 dark:bg-slate-850 border-slate-200 dark:border-slate-800 text-slate-400 dark:text-slate-500 cursor-not-allowed"
+                        ? "bg-slate-100 dark:bg-slate-850 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 dark:text-slate-500 cursor-not-allowed"
                         : copied
                           ? "bg-emerald-600 border-emerald-600 text-white shadow-sm"
                           : "bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700 shadow-sm"

@@ -318,7 +318,7 @@ export default function LockPdfSuite() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -351,7 +351,7 @@ export default function LockPdfSuite() {
                                         <p className="text-sm font-semibold text-slate-800 mb-1">
                                             Drop PDF here, or <span className="text-indigo-600">click to browse</span>
                                         </p>
-                                        <p className="text-xs text-slate-400">Maximum file size: 20 MB</p>
+                                        <p className="text-xs text-slate-600 dark:text-slate-300">Maximum file size: 20 MB</p>
                                     </>
                                 )}
                             </div>
@@ -394,10 +394,10 @@ export default function LockPdfSuite() {
                             <div className="space-y-1.5">
                                 <label className="text-xs font-bold text-slate-800 flex items-center justify-between">
                                     <span>User Open Password (Required)</span>
-                                    <span className="text-[10px] text-slate-400 font-normal">Required to view document</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-normal">Required to view document</span>
                                 </label>
                                 <div className="relative">
-                                    <input
+                                    <input aria-label="Required to view document"
                                         type={showUserPassword ? "text" : "password"}
                                         value={userPassword}
                                         onChange={(e) => setUserPassword(e.target.value)}
@@ -407,7 +407,7 @@ export default function LockPdfSuite() {
                                     <button
                                         type="button"
                                         onClick={() => setShowUserPassword(!showUserPassword)}
-                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 hover:text-slate-600"
                                     >
                                         {showUserPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                                     </button>
@@ -434,10 +434,10 @@ export default function LockPdfSuite() {
                             <div className="space-y-1.5">
                                 <label className="text-xs font-bold text-slate-800 flex items-center justify-between">
                                     <span>Owner Master Password (Optional)</span>
-                                    <span className="text-[10px] text-slate-400 font-normal">Controls permissions</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-normal">Controls permissions</span>
                                 </label>
                                 <div className="relative">
-                                    <input
+                                    <input aria-label="Controls permissions"
                                         type={showOwnerPassword ? "text" : "password"}
                                         value={ownerPassword}
                                         onChange={(e) => setOwnerPassword(e.target.value)}
@@ -447,7 +447,7 @@ export default function LockPdfSuite() {
                                     <button
                                         type="button"
                                         onClick={() => setShowOwnerPassword(!showOwnerPassword)}
-                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                                        className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 hover:text-slate-600"
                                     >
                                         {showOwnerPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                                     </button>
@@ -495,8 +495,7 @@ export default function LockPdfSuite() {
                                         key={key}
                                         className="flex items-center gap-2.5 p-2.5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-slate-100/50 cursor-pointer transition-all"
                                     >
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Permissions[Key As Keyof Security Flags]" type="checkbox"
                                             checked={permissions[key as keyof SecurityFlags]}
                                             onChange={(e) =>
                                                 setPermissions((prev) => ({
@@ -519,7 +518,7 @@ export default function LockPdfSuite() {
                             disabled={!pdfBytes || isEncrypting || !userPassword.trim()}
                             className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md min-h-[44px] ${pdfBytes && userPassword.trim() && !isEncrypting
                                 ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                 }`}
                         >
                             {isEncrypting ? (

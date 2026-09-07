@@ -417,7 +417,7 @@ export default function HtmlEncoderDecoder() {
                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-500 hover:bg-indigo-50/10"
                 }`}
               >
-                <input
+                <input aria-label="Html File Input"
                   ref={fileInputRef}
                   type="file"
                   accept=".txt,.html,.htm,.xml,.json,.js,.css"
@@ -494,7 +494,7 @@ export default function HtmlEncoderDecoder() {
                           : "border-slate-200 hover:border-indigo-200 hover:bg-slate-50/50"
                       }`}
                     >
-                      <input
+                      <input aria-label="Encode Type"
                         type="radio"
                         name="encode-type"
                         checked={encodeType === "special"}
@@ -518,7 +518,7 @@ export default function HtmlEncoderDecoder() {
                           : "border-slate-200 hover:border-indigo-200 hover:bg-slate-50/50"
                       }`}
                     >
-                      <input
+                      <input aria-label="Encode Type"
                         type="radio"
                         name="encode-type"
                         checked={encodeType === "all"}
@@ -556,7 +556,7 @@ export default function HtmlEncoderDecoder() {
                             : "border-slate-200 hover:border-indigo-200 hover:bg-slate-50/50 text-slate-700"
                         }`}
                       >
-                        <input
+                        <input aria-label="Output Ref"
                           type="radio"
                           name="output-ref"
                           checked={outputRef === opt.id}
@@ -638,7 +638,7 @@ export default function HtmlEncoderDecoder() {
               <div className="p-5 space-y-4">
                 {/* Result Textarea (LOCKED HEIGHT, MATCHING INPUT) */}
                 <div className="space-y-1">
-                  <textarea
+                  <textarea aria-label="Html Output Textarea"
                     id="html-output-textarea"
                     readOnly
                     value={hasError ? "" : output}
@@ -664,7 +664,7 @@ export default function HtmlEncoderDecoder() {
                       ? copied
                         ? "bg-green-500 text-white shadow-md shadow-green-100"
                         : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-100 hover:shadow-lg hover:-translate-y-0.5"
-                      : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                      : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                   }`}
                 >
                   {copied ? (
@@ -716,7 +716,7 @@ export default function HtmlEncoderDecoder() {
                     </div>
                   </div>
 
-                  <div className="text-[10px] text-slate-400 text-center leading-relaxed">
+                  <div className="text-[10px] text-slate-600 dark:text-slate-300 text-center leading-relaxed">
                     Bit sizes are calculated using standard UTF-8 byte encoding arrays.
                   </div>
                 </div>
@@ -876,7 +876,7 @@ export default function HtmlEncoderDecoder() {
           </p>
           <div className="my-6 space-y-4">
             <div>
-              <span className="text-xs font-semibold uppercase text-slate-400 block mb-1">Raw Dynamic Code Snippet Input</span>
+              <span className="text-xs font-semibold uppercase text-slate-600 dark:text-slate-300 block mb-1">Raw Dynamic Code Snippet Input</span>
               <pre className="p-4 bg-slate-900 text-indigo-400 rounded-xl font-mono text-xs overflow-x-auto">
 {`<div>
   <a href="/login?user=admin&session=true">Click Here & "Proceed"</a>
@@ -884,7 +884,7 @@ export default function HtmlEncoderDecoder() {
               </pre>
             </div>
             <div>
-              <span className="text-xs font-semibold uppercase text-slate-400 block mb-1">Encoded HTML Entity Safe Output</span>
+              <span className="text-xs font-semibold uppercase text-slate-600 dark:text-slate-300 block mb-1">Encoded HTML Entity Safe Output</span>
               <pre className="p-4 bg-slate-950 text-emerald-400 rounded-xl font-mono text-xs overflow-x-auto">
 {`&lt;div&gt;
   &lt;a href=&quot;/login?user=admin&amp;session=true&quot;&gt;Click Here &amp; &quot;Proceed&quot;&lt;/a&gt;

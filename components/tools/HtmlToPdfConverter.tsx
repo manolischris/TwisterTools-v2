@@ -519,7 +519,7 @@ export default function HtmlToPdfConverter() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept=".html,.htm,.txt"
@@ -534,7 +534,7 @@ export default function HtmlToPdfConverter() {
                                         <p className="text-xs font-bold text-slate-800">
                                             Drop .html file here, or <span className="text-indigo-600">click to browse</span>
                                         </p>
-                                        <p className="text-[11px] text-slate-400">Max size 20 MB limit</p>
+                                        <p className="text-[11px] text-slate-600 dark:text-slate-300">Max size 20 MB limit</p>
                                     </div>
                                 </div>
                             </div>
@@ -561,7 +561,7 @@ export default function HtmlToPdfConverter() {
                                         {copied ? "Copied" : "Copy Source"}
                                     </button>
                                 </div>
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={htmlCode}
                                     onChange={(e) => setHtmlCode(e.target.value)}
                                     placeholder="Paste your HTML code here or drop a file above..."
@@ -611,7 +611,7 @@ export default function HtmlToPdfConverter() {
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Page Size</label>
-                                    <select
+                                    <select aria-label="Select Page Size"
                                         value={config.format}
                                         onChange={(e) => setConfig({ ...config, format: e.target.value as PageFormat })}
                                         className="w-full text-xs font-medium bg-slate-50 border border-slate-200 rounded-lg p-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -624,7 +624,7 @@ export default function HtmlToPdfConverter() {
 
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Orientation</label>
-                                    <select
+                                    <select aria-label="Select Orientation"
                                         value={config.orientation}
                                         onChange={(e) => setConfig({ ...config, orientation: e.target.value as Orientation })}
                                         className="w-full text-xs font-medium bg-slate-50 border border-slate-200 rounded-lg p-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -636,7 +636,7 @@ export default function HtmlToPdfConverter() {
 
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider">Margin (mm)</label>
-                                    <input
+                                    <input aria-label="Margin (mm)"
                                         type="number"
                                         min="0"
                                         max="50"
@@ -649,7 +649,7 @@ export default function HtmlToPdfConverter() {
 
                             <div className="flex flex-wrap items-center gap-4 pt-2 border-t border-slate-100">
                                 <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
-                                    <input
+                                    <input aria-label="Print Background"
                                         type="checkbox"
                                         checked={config.printBackground}
                                         onChange={(e) => setConfig({ ...config, printBackground: e.target.checked })}
@@ -665,7 +665,7 @@ export default function HtmlToPdfConverter() {
                                         <Eye className="w-3.5 h-3.5 text-indigo-600" />
                                         DOM Render Live Preview
                                     </span>
-                                    <span className="text-[11px] text-slate-400 font-mono">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 font-mono">
                                         Estimated PDF: ~{estimatedSizeMb} MB
                                     </span>
                                 </div>
@@ -679,10 +679,10 @@ export default function HtmlToPdfConverter() {
                                             sandbox="allow-same-origin"
                                         />
                                     ) : (
-                                        <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 p-4 text-center">
+                                        <div className="w-full h-full flex flex-col items-center justify-center text-slate-600 dark:text-slate-300 p-4 text-center">
                                             <Code className="w-8 h-8 text-slate-300 mb-2" />
                                             <p className="text-xs font-medium text-slate-500">Live preview will appear here</p>
-                                            <p className="text-[11px] text-slate-400">Paste HTML or click "Load Sample HTML Template"</p>
+                                            <p className="text-[11px] text-slate-600 dark:text-slate-300">Paste HTML or click "Load Sample HTML Template"</p>
                                         </div>
                                     )}
                                 </div>
@@ -694,7 +694,7 @@ export default function HtmlToPdfConverter() {
                                 disabled={!htmlCode.trim() || isProcessing}
                                 className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${htmlCode.trim() && !isProcessing
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (

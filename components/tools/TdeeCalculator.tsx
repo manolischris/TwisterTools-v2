@@ -455,8 +455,7 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Age (Years)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="10"
                                         max="120"
                                         value={age === 0 ? "" : age}
@@ -474,18 +473,17 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                 {unitSystem === "imperial" ? (
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="2"
                                                 max="8"
                                                 value={heightFt === 0 ? "" : heightFt}
                                                 onChange={(e) => { handleNumberInput(e, (val) => setHeightFt(Math.max(0, val))); setActivePresetId(null); }}
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">ft</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">ft</span>
                                         </div>
                                         <div className="relative">
-                                            <input
+                                            <input aria-label="ft"
                                                 type="number"
                                                 min="0"
                                                 max="11"
@@ -493,12 +491,12 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                                 onChange={(e) => { handleNumberInput(e, (val) => setHeightIn(Math.max(0, Math.min(11, val)))); setActivePresetId(null); }}
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">in</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">in</span>
                                         </div>
                                     </div>
                                 ) : (
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="in"
                                             type="number"
                                             min="80"
                                             max="250"
@@ -506,7 +504,7 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setHeightCm(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">cm</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">cm</span>
                                     </div>
                                 )}
                             </div>
@@ -518,19 +516,18 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                 </label>
                                 {unitSystem === "imperial" ? (
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="40"
                                             max="800"
                                             value={weightLbs === 0 ? "" : weightLbs}
                                             onChange={(e) => { handleNumberInput(e, (val) => setWeightLbs(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">lbs</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">lbs</span>
                                     </div>
                                 ) : (
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="lbs"
                                             type="number"
                                             min="20"
                                             max="400"
@@ -538,7 +535,7 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setWeightKg(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">kg</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">kg</span>
                                     </div>
                                 )}
                             </div>
@@ -548,8 +545,7 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                     <Zap className="w-3.5 h-3.5 text-indigo-600" /> Daily Exercise & Activity Level
                                 </label>
-                                <select
-                                    value={activityLevel}
+                                <select aria-label="Select option" value={activityLevel}
                                     onChange={(e) => setActivityLevel(e.target.value as ActivityLevel)}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                 >
@@ -565,7 +561,7 @@ Calculated at twistertools.com/tools/calculators/tdee-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Demographic Presets
                                 </span>
                                 {activePresetId && (

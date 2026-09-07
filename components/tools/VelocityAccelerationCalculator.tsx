@@ -416,7 +416,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max={unitSystem === "metric" ? "250" : "160"}
@@ -425,8 +425,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                         onChange={(e) => setSpeedInput(parseFloat(e.target.value) || 0)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="400"
                                         step="any"
@@ -447,7 +446,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0.2"
                                         max="4.0"
@@ -456,8 +455,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                         onChange={(e) => setReactionTimeInput(parseFloat(e.target.value) || 0.2)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="10"
                                         step="0.05"
@@ -502,8 +500,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                     <label className="text-xs font-bold text-indigo-900 block">
                                         Custom Friction Coefficient (μ: 0.05 - 1.50)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0.05"
                                         max="2.00"
                                         step="0.01"
@@ -524,7 +521,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                         {gradeInput > 0 ? `+${gradeInput}% (Uphill)` : gradeInput < 0 ? `${gradeInput}% (Downhill)` : "0% (Flat)"}
                                     </span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="-20"
                                     max="20"
@@ -542,8 +539,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                     </label>
                                     <span className="text-xs font-mono font-bold text-slate-700">{massInput}</span>
                                 </div>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="100"
                                     step="50"
                                     value={massInput === 0 ? "" : massInput}
@@ -660,7 +656,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                                             <Car className="w-4 h-4 text-indigo-400" />
                                             Stopping Distance Split Proportion
                                         </span>
-                                        <span className="font-mono text-[11px] text-slate-400">
+                                        <span className="font-mono text-[11px] text-slate-600 dark:text-slate-300">
                                             Total: {unitSystem === "metric" ? `${formatNum(m.totalStoppingDistanceMeters)}m` : `${formatNum(m.totalStoppingDistanceFeet)}ft`}
                                         </span>
                                     </div>
@@ -746,7 +742,7 @@ Generated via twistertools.com/tools/math-tools/velocity-acceleration-calculator
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                     ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                    : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                    : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

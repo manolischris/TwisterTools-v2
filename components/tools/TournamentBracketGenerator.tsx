@@ -557,9 +557,9 @@ export default function TournamentBracketGenerator() {
                                     <Users className="w-3.5 h-3.5 text-indigo-600" />
                                     Competitors / Teams ({participantCount})
                                 </label>
-                                <span className="text-[11px] text-slate-400 font-medium">One per line</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">One per line</span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawInput}
                                 onChange={(e) => setRawInput(e.target.value)}
                                 rows={8}
@@ -575,8 +575,7 @@ export default function TournamentBracketGenerator() {
                                     <Hash className="w-3.5 h-3.5 text-indigo-600" />
                                     Seeding Method
                                 </label>
-                                <select
-                                    value={seedingMethod}
+                                <select aria-label="Select option" value={seedingMethod}
                                     onChange={(e) => setSeedingMethod(e.target.value as SeedingMethod)}
                                     className="w-full py-2 px-3 rounded-xl border border-slate-200 bg-white text-xs font-bold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                 >
@@ -591,8 +590,7 @@ export default function TournamentBracketGenerator() {
                                     <Swords className="w-3.5 h-3.5 text-indigo-600" />
                                     Format
                                 </label>
-                                <select
-                                    value={tournamentFormat}
+                                <select aria-label="Select option" value={tournamentFormat}
                                     onChange={(e) => setTournamentFormat(e.target.value as TournamentFormat)}
                                     className="w-full py-2 px-3 rounded-xl border border-slate-200 bg-white text-xs font-bold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                 >
@@ -605,15 +603,15 @@ export default function TournamentBracketGenerator() {
                         {/* Quick Spec Metrics Box */}
                         <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 grid grid-cols-3 gap-2 text-center">
                             <div>
-                                <span className="text-[11px] font-bold text-slate-400 uppercase">Bracket Size</span>
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase">Bracket Size</span>
                                 <p className="text-base font-black text-slate-900">{bracketSize} Slots</p>
                             </div>
                             <div>
-                                <span className="text-[11px] font-bold text-slate-400 uppercase">Rounds</span>
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase">Rounds</span>
                                 <p className="text-base font-black text-indigo-600">{totalRounds}</p>
                             </div>
                             <div>
-                                <span className="text-[11px] font-bold text-slate-400 uppercase">Byes</span>
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase">Byes</span>
                                 <p className={`text-base font-black ${byeCount > 0 ? "text-amber-600" : "text-slate-900"}`}>
                                     {byeCount}
                                 </p>
@@ -706,7 +704,7 @@ export default function TournamentBracketGenerator() {
                                 <div className="h-64 flex flex-col items-center justify-center text-center p-6 border border-dashed border-slate-200 rounded-xl">
                                     <Users className="w-8 h-8 text-slate-300 mb-2" />
                                     <p className="text-sm font-bold text-slate-700">Add at least 2 participants</p>
-                                    <p className="text-xs text-slate-400 mt-1">Enter team names in the left workspace panel to generate your bracket tree.</p>
+                                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">Enter team names in the left workspace panel to generate your bracket tree.</p>
                                 </div>
                             ) : (
                                 <div className="flex flex-nowrap items-stretch gap-6 w-max m-auto px-0 min-h-full py-0">
@@ -754,7 +752,7 @@ export default function TournamentBracketGenerator() {
                                                                     }`}
                                                             >
                                                                 {/* Match Number Tag */}
-                                                                <div className="bg-slate-50 border-b border-slate-100 px-3 py-1 text-[10px] font-bold text-slate-400 flex items-center justify-between">
+                                                                <div className="bg-slate-50 border-b border-slate-100 px-3 py-1 text-[10px] font-bold text-slate-600 dark:text-slate-300 flex items-center justify-between">
                                                                     <span>MATCH {matchNum}</span>
                                                                     {match.isBye && (
                                                                         <span className="text-amber-600 bg-amber-50 px-1.5 py-0.2 rounded font-semibold">
@@ -789,8 +787,7 @@ export default function TournamentBracketGenerator() {
                                                                         </span>
                                                                     </div>
                                                                     {!match.isBye && match.team1 && (
-                                                                        <input
-                                                                            type="number"
+                                                                        <input aria-label="Input value" type="number"
                                                                             min="0"
                                                                             value={match.team1Score ?? ""}
                                                                             onClick={(e) => e.stopPropagation()}
@@ -814,7 +811,7 @@ export default function TournamentBracketGenerator() {
                                                                     className={`p-2.5 flex items-center justify-between gap-2 transition cursor-pointer ${match.winner === match.team2 && match.team2
                                                                         ? "bg-indigo-600 text-white font-bold"
                                                                         : match.isBye
-                                                                            ? "bg-slate-50/50 text-slate-400 italic"
+                                                                            ? "bg-slate-50/50 text-slate-600 dark:text-slate-300 italic"
                                                                             : "hover:bg-slate-50 text-slate-800"
                                                                         }`}
                                                                 >
@@ -834,8 +831,7 @@ export default function TournamentBracketGenerator() {
                                                                         </span>
                                                                     </div>
                                                                     {!match.isBye && match.team2 && (
-                                                                        <input
-                                                                            type="number"
+                                                                        <input aria-label="Input value" type="number"
                                                                             min="0"
                                                                             value={match.team2Score ?? ""}
                                                                             onClick={(e) => e.stopPropagation()}

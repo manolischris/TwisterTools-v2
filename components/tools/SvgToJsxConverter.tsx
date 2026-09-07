@@ -324,8 +324,7 @@ export default function SvgToJsxConverter() {
                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                             Component Name
                         </label>
-                        <input
-                            type="text"
+                        <input aria-label="Input value" type="text"
                             value={componentName}
                             onChange={(e) => setComponentName(e.target.value.replace(/[^a-zA-Z0-9_]/g, ""))}
                             placeholder="IconComponent"
@@ -386,7 +385,7 @@ export default function SvgToJsxConverter() {
                     {/* Checkbox Options */}
                     <div className="sm:col-span-2 flex flex-wrap gap-4 items-center pt-2">
                         <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
-                            <input
+                            <input aria-label="Forward Ref"
                                 type="checkbox"
                                 checked={useForwardRef}
                                 onChange={(e) => setUseForwardRef(e.target.checked)}
@@ -396,8 +395,7 @@ export default function SvgToJsxConverter() {
                         </label>
 
                         <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Pass Props" type="checkbox"
                                 checked={passProps}
                                 onChange={(e) => setPassProps(e.target.checked)}
                                 className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500"
@@ -406,8 +404,7 @@ export default function SvgToJsxConverter() {
                         </label>
 
                         <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Strip Dimensions" type="checkbox"
                                 checked={stripDimensions}
                                 onChange={(e) => setStripDimensions(e.target.checked)}
                                 className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500"
@@ -429,7 +426,7 @@ export default function SvgToJsxConverter() {
                                 <h2 className="text-base sm:text-lg font-bold text-slate-900">SVG Input</h2>
                             </div>
                             <div className="flex items-center gap-2">
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept=".svg,image/svg+xml"
@@ -446,7 +443,7 @@ export default function SvgToJsxConverter() {
                         </div>
 
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawSvg}
                                 onChange={(e) => setRawSvg(e.target.value)}
                                 placeholder="Paste your raw <svg> markup here..."
@@ -467,7 +464,7 @@ export default function SvgToJsxConverter() {
                                 <span className="flex items-center gap-1.5">
                                     <Eye className="w-3.5 h-3.5 text-indigo-600" /> Live Render Preview
                                 </span>
-                                <span className="text-[11px] text-slate-400 font-normal">Sanitized Vector Stage</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300 font-normal">Sanitized Vector Stage</span>
                             </div>
                             <div className="w-full h-24 bg-white border border-slate-200 rounded-lg flex items-center justify-center overflow-hidden p-2">
                                 {rawSvg && !parseError ? (
@@ -476,7 +473,7 @@ export default function SvgToJsxConverter() {
                                         dangerouslySetInnerHTML={{ __html: rawSvg }}
                                     />
                                 ) : (
-                                    <span className="text-xs text-slate-400">No renderable SVG</span>
+                                    <span className="text-xs text-slate-600 dark:text-slate-300">No renderable SVG</span>
                                 )}
                             </div>
                         </div>
@@ -499,7 +496,7 @@ export default function SvgToJsxConverter() {
                         </div>
 
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Generated React functional component will appear here"
                                 readOnly
                                 value={transformedOutput}
                                 placeholder="Generated React functional component will appear here..."

@@ -479,8 +479,7 @@ export default function JulianDateConverter() {
                                         <Calendar className="w-3.5 h-3.5 text-indigo-500" />
                                         Calendar Date (YYYY-MM-DD)
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={inputDate}
                                         onChange={(e) => setInputDate(e.target.value)}
                                         placeholder="2026-08-29 or -4713-01-01"
@@ -495,8 +494,7 @@ export default function JulianDateConverter() {
                                             <Clock className="w-3.5 h-3.5 text-indigo-500" />
                                             Time (HH:MM:SS)
                                         </label>
-                                        <input
-                                            type="text"
+                                        <input aria-label="Input value" type="text"
                                             value={inputTime}
                                             onChange={(e) => setInputTime(e.target.value)}
                                             placeholder="12:00:00"
@@ -509,8 +507,7 @@ export default function JulianDateConverter() {
                                             <Globe className="w-3.5 h-3.5 text-indigo-500" />
                                             Timezone Offset (Hours)
                                         </label>
-                                        <select
-                                            value={inputTimezoneOffset}
+                                        <select aria-label="Select option" value={inputTimezoneOffset}
                                             onChange={(e) => setInputTimezoneOffset(parseFloat(e.target.value))}
                                             className="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-sm bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                         >
@@ -538,8 +535,7 @@ export default function JulianDateConverter() {
                                         <Binary className="w-3.5 h-3.5 text-indigo-500" />
                                         Julian Day Number (JD)
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={inputJd}
                                         onChange={(e) => setInputJd(e.target.value)}
                                         placeholder="e.g. 2451545.0"
@@ -632,7 +628,7 @@ export default function JulianDateConverter() {
                                     <button
                                         type="button"
                                         onClick={() => handleCopy(astronomicalCalculations.mjd, "mjd")}
-                                        className="text-slate-400 hover:text-indigo-600 p-1 cursor-pointer"
+                                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 p-1 cursor-pointer"
                                         title="Copy MJD"
                                     >
                                         {copiedKey === "mjd" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
@@ -649,7 +645,7 @@ export default function JulianDateConverter() {
                                     <button
                                         type="button"
                                         onClick={() => handleCopy(astronomicalCalculations.rjd, "rjd")}
-                                        className="text-slate-400 hover:text-indigo-600 p-1 cursor-pointer"
+                                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 p-1 cursor-pointer"
                                         title="Copy RJD"
                                     >
                                         {copiedKey === "rjd" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
@@ -666,7 +662,7 @@ export default function JulianDateConverter() {
                                     <button
                                         type="button"
                                         onClick={() => handleCopy(astronomicalCalculations.gmst, "gmst")}
-                                        className="text-slate-400 hover:text-indigo-600 p-1 cursor-pointer"
+                                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 p-1 cursor-pointer"
                                         title="Copy GMST"
                                     >
                                         {copiedKey === "gmst" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
@@ -683,7 +679,7 @@ export default function JulianDateConverter() {
                                     <button
                                         type="button"
                                         onClick={() => handleCopy(astronomicalCalculations.unixTimestamp, "unix")}
-                                        className="text-slate-400 hover:text-indigo-600 p-1 cursor-pointer"
+                                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 p-1 cursor-pointer"
                                         title="Copy Unix Timestamp"
                                     >
                                         {copiedKey === "unix" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}
@@ -700,7 +696,7 @@ export default function JulianDateConverter() {
                                     <button
                                         type="button"
                                         onClick={() => handleCopy(astronomicalCalculations.julianCenturyJ2000, "t_century")}
-                                        className="text-slate-400 hover:text-indigo-600 p-1 cursor-pointer"
+                                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 p-1 cursor-pointer"
                                         title="Copy Julian Centuries"
                                     >
                                         {copiedKey === "t_century" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3" />}

@@ -484,7 +484,7 @@ Generated via TwisterTools Lightning Distance & Thunder Delay Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0.1"
                                         max="60"
@@ -493,8 +493,7 @@ Generated via TwisterTools Lightning Distance & Thunder Delay Calculator`;
                                         onChange={(e) => setSecondsInput(parseFloat(e.target.value) || 0)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="300"
                                         step="any"
@@ -570,8 +569,7 @@ Generated via TwisterTools Lightning Distance & Thunder Delay Calculator`;
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Air Temp (°{tempUnit})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         value={temperature}
                                         onChange={(e) => handleNumberInput(e, setTemperature)}
                                         className="w-full px-2.5 py-1.5 text-xs font-bold text-slate-900 bg-white border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
@@ -582,8 +580,7 @@ Generated via TwisterTools Lightning Distance & Thunder Delay Calculator`;
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Humidity (%)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="100"
                                         value={humidity}
@@ -596,8 +593,7 @@ Generated via TwisterTools Lightning Distance & Thunder Delay Calculator`;
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Altitude (Meters)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="8000"
                                         value={altitude}
@@ -718,7 +714,7 @@ Generated via TwisterTools Lightning Distance & Thunder Delay Calculator`;
                         <div className="p-4 bg-slate-900 text-white rounded-xl space-y-3 text-xs">
                             <div className="font-bold text-indigo-300 uppercase tracking-wider flex items-center justify-between">
                                 <span>Acoustic & Shockwave Metrics</span>
-                                <span className="text-[10px] text-slate-400 font-mono">30/30 Threshold: 30s</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">30/30 Threshold: 30s</span>
                             </div>
 
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px] text-slate-300">
@@ -730,7 +726,7 @@ Generated via TwisterTools Lightning Distance & Thunder Delay Calculator`;
 
                             {/* Threat Progress Bar */}
                             <div className="space-y-1 pt-1">
-                                <div className="flex justify-between text-[10px] text-slate-400 font-semibold">
+                                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-semibold">
                                     <span>Danger Proximity Scale</span>
                                     <span>{calculation.seconds <= 30 ? "⚠️ Inside Threat Perimeter" : "Outside Immediate Threat"}</span>
                                 </div>

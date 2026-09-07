@@ -394,7 +394,7 @@ export default function ImageToBase64Converter() {
                                 }`}
                             onClick={() => fileInputRef.current?.click()}
                         >
-                            <input
+                            <input aria-label="Upload file"
                                 ref={fileInputRef}
                                 type="file"
                                 accept="image/png,image/jpeg,image/webp,image/svg+xml,image/gif"
@@ -482,8 +482,7 @@ export default function ImageToBase64Converter() {
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Convert Output Format
                                     </label>
-                                    <select
-                                        value={targetOutputFormat}
+                                    <select aria-label="Select option" value={targetOutputFormat}
                                         onChange={(e) => {
                                             setTargetOutputFormat(e.target.value as "original" | "image/png" | "image/jpeg" | "image/webp");
                                         }}
@@ -500,8 +499,7 @@ export default function ImageToBase64Converter() {
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Max Constraint (Width/Height)
                                     </label>
-                                    <select
-                                        value={maxDimension}
+                                    <select aria-label="Select option" value={maxDimension}
                                         onChange={(e) => setMaxDimension(Number(e.target.value))}
                                         className="w-full py-1.5 px-2.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-800 bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                     >
@@ -520,7 +518,7 @@ export default function ImageToBase64Converter() {
                                         <span>Compression Quality</span>
                                         <span className="text-indigo-600">{quality}%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="10"
                                         max="100"
@@ -546,7 +544,7 @@ export default function ImageToBase64Converter() {
                     {sourceImageMeta ? (
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-slate-100">
                             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                     Dimensions
                                 </span>
                                 <p className="text-xs sm:text-sm font-black text-slate-900 mt-0.5">
@@ -554,7 +552,7 @@ export default function ImageToBase64Converter() {
                                 </p>
                             </div>
                             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                     Original Size
                                 </span>
                                 <p className="text-xs sm:text-sm font-black text-slate-900 mt-0.5">
@@ -562,7 +560,7 @@ export default function ImageToBase64Converter() {
                                 </p>
                             </div>
                             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                     Base64 Size
                                 </span>
                                 <p className="text-xs sm:text-sm font-black text-indigo-600 mt-0.5">
@@ -570,7 +568,7 @@ export default function ImageToBase64Converter() {
                                 </p>
                             </div>
                             <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                     Inflation Overhead
                                 </span>
                                 <p className="text-xs sm:text-sm font-black text-amber-600 mt-0.5">
@@ -580,7 +578,7 @@ export default function ImageToBase64Converter() {
                         </div>
                     ) : (
                         <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center gap-2 text-xs text-slate-500">
-                            <Info className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                            <Info className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                             <span>Select or drop an image above to calculate dimension metrics.</span>
                         </div>
                     )}
@@ -599,7 +597,7 @@ export default function ImageToBase64Converter() {
 
                             <div className="flex items-center gap-2">
                                 <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-700 cursor-pointer select-none">
-                                    <input
+                                    <input aria-label="Prefix"
                                         type="checkbox"
                                         checked={includePrefix}
                                         onChange={(e) => setIncludePrefix(e.target.checked)}
@@ -612,7 +610,7 @@ export default function ImageToBase64Converter() {
 
                         {/* Textarea Viewport */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Base64 encoded string output will appear here"
                                 readOnly
                                 value={renderedOutputString}
                                 placeholder="Base64 encoded string output will appear here..."

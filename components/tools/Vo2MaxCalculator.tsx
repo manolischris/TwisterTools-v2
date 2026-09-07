@@ -608,8 +608,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Age (Years)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="15"
                                         max="100"
                                         value={age === 0 ? "" : age}
@@ -627,15 +626,14 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                             <Heart className="w-3.5 h-3.5 text-rose-500" /> Resting Heart Rate
                                         </label>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="35"
                                                 max="120"
                                                 value={restingHr === 0 ? "" : restingHr}
                                                 onChange={(e) => handleNumberInput(e, (val) => setRestingHr(Math.max(30, Math.min(140, val))))}
                                                 className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">BPM</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">BPM</span>
                                         </div>
                                     </div>
                                     <div className="p-3 bg-indigo-50/60 rounded-xl border border-indigo-100 flex flex-col justify-center">
@@ -653,8 +651,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                     </label>
                                     {unitSystem === "metric" ? (
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 step="50"
                                                 min="500"
                                                 max="5000"
@@ -662,11 +659,11 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setCooperMeters(Math.max(500, val)))}
                                                 className="w-full pl-3 pr-16 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">meters</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">meters</span>
                                         </div>
                                     ) : (
                                         <div className="relative">
-                                            <input
+                                            <input aria-label="meters"
                                                 type="number"
                                                 step="0.05"
                                                 min="0.3"
@@ -675,7 +672,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setCooperMiles(Math.max(0.3, val)))}
                                                 className="w-full pl-3 pr-14 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">miles</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">miles</span>
                                         </div>
                                     )}
                                     <p className="text-[11px] text-slate-500">Run or walk at maximum sustainable effort around a flat track for 12 continuous minutes.</p>
@@ -691,8 +688,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                             </label>
                                             <div className="relative">
                                                 {unitSystem === "metric" ? (
-                                                    <input
-                                                        type="number"
+                                                    <input aria-label="Input value" type="number"
                                                         min="30"
                                                         max="250"
                                                         value={weightKg === 0 ? "" : weightKg}
@@ -700,8 +696,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                                         className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                                     />
                                                 ) : (
-                                                    <input
-                                                        type="number"
+                                                    <input aria-label="Input value" type="number"
                                                         min="70"
                                                         max="550"
                                                         value={weightLbs === 0 ? "" : weightLbs}
@@ -709,7 +704,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                                         className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                                     />
                                                 )}
-                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                     {unitSystem === "metric" ? "kg" : "lbs"}
                                                 </span>
                                             </div>
@@ -720,15 +715,14 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                                 <Heart className="w-3.5 h-3.5 text-rose-500" /> Post-Walk HR (10s pulse × 6)
                                             </label>
                                             <div className="relative">
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min="60"
                                                     max="200"
                                                     value={postWalkHr === 0 ? "" : postWalkHr}
                                                     onChange={(e) => handleNumberInput(e, (val) => setPostWalkHr(Math.max(50, Math.min(220, val))))}
                                                     className="w-full pl-3 pr-12 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                                 />
-                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">BPM</span>
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">BPM</span>
                                             </div>
                                         </div>
                                     </div>
@@ -739,18 +733,17 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                         </label>
                                         <div className="grid grid-cols-2 gap-3">
                                             <div className="relative">
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min="8"
                                                     max="35"
                                                     value={walkMinutes === 0 ? "" : walkMinutes}
                                                     onChange={(e) => handleNumberInput(e, (val) => setWalkMinutes(Math.max(5, Math.min(60, val))))}
                                                     className="w-full pl-3 pr-12 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                                 />
-                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">min</span>
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">min</span>
                                             </div>
                                             <div className="relative">
-                                                <input
+                                                <input aria-label="min"
                                                     type="number"
                                                     min="0"
                                                     max="59"
@@ -758,7 +751,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                                     onChange={(e) => handleNumberInput(e, (val) => setWalkSeconds(Math.max(0, Math.min(59, val))))}
                                                     className="w-full pl-3 pr-12 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                                 />
-                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">sec</span>
+                                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">sec</span>
                                             </div>
                                         </div>
                                     </div>
@@ -771,15 +764,14 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                         <Activity className="w-3.5 h-3.5 text-indigo-600" /> 1-Minute Recovery Heart Rate
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="45"
                                             max="180"
                                             value={recoveryPulse1Min === 0 ? "" : recoveryPulse1Min}
                                             onChange={(e) => handleNumberInput(e, (val) => setRecoveryPulse1Min(Math.max(40, Math.min(200, val))))}
                                             className="w-full pl-3 pr-14 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">beats/min</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">beats/min</span>
                                     </div>
                                     <p className="text-[11px] text-slate-500">Step up and down on a 12-inch bench at 24 steps/min for 3 minutes. Sit immediately and count total heartbeats for 1 full minute.</p>
                                 </div>
@@ -869,7 +861,7 @@ Calculated at twistertools.com/tools/calculators/vo2-max-calculator`;
                                         />
                                     )}
                                 </div>
-                                <div className="flex justify-between text-[10px] font-bold text-slate-400">
+                                <div className="flex justify-between text-[10px] font-bold text-slate-600 dark:text-slate-300">
                                     <span>15</span>
                                     <span>30</span>
                                     <span>45</span>

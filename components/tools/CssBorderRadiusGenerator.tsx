@@ -410,7 +410,7 @@ export default function CssBorderRadiusGenerator() {
                                                 {allRadius}{unit}
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max={unit === "%" ? 50 : unit === "rem" ? 10 : 250}
@@ -428,7 +428,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Top-Left (TL)</span>
                                                 <span className="font-mono text-indigo-600">{tlRadius}{unit}</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max={unit === "%" ? 50 : unit === "rem" ? 10 : 250}
@@ -445,7 +445,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Top-Right (TR)</span>
                                                 <span className="font-mono text-indigo-600">{trRadius}{unit}</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max={unit === "%" ? 50 : unit === "rem" ? 10 : 250}
@@ -462,7 +462,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Bottom-Right (BR)</span>
                                                 <span className="font-mono text-indigo-600">{brRadius}{unit}</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max={unit === "%" ? 50 : unit === "rem" ? 10 : 250}
@@ -479,7 +479,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Bottom-Left (BL)</span>
                                                 <span className="font-mono text-indigo-600">{blRadius}{unit}</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max={unit === "%" ? 50 : unit === "rem" ? 10 : 250}
@@ -533,7 +533,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Horizontal TL</span>
                                                 <span className="font-mono text-indigo-600">{hTl}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -547,7 +547,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Horizontal TR</span>
                                                 <span className="font-mono text-indigo-600">{hTr}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -561,7 +561,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Horizontal BR</span>
                                                 <span className="font-mono text-indigo-600">{hBr}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -575,7 +575,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Horizontal BL</span>
                                                 <span className="font-mono text-indigo-600">{hBl}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -598,7 +598,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Vertical TL</span>
                                                 <span className="font-mono text-purple-600">{vTl}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -612,7 +612,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Vertical TR</span>
                                                 <span className="font-mono text-purple-600">{vTr}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -626,7 +626,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Vertical BR</span>
                                                 <span className="font-mono text-purple-600">{vBr}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -640,7 +640,7 @@ export default function CssBorderRadiusGenerator() {
                                                 <span>Vertical BL</span>
                                                 <span className="font-mono text-purple-600">{vBl}%</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -672,7 +672,7 @@ export default function CssBorderRadiusGenerator() {
                                                     }`}
                                             >
                                                 <span className="block truncate font-bold">{preset.name}</span>
-                                                <span className="block text-[10px] text-slate-400 font-normal">{preset.category}</span>
+                                                <span className="block text-[10px] text-slate-600 dark:text-slate-300 font-normal">{preset.category}</span>
                                             </button>
                                         ))}
                                     </div>
@@ -682,7 +682,7 @@ export default function CssBorderRadiusGenerator() {
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                         Custom Clip-Path Function (Editable)
                                     </label>
-                                    <textarea
+                                    <textarea aria-label="Input text content"
                                         rows={2}
                                         value={customClipPath}
                                         onChange={(e) => setCustomClipPath(e.target.value)}
@@ -703,8 +703,7 @@ export default function CssBorderRadiusGenerator() {
                             </label>
                             <div className="flex items-center gap-2 text-xs">
                                 <label className="flex items-center gap-1 cursor-pointer text-slate-600">
-                                    <input
-                                        type="checkbox"
+                                    <input type="checkbox"
                                         checked={showBorder}
                                         onChange={(e) => setShowBorder(e.target.checked)}
                                         className="rounded text-indigo-600 accent-indigo-600"
@@ -712,8 +711,7 @@ export default function CssBorderRadiusGenerator() {
                                     Border
                                 </label>
                                 <label className="flex items-center gap-1 cursor-pointer text-slate-600">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Shadow" type="checkbox"
                                         checked={showShadow}
                                         onChange={(e) => setShowShadow(e.target.checked)}
                                         className="rounded text-indigo-600 accent-indigo-600"

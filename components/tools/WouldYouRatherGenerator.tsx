@@ -589,7 +589,7 @@ URL: https://twistertools.com/tools/random-tools/would-you-rather-generator
                             {/* OR Divider */}
                             <div className="flex items-center justify-center my-3 relative">
                                 <div className="w-full border-t border-slate-200 absolute" />
-                                <span className="relative px-3 bg-white text-s font-black uppercase text-slate-400 tracking-wider">
+                                <span className="relative px-3 bg-white text-s font-black uppercase text-slate-600 dark:text-slate-300 tracking-wider">
                                     OR
                                 </span>
                             </div>
@@ -837,7 +837,7 @@ URL: https://twistertools.com/tools/random-tools/would-you-rather-generator
                                 Add Your Custom Dilemma
                             </label>
                             <form onSubmit={handleAddCustom} className="space-y-2.5">
-                                <input
+                                <input aria-label="Option A"
                                     type="text"
                                     placeholder="Option A (e.g., Live underwater forever)"
                                     value={customOptionA}
@@ -845,7 +845,7 @@ URL: https://twistertools.com/tools/random-tools/would-you-rather-generator
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                     maxLength={120}
                                 />
-                                <input
+                                <input aria-label="Option B"
                                     type="text"
                                     placeholder="Option B (e.g., Live in orbit on Mars forever)"
                                     value={customOptionB}

@@ -523,7 +523,7 @@ export default function TextColumnExtractor() {
                             </span>
 
                             <div className="flex items-center gap-2">
-                                <input
+                                <input aria-label="Upload file"
                                     type="file"
                                     ref={fileInputRef}
                                     onChange={handleFileUpload}
@@ -558,8 +558,7 @@ export default function TextColumnExtractor() {
                                     Input Delimiter / Splitter:
                                 </label>
                                 <label className="flex items-center gap-1.5 text-xs font-semibold text-slate-600 cursor-pointer">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Headers" type="checkbox"
                                         checked={hasHeaders}
                                         onChange={(e) => setHasHeaders(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -598,7 +597,7 @@ export default function TextColumnExtractor() {
                             {inputDelimiter === "custom" && (
                                 <div className="pt-2 flex items-center gap-2">
                                     <span className="text-xs font-semibold text-slate-600">Custom String:</span>
-                                    <input
+                                    <input aria-label="Custom String"
                                         type="text"
                                         value={customInputDelim}
                                         onChange={(e) => setCustomInputDelim(e.target.value)}
@@ -611,7 +610,7 @@ export default function TextColumnExtractor() {
                             {inputDelimiter === "regex" && (
                                 <div className="pt-2 flex items-center gap-2">
                                     <span className="text-xs font-semibold text-slate-600">Regex Pattern:</span>
-                                    <input
+                                    <input aria-label="Regex Pattern"
                                         type="text"
                                         value={inputRegexDelim}
                                         onChange={(e) => setInputRegexDelim(e.target.value)}
@@ -629,7 +628,7 @@ export default function TextColumnExtractor() {
                                     <span>Raw Delimited Content</span>
                                     <span className="text-slate-300 hidden sm:inline">|</span>
                                     <div className="flex items-center gap-1 flex-wrap">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mr-1">Load Sample:</span>
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mr-1">Load Sample:</span>
                                         {SAMPLE_DATASETS.map((sample) => (
                                             <button
                                                 key={sample.name}
@@ -644,7 +643,7 @@ export default function TextColumnExtractor() {
                                 </div>
                                 <span className="font-mono">{parsedMatrix.length} rows parsed &bull; {maxColumns} columns detected</span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Paste CSV, TSV, log entries, or delimited data here..."
@@ -683,7 +682,7 @@ export default function TextColumnExtractor() {
                             {/* Column Range Input */}
                             <div className="flex items-center gap-2">
                                 <span className="text-xs font-semibold text-slate-500 whitespace-nowrap">Indexes/Ranges:</span>
-                                <input
+                                <input aria-label="Indexes/Ranges"
                                     type="text"
                                     value={columnRangeInput}
                                     onChange={handleRangeInputChange}
@@ -695,7 +694,7 @@ export default function TextColumnExtractor() {
                             {/* Interactive Badges Grid */}
                             <div className="flex flex-wrap gap-1.5 pt-1 max-h-32 overflow-y-auto p-2 bg-slate-50 border border-slate-200/80 rounded-xl">
                                 {maxColumns === 0 ? (
-                                    <span className="text-xs text-slate-400 italic">No columns detected. Paste delimited text above.</span>
+                                    <span className="text-xs text-slate-600 dark:text-slate-300 italic">No columns detected. Paste delimited text above.</span>
                                 ) : (
                                     Array.from({ length: maxColumns }, (_, idx) => {
                                         const isSelected = selectedColumns.includes(idx);
@@ -800,7 +799,7 @@ export default function TextColumnExtractor() {
                             {/* Options Checkboxes */}
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-2 border-t border-slate-200/70 text-xs font-medium text-slate-700">
                                 <label className="flex items-center gap-1.5 cursor-pointer">
-                                    <input
+                                    <input aria-label="Headers In Output"
                                         type="checkbox"
                                         checked={includeHeadersInOutput}
                                         onChange={(e) => setIncludeHeadersInOutput(e.target.checked)}
@@ -810,7 +809,7 @@ export default function TextColumnExtractor() {
                                 </label>
 
                                 <label className="flex items-center gap-1.5 cursor-pointer">
-                                    <input
+                                    <input aria-label="Include Headers"
                                         type="checkbox"
                                         checked={deduplicateRows}
                                         onChange={(e) => setDeduplicateRows(e.target.checked)}
@@ -820,7 +819,7 @@ export default function TextColumnExtractor() {
                                 </label>
 
                                 <label className="flex items-center gap-1.5 cursor-pointer">
-                                    <input
+                                    <input aria-label="Deduplicate Rows"
                                         type="checkbox"
                                         checked={quoteOutputs}
                                         onChange={(e) => setQuoteOutputs(e.target.checked)}
@@ -830,7 +829,7 @@ export default function TextColumnExtractor() {
                                 </label>
 
                                 <label className="flex items-center gap-1.5 cursor-pointer">
-                                    <input
+                                    <input aria-label="Wrap in &quot;Quotes&quot;"
                                         type="checkbox"
                                         checked={trimWhitespace}
                                         onChange={(e) => setTrimWhitespace(e.target.checked)}
@@ -840,7 +839,7 @@ export default function TextColumnExtractor() {
                                 </label>
 
                                 <label className="flex items-center gap-1.5 cursor-pointer">
-                                    <input
+                                    <input aria-label="Trim Whitespace"
                                         type="checkbox"
                                         checked={removeEmptyLines}
                                         onChange={(e) => setRemoveEmptyLines(e.target.checked)}
@@ -861,7 +860,7 @@ export default function TextColumnExtractor() {
                             </div>
 
                             {previewTab === "formatted" ? (
-                                <textarea
+                                <textarea aria-label="Extracted columns will automatically render here"
                                     readOnly
                                     value={extractedOutput}
                                     placeholder="Extracted columns will automatically render here..."
@@ -872,7 +871,7 @@ export default function TextColumnExtractor() {
                             ) : (
                                 <div className="border border-slate-300 rounded-xl overflow-x-auto max-h-[300px] overflow-y-auto bg-slate-50">
                                     {extractedTableData.rows.length === 0 ? (
-                                        <div className="p-8 text-center text-xs text-slate-400 italic">
+                                        <div className="p-8 text-center text-xs text-slate-600 dark:text-slate-300 italic">
                                             No columns selected or data available for table preview.
                                         </div>
                                     ) : (
@@ -890,7 +889,7 @@ export default function TextColumnExtractor() {
                                             <tbody className="divide-y divide-slate-200 bg-white">
                                                 {extractedTableData.rows.map((row, rIdx) => (
                                                     <tr key={rIdx} className="hover:bg-indigo-50/40">
-                                                        <td className="p-2 font-mono text-[10px] text-slate-400 text-center">{rIdx + 1}</td>
+                                                        <td className="p-2 font-mono text-[10px] text-slate-600 dark:text-slate-300 text-center">{rIdx + 1}</td>
                                                         {row.map((cell, cIdx) => (
                                                             <td key={cIdx} className="p-2 border-l border-slate-200 font-mono text-slate-800 whitespace-nowrap">
                                                                 {cell}

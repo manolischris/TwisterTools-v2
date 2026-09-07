@@ -379,7 +379,7 @@ export default function FteCalculator() {
                                 <div>
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">Weekly Standard</label>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <input
+                                        <input aria-label="Weekly Standard"
                                             type="number"
                                             min={1}
                                             max={80}
@@ -387,14 +387,14 @@ export default function FteCalculator() {
                                             onChange={(e) => handleNumberInput(e, setStandardWeeklyHours, 1, 80)}
                                             className="w-full text-xs sm:text-sm font-bold text-slate-800 outline-none"
                                         />
-                                        <span className="text-[10px] text-slate-400 font-bold">hrs</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-bold">hrs</span>
                                     </div>
                                 </div>
 
                                 <div>
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">Weeks / Year</label>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <input
+                                        <input aria-label="Weeks / Year"
                                             type="number"
                                             min={1}
                                             max={52}
@@ -402,23 +402,22 @@ export default function FteCalculator() {
                                             onChange={(e) => handleNumberInput(e, setWeeksPerYear, 1, 52)}
                                             className="w-full text-xs sm:text-sm font-bold text-slate-800 outline-none"
                                         />
-                                        <span className="text-[10px] text-slate-400 font-bold">wks</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-bold">wks</span>
                                     </div>
                                 </div>
 
                                 <div className="col-span-2 sm:col-span-1">
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">Avg Hourly Wage</label>
                                     <div className="flex items-center gap-1 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 focus-within:ring-2 focus-within:ring-indigo-500">
-                                        <span className="text-xs text-slate-400 font-bold">$</span>
-                                        <input
-                                            type="number"
+                                        <span className="text-xs text-slate-600 dark:text-slate-300 font-bold">$</span>
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             max={1000}
                                             value={averageHourlyRate}
                                             onChange={(e) => handleNumberInput(e, setAverageHourlyRate, 0, 1000)}
                                             className="w-full text-xs sm:text-sm font-bold text-slate-800 outline-none"
                                         />
-                                        <span className="text-[10px] text-slate-400 font-bold">/hr</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-bold">/hr</span>
                                     </div>
                                 </div>
                             </div>
@@ -460,7 +459,7 @@ export default function FteCalculator() {
                                     </div>
                                     <div className="flex gap-2">
                                         <div className="relative flex-1">
-                                            <input
+                                            <input aria-label="Select timeframe below"
                                                 type="number"
                                                 min={0}
                                                 max={1000000}
@@ -513,8 +512,7 @@ export default function FteCalculator() {
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                                 Full-Time Staff (30+ hrs/wk)
                                             </label>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0}
                                                 max={10000}
                                                 value={quickFullTimeCount}
@@ -527,8 +525,7 @@ export default function FteCalculator() {
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                                 Part-Time Hours / Wk (All PT)
                                             </label>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0}
                                                 max={100000}
                                                 value={quickPartTimeHours}
@@ -553,7 +550,7 @@ export default function FteCalculator() {
 
                                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                                         <div className="col-span-2 sm:col-span-3">
-                                            <input
+                                            <input aria-label="Role / Title"
                                                 type="text"
                                                 placeholder="Role / Title (e.g. Support Associate)"
                                                 value={newTierName}
@@ -564,7 +561,7 @@ export default function FteCalculator() {
 
                                         <div>
                                             <label className="block text-[10px] font-semibold text-slate-500 mb-0.5">Hours/Wk per Person</label>
-                                            <input
+                                            <input aria-label="Hours/Wk per Person"
                                                 type="number"
                                                 min={1}
                                                 max={100}
@@ -576,7 +573,7 @@ export default function FteCalculator() {
 
                                         <div>
                                             <label className="block text-[10px] font-semibold text-slate-500 mb-0.5">Staff Headcount</label>
-                                            <input
+                                            <input aria-label="Staff Headcount"
                                                 type="number"
                                                 min={1}
                                                 max={500}
@@ -588,7 +585,7 @@ export default function FteCalculator() {
 
                                         <div>
                                             <label className="block text-[10px] font-semibold text-slate-500 mb-0.5">Hourly Wage ($)</label>
-                                            <input
+                                            <input aria-label="Hourly Wage ($)"
                                                 type="number"
                                                 min={0}
                                                 max={1000}
@@ -600,7 +597,7 @@ export default function FteCalculator() {
                                     </div>
 
                                     <div className="flex gap-2">
-                                        <input
+                                        <input aria-label="Department"
                                             type="text"
                                             placeholder="Department (e.g. Sales, Support)"
                                             value={newTierDept}
@@ -620,7 +617,7 @@ export default function FteCalculator() {
                                 {/* Roster Table List */}
                                 <div className="space-y-2 max-h-56 overflow-y-auto pr-1">
                                     {employees.length === 0 ? (
-                                        <p className="text-xs text-slate-400 text-center py-4 italic">No staff tiers entered. Add roles above.</p>
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 text-center py-4 italic">No staff tiers entered. Add roles above.</p>
                                     ) : (
                                         employees.map((emp) => {
                                             const tierFte = (emp.hoursPerWeek * emp.headcount) / standardWeeklyHours;
@@ -646,14 +643,14 @@ export default function FteCalculator() {
                                                             <span className="text-xs font-mono font-black text-indigo-600 block">
                                                                 {tierFte.toFixed(2)} FTE
                                                             </span>
-                                                            <span className="text-[10px] text-slate-400 font-mono block">
+                                                            <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono block">
                                                                 {emp.hoursPerWeek * emp.headcount} hrs/wk
                                                             </span>
                                                         </div>
                                                         <button
                                                             type="button"
                                                             onClick={() => handleRemoveRosterRow(emp.id)}
-                                                            className="text-slate-400 hover:text-rose-500 p-1 transition cursor-pointer"
+                                                            className="text-slate-600 dark:text-slate-300 hover:text-rose-500 p-1 transition cursor-pointer"
                                                             title="Delete Staff Tier"
                                                         >
                                                             <Trash2 className="w-3.5 h-3.5" />
@@ -712,7 +709,7 @@ export default function FteCalculator() {
                                 <span className="text-lg font-black text-slate-900 font-mono">
                                     ${Math.round(activeSummary.annualCost).toLocaleString()}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">Based on ${averageHourlyRate}/hr avg</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">Based on ${averageHourlyRate}/hr avg</span>
                             </div>
 
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl space-y-0.5">
@@ -720,7 +717,7 @@ export default function FteCalculator() {
                                 <span className="text-lg font-black text-slate-900 font-mono">
                                     ${Math.round(activeSummary.monthlyCost).toLocaleString()}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">Monthly labor expense</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">Monthly labor expense</span>
                             </div>
 
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl space-y-0.5 col-span-2 sm:col-span-1">
@@ -728,7 +725,7 @@ export default function FteCalculator() {
                                 <span className="text-lg font-black text-indigo-600 font-mono">
                                     {((activeSummary.fte / (calcMode === "roster" ? Math.max(1, rosterCalculations.totalHeadcount) : Math.max(1, quickFullTimeCount))) * 100).toFixed(0)}%
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">FTE vs Headcount density</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">FTE vs Headcount density</span>
                             </div>
                         </div>
 
@@ -771,7 +768,7 @@ export default function FteCalculator() {
                                             </div>
                                             <div className="text-right font-mono">
                                                 <span className="font-bold text-indigo-600">{data.fte.toFixed(2)} FTE</span>
-                                                <span className="text-[10px] text-slate-400 block">${Math.round(data.payroll * weeksPerYear).toLocaleString()}/yr</span>
+                                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">${Math.round(data.payroll * weeksPerYear).toLocaleString()}/yr</span>
                                             </div>
                                         </div>
                                     ))}
@@ -955,15 +952,15 @@ export default function FteCalculator() {
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">Mandatory Coverage</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">Mandatory Coverage</span>
                                 <p>Must offer Minimum Essential Coverage (MEC) providing Minimum Value to at least 95% of full-time staff and dependents.</p>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">IRS Reporting Forms</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">IRS Reporting Forms</span>
                                 <p>Obligated to file annual Forms 1094-C (transmittal) and 1095-C (individual employee health coverage statements).</p>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">Penalty A & B Liabilities</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">Penalty A & B Liabilities</span>
                                 <p>Subject to non-offering or unaffordability excise taxes if any employee receives a Premium Tax Credit on an exchange.</p>
                             </div>
                         </div>

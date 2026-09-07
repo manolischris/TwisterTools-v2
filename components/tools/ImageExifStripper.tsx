@@ -454,7 +454,7 @@ export default function ImageExifStripper() {
                                     : "border-slate-300 hover:border-indigo-400 hover:bg-slate-50/60"
                                 }`}
                         >
-                            <input
+                            <input aria-label="Upload file"
                                 ref={fileInputRef}
                                 type="file"
                                 accept="image/jpeg,image/png,image/webp"
@@ -520,7 +520,7 @@ export default function ImageExifStripper() {
                                     <div className="border border-slate-200 rounded-xl overflow-hidden divide-y divide-slate-100 bg-white">
                                         <div className="p-2.5 flex items-center justify-between text-xs hover:bg-slate-50">
                                             <span className="text-slate-500 flex items-center gap-1.5">
-                                                <Camera className="w-3.5 h-3.5 text-slate-400" /> Camera Hardware
+                                                <Camera className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" /> Camera Hardware
                                             </span>
                                             <span className="font-medium text-slate-800">
                                                 {imageState.exifData.make || imageState.exifData.model
@@ -530,7 +530,7 @@ export default function ImageExifStripper() {
                                         </div>
                                         <div className="p-2.5 flex items-center justify-between text-xs hover:bg-slate-50">
                                             <span className="text-slate-500 flex items-center gap-1.5">
-                                                <Calendar className="w-3.5 h-3.5 text-slate-400" /> Date & Timestamp
+                                                <Calendar className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" /> Date & Timestamp
                                             </span>
                                             <span className="font-medium text-slate-800">
                                                 {imageState.exifData.dateTime || "Not detected"}
@@ -538,7 +538,7 @@ export default function ImageExifStripper() {
                                         </div>
                                         <div className="p-2.5 flex items-center justify-between text-xs hover:bg-slate-50">
                                             <span className="text-slate-500 flex items-center gap-1.5">
-                                                <MapPin className="w-3.5 h-3.5 text-slate-400" /> GPS Coordinates
+                                                <MapPin className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" /> GPS Coordinates
                                             </span>
                                             <span className={`font-semibold ${imageState.exifData.gpsLatitude ? "text-rose-600 font-mono text-[11px]" : "text-slate-800"}`}>
                                                 {imageState.exifData.gpsLatitude ? "Geotag Attached (Privacy Risk)" : "No GPS embedded"}
@@ -546,7 +546,7 @@ export default function ImageExifStripper() {
                                         </div>
                                         <div className="p-2.5 flex items-center justify-between text-xs hover:bg-slate-50">
                                             <span className="text-slate-500 flex items-center gap-1.5">
-                                                <SlidersHorizontal className="w-3.5 h-3.5 text-slate-400" /> Exposure / Optics
+                                                <SlidersHorizontal className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" /> Exposure / Optics
                                             </span>
                                             <span className="font-medium text-slate-800 font-mono text-[11px]">
                                                 {imageState.exifData.fNumber || imageState.exifData.exposureTime || imageState.exifData.iso
@@ -624,7 +624,7 @@ export default function ImageExifStripper() {
                                 <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                     <span>Compression Quality:</span>
                                     <div className="flex items-center gap-1">
-                                        <input
+                                        <input aria-label="Compression Quality"
                                             type="number"
                                             min="10"
                                             max="100"
@@ -639,10 +639,10 @@ export default function ImageExifStripper() {
                                             }
                                             className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-slate-400 font-normal">%</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-normal">%</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="10"
                                     max="100"
@@ -720,7 +720,7 @@ export default function ImageExifStripper() {
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                         <span className="flex items-center gap-1">
-                            <Layers className="w-3.5 h-3.5 text-slate-400" />
+                            <Layers className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             Canvas Raster Clean Pipeline
                         </span>
                         <span className="text-indigo-600 font-semibold">Ready for Web Publishing</span>

@@ -449,7 +449,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-semibold text-slate-600">Current Season</label>
-                                    <select
+                                    <select aria-label="Select Current Season"
                                         value={season}
                                         onChange={(e) => setSeason(e.target.value as SeasonType)}
                                         className="w-full px-3 py-2 text-xs font-medium text-slate-800 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -463,7 +463,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
 
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-semibold text-slate-600">Light Exposure</label>
-                                    <select
+                                    <select aria-label="Select Light Exposure"
                                         value={light}
                                         onChange={(e) => setLight(e.target.value as LightExposure)}
                                         className="w-full px-3 py-2 text-xs font-medium text-slate-800 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -482,7 +482,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                                         <label className="text-xs font-semibold text-slate-700">Ambient Temperature</label>
                                         <span className="text-xs font-bold text-slate-900">{roomTempC}°{unitSystem === "metric" ? "C" : "F"}</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={unitSystem === "metric" ? 14 : 58}
                                         max={unitSystem === "metric" ? 34 : 94}
@@ -498,7 +498,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                                         <label className="text-xs font-semibold text-slate-700">Relative Humidity</label>
                                         <span className="text-xs font-bold text-slate-900">{humidityPct}% RH</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={20}
                                         max={85}
@@ -521,7 +521,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-semibold text-slate-600">Pot Material</label>
-                                    <select
+                                    <select aria-label="Select Pot Material"
                                         value={potMaterial}
                                         onChange={(e) => setPotMaterial(e.target.value as PotMaterial)}
                                         className="w-full px-3 py-2 text-xs font-medium text-slate-800 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -536,7 +536,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
 
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-semibold text-slate-600">Potting Soil Blend</label>
-                                    <select
+                                    <select aria-label="Select Potting Soil Blend"
                                         value={soilBlend}
                                         onChange={(e) => setSoilBlend(e.target.value as SoilBlend)}
                                         className="w-full px-3 py-2 text-xs font-medium text-slate-800 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -592,7 +592,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                                     <div className="space-y-1">
                                         <label className="text-[11px] font-bold text-slate-600 uppercase">Top Rim Diameter</label>
                                         <div className="flex items-center gap-1">
-                                            <input
+                                            <input aria-label="Top Rim Diameter"
                                                 type="number"
                                                 min={5}
                                                 max={100}
@@ -609,7 +609,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                                     <div className="space-y-1">
                                         <label className="text-[11px] font-bold text-slate-600 uppercase">Bottom Base Diameter</label>
                                         <div className="flex items-center gap-1">
-                                            <input
+                                            <input aria-label="Bottom Base Diameter"
                                                 type="number"
                                                 min={3}
                                                 max={90}
@@ -626,7 +626,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                                     <div className="space-y-1">
                                         <label className="text-[11px] font-bold text-slate-600 uppercase">Length / Side</label>
                                         <div className="flex items-center gap-1">
-                                            <input
+                                            <input aria-label="Length / Side"
                                                 type="number"
                                                 min={5}
                                                 max={120}
@@ -643,7 +643,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                                     <div className="space-y-1">
                                         <label className="text-[11px] font-bold text-slate-600 uppercase">Width</label>
                                         <div className="flex items-center gap-1">
-                                            <input
+                                            <input aria-label="Width"
                                                 type="number"
                                                 min={5}
                                                 max={100}
@@ -659,7 +659,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-600 uppercase">Pot Height / Depth</label>
                                     <div className="flex items-center gap-1">
-                                        <input
+                                        <input aria-label="Pot Height / Depth"
                                             type="number"
                                             min={5}
                                             max={120}
@@ -757,7 +757,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                             <div className="grid grid-cols-3 gap-2 pt-1">
                                 {intervalCalculations.nextDates.map((dateStr, idx) => (
                                     <div key={idx} className="p-2.5 bg-white border border-slate-200 rounded-lg text-center shadow-2xs">
-                                        <span className="text-[10px] font-bold text-slate-400 block uppercase">Session #{idx + 1}</span>
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 block uppercase">Session #{idx + 1}</span>
                                         <span className="text-xs font-extrabold text-indigo-950">{dateStr}</span>
                                     </div>
                                 ))}
@@ -837,8 +837,8 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                     {/* Filter and Search Bar */}
                     <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
                         <div className="relative flex-1">
-                            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                            <input
+                            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300" />
+                            <input aria-label="Search species"
                                 type="text"
                                 placeholder="Search species (e.g., Monstera, Fern, Succulent, Pothos)..."
                                 value={searchQuery}
@@ -879,7 +879,7 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                             <tbody className="divide-y divide-slate-200 font-medium">
                                 {filteredPresets.length === 0 ? (
                                     <tr>
-                                        <td colSpan={6} className="p-4 text-center text-xs text-slate-400">
+                                        <td colSpan={6} className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">
                                             No plant species matched your search query.
                                         </td>
                                     </tr>
@@ -948,11 +948,11 @@ Calculated via twistertools.com/tools/home-tools/plant-watering-calculator`;
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Cylinder Flowerpot Volume:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Cylinder Flowerpot Volume:</span>
                                 <strong className="text-indigo-300 text-sm">V = π × r² × h</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Tapered Round Pot (Frustum):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Tapered Round Pot (Frustum):</span>
                                 <strong className="text-indigo-300 text-sm">V = (1/3) × π × h × (r₁² + r₂² + r₁r₂)</strong>
                             </div>
                         </div>

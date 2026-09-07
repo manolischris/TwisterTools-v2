@@ -429,7 +429,7 @@ export default function FractionCalculator() {
                     {mode === "mixed" && (
                       <div className="flex flex-col items-center">
                         <span className="text-[10px] font-medium text-slate-500 mb-1">Whole</span>
-                        <input
+                        <input aria-label="Whole"
                           type="text"
                           inputMode="numeric"
                           value={w1}
@@ -442,7 +442,7 @@ export default function FractionCalculator() {
 
                     <div className="flex flex-col items-center space-y-1.5 flex-1 max-w-[120px]">
                       <span className="text-[10px] font-medium text-slate-500">Numerator</span>
-                      <input
+                      <input aria-label="Numerator"
                         type="text"
                         inputMode="numeric"
                         value={n1}
@@ -451,14 +451,12 @@ export default function FractionCalculator() {
                         placeholder="1"
                       />
                       <div className="w-full h-0.5 bg-slate-400 rounded-full my-1"></div>
-                      <input
-                        type="text"
+                      <input aria-label="Denominator" type="text"
                         inputMode="numeric"
                         value={d1}
                         onChange={handleInputChange(setD1)}
                         className="w-full h-11 text-center text-base font-bold bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-600 outline-none shadow-sm text-slate-800"
-                        placeholder="2"
-                      />
+                        placeholder="2"/>
                       <span className="text-[10px] font-medium text-slate-500">Denominator</span>
                     </div>
                   </div>
@@ -477,7 +475,7 @@ export default function FractionCalculator() {
                     {mode === "mixed" && (
                       <div className="flex flex-col items-center">
                         <span className="text-[10px] font-medium text-slate-500 mb-1">Whole</span>
-                        <input
+                        <input aria-label="Whole"
                           type="text"
                           inputMode="numeric"
                           value={w2}
@@ -490,7 +488,7 @@ export default function FractionCalculator() {
 
                     <div className="flex flex-col items-center space-y-1.5 flex-1 max-w-[120px]">
                       <span className="text-[10px] font-medium text-slate-500">Numerator</span>
-                      <input
+                      <input aria-label="Numerator"
                         type="text"
                         inputMode="numeric"
                         value={n2}
@@ -499,14 +497,12 @@ export default function FractionCalculator() {
                         placeholder="3"
                       />
                       <div className="w-full h-0.5 bg-slate-400 rounded-full my-1"></div>
-                      <input
-                        type="text"
+                      <input aria-label="Denominator" type="text"
                         inputMode="numeric"
                         value={d2}
                         onChange={handleInputChange(setD2)}
                         className="w-full h-11 text-center text-base font-bold bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-600 outline-none shadow-sm text-slate-800"
-                        placeholder="4"
-                      />
+                        placeholder="4"/>
                       <span className="text-[10px] font-medium text-slate-500">Denominator</span>
                     </div>
                   </div>
@@ -563,7 +559,7 @@ export default function FractionCalculator() {
                             <div className="w-full h-0.5 bg-indigo-500 my-0.5"></div>
                             <span>{result.simpDen}</span>
                           </div>
-                          <span className="text-slate-400 text-xl font-normal mx-1">=</span>
+                          <span className="text-slate-600 dark:text-slate-300 text-xl font-normal mx-1">=</span>
                         </div>
                       )}
 
@@ -801,21 +797,21 @@ export default function FractionCalculator() {
                 <tr className="hover:bg-slate-50">
                   <td className="p-3.5">2/4</td>
                   <td className="p-3.5 font-bold text-indigo-600">1/2</td>
-                  <td className="p-3.5 text-slate-400">—</td>
+                  <td className="p-3.5 text-slate-600 dark:text-slate-300">—</td>
                   <td className="p-3.5">0.50</td>
                   <td className="p-3.5">50.0%</td>
                 </tr>
                 <tr className="hover:bg-slate-50">
                   <td className="p-3.5">4/12</td>
                   <td className="p-3.5 font-bold text-indigo-600">1/3</td>
-                  <td className="p-3.5 text-slate-400">—</td>
+                  <td className="p-3.5 text-slate-600 dark:text-slate-300">—</td>
                   <td className="p-3.5">0.333333...</td>
                   <td className="p-3.5">33.33%</td>
                 </tr>
                 <tr className="hover:bg-slate-50">
                   <td className="p-3.5">6/8</td>
                   <td className="p-3.5 font-bold text-indigo-600">3/4</td>
-                  <td className="p-3.5 text-slate-400">—</td>
+                  <td className="p-3.5 text-slate-600 dark:text-slate-300">—</td>
                   <td className="p-3.5">0.75</td>
                   <td className="p-3.5">75.0%</td>
                 </tr>

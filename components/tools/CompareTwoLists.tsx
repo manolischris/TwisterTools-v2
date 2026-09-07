@@ -515,7 +515,7 @@ export default function CompareTwoLists() {
             </div>
           </div>
           <div className="flex items-center gap-3 w-full md:w-auto">
-            <input
+            <input aria-label="Instagram Zip Input"
               ref={zipInputRef}
               type="file"
               accept=".zip"
@@ -564,7 +564,7 @@ export default function CompareTwoLists() {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <input
+                <input aria-label="Upload file"
                   ref={fileInputARef}
                   type="file"
                   accept=".txt,.csv,.json,.html"
@@ -582,7 +582,7 @@ export default function CompareTwoLists() {
             </div>
 
             <div className="p-4 space-y-3">
-              <textarea
+              <textarea aria-label="List A Input"
                 id="list-a-input"
                 value={listAText}
                 onChange={(e) => setListAText(e.target.value)}
@@ -597,7 +597,7 @@ export default function CompareTwoLists() {
                 <span>Items counted: <strong className="text-slate-800 font-mono">{countA}</strong></span>
                 <button
                   onClick={() => setListAText("")}
-                  className="text-slate-400 hover:text-rose-600 transition-colors"
+                  className="text-slate-600 dark:text-slate-300 hover:text-rose-600 transition-colors"
                 >
                   Clear A
                 </button>
@@ -617,7 +617,7 @@ export default function CompareTwoLists() {
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <input
+                <input aria-label="Upload file"
                   ref={fileInputBRef}
                   type="file"
                   accept=".txt,.csv,.json,.html"
@@ -635,7 +635,7 @@ export default function CompareTwoLists() {
             </div>
 
             <div className="p-4 space-y-3">
-              <textarea
+              <textarea aria-label="List B Input"
                 id="list-b-input"
                 value={listBText}
                 onChange={(e) => setListBText(e.target.value)}
@@ -650,7 +650,7 @@ export default function CompareTwoLists() {
                 <span>Items counted: <strong className="text-slate-800 font-mono">{countB}</strong></span>
                 <button
                   onClick={() => setListBText("")}
-                  className="text-slate-400 hover:text-rose-600 transition-colors"
+                  className="text-slate-600 dark:text-slate-300 hover:text-rose-600 transition-colors"
                 >
                   Clear B
                 </button>
@@ -665,7 +665,7 @@ export default function CompareTwoLists() {
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
               <label className="flex items-center gap-2.5 cursor-pointer bg-slate-50 p-2.5 rounded-xl border border-slate-200 hover:bg-indigo-50/50 transition-colors">
-                <input
+                <input aria-label="Instagram Mode"
                   type="checkbox"
                   checked={options.instagramMode}
                   onChange={(e) =>
@@ -680,8 +680,7 @@ export default function CompareTwoLists() {
               </label>
 
               <label className="flex items-center gap-2.5 cursor-pointer bg-slate-50 p-2.5 rounded-xl border border-slate-200 hover:bg-indigo-50/50 transition-colors">
-                <input
-                  type="checkbox"
+                <input aria-label="Case Sensitive" type="checkbox"
                   checked={options.caseSensitive}
                   onChange={(e) =>
                     setOptions((p) => ({ ...p, caseSensitive: e.target.checked }))
@@ -692,8 +691,7 @@ export default function CompareTwoLists() {
               </label>
 
               <label className="flex items-center gap-2.5 cursor-pointer bg-slate-50 p-2.5 rounded-xl border border-slate-200 hover:bg-indigo-50/50 transition-colors">
-                <input
-                  type="checkbox"
+                <input aria-label="Remove Duplicates" type="checkbox"
                   checked={options.removeDuplicates}
                   onChange={(e) =>
                     setOptions((p) => ({ ...p, removeDuplicates: e.target.checked }))
@@ -704,8 +702,7 @@ export default function CompareTwoLists() {
               </label>
 
               <label className="flex items-center gap-2.5 cursor-pointer bg-slate-50 p-2.5 rounded-xl border border-slate-200 hover:bg-indigo-50/50 transition-colors">
-                <input
-                  type="checkbox"
+                <input aria-label="Sort Output" type="checkbox"
                   checked={options.sortOutput}
                   onChange={(e) =>
                     setOptions((p) => ({ ...p, sortOutput: e.target.checked }))
@@ -812,7 +809,7 @@ export default function CompareTwoLists() {
               </div>
 
               {/* Results Textarea */}
-              <textarea
+              <textarea aria-label="Results will appear here based on selected set operation"
                 readOnly
                 value={outputItems.join("\n")}
                 placeholder="Results will appear here based on selected set operation..."
@@ -830,7 +827,7 @@ export default function CompareTwoLists() {
                       ? copied
                         ? "bg-emerald-500 text-white shadow-md shadow-emerald-200"
                         : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200"
-                      : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                      : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                   }`}
                 >
                   {copied ? (

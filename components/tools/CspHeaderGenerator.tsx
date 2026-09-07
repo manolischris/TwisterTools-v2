@@ -577,7 +577,7 @@ export default function CspHeaderGenerator() {
                             >
                                 <div className="flex items-center justify-between gap-2 mb-2.5">
                                     <label className="flex items-center gap-2.5 cursor-pointer select-none">
-                                        <input
+                                        <input aria-label="D"
                                             type="checkbox"
                                             checked={cfg.enabled}
                                             onChange={(e) => updateDirective(dirName, { enabled: e.target.checked })}
@@ -603,7 +603,7 @@ export default function CspHeaderGenerator() {
                                     <div className="space-y-2.5 pl-6">
                                         <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-xs text-slate-700">
                                             <label className="flex items-center gap-1.5 cursor-pointer">
-                                                <input
+                                                <input aria-label="None"
                                                     type="checkbox"
                                                     checked={cfg.none}
                                                     onChange={(e) => updateDirective(dirName, { none: e.target.checked })}
@@ -615,8 +615,7 @@ export default function CspHeaderGenerator() {
                                             {!cfg.none && (
                                                 <>
                                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                                        <input
-                                                            type="checkbox"
+                                                        <input type="checkbox"
                                                             checked={cfg.self}
                                                             onChange={(e) => updateDirective(dirName, { self: e.target.checked })}
                                                             className="rounded border-slate-300 text-indigo-600 w-3.5 h-3.5"
@@ -624,7 +623,7 @@ export default function CspHeaderGenerator() {
                                                         <span className="font-mono">'self'</span>
                                                     </label>
                                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                                        <input
+                                                        <input aria-label="'self'"
                                                             type="checkbox"
                                                             checked={cfg.unsafeInline}
                                                             onChange={(e) => updateDirective(dirName, { unsafeInline: e.target.checked })}
@@ -634,8 +633,7 @@ export default function CspHeaderGenerator() {
                                                     </label>
                                                     {(dirName === "script-src" || dirName === "default-src") && (
                                                         <label className="flex items-center gap-1.5 cursor-pointer">
-                                                            <input
-                                                                type="checkbox"
+                                                            <input type="checkbox"
                                                                 checked={cfg.unsafeEval}
                                                                 onChange={(e) => updateDirective(dirName, { unsafeEval: e.target.checked })}
                                                                 className="rounded border-slate-300 text-indigo-600 w-3.5 h-3.5"
@@ -645,7 +643,7 @@ export default function CspHeaderGenerator() {
                                                     )}
                                                     {(dirName === "script-src") && (
                                                         <label className="flex items-center gap-1.5 cursor-pointer">
-                                                            <input
+                                                            <input aria-label="Strict Dynamic"
                                                                 type="checkbox"
                                                                 checked={cfg.strictDynamic}
                                                                 onChange={(e) => updateDirective(dirName, { strictDynamic: e.target.checked })}
@@ -655,8 +653,7 @@ export default function CspHeaderGenerator() {
                                                         </label>
                                                     )}
                                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                                        <input
-                                                            type="checkbox"
+                                                        <input type="checkbox"
                                                             checked={cfg.data}
                                                             onChange={(e) => updateDirective(dirName, { data: e.target.checked })}
                                                             className="rounded border-slate-300 text-indigo-600 w-3.5 h-3.5"
@@ -664,7 +661,7 @@ export default function CspHeaderGenerator() {
                                                         <span className="font-mono">data:</span>
                                                     </label>
                                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                                        <input
+                                                        <input aria-label="data"
                                                             type="checkbox"
                                                             checked={cfg.blob}
                                                             onChange={(e) => updateDirective(dirName, { blob: e.target.checked })}
@@ -673,7 +670,7 @@ export default function CspHeaderGenerator() {
                                                         <span className="font-mono">blob:</span>
                                                     </label>
                                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                                        <input
+                                                        <input aria-label="blob"
                                                             type="checkbox"
                                                             checked={cfg.httpsOnly}
                                                             onChange={(e) => updateDirective(dirName, { httpsOnly: e.target.checked })}
@@ -687,8 +684,7 @@ export default function CspHeaderGenerator() {
 
                                         {!cfg.none && (
                                             <div>
-                                                <input
-                                                    type="text"
+                                                <input aria-label="Input value" type="text"
                                                     value={cfg.customSources}
                                                     onChange={(e) => updateDirective(dirName, { customSources: e.target.value })}
                                                     placeholder="Custom hosts (e.g., https://api.stripe.com cdn.jsdelivr.net)"
@@ -704,8 +700,7 @@ export default function CspHeaderGenerator() {
 
                     {/* Add Custom Directive Input */}
                     <form onSubmit={handleAddCustomDirective} className="flex gap-2 pt-2 border-t border-slate-100">
-                        <input
-                            type="text"
+                        <input aria-label="Input value" type="text"
                             value={customDirectiveName}
                             onChange={(e) => setCustomDirectiveName(e.target.value)}
                             placeholder="Add directive (e.g. prefetch-src, child-src)"
@@ -733,7 +728,7 @@ export default function CspHeaderGenerator() {
                             </span>
                             <div className="flex flex-wrap gap-3 text-xs">
                                 <label className="flex items-center gap-1.5 cursor-pointer">
-                                    <input
+                                    <input aria-label="Frame Ancestors None"
                                         type="checkbox"
                                         checked={general.frameAncestorsNone}
                                         onChange={(e) => setGeneral((p) => ({ ...p, frameAncestorsNone: e.target.checked }))}
@@ -743,7 +738,7 @@ export default function CspHeaderGenerator() {
                                 </label>
                                 {!general.frameAncestorsNone && (
                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                        <input
+                                        <input aria-label="'none'"
                                             type="checkbox"
                                             checked={general.frameAncestorsSelf}
                                             onChange={(e) => setGeneral((p) => ({ ...p, frameAncestorsSelf: e.target.checked }))}
@@ -754,7 +749,7 @@ export default function CspHeaderGenerator() {
                                 )}
                             </div>
                             {!general.frameAncestorsNone && (
-                                <input
+                                <input aria-label="'self'"
                                     type="text"
                                     value={general.frameAncestorsCustom}
                                     onChange={(e) => setGeneral((p) => ({ ...p, frameAncestorsCustom: e.target.value }))}
@@ -770,7 +765,7 @@ export default function CspHeaderGenerator() {
                                 <span className="font-mono text-xs font-bold text-slate-900 block">base-uri</span>
                                 <div className="flex items-center gap-3 text-xs">
                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                        <input
+                                        <input aria-label="Base Uri None"
                                             type="checkbox"
                                             checked={general.baseUriNone}
                                             onChange={(e) => setGeneral((p) => ({ ...p, baseUriNone: e.target.checked }))}
@@ -780,7 +775,7 @@ export default function CspHeaderGenerator() {
                                     </label>
                                     {!general.baseUriNone && (
                                         <label className="flex items-center gap-1.5 cursor-pointer">
-                                            <input
+                                            <input aria-label="'none'"
                                                 type="checkbox"
                                                 checked={general.baseUriSelf}
                                                 onChange={(e) => setGeneral((p) => ({ ...p, baseUriSelf: e.target.checked }))}
@@ -796,7 +791,7 @@ export default function CspHeaderGenerator() {
                                 <span className="font-mono text-xs font-bold text-slate-900 block">form-action</span>
                                 <div className="flex items-center gap-3 text-xs">
                                     <label className="flex items-center gap-1.5 cursor-pointer">
-                                        <input
+                                        <input aria-label="Form Action None"
                                             type="checkbox"
                                             checked={general.formActionNone}
                                             onChange={(e) => setGeneral((p) => ({ ...p, formActionNone: e.target.checked }))}
@@ -806,7 +801,7 @@ export default function CspHeaderGenerator() {
                                     </label>
                                     {!general.formActionNone && (
                                         <label className="flex items-center gap-1.5 cursor-pointer">
-                                            <input
+                                            <input aria-label="'none'"
                                                 type="checkbox"
                                                 checked={general.formActionSelf}
                                                 onChange={(e) => setGeneral((p) => ({ ...p, formActionSelf: e.target.checked }))}
@@ -822,7 +817,7 @@ export default function CspHeaderGenerator() {
                         {/* Upgrade Insecure Requests & Report Only */}
                         <div className="space-y-2 text-xs">
                             <label className="flex items-center gap-2 cursor-pointer font-semibold text-slate-800">
-                                <input
+                                <input aria-label="Upgrade Insecure Requests"
                                     type="checkbox"
                                     checked={general.upgradeInsecureRequests}
                                     onChange={(e) => setGeneral((p) => ({ ...p, upgradeInsecureRequests: e.target.checked }))}
@@ -831,8 +826,7 @@ export default function CspHeaderGenerator() {
                                 upgrade-insecure-requests (Rewrite HTTP assets to HTTPS)
                             </label>
                             <label className="flex items-center gap-2 cursor-pointer font-semibold text-indigo-700 bg-indigo-50/70 p-2 rounded-lg border border-indigo-100">
-                                <input
-                                    type="checkbox"
+                                <input type="checkbox"
                                     checked={general.reportOnly}
                                     onChange={(e) => setGeneral((p) => ({ ...p, reportOnly: e.target.checked }))}
                                     className="rounded border-slate-300 text-indigo-600 w-4 h-4"
@@ -847,8 +841,7 @@ export default function CspHeaderGenerator() {
                                 <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                     report-uri Endpoint
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={general.reportUri}
                                     onChange={(e) => setGeneral((p) => ({ ...p, reportUri: e.target.value }))}
                                     placeholder="https://api.example.com/csp-report"
@@ -859,8 +852,7 @@ export default function CspHeaderGenerator() {
                                 <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                     report-to Group (CSP Level 3)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={general.reportTo}
                                     onChange={(e) => setGeneral((p) => ({ ...p, reportTo: e.target.value }))}
                                     placeholder="csp-endpoint-group"
@@ -976,7 +968,7 @@ export default function CspHeaderGenerator() {
                             <CheckCircle2 className="w-4 h-4" />
                             CSP Level 3 Compliant
                         </span>
-                        <span className="text-slate-400">Zero Server Telemetry</span>
+                        <span className="text-slate-600 dark:text-slate-300">Zero Server Telemetry</span>
                     </div>
                 </div>
             </div>

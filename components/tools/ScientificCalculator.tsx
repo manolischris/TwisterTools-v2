@@ -525,7 +525,7 @@ export default function ScientificCalculator() {
                   {result}
                 </div>
                 {/* Status Indicator Bar */}
-                <div className="flex items-center justify-between text-[10px] text-slate-400 font-mono pt-1 border-t border-slate-800">
+                <div className="flex items-center justify-between text-[10px] text-slate-600 dark:text-slate-300 font-mono pt-1 border-t border-slate-800">
                   <span className="flex items-center gap-1.5">
                     <span
                       className={`w-2 h-2 rounded-full ${
@@ -833,8 +833,7 @@ export default function ScientificCalculator() {
                 <label className="text-xs font-medium text-slate-600 block mb-1">
                   Decimal Precision
                 </label>
-                <select
-                  value={precision}
+                <select aria-label="Select option" value={precision}
                   onChange={(e) =>
                     setPrecision(
                       Math.max(
@@ -909,7 +908,7 @@ export default function ScientificCalculator() {
                   <p className="text-xs text-slate-500">
                     No calculations logged yet.
                   </p>
-                  <p className="text-[11px] text-slate-400">
+                  <p className="text-[11px] text-slate-600 dark:text-slate-300">
                     Calculations evaluated will automatically appear here.
                   </p>
                 </div>
@@ -923,7 +922,7 @@ export default function ScientificCalculator() {
                     }}
                     className="p-3 rounded-xl bg-slate-50 border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/40 cursor-pointer transition-all space-y-1 group"
                   >
-                    <div className="flex justify-between text-[11px] text-slate-400 font-mono">
+                    <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-300 font-mono">
                       <span>{item.timestamp}</span>
                       <span className="opacity-0 group-hover:opacity-100 text-indigo-600 font-sans transition-opacity">
                         Click to restore

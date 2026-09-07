@@ -473,8 +473,7 @@ Simulated via twistertools.com/tools/random-tools/coin-flipper`;
                                 </label>
                                 <div className="flex items-center gap-2">
                                     <div className="relative flex-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="1000000"
                                             value={batchSize === 0 ? "" : batchSize}
@@ -482,7 +481,7 @@ Simulated via twistertools.com/tools/random-tools/coin-flipper`;
                                             className="w-full pl-3 pr-16 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                             placeholder="Count"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             Flips
                                         </span>
                                     </div>
@@ -646,14 +645,14 @@ Simulated via twistertools.com/tools/random-tools/coin-flipper`;
                             /* History Log List Tab */
                             <div className="max-h-[260px] overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100">
                                 {history.length === 0 ? (
-                                    <p className="p-4 text-center text-xs text-slate-400">No flips executed yet.</p>
+                                    <p className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">No flips executed yet.</p>
                                 ) : (
                                     history.map((item) => (
                                         <div key={item.id} className="p-3 flex items-center justify-between text-xs hover:bg-slate-50">
                                             <div className="flex items-center gap-2">
                                                 <span className={`w-2 h-2 rounded-full ${item.result === "heads" ? "bg-indigo-600" : "bg-amber-500"}`} />
                                                 <span className="font-bold uppercase text-slate-900">{item.result}</span>
-                                                <span className="text-[11px] text-slate-400">({item.timestamp})</span>
+                                                <span className="text-[11px] text-slate-600 dark:text-slate-300">({item.timestamp})</span>
                                             </div>
                                             <div className="text-right font-medium text-slate-600">
                                                 <span>Ratio: {item.headsRatioSoFar.toFixed(1)}% H</span>
@@ -729,15 +728,15 @@ Simulated via twistertools.com/tools/random-tools/coin-flipper`;
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Expected Mean E(X):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Expected Mean E(X):</span>
                                 <strong className="text-indigo-300 text-sm">0.5 × n</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Variance (σ²):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Variance (σ²):</span>
                                 <strong className="text-indigo-300 text-sm">0.25 × n</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Standard Deviation (σ):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Standard Deviation (σ):</span>
                                 <strong className="text-indigo-300 text-sm">0.5 × √n</strong>
                             </div>
                         </div>

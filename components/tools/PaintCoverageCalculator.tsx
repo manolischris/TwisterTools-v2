@@ -419,7 +419,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                             <div className="grid grid-cols-3 gap-3">
                                 <div>
                                     <label className="text-[11px] font-bold text-slate-600 block mb-1">Length ({dimUnitLabel})</label>
-                                    <input
+                                    <input aria-label="Length ({dimUnitLabel})"
                                         type="number"
                                         min={1}
                                         step={unit === "imperial" ? 1 : 0.1}
@@ -430,7 +430,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                 </div>
                                 <div>
                                     <label className="text-[11px] font-bold text-slate-600 block mb-1">Width ({dimUnitLabel})</label>
-                                    <input
+                                    <input aria-label="Width ({dimUnitLabel})"
                                         type="number"
                                         min={1}
                                         step={unit === "imperial" ? 1 : 0.1}
@@ -441,7 +441,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                 </div>
                                 <div>
                                     <label className="text-[11px] font-bold text-slate-600 block mb-1">Height ({dimUnitLabel})</label>
-                                    <input
+                                    <input aria-label="Height ({dimUnitLabel})"
                                         type="number"
                                         min={1}
                                         step={unit === "imperial" ? 1 : 0.1}
@@ -463,8 +463,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                         Doors Deductions
                                     </span>
                                     <div className="flex items-center gap-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             value={doorsCount === 0 ? "" : doorsCount}
                                             onChange={(e) => handleNumberInput(e, setDoorsCount)}
@@ -476,7 +475,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                 <div className="grid grid-cols-2 gap-2 text-xs">
                                     <div>
                                         <span className="text-[11px] text-slate-500 block mb-0.5">Width ({dimUnitLabel})</span>
-                                        <input
+                                        <input aria-label="Width ({dimUnitLabel})"
                                             type="number"
                                             value={doorWidth === 0 ? "" : doorWidth}
                                             onChange={(e) => handleNumberInput(e, setDoorWidth)}
@@ -485,7 +484,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                     </div>
                                     <div>
                                         <span className="text-[11px] text-slate-500 block mb-0.5">Height ({dimUnitLabel})</span>
-                                        <input
+                                        <input aria-label="Height ({dimUnitLabel})"
                                             type="number"
                                             value={doorHeight === 0 ? "" : doorHeight}
                                             onChange={(e) => handleNumberInput(e, setDoorHeight)}
@@ -503,8 +502,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                         Windows Deductions
                                     </span>
                                     <div className="flex items-center gap-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             value={windowsCount === 0 ? "" : windowsCount}
                                             onChange={(e) => handleNumberInput(e, setWindowsCount)}
@@ -516,7 +514,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                 <div className="grid grid-cols-2 gap-2 text-xs">
                                     <div>
                                         <span className="text-[11px] text-slate-500 block mb-0.5">Width ({dimUnitLabel})</span>
-                                        <input
+                                        <input aria-label="Width ({dimUnitLabel})"
                                             type="number"
                                             value={windowWidth === 0 ? "" : windowWidth}
                                             onChange={(e) => handleNumberInput(e, setWindowWidth)}
@@ -525,7 +523,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                     </div>
                                     <div>
                                         <span className="text-[11px] text-slate-500 block mb-0.5">Height ({dimUnitLabel})</span>
-                                        <input
+                                        <input aria-label="Height ({dimUnitLabel})"
                                             type="number"
                                             value={windowHeight === 0 ? "" : windowHeight}
                                             onChange={(e) => handleNumberInput(e, setWindowHeight)}
@@ -583,8 +581,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                     <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                         Wall Texture / Porosity
                                     </label>
-                                    <select
-                                        value={surfaceTexture}
+                                    <select aria-label="Select option" value={surfaceTexture}
                                         onChange={(e) => setSurfaceTexture(e.target.value as SurfacePorosity)}
                                         className="w-full px-3 py-2 text-xs font-bold text-slate-800 bg-white border border-slate-300 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
                                     >
@@ -599,7 +596,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                             {/* Ceiling Toggle */}
                             <div className="pt-2 border-t border-slate-200 flex items-center justify-between">
                                 <label className="flex items-center gap-2 cursor-pointer text-xs font-bold text-slate-800">
-                                    <input
+                                    <input aria-label="Ceiling"
                                         type="checkbox"
                                         checked={includeCeiling}
                                         onChange={(e) => setIncludeCeiling(e.target.checked)}
@@ -610,7 +607,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                 {includeCeiling && (
                                     <div className="flex items-center gap-2 text-xs">
                                         <span className="text-slate-500 font-semibold">Ceiling Coats:</span>
-                                        <select
+                                        <select aria-label="Select Ceiling Coats"
                                             value={ceilingCoats}
                                             onChange={(e) => setCeilingCoats(Number(e.target.value))}
                                             className="px-2 py-1 text-xs font-bold bg-white border border-slate-300 rounded-md"
@@ -641,8 +638,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                                     <div>
                                         <span className="font-semibold text-slate-700 block mb-1">Spread Rate ({areaUnitLabel}/{unit === "imperial" ? "gal" : "L"}):</span>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             value={customSpreadRate === 0 ? "" : customSpreadRate}
                                             onChange={(e) => handleNumberInput(e, setCustomSpreadRate)}
                                             className="w-full px-2 py-1 font-bold text-slate-800 bg-white border border-slate-300 rounded"
@@ -650,7 +646,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                     </div>
                                     <div>
                                         <span className="font-semibold text-slate-700 block mb-1">Cost Per Gallon ($):</span>
-                                        <input
+                                        <input aria-label="Cost Per Gallon ($)"
                                             type="number"
                                             value={pricePerGallon === 0 ? "" : pricePerGallon}
                                             onChange={(e) => handleNumberInput(e, setPricePerGallon)}
@@ -748,7 +744,7 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                                     <span className="text-slate-500 font-semibold block">Est. Material Cost:</span>
                                     <p className="font-extrabold text-emerald-700 text-sm">
                                         ${calculation.estimatedPaintCost.toFixed(2)}
-                                        <span className="text-xs text-slate-400 font-normal ml-1">(@${pricePerGallon}/gal)</span>
+                                        <span className="text-xs text-slate-600 dark:text-slate-300 font-normal ml-1">(@${pricePerGallon}/gal)</span>
                                     </p>
                                 </div>
                             </div>
@@ -761,24 +757,24 @@ Generated via twistertools.com/tools/home-tools/paint-coverage-calculator`;
                             </span>
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs">
                                 <div className="p-2 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-slate-400 text-[10px] block uppercase font-bold">Gross Walls</span>
+                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] block uppercase font-bold">Gross Walls</span>
                                     <strong className="text-slate-800">{calculation.grossWallArea.toFixed(1)}</strong>
-                                    <span className="text-[10px] text-slate-400 block">{areaUnitLabel}</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block">{areaUnitLabel}</span>
                                 </div>
                                 <div className="p-2 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-slate-400 text-[10px] block uppercase font-bold">Cutout Deductions</span>
+                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] block uppercase font-bold">Cutout Deductions</span>
                                     <strong className="text-rose-600">-{calculation.totalDeductionArea.toFixed(1)}</strong>
-                                    <span className="text-[10px] text-slate-400 block">{areaUnitLabel}</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block">{areaUnitLabel}</span>
                                 </div>
                                 <div className="p-2 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-slate-400 text-[10px] block uppercase font-bold">Net Paint Wall</span>
+                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] block uppercase font-bold">Net Paint Wall</span>
                                     <strong className="text-indigo-600">{calculation.netWallArea.toFixed(1)}</strong>
-                                    <span className="text-[10px] text-slate-400 block">{areaUnitLabel}</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block">{areaUnitLabel}</span>
                                 </div>
                                 <div className="p-2 bg-white rounded-lg border border-slate-200">
-                                    <span className="text-slate-400 text-[10px] block uppercase font-bold">Total With {coats} Coats</span>
+                                    <span className="text-slate-600 dark:text-slate-300 text-[10px] block uppercase font-bold">Total With {coats} Coats</span>
                                     <strong className="text-emerald-700">{calculation.totalAreaWithWaste.toFixed(1)}</strong>
-                                    <span className="text-[10px] text-slate-400 block">{areaUnitLabel}</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block">{areaUnitLabel}</span>
                                 </div>
                             </div>
                         </div>

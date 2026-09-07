@@ -434,7 +434,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                 </div>
 
                 <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-                    <input
+                    <input aria-label="Upload file"
                         type="file"
                         ref={fileInputRef}
                         onChange={handleFileUpload}
@@ -491,8 +491,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                     </div>
                                     <div className="grid grid-cols-2 gap-3">
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="1"
                                                 max="100000"
                                                 value={origWidth === 0 ? "" : origWidth}
@@ -500,13 +499,12 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                                 className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                                 placeholder="Width"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 W px
                                             </span>
                                         </div>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="1"
                                                 max="100000"
                                                 value={origHeight === 0 ? "" : origHeight}
@@ -514,7 +512,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                                 className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                                 placeholder="Height"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 H px
                                             </span>
                                         </div>
@@ -561,8 +559,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                     </div>
                                     <div className="grid grid-cols-2 gap-3">
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="1"
                                                 max="100000"
                                                 value={targetWidth === 0 ? "" : targetWidth}
@@ -570,13 +567,12 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                                 className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                                 placeholder="Target W"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 W px
                                             </span>
                                         </div>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="1"
                                                 max="100000"
                                                 value={targetHeight === 0 ? "" : targetHeight}
@@ -584,7 +580,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                                 className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                                 placeholder="Target H"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 H px
                                             </span>
                                         </div>
@@ -597,7 +593,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                         <span>Scale Percentage Factor</span>
                                         <span className="text-indigo-600 font-mono text-sm">{scalePercent}%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max="400"
@@ -606,7 +602,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                         onChange={(e) => handleScalePercentChange(Number(e.target.value))}
                                         className="w-full accent-indigo-600 cursor-pointer"
                                     />
-                                    <div className="flex justify-between text-[11px] text-slate-400 font-medium">
+                                    <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-300 font-medium">
                                         <span>25% (Thumbnail)</span>
                                         <span>50% (Half)</span>
                                         <span>100% (Native)</span>
@@ -642,8 +638,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                     </label>
                                     <div className="grid grid-cols-2 gap-3 items-center">
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0.1"
                                                 step="any"
                                                 value={ratioW === 0 ? "" : ratioW}
@@ -651,13 +646,12 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                                 placeholder="Ratio Width"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 W
                                             </span>
                                         </div>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0.1"
                                                 step="any"
                                                 value={ratioH === 0 ? "" : ratioH}
@@ -665,7 +659,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                                 placeholder="Ratio Height"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 H
                                             </span>
                                         </div>
@@ -707,8 +701,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                         Enter Known {knownType === "width" ? "Width" : "Height"} Value (Pixels)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="100000"
                                             value={knownValue === 0 ? "" : knownValue}
@@ -716,7 +709,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                             className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                             placeholder={`Enter ${knownType} in pixels`}
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             Pixels
                                         </span>
                                     </div>
@@ -833,7 +826,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                     </div>
 
                                     {/* Overlay Dimension Tags */}
-                                    <div className="absolute bottom-3 left-3 text-[11px] font-mono text-slate-400 bg-slate-900/80 px-2 py-1 rounded border border-slate-800">
+                                    <div className="absolute bottom-3 left-3 text-[11px] font-mono text-slate-600 dark:text-slate-300 bg-slate-900/80 px-2 py-1 rounded border border-slate-800">
                                         Stage: Scale-Normalized
                                     </div>
                                     <div className="absolute bottom-3 right-3 text-[11px] font-bold text-indigo-300 bg-slate-900/80 px-2 py-1 rounded border border-slate-800">
@@ -889,7 +882,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                             <FileCode className="w-4 h-4 text-indigo-600" />
                                             Modern CSS Property
                                         </span>
-                                        <span className="text-[10px] text-slate-400">Standard Spec</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300">Standard Spec</span>
                                     </div>
                                     <pre className="p-3 rounded-xl bg-slate-950 text-indigo-300 font-mono text-xs overflow-x-auto border border-slate-800">
                                         <code>{`/* Native Responsive Aspect Ratio */
@@ -907,7 +900,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                             <Layers className="w-4 h-4 text-indigo-600" />
                                             Tailwind CSS Utility Class
                                         </span>
-                                        <span className="text-[10px] text-slate-400">Tailwind 3.x / 4.x</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300">Tailwind 3.x / 4.x</span>
                                     </div>
                                     <pre className="p-3 rounded-xl bg-slate-950 text-emerald-300 font-mono text-xs overflow-x-auto border border-slate-800">
                                         <code>{`<div className="w-full aspect-[${previewWidth}/${previewHeight}] object-cover">
@@ -922,7 +915,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                             <Tv className="w-4 h-4 text-indigo-600" />
                                             HTML5 Embedded Image Attributes
                                         </span>
-                                        <span className="text-[10px] text-slate-400">Prevents CLS Layout Shift</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300">Prevents CLS Layout Shift</span>
                                     </div>
                                     <pre className="p-3 rounded-xl bg-slate-950 text-amber-300 font-mono text-xs overflow-x-auto border border-slate-800">
                                         <code>{`<img 
@@ -955,7 +948,7 @@ Computed at: twistertools.com/tools/image-tools/image-aspect-ratio-scaler`;
                                             <span className="font-bold text-slate-900 group-hover:text-indigo-600">
                                                 {res.name}
                                             </span>
-                                            <span className="text-[10px] text-slate-400 font-mono">
+                                            <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                                                 ({res.category})
                                             </span>
                                         </div>

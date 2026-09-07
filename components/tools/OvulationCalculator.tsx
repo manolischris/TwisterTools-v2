@@ -353,8 +353,7 @@ Calculated at twistertools.com/tools/calculators/ovulation-calculator`;
                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                   <Calendar className="w-3.5 h-3.5 text-indigo-600" /> First Day of Last Period
                 </label>
-                <input
-                  type="date"
+                <input aria-label="Input value" type="date"
                   value={lastPeriodDate}
                   onChange={(e) => {
                     setLastPeriodDate(e.target.value);
@@ -377,7 +376,7 @@ Calculated at twistertools.com/tools/calculators/ovulation-calculator`;
                     {cycleLength} Days
                   </span>
                 </div>
-                <input
+                <input aria-label="Adjust slider value"
                   type="range"
                   min="20"
                   max="45"
@@ -389,8 +388,7 @@ Calculated at twistertools.com/tools/calculators/ovulation-calculator`;
                   className="w-full accent-indigo-600 cursor-pointer h-2 bg-slate-100 rounded-lg"
                 />
                 <div className="flex items-center gap-3 mt-2">
-                  <input
-                    type="number"
+                  <input aria-label="Input value" type="number"
                     min="20"
                     max="45"
                     value={cycleLength === 0 ? "" : cycleLength}
@@ -414,7 +412,7 @@ Calculated at twistertools.com/tools/calculators/ovulation-calculator`;
                     {lutealLength} Days
                   </span>
                 </div>
-                <input
+                <input aria-label="Adjust slider value"
                   type="range"
                   min="9"
                   max="18"
@@ -426,8 +424,7 @@ Calculated at twistertools.com/tools/calculators/ovulation-calculator`;
                   className="w-full accent-indigo-600 cursor-pointer h-2 bg-slate-100 rounded-lg"
                 />
                 <div className="flex items-center gap-3 mt-2">
-                  <input
-                    type="number"
+                  <input aria-label="Input value" type="number"
                     min="9"
                     max="18"
                     value={lutealLength === 0 ? "" : lutealLength}
@@ -445,7 +442,7 @@ Calculated at twistertools.com/tools/calculators/ovulation-calculator`;
             {/* PRESETS COMPONENT */}
             <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                   <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Reference Presets
                 </span>
                 {activePresetId && (

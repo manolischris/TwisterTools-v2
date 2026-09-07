@@ -596,7 +596,7 @@ export default function DiceRoller() {
                                         {enableSound ? (
                                             <Volume2 className="w-3.5 h-3.5 text-indigo-600" />
                                         ) : (
-                                            <VolumeX className="w-3.5 h-3.5 text-slate-400" />
+                                            <VolumeX className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                                         )}
                                         <span>Audio {enableSound ? 'ON' : 'OFF'}</span>
                                     </button>
@@ -655,7 +655,7 @@ export default function DiceRoller() {
                             {/* Active Notation & Symmetrical Copy Button */}
                             <div className="flex items-center justify-between text-xs text-slate-500 px-1">
                                 <div className="flex items-center gap-1.5">
-                                    <span className="font-medium text-slate-400">Notation Formula:</span>
+                                    <span className="font-medium text-slate-600 dark:text-slate-300">Notation Formula:</span>
                                     <code className="font-mono font-bold text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/30 px-2 py-0.5 rounded border border-indigo-100 dark:border-indigo-900/50">
                                         {diceNotation}
                                     </code>
@@ -683,7 +683,7 @@ export default function DiceRoller() {
                         {/* ADVANCED MODIFIERS, RULE PRESETS & CUSTOM DICE */}
                         <div className="pt-5 border-t border-slate-100 space-y-5">
                             <div>
-                                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
+                                <h3 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 mb-3">
                                     Advanced Modifiers & Drop Rules
                                 </h3>
                                 {/* Modifiers & Math Rules Grid */}
@@ -692,8 +692,7 @@ export default function DiceRoller() {
                                         <label className="text-[10px] font-bold uppercase text-slate-500 block mb-1">
                                             Modifier (+/-)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             value={modifierStr}
                                             onChange={(e) => handleNumberInput(e.target.value, setModifierStr, -100, 100)}
                                             className="w-full bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-sm font-semibold text-slate-800 text-center focus:ring-2 focus:ring-indigo-500"
@@ -704,8 +703,7 @@ export default function DiceRoller() {
                                         <label className="text-[10px] font-bold uppercase text-slate-500 block mb-1">
                                             Drop Lowest
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max={Math.max(0, activeDice.length - 1)}
                                             value={dropLowestStr}
@@ -718,8 +716,7 @@ export default function DiceRoller() {
                                         <label className="text-[10px] font-bold uppercase text-slate-500 block mb-1">
                                             Drop Highest
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max={Math.max(0, activeDice.length - 1)}
                                             value={dropHighestStr}
@@ -732,7 +729,7 @@ export default function DiceRoller() {
 
                             {/* Quick Presets */}
                             <div>
-                                <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block mb-2">
+                                <label className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 block mb-2">
                                     Quick Rule Presets
                                 </label>
                                 <div className="flex flex-wrap gap-1.5">
@@ -755,8 +752,7 @@ export default function DiceRoller() {
                                     <Settings2 className="w-3.5 h-3.5 text-indigo-600" /> Custom Die Sides
                                 </label>
                                 <div className="flex items-center gap-2">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="2"
                                         max="1000"
                                         value={customSidesStr}
@@ -857,7 +853,7 @@ export default function DiceRoller() {
                                                     {currentRoll.total}
                                                 </div>
 
-                                                <div className="mt-4 pt-3 border-t border-slate-800 grid grid-cols-3 gap-2 text-xs text-slate-400">
+                                                <div className="mt-4 pt-3 border-t border-slate-800 grid grid-cols-3 gap-2 text-xs text-slate-600 dark:text-slate-300">
                                                     <div>
                                                         <span className="block text-[10px] uppercase text-slate-500">Highest</span>
                                                         <span className="font-semibold text-slate-200">{currentRoll.highest}</span>
@@ -875,7 +871,7 @@ export default function DiceRoller() {
 
                                         </div>
                                     ) : (
-                                        <div className="py-16 text-center text-slate-400 space-y-3">
+                                        <div className="py-16 text-center text-slate-600 dark:text-slate-300 space-y-3">
                                             <DiceIcon className="w-12 h-12 mx-auto text-slate-300 animate-bounce" />
                                             <p className="text-sm font-medium">Ready to Roll! Choose your dice pool and hit Roll.</p>
                                         </div>
@@ -911,7 +907,7 @@ export default function DiceRoller() {
 
                                     <div className="max-h-[350px] overflow-y-auto space-y-2 pr-1">
                                         {rollHistory.length === 0 ? (
-                                            <div className="py-12 text-center text-slate-400 text-xs font-medium">
+                                            <div className="py-12 text-center text-slate-600 dark:text-slate-300 text-xs font-medium">
                                                 No roll history recorded yet.
                                             </div>
                                         ) : (
@@ -923,7 +919,7 @@ export default function DiceRoller() {
                                                     <div>
                                                         <div className="font-bold text-slate-800 flex items-center gap-2">
                                                             <span>{item.notation}</span>
-                                                            <span className="text-[10px] font-normal text-slate-400">
+                                                            <span className="text-[10px] font-normal text-slate-600 dark:text-slate-300">
                                                                 {item.timestamp.toLocaleTimeString()}
                                                             </span>
                                                         </div>
@@ -950,15 +946,15 @@ export default function DiceRoller() {
                                         </h3>
                                         <div className="grid grid-cols-3 gap-2 text-center">
                                             <div className="bg-white p-2.5 rounded-lg border border-slate-200">
-                                                <div className="text-[10px] uppercase font-bold text-slate-400">Min Score</div>
+                                                <div className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">Min Score</div>
                                                 <div className="text-lg font-bold text-slate-800">{poolStats.min}</div>
                                             </div>
                                             <div className="bg-white p-2.5 rounded-lg border border-slate-200">
-                                                <div className="text-[10px] uppercase font-bold text-slate-400">Avg Expected</div>
+                                                <div className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">Avg Expected</div>
                                                 <div className="text-lg font-bold text-indigo-600">{poolStats.avg}</div>
                                             </div>
                                             <div className="bg-white p-2.5 rounded-lg border border-slate-200">
-                                                <div className="text-[10px] uppercase font-bold text-slate-400">Max Score</div>
+                                                <div className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">Max Score</div>
                                                 <div className="text-lg font-bold text-slate-800">{poolStats.max}</div>
                                             </div>
                                         </div>
@@ -993,7 +989,7 @@ export default function DiceRoller() {
                             )}
                         </div>
 
-                        <div className="pt-4 border-t border-slate-100 text-[11px] text-slate-400 text-center">
+                        <div className="pt-4 border-t border-slate-100 text-[11px] text-slate-600 dark:text-slate-300 text-center">
                             TwisterTools TRNG Engine v2.0 • Cryptographically Secure Uniform Random Distribution
                         </div>
 

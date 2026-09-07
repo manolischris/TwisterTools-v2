@@ -275,7 +275,7 @@ export default function ZalgoTextGenerator() {
                                             {glitchIntensity}%
                                         </span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max="100"
@@ -299,7 +299,7 @@ export default function ZalgoTextGenerator() {
                                             {maxDiacriticsPerChar} marks
                                         </span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max="50"
@@ -320,7 +320,7 @@ export default function ZalgoTextGenerator() {
                                     </span>
                                     <div className="grid grid-cols-3 gap-2">
                                         <label className="flex items-center gap-2 text-xs font-medium text-slate-700 bg-white p-2 rounded-lg border border-slate-200 cursor-pointer">
-                                            <input
+                                            <input aria-label="Up"
                                                 type="checkbox"
                                                 checked={includeUp}
                                                 onChange={(e) => {
@@ -332,8 +332,7 @@ export default function ZalgoTextGenerator() {
                                             Above (Up)
                                         </label>
                                         <label className="flex items-center gap-2 text-xs font-medium text-slate-700 bg-white p-2 rounded-lg border border-slate-200 cursor-pointer">
-                                            <input
-                                                type="checkbox"
+                                            <input type="checkbox"
                                                 checked={includeMid}
                                                 onChange={(e) => {
                                                     setIncludeMid(e.target.checked);
@@ -344,8 +343,7 @@ export default function ZalgoTextGenerator() {
                                             Middle (Overlay)
                                         </label>
                                         <label className="flex items-center gap-2 text-xs font-medium text-slate-700 bg-white p-2 rounded-lg border border-slate-200 cursor-pointer">
-                                            <input
-                                                type="checkbox"
+                                            <input type="checkbox"
                                                 checked={includeDown}
                                                 onChange={(e) => {
                                                     setIncludeDown(e.target.checked);
@@ -477,7 +475,7 @@ export default function ZalgoTextGenerator() {
                                             ? copied
                                                 ? "bg-green-500 text-white shadow-md shadow-green-200"
                                                 : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200"
-                                            : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                                            : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                             }`}
                                     >
                                         {copied ? (

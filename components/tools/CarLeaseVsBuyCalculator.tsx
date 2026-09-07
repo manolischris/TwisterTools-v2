@@ -487,7 +487,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                             <div className="flex items-center gap-3">
                                 <div className="flex items-center gap-1.5">
                                     <span className="text-xs font-bold text-slate-500">Currency:</span>
-                                    <select
+                                    <select aria-label="Select Currency"
                                         value={currency}
                                         onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                         className="px-2.5 py-1 rounded-lg border border-slate-200 text-slate-800 font-semibold text-xs bg-slate-50 outline-none focus:ring-2 focus:ring-indigo-500"
@@ -516,9 +516,8 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                     Vehicle Price
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={vehiclePrice === 0 ? "" : vehiclePrice}
@@ -532,8 +531,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                     Sales Tax (%)
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="30"
                                         step="0.1"
@@ -541,15 +539,14 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                         onChange={(e) => handleNumberInput(e, setSalesTaxRate)}
                                         className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-xs transition"
                                     />
-                                    <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                    <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                 </div>
                             </div>
                             <div>
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                     Horizon (Yrs)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     max="12"
                                     value={holdingPeriodYears === 0 ? "" : holdingPeriodYears}
@@ -574,7 +571,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                             <span>Monthly Payment</span>
                                             <span className="text-indigo-600 font-bold">{currencySymbol}{leaseMonthlyPayment}</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Monthly Payment"
                                             type="number"
                                             min="0"
                                             step="10"
@@ -586,7 +583,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                     <div className="grid grid-cols-2 gap-2">
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Down Payment</label>
-                                            <input
+                                            <input aria-label="Down Payment"
                                                 type="number"
                                                 min="0"
                                                 step="250"
@@ -597,7 +594,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                         </div>
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Term (Months)</label>
-                                            <select
+                                            <select aria-label="Select Term (Months)"
                                                 value={leaseTermMonths}
                                                 onChange={(e) => setLeaseTermMonths(Number(e.target.value))}
                                                 className="w-full px-2 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -612,7 +609,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                     <div className="grid grid-cols-2 gap-2">
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Acquisition Fee</label>
-                                            <input
+                                            <input aria-label="Acquisition Fee"
                                                 type="number"
                                                 min="0"
                                                 value={leaseAcquisitionFee === 0 ? "" : leaseAcquisitionFee}
@@ -622,7 +619,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                         </div>
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Disposition Fee</label>
-                                            <input
+                                            <input aria-label="Disposition Fee"
                                                 type="number"
                                                 min="0"
                                                 value={leaseDispositionFee === 0 ? "" : leaseDispositionFee}
@@ -644,7 +641,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                     <div className="grid grid-cols-2 gap-2">
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Down Payment</label>
-                                            <input
+                                            <input aria-label="Down Payment"
                                                 type="number"
                                                 min="0"
                                                 step="500"
@@ -655,7 +652,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                         </div>
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Loan Term</label>
-                                            <select
+                                            <select aria-label="Select Loan Term"
                                                 value={loanTermMonths}
                                                 onChange={(e) => setLoanTermMonths(Number(e.target.value))}
                                                 className="w-full px-2 py-1.5 rounded-lg border border-slate-200 bg-white text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -671,7 +668,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                     <div className="grid grid-cols-2 gap-2">
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Loan APR (%)</label>
-                                            <input
+                                            <input aria-label="Loan APR (%)"
                                                 type="number"
                                                 min="0"
                                                 max="25"
@@ -683,7 +680,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                         </div>
                                         <div>
                                             <label className="block text-[11px] font-semibold text-slate-600 mb-0.5">Dealer / Doc Fees</label>
-                                            <input
+                                            <input aria-label="Dealer / Doc Fees"
                                                 type="number"
                                                 min="0"
                                                 value={dealerDocFees === 0 ? "" : dealerDocFees}
@@ -697,7 +694,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                             <span>Est. Annual Depreciation</span>
                                             <span className="text-slate-900 font-bold">{annualDepreciationRate}% / yr</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="8"
                                             max="25"
@@ -714,7 +711,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                         {/* Presets Horizontal Pill Selector */}
                         <div className="pt-3 border-t border-slate-100 space-y-1.5">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Fast Comparison Scenarios
                                 </span>
                                 {activePresetId && (
@@ -944,7 +941,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                         <tr>
                                             <td className="p-2.5 font-semibold text-slate-900">End-of-Period Asset Value</td>
                                             <td className="p-2.5 text-emerald-600 font-bold">-{currencySymbol}{Math.round(results.estimatedResaleValue).toLocaleString()}</td>
-                                            <td className="p-2.5 font-bold text-slate-400">{currencySymbol}0</td>
+                                            <td className="p-2.5 font-bold text-slate-600 dark:text-slate-300">{currencySymbol}0</td>
                                         </tr>
                                         <tr className="bg-slate-50 font-bold">
                                             <td className="p-2.5 text-slate-900">Net Cost of Ownership</td>
@@ -1039,11 +1036,11 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs font-mono text-indigo-300">
                             <div className="bg-slate-950 p-3.5 rounded-lg border border-slate-800 space-y-1">
-                                <span className="text-slate-400 block font-sans font-bold">Loan Monthly Amortization:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block font-sans font-bold">Loan Monthly Amortization:</span>
                                 <code>PMT = P × [ r(1 + r)^n ] / [ (1 + r)^n - 1 ]</code>
                             </div>
                             <div className="bg-slate-950 p-3.5 rounded-lg border border-slate-800 space-y-1">
-                                <span className="text-slate-400 block font-sans font-bold">Monthly Lease Base Payment:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block font-sans font-bold">Monthly Lease Base Payment:</span>
                                 <code>Lease PMT = (Cap Cost - Residual) / Term + (Cap Cost + Residual) × MF</code>
                             </div>
                         </div>
@@ -1105,7 +1102,7 @@ Calculate your personalized auto finance breakdown at twistertools.com/tools/cal
                                 <tr>
                                     <td className="p-3 font-semibold text-slate-900">Asset Resale Value at Year 5</td>
                                     <td className="p-3 text-emerald-600 font-bold">+$20,250 (Vehicle Equity Retained)</td>
-                                    <td className="p-3 text-slate-400 font-semibold">$0 (Vehicle returned to dealer)</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300 font-semibold">$0 (Vehicle returned to dealer)</td>
                                 </tr>
                                 <tr className="bg-indigo-50/50 hover:bg-indigo-50">
                                     <td className="p-3 font-bold text-indigo-900">Net Cost of Ownership</td>

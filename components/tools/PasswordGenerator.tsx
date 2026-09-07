@@ -346,7 +346,7 @@ export default function PasswordGenerator() {
                         {length}
                       </span>
                     </div>
-                    <input
+                    <input aria-label="Adjust slider value"
                       type="range"
                       min={8}
                       max={128}
@@ -364,8 +364,7 @@ export default function PasswordGenerator() {
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 rounded-xl p-4">
                       <label className="flex items-center gap-3 cursor-pointer group py-2.5">
-                        <input
-                          type="checkbox"
+                        <input type="checkbox"
                           checked={useUppercase}
                           onChange={(e) => setUseUppercase(e.target.checked)}
                           className="w-5 h-5 text-indigo-600 rounded border-slate-300 dark:border-slate-600 focus:ring-indigo-600 cursor-pointer"
@@ -376,8 +375,7 @@ export default function PasswordGenerator() {
                       </label>
 
                       <label className="flex items-center gap-3 cursor-pointer group py-2.5">
-                        <input
-                          type="checkbox"
+                        <input aria-label="Lowercase" type="checkbox"
                           checked={useLowercase}
                           onChange={(e) => setUseLowercase(e.target.checked)}
                           className="w-5 h-5 text-indigo-600 rounded border-slate-300 dark:border-slate-600 focus:ring-indigo-600 cursor-pointer"
@@ -388,8 +386,7 @@ export default function PasswordGenerator() {
                       </label>
 
                       <label className="flex items-center gap-3 cursor-pointer group py-2.5">
-                        <input
-                          type="checkbox"
+                        <input aria-label="Numbers" type="checkbox"
                           checked={useNumbers}
                           onChange={(e) => setUseNumbers(e.target.checked)}
                           className="w-5 h-5 text-indigo-600 rounded border-slate-300 dark:border-slate-600 focus:ring-indigo-600 cursor-pointer"
@@ -400,8 +397,7 @@ export default function PasswordGenerator() {
                       </label>
 
                       <label className="flex items-center gap-3 cursor-pointer group py-2.5">
-                        <input
-                          type="checkbox"
+                        <input aria-label="Symbols" type="checkbox"
                           checked={useSymbols}
                           onChange={(e) => setUseSymbols(e.target.checked)}
                           className="w-5 h-5 text-indigo-600 rounded border-slate-300 dark:border-slate-600 focus:ring-indigo-600 cursor-pointer"
@@ -419,8 +415,7 @@ export default function PasswordGenerator() {
                       <HelpCircle className="w-4 h-4 text-indigo-500" />
                       <span>Exclude Characters</span>
                     </label>
-                    <input
-                      type="text"
+                    <input aria-label="Input value" type="text"
                       value={excludeChars}
                       onChange={(e) => setExcludeChars(e.target.value)}
                       placeholder="e.g. i, l, 1, o, 0, O"
@@ -464,7 +459,7 @@ export default function PasswordGenerator() {
                         {wordCount}
                       </span>
                     </div>
-                    <input
+                    <input aria-label="Adjust slider value"
                       type="range"
                       min={3}
                       max={10}
@@ -480,8 +475,7 @@ export default function PasswordGenerator() {
                       <Settings className="w-4 h-4 text-indigo-500" />
                       <span>Custom Separator</span>
                     </label>
-                    <input
-                      type="text"
+                    <input aria-label="Input value" type="text"
                       maxLength={5}
                       value={separator}
                       onChange={(e) => setSeparator(e.target.value)}
@@ -493,7 +487,7 @@ export default function PasswordGenerator() {
                   {/* Checklist options */}
                   <div className="space-y-3 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 rounded-xl p-4">
                     <label className="flex items-center gap-3 cursor-pointer group py-2.5">
-                      <input
+                      <input aria-label="Capitalize Words"
                         type="checkbox"
                         checked={capitalizeWords}
                         onChange={(e) => setCapitalizeWords(e.target.checked)}
@@ -505,8 +499,7 @@ export default function PasswordGenerator() {
                     </label>
 
                     <label className="flex items-center gap-3 cursor-pointer group mt-3 py-2.5">
-                      <input
-                        type="checkbox"
+                      <input aria-label="Number" type="checkbox"
                         checked={includeNumber}
                         onChange={(e) => setIncludeNumber(e.target.checked)}
                         className="w-5 h-5 text-indigo-600 rounded border-slate-300 dark:border-slate-600 focus:ring-indigo-600 cursor-pointer"
@@ -533,7 +526,7 @@ export default function PasswordGenerator() {
             {/* Output display block */}
             <div className="space-y-2">
               <div className="font-mono break-all bg-slate-50 border border-slate-200/60 p-4 rounded-xl text-center text-lg select-all text-slate-900 font-bold min-h-[64px] flex items-center justify-center">
-                {generatedValue || <span className="text-slate-400 italic font-normal">Select character sets</span>}
+                {generatedValue || <span className="text-slate-600 dark:text-slate-300 italic font-normal">Select character sets</span>}
               </div>
             </div>
 

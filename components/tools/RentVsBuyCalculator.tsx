@@ -438,7 +438,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                             <div className="flex items-center gap-4">
                                 <div className="flex items-center gap-2">
                                     <span className="text-xs font-bold text-slate-500 uppercase">Currency:</span>
-                                    <select
+                                    <select aria-label="Select Currency"
                                         value={currency}
                                         onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                         className="px-2.5 py-1 rounded-lg border border-slate-200 bg-slate-50 text-slate-900 font-semibold text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -463,7 +463,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                         {/* Presets Horizontal Pill Bar */}
                         <div className="space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Market Scenarios
                                 </span>
                                 {activePresetId && (
@@ -505,9 +505,8 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Target Home Price</label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="10000"
                                             value={homePrice === 0 ? "" : homePrice}
@@ -520,7 +519,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Down Payment (%)</label>
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="Down Payment (%)"
                                             type="number"
                                             min="0"
                                             max="100"
@@ -529,14 +528,14 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setDownPaymentPercent, Math.min(100, Math.max(0, val))))}
                                             className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
 
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Mortgage Interest Rate (%)</label>
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="Mortgage Interest Rate (%)"
                                             type="number"
                                             min="0"
                                             max="25"
@@ -545,13 +544,13 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setMortgageRate, Math.max(0, val)))}
                                             className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
 
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Loan Term</label>
-                                    <select
+                                    <select aria-label="Select Loan Term"
                                         value={loanTermYears}
                                         onChange={(e) => setLoanTermYears(Number(e.target.value))}
                                         className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -565,7 +564,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Property Tax Rate (%)</label>
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="Property Tax Rate (%)"
                                             type="number"
                                             min="0"
                                             max="10"
@@ -574,14 +573,14 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                             onChange={(e) => handleNumberInput(e, (val) => setPropertyTaxRate(Math.max(0, val)))}
                                             className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
 
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Annual Maintenance (%)</label>
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="Annual Maintenance (%)"
                                             type="number"
                                             min="0"
                                             max="10"
@@ -590,7 +589,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                             onChange={(e) => handleNumberInput(e, (val) => setAnnualMaintenanceRate(Math.max(0, val)))}
                                             className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
                             </div>
@@ -606,9 +605,8 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Monthly Rent</label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="100"
                                             value={monthlyRent === 0 ? "" : monthlyRent}
@@ -621,7 +619,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Annual Rent Increase (%)</label>
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="Annual Rent Increase (%)"
                                             type="number"
                                             min="0"
                                             max="20"
@@ -630,14 +628,14 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                             onChange={(e) => handleNumberInput(e, (val) => setAnnualRentIncrease(Math.max(0, val)))}
                                             className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
 
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Renter Investment ROI (%)</label>
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="Renter Investment ROI (%)"
                                             type="number"
                                             min="0"
                                             max="25"
@@ -646,14 +644,14 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                             onChange={(e) => handleNumberInput(e, (val) => setInvestmentReturnRate(Math.max(0, val)))}
                                             className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
 
                                 <div>
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">Home Appreciation Rate (%)</label>
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="Home Appreciation Rate (%)"
                                             type="number"
                                             min="0"
                                             max="20"
@@ -662,7 +660,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                             onChange={(e) => handleNumberInput(e, (val) => setHomeAppreciationRate(Math.max(0, val)))}
                                             className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 bg-white text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                     </div>
                                 </div>
                             </div>
@@ -674,7 +672,7 @@ Run your custom real estate simulation at twistertools.com/tools/calculators/ren
                                 <span>Comparison Horizon</span>
                                 <span className="font-bold text-indigo-600">{horizonYears} Years</span>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="1"
                                 max="30"

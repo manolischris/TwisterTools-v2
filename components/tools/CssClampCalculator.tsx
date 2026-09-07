@@ -300,7 +300,7 @@ export default function CssClampCalculator() {
                             <div>
                                 <span className="block text-xs font-medium text-slate-500 mb-1">Min Viewport Width</span>
                                 <div className="relative">
-                                    <input
+                                    <input aria-label="Min Viewport Width"
                                         type="number"
                                         min="240"
                                         max="3840"
@@ -308,13 +308,13 @@ export default function CssClampCalculator() {
                                         onChange={(e) => handleNumberInput(e, setMinViewport)}
                                         className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">px</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">px</span>
                                 </div>
                             </div>
                             <div>
                                 <span className="block text-xs font-medium text-slate-500 mb-1">Max Viewport Width</span>
                                 <div className="relative">
-                                    <input
+                                    <input aria-label="Max Viewport Width"
                                         type="number"
                                         min="240"
                                         max="3840"
@@ -322,13 +322,13 @@ export default function CssClampCalculator() {
                                         onChange={(e) => handleNumberInput(e, setMaxViewport)}
                                         className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">px</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">px</span>
                                 </div>
                             </div>
                         </div>
                         {/* Quick Viewport Presets */}
                         <div className="flex flex-wrap gap-1.5 pt-1">
-                            <span className="text-[11px] font-semibold text-slate-400 self-center mr-1">Presets:</span>
+                            <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 self-center mr-1">Presets:</span>
                             {[
                                 { label: "Mobile to Laptop", min: 375, max: 1280 },
                                 { label: "Standard Web", min: 360, max: 1200 },
@@ -359,7 +359,7 @@ export default function CssClampCalculator() {
                             <div>
                                 <span className="block text-xs font-medium text-slate-500 mb-1">Minimum Size</span>
                                 <div className="relative">
-                                    <input
+                                    <input aria-label="Minimum Size"
                                         type="number"
                                         min="1"
                                         max="500"
@@ -367,16 +367,16 @@ export default function CssClampCalculator() {
                                         onChange={(e) => handleNumberInput(e, setMinSize)}
                                         className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">px</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">px</span>
                                 </div>
-                                <span className="block text-[11px] text-slate-400 mt-1 font-mono">
+                                <span className="block text-[11px] text-slate-600 dark:text-slate-300 mt-1 font-mono">
                                     ≈ {(minSize / (rootFontSize || 16)).toFixed(3)} rem
                                 </span>
                             </div>
                             <div>
                                 <span className="block text-xs font-medium text-slate-500 mb-1">Maximum Size</span>
                                 <div className="relative">
-                                    <input
+                                    <input aria-label="Maximum Size"
                                         type="number"
                                         min="1"
                                         max="500"
@@ -384,9 +384,9 @@ export default function CssClampCalculator() {
                                         onChange={(e) => handleNumberInput(e, setMaxSize)}
                                         className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">px</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">px</span>
                                 </div>
-                                <span className="block text-[11px] text-slate-400 mt-1 font-mono">
+                                <span className="block text-[11px] text-slate-600 dark:text-slate-300 mt-1 font-mono">
                                     ≈ {(maxSize / (rootFontSize || 16)).toFixed(3)} rem
                                 </span>
                             </div>
@@ -400,24 +400,22 @@ export default function CssClampCalculator() {
                                 Browser Root Size
                             </label>
                             <div className="relative">
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="8"
                                     max="64"
                                     value={rootFontSize === 0 ? "" : rootFontSize}
                                     onChange={(e) => handleNumberInput(e, setRootFontSize)}
                                     className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                 />
-                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">px</span>
+                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">px</span>
                             </div>
-                            <span className="text-[11px] text-slate-400 mt-1 block">Default: 16px (1rem = 16px)</span>
+                            <span className="text-[11px] text-slate-600 dark:text-slate-300 mt-1 block">Default: 16px (1rem = 16px)</span>
                         </div>
                         <div>
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                 Target CSS Property
                             </label>
-                            <select
-                                value={cssProperty}
+                            <select aria-label="Select option" value={cssProperty}
                                 onChange={(e) => setCssProperty(e.target.value)}
                                 className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white cursor-pointer"
                             >
@@ -428,7 +426,7 @@ export default function CssClampCalculator() {
                                 <option value="line-height">line-height</option>
                                 <option value="width">width</option>
                             </select>
-                            <span className="text-[11px] text-slate-400 mt-1 block">Used for code snippet exports</span>
+                            <span className="text-[11px] text-slate-600 dark:text-slate-300 mt-1 block">Used for code snippet exports</span>
                         </div>
                     </div>
 
@@ -484,7 +482,7 @@ export default function CssClampCalculator() {
 
                     {/* Primary Output Display Box */}
                     <div className="p-4 rounded-xl bg-slate-950 text-slate-100 font-mono text-xs sm:text-sm space-y-3 relative group border border-slate-800">
-                        <div className="flex items-center justify-between text-slate-400 text-xs border-b border-slate-800 pb-2">
+                        <div className="flex items-center justify-between text-slate-600 dark:text-slate-300 text-xs border-b border-slate-800 pb-2">
                             <span className="font-sans font-semibold text-indigo-400 flex items-center gap-1.5">
                                 <FileCode2 className="w-4 h-4" />
                                 {activeTab === "css" && "Pure CSS Declaration"}
@@ -523,7 +521,7 @@ export default function CssClampCalculator() {
                             <button
                                 type="button"
                                 onClick={() => copyToClipboard(activeClampRule, true)}
-                                className="flex items-center gap-1 text-slate-400 hover:text-white text-xs transition cursor-pointer"
+                                className="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-white text-xs transition cursor-pointer"
                             >
                                 {copiedFormula ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                                 {copiedFormula ? "Copied Raw clamp()!" : "Copy clamp() only"}
@@ -544,7 +542,7 @@ export default function CssClampCalculator() {
                         </div>
 
                         <div className="space-y-1">
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="280"
                                 max="1600"
@@ -553,7 +551,7 @@ export default function CssClampCalculator() {
                                 onChange={(e) => setPreviewWidth(parseInt(e.target.value, 10))}
                                 className="w-full accent-indigo-600 cursor-pointer h-2 bg-slate-200 rounded-lg appearance-none"
                             />
-                            <div className="flex justify-between text-[11px] text-slate-400 font-mono">
+                            <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-300 font-mono">
                                 <span>280px (Mobile)</span>
                                 <span>768px (Tablet)</span>
                                 <span>1200px (Desktop)</span>
@@ -584,7 +582,7 @@ export default function CssClampCalculator() {
                                 </div>
                             </div>
 
-                            <div className="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-200">
+                            <div className="flex items-center justify-between text-[11px] text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-200">
                                 <span>Min: {minSize}px</span>
                                 <span className="font-medium text-slate-600">
                                     {previewWidth <= minViewport && "Clamped to Minimum"}
@@ -650,15 +648,15 @@ export default function CssClampCalculator() {
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">1. Minimum Floor:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">1. Minimum Floor:</span>
                                 <strong className="text-indigo-300 text-sm">Active when screen &lt; MinViewport</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">2. Fluid Curve:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">2. Fluid Curve:</span>
                                 <strong className="text-indigo-300 text-sm">Active inside viewport bounds</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">3. Maximum Ceiling:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">3. Maximum Ceiling:</span>
                                 <strong className="text-indigo-300 text-sm">Active when screen &gt; MaxViewport</strong>
                             </div>
                         </div>

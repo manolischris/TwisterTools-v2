@@ -319,7 +319,7 @@ export default function PixelArtScaler() {
                                 : "border-slate-300 hover:border-indigo-400 bg-slate-50/50"
                                 }`}
                         >
-                            <input
+                            <input aria-label="Upload file"
                                 ref={fileInputRef}
                                 type="file"
                                 accept="image/png,image/gif,image/webp,image/jpeg,image/svg+xml"
@@ -439,8 +439,7 @@ export default function PixelArtScaler() {
                                             >
                                                 Target Width (px)
                                             </label>
-                                            <input
-                                                id={customWidthId}
+                                            <input aria-label="Input value" id={customWidthId}
                                                 type="number"
                                                 min="1"
                                                 max="8192"
@@ -458,8 +457,7 @@ export default function PixelArtScaler() {
                                             >
                                                 Target Height (px)
                                             </label>
-                                            <input
-                                                id={customHeightId}
+                                            <input aria-label="Input value" id={customHeightId}
                                                 type="number"
                                                 min="1"
                                                 max="8192"
@@ -472,7 +470,7 @@ export default function PixelArtScaler() {
                                         </div>
                                     </div>
                                     <label className="flex items-center gap-2 text-xs text-slate-700 cursor-pointer select-none">
-                                        <input
+                                        <input aria-label="Lock Aspect Ratio"
                                             type="checkbox"
                                             checked={lockAspectRatio}
                                             onChange={(e) => setLockAspectRatio(e.target.checked)}
@@ -594,7 +592,7 @@ export default function PixelArtScaler() {
                                 >
                                     <ZoomOut className="w-3.5 h-3.5" />
                                 </button>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     id={zoomInputId}
                                     type="range"
                                     min="25"
@@ -649,7 +647,7 @@ export default function PixelArtScaler() {
                     {/* Right Panel Footer */}
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                         <span className="flex items-center gap-1">
-                            <Cpu className="w-3.5 h-3.5 text-slate-400" />
+                            <Cpu className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             Hardware Accelerated Canvas Compositing
                         </span>
                         <span className="font-mono text-indigo-600 font-semibold uppercase">{exportFormat} Output</span>

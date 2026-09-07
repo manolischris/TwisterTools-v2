@@ -288,8 +288,7 @@ export default function ProbabilityCalculator() {
                                 <label className="block text-sm font-medium text-slate-700 mb-1">
                                     Number of Favorable Outcomes (m)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     value={favorable === 0 ? "" : favorable}
                                     onChange={(e) => handleNumberInput(e, setFavorable)}
@@ -301,8 +300,7 @@ export default function ProbabilityCalculator() {
                                 <label className="block text-sm font-medium text-slate-700 mb-1">
                                     Total Possible Outcomes (n)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     value={totalOutcomes === 0 ? "" : totalOutcomes}
                                     onChange={(e) => handleNumberInput(e, setTotalOutcomes)}
@@ -321,8 +319,7 @@ export default function ProbabilityCalculator() {
                                     <label className="block text-sm font-medium text-slate-700 mb-1">
                                         P(Event A) %
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="100"
                                         value={probA === 0 ? "" : probA}
@@ -334,8 +331,7 @@ export default function ProbabilityCalculator() {
                                     <label className="block text-sm font-medium text-slate-700 mb-1">
                                         P(Event B) %
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="100"
                                         value={probB === 0 ? "" : probB}
@@ -367,8 +363,7 @@ export default function ProbabilityCalculator() {
                                     <label className="block text-sm font-medium text-slate-700 mb-1">
                                         Conditional P(B given A) %
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="100"
                                         value={probBgivenA === 0 ? "" : probBgivenA}
@@ -387,8 +382,7 @@ export default function ProbabilityCalculator() {
                                 <label className="block text-sm font-medium text-slate-700 mb-1">
                                     Single Trial Probability (%)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     max="100"
                                     value={singleProb === 0 ? "" : singleProb}
@@ -401,8 +395,7 @@ export default function ProbabilityCalculator() {
                                 <label className="block text-sm font-medium text-slate-700 mb-1">
                                     Number of Trials (n)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     max="500"
                                     value={trialsSeries === 0 ? "" : trialsSeries}
@@ -422,8 +415,7 @@ export default function ProbabilityCalculator() {
                                     <label className="block text-sm font-medium text-slate-700 mb-1">
                                         Total Trials (n)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="200"
                                         value={nTrials === 0 ? "" : nTrials}
@@ -435,8 +427,7 @@ export default function ProbabilityCalculator() {
                                     <label className="block text-sm font-medium text-slate-700 mb-1">
                                         Target Successes (k)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max={nTrials}
                                         value={kSuccesses === 0 ? "" : kSuccesses}
@@ -449,8 +440,7 @@ export default function ProbabilityCalculator() {
                                 <label className="block text-sm font-medium text-slate-700 mb-1">
                                     Success Probability Per Trial (%)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     max="100"
                                     value={pSuccess === 0 ? "" : pSuccess}

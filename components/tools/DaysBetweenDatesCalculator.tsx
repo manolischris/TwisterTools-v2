@@ -394,7 +394,7 @@ export default function DaysBetweenDatesCalculator() {
                                     {/* Options & Weekend Filters */}
                                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-4">
                                         <label className="flex items-center gap-3 text-xs font-semibold text-slate-700 cursor-pointer">
-                                            <input
+                                            <input aria-label="End Day"
                                                 type="checkbox"
                                                 checked={includeEndDay}
                                                 onChange={(e) => setIncludeEndDay(e.target.checked)}
@@ -604,7 +604,7 @@ export default function DaysBetweenDatesCalculator() {
                                     <>
                                         {/* Detailed Year/Month/Day Breakdown */}
                                         <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 space-y-1.5">
-                                            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                                            <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                                 Calendar Span Breakdown
                                             </span>
                                             <div className="text-base sm:text-lg font-bold text-slate-800 font-mono">
@@ -676,7 +676,7 @@ export default function DaysBetweenDatesCalculator() {
                                         {/* Metadata Breakdown */}
                                         <div className="grid grid-cols-2 gap-3">
                                             <div className="p-3.5 border border-slate-200 rounded-xl bg-slate-50 space-y-1">
-                                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                                                <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                                     ISO Date String
                                                 </span>
                                                 <div className="text-sm font-bold font-mono text-slate-800">
@@ -684,7 +684,7 @@ export default function DaysBetweenDatesCalculator() {
                                                 </div>
                                             </div>
                                             <div className="p-3.5 border border-slate-200 rounded-xl bg-slate-50 space-y-1">
-                                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                                                <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                                     Day of the Year
                                                 </span>
                                                 <div className="text-sm font-bold font-mono text-slate-800">

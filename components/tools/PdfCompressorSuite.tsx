@@ -295,7 +295,7 @@ export default function PdfCompressorSuite() {
                                     : "border-slate-300 bg-slate-50 hover:border-indigo-400 hover:bg-slate-100/50"
                             }`}
                     >
-                        <input
+                        <input aria-label="Upload file"
                             ref={fileInputRef}
                             type="file"
                             accept="application/pdf"
@@ -324,7 +324,7 @@ export default function PdfCompressorSuite() {
                                     <p className="text-sm font-medium text-slate-700">
                                         Drag and drop your PDF here, or click to browse
                                     </p>
-                                    <p className="text-xs text-slate-400">
+                                    <p className="text-xs text-slate-600 dark:text-slate-300">
                                         Maximum allowed size: 20 MB
                                     </p>
                                 </>
@@ -391,7 +391,7 @@ export default function PdfCompressorSuite() {
                         <button
                             onClick={handleCompress}
                             disabled={!file || isProcessing}
-                            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-200 disabled:text-slate-400 transition-all shadow-md shadow-indigo-100 min-h-[44px]"
+                            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-200 disabled:text-slate-600 dark:text-slate-300 transition-all shadow-md shadow-indigo-100 min-h-[44px]"
                         >
                             {isProcessing ? (
                                 <>
@@ -502,7 +502,7 @@ export default function PdfCompressorSuite() {
                         )}
 
                         {!result && !isProcessing && (
-                            <div className="text-center py-12 text-slate-400 space-y-2 border-2 border-dashed border-slate-100 rounded-xl">
+                            <div className="text-center py-12 text-slate-600 dark:text-slate-300 space-y-2 border-2 border-dashed border-slate-100 rounded-xl">
                                 <HardDrive className="w-8 h-8 mx-auto stroke-1" />
                                 <p className="text-sm">
                                     Upload a PDF document and start compression to view output metrics.

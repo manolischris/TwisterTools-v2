@@ -303,7 +303,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                 className="px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition border border-slate-200 cursor-pointer shadow-xs"
                                 title="Reset all fields"
                             >
-                                <RotateCcw className="w-3.5 h-3.5 text-slate-400" />
+                                <RotateCcw className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                                 <span>Reset</span>
                             </button>
                         </div>
@@ -337,8 +337,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                             <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block">
                                 Habit or Target Behavioral Routine
                             </label>
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={habitName}
                                 onChange={(e) => setHabitName(e.target.value)}
                                 placeholder="e.g., Morning Workout, Deep Work, Reading..."
@@ -355,8 +354,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                     <span className="text-[11px] font-mono text-indigo-600 font-bold">{currentStreak} days</span>
                                 </div>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={0}
                                         max={3650}
                                         value={currentStreak}
@@ -374,8 +372,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                     <span className="text-[11px] font-mono text-indigo-600 font-bold">{targetDays} days</span>
                                 </div>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         max={3650}
                                         value={targetDays}
@@ -396,7 +393,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                 </span>
                                 <span className="font-mono text-indigo-600 font-black">{historicalRate}%</span>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min={30}
                                 max={99}
@@ -405,7 +402,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                 onChange={(e) => setHistoricalRate(Number(e.target.value))}
                                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                             />
-                            <div className="flex justify-between text-[10px] text-slate-400 font-semibold">
+                            <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-semibold">
                                 <span>30% (High Friction)</span>
                                 <span>75% (Realistic)</span>
                                 <span>99% (Machine Routine)</span>
@@ -420,8 +417,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                     <span>Allowed Buffer Skips</span>
                                     <span className="font-mono text-indigo-600">{skipAllowance} days</span>
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min={0}
                                     max={30}
                                     value={skipAllowance}
@@ -436,8 +432,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                 <label className="text-xs font-bold text-slate-700 block">
                                     Schedule Volatility
                                 </label>
-                                <select
-                                    value={volatility}
+                                <select aria-label="Select option" value={volatility}
                                     onChange={(e) => setVolatility(e.target.value as "low" | "medium" | "high")}
                                     className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-800 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none transition cursor-pointer"
                                 >
@@ -510,7 +505,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                 <span className="text-lg sm:text-xl font-black text-slate-900 font-mono">
                                     {analytics.unbrokenProbability.toFixed(1)}%
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">0 skips allowed</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">0 skips allowed</span>
                             </div>
 
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
@@ -518,7 +513,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                 <span className="text-lg sm:text-xl font-black text-indigo-600 font-mono">
                                     {analytics.automaticityScore}%
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">66-day baseline</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">66-day baseline</span>
                             </div>
 
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
@@ -526,7 +521,7 @@ Calculated with TwisterTools Habit Streak & Target Goal Probability Engine`;
                                 <span className="text-lg sm:text-xl font-black text-emerald-600 font-mono">
                                     ~{analytics.expectedTotalDays}d
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">calendar span</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">calendar span</span>
                             </div>
                         </div>
 

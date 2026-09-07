@@ -384,8 +384,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                                             Years
                                         </label>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="35"
                                                 value={years === 0 && months === 0 ? "" : years}
@@ -396,7 +395,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                                                 className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                                 placeholder="0"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 yrs
                                             </span>
                                         </div>
@@ -407,8 +406,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                                             Additional Months
                                         </label>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="11"
                                                 value={months === 0 ? "" : months}
@@ -419,7 +417,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                                                 className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                                 placeholder="0"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                                 mos
                                             </span>
                                         </div>
@@ -433,7 +431,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                                     <span className="font-semibold text-slate-600">Quick Age Slider</span>
                                     <span className="font-bold text-indigo-600">{results.totalYears.toFixed(1)} Feline Years</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="25"
@@ -449,7 +447,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                                     }}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[10px] font-semibold text-slate-400">
+                                <div className="flex justify-between text-[10px] font-semibold text-slate-600 dark:text-slate-300">
                                     <span>0y (Kitten)</span>
                                     <span>5y (Prime)</span>
                                     <span>10y (Mature)</span>
@@ -501,7 +499,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                         {/* Presets */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Reference Life Stages
                                 </span>
                                 {activePresetId && (
@@ -624,7 +622,7 @@ Calculated at twistertools.com/tools/calculators/cat-age-calculator`;
                                         }}
                                     />
                                 </div>
-                                <div className="flex justify-between text-[10px] font-bold text-slate-400">
+                                <div className="flex justify-between text-[10px] font-bold text-slate-600 dark:text-slate-300">
                                     <span>Kitten</span>
                                     <span>Junior</span>
                                     <span>Prime</span>

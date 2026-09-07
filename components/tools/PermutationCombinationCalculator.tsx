@@ -367,8 +367,7 @@ export default function PermutationCombinationCalculator() {
                                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                         Total Items (n)
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={valN}
                                         onChange={(e) => { handleNumberInput(e, setValN); setActivePresetId(null); }}
                                         placeholder="e.g. 10"
@@ -380,8 +379,7 @@ export default function PermutationCombinationCalculator() {
                                     <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                         Sample Size (r)
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={valR}
                                         onChange={(e) => { handleNumberInput(e, setValR); setActivePresetId(null); }}
                                         placeholder="e.g. 3"
@@ -413,7 +411,7 @@ export default function PermutationCombinationCalculator() {
                             {/* Quick Presets */}
                             <div className="pt-2 space-y-2">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                    <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                         <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Presets & Use Cases
                                     </span>
                                     {activePresetId && (

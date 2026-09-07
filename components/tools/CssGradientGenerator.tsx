@@ -392,7 +392,7 @@ export default function CssGradientGenerator() {
                                     <span className="font-mono text-indigo-600">{angle}°</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max="360"
@@ -400,8 +400,7 @@ export default function CssGradientGenerator() {
                                         onChange={(e) => setAngle(Number(e.target.value))}
                                         className="w-full accent-indigo-600 cursor-pointer"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="360"
                                         value={angle === 0 ? "" : angle}
@@ -430,7 +429,7 @@ export default function CssGradientGenerator() {
                             <div className="grid grid-cols-2 gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 mb-1.5">Radial Shape</label>
-                                    <select
+                                    <select aria-label="Select Radial Shape"
                                         value={radialShape}
                                         onChange={(e) => setRadialShape(e.target.value as "circle" | "ellipse")}
                                         className="w-full px-3 py-1.5 text-xs font-semibold bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
@@ -441,7 +440,7 @@ export default function CssGradientGenerator() {
                                 </div>
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 mb-1.5">Focal Origin</label>
-                                    <select
+                                    <select aria-label="Select Focal Origin"
                                         value={radialPosition}
                                         onChange={(e) => setRadialPosition(e.target.value)}
                                         className="w-full px-3 py-1.5 text-xs font-semibold bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500"
@@ -466,7 +465,7 @@ export default function CssGradientGenerator() {
                                     <span className="font-mono text-indigo-600">{angle}°</span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max="360"
@@ -474,8 +473,7 @@ export default function CssGradientGenerator() {
                                         onChange={(e) => setAngle(Number(e.target.value))}
                                         className="w-full accent-indigo-600 cursor-pointer"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="360"
                                         value={angle === 0 ? "" : angle}
@@ -510,20 +508,19 @@ export default function CssGradientGenerator() {
                                             : "border-slate-200 bg-slate-50/50 hover:bg-slate-50"
                                             }`}
                                     >
-                                        <input
+                                        <input aria-label="Select color"
                                             type="color"
                                             value={s.color}
                                             onChange={(e) => handleUpdateStopColor(s.id, e.target.value)}
                                             className="w-8 h-8 rounded-lg border-0 cursor-pointer p-0 bg-transparent flex-shrink-0"
                                         />
-                                        <input
-                                            type="text"
+                                        <input aria-label="Input value" type="text"
                                             value={s.color}
                                             onChange={(e) => handleUpdateStopColor(s.id, e.target.value)}
                                             className="w-20 px-2 py-1 text-xs font-mono uppercase bg-white border border-slate-200 rounded-md focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
                                         <div className="flex-1 flex items-center gap-2">
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="0"
                                                 max="100"
@@ -536,7 +533,7 @@ export default function CssGradientGenerator() {
                                         <button
                                             onClick={() => handleRemoveStop(s.id)}
                                             disabled={stops.length <= 2}
-                                            className="text-slate-400 hover:text-rose-600 disabled:opacity-30 transition p-1 cursor-pointer"
+                                            className="text-slate-600 dark:text-slate-300 hover:text-rose-600 disabled:opacity-30 transition p-1 cursor-pointer"
                                             title="Delete Stop"
                                         >
                                             <Trash2 className="w-4 h-4" />
@@ -615,8 +612,7 @@ export default function CssGradientGenerator() {
                                     Production CSS Output
                                 </label>
                                 <label className="flex items-center gap-1.5 text-xs text-slate-600 cursor-pointer font-medium">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Vendor Prefixes" type="checkbox"
                                         checked={includeVendorPrefixes}
                                         onChange={(e) => setIncludeVendorPrefixes(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 accent-indigo-600"

@@ -404,7 +404,7 @@ export default function CreditCardGenerator() {
                       <div></div>
                     </div>
                   </div>
-                  <span className="text-[10px] tracking-widest uppercase font-mono text-slate-400">TEST SANDBOX</span>
+                  <span className="text-[10px] tracking-widest uppercase font-mono text-slate-600 dark:text-slate-300">TEST SANDBOX</span>
                 </div>
                 <span className="text-lg font-bold italic tracking-wider text-indigo-300">
                   {primaryProfile.brandName}
@@ -412,7 +412,7 @@ export default function CreditCardGenerator() {
               </div>
 
               <div className="space-y-1">
-                <p className="text-[10px] text-slate-400 uppercase tracking-wider font-mono">Card Number</p>
+                <p className="text-[10px] text-slate-600 dark:text-slate-300 uppercase tracking-wider font-mono">Card Number</p>
                 <div className="flex items-center justify-between">
                   <p className="font-mono text-xl md:text-2xl font-bold tracking-widest text-slate-100">
                     {primaryProfile.formattedCardNumber}
@@ -433,15 +433,15 @@ export default function CreditCardGenerator() {
 
               <div className="grid grid-cols-3 gap-4 pt-2 border-t border-slate-800">
                 <div>
-                  <p className="text-[9px] text-slate-400 uppercase tracking-wider">Cardholder</p>
+                  <p className="text-[9px] text-slate-600 dark:text-slate-300 uppercase tracking-wider">Cardholder</p>
                   <p className="text-xs font-semibold text-slate-200 truncate">{primaryProfile.cardholderName}</p>
                 </div>
                 <div>
-                  <p className="text-[9px] text-slate-400 uppercase tracking-wider">Expires</p>
+                  <p className="text-[9px] text-slate-600 dark:text-slate-300 uppercase tracking-wider">Expires</p>
                   <p className="text-xs font-mono font-semibold text-slate-200">{primaryProfile.expFormatted}</p>
                 </div>
                 <div>
-                  <p className="text-[9px] text-slate-400 uppercase tracking-wider">CVV / CVC</p>
+                  <p className="text-[9px] text-slate-600 dark:text-slate-300 uppercase tracking-wider">CVV / CVC</p>
                   <p className="text-xs font-mono font-semibold text-slate-200">{primaryProfile.cvv}</p>
                 </div>
               </div>
@@ -490,7 +490,7 @@ export default function CreditCardGenerator() {
                       <span>{primaryProfile.cardholderName}</span>
                       <button
                         onClick={() => copyToClipboard(primaryProfile.cardholderName, "name")}
-                        className="text-slate-400 hover:text-indigo-600"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedField === "name" ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -503,7 +503,7 @@ export default function CreditCardGenerator() {
                       <span className="truncate">{primaryProfile.email}</span>
                       <button
                         onClick={() => copyToClipboard(primaryProfile.email, "email")}
-                        className="text-slate-400 hover:text-indigo-600 flex-shrink-0 ml-1"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600 flex-shrink-0 ml-1"
                       >
                         {copiedField === "email" ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -516,7 +516,7 @@ export default function CreditCardGenerator() {
                       <span>{primaryProfile.address.street}</span>
                       <button
                         onClick={() => copyToClipboard(primaryProfile.address.street, "street")}
-                        className="text-slate-400 hover:text-indigo-600"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedField === "street" ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -529,7 +529,7 @@ export default function CreditCardGenerator() {
                       <span>{primaryProfile.address.city}, {primaryProfile.address.state} {primaryProfile.address.zip}</span>
                       <button
                         onClick={() => copyToClipboard(`${primaryProfile.address.city}, ${primaryProfile.address.state} ${primaryProfile.address.zip}`, "citystate")}
-                        className="text-slate-400 hover:text-indigo-600"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedField === "citystate" ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -542,7 +542,7 @@ export default function CreditCardGenerator() {
                       <span>{primaryProfile.phone}</span>
                       <button
                         onClick={() => copyToClipboard(primaryProfile.phone, "phone")}
-                        className="text-slate-400 hover:text-indigo-600"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedField === "phone" ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>
@@ -555,7 +555,7 @@ export default function CreditCardGenerator() {
                       <span>{primaryProfile.ssn}</span>
                       <button
                         onClick={() => copyToClipboard(primaryProfile.ssn, "ssn")}
-                        className="text-slate-400 hover:text-indigo-600"
+                        className="text-slate-600 dark:text-slate-300 hover:text-indigo-600"
                       >
                         {copiedField === "ssn" ? <Check className="w-3.5 h-3.5 text-green-600" /> : <Copy className="w-3.5 h-3.5" />}
                       </button>

@@ -311,9 +311,9 @@ export default function JwtDecoder() {
                 {token ? (
                   <>
                     <span className="text-rose-600 dark:text-rose-400 font-semibold">{decoded.headerRaw || ""}</span>
-                    {decoded.payloadRaw && <span className="text-slate-400 dark:text-slate-600">.</span>}
+                    {decoded.payloadRaw && <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">.</span>}
                     <span className="text-purple-600 dark:text-purple-400 font-semibold">{decoded.payloadRaw || ""}</span>
-                    {decoded.signatureRaw && <span className="text-slate-400 dark:text-slate-600">.</span>}
+                    {decoded.signatureRaw && <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">.</span>}
                     <span className="text-cyan-600 dark:text-cyan-400 font-semibold">{decoded.signatureRaw || ""}</span>
                   </>
                 ) : (

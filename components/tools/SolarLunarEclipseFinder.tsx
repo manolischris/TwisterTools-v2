@@ -474,8 +474,8 @@ Curated via TwisterTools Eclipse Visibility Explorer`;
                         {/* Search & Sub-Type Filtering Bar */}
                         <div className="space-y-3">
                             <div className="relative">
-                                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-                                <input
+                                <Search className="w-4 h-4 text-slate-600 dark:text-slate-300 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                                <input aria-label="Search by country, city, continent, type, or year"
                                     type="text"
                                     placeholder="Search by country, city, continent, type, or year..."
                                     value={searchTerm}
@@ -509,7 +509,7 @@ Curated via TwisterTools Eclipse Visibility Explorer`;
                             {filteredEclipses.length === 0 ? (
                                 <div className="p-8 text-center bg-slate-50 rounded-xl border border-slate-200 space-y-2">
                                     <p className="text-sm font-semibold text-slate-600">No matching eclipses found</p>
-                                    <p className="text-xs text-slate-400">Try broadening your search query or switching category filters.</p>
+                                    <p className="text-xs text-slate-600 dark:text-slate-300">Try broadening your search query or switching category filters.</p>
                                 </div>
                             ) : (
                                 filteredEclipses.map((item) => {
@@ -563,7 +563,7 @@ Curated via TwisterTools Eclipse Visibility Explorer`;
                                                     {item.date}
                                                 </span>
                                                 <span className="flex items-center gap-1">
-                                                    <Clock className="w-3.5 h-3.5 text-slate-400" />
+                                                    <Clock className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                                                     {item.maxDuration}
                                                 </span>
                                                 <span className="flex items-center gap-1 font-semibold text-slate-700">
@@ -649,15 +649,15 @@ Curated via TwisterTools Eclipse Visibility Explorer`;
 
                             <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800 text-[11px]">
                                 <div>
-                                    <span className="text-slate-400 block">Peak Totality</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block">Peak Totality</span>
                                     <span className="font-bold text-amber-300 font-mono">{activeEvent.maxDuration}</span>
                                 </div>
                                 <div>
-                                    <span className="text-slate-400 block">Magnitude</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block">Magnitude</span>
                                     <span className="font-bold text-indigo-300 font-mono">{activeEvent.magnitude.toFixed(4)}</span>
                                 </div>
                                 <div>
-                                    <span className="text-slate-400 block">Gamma Val</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block">Gamma Val</span>
                                     <span className="font-bold text-slate-200 font-mono">{activeEvent.gamma.toFixed(4)}</span>
                                 </div>
                             </div>

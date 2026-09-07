@@ -512,7 +512,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                             }`}
                                     >
                                         <span className="font-extrabold text-xs leading-tight">{m.label}</span>
-                                        <span className={`text-[10px] mt-1 truncate ${mode === m.id ? "text-indigo-100" : "text-slate-400"}`}>
+                                        <span className={`text-[10px] mt-1 truncate ${mode === m.id ? "text-indigo-100" : "text-slate-600 dark:text-slate-300"}`}>
                                             {m.desc}
                                         </span>
                                     </button>
@@ -528,8 +528,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                             Leg A Length (a)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="any"
                                             value={sideA === 0 ? "" : sideA}
@@ -542,8 +541,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                             Leg B Length (b)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="any"
                                             value={sideB === 0 ? "" : sideB}
@@ -561,8 +559,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                             Known Leg (a)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="any"
                                             value={sideA === 0 ? "" : sideA}
@@ -575,8 +572,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                             Hypotenuse (c)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="any"
                                             value={sideC === 0 ? "" : sideC}
@@ -592,7 +588,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                     <div>
                                         <label className="block text-xs font-bold text-slate-700 mb-1">Side 1 (a)</label>
-                                        <input
+                                        <input aria-label="Side 1 (a)"
                                             type="number"
                                             min="0"
                                             step="any"
@@ -603,7 +599,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                     </div>
                                     <div>
                                         <label className="block text-xs font-bold text-slate-700 mb-1">Side 2 (b)</label>
-                                        <input
+                                        <input aria-label="Side 2 (b)"
                                             type="number"
                                             min="0"
                                             step="any"
@@ -614,7 +610,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                     </div>
                                     <div>
                                         <label className="block text-xs font-bold text-slate-700 mb-1">Side 3 (c)</label>
-                                        <input
+                                        <input aria-label="Side 3 (c)"
                                             type="number"
                                             min="0"
                                             step="any"
@@ -635,7 +631,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                         <div className={`grid ${mode === "DISTANCE_3D" ? "grid-cols-3" : "grid-cols-2"} gap-3`}>
                                             <div>
                                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">X₁</label>
-                                                <input
+                                                <input aria-label="X₁"
                                                     type="number"
                                                     step="any"
                                                     value={x1 === 0 ? "" : x1}
@@ -645,7 +641,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                             </div>
                                             <div>
                                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">Y₁</label>
-                                                <input
+                                                <input aria-label="Y₁"
                                                     type="number"
                                                     step="any"
                                                     value={y1 === 0 ? "" : y1}
@@ -656,7 +652,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                             {mode === "DISTANCE_3D" && (
                                                 <div>
                                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">Z₁</label>
-                                                    <input
+                                                    <input aria-label="Z₁"
                                                         type="number"
                                                         step="any"
                                                         value={z1 === 0 ? "" : z1}
@@ -675,7 +671,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                         <div className={`grid ${mode === "DISTANCE_3D" ? "grid-cols-3" : "grid-cols-2"} gap-3`}>
                                             <div>
                                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">X₂</label>
-                                                <input
+                                                <input aria-label="X₂"
                                                     type="number"
                                                     step="any"
                                                     value={x2 === 0 ? "" : x2}
@@ -685,7 +681,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                             </div>
                                             <div>
                                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">Y₂</label>
-                                                <input
+                                                <input aria-label="Y₂"
                                                     type="number"
                                                     step="any"
                                                     value={y2 === 0 ? "" : y2}
@@ -696,7 +692,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                                             {mode === "DISTANCE_3D" && (
                                                 <div>
                                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">Z₂</label>
-                                                    <input
+                                                    <input aria-label="Z₂"
                                                         type="number"
                                                         step="any"
                                                         value={z2 === 0 ? "" : z2}
@@ -780,7 +776,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
 
                         {/* Real-time Dynamic Vector SVG Visualizer */}
                         <div className="w-full bg-slate-900 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-800 relative overflow-hidden min-h-[220px]">
-                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-600 dark:text-slate-300 flex items-center gap-1">
                                 <Maximize2 className="w-3.5 h-3.5 text-indigo-400" /> Dynamic Geometric Projection
                             </div>
 
@@ -982,7 +978,7 @@ Generated via TwisterTools Pythagorean & Distance Calculator`;
                             onClick={handleCopy}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${result.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

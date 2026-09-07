@@ -402,13 +402,13 @@ const SAMPLE_JSON = `{
 function JsonTreeView({ data, depth = 0 }: { data: any; depth?: number }): React.ReactNode {
   const [collapsed, setCollapsed] = useState(depth > 2);
 
-  if (data === null || data === undefined) return <span className="text-slate-400">{String(data)}</span>;
+  if (data === null || data === undefined) return <span className="text-slate-600 dark:text-slate-300">{String(data)}</span>;
   if (typeof data === "string") return <span className="text-emerald-400">"{data}"</span>;
   if (typeof data === "number") return <span className="text-blue-400">{data}</span>;
   if (typeof data === "boolean") return <span className="text-purple-400">{data ? "true" : "false"}</span>;
 
   if (Array.isArray(data)) {
-    if (data.length === 0) return <span className="text-slate-400">[]</span>;
+    if (data.length === 0) return <span className="text-slate-600 dark:text-slate-300">[]</span>;
     return (
       <div className="ml-4">
         <button onClick={() => setCollapsed(!collapsed)} className="inline-flex items-center gap-1 text-xs font-mono text-slate-500 hover:text-slate-300 transition-colors">
@@ -428,7 +428,7 @@ function JsonTreeView({ data, depth = 0 }: { data: any; depth?: number }): React
 
   if (typeof data === "object") {
     const keys = Object.keys(data);
-    if (keys.length === 0) return <span className="text-slate-400">{'{}'}</span>;
+    if (keys.length === 0) return <span className="text-slate-600 dark:text-slate-300">{'{}'}</span>;
     return (
       <div className="ml-4">
         <button onClick={() => setCollapsed(!collapsed)} className="inline-flex items-center gap-1 text-xs font-mono text-slate-500 hover:text-slate-300 transition-colors">
@@ -570,7 +570,7 @@ export default function YamlJsonConverter() {
                 </div>
               </div>
             )}
-            <textarea
+            <textarea aria-label="Input text content"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={mode === "yaml-to-json" || mode === "yaml-beautify" ? "Paste your YAML here to convert..." : "Paste your JSON here to convert..."}
@@ -593,7 +593,7 @@ export default function YamlJsonConverter() {
             </div>
             {/* Drag-and-Drop Upload Zone */}
             <div className="mt-2">
-              <input ref={fileInputRef} type="file" accept=".yaml,.yml,.json,.txt" onChange={handleFileSelect} className="hidden" />
+              <input aria-label="Upload file' ref={fileInputRef} type='file" accept=".yaml,.yml,.json,.txt" onChange={handleFileSelect} className="hidden" />
               <div
                 onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}
                 onClick={() => fileInputRef.current?.click()}
@@ -605,7 +605,7 @@ export default function YamlJsonConverter() {
                   <Upload className="w-5 h-5 text-slate-500 flex-shrink-0" />
                   <p className="text-xs text-slate-600">
                     {isDragOver ? "Drop file to load" : "Drop a .yaml, .yml, .json file here, or click to browse"}
-                    <span className="block text-[10px] text-slate-400 mt-0.5">.yaml, .yml, .json, .txt</span>
+                    <span className="block text-[10px] text-slate-600 dark:text-slate-300 mt-0.5">.yaml, .yml, .json, .txt</span>
                   </p>
                 </div>
               </div>
@@ -674,7 +674,7 @@ export default function YamlJsonConverter() {
                     ? copied
                       ? "bg-green-500 text-white shadow-md shadow-green-200"
                       : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                 }`}
               >
                 {copied ? <><Check className="w-4 h-4" /> Copied Securely!</> : <><Copy className="w-4 h-4" /> Copy Formatted Output</>}

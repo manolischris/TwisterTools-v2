@@ -426,8 +426,7 @@ export default function UrlQueryParameterParser() {
                         <label htmlFor={formatSelectId} className="text-xs font-bold text-slate-700 block">
                             Target Serialization
                         </label>
-                        <select
-                            id={formatSelectId}
+                        <select aria-label="Select option" id={formatSelectId}
                             value={outputFormat}
                             onChange={(e) => setOutputFormat(e.target.value as OutputFormat)}
                             className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-indigo-500 text-slate-800 font-medium outline-none"
@@ -444,8 +443,7 @@ export default function UrlQueryParameterParser() {
                         <label htmlFor={duplicateHandlingSelectId} className="text-xs font-bold text-slate-700 block">
                             Duplicate Keys Handling
                         </label>
-                        <select
-                            id={duplicateHandlingSelectId}
+                        <select aria-label="Select option" id={duplicateHandlingSelectId}
                             value={duplicateHandling}
                             onChange={(e) => setDuplicateHandling(e.target.value as DuplicateHandling)}
                             className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-indigo-500 text-slate-800 font-medium outline-none"
@@ -459,7 +457,7 @@ export default function UrlQueryParameterParser() {
                     {/* Checkbox Toggles Group 1 */}
                     <div className="space-y-2 pt-1 sm:pt-0">
                         <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                            <input
+                            <input aria-label="Auto Type Casting"
                                 type="checkbox"
                                 checked={autoTypeCasting}
                                 onChange={(e) => setAutoTypeCasting(e.target.checked)}
@@ -468,8 +466,7 @@ export default function UrlQueryParameterParser() {
                             Auto Type Casting (Number, Bool)
                         </label>
                         <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Encode Special Chars" type="checkbox"
                                 checked={encodeSpecialChars}
                                 onChange={(e) => setEncodeSpecialChars(e.target.checked)}
                                 className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -504,7 +501,7 @@ export default function UrlQueryParameterParser() {
                         Raw Target URL or Query String Input
                     </label>
                     <div className="flex items-center gap-3">
-                        <span className="text-xs text-slate-400 font-mono">
+                        <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">
                             {rawInputUrl.length} chars
                         </span>
                         <button
@@ -519,8 +516,7 @@ export default function UrlQueryParameterParser() {
                 </div>
 
                 <div className="relative">
-                    <input
-                        type="text"
+                    <input aria-label="Input value" type="text"
                         value={rawInputUrl}
                         onChange={(e) => handleRawUrlChange(e.target.value)}
                         placeholder="https://example.com/api?user=john&role=admin#section"
@@ -574,7 +570,7 @@ export default function UrlQueryParameterParser() {
                     {/* Parameters Itemized List */}
                     <div className="space-y-2 max-h-[480px] overflow-y-auto pr-1">
                         {paramsList.length === 0 ? (
-                            <div className="p-8 text-center border-2 border-dashed border-slate-200 rounded-xl text-slate-400 text-xs">
+                            <div className="p-8 text-center border-2 border-dashed border-slate-200 rounded-xl text-slate-600 dark:text-slate-300 text-xs">
                                 No query parameters detected. Paste a valid URL above or click &quot;Add Parameter&quot;.
                             </div>
                         ) : (
@@ -586,26 +582,23 @@ export default function UrlQueryParameterParser() {
                                             : "bg-slate-50/70 border-slate-200/60 opacity-60"
                                         }`}
                                 >
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="D" type="checkbox"
                                         checked={param.enabled}
                                         onChange={(e) => handleParamChange(param.id, "enabled", e.target.checked)}
                                         className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5 shrink-0"
                                         title="Toggle Parameter"
                                     />
-                                    <span className="text-[11px] font-mono text-slate-400 w-5 text-right shrink-0">
+                                    <span className="text-[11px] font-mono text-slate-600 dark:text-slate-300 w-5 text-right shrink-0">
                                         {index + 1}.
                                     </span>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={param.key}
                                         onChange={(e) => handleParamChange(param.id, "key", e.target.value)}
                                         placeholder="key"
                                         className="w-1/3 min-w-0 px-2.5 py-1.5 text-xs font-mono rounded-lg border border-slate-200 bg-slate-50 focus:bg-white focus:ring-1 focus:ring-indigo-500 text-slate-900 outline-none"
                                     />
-                                    <span className="text-slate-400 font-bold text-xs">=</span>
-                                    <input
-                                        type="text"
+                                    <span className="text-slate-600 dark:text-slate-300 font-bold text-xs">=</span>
+                                    <input aria-label="Input value" type="text"
                                         value={param.value}
                                         onChange={(e) => handleParamChange(param.id, "value", e.target.value)}
                                         placeholder="value"
@@ -614,7 +607,7 @@ export default function UrlQueryParameterParser() {
                                     <button
                                         type="button"
                                         onClick={() => handleRemoveParam(param.id)}
-                                        className="p-1 text-slate-400 hover:text-rose-600 transition shrink-0 cursor-pointer"
+                                        className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition shrink-0 cursor-pointer"
                                         title="Delete Parameter"
                                     >
                                         <Trash2 className="w-4 h-4" />
@@ -713,7 +706,7 @@ export default function UrlQueryParameterParser() {
                             <RefreshCw className="w-3.5 h-3.5" />
                             Synchronized Bi-Directionally
                         </span>
-                        <span className="text-slate-400">RFC 3986 & WHATWG URL Standard</span>
+                        <span className="text-slate-600 dark:text-slate-300">RFC 3986 & WHATWG URL Standard</span>
                     </div>
                 </div>
             </div>

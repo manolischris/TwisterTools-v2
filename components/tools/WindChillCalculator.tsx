@@ -435,7 +435,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                                 }`}
                                         >
                                             <span className="font-extrabold text-xs">{std.name}</span>
-                                            <span className={`text-[10px] truncate max-w-full ${modelStandard === std.id ? "text-indigo-100" : "text-slate-400"}`}>
+                                            <span className={`text-[10px] truncate max-w-full ${modelStandard === std.id ? "text-indigo-100" : "text-slate-600 dark:text-slate-300"}`}>
                                                 {std.sub}
                                             </span>
                                         </button>
@@ -458,7 +458,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={unitSystem === "imperial" ? "-50" : "-45"}
                                         max={unitSystem === "imperial" ? "50" : "15"}
@@ -467,8 +467,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                         onChange={(e) => setTemperatureInput(parseFloat(e.target.value) || 0)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="any"
                                         value={temperatureInput === 0 ? "" : temperatureInput}
                                         onChange={(e) => handleNumberInput(e, setTemperatureInput)}
@@ -490,7 +489,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max={unitSystem === "imperial" ? "80" : "130"}
@@ -499,8 +498,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                         onChange={(e) => setWindSpeedInput(Math.max(0, parseFloat(e.target.value) || 0))}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="any"
                                         value={windSpeedInput === 0 ? "" : windSpeedInput}
@@ -524,7 +522,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="5"
                                             max="100"
@@ -533,8 +531,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                             onChange={(e) => setRelativeHumidity(parseFloat(e.target.value) || 50)}
                                             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                         />
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="100"
                                             value={relativeHumidity === 0 ? "" : relativeHumidity}
@@ -676,7 +673,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                             <AlertTriangle className="w-4 h-4 text-amber-400" />
                                             Meteorological Safety Advisory
                                         </span>
-                                        <span className="text-[10px] text-slate-400 font-mono">Status: Verified</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">Status: Verified</span>
                                     </div>
                                     <p className="text-slate-300 leading-relaxed text-xs">
                                         {res.advisoryText}
@@ -684,7 +681,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                                 </div>
 
                                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-[11px] text-slate-500 flex items-start gap-2">
-                                    <Info className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
+                                    <Info className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0 mt-0.5" />
                                     <p>
                                         <strong>Meteorological & Safety Disclaimer:</strong> Frostbite and hypothermia exposure windows are theoretical estimates based on standard NOAA/NWS human heat transfer models for healthy, dry skin. Individual susceptibility varies significantly with clothing, moisture, age, and health conditions. Always consult local meteorological alerts and seek professional emergency medical care for suspected cold injuries.
                                     </p>
@@ -703,7 +700,7 @@ Generated via TwisterTools Wind Chill Factor Calculator`;
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

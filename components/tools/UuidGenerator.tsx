@@ -287,8 +287,7 @@ export default function UuidGenerator() {
                 >
                   -
                 </button>
-                <input
-                  type="number"
+                <input aria-label="Input value" type="number"
                   min={1}
                   max={500}
                   value={quantity}
@@ -456,7 +455,7 @@ export default function UuidGenerator() {
               {/* Output Content */}
               <div className="p-5 space-y-4">
                 <div className="relative">
-                  <textarea
+                  <textarea aria-label="Click Generate to produce identifiers"
                     readOnly
                     value={formattedList}
                     placeholder="Click Generate to produce identifiers..."
@@ -468,7 +467,7 @@ export default function UuidGenerator() {
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-2 gap-3">
                   <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3 text-center">
-                    <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Batch Count
                     </span>
                     <span className="text-lg font-extrabold text-slate-700">
@@ -476,7 +475,7 @@ export default function UuidGenerator() {
                     </span>
                   </div>
                   <div className="bg-slate-50 border border-slate-200/80 rounded-xl p-3 text-center">
-                    <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                       Total Length
                     </span>
                     <span className="text-lg font-extrabold text-slate-700">

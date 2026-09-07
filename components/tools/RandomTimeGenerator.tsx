@@ -485,8 +485,7 @@ export default function RandomTimeGenerator() {
                                     <Clock className="w-4 h-4 text-indigo-600" />
                                     Start Boundary (HH:MM)
                                 </label>
-                                <input
-                                    type="time"
+                                <input aria-label="Input value" type="time"
                                     value={startTime}
                                     onChange={(e) => setStartTime(e.target.value)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
@@ -497,8 +496,7 @@ export default function RandomTimeGenerator() {
                                     <Clock className="w-4 h-4 text-indigo-600" />
                                     End Boundary (HH:MM)
                                 </label>
-                                <input
-                                    type="time"
+                                <input aria-label="Input value" type="time"
                                     value={endTime}
                                     onChange={(e) => setEndTime(e.target.value)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
@@ -512,8 +510,7 @@ export default function RandomTimeGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Total Items to Generate
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     max="500"
                                     value={count === 0 ? "" : count}
@@ -528,8 +525,7 @@ export default function RandomTimeGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Step Precision Interval
                                 </label>
-                                <select
-                                    value={stepMinutes}
+                                <select aria-label="Select option" value={stepMinutes}
                                     onChange={(e) => setStepMinutes(Number(e.target.value))}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                 >
@@ -550,8 +546,7 @@ export default function RandomTimeGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Output Format
                                 </label>
-                                <select
-                                    value={timeFormat}
+                                <select aria-label="Select option" value={timeFormat}
                                     onChange={(e) => setTimeFormat(e.target.value as TimeFormat)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                 >
@@ -568,8 +563,7 @@ export default function RandomTimeGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <Globe className="w-3.5 h-3.5 text-indigo-600" /> Timezone Context
                                 </label>
-                                <select
-                                    value={selectedTimezone}
+                                <select aria-label="Select option" value={selectedTimezone}
                                     onChange={(e) => setSelectedTimezone(e.target.value)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white truncate"
                                 >
@@ -588,8 +582,7 @@ export default function RandomTimeGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <Calendar className="w-3.5 h-3.5 text-indigo-600" /> Reference Calendar Date
                                 </label>
-                                <input
-                                    type="date"
+                                <input aria-label="Input value" type="date"
                                     value={targetDate}
                                     onChange={(e) => setTargetDate(e.target.value)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
@@ -600,8 +593,7 @@ export default function RandomTimeGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <ArrowDownUp className="w-3.5 h-3.5 text-indigo-600" /> Sort Order
                                 </label>
-                                <select
-                                    value={sortOrder}
+                                <select aria-label="Select option" value={sortOrder}
                                     onChange={(e) => setSortOrder(e.target.value as SortOrder)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                 >
@@ -615,7 +607,7 @@ export default function RandomTimeGenerator() {
                         {/* Checkbox Toggles */}
                         <div className="pt-2 flex flex-col sm:flex-row gap-4">
                             <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 select-none">
-                                <input
+                                <input aria-label="Seconds"
                                     type="checkbox"
                                     checked={includeSeconds}
                                     onChange={(e) => setIncludeSeconds(e.target.checked)}
@@ -625,8 +617,7 @@ export default function RandomTimeGenerator() {
                             </label>
 
                             <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 select-none">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Unique Only" type="checkbox"
                                     checked={uniqueOnly}
                                     onChange={(e) => setUniqueOnly(e.target.checked)}
                                     className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300"
@@ -666,7 +657,7 @@ export default function RandomTimeGenerator() {
                                     {selectedItems.size === results.length && results.length > 0 ? (
                                         <CheckSquare className="w-3.5 h-3.5 text-indigo-600" />
                                     ) : (
-                                        <Square className="w-3.5 h-3.5 text-slate-400" />
+                                        <Square className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                                     )}
                                     Select All
                                 </button>
@@ -706,7 +697,7 @@ export default function RandomTimeGenerator() {
                         <div className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50">
                             <div className="max-h-[300px] overflow-y-auto divide-y divide-slate-100 p-1">
                                 {results.length === 0 ? (
-                                    <div className="p-8 text-center text-slate-400 text-xs font-medium">
+                                    <div className="p-8 text-center text-slate-600 dark:text-slate-300 text-xs font-medium">
                                         No time entries generated. Adjust parameters and click Generate.
                                     </div>
                                 ) : (
@@ -722,7 +713,7 @@ export default function RandomTimeGenerator() {
                                                     }`}
                                             >
                                                 <div className="flex items-center gap-3">
-                                                    <span className="text-slate-400 font-mono text-[11px] w-6">
+                                                    <span className="text-slate-600 dark:text-slate-300 font-mono text-[11px] w-6">
                                                         #{index + 1}
                                                     </span>
                                                     <div className="flex items-center gap-2">
@@ -736,12 +727,10 @@ export default function RandomTimeGenerator() {
                                                     <span className="hidden sm:inline-block font-mono">
                                                         {item.totalSeconds}s from 00:00
                                                     </span>
-                                                    <input
-                                                        type="checkbox"
+                                                    <input aria-label="Checked" type="checkbox"
                                                         checked={isChecked}
                                                         readOnly
-                                                        className="w-3.5 h-3.5 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300 pointer-events-none"
-                                                    />
+                                                        className="w-3.5 h-3.5 rounded text-indigo-600 focus:ring-indigo-500 border-slate-300 pointer-events-none"/>
                                                 </div>
                                             </div>
                                         );

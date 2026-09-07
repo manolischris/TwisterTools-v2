@@ -478,7 +478,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                             }`}
                                     >
                                         <span className="font-extrabold text-xs">{mode.label}</span>
-                                        <span className={`text-[10px] truncate max-w-full ${solveMode === mode.id ? "text-indigo-100" : "text-slate-400"}`}>
+                                        <span className={`text-[10px] truncate max-w-full ${solveMode === mode.id ? "text-indigo-100" : "text-slate-600 dark:text-slate-300"}`}>
                                             {mode.desc}
                                         </span>
                                     </button>
@@ -501,7 +501,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={unitSystem === "METRIC" ? -40 : -40}
                                         max={unitSystem === "METRIC" ? 60 : 140}
@@ -510,8 +510,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                         onChange={(e) => setAirTempInput(parseFloat(e.target.value) || 0)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.1"
                                         value={airTempInput === 0 ? "" : airTempInput}
                                         onChange={(e) => handleNumberInput(e, setAirTempInput)}
@@ -533,7 +532,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="1"
                                             max="100"
@@ -542,8 +541,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                             onChange={(e) => setRhInput(parseFloat(e.target.value) || 1)}
                                             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                         />
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="100"
                                             step="0.1"
@@ -567,7 +565,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min={unitSystem === "METRIC" ? -50 : -58}
                                             max={unitSystem === "METRIC" ? 50 : 122}
@@ -576,8 +574,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                             onChange={(e) => setDewPointInput(parseFloat(e.target.value) || 0)}
                                             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                         />
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.1"
                                             value={dewPointInput === 0 ? "" : dewPointInput}
                                             onChange={(e) => handleNumberInput(e, setDewPointInput)}
@@ -599,8 +596,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.01"
                                             min="0.1"
                                             value={vaporPressureInput === 0 ? "" : vaporPressureInput}
@@ -818,7 +814,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                         <div className="bg-amber-400 h-full" style={{ width: "25%" }} title="Sticky (16-20°C)" />
                                         <div className="bg-rose-500 h-full" style={{ width: "25%" }} title="Oppressive (> 21°C)" />
                                     </div>
-                                    <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                                    <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                                         <span>&lt;10°C Dry</span>
                                         <span>13°C Ideal</span>
                                         <span>18°C Muggy</span>
@@ -876,7 +872,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                                 <div className="p-3 bg-slate-900 text-white rounded-xl space-y-2 text-xs">
                                     <div className="font-bold text-indigo-300 uppercase tracking-wider flex items-center justify-between">
                                         <span>Thermodynamic State Vector</span>
-                                        <span className="text-[10px] text-slate-400 font-mono">P = {pressureHPa} hPa</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">P = {pressureHPa} hPa</span>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px] text-slate-300">
                                         <div>T (Air): <strong className="text-white">{formatVal(m.dryBulbTempC)}°C</strong></div>
@@ -888,7 +884,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                             </div>
                         ) : (
                             <div className="p-8 bg-slate-50 border border-slate-200 rounded-xl text-center text-xs text-slate-500 space-y-2">
-                                <Droplets className="w-8 h-8 mx-auto text-slate-400" />
+                                <Droplets className="w-8 h-8 mx-auto text-slate-600 dark:text-slate-300" />
                                 <p>Provide valid temperature and humidity parameters to view thermodynamic metrics.</p>
                             </div>
                         )}
@@ -900,7 +896,7 @@ Generated via TwisterTools Dew Point & Psychrometric Equilibrium Calculator`;
                             onClick={handleCopyReport}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

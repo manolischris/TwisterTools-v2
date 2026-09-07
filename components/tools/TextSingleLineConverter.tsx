@@ -375,7 +375,7 @@ export default function TextSingleLineConverter() {
                     {/* Delimiter Selector */}
                     <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-700 block">Line Delimiter</label>
-                        <select
+                        <select aria-label="Select Line Delimiter"
                             value={delimiterType}
                             onChange={(e) => setDelimiterType(e.target.value as DelimiterType)}
                             className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs sm:text-sm bg-white font-medium text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -394,7 +394,7 @@ export default function TextSingleLineConverter() {
                     {delimiterType === "custom" ? (
                         <div className="space-y-1.5">
                             <label className="text-xs font-bold text-slate-700 block">Custom Separator Value</label>
-                            <input
+                            <input aria-label="Custom Separator Value"
                                 type="text"
                                 value={customDelimiter}
                                 onChange={(e) => setCustomDelimiter(e.target.value)}
@@ -405,7 +405,7 @@ export default function TextSingleLineConverter() {
                     ) : (
                         <div className="space-y-1.5">
                             <label className="text-xs font-bold text-slate-700 block">Wrap Items in Quotes</label>
-                            <select
+                            <select aria-label="Select Wrap Items in Quotes"
                                 value={quoteType}
                                 onChange={(e) => setQuoteType(e.target.value as QuoteType)}
                                 className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs sm:text-sm bg-white font-medium text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -422,7 +422,7 @@ export default function TextSingleLineConverter() {
                     {delimiterType === "custom" && (
                         <div className="space-y-1.5">
                             <label className="text-xs font-bold text-slate-700 block">Wrap Items in Quotes</label>
-                            <select
+                            <select aria-label="Select Wrap Items in Quotes"
                                 value={quoteType}
                                 onChange={(e) => setQuoteType(e.target.value as QuoteType)}
                                 className="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs sm:text-sm bg-white font-medium text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -440,8 +440,7 @@ export default function TextSingleLineConverter() {
                         <label className="text-xs font-bold text-slate-700 block">Formatting Cleaners</label>
                         <div className="grid grid-cols-2 gap-2 pt-1 text-xs text-slate-700">
                             <label className="flex items-center gap-2 cursor-pointer select-none">
-                                <input
-                                    type="checkbox"
+                                <input type="checkbox"
                                     checked={trimLineEdges}
                                     onChange={(e) => setTrimLineEdges(e.target.checked)}
                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -449,8 +448,7 @@ export default function TextSingleLineConverter() {
                                 <span>Trim Line Edges</span>
                             </label>
                             <label className="flex items-center gap-2 cursor-pointer select-none">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Remove Empty Lines" type="checkbox"
                                     checked={removeEmptyLines}
                                     onChange={(e) => setRemoveEmptyLines(e.target.checked)}
                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -458,8 +456,7 @@ export default function TextSingleLineConverter() {
                                 <span>Remove Empty Lines</span>
                             </label>
                             <label className="flex items-center gap-2 cursor-pointer select-none">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Collapse Multiple Spaces" type="checkbox"
                                     checked={collapseMultipleSpaces}
                                     onChange={(e) => setCollapseMultipleSpaces(e.target.checked)}
                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -467,8 +464,7 @@ export default function TextSingleLineConverter() {
                                 <span>Collapse Multiple Spaces</span>
                             </label>
                             <label className="flex items-center gap-2 cursor-pointer select-none">
-                                <input
-                                    type="checkbox"
+                                <input aria-label="Wrap With Brackets" type="checkbox"
                                     checked={wrapWithBrackets}
                                     onChange={(e) => setWrapWithBrackets(e.target.checked)}
                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -482,11 +478,11 @@ export default function TextSingleLineConverter() {
                 {/* Additional Escaping Options (Visible when quotes are active) */}
                 {quoteType !== "none" && (
                     <div className="pt-3 border-t border-slate-100 flex flex-wrap gap-4 text-xs font-semibold text-slate-700">
-                        <span className="text-slate-400 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
+                        <span className="text-slate-600 dark:text-slate-300 font-bold uppercase tracking-wider text-[11px] flex items-center gap-1">
                             <Code2 className="w-3.5 h-3.5 text-indigo-500" /> String Escaping:
                         </span>
                         <label className="flex items-center gap-2 cursor-pointer select-none">
-                            <input
+                            <input aria-label="Escape Quotes"
                                 type="checkbox"
                                 checked={escapeQuotes}
                                 onChange={(e) => setEscapeQuotes(e.target.checked)}
@@ -495,8 +491,7 @@ export default function TextSingleLineConverter() {
                             <span>Escape Internal Quotes (\&quot;)</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer select-none">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Escape Backslashes" type="checkbox"
                                 checked={escapeBackslashes}
                                 onChange={(e) => setEscapeBackslashes(e.target.checked)}
                                 className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -523,7 +518,7 @@ export default function TextSingleLineConverter() {
                                 </h2>
                             </div>
                             <div className="flex items-center gap-2">
-                                <input
+                                <input aria-label="Upload file"
                                     type="file"
                                     ref={fileInputRef}
                                     onChange={handleFileUpload}
@@ -553,7 +548,7 @@ export default function TextSingleLineConverter() {
 
                         {/* Input Textarea Container */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Paste your multi-line code, SQL statements, lists, or text paragraphs here..."
@@ -611,7 +606,7 @@ export default function TextSingleLineConverter() {
 
                         {/* Output Textarea Container */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Your flattened single-line string will generate here in real time"
                                 value={outputText}
                                 readOnly
                                 placeholder="Your flattened single-line string will generate here in real time..."
@@ -640,28 +635,28 @@ export default function TextSingleLineConverter() {
                     <div className="text-2xl font-black text-indigo-600 font-mono">
                         {stats.inputLines > 1 ? `${stats.inputLines} → 1` : stats.inputLines}
                     </div>
-                    <span className="text-[10px] text-slate-400">Total lines flattened</span>
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300">Total lines flattened</span>
                 </div>
                 <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-sm text-center space-y-1">
                     <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Byte Reduction</span>
                     <div className="text-2xl font-black text-emerald-600 font-mono">
                         {stats.savedBytes > 0 ? `-${stats.savedBytes} B` : "0 B"}
                     </div>
-                    <span className="text-[10px] text-slate-400">Whitespace footprint removed</span>
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300">Whitespace footprint removed</span>
                 </div>
                 <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-sm text-center space-y-1">
                     <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Delimiter Pattern</span>
                     <div className="text-base sm:text-lg font-bold text-slate-800 font-mono truncate px-1">
                         {delimiterType === "custom" ? customDelimiter : delimiterType === "comma_space" ? ", [space]" : delimiterType}
                     </div>
-                    <span className="text-[10px] text-slate-400">Active line separator</span>
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300">Active line separator</span>
                 </div>
                 <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-sm text-center space-y-1">
                     <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Quotation Wrap</span>
                     <div className="text-base sm:text-lg font-bold text-slate-800 font-mono">
                         {quoteType === "none" ? "None" : quoteType === "double" ? 'Double (")' : quoteType === "single" ? "Single (')" : "Backtick (`)"}
                     </div>
-                    <span className="text-[10px] text-slate-400">Element wrapper mode</span>
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300">Element wrapper mode</span>
                 </div>
             </div>
 

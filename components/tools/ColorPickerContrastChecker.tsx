@@ -443,7 +443,7 @@ export default function ColorPickerContrastChecker() {
                         <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-4">
                             <div className="flex items-center gap-3">
                                 <div className="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-slate-300 shadow-inner flex-shrink-0 cursor-pointer">
-                                    <input
+                                    <input aria-label="Select color"
                                         type="color"
                                         value={activeHex}
                                         onChange={(e) => updateActiveColorFromHex(e.target.value.toUpperCase())}
@@ -456,11 +456,10 @@ export default function ColorPickerContrastChecker() {
                                     </label>
                                     <div className="flex items-center gap-2">
                                         <div className="relative flex-1">
-                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-mono font-bold text-sm">
+                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-mono font-bold text-sm">
                                                 #
                                             </span>
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 maxLength={6}
                                                 value={activeHex.replace("#", "")}
                                                 onChange={(e) => {
@@ -521,7 +520,7 @@ export default function ColorPickerContrastChecker() {
                                     <span className="font-bold text-rose-600">Red Channel (R)</span>
                                     <span className="font-mono font-bold text-slate-700">{activeRgb.r}</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="255"
@@ -534,7 +533,7 @@ export default function ColorPickerContrastChecker() {
                                     <span className="font-bold text-emerald-600">Green Channel (G)</span>
                                     <span className="font-mono font-bold text-slate-700">{activeRgb.g}</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="255"
@@ -547,7 +546,7 @@ export default function ColorPickerContrastChecker() {
                                     <span className="font-bold text-blue-600">Blue Channel (B)</span>
                                     <span className="font-mono font-bold text-slate-700">{activeRgb.b}</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="255"
@@ -564,7 +563,7 @@ export default function ColorPickerContrastChecker() {
                                         <span>Lightness (L)</span>
                                         <span className="font-mono">{activeHsl.l}%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max="100"
@@ -578,7 +577,7 @@ export default function ColorPickerContrastChecker() {
                                         <span>Saturation (S)</span>
                                         <span className="font-mono">{activeHsl.s}%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max="100"
@@ -623,7 +622,7 @@ export default function ColorPickerContrastChecker() {
                                     <span className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight font-mono">
                                         {contrastRatio.toFixed(2)}
                                     </span>
-                                    <span className="text-lg font-bold text-slate-400 font-mono">:1</span>
+                                    <span className="text-lg font-bold text-slate-600 dark:text-slate-300 font-mono">:1</span>
                                 </div>
                             </div>
                             <div className="flex flex-col items-center sm:items-end gap-1.5">
@@ -888,7 +887,7 @@ export default function ColorPickerContrastChecker() {
                         <div className="p-3 bg-slate-950 rounded-lg border border-slate-800 text-center font-mono text-sm sm:text-base text-indigo-300">
                             {"(L₁ + 0.05) / (L₂ + 0.05)"}
                         </div>
-                        <p className="text-xs text-slate-400 leading-relaxed">
+                        <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                             The constant offset of 0.05 accounts for ambient light flares reflected off typical display glass, ensuring ratios scale proportionally from 1:1 up to 21:1.
                         </p>
                     </div>

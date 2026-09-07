@@ -434,9 +434,9 @@ export default function ZeroWidthSpaceCleaner() {
                         <span className={`text-2xl font-black font-mono ${analysis.totalInvisibleCount > 0 ? "text-rose-600" : "text-emerald-600"}`}>
                             {analysis.totalInvisibleCount}
                         </span>
-                        <span className="text-xs font-semibold text-slate-400">found</span>
+                        <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">found</span>
                     </div>
-                    <span className="text-[10px] text-slate-400 block truncate">
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block truncate">
                         {analysis.totalInvisibleCount > 0 ? "Potential bugs detected" : "Payload clean & verified"}
                     </span>
                 </div>
@@ -456,7 +456,7 @@ export default function ZeroWidthSpaceCleaner() {
                             )}
                         </span>
                     </div>
-                    <span className="text-[10px] text-slate-400 block truncate">
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block truncate">
                         {analysis.hasDangerIssues ? "ZWSP, BOM or BiDi present" : "Zero syntax-breaking characters"}
                     </span>
                 </div>
@@ -465,18 +465,18 @@ export default function ZeroWidthSpaceCleaner() {
                     <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Raw Payload Size</span>
                     <div className="flex items-baseline gap-1.5">
                         <span className="text-2xl font-black font-mono text-slate-800">{analysis.byteSizeRaw}</span>
-                        <span className="text-xs font-semibold text-slate-400">bytes</span>
+                        <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">bytes</span>
                     </div>
-                    <span className="text-[10px] text-slate-400 block truncate">{analysis.charCount} characters</span>
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block truncate">{analysis.charCount} characters</span>
                 </div>
 
                 <div className="p-4 bg-white border border-slate-200 rounded-2xl shadow-xs space-y-1">
                     <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider block">Cleaned Efficiency</span>
                     <div className="flex items-baseline gap-1.5">
                         <span className="text-2xl font-black font-mono text-emerald-600">{bytesSaved}</span>
-                        <span className="text-xs font-semibold text-slate-400">bytes saved</span>
+                        <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">bytes saved</span>
                     </div>
-                    <span className="text-[10px] text-slate-400 block truncate">New size: {cleanedByteSize} bytes</span>
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block truncate">New size: {cleanedByteSize} bytes</span>
                 </div>
             </div>
 
@@ -539,7 +539,7 @@ export default function ZeroWidthSpaceCleaner() {
                             </div>
                         ) : (
                             <div className="space-y-2">
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={inputText}
                                     onChange={(e) => setInputText(e.target.value)}
                                     placeholder="Paste source code, JSON payloads, API keys, or text here to detect hidden zero-width spaces..."
@@ -609,7 +609,7 @@ export default function ZeroWidthSpaceCleaner() {
 
                         {/* Clean Output Area */}
                         <div className="space-y-2">
-                            <textarea
+                            <textarea aria-label="Cleaned and sanitized output will appear here automatically"
                                 value={cleanedText}
                                 readOnly
                                 placeholder="Cleaned and sanitized output will appear here automatically..."
@@ -627,7 +627,7 @@ export default function ZeroWidthSpaceCleaner() {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-slate-700">
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Strip Zero Width"
                                         type="checkbox"
                                         checked={stripZeroWidth}
                                         onChange={(e) => setStripZeroWidth(e.target.checked)}
@@ -637,8 +637,7 @@ export default function ZeroWidthSpaceCleaner() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
-                                        type="checkbox"
+                                    <input type="checkbox"
                                         checked={normalizeNonBreaking}
                                         onChange={(e) => setNormalizeNonBreaking(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -647,7 +646,7 @@ export default function ZeroWidthSpaceCleaner() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Normalize NBSP to ASCII Space"
                                         type="checkbox"
                                         checked={stripBidiOverrides}
                                         onChange={(e) => setStripBidiOverrides(e.target.checked)}
@@ -657,7 +656,7 @@ export default function ZeroWidthSpaceCleaner() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Strip Trojan BiDi Controls"
                                         type="checkbox"
                                         checked={stripControlChars}
                                         onChange={(e) => setStripControlChars(e.target.checked)}
@@ -667,7 +666,7 @@ export default function ZeroWidthSpaceCleaner() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Strip C0/C1 Byte Controls"
                                         type="checkbox"
                                         checked={stripTypographicSpaces}
                                         onChange={(e) => setStripTypographicSpaces(e.target.checked)}
@@ -677,7 +676,7 @@ export default function ZeroWidthSpaceCleaner() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Normalize Em/Thin/CJK Spaces"
                                         type="checkbox"
                                         checked={stripSoftHyphens}
                                         onChange={(e) => setStripSoftHyphens(e.target.checked)}
@@ -687,7 +686,7 @@ export default function ZeroWidthSpaceCleaner() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Remove Soft Hyphens (SHY)"
                                         type="checkbox"
                                         checked={collapseConsecutiveSpaces}
                                         onChange={(e) => setCollapseConsecutiveSpaces(e.target.checked)}
@@ -697,7 +696,7 @@ export default function ZeroWidthSpaceCleaner() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Collapse Multi-Spaces"
                                         type="checkbox"
                                         checked={trimLines}
                                         onChange={(e) => setTrimLines(e.target.checked)}

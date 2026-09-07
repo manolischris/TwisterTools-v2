@@ -673,7 +673,7 @@ $poly-shape: ${clipPathString};
                                             <div className="flex justify-between text-xs font-bold text-slate-700 mb-1">
                                                 <span>Width: {width}px</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="10"
                                                 max="400"
@@ -689,7 +689,7 @@ $poly-shape: ${clipPathString};
                                                     <span className="text-[10px] text-indigo-600 font-semibold">(Auto)</span>
                                                 )}
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="10"
                                                 max="400"
@@ -711,7 +711,7 @@ $poly-shape: ${clipPathString};
                                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                             Left Width: {leftWidth}px
                                                         </label>
-                                                        <input
+                                                        <input aria-label="Adjust slider value"
                                                             type="range"
                                                             min="0"
                                                             max="200"
@@ -724,7 +724,7 @@ $poly-shape: ${clipPathString};
                                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                             Right Width: {rightWidth}px
                                                         </label>
-                                                        <input
+                                                        <input aria-label="Adjust slider value"
                                                             type="range"
                                                             min="0"
                                                             max="200"
@@ -740,7 +740,7 @@ $poly-shape: ${clipPathString};
                                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                             Top Height: {topHeight}px
                                                         </label>
-                                                        <input
+                                                        <input aria-label="Adjust slider value"
                                                             type="range"
                                                             min="0"
                                                             max="200"
@@ -753,7 +753,7 @@ $poly-shape: ${clipPathString};
                                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                                             Bottom Height: {bottomHeight}px
                                                         </label>
-                                                        <input
+                                                        <input aria-label="Adjust slider value"
                                                             type="range"
                                                             min="0"
                                                             max="200"
@@ -775,14 +775,13 @@ $poly-shape: ${clipPathString};
                                             <Palette className="w-4 h-4 text-indigo-600" /> Color
                                         </label>
                                         <div className="flex items-center gap-2">
-                                            <input
+                                            <input aria-label="Select color"
                                                 type="color"
                                                 value={color}
                                                 onChange={(e) => setColor(e.target.value)}
                                                 className="w-10 h-10 rounded-xl border border-slate-200 cursor-pointer p-0.5 bg-white"
                                             />
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={color}
                                                 onChange={(e) => setColor(e.target.value)}
                                                 className="flex-1 px-3 py-2 border border-slate-200 rounded-xl text-xs font-mono font-semibold uppercase bg-slate-50 focus:bg-white outline-none focus:ring-2 focus:ring-indigo-500"
@@ -806,8 +805,7 @@ $poly-shape: ${clipPathString};
                                                 {usePseudo ? "Active (::after)" : "Standalone Div"}
                                             </button>
                                             {usePseudo && (
-                                                <select
-                                                    value={pseudoSelector}
+                                                <select aria-label="Select option" value={pseudoSelector}
                                                     onChange={(e) => setPseudoSelector(e.target.value as "::before" | "::after")}
                                                     className="px-2 py-2 border border-slate-200 rounded-xl text-xs font-bold bg-white text-slate-700 outline-none"
                                                 >
@@ -855,7 +853,7 @@ $poly-shape: ${clipPathString};
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                             Box Width: {polyWidth}px
                                         </label>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="50"
                                             max="400"
@@ -868,7 +866,7 @@ $poly-shape: ${clipPathString};
                                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">
                                             Box Height: {polyHeight}px
                                         </label>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="50"
                                             max="400"
@@ -901,9 +899,8 @@ $poly-shape: ${clipPathString};
                                             <div key={idx} className="p-2 flex items-center justify-between gap-2 text-xs">
                                                 <span className="font-bold text-slate-600 w-6">P{idx + 1}</span>
                                                 <div className="flex items-center gap-2 flex-1">
-                                                    <span className="text-[10px] text-slate-400 font-semibold">X:</span>
-                                                    <input
-                                                        type="number"
+                                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-semibold">X:</span>
+                                                    <input aria-label="Input value" type="number"
                                                         min="0"
                                                         max="100"
                                                         value={pt.x}
@@ -916,11 +913,10 @@ $poly-shape: ${clipPathString};
                                                         }}
                                                         className="w-14 px-1.5 py-0.5 border border-slate-200 rounded font-mono text-center"
                                                     />
-                                                    <span className="text-[10px] text-slate-400 font-semibold">%</span>
+                                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-semibold">%</span>
 
-                                                    <span className="text-[10px] text-slate-400 font-semibold ml-2">Y:</span>
-                                                    <input
-                                                        type="number"
+                                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-semibold ml-2">Y:</span>
+                                                    <input aria-label="Input value" type="number"
                                                         min="0"
                                                         max="100"
                                                         value={pt.y}
@@ -933,7 +929,7 @@ $poly-shape: ${clipPathString};
                                                         }}
                                                         className="w-14 px-1.5 py-0.5 border border-slate-200 rounded font-mono text-center"
                                                     />
-                                                    <span className="text-[10px] text-slate-400 font-semibold">%</span>
+                                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                                 </div>
                                                 <button
                                                     type="button"
@@ -978,14 +974,13 @@ $poly-shape: ${clipPathString};
                                                 {polyBgType === "gradient" ? "Start Color" : "Fill Color"}
                                             </label>
                                             <div className="flex items-center gap-2">
-                                                <input
+                                                <input aria-label="Select color"
                                                     type="color"
                                                     value={polyColor}
                                                     onChange={(e) => setPolyColor(e.target.value)}
                                                     className="w-8 h-8 rounded-lg border border-slate-200 cursor-pointer p-0.5"
                                                 />
-                                                <input
-                                                    type="text"
+                                                <input aria-label="Input value" type="text"
                                                     value={polyColor}
                                                     onChange={(e) => setPolyColor(e.target.value)}
                                                     className="w-full px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono uppercase"
@@ -997,14 +992,13 @@ $poly-shape: ${clipPathString};
                                             <div>
                                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">End Color</label>
                                                 <div className="flex items-center gap-2">
-                                                    <input
+                                                    <input aria-label="Select color"
                                                         type="color"
                                                         value={polyGradientColorEnd}
                                                         onChange={(e) => setPolyGradientColorEnd(e.target.value)}
                                                         className="w-8 h-8 rounded-lg border border-slate-200 cursor-pointer p-0.5"
                                                     />
-                                                    <input
-                                                        type="text"
+                                                    <input aria-label="Input value" type="text"
                                                         value={polyGradientColorEnd}
                                                         onChange={(e) => setPolyGradientColorEnd(e.target.value)}
                                                         className="w-full px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono uppercase"
@@ -1360,15 +1354,15 @@ $poly-shape: ${clipPathString};
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Height from Base ($W$):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Height from Base ($W$):</span>
                                 <strong className="text-indigo-300 text-sm">h = (√3 / 2) × W ≈ 0.866 × W</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Side Borders:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Side Borders:</span>
                                 <strong className="text-indigo-300 text-sm">border-left/right = W / 2</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Area of Shape ($A$):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Area of Shape ($A$):</span>
                                 <strong className="text-indigo-300 text-sm">A = (√3 / 4) × W²</strong>
                             </div>
                         </div>

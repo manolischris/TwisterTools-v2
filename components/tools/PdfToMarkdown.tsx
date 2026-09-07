@@ -401,7 +401,7 @@ export default function PdfToMarkdown() {
                                         : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -414,7 +414,7 @@ export default function PdfToMarkdown() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop your PDF here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Strict limit: 20 MB file size limit</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Strict limit: 20 MB file size limit</p>
                             </div>
 
                             {errorMessage && (
@@ -451,7 +451,7 @@ export default function PdfToMarkdown() {
                                             key={key}
                                             className="flex items-center gap-2 text-slate-700 font-medium cursor-pointer"
                                         >
-                                            <input
+                                            <input aria-label="Options[Key As Keyof Extraction Options]"
                                                 type="checkbox"
                                                 checked={options[key as keyof ExtractionOptions]}
                                                 onChange={(e) =>
@@ -486,7 +486,7 @@ export default function PdfToMarkdown() {
                                     <div className="h-[280px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                         <Layers className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-700">No Document Loaded</p>
-                                        <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                             Upload a PDF document above to extract structural text and render Markdown code.
                                         </p>
                                     </div>
@@ -593,7 +593,7 @@ export default function PdfToMarkdown() {
                         <div className="p-5 space-y-4">
                             {/* Output Display Container */}
                             {previewTab === "markdown" ? (
-                                <textarea
+                                <textarea aria-label="Compiled Markdown text will appear here automatically after loading a PDF"
                                     id="markdown-output-textarea"
                                     value={markdownOutput}
                                     readOnly
@@ -643,7 +643,7 @@ export default function PdfToMarkdown() {
                                             );
                                         })
                                     ) : (
-                                        <p className="text-slate-400 italic">No content rendered yet.</p>
+                                        <p className="text-slate-600 dark:text-slate-300 italic">No content rendered yet.</p>
                                     )}
                                 </div>
                             )}
@@ -686,7 +686,7 @@ export default function PdfToMarkdown() {
                                             ? copied
                                                 ? "bg-green-600 text-white shadow-md"
                                                 : "bg-slate-800 hover:bg-slate-900 text-white shadow-md"
-                                            : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                            : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                         }`}
                                 >
                                     {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
@@ -699,7 +699,7 @@ export default function PdfToMarkdown() {
                                     disabled={!markdownOutput}
                                     className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold transition-all duration-200 shadow-md ${markdownOutput
                                             ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                            : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                            : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                         }`}
                                 >
                                     <FileDown className="w-4 h-4" />
@@ -725,7 +725,7 @@ export default function PdfToMarkdown() {
                             <span className="text-xs font-bold text-slate-800">PDF Page Zoom</span>
                             <button
                                 onClick={() => setPreviewModalUrl(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>

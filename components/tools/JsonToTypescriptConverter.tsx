@@ -615,8 +615,7 @@ export default function JsonToTypescriptConverter() {
                         <label htmlFor={rootNameInputId} className="text-xs font-bold text-slate-700 block">
                             Root Type Name
                         </label>
-                        <input
-                            id={rootNameInputId}
+                        <input aria-label="Input value" id={rootNameInputId}
                             type="text"
                             value={options.rootName}
                             onChange={(e) => setOptions((p) => ({ ...p, rootName: e.target.value }))}
@@ -630,8 +629,7 @@ export default function JsonToTypescriptConverter() {
                         <label htmlFor={declarationKindSelectId} className="text-xs font-bold text-slate-700 block">
                             Declaration Kind
                         </label>
-                        <select
-                            id={declarationKindSelectId}
+                        <select aria-label="Select option" id={declarationKindSelectId}
                             value={options.declarationKind}
                             onChange={(e) => setOptions((p) => ({ ...p, declarationKind: e.target.value as DeclarationKind }))}
                             className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-indigo-500 text-slate-800 font-medium outline-none"
@@ -646,8 +644,7 @@ export default function JsonToTypescriptConverter() {
                         <label htmlFor={arrayStyleSelectId} className="text-xs font-bold text-slate-700 block">
                             Array Formatting
                         </label>
-                        <select
-                            id={arrayStyleSelectId}
+                        <select aria-label="Select option" id={arrayStyleSelectId}
                             value={options.arrayStyle}
                             onChange={(e) => setOptions((p) => ({ ...p, arrayStyle: e.target.value as ArrayStyle }))}
                             className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-indigo-500 text-slate-800 font-medium outline-none"
@@ -662,8 +659,7 @@ export default function JsonToTypescriptConverter() {
                         <label htmlFor={optionalitySelectId} className="text-xs font-bold text-slate-700 block">
                             Field Optionality Mode
                         </label>
-                        <select
-                            id={optionalitySelectId}
+                        <select aria-label="Select option" id={optionalitySelectId}
                             value={options.optionalityMode}
                             onChange={(e) => setOptions((p) => ({ ...p, optionalityMode: e.target.value as OptionalityMode }))}
                             className="w-full px-2.5 py-1.5 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:ring-1 focus:ring-indigo-500 text-slate-800 font-medium outline-none"
@@ -677,7 +673,7 @@ export default function JsonToTypescriptConverter() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 pt-2 border-t border-slate-100">
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                        <input
+                        <input aria-label="Export Keywords"
                             type="checkbox"
                             checked={options.exportKeywords}
                             onChange={(e) => setOptions((p) => ({ ...p, exportKeywords: e.target.checked }))}
@@ -687,8 +683,7 @@ export default function JsonToTypescriptConverter() {
                     </label>
 
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                        <input
-                            type="checkbox"
+                        <input aria-label="Readonly Props" type="checkbox"
                             checked={options.readonlyProps}
                             onChange={(e) => setOptions((p) => ({ ...p, readonlyProps: e.target.checked }))}
                             className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -697,8 +692,7 @@ export default function JsonToTypescriptConverter() {
                     </label>
 
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                        <input
-                            type="checkbox"
+                        <input aria-label="Detect Dates" type="checkbox"
                             checked={options.detectDates}
                             onChange={(e) => setOptions((p) => ({ ...p, detectDates: e.target.checked }))}
                             className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -707,8 +701,7 @@ export default function JsonToTypescriptConverter() {
                     </label>
 
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                        <input
-                            type="checkbox"
+                        <input aria-label="Js Doc" type="checkbox"
                             checked={options.includeJsDoc}
                             onChange={(e) => setOptions((p) => ({ ...p, includeJsDoc: e.target.checked }))}
                             className="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -750,7 +743,7 @@ export default function JsonToTypescriptConverter() {
                         )}
 
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawJson}
                                 onChange={(e) => setRawJson(e.target.value)}
                                 placeholder="Paste your raw JSON payload here..."
@@ -763,7 +756,7 @@ export default function JsonToTypescriptConverter() {
 
                     <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
                         <span className="flex items-center gap-1">
-                            <Boxes className="w-4 h-4 text-slate-400" />
+                            <Boxes className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                             Client-Side Native AST Engine
                         </span>
                         <span className="font-mono text-slate-600">
@@ -832,7 +825,7 @@ export default function JsonToTypescriptConverter() {
                             <CheckCircle2 className="w-4 h-4" />
                             TypeScript 5.x Strict Mode Compatible
                         </span>
-                        <span className="text-slate-400">Zero Server Roundtrips</span>
+                        <span className="text-slate-600 dark:text-slate-300">Zero Server Roundtrips</span>
                     </div>
                 </div>
             </div>

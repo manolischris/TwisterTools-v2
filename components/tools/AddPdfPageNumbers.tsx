@@ -345,7 +345,7 @@ export default function AddPdfPageNumbers() {
                                         : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -358,7 +358,7 @@ export default function AddPdfPageNumbers() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop your PDF file here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Supports documents up to 20 MB</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Supports documents up to 20 MB</p>
                             </div>
 
                             {errorMessage && (
@@ -385,7 +385,7 @@ export default function AddPdfPageNumbers() {
                                     <div className="h-[360px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                         <FileText className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-700">No PDF Loaded</p>
-                                        <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                             Upload a document above to configure page numbering position, font, and custom stamp formats.
                                         </p>
                                     </div>
@@ -537,8 +537,7 @@ export default function AddPdfPageNumbers() {
                                         Custom Template (<span className="text-indigo-600">{"{page}"}</span> and{" "}
                                         <span className="text-indigo-600">{"{total}"}</span> supported)
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={customText}
                                         onChange={(e) => setCustomText(e.target.value)}
                                         className="w-full text-xs px-3 py-2 border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -551,7 +550,7 @@ export default function AddPdfPageNumbers() {
                             <div className="grid grid-cols-3 gap-3">
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700">Start Page</label>
-                                    <input
+                                    <input aria-label="Start Page"
                                         type="number"
                                         min={1}
                                         max={totalPages || 1}
@@ -562,7 +561,7 @@ export default function AddPdfPageNumbers() {
                                 </div>
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700">End Page</label>
-                                    <input
+                                    <input aria-label="End Page"
                                         type="number"
                                         min={1}
                                         max={totalPages || 1}
@@ -575,7 +574,7 @@ export default function AddPdfPageNumbers() {
                                 </div>
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700">First Number</label>
-                                    <input
+                                    <input aria-label="First Number"
                                         type="number"
                                         min={1}
                                         value={startNumberingFrom}
@@ -591,7 +590,7 @@ export default function AddPdfPageNumbers() {
                             <div className="grid grid-cols-3 gap-3">
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700">Font Family</label>
-                                    <select
+                                    <select aria-label="Select Font Family"
                                         value={fontFamily}
                                         onChange={(e) => setFontFamily(e.target.value as any)}
                                         className="w-full text-xs px-2 py-1.5 border border-slate-200 rounded-lg bg-slate-50"
@@ -603,7 +602,7 @@ export default function AddPdfPageNumbers() {
                                 </div>
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700">Size (pt)</label>
-                                    <input
+                                    <input aria-label="Size (pt)"
                                         type="number"
                                         min={6}
                                         max={36}
@@ -615,7 +614,7 @@ export default function AddPdfPageNumbers() {
                                 <div className="space-y-1">
                                     <label className="text-[11px] font-bold text-slate-700">Font Color</label>
                                     <div className="flex items-center gap-1.5">
-                                        <input
+                                        <input aria-label="Select color"
                                             type="color"
                                             value={fontColor}
                                             onChange={(e) => setFontColor(e.target.value)}
@@ -634,7 +633,7 @@ export default function AddPdfPageNumbers() {
                                     <label className="font-bold text-slate-800">Edge Offset Margin</label>
                                     <span className="font-mono text-slate-500">{margin} pt</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={10}
                                     max={60}
@@ -651,7 +650,7 @@ export default function AddPdfPageNumbers() {
                                 disabled={!pdfBytes || isProcessing}
                                 className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${pdfBytes && !isProcessing
                                         ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                        : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (

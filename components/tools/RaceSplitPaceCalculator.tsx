@@ -591,13 +591,12 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                         <span className="flex items-center gap-1">
                                             <Milestone className="w-3.5 h-3.5 text-indigo-600" /> Race Distance
                                         </span>
-                                        <span className="text-[11px] text-slate-400 lowercase font-normal">
+                                        <span className="text-[11px] text-slate-600 dark:text-slate-300 lowercase font-normal">
                                             {unitSystem === "km" ? "standard marathon: 42.195 km" : "standard marathon: 26.219 mi"}
                                         </span>
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.001"
                                             min="0.1"
                                             max="1000"
@@ -608,7 +607,7 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                             }}
                                             className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 uppercase">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase">
                                             {unitSystem}
                                         </span>
                                     </div>
@@ -623,18 +622,17 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                     </label>
                                     <div className="grid grid-cols-2 gap-3 min-w-0">
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="1"
                                                 max="59"
                                                 value={paceMinutes === 0 ? "" : paceMinutes}
                                                 onChange={(e) => handleNumberInput(e, (val) => setPaceMinutes(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">min</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">min</span>
                                         </div>
                                         <div className="relative">
-                                            <input
+                                            <input aria-label="min"
                                                 type="number"
                                                 min="0"
                                                 max="59"
@@ -642,7 +640,7 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setPaceSeconds(Math.max(0, Math.min(59, val))))}
                                                 className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">sec</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">sec</span>
                                         </div>
                                     </div>
                                 </div>
@@ -656,18 +654,17 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                     </label>
                                     <div className="grid grid-cols-3 gap-2 min-w-0">
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="99"
                                                 value={timeHours === 0 ? "" : timeHours}
                                                 onChange={(e) => handleNumberInput(e, (val) => setTimeHours(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-400">hrs</span>
+                                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-600 dark:text-slate-300">hrs</span>
                                         </div>
                                         <div className="relative">
-                                            <input
+                                            <input aria-label="hrs"
                                                 type="number"
                                                 min="0"
                                                 max="59"
@@ -675,10 +672,10 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setTimeMinutes(Math.max(0, Math.min(59, val))))}
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-400">min</span>
+                                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-600 dark:text-slate-300">min</span>
                                         </div>
                                         <div className="relative">
-                                            <input
+                                            <input aria-label="min"
                                                 type="number"
                                                 min="0"
                                                 max="59"
@@ -686,7 +683,7 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setTimeSeconds(Math.max(0, Math.min(59, val))))}
                                                 className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-400">sec</span>
+                                            <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] font-bold text-slate-600 dark:text-slate-300">sec</span>
                                         </div>
                                     </div>
                                 </div>
@@ -698,8 +695,7 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <TrendingUp className="w-3.5 h-3.5 text-indigo-600" /> Pacing Strategy
                                     </label>
-                                    <select
-                                        value={pacingStrategy}
+                                    <select aria-label="Select option" value={pacingStrategy}
                                         onChange={(e) => setPacingStrategy(e.target.value as PacingStrategy)}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs bg-slate-50"
                                     >
@@ -713,8 +709,7 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <TableIcon className="w-3.5 h-3.5 text-indigo-600" /> Split Increments
                                     </label>
-                                    <select
-                                        value={splitInterval}
+                                    <select aria-label="Select option" value={splitInterval}
                                         onChange={(e) => setSplitInterval(Number(e.target.value))}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-xs bg-slate-50"
                                     >
@@ -730,7 +725,7 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                         {/* REFERENCE PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Standard Race Distances
                                 </span>
                                 {activePresetId && (
@@ -840,25 +835,25 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                             {/* Pace Equivalents Dual Badge Row */}
                             <div className="mt-4 pt-3 border-t border-indigo-100/80 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
                                 <div>
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Metric Pace</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Metric Pace</span>
                                     <span className="font-extrabold text-slate-800">
                                         {formatDuration(computedMetrics.paceSecPerKm)} <span className="font-normal text-slate-500">/km</span>
                                     </span>
                                 </div>
                                 <div>
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Imperial Pace</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Imperial Pace</span>
                                     <span className="font-extrabold text-slate-800">
                                         {formatDuration(computedMetrics.paceSecPerMile)} <span className="font-normal text-slate-500">/mi</span>
                                     </span>
                                 </div>
                                 <div>
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Speed</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Speed</span>
                                     <span className="font-extrabold text-indigo-600">
                                         {computedMetrics.speedKmh.toFixed(1)} <span className="font-normal text-slate-500">km/h</span>
                                     </span>
                                 </div>
                                 <div>
-                                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Speed (MPH)</span>
+                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Speed (MPH)</span>
                                     <span className="font-extrabold text-indigo-600">
                                         {computedMetrics.speedMph.toFixed(1)} <span className="font-normal text-slate-500">mph</span>
                                     </span>
@@ -966,14 +961,14 @@ Calculated at twistertools.com/tools/calculators/race-split-pace-calculator`;
                         {/* Summary Metrics Row */}
                         <div className="grid grid-cols-2 gap-3 pt-1">
                             <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Estimated Aerobic VDOT</span>
+                                <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">Estimated Aerobic VDOT</span>
                                 <span className="text-base font-extrabold text-slate-900">
                                     {computedMetrics.vdot > 0 ? computedMetrics.vdot.toFixed(1) : "--"}
                                 </span>
                                 <span className="text-[10px] text-slate-500 block">Jack Daniels VO2 index</span>
                             </div>
                             <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Est. Caloric Expenditure</span>
+                                <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">Est. Caloric Expenditure</span>
                                 <span className="text-base font-extrabold text-indigo-600">
                                     ~{computedMetrics.estCalories70kg.toLocaleString()} <span className="text-xs font-normal text-slate-500">kcal</span>
                                 </span>

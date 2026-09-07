@@ -322,7 +322,7 @@ Calculated at twistertools.com/tools/text-tools/reading-time-calculator`;
                                     {metrics.wordCount.toLocaleString()} words | {metrics.charCount.toLocaleString()} chars
                                 </span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={text}
                                 onChange={(e) => {
                                     setText(e.target.value);
@@ -336,7 +336,7 @@ Calculated at twistertools.com/tools/text-tools/reading-time-calculator`;
                         {/* Presets Selector */}
                         <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Sample Text Presets
                                 </span>
                                 {activePresetId && (
@@ -505,7 +505,7 @@ Calculated at twistertools.com/tools/text-tools/reading-time-calculator`;
                                             <span className="font-bold text-indigo-600">{customReadingWpm} WPM ({formatDuration(metrics.customReadingTimeSec)})</span>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="80"
                                                 max="500"
@@ -514,8 +514,7 @@ Calculated at twistertools.com/tools/text-tools/reading-time-calculator`;
                                                 onChange={(e) => setCustomReadingWpm(Number(e.target.value))}
                                                 className="w-full accent-indigo-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
                                             />
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="50"
                                                 max="800"
                                                 value={customReadingWpm === 0 ? "" : customReadingWpm}
@@ -532,7 +531,7 @@ Calculated at twistertools.com/tools/text-tools/reading-time-calculator`;
                                             <span className="font-bold text-emerald-600">{customSpeakingWpm} WPM ({formatDuration(metrics.customSpeakingTimeSec)})</span>
                                         </div>
                                         <div className="flex items-center gap-3">
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min="60"
                                                 max="300"
@@ -541,8 +540,7 @@ Calculated at twistertools.com/tools/text-tools/reading-time-calculator`;
                                                 onChange={(e) => setCustomSpeakingWpm(Number(e.target.value))}
                                                 className="w-full accent-emerald-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
                                             />
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="40"
                                                 max="400"
                                                 value={customSpeakingWpm === 0 ? "" : customSpeakingWpm}
@@ -556,17 +554,17 @@ Calculated at twistertools.com/tools/text-tools/reading-time-calculator`;
                                 {/* Speed Benchmark Breakdown Cards */}
                                 <div className="grid grid-cols-3 gap-2 text-center">
                                     <div className="p-3 border border-slate-200 rounded-xl bg-slate-50">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Slow / Technical</span>
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">Slow / Technical</span>
                                         <span className="text-sm font-bold text-slate-800 mt-0.5 block">130 WPM</span>
                                         <span className="text-xs text-indigo-600 font-semibold">{formatDuration(Math.ceil((metrics.wordCount / 130) * 60))}</span>
                                     </div>
                                     <div className="p-3 border border-slate-200 rounded-xl bg-slate-50">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Average Silent</span>
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">Average Silent</span>
                                         <span className="text-sm font-bold text-slate-800 mt-0.5 block">230 WPM</span>
                                         <span className="text-xs text-indigo-600 font-semibold">{formatDuration(metrics.readingTimeSeconds)}</span>
                                     </div>
                                     <div className="p-3 border border-slate-200 rounded-xl bg-slate-50">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Skimming / Fast</span>
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">Skimming / Fast</span>
                                         <span className="text-sm font-bold text-slate-800 mt-0.5 block">310 WPM</span>
                                         <span className="text-xs text-indigo-600 font-semibold">{formatDuration(Math.ceil((metrics.wordCount / 310) * 60))}</span>
                                     </div>

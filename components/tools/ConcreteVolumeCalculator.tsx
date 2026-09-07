@@ -371,8 +371,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                                 </label>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min={0.1}
                                                     step={0.5}
                                                     value={length === 0 ? "" : length}
@@ -390,8 +389,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                                 </label>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min={0.1}
                                                     step={0.5}
                                                     value={width === 0 ? "" : width}
@@ -411,8 +409,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                                 </label>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min={1}
                                                     step={0.5}
                                                     value={thickness === 0 ? "" : thickness}
@@ -430,8 +427,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                                 </label>
                                             </div>
                                             <div className="flex items-center gap-2">
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min={1}
                                                     step={1}
                                                     value={quantity === 0 ? "" : quantity}
@@ -450,8 +446,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                             Pier Diameter ({unitSystem === "imperial" ? "Inches" : "Centimeters"})
                                         </label>
                                         <div className="flex items-center gap-2">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={4}
                                                 step={1}
                                                 value={diameter === 0 ? "" : diameter}
@@ -467,8 +462,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                             Pier Depth/Height ({unitSystem === "imperial" ? "Feet" : "Meters"})
                                         </label>
                                         <div className="flex items-center gap-2">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0.5}
                                                 step={0.5}
                                                 value={height === 0 ? "" : height}
@@ -484,8 +478,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                             Number of Piers
                                         </label>
                                         <div className="flex items-center gap-2">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={1}
                                                 step={1}
                                                 value={quantity === 0 ? "" : quantity}
@@ -509,7 +502,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                     </label>
                                     <span className="text-xs font-bold text-indigo-600">{wastePercent}%</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={0}
                                     max={25}
@@ -518,7 +511,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                     onChange={(e) => setWastePercent(Number(e.target.value))}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                     <span>0% (Exact)</span>
                                     <span>10% (Standard)</span>
                                     <span>20% (Rough Base)</span>
@@ -531,8 +524,7 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                     Estimated Ready-Mix Cost ({unitSystem === "imperial" ? "$/yd³" : "$/m³"})
                                 </label>
                                 <div className="flex items-center gap-2">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={0}
                                         step={5}
                                         value={costPerUnit === 0 ? "" : costPerUnit}
@@ -637,22 +629,22 @@ Calculated via twistertools.com/tools/home-tools/concrete-volume-calculator`;
                                 <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                     <span className="text-[11px] font-bold text-slate-500 block uppercase">80 lb Bags</span>
                                     <span className="text-lg sm:text-xl font-black text-indigo-600">{calculations.bags80lb}</span>
-                                    <span className="text-[10px] text-slate-400 block font-medium">0.60 cu ft/bag</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-medium">0.60 cu ft/bag</span>
                                 </div>
                                 <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                     <span className="text-[11px] font-bold text-slate-500 block uppercase">60 lb Bags</span>
                                     <span className="text-lg sm:text-xl font-black text-indigo-600">{calculations.bags60lb}</span>
-                                    <span className="text-[10px] text-slate-400 block font-medium">0.45 cu ft/bag</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-medium">0.45 cu ft/bag</span>
                                 </div>
                                 <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                     <span className="text-[11px] font-bold text-slate-500 block uppercase">50 lb Bags</span>
                                     <span className="text-lg sm:text-xl font-black text-indigo-600">{calculations.bags50lb}</span>
-                                    <span className="text-[10px] text-slate-400 block font-medium">0.375 cu ft/bag</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-medium">0.375 cu ft/bag</span>
                                 </div>
                                 <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                     <span className="text-[11px] font-bold text-slate-500 block uppercase">25 kg Bags</span>
                                     <span className="text-lg sm:text-xl font-black text-indigo-600">{calculations.bags25kg}</span>
-                                    <span className="text-[10px] text-slate-400 block font-medium">0.012 m³/bag</span>
+                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-medium">0.012 m³/bag</span>
                                 </div>
                             </div>
                         </div>

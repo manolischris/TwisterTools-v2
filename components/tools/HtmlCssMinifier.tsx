@@ -640,7 +640,7 @@ export default function HtmlCssMinifier() {
                 </div>
               </div>
             )}
-            <textarea
+            <textarea aria-label="Input text content"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onDragOver={handleDragOver}
@@ -677,7 +677,7 @@ export default function HtmlCssMinifier() {
             </div>
             {/* Drag-and-Drop Upload Zone */}
             <div className="mt-2">
-              <input
+              <input aria-label="Upload file"
                 ref={fileInputRef}
                 type="file"
                 accept={mode.startsWith("html") ? ".html,.htm" : ".css"}
@@ -701,7 +701,7 @@ export default function HtmlCssMinifier() {
                     {isDragOver
                       ? "Drop file to load"
                       : `Drop a .${mode.startsWith("html") ? "html" : "css"} file here, or click to browse`}
-                    <span className="block text-[10px] text-slate-400 mt-0.5">
+                    <span className="block text-[10px] text-slate-600 dark:text-slate-300 mt-0.5">
                       {mode.startsWith("html") ? ".html, .htm" : ".css"}
                     </span>
                   </p>
@@ -794,7 +794,7 @@ export default function HtmlCssMinifier() {
                     ? copied
                       ? "bg-green-500 text-white shadow-md shadow-green-200"
                       : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                 }`}
               >
                 {copied ? (

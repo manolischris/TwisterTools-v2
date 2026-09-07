@@ -613,7 +613,7 @@ Source: twistertools.com/tools/random-tools/random-country-picker`;
                                             } else if (isSelectedChoice && !isCorrectChoice) {
                                                 btnStyle = "bg-rose-500 text-white border-rose-500 font-bold shadow-sm";
                                             } else {
-                                                btnStyle = "bg-slate-100 text-slate-400 border-slate-200 opacity-60";
+                                                btnStyle = "bg-slate-100 text-slate-600 dark:text-slate-300 border-slate-200 opacity-60";
                                             }
                                         }
 
@@ -836,7 +836,7 @@ Source: twistertools.com/tools/random-tools/random-country-picker`;
                                                 />
                                             </div>
                                             <span className="font-bold text-slate-900 truncate">{c.name}</span>
-                                            <span className="text-[11px] text-slate-400">({c.capital})</span>
+                                            <span className="text-[11px] text-slate-600 dark:text-slate-300">({c.capital})</span>
                                         </div>
                                         <span className="text-[11px] font-semibold text-indigo-600 flex-shrink-0 ml-2">
                                             {c.continent}

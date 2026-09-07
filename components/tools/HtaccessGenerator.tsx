@@ -774,14 +774,14 @@ export default function HtaccessGenerator() {
 
                                 <div className="space-y-2 pt-2">
                                     <label className="block text-xs font-bold text-slate-700">Primary Domain Name</label>
-                                    <input
+                                    <input aria-label="Primary Domain Name"
                                         type="text"
                                         value={customDomain}
                                         onChange={(e) => setCustomDomain(e.target.value)}
                                         placeholder="example.com"
                                         className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                     />
-                                    <span className="text-[11px] text-slate-400">Used for canonical redirects and anti-hotlinking rules.</span>
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300">Used for canonical redirects and anti-hotlinking rules.</span>
                                 </div>
                             </div>
                         )}
@@ -796,7 +796,7 @@ export default function HtaccessGenerator() {
 
                                 <div className="space-y-3">
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
+                                        <input aria-label="Force Https"
                                             type="checkbox"
                                             checked={forceHttps}
                                             onChange={(e) => setForceHttps(e.target.checked)}
@@ -833,7 +833,7 @@ export default function HtaccessGenerator() {
 
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-3">
                                         <label className="flex items-start gap-3 cursor-pointer">
-                                            <input
+                                            <input aria-label="Hsts"
                                                 type="checkbox"
                                                 checked={enableHsts}
                                                 onChange={(e) => setEnableHsts(e.target.checked)}
@@ -849,7 +849,7 @@ export default function HtaccessGenerator() {
                                             <div className="pl-7 space-y-2 pt-1 border-t border-slate-200">
                                                 <div>
                                                     <label className="block text-[11px] font-bold text-slate-700">HSTS Max-Age (Seconds)</label>
-                                                    <input
+                                                    <input aria-label="HSTS Max-Age (Seconds)"
                                                         type="number"
                                                         value={hstsMaxAge === 0 ? "" : hstsMaxAge}
                                                         onChange={(e) => handleNumberInput(e, setHstsMaxAge)}
@@ -858,7 +858,7 @@ export default function HtaccessGenerator() {
                                                 </div>
                                                 <div className="flex flex-wrap gap-4 pt-1">
                                                     <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer">
-                                                        <input
+                                                        <input aria-label="Hsts Include Subdomains"
                                                             type="checkbox"
                                                             checked={hstsIncludeSubdomains}
                                                             onChange={(e) => setHstsIncludeSubdomains(e.target.checked)}
@@ -867,8 +867,7 @@ export default function HtaccessGenerator() {
                                                         includeSubDomains
                                                     </label>
                                                     <label className="flex items-center gap-1.5 text-xs text-slate-700 cursor-pointer">
-                                                        <input
-                                                            type="checkbox"
+                                                        <input type="checkbox"
                                                             checked={hstsPreload}
                                                             onChange={(e) => setHstsPreload(e.target.checked)}
                                                             className="rounded text-indigo-600 w-3.5 h-3.5"
@@ -893,7 +892,7 @@ export default function HtaccessGenerator() {
 
                                 <div className="space-y-3">
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
+                                        <input aria-label="Remove Php Extension"
                                             type="checkbox"
                                             checked={removePhpExtension}
                                             onChange={(e) => setRemovePhpExtension(e.target.checked)}
@@ -906,8 +905,7 @@ export default function HtaccessGenerator() {
                                     </label>
 
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Remove Html Extension" type="checkbox"
                                             checked={removeHtmlExtension}
                                             onChange={(e) => setRemoveHtmlExtension(e.target.checked)}
                                             className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -919,8 +917,7 @@ export default function HtaccessGenerator() {
                                     </label>
 
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Remove Trailing Slash" type="checkbox"
                                             checked={removeTrailingSlash}
                                             onChange={(e) => {
                                                 setRemoveTrailingSlash(e.target.checked);
@@ -935,8 +932,7 @@ export default function HtaccessGenerator() {
                                     </label>
 
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Append Trailing Slash" type="checkbox"
                                             checked={appendTrailingSlash}
                                             onChange={(e) => {
                                                 setAppendTrailingSlash(e.target.checked);
@@ -963,7 +959,7 @@ export default function HtaccessGenerator() {
 
                                 <div className="space-y-3">
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
+                                        <input aria-label="Gzip"
                                             type="checkbox"
                                             checked={enableGzip}
                                             onChange={(e) => setEnableGzip(e.target.checked)}
@@ -976,8 +972,7 @@ export default function HtaccessGenerator() {
                                     </label>
 
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Brotli" type="checkbox"
                                             checked={enableBrotli}
                                             onChange={(e) => setEnableBrotli(e.target.checked)}
                                             className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -990,8 +985,7 @@ export default function HtaccessGenerator() {
 
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-3">
                                         <label className="flex items-start gap-3 cursor-pointer">
-                                            <input
-                                                type="checkbox"
+                                            <input type="checkbox"
                                                 checked={enableBrowserCaching}
                                                 onChange={(e) => setEnableBrowserCaching(e.target.checked)}
                                                 className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -1006,7 +1000,7 @@ export default function HtaccessGenerator() {
                                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pl-7 pt-1 border-t border-slate-200">
                                                 <div>
                                                     <label className="block text-[10px] font-bold text-slate-600 uppercase">Images (WebP/PNG/JPG)</label>
-                                                    <select
+                                                    <select aria-label="Select Images (WebP/PNG/JPG)"
                                                         value={cacheDurationImages}
                                                         onChange={(e) => setCacheDurationImages(e.target.value)}
                                                         className="w-full text-xs p-1.5 rounded-lg border border-slate-200 bg-white"
@@ -1018,7 +1012,7 @@ export default function HtaccessGenerator() {
                                                 </div>
                                                 <div>
                                                     <label className="block text-[10px] font-bold text-slate-600 uppercase">CSS / JS Scripts</label>
-                                                    <select
+                                                    <select aria-label="Select CSS / JS Scripts"
                                                         value={cacheDurationCssJs}
                                                         onChange={(e) => setCacheDurationCssJs(e.target.value)}
                                                         className="w-full text-xs p-1.5 rounded-lg border border-slate-200 bg-white"
@@ -1030,7 +1024,7 @@ export default function HtaccessGenerator() {
                                                 </div>
                                                 <div>
                                                     <label className="block text-[10px] font-bold text-slate-600 uppercase">Video / Audio Media</label>
-                                                    <select
+                                                    <select aria-label="Select Video / Audio Media"
                                                         value={cacheDurationMedia}
                                                         onChange={(e) => setCacheDurationMedia(e.target.value)}
                                                         className="w-full text-xs p-1.5 rounded-lg border border-slate-200 bg-white"
@@ -1057,7 +1051,7 @@ export default function HtaccessGenerator() {
 
                                 <div className="space-y-3">
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
+                                        <input aria-label="Disable Directory Listing"
                                             type="checkbox"
                                             checked={disableDirectoryListing}
                                             onChange={(e) => setDisableDirectoryListing(e.target.checked)}
@@ -1070,8 +1064,7 @@ export default function HtaccessGenerator() {
                                     </label>
 
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Protect Sensitive Files" type="checkbox"
                                             checked={protectSensitiveFiles}
                                             onChange={(e) => setProtectSensitiveFiles(e.target.checked)}
                                             className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -1083,8 +1076,7 @@ export default function HtaccessGenerator() {
                                     </label>
 
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Block Bad Bots" type="checkbox"
                                             checked={blockBadBots}
                                             onChange={(e) => setBlockBadBots(e.target.checked)}
                                             className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -1096,8 +1088,7 @@ export default function HtaccessGenerator() {
                                     </label>
 
                                     <label className="flex items-start gap-3 p-3 rounded-xl bg-slate-50 border border-slate-200/80 cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Prevent Clickjacking" type="checkbox"
                                             checked={preventClickjacking}
                                             onChange={(e) => setPreventClickjacking(e.target.checked)}
                                             className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -1111,7 +1102,7 @@ export default function HtaccessGenerator() {
                                     {/* IP Blacklist */}
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
                                         <label className="flex items-start gap-3 cursor-pointer">
-                                            <input
+                                            <input aria-label="Block Specific Ips"
                                                 type="checkbox"
                                                 checked={blockSpecificIps}
                                                 onChange={(e) => setBlockSpecificIps(e.target.checked)}
@@ -1124,7 +1115,7 @@ export default function HtaccessGenerator() {
                                         </label>
                                         {blockSpecificIps && (
                                             <div className="pl-7 pt-1">
-                                                <textarea
+                                                <textarea aria-label="Input text content"
                                                     rows={3}
                                                     value={blockedIpsList}
                                                     onChange={(e) => setBlockedIpsList(e.target.value)}
@@ -1149,7 +1140,7 @@ export default function HtaccessGenerator() {
                                 <div className="space-y-3">
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
                                         <label className="flex items-center gap-2 text-xs font-bold text-slate-900 cursor-pointer">
-                                            <input
+                                            <input aria-label="Custom404"
                                                 type="checkbox"
                                                 checked={custom404}
                                                 onChange={(e) => setCustom404(e.target.checked)}
@@ -1158,8 +1149,7 @@ export default function HtaccessGenerator() {
                                             404 Not Found Handler
                                         </label>
                                         {custom404 && (
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={custom404Path}
                                                 onChange={(e) => setCustom404Path(e.target.value)}
                                                 placeholder="/404.html"
@@ -1170,7 +1160,7 @@ export default function HtaccessGenerator() {
 
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
                                         <label className="flex items-center gap-2 text-xs font-bold text-slate-900 cursor-pointer">
-                                            <input
+                                            <input aria-label="Custom403"
                                                 type="checkbox"
                                                 checked={custom403}
                                                 onChange={(e) => setCustom403(e.target.checked)}
@@ -1179,8 +1169,7 @@ export default function HtaccessGenerator() {
                                             403 Forbidden Handler
                                         </label>
                                         {custom403 && (
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={custom403Path}
                                                 onChange={(e) => setCustom403Path(e.target.value)}
                                                 placeholder="/403.html"
@@ -1191,7 +1180,7 @@ export default function HtaccessGenerator() {
 
                                     <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
                                         <label className="flex items-center gap-2 text-xs font-bold text-slate-900 cursor-pointer">
-                                            <input
+                                            <input aria-label="Custom500"
                                                 type="checkbox"
                                                 checked={custom500}
                                                 onChange={(e) => setCustom500(e.target.checked)}
@@ -1200,8 +1189,7 @@ export default function HtaccessGenerator() {
                                             500 Internal Server Error Handler
                                         </label>
                                         {custom500 && (
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={custom500Path}
                                                 onChange={(e) => setCustom500Path(e.target.value)}
                                                 placeholder="/500.html"
@@ -1223,22 +1211,19 @@ export default function HtaccessGenerator() {
 
                                 <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/80 space-y-3">
                                     <div className="grid grid-cols-1 sm:grid-cols-5 gap-2">
-                                        <input
-                                            type="text"
+                                        <input aria-label="Input value" type="text"
                                             value={newRedirectFrom}
                                             onChange={(e) => setNewRedirectFrom(e.target.value)}
                                             placeholder="/old-url"
                                             className="sm:col-span-2 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-mono bg-white"
                                         />
-                                        <input
-                                            type="text"
+                                        <input aria-label="Input value" type="text"
                                             value={newRedirectTo}
                                             onChange={(e) => setNewRedirectTo(e.target.value)}
                                             placeholder="/new-destination"
                                             className="sm:col-span-2 px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-mono bg-white"
                                         />
-                                        <select
-                                            value={newRedirectType}
+                                        <select aria-label="Select option" value={newRedirectType}
                                             onChange={(e) => setNewRedirectType(e.target.value as "301" | "302")}
                                             className="px-2 py-1.5 rounded-lg border border-slate-200 text-xs bg-white font-semibold"
                                         >
@@ -1262,7 +1247,7 @@ export default function HtaccessGenerator() {
                                                 <div className="truncate mr-2">
                                                     <span className="font-bold text-indigo-600 mr-2">[{rule.type}]</span>
                                                     <span className="text-slate-800">{rule.from}</span>
-                                                    <span className="text-slate-400 mx-1.5">→</span>
+                                                    <span className="text-slate-600 dark:text-slate-300 mx-1.5">→</span>
                                                     <span className="text-emerald-700">{rule.to}</span>
                                                 </div>
                                                 <button

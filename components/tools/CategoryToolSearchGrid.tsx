@@ -309,11 +309,10 @@ export default function CategoryToolSearchGrid({
     <div className="space-y-8">
       {/* Dynamic Client Search Bar */}
       <div className="relative max-w-2xl mx-auto">
-        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
           <Search className="w-5 h-5" />
         </div>
-        <input
-          type="text"
+        <input type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search tools in this category..."
@@ -323,7 +322,7 @@ export default function CategoryToolSearchGrid({
         {searchQuery && (
           <button
             onClick={() => setSearchQuery("")}
-            className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
+            className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-600 dark:hover:text-slate-200 transition-colors"
             aria-label="Clear search"
           >
             <X className="w-5 h-5" />
@@ -369,10 +368,10 @@ export default function CategoryToolSearchGrid({
                 </div>
 
                 <div className="flex items-center justify-between mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
-                  <span className="text-xs font-semibold text-slate-400 dark:text-slate-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 dark:text-slate-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                     Launch Tool
                   </span>
-                  <div className="text-slate-400 dark:text-slate-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 group-hover:translate-x-1.5 transition-all duration-300">
+                  <div className="text-slate-600 dark:text-slate-300 dark:text-slate-500 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 group-hover:translate-x-1.5 transition-all duration-300">
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>

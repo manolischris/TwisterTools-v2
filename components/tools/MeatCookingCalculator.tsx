@@ -465,8 +465,7 @@ Calculated via twistertools.com/tools/home-tools/meat-cooking-time-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Select Meat Cut / Protein
                             </label>
-                            <select
-                                value={selectedCutId}
+                            <select aria-label="Select option" value={selectedCutId}
                                 onChange={(e) => handleCutChange(e.target.value)}
                                 className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl font-semibold text-slate-900 text-sm focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                             >
@@ -485,8 +484,7 @@ Calculated via twistertools.com/tools/home-tools/meat-cooking-time-calculator`;
                                     Raw Meat Weight
                                 </label>
                                 <div className="flex items-center gap-2">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.1"
                                         min="0.5"
                                         max="50"
@@ -545,7 +543,7 @@ Calculated via twistertools.com/tools/home-tools/meat-cooking-time-calculator`;
                                     <span className="text-[11px] text-slate-500">Bones add thermal mass and slightly extend roasting duration (+8-10%)</span>
                                 </div>
                                 <label className="relative inline-flex items-center cursor-pointer">
-                                    <input
+                                    <input aria-label="Bone In"
                                         type="checkbox"
                                         checked={isBoneIn}
                                         onChange={(e) => setIsBoneIn(e.target.checked)}
@@ -593,8 +591,7 @@ Calculated via twistertools.com/tools/home-tools/meat-cooking-time-calculator`;
                                         <Clock className="w-3.5 h-3.5 text-indigo-600" />
                                         Target Dinner Serving Time (Optional)
                                     </label>
-                                    <input
-                                        type="time"
+                                    <input aria-label="Input value" type="time"
                                         value={dinnerTargetTime}
                                         onChange={(e) => setDinnerTargetTime(e.target.value)}
                                         className="px-2 py-1 text-xs font-bold bg-white border border-slate-300 rounded-lg text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -777,8 +774,8 @@ Calculated via twistertools.com/tools/home-tools/meat-cooking-time-calculator`;
                     {/* Filter and Search Bar */}
                     <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
                         <div className="relative flex-1">
-                            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                            <input
+                            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300" />
+                            <input aria-label="Search cuts"
                                 type="text"
                                 placeholder="Search cuts (e.g. prime rib, brisket, pork loin)..."
                                 value={searchQuery}
@@ -819,7 +816,7 @@ Calculated via twistertools.com/tools/home-tools/meat-cooking-time-calculator`;
                             <tbody className="divide-y divide-slate-200 font-medium">
                                 {filteredCatalog.length === 0 ? (
                                     <tr>
-                                        <td colSpan={6} className="p-4 text-center text-xs text-slate-400">
+                                        <td colSpan={6} className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">
                                             No meat cuts matched your query.
                                         </td>
                                     </tr>
@@ -890,11 +887,11 @@ Calculated via twistertools.com/tools/home-tools/meat-cooking-time-calculator`;
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Thermometer Pull Target:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Thermometer Pull Target:</span>
                                 <strong className="text-indigo-300 text-sm">T_pull = T_target - (0.05 to 0.10 × T_oven_gradient)</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Resting Duration:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Resting Duration:</span>
                                 <strong className="text-indigo-300 text-sm">Time_rest = Weight_lbs × 3.5 mins (Min 10m, Max 30m)</strong>
                             </div>
                         </div>

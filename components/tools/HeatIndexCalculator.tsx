@@ -467,7 +467,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={tempUnit === "C" ? 15 : 60}
                                         max={tempUnit === "C" ? 55 : 130}
@@ -476,8 +476,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                         onChange={(e) => setTemperatureInput(parseFloat(e.target.value) || 0)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="any"
                                         value={temperatureInput === 0 ? "" : temperatureInput}
                                         onChange={(e) => handleNumberInput(e, setTemperatureInput)}
@@ -524,7 +523,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-3">
-                                                <input
+                                                <input aria-label="Adjust slider value"
                                                     type="range"
                                                     min="5"
                                                     max="100"
@@ -533,8 +532,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                                     onChange={(e) => setRhInput(parseFloat(e.target.value) || 0)}
                                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                                 />
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min="0"
                                                     max="100"
                                                     step="any"
@@ -555,7 +553,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                                 </span>
                                             </div>
                                             <div className="flex items-center gap-3">
-                                                <input
+                                                <input aria-label="Adjust slider value"
                                                     type="range"
                                                     min={tempUnit === "C" ? 0 : 32}
                                                     max={tempUnit === "C" ? 35 : 95}
@@ -564,8 +562,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                                     onChange={(e) => setDewPointInput(parseFloat(e.target.value) || 0)}
                                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                                 />
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     step="any"
                                                     value={dewPointInput === 0 ? "" : dewPointInput}
                                                     onChange={(e) => handleNumberInput(e, setDewPointInput)}
@@ -589,7 +586,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max="10"
@@ -598,8 +595,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                         onChange={(e) => setWindSpeedMps(parseFloat(e.target.value) || 0)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="50"
                                         step="any"
@@ -715,7 +711,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                         <span className="font-bold text-indigo-300 uppercase tracking-wider">
                                             Thermal Discomfort Meter
                                         </span>
-                                        <span className="font-mono text-[11px] text-slate-400">
+                                        <span className="font-mono text-[11px] text-slate-600 dark:text-slate-300">
                                             Index: {formatNum(m.heatIndexF)}°F
                                         </span>
                                     </div>
@@ -728,7 +724,7 @@ Generated via TwisterTools Heat Index Calculator`;
                                         />
                                     </div>
 
-                                    <div className="flex justify-between text-[10px] font-bold text-slate-400 pt-0.5">
+                                    <div className="flex justify-between text-[10px] font-bold text-slate-600 dark:text-slate-300 pt-0.5">
                                         <span className="text-emerald-400">Safe (80°F)</span>
                                         <span className="text-amber-400">Caution (90°F)</span>
                                         <span className="text-orange-400">Ex. Caution (103°F)</span>
@@ -783,7 +779,7 @@ Generated via TwisterTools Heat Index Calculator`;
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

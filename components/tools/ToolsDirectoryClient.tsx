@@ -447,7 +447,7 @@ function ToolCard({
       {/* Footer CTA */}
       <div className="flex items-center justify-between mt-5 pt-4 border-t border-slate-100">
         <span
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-400 group-hover:text-indigo-600 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-300 group-hover:text-indigo-600 transition-colors"
         >
           Launch Tool
           <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -546,16 +546,15 @@ export default function ToolsDirectoryClient({
       <div className="space-y-4">
         {/* Search Input */}
         <div className="relative max-w-2xl mx-auto">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
             <Search className="w-5 h-5" />
           </div>
-          <input
+          <input aria-label="Tools Search Input"
             id="tools-search-input"
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search all tools — e.g. JSON, password, UUID..."
-            aria-label="Search all tools"
             className="w-full pl-11 pr-11 py-3.5 bg-white border border-slate-200 rounded-2xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500/60 focus:border-indigo-400 text-slate-800 placeholder-slate-400 text-base transition-all"
           />
           {searchQuery && (
@@ -563,7 +562,7 @@ export default function ToolsDirectoryClient({
               id="tools-search-clear"
               onClick={() => setSearchQuery("")}
               aria-label="Clear search query"
-              className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-400 hover:text-slate-600 transition-colors"
+              className="absolute inset-y-0 right-0 pr-4 flex items-center text-slate-600 dark:text-slate-300 hover:text-slate-600 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -735,7 +734,7 @@ export default function ToolsDirectoryClient({
             p === "…" ? (
               <span
                 key={`ellipsis-${idx}`}
-                className="px-2 py-2 text-slate-400 text-sm select-none"
+                className="px-2 py-2 text-slate-600 dark:text-slate-300 text-sm select-none"
                 aria-hidden="true"
               >
                 …
@@ -771,7 +770,7 @@ export default function ToolsDirectoryClient({
           </button>
 
           {/* Page label */}
-          <span className="ml-3 text-sm text-slate-400 hidden sm:inline">
+          <span className="ml-3 text-sm text-slate-600 dark:text-slate-300 hidden sm:inline">
             Page{" "}
             <strong className="text-slate-600">{safePage}</strong> of{" "}
             <strong className="text-slate-600">{totalPages}</strong>

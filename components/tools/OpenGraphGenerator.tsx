@@ -171,7 +171,7 @@ function FacebookPreview({ data }: { data: OpenGraphFormData }) {
               }}
             />
           ) : (
-            <div className="flex flex-col items-center gap-2 text-slate-400">
+            <div className="flex flex-col items-center gap-2 text-slate-600 dark:text-slate-300">
               <ImageIcon className="w-10 h-10" />
               <span className="text-xs font-medium">1200 x 630 pixels recommended</span>
             </div>
@@ -211,7 +211,7 @@ function TwitterPreview({ data }: { data: OpenGraphFormData }) {
             <div className="p-3 space-y-1">
               <p className="text-xs text-slate-500 truncate">{domain}</p>
               <h3 className="text-sm font-bold text-slate-100 line-clamp-1">{title}</h3>
-              <p className="text-xs text-slate-400 line-clamp-2">{desc}</p>
+              <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2">{desc}</p>
             </div>
           </div>
         ) : (
@@ -226,7 +226,7 @@ function TwitterPreview({ data }: { data: OpenGraphFormData }) {
             <div className="flex-1 min-w-0 space-y-1">
               <p className="text-xs text-slate-500 truncate">{domain}</p>
               <h3 className="text-sm font-bold text-slate-100 line-clamp-1">{title}</h3>
-              <p className="text-xs text-slate-400 line-clamp-2">{desc}</p>
+              <p className="text-xs text-slate-600 dark:text-slate-300 line-clamp-2">{desc}</p>
             </div>
           </div>
         )}
@@ -246,7 +246,7 @@ function LinkedInPreview({ data }: { data: OpenGraphFormData }) {
           {data.imageUrl ? (
             <img src={data.imageUrl} alt={data.imageAlt} className="w-full h-full object-cover" />
           ) : (
-            <div className="flex flex-col items-center gap-2 text-slate-400">
+            <div className="flex flex-col items-center gap-2 text-slate-600 dark:text-slate-300">
               <ImageIcon className="w-10 h-10" />
               <span className="text-xs font-medium">LinkedIn Image Ratio 1.91:1</span>
             </div>
@@ -343,7 +343,7 @@ export default function OpenGraphGenerator() {
                 <div className="space-y-3">
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Page Title (og:title)</label>
-                    <input
+                    <input aria-label="Page Title (ogtitle)"
                       type="text"
                       value={formData.title}
                       onChange={(e) => updateField("title", e.target.value)}
@@ -353,7 +353,7 @@ export default function OpenGraphGenerator() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Canonical URL (og:url)</label>
-                    <input
+                    <input aria-label="Canonical URL (ogurl)"
                       type="url"
                       value={formData.url}
                       onChange={(e) => updateField("url", e.target.value)}
@@ -363,7 +363,7 @@ export default function OpenGraphGenerator() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Description (og:description)</label>
-                    <textarea
+                    <textarea aria-label="Description (ogdescription)"
                       value={formData.description}
                       onChange={(e) => updateField("description", e.target.value)}
                       placeholder="Write a clear 1-2 sentence overview to display on social feeds..."
@@ -381,7 +381,7 @@ export default function OpenGraphGenerator() {
                 <div className="space-y-3">
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Image Asset URL (og:image)</label>
-                    <input
+                    <input aria-label="Image Asset URL (ogimage)"
                       type="url"
                       value={formData.imageUrl}
                       onChange={(e) => updateField("imageUrl", e.target.value)}
@@ -391,7 +391,7 @@ export default function OpenGraphGenerator() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Image Alt Text (og:image:alt)</label>
-                    <input
+                    <input aria-label="Image Alt Text (ogimagealt)"
                       type="text"
                       value={formData.imageAlt}
                       onChange={(e) => updateField("imageAlt", e.target.value)}
@@ -410,7 +410,7 @@ export default function OpenGraphGenerator() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Site Name (og:site_name)</label>
-                    <input
+                    <input aria-label="Site Name (ogsite_name)"
                       type="text"
                       value={formData.siteName}
                       onChange={(e) => updateField("siteName", e.target.value)}
@@ -420,7 +420,7 @@ export default function OpenGraphGenerator() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Object Type (og:type)</label>
-                    <select
+                    <select aria-label="Select Object Type (ogtype)"
                       value={formData.ogType}
                       onChange={(e) => updateField("ogType", e.target.value as OgType)}
                       className="w-full text-sm border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-slate-800 bg-white"
@@ -436,7 +436,7 @@ export default function OpenGraphGenerator() {
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Twitter Card Format</label>
-                    <select
+                    <select aria-label="Select Twitter Card Format"
                       value={formData.twitterCardType}
                       onChange={(e) => updateField("twitterCardType", e.target.value as TwitterCardType)}
                       className="w-full text-sm border border-slate-200 rounded-xl px-3.5 py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-600 text-slate-800 bg-white"
@@ -447,7 +447,7 @@ export default function OpenGraphGenerator() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-slate-700 mb-1">Twitter Handle</label>
-                    <input
+                    <input aria-label="Twitter Handle"
                       type="text"
                       value={formData.twitterSite}
                       onChange={(e) => updateField("twitterSite", e.target.value)}
@@ -534,7 +534,7 @@ export default function OpenGraphGenerator() {
             </div>
 
             <div className="p-5 space-y-4">
-              <textarea
+              <textarea aria-label="Input text content"
                 value={metaTagCode}
                 readOnly
                 className="font-mono text-xs h-[240px] focus:outline-none p-4 w-full bg-slate-900 text-emerald-400 border border-slate-800 rounded-xl resize-none cursor-text leading-relaxed"

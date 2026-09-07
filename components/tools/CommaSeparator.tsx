@@ -352,8 +352,7 @@ export default function CommaSeparator() {
                       : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-650 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-850"
                   }`}
                 >
-                  <input
-                    type="checkbox"
+                  <input aria-label="State" type="checkbox"
                     checked={state}
                     onChange={(e) => setter(e.target.checked)}
                     className="w-4 h-4 text-indigo-650 border-slate-355 rounded focus:ring-indigo-550 cursor-pointer"
@@ -415,8 +414,7 @@ export default function CommaSeparator() {
                     Trim leading/trailing spacing errors
                   </span>
                 </div>
-                <input
-                  type="checkbox"
+                <input aria-label="Strip Whitespace" type="checkbox"
                   checked={stripWhitespace}
                   onChange={(e) => setStripWhitespace(e.target.checked)}
                   className="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-500 cursor-pointer"
@@ -433,8 +431,7 @@ export default function CommaSeparator() {
                     Keep only unique text items
                   </span>
                 </div>
-                <input
-                  type="checkbox"
+                <input aria-label="Remove Duplicates" type="checkbox"
                   checked={removeDuplicates}
                   onChange={(e) => setRemoveDuplicates(e.target.checked)}
                   className="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-550 cursor-pointer"
@@ -451,8 +448,7 @@ export default function CommaSeparator() {
                     Sort items ascending (A-Z)
                   </span>
                 </div>
-                <input
-                  type="checkbox"
+                <input aria-label="Sort Alphabetically" type="checkbox"
                   checked={sortAlphabetically}
                   onChange={(e) => setSortAlphabetically(e.target.checked)}
                   className="w-4 h-4 text-indigo-600 border-slate-300 rounded focus:ring-indigo-550 cursor-pointer"

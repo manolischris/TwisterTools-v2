@@ -445,7 +445,7 @@ export default function MeetingTimezoneScheduler() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 <div>
                                     <label className="text-[11px] font-bold text-slate-600 block mb-1">Meeting Title</label>
-                                    <input
+                                    <input aria-label="Meeting Title"
                                         type="text"
                                         value={meetingTitle}
                                         onChange={(e) => setMeetingTitle(e.target.value)}
@@ -456,7 +456,7 @@ export default function MeetingTimezoneScheduler() {
                                 <div className="grid grid-cols-2 gap-2">
                                     <div>
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">Date</label>
-                                        <input
+                                        <input aria-label="Date"
                                             type="date"
                                             value={selectedDate}
                                             onChange={(e) => setSelectedDate(e.target.value)}
@@ -465,7 +465,7 @@ export default function MeetingTimezoneScheduler() {
                                     </div>
                                     <div>
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">Duration</label>
-                                        <select
+                                        <select aria-label="Select Duration"
                                             value={meetingDuration}
                                             onChange={(e) => setMeetingDuration(Number(e.target.value))}
                                             className="w-full px-2.5 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -494,7 +494,7 @@ export default function MeetingTimezoneScheduler() {
 
                             {/* Quick Add City Autocomplete Input */}
                             <div className="space-y-2">
-                                <input
+                                <input aria-label="Search city, region, or timezone"
                                     type="text"
                                     placeholder="Search city, region, or timezone (e.g. Tokyo, Berlin, Sydney)..."
                                     value={searchQuery}
@@ -505,7 +505,7 @@ export default function MeetingTimezoneScheduler() {
                                 {searchQuery && (
                                     <div className="bg-slate-50 border border-slate-200 rounded-xl p-2 max-h-36 overflow-y-auto space-y-1">
                                         {filteredSearchTimezones.length === 0 ? (
-                                            <p className="text-xs text-slate-400 p-2">No matching standard cities found.</p>
+                                            <p className="text-xs text-slate-600 dark:text-slate-300 p-2">No matching standard cities found.</p>
                                         ) : (
                                             filteredSearchTimezones.map((tzItem) => (
                                                 <button
@@ -546,7 +546,7 @@ export default function MeetingTimezoneScheduler() {
                                                             Primary
                                                         </span>
                                                     )}
-                                                    <span className="text-[10px] text-slate-400 truncate">({loc.country})</span>
+                                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 truncate">({loc.country})</span>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-[11px] text-slate-500 mt-0.5">
                                                     <span className="font-mono font-medium text-slate-700">{loc.label}</span>
@@ -584,7 +584,7 @@ export default function MeetingTimezoneScheduler() {
                                                         <button
                                                             type="button"
                                                             onClick={() => removeLocation(loc.id)}
-                                                            className="text-slate-400 hover:text-rose-500 p-1 transition cursor-pointer"
+                                                            className="text-slate-600 dark:text-slate-300 hover:text-rose-500 p-1 transition cursor-pointer"
                                                             title="Remove Location"
                                                         >
                                                             <Trash2 className="w-3.5 h-3.5" />
@@ -712,9 +712,9 @@ export default function MeetingTimezoneScheduler() {
                                     <div key={loc.id} className="space-y-1">
                                         <div className="flex items-center justify-between text-[11px] font-semibold text-slate-700">
                                             <span className="flex items-center gap-1.5 truncate">
-                                                <Building2 className="w-3 h-3 text-slate-400" />
+                                                <Building2 className="w-3 h-3 text-slate-600 dark:text-slate-300" />
                                                 <strong className="text-slate-900">{loc.city}</strong>
-                                                <span className="text-slate-400">({loc.label})</span>
+                                                <span className="text-slate-600 dark:text-slate-300">({loc.label})</span>
                                             </span>
                                             <span className="font-mono text-xs font-bold text-indigo-600">
                                                 {format12Hour(getLocalHourDetails(loc.tz, homeLocation.tz, selectedDate, selectedSlotHour).localHour)}

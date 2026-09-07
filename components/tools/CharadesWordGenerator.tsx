@@ -298,7 +298,7 @@ export default function CharadesWordGenerator() {
                                     className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs transition cursor-pointer"
                                     title={soundEnabled ? "Mute Timer Buzzer" : "Unmute Timer Buzzer"}
                                 >
-                                    {soundEnabled ? <Volume2 className="w-4 h-4 text-indigo-600" /> : <VolumeX className="w-4 h-4 text-slate-400" />}
+                                    {soundEnabled ? <Volume2 className="w-4 h-4 text-indigo-600" /> : <VolumeX className="w-4 h-4 text-slate-600 dark:text-slate-300" />}
                                 </button>
                             </div>
                         </div>
@@ -573,8 +573,7 @@ export default function CharadesWordGenerator() {
                                 Add Custom Prompt
                             </label>
                             <div className="flex gap-2">
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={customWordInput}
                                     onChange={(e) => setCustomWordInput(e.target.value)}
                                     placeholder="e.g. Grandma cooking Thanksgiving dinner"
@@ -589,8 +588,7 @@ export default function CharadesWordGenerator() {
                                 </button>
                             </div>
                             <div className="flex items-center gap-2">
-                                <select
-                                    value={customCategoryInput}
+                                <select aria-label="Select option" value={customCategoryInput}
                                     onChange={(e) => setCustomCategoryInput(e.target.value as Exclude<CategoryType, "all">)}
                                     className="text-xs bg-white border border-slate-300 rounded-md px-2 py-1 outline-none text-slate-700"
                                 >
@@ -601,7 +599,7 @@ export default function CharadesWordGenerator() {
                                     <option value="phrases">Phrases</option>
                                     <option value="characters">Characters</option>
                                 </select>
-                                <select
+                                <select aria-label="Select Characters"
                                     value={customDifficultyInput}
                                     onChange={(e) => setCustomDifficultyInput(e.target.value as Exclude<DifficultyLevel, "all">)}
                                     className="text-xs bg-white border border-slate-300 rounded-md px-2 py-1 outline-none text-slate-700"
@@ -610,7 +608,7 @@ export default function CharadesWordGenerator() {
                                     <option value="medium">Medium</option>
                                     <option value="hard">Hard</option>
                                 </select>
-                                <span className="text-[11px] text-slate-400 ml-auto">
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300 ml-auto">
                                     {customDeck.length} custom cards
                                 </span>
                             </div>
@@ -624,7 +622,7 @@ export default function CharadesWordGenerator() {
                         </span>
                         <div className="flex flex-wrap gap-1.5 max-h-20 overflow-y-auto">
                             {history.length === 0 ? (
-                                <span className="text-xs text-slate-400">No prompt history yet.</span>
+                                <span className="text-xs text-slate-600 dark:text-slate-300">No prompt history yet.</span>
                             ) : (
                                 history.slice(0, 10).map((h) => (
                                     <span

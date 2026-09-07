@@ -450,8 +450,7 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Age (Years)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="5"
                                         max="110"
                                         value={age === 0 ? "" : age}
@@ -468,19 +467,18 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                 </label>
                                 {unitSystem === "imperial" ? (
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="30"
                                             max="700"
                                             value={weightLbs === 0 ? "" : weightLbs}
                                             onChange={(e) => { handleNumberInput(e, (val) => setWeightLbs(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">lbs</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">lbs</span>
                                     </div>
                                 ) : (
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="lbs"
                                             type="number"
                                             min="15"
                                             max="350"
@@ -488,7 +486,7 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setWeightKg(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-10 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">kg</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">kg</span>
                                     </div>
                                 )}
                             </div>
@@ -500,15 +498,14 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                         <Activity className="w-3.5 h-3.5 text-indigo-600" /> Daily Exercise
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="360"
                                             value={workoutMinutes === 0 ? "" : workoutMinutes}
                                             onChange={(e) => { handleNumberInput(e, (val) => setWorkoutMinutes(Math.max(0, Math.min(360, val)))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">mins</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">mins</span>
                                     </div>
                                 </div>
 
@@ -516,8 +513,7 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <Sun className="w-3.5 h-3.5 text-indigo-600" /> Climate Zone
                                     </label>
-                                    <select
-                                        value={climate}
+                                    <select aria-label="Select option" value={climate}
                                         onChange={(e) => setClimate(e.target.value as ClimateType)}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     >
@@ -537,7 +533,7 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                     </span>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 min-w-0">
                                         <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
-                                            <input
+                                            <input aria-label="Pregnant"
                                                 type="checkbox"
                                                 checked={isPregnant}
                                                 onChange={(e) => {
@@ -550,8 +546,7 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                                         </label>
 
                                         <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
-                                            <input
-                                                type="checkbox"
+                                            <input aria-label="Breastfeeding" type="checkbox"
                                                 checked={isBreastfeeding}
                                                 onChange={(e) => {
                                                     setIsBreastfeeding(e.target.checked);
@@ -569,7 +564,7 @@ Calculated at twistertools.com/tools/calculators/water-intake-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Lifestyle Presets
                                 </span>
                                 {activePresetId && (

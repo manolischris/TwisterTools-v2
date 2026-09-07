@@ -234,7 +234,7 @@ export default function PdfToTextExtractor() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -247,7 +247,7 @@ export default function PdfToTextExtractor() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop your PDF file here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Supports documents up to 20 MB</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Supports documents up to 20 MB</p>
                             </div>
 
                             {errorMessage && (
@@ -332,7 +332,7 @@ export default function PdfToTextExtractor() {
                         <div className="p-5 space-y-4">
                             {/* Text Output Area */}
                             <div className="relative">
-                                <textarea
+                                <textarea aria-label="Extracted plain text from your PDF document will appear here"
                                     value={fullText}
                                     readOnly
                                     placeholder="Extracted plain text from your PDF document will appear here..."
@@ -372,7 +372,7 @@ export default function PdfToTextExtractor() {
                                         ? copied
                                             ? "bg-green-600 text-white shadow-green-200"
                                             : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                        : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                         }`}
                                 >
                                     {copied ? (
@@ -394,7 +394,7 @@ export default function PdfToTextExtractor() {
                                     disabled={!fullText}
                                     className={`py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${fullText
                                         ? "bg-slate-800 hover:bg-slate-900 text-white shadow-slate-200 hover:-translate-y-0.5"
-                                        : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                         }`}
                                 >
                                     <Download className="w-4 h-4" />

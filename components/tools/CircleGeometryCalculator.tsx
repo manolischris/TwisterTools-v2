@@ -386,7 +386,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                                             }`}
                                     >
                                         <span className="font-extrabold text-xs">{mode.label}</span>
-                                        <span className={`text-[10px] truncate max-w-full ${calcMode === mode.id ? "text-indigo-100" : "text-slate-400"}`}>
+                                        <span className={`text-[10px] truncate max-w-full ${calcMode === mode.id ? "text-indigo-100" : "text-slate-600 dark:text-slate-300"}`}>
                                             {mode.desc}
                                         </span>
                                     </button>
@@ -399,7 +399,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                             {calcMode === "RADIUS" && (
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Circle Radius (r)</label>
-                                    <input
+                                    <input aria-label="Circle Radius (r)"
                                         type="number"
                                         min="0"
                                         step="any"
@@ -414,7 +414,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                             {calcMode === "DIAMETER" && (
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Circle Diameter (d)</label>
-                                    <input
+                                    <input aria-label="Circle Diameter (d)"
                                         type="number"
                                         min="0"
                                         step="any"
@@ -429,7 +429,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                             {calcMode === "CIRCUMFERENCE" && (
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Circumference (C = 2πr)</label>
-                                    <input
+                                    <input aria-label="Circumference (C = 2πr)"
                                         type="number"
                                         min="0"
                                         step="any"
@@ -444,7 +444,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                             {calcMode === "AREA" && (
                                 <div>
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Enclosed Circle Area (A = πr²)</label>
-                                    <input
+                                    <input aria-label="Enclosed Circle Area (A = πr²)"
                                         type="number"
                                         min="0"
                                         step="any"
@@ -461,7 +461,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                         <div>
                                             <label className="block text-xs font-bold text-slate-700 mb-1">Radius (r)</label>
-                                            <input
+                                            <input aria-label="Radius (r)"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -472,7 +472,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-bold text-slate-700 mb-1">Arc Length (s)</label>
-                                            <input
+                                            <input aria-label="Arc Length (s)"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -494,7 +494,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max={angleUnit === "deg" ? "360" : "6.28318"}
@@ -503,8 +503,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                                         onChange={(e) => setAngleInput(parseFloat(e.target.value) || 1)}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0.1"
                                         max={angleUnit === "deg" ? "360" : "6.28318"}
                                         step="any"
@@ -585,7 +584,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
 
                         {/* Real-time Dynamic Circle & Sector SVG Visualizer */}
                         <div className="w-full bg-slate-900 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-800 relative overflow-hidden min-h-[220px]">
-                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-600 dark:text-slate-300 flex items-center gap-1">
                                 <Maximize2 className="w-3.5 h-3.5 text-indigo-400" /> Dynamic 2D Vector Projection
                             </div>
 
@@ -703,7 +702,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                                 <div className="p-3 bg-slate-900 text-white rounded-xl space-y-2 text-xs">
                                     <div className="font-bold text-indigo-300 uppercase tracking-wider flex items-center justify-between">
                                         <span>Fundamental Dimensions</span>
-                                        <span className="text-[10px] text-slate-400 font-mono">Precision: {precision}dp</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">Precision: {precision}dp</span>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px] text-slate-300">
                                         <div>Radius: <strong className="text-white">{formatNum(m.radius)}</strong></div>
@@ -726,7 +725,7 @@ Generated via TwisterTools Circle Geometry Calculator`;
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

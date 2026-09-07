@@ -366,7 +366,7 @@ export default function UnitPriceCalculator() {
 
                         {/* Presets Pill Bar */}
                         <div className="space-y-2">
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                 <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Instant Grocery Scenarios
                             </span>
                             <div className="w-full overflow-x-auto pb-2 flex items-center gap-2 scrollbar-thin scrollbar-thumb-slate-200 hover:scrollbar-thumb-slate-300">
@@ -421,7 +421,7 @@ export default function UnitPriceCalculator() {
                                             {items.length > 2 && (
                                                 <button
                                                     onClick={() => handleRemoveItem(item.id)}
-                                                    className="p-1 text-slate-400 hover:text-rose-600 transition"
+                                                    className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition"
                                                     title="Delete item"
                                                     aria-label="Delete item"
                                                 >
@@ -437,7 +437,7 @@ export default function UnitPriceCalculator() {
                                                     Price ({currencySymbol})
                                                 </label>
                                                 <div className="relative">
-                                                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-bold">
+                                                    <span className="absolute left-2 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-bold">
                                                         {currencySymbol}
                                                     </span>
                                                     <input
@@ -613,14 +613,14 @@ export default function UnitPriceCalculator() {
                             </div>
                         ) : (
                             <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 text-center text-slate-500 space-y-2">
-                                <AlertCircle className="w-8 h-8 mx-auto text-slate-400" />
+                                <AlertCircle className="w-8 h-8 mx-auto text-slate-600 dark:text-slate-300" />
                                 <p className="text-sm font-semibold">Enter prices and quantities on the left to calculate the best value.</p>
                             </div>
                         )}
 
                         {/* Comparison Breakdown Cards */}
                         <div className="space-y-3">
-                            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+                            <h3 className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                 Detailed Product Comparison
                             </h3>
 

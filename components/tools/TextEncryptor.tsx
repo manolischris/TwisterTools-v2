@@ -411,7 +411,7 @@ export default function TextEncryptor() {
                                         <button
                                             type="button"
                                             onClick={() => setShowSecretKey(!showSecretKey)}
-                                            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                                            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 hover:text-slate-600"
                                         >
                                             {showSecretKey ? (
                                                 <EyeOff className="w-4 h-4" />
@@ -523,7 +523,7 @@ export default function TextEncryptor() {
 
                                 {/* Output Container */}
                                 <div className="relative">
-                                    <textarea
+                                    <textarea aria-label="Text Output Area"
                                         id="text-output-area"
                                         value={outputText}
                                         readOnly
@@ -578,7 +578,7 @@ export default function TextEncryptor() {
                                             ? copied
                                                 ? "bg-green-500 text-white shadow-md shadow-green-200"
                                                 : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                                            : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                                            : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                         }`}
                                 >
                                     {copied ? (

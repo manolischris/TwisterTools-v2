@@ -248,8 +248,7 @@ Calculated via TwisterTools.com`;
                         <label className="block text-sm font-medium text-slate-700">
                             Currency
                         </label>
-                        <select
-                            value={currency}
+                        <select aria-label="Select option" value={currency}
                             onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                             className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-sm"
                         >
@@ -267,11 +266,10 @@ Calculated via TwisterTools.com`;
                             Principal Amount ({currencySymbol})
                         </label>
                         <div className="relative">
-                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400 font-semibold text-sm">
+                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300 font-semibold text-sm">
                                 {currencySymbol}
                             </div>
-                            <input
-                                type="number"
+                            <input aria-label="Input value" type="number"
                                 min="0"
                                 step="any"
                                 value={principal === 0 ? "" : principal}
@@ -288,8 +286,7 @@ Calculated via TwisterTools.com`;
                             Annual Interest Rate (%)
                         </label>
                         <div className="relative">
-                            <input
-                                type="number"
+                            <input aria-label="Input value" type="number"
                                 min="0"
                                 step="0.01"
                                 value={rate === 0 ? "" : rate}
@@ -297,7 +294,7 @@ Calculated via TwisterTools.com`;
                                 className="w-full pl-4 pr-9 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-sm"
                                 placeholder="e.g. 5.5"
                             />
-                            <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
+                            <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                 <Percent className="w-4 h-4" />
                             </div>
                         </div>
@@ -310,8 +307,7 @@ Calculated via TwisterTools.com`;
                         </label>
                         <div className="grid grid-cols-3 gap-3">
                             <div className="col-span-2">
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0"
                                     step="any"
                                     value={timeValue === 0 ? "" : timeValue}
@@ -321,8 +317,7 @@ Calculated via TwisterTools.com`;
                                 />
                             </div>
                             <div>
-                                <select
-                                    value={timeUnit}
+                                <select aria-label="Select option" value={timeUnit}
                                     onChange={(e) => setTimeUnit(e.target.value as TimePeriodUnit)}
                                     className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-sm capitalize"
                                 >
@@ -341,7 +336,7 @@ Calculated via TwisterTools.com`;
                                 <span>Principal Slider</span>
                                 <span className="font-semibold text-slate-700">{currencySymbol}{principal.toLocaleString()}</span>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="500"
                                 max="200000"
@@ -356,7 +351,7 @@ Calculated via TwisterTools.com`;
                                 <span>Interest Rate Slider</span>
                                 <span className="font-semibold text-slate-700">{rate}%</span>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="0.5"
                                 max="30"
@@ -447,7 +442,7 @@ Calculated via TwisterTools.com`;
                                     style={{ width: `${calculation.interestPercentage}%` }}
                                 />
                             </div>
-                            <div className="flex justify-between text-[11px] text-slate-400 pt-1">
+                            <div className="flex justify-between text-[11px] text-slate-600 dark:text-slate-300 pt-1">
                                 <span className="flex items-center gap-1">
                                     <span className="w-2 h-2 rounded-full bg-slate-800 inline-block" /> Original Principal
                                 </span>

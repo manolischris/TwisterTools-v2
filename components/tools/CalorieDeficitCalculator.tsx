@@ -636,8 +636,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Age (Years)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="12"
                                         max="110"
                                         value={age === 0 ? "" : age}
@@ -658,8 +657,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                 {unitSystem === "imperial" ? (
                                     <div className="grid grid-cols-2 gap-3">
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="3"
                                                 max="8"
                                                 value={heightFt === 0 ? "" : heightFt}
@@ -669,10 +667,10 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                                 }}
                                                 className="w-full pl-3 pr-8 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">ft</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">ft</span>
                                         </div>
                                         <div className="relative">
-                                            <input
+                                            <input aria-label="ft"
                                                 type="number"
                                                 min="0"
                                                 max="11"
@@ -683,12 +681,12 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                                 }}
                                                 className="w-full pl-3 pr-8 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                             />
-                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">in</span>
+                                            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">in</span>
                                         </div>
                                     </div>
                                 ) : (
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="in"
                                             type="number"
                                             min="90"
                                             max="250"
@@ -699,7 +697,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                             }}
                                             className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">cm</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">cm</span>
                                     </div>
                                 )}
                             </div>
@@ -711,8 +709,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                         <Scale className="w-3.5 h-3.5 text-indigo-600" /> Current Weight
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.5"
                                             value={unitSystem === "imperial" ? (currentWeightLbs === 0 ? "" : currentWeightLbs) : (currentWeightKg === 0 ? "" : currentWeightKg)}
                                             onChange={(e) => {
@@ -725,7 +722,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                             }}
                                             className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             {unitSystem === "imperial" ? "lbs" : "kg"}
                                         </span>
                                     </div>
@@ -736,8 +733,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                         <Target className="w-3.5 h-3.5 text-indigo-600" /> Target Goal Weight
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.5"
                                             value={unitSystem === "imperial" ? (targetWeightLbs === 0 ? "" : targetWeightLbs) : (targetWeightKg === 0 ? "" : targetWeightKg)}
                                             onChange={(e) => {
@@ -750,7 +746,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                             }}
                                             className="w-full pl-3 pr-10 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             {unitSystem === "imperial" ? "lbs" : "kg"}
                                         </span>
                                     </div>
@@ -762,8 +758,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                     <Activity className="w-3.5 h-3.5 text-indigo-600" /> Daily Activity Level
                                 </label>
-                                <select
-                                    value={activityLevel}
+                                <select aria-label="Select option" value={activityLevel}
                                     onChange={(e) => setActivityLevel(e.target.value as ActivityLevel)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                 >
@@ -786,7 +781,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                             -{dailyDeficit} kcal/day
                                         </span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="150"
                                         max="1200"
@@ -798,7 +793,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                         }}
                                         className="w-full accent-indigo-600 cursor-pointer h-2 bg-indigo-200 rounded-lg"
                                     />
-                                    <div className="flex justify-between text-[10px] font-bold text-slate-400">
+                                    <div className="flex justify-between text-[10px] font-bold text-slate-600 dark:text-slate-300">
                                         <span>-150 (Gentle)</span>
                                         <span>-500 (Standard)</span>
                                         <span>-750 (Aggressive)</span>
@@ -810,8 +805,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                         <Calendar className="w-3.5 h-3.5 text-indigo-600" /> Goal Completion Date
                                     </label>
-                                    <input
-                                        type="date"
+                                    <input aria-label="Input value" type="date"
                                         value={targetDateInput}
                                         onChange={(e) => setTargetDateInput(e.target.value)}
                                         className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
@@ -826,7 +820,7 @@ Generated at twistertools.com/tools/calculators/calorie-deficit-calculator`;
                         {/* PRESETS CONTAINER */}
                         <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Deficit Quick Presets
                                 </span>
                                 {activePresetId && (

@@ -447,7 +447,7 @@ export default function MorseCodeTranslator() {
                                                 {wpm} WPM
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="5"
                                             max="40"
@@ -466,7 +466,7 @@ export default function MorseCodeTranslator() {
                                                 {frequency} Hz
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="300"
                                             max="1000"
@@ -485,7 +485,7 @@ export default function MorseCodeTranslator() {
                                                 {volume}%
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max="100"
@@ -602,7 +602,7 @@ export default function MorseCodeTranslator() {
                                                             ? "text-emerald-400"
                                                             : char === "/"
                                                                 ? "text-rose-400 font-bold"
-                                                                : "text-slate-400"
+                                                                : "text-slate-600 dark:text-slate-300"
                                                     }`}
                                             >
                                                 {char}
@@ -613,7 +613,7 @@ export default function MorseCodeTranslator() {
 
                                 {/* Standard Text Area for Morse to Text */}
                                 {mode === "morseToText" && (
-                                    <textarea
+                                    <textarea aria-label="Morse Output Area"
                                         id="morse-output-area"
                                         value={outputText}
                                         readOnly
@@ -671,7 +671,7 @@ export default function MorseCodeTranslator() {
                                             ? copied
                                                 ? "bg-green-500 text-white shadow-md shadow-green-200"
                                                 : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200"
-                                            : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                                            : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                             }`}
                                     >
                                         {copied ? (

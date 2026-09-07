@@ -331,7 +331,7 @@ export default function ListRandomizerShuffler() {
                                     {parsedInputItems.length} parsed item{parsedInputItems.length === 1 ? "" : "s"}
                                 </span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawInput}
                                 onChange={(e) => setRawInput(e.target.value)}
                                 rows={8}
@@ -372,8 +372,7 @@ export default function ListRandomizerShuffler() {
 
                             {delimiter === "custom" && (
                                 <div className="pt-1">
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={customDelimiter}
                                         onChange={(e) => setCustomDelimiter(e.target.value)}
                                         placeholder="Enter custom delimiter string (e.g. ' | ' or ' - ')"
@@ -398,7 +397,7 @@ export default function ListRandomizerShuffler() {
                                     {trimWhitespace ? (
                                         <CheckSquare className="w-4 h-4 text-indigo-600 flex-shrink-0" />
                                     ) : (
-                                        <Square className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                        <Square className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                     )}
                                     <span>Trim item whitespace</span>
                                 </button>
@@ -411,7 +410,7 @@ export default function ListRandomizerShuffler() {
                                     {removeDuplicates ? (
                                         <CheckSquare className="w-4 h-4 text-indigo-600 flex-shrink-0" />
                                     ) : (
-                                        <Square className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                        <Square className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                     )}
                                     <span>Remove duplicate items</span>
                                 </button>
@@ -424,7 +423,7 @@ export default function ListRandomizerShuffler() {
                                     {ignoreEmptyLines ? (
                                         <CheckSquare className="w-4 h-4 text-indigo-600 flex-shrink-0" />
                                     ) : (
-                                        <Square className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                        <Square className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                     )}
                                     <span>Ignore empty entries</span>
                                 </button>
@@ -437,7 +436,7 @@ export default function ListRandomizerShuffler() {
                                     {addPrefixNumbers ? (
                                         <CheckSquare className="w-4 h-4 text-indigo-600 flex-shrink-0" />
                                     ) : (
-                                        <Square className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                        <Square className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                     )}
                                     <span>Prefix numbered rank (1, 2, 3...)</span>
                                 </button>
@@ -451,8 +450,7 @@ export default function ListRandomizerShuffler() {
                                     Limit Output Sample (0 = All)
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max={parsedInputItems.length}
                                         value={itemLimit === 0 ? "" : itemLimit}
@@ -460,7 +458,7 @@ export default function ListRandomizerShuffler() {
                                         placeholder="Pick X items"
                                         className="w-full pl-3 pr-14 py-1.5 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-400">
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-600 dark:text-slate-300">
                                         items
                                     </span>
                                 </div>
@@ -471,8 +469,7 @@ export default function ListRandomizerShuffler() {
                                     Group Items by Size (0 = None)
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="500"
                                         value={groupSize === 0 ? "" : groupSize}
@@ -480,7 +477,7 @@ export default function ListRandomizerShuffler() {
                                         placeholder="e.g. 4 per team"
                                         className="w-full pl-3 pr-16 py-1.5 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-400">
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-600 dark:text-slate-300">
                                         per group
                                     </span>
                                 </div>
@@ -545,7 +542,7 @@ export default function ListRandomizerShuffler() {
                                     {shuffledOutput.length} item{shuffledOutput.length === 1 ? "" : "s"} rendered
                                 </span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Click"
                                 readOnly
                                 value={formattedOutputText}
                                 rows={8}
@@ -557,15 +554,15 @@ export default function ListRandomizerShuffler() {
                         {/* Quick Statistics Matrix */}
                         <div className="grid grid-cols-3 gap-2 text-center text-xs font-mono">
                             <div className="p-2 rounded-lg bg-slate-50 border border-slate-200">
-                                <span className="text-slate-400 block text-[10px] uppercase">Input Items</span>
+                                <span className="text-slate-600 dark:text-slate-300 block text-[10px] uppercase">Input Items</span>
                                 <strong className="text-slate-900 text-sm">{parsedInputItems.length}</strong>
                             </div>
                             <div className="p-2 rounded-lg bg-slate-50 border border-slate-200">
-                                <span className="text-slate-400 block text-[10px] uppercase">Output Items</span>
+                                <span className="text-slate-600 dark:text-slate-300 block text-[10px] uppercase">Output Items</span>
                                 <strong className="text-indigo-600 text-sm">{shuffledOutput.length}</strong>
                             </div>
                             <div className="p-2 rounded-lg bg-slate-50 border border-slate-200">
-                                <span className="text-slate-400 block text-[10px] uppercase">Groups</span>
+                                <span className="text-slate-600 dark:text-slate-300 block text-[10px] uppercase">Groups</span>
                                 <strong className="text-slate-900 text-sm">
                                     {groupSize > 0 && shuffledOutput.length > 0
                                         ? Math.ceil(shuffledOutput.length / groupSize)

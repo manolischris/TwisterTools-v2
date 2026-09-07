@@ -518,8 +518,7 @@ export default function LotteryNumberGenerator() {
                                         Main Balls Drawn
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="20"
                                             value={mainCount === 0 ? "" : mainCount}
@@ -529,7 +528,7 @@ export default function LotteryNumberGenerator() {
                                             }}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             Balls
                                         </span>
                                     </div>
@@ -539,8 +538,7 @@ export default function LotteryNumberGenerator() {
                                         Main Pool Range (1 to N)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="2"
                                             max="99"
                                             value={mainPool === 0 ? "" : mainPool}
@@ -550,7 +548,7 @@ export default function LotteryNumberGenerator() {
                                             }}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             Max
                                         </span>
                                     </div>
@@ -564,8 +562,7 @@ export default function LotteryNumberGenerator() {
                                         Bonus Balls Drawn
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="5"
                                             value={bonusCount === 0 ? "" : bonusCount}
@@ -575,7 +572,7 @@ export default function LotteryNumberGenerator() {
                                             }}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             Bonus
                                         </span>
                                     </div>
@@ -585,8 +582,7 @@ export default function LotteryNumberGenerator() {
                                         Bonus Pool Range (1 to N)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="50"
                                             disabled={bonusCount === 0}
@@ -595,9 +591,9 @@ export default function LotteryNumberGenerator() {
                                                 handleNumberInput(e, setBonusPool, 0, 50);
                                                 setSelectedPresetId("custom");
                                             }}
-                                            className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white disabled:bg-slate-100 disabled:text-slate-400"
+                                            className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white disabled:bg-slate-100 disabled:text-slate-600 dark:text-slate-300"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             Max
                                         </span>
                                     </div>
@@ -606,7 +602,7 @@ export default function LotteryNumberGenerator() {
 
                             <div className="flex items-center justify-between pt-1">
                                 <label className="text-xs font-medium text-slate-700 cursor-pointer flex items-center gap-2">
-                                    <input
+                                    <input aria-label="Sort Ascending"
                                         type="checkbox"
                                         checked={sortAscending}
                                         onChange={(e) => setSortAscending(e.target.checked)}
@@ -636,7 +632,7 @@ export default function LotteryNumberGenerator() {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <div className="relative flex-1">
-                                        <input
+                                        <input aria-label="Up to 50 lines"
                                             type="number"
                                             min="1"
                                             max="50"
@@ -645,7 +641,7 @@ export default function LotteryNumberGenerator() {
                                             className="w-full pl-3 pr-16 py-2 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                             placeholder="5"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                             Tickets
                                         </span>
                                     </div>
@@ -745,7 +741,7 @@ export default function LotteryNumberGenerator() {
                                         </div>
                                     ))
                                 ) : (
-                                    <span className="text-slate-400 text-xs">Press draw button to simulate balls</span>
+                                    <span className="text-slate-600 dark:text-slate-300 text-xs">Press draw button to simulate balls</span>
                                 )}
 
                                 {/* Bonus Balls */}
@@ -769,17 +765,17 @@ export default function LotteryNumberGenerator() {
                             {displayTicket && (
                                 <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-white/10 text-center text-xs font-mono">
                                     <div>
-                                        <span className="text-slate-400 text-[10px] block uppercase">Ball Sum</span>
+                                        <span className="text-slate-600 dark:text-slate-300 text-[10px] block uppercase">Ball Sum</span>
                                         <span className="text-indigo-200 font-bold text-sm">{displayTicket.sum}</span>
                                     </div>
                                     <div>
-                                        <span className="text-slate-400 text-[10px] block uppercase">Odd / Even</span>
+                                        <span className="text-slate-600 dark:text-slate-300 text-[10px] block uppercase">Odd / Even</span>
                                         <span className="text-indigo-200 font-bold text-sm">
                                             {displayTicket.oddCount}O / {displayTicket.evenCount}E
                                         </span>
                                     </div>
                                     <div>
-                                        <span className="text-slate-400 text-[10px] block uppercase">Pool Spread</span>
+                                        <span className="text-slate-600 dark:text-slate-300 text-[10px] block uppercase">Pool Spread</span>
                                         <span className="text-indigo-200 font-bold text-sm">
                                             1 - {mainPool}
                                         </span>
@@ -847,18 +843,18 @@ export default function LotteryNumberGenerator() {
                                 </span>
                                 <div className="max-h-[200px] overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100">
                                     {history.length === 0 ? (
-                                        <p className="p-4 text-center text-xs text-slate-400">No session draws recorded.</p>
+                                        <p className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">No session draws recorded.</p>
                                     ) : (
                                         history.map((t, idx) => (
                                             <div key={t.id} className="p-2.5 flex items-center justify-between text-xs hover:bg-slate-50 transition">
                                                 <div className="flex items-center gap-2">
-                                                    <span className="text-slate-400 font-mono text-[10px]">#{history.length - idx}</span>
+                                                    <span className="text-slate-600 dark:text-slate-300 font-mono text-[10px]">#{history.length - idx}</span>
                                                     <span className="font-bold text-slate-800">{t.mainNumbers.join(" ")}</span>
                                                     {t.bonusNumbers.length > 0 && (
                                                         <span className="text-amber-600 font-bold">[{t.bonusNumbers.join(" ")}]</span>
                                                     )}
                                                 </div>
-                                                <span className="text-[10px] text-slate-400">{t.timestamp}</span>
+                                                <span className="text-[10px] text-slate-600 dark:text-slate-300">{t.timestamp}</span>
                                             </div>
                                         ))
                                     )}
@@ -931,22 +927,22 @@ export default function LotteryNumberGenerator() {
                         </h3>
                         <div className="grid sm:grid-cols-4 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">US Powerball:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">US Powerball:</span>
                                 <strong className="text-indigo-300 text-sm">1 in 292,201,338</strong>
                                 <span className="text-[10px] text-slate-500 block mt-1">5/69 + 1/26</span>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">US Mega Millions:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">US Mega Millions:</span>
                                 <strong className="text-indigo-300 text-sm">1 in 302,575,350</strong>
                                 <span className="text-[10px] text-slate-500 block mt-1">5/70 + 1/25</span>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">EuroMillions:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">EuroMillions:</span>
                                 <strong className="text-indigo-300 text-sm">1 in 139,838,160</strong>
                                 <span className="text-[10px] text-slate-500 block mt-1">5/50 + 2/12</span>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Classic 6/49:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Classic 6/49:</span>
                                 <strong className="text-indigo-300 text-sm">1 in 13,983,816</strong>
                                 <span className="text-[10px] text-slate-500 block mt-1">6/49 Single Drum</span>
                             </div>

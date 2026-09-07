@@ -315,7 +315,7 @@ export default function EmailExtractor() {
                         </p>
 
                         <div className="flex-1 flex flex-col min-h-[280px]">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawText}
                                 onChange={(e) => {
                                     setRawText(e.target.value);
@@ -329,7 +329,7 @@ export default function EmailExtractor() {
                         {/* Presets Bar */}
                         <div className="pt-2 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Load Samples
                                 </span>
                                 {activePresetId && (
@@ -399,7 +399,7 @@ export default function EmailExtractor() {
                                     <Filter className="w-3.5 h-3.5 text-indigo-600" /> Filtering & Rules
                                 </span>
                                 <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                    <input
+                                    <input aria-label="Remove Duplicates"
                                         type="checkbox"
                                         checked={removeDuplicates}
                                         onChange={(e) => setRemoveDuplicates(e.target.checked)}
@@ -414,8 +414,7 @@ export default function EmailExtractor() {
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Include Domain Filter
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={filterDomain}
                                         onChange={(e) => setFilterDomain(e.target.value)}
                                         placeholder="e.g. enterprise-corp.com"
@@ -426,8 +425,7 @@ export default function EmailExtractor() {
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">
                                         Exclude Domain
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={excludeDomain}
                                         onChange={(e) => setExcludeDomain(e.target.value)}
                                         placeholder="e.g. example.com"
@@ -438,7 +436,7 @@ export default function EmailExtractor() {
 
                             <div className="flex items-center justify-between pt-1">
                                 <span className="text-[11px] font-bold text-slate-600">Sort Results:</span>
-                                <select
+                                <select aria-label="Select Sort Results"
                                     value={sortBy}
                                     onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSortBy(e.target.value as "none" | "alpha-asc" | "alpha-desc" | "domain")}
                                     className="px-3 py-1 rounded-lg border border-slate-200 text-xs font-medium text-slate-900 bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -463,13 +461,13 @@ export default function EmailExtractor() {
                                     extractedEmails.map((email, idx) => (
                                         <div key={idx} className="flex items-center justify-between py-1 px-2 rounded hover:bg-indigo-50/60 transition">
                                             <span className="text-slate-900 font-medium">{email}</span>
-                                            <span className="text-[10px] text-slate-400 bg-slate-200/60 px-1.5 py-0.5 rounded">
+                                            <span className="text-[10px] text-slate-600 dark:text-slate-300 bg-slate-200/60 px-1.5 py-0.5 rounded">
                                                 {email.split("@")[1]}
                                             </span>
                                         </div>
                                     ))
                                 ) : (
-                                    <div className="h-full flex items-center justify-center text-slate-400 italic">
+                                    <div className="h-full flex items-center justify-center text-slate-600 dark:text-slate-300 italic">
                                         No email addresses detected yet. Paste text or load a sample.
                                     </div>
                                 )}

@@ -365,7 +365,7 @@ export default function ExtractPdfImages() {
                                         : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -378,7 +378,7 @@ export default function ExtractPdfImages() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop your PDF file here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Supports documents up to 20 MB</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Supports documents up to 20 MB</p>
                             </div>
 
                             {errorMessage && (
@@ -416,7 +416,7 @@ export default function ExtractPdfImages() {
                                     <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                         <Layers3 className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-700">No Image Assets Extracted</p>
-                                        <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                             Upload a PDF document above to extract embedded high-resolution graphics and images.
                                         </p>
                                     </div>
@@ -459,7 +459,7 @@ export default function ExtractPdfImages() {
                                                 </div>
 
                                                 <div className="w-full flex justify-between items-center mt-1.5 px-1">
-                                                    <span className="text-[10px] text-slate-400 font-mono">
+                                                    <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                                                         {asset.width} × {asset.height} px
                                                     </span>
                                                     <span className="text-[10px] uppercase font-bold text-indigo-600 bg-indigo-50 px-1.5 py-0.5 rounded border border-indigo-100">
@@ -569,7 +569,7 @@ export default function ExtractPdfImages() {
                                 disabled={selectedAssets.length === 0 || isProcessing}
                                 className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${selectedAssets.length > 0 && !isProcessing
                                         ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                        : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (
@@ -605,7 +605,7 @@ export default function ExtractPdfImages() {
                             </span>
                             <button
                                 onClick={() => setPreviewAsset(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>

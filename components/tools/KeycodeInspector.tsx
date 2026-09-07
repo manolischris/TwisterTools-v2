@@ -213,8 +213,7 @@ export function KeyboardListener() {
   }, []);
 
   return (
-    <input 
-      type="text" 
+    <input aria-label="Input value" type="text" 
       onKeyDown={(e) => {
         if (e.key === ${JSON.stringify(keyVal)}) {
           console.log('Input key down:', e.key);
@@ -392,7 +391,7 @@ onUnmounted(() => {
                                 </div>
                             </div>
 
-                            <div className="text-[11px] text-slate-400">
+                            <div className="text-[11px] text-slate-600 dark:text-slate-300">
                                 Click anywhere or focus this box to capture keyboard events in real-time
                             </div>
                         </div>
@@ -405,7 +404,7 @@ onUnmounted(() => {
                             >
                                 <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 mb-1">
                                     <span>event.key</span>
-                                    {copiedKey === "key" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-400 group-hover:text-indigo-600" />}
+                                    {copiedKey === "key" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-600 dark:text-slate-300 group-hover:text-indigo-600" />}
                                 </div>
                                 <div className="text-base sm:text-lg font-bold font-mono text-slate-900 truncate">
                                     {currentEvent.key === " " ? "Space" : currentEvent.key}
@@ -419,7 +418,7 @@ onUnmounted(() => {
                             >
                                 <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 mb-1">
                                     <span>event.code</span>
-                                    {copiedKey === "code" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-400 group-hover:text-indigo-600" />}
+                                    {copiedKey === "code" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-600 dark:text-slate-300 group-hover:text-indigo-600" />}
                                 </div>
                                 <div className="text-base sm:text-lg font-bold font-mono text-slate-900 truncate">
                                     {currentEvent.code}
@@ -433,7 +432,7 @@ onUnmounted(() => {
                             >
                                 <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 mb-1">
                                     <span>event.keyCode</span>
-                                    {copiedKey === "keyCode" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-400 group-hover:text-indigo-600" />}
+                                    {copiedKey === "keyCode" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-600 dark:text-slate-300 group-hover:text-indigo-600" />}
                                 </div>
                                 <div className="text-base sm:text-lg font-bold font-mono text-slate-900">
                                     {currentEvent.keyCode}
@@ -447,7 +446,7 @@ onUnmounted(() => {
                             >
                                 <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 mb-1">
                                     <span>event.which</span>
-                                    {copiedKey === "which" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-400 group-hover:text-indigo-600" />}
+                                    {copiedKey === "which" ? <Check className="w-3 h-3 text-emerald-600" /> : <Copy className="w-3 h-3 text-slate-600 dark:text-slate-300 group-hover:text-indigo-600" />}
                                 </div>
                                 <div className="text-base sm:text-lg font-bold font-mono text-slate-900">
                                     {currentEvent.which}
@@ -536,7 +535,7 @@ onUnmounted(() => {
                     <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
                         <div className="flex items-center gap-4">
                             <label className="flex items-center gap-2 cursor-pointer select-none font-semibold text-slate-700">
-                                <input
+                                <input aria-label="Prevent Default Behavior"
                                     type="checkbox"
                                     checked={preventDefaultBehavior}
                                     onChange={(e) => setPreventDefaultBehavior(e.target.checked)}
@@ -617,7 +616,7 @@ onUnmounted(() => {
 
                             <div className="max-h-52 overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100 bg-white">
                                 {history.length === 0 ? (
-                                    <div className="p-4 text-center text-xs text-slate-400 font-medium">
+                                    <div className="p-4 text-center text-xs text-slate-600 dark:text-slate-300 font-medium">
                                         No keys pressed yet. Type on your keyboard to record event stream.
                                     </div>
                                 ) : (
@@ -635,10 +634,10 @@ onUnmounted(() => {
                                             </div>
 
                                             <div className="flex items-center gap-3">
-                                                <span className="font-mono text-[11px] text-slate-400">
+                                                <span className="font-mono text-[11px] text-slate-600 dark:text-slate-300">
                                                     keyCode: <strong className="text-slate-700">{item.keyCode}</strong>
                                                 </span>
-                                                <span className="text-[10px] text-slate-400 font-mono hidden sm:inline">{item.timestamp}</span>
+                                                <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono hidden sm:inline">{item.timestamp}</span>
                                             </div>
                                         </div>
                                     ))
@@ -818,7 +817,7 @@ onUnmounted(() => {
                                     <span>key: <strong className="text-indigo-600">&quot;{k.key}&quot;</strong></span>
                                     <span>code: <strong className="text-slate-800">{k.code}</strong></span>
                                 </div>
-                                <div className="text-[10px] font-mono text-slate-400">
+                                <div className="text-[10px] font-mono text-slate-600 dark:text-slate-300">
                                     keyCode: {k.codeNum}
                                 </div>
                             </div>

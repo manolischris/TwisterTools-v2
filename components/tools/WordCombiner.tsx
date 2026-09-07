@@ -326,20 +326,20 @@ export default function WordCombiner() {
                         <button
                           type="button"
                           onClick={() => removeColumn(col.id)}
-                          className="text-slate-400 hover:text-rose-500 transition-colors"
+                          className="text-slate-600 dark:text-slate-300 hover:text-rose-500 transition-colors"
                           title="Remove list column"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       )}
                     </div>
-                    <textarea
+                    <textarea aria-label="Input text content"
                       value={col.text}
                       onChange={(e) => updateColumnText(col.id, e.target.value)}
                       placeholder={`Enter words...\n(One per line)`}
                       className="w-full h-48 p-3 font-mono text-xs bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white resize-none text-slate-800 transition-all"
                     />
-                    <span className="text-[10px] text-slate-400 text-right font-mono">
+                    <span className="text-[10px] text-slate-600 dark:text-slate-300 text-right font-mono">
                       {col.text.split(/\r?\n/).filter((l) => l.trim().length > 0).length} items
                     </span>
                   </div>
@@ -391,7 +391,7 @@ export default function WordCombiner() {
               <div className="pt-3 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-3">
                 <div className="space-y-1">
                   <label className="text-[11px] font-semibold text-slate-600">Separator</label>
-                  <select
+                  <select aria-label="Select Separator"
                     value={separatorType}
                     onChange={(e) => setSeparatorType(e.target.value as SeparatorType)}
                     className="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -408,7 +408,7 @@ export default function WordCombiner() {
                 {separatorType === "custom" ? (
                   <div className="space-y-1">
                     <label className="text-[11px] font-semibold text-slate-600">Custom Symbol</label>
-                    <input
+                    <input aria-label="Custom Symbol"
                       type="text"
                       value={customSeparator}
                       onChange={(e) => setCustomSeparator(e.target.value)}
@@ -419,7 +419,7 @@ export default function WordCombiner() {
                 ) : (
                   <div className="space-y-1">
                     <label className="text-[11px] font-semibold text-slate-600">Text Casing</label>
-                    <select
+                    <select aria-label="Select Text Casing"
                       value={casing}
                       onChange={(e) => setCasing(e.target.value as any)}
                       className="w-full bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-xs font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600"
@@ -434,7 +434,7 @@ export default function WordCombiner() {
 
                 <div className="space-y-1">
                   <label className="text-[11px] font-semibold text-slate-600">Add Prefix</label>
-                  <input
+                  <input aria-label="Add Prefix"
                     type="text"
                     value={prefix}
                     onChange={(e) => setPrefix(e.target.value)}
@@ -445,7 +445,7 @@ export default function WordCombiner() {
 
                 <div className="space-y-1">
                   <label className="text-[11px] font-semibold text-slate-600">Add Suffix</label>
-                  <input
+                  <input aria-label="Add Suffix"
                     type="text"
                     value={suffix}
                     onChange={(e) => setSuffix(e.target.value)}
@@ -458,7 +458,7 @@ export default function WordCombiner() {
               {/* Additional Toggle Filters */}
               <div className="pt-3 border-t border-slate-100 flex flex-wrap gap-4 text-xs font-medium text-slate-700">
                 <label className="flex items-center gap-2 cursor-pointer">
-                  <input
+                  <input aria-label="Remove Duplicates"
                     type="checkbox"
                     checked={removeDuplicates}
                     onChange={(e) => setRemoveDuplicates(e.target.checked)}
@@ -467,8 +467,7 @@ export default function WordCombiner() {
                   <span>Deduplicate Output</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
+                  <input aria-label="Wrap In Quotes" type="checkbox"
                     checked={wrapInQuotes}
                     onChange={(e) => setWrapInQuotes(e.target.checked)}
                     className="rounded text-indigo-600 focus:ring-indigo-500 h-4 w-4"
@@ -476,8 +475,7 @@ export default function WordCombiner() {
                   <span>Wrap in Quotes ("")</span>
                 </label>
                 <label className="flex items-center gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
+                  <input aria-label="Trim Whitespace" type="checkbox"
                     checked={trimWhitespace}
                     onChange={(e) => setTrimWhitespace(e.target.checked)}
                     className="rounded text-indigo-600 focus:ring-indigo-500 h-4 w-4"
@@ -516,7 +514,7 @@ export default function WordCombiner() {
             <div className="p-5 flex-1 flex flex-col space-y-4">
               {/* Output Preview Window */}
               <div className="relative flex-1">
-                <textarea
+                <textarea aria-label="Generated combinations will appear here automatically"
                   readOnly
                   value={outputText}
                   placeholder="Generated combinations will appear here automatically..."
@@ -564,7 +562,7 @@ export default function WordCombiner() {
                     ? copied
                       ? "bg-emerald-600 text-white shadow-md shadow-emerald-200"
                       : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                 }`}
               >
                 {copied ? (

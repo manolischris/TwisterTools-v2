@@ -391,7 +391,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                     <div className="grid grid-cols-2 gap-4 pt-1">
                                         <div>
                                             <label className="block text-xs font-medium text-slate-600 mb-1">Base Servings / Yield</label>
-                                            <input
+                                            <input aria-label="Base Servings / Yield"
                                                 type="number"
                                                 min="1"
                                                 value={baseServings === 0 ? "" : baseServings}
@@ -401,7 +401,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                         </div>
                                         <div>
                                             <label className="block text-xs font-medium text-slate-600 mb-1">Target Servings / Yield</label>
-                                            <input
+                                            <input aria-label="Target Servings / Yield"
                                                 type="number"
                                                 min="1"
                                                 value={targetServings === 0 ? "" : targetServings}
@@ -413,8 +413,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                 ) : (
                                     <div>
                                         <label className="block text-xs font-medium text-slate-600 mb-1">Multiplier Factor (e.g. 0.5x, 2x, 3.5x)</label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.1"
                                             min="0.01"
                                             value={customMultiplier === 0 ? "" : customMultiplier}
@@ -438,15 +437,14 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         value={targetFlourTotal === 0 ? "" : targetFlourTotal}
                                         onChange={(e) => handleNumberInput(e, setTargetFlourTotal)}
                                         className="w-full pl-3 pr-16 py-2 rounded-xl border border-slate-200 bg-white text-slate-900 font-bold text-sm focus:ring-2 focus:ring-indigo-500 outline-none"
                                         placeholder="Target grams"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                         Grams
                                     </span>
                                 </div>
@@ -462,7 +460,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                     {/* Source Pan */}
                                     <div className="p-3 bg-white border border-slate-200 rounded-xl space-y-2">
                                         <span className="text-xs font-bold text-slate-700 block">Original Recipe Pan</span>
-                                        <select
+                                        <select aria-label="Select Original Recipe Pan"
                                             value={sourcePan.shape}
                                             onChange={(e) => setSourcePan({ ...sourcePan, shape: e.target.value as PanShape })}
                                             className="w-full text-xs font-semibold p-1.5 rounded-lg border border-slate-200 bg-slate-50"
@@ -474,7 +472,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                         <div className="grid grid-cols-2 gap-2 pt-1">
                                             <div>
                                                 <span className="text-[10px] text-slate-500 block">Dia/Width (in)</span>
-                                                <input
+                                                <input aria-label="Dia/Width (in)"
                                                     type="number"
                                                     value={sourcePan.diameterOrWidth}
                                                     onChange={(e) => handleNumberInput(e, (v) => setSourcePan({ ...sourcePan, diameterOrWidth: v }))}
@@ -484,7 +482,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                             {sourcePan.shape === "rectangular" && (
                                                 <div>
                                                     <span className="text-[10px] text-slate-500 block">Length (in)</span>
-                                                    <input
+                                                    <input aria-label="Length (in)"
                                                         type="number"
                                                         value={sourcePan.length}
                                                         onChange={(e) => handleNumberInput(e, (v) => setSourcePan({ ...sourcePan, length: v }))}
@@ -494,7 +492,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                             )}
                                             <div>
                                                 <span className="text-[10px] text-slate-500 block">Depth (in)</span>
-                                                <input
+                                                <input aria-label="Depth (in)"
                                                     type="number"
                                                     value={sourcePan.depth}
                                                     onChange={(e) => handleNumberInput(e, (v) => setSourcePan({ ...sourcePan, depth: v }))}
@@ -507,7 +505,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                     {/* Target Pan */}
                                     <div className="p-3 bg-white border border-slate-200 rounded-xl space-y-2">
                                         <span className="text-xs font-bold text-indigo-700 block">Target Desired Pan</span>
-                                        <select
+                                        <select aria-label="Select Target Desired Pan"
                                             value={targetPan.shape}
                                             onChange={(e) => setTargetPan({ ...targetPan, shape: e.target.value as PanShape })}
                                             className="w-full text-xs font-semibold p-1.5 rounded-lg border border-slate-200 bg-slate-50"
@@ -519,7 +517,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                         <div className="grid grid-cols-2 gap-2 pt-1">
                                             <div>
                                                 <span className="text-[10px] text-slate-500 block">Dia/Width (in)</span>
-                                                <input
+                                                <input aria-label="Dia/Width (in)"
                                                     type="number"
                                                     value={targetPan.diameterOrWidth}
                                                     onChange={(e) => handleNumberInput(e, (v) => setTargetPan({ ...targetPan, diameterOrWidth: v }))}
@@ -529,7 +527,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                             {targetPan.shape === "rectangular" && (
                                                 <div>
                                                     <span className="text-[10px] text-slate-500 block">Length (in)</span>
-                                                    <input
+                                                    <input aria-label="Length (in)"
                                                         type="number"
                                                         value={targetPan.length}
                                                         onChange={(e) => handleNumberInput(e, (v) => setTargetPan({ ...targetPan, length: v }))}
@@ -539,7 +537,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                             )}
                                             <div>
                                                 <span className="text-[10px] text-slate-500 block">Depth (in)</span>
-                                                <input
+                                                <input aria-label="Depth (in)"
                                                     type="number"
                                                     value={targetPan.depth}
                                                     onChange={(e) => handleNumberInput(e, (v) => setTargetPan({ ...targetPan, depth: v }))}
@@ -573,16 +571,14 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                         key={item.id}
                                         className="flex items-center gap-2 p-2.5 bg-slate-50 border border-slate-200 rounded-xl hover:border-indigo-300 transition"
                                     >
-                                        <input
-                                            type="text"
+                                        <input aria-label="Input value" type="text"
                                             value={item.name}
                                             onChange={(e) => updateIngredient(item.id, "name", e.target.value)}
                                             placeholder="Ingredient name"
                                             className="flex-1 min-w-0 px-2.5 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-semibold text-slate-900 focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
 
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="any"
                                             min="0"
                                             value={item.amount === 0 ? "" : item.amount}
@@ -590,8 +586,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                             className="w-20 px-2 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-bold text-slate-900 focus:ring-1 focus:ring-indigo-500 outline-none text-right"
                                         />
 
-                                        <select
-                                            value={item.unit}
+                                        <select aria-label="Select option" value={item.unit}
                                             onChange={(e) => updateIngredient(item.id, "unit", e.target.value as UnitType)}
                                             className="w-18 px-1.5 py-1.5 rounded-lg border border-slate-200 bg-white text-xs font-semibold text-slate-700 focus:ring-1 focus:ring-indigo-500 outline-none"
                                         >
@@ -607,7 +602,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
 
                                         {mode === "bakers" && (
                                             <label className="flex items-center gap-1 text-[11px] font-bold text-slate-600 cursor-pointer bg-white px-2 py-1.5 rounded-lg border border-slate-200 whitespace-nowrap">
-                                                <input
+                                                <input aria-label="Flour"
                                                     type="checkbox"
                                                     checked={!!item.isFlour}
                                                     onChange={(e) => updateIngredient(item.id, "isFlour", e.target.checked)}
@@ -621,7 +616,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                             type="button"
                                             onClick={() => removeIngredient(item.id)}
                                             disabled={ingredients.length <= 1}
-                                            className="p-1.5 text-slate-400 hover:text-rose-600 disabled:opacity-30 transition cursor-pointer"
+                                            className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-rose-600 disabled:opacity-30 transition cursor-pointer"
                                             title="Remove ingredient"
                                         >
                                             <Trash2 className="w-4 h-4" />
@@ -663,7 +658,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                         ? `${(totalDoughWeight / 1000).toFixed(2)} kg`
                                         : `${totalDoughWeight.toFixed(0)} g`}
                                 </p>
-                                <span className="text-[10px] text-slate-400">Total batch yield weight</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300">Total batch yield weight</span>
                             </div>
 
                             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
@@ -674,7 +669,7 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                                 <p className="text-xl font-black text-indigo-600 mt-1">
                                     {hydrationPercentage > 0 ? `${hydrationPercentage.toFixed(1)}%` : "N/A"}
                                 </p>
-                                <span className="text-[10px] text-slate-400">Liquid / Flour Ratio</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300">Liquid / Flour Ratio</span>
                             </div>
                         </div>
 
@@ -778,19 +773,19 @@ ${hydrationPercentage > 0 ? `Calculated Hydration: ${hydrationPercentage.toFixed
                         </h3>
                         <div className="grid sm:grid-cols-4 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Total Flour:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Total Flour:</span>
                                 <strong className="text-indigo-300 text-sm">100.0% (Base)</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Water (Hydration):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Water (Hydration):</span>
                                 <strong className="text-indigo-300 text-sm">65.0% – 78.0%</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Fine Salt:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Fine Salt:</span>
                                 <strong className="text-indigo-300 text-sm">2.0% – 2.2%</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Yeast / Starter:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Yeast / Starter:</span>
                                 <strong className="text-indigo-300 text-sm">0.8% – 20.0%</strong>
                             </div>
                         </div>

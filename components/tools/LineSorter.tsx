@@ -298,7 +298,7 @@ export default function LineSorter() {
 
                         {/* Presets Row */}
                         <div className="space-y-1.5">
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                 <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Samples
                             </span>
                             <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-thin">
@@ -317,7 +317,7 @@ export default function LineSorter() {
 
                         {/* Input Text Area */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Paste or type text lines here..."
@@ -379,7 +379,7 @@ export default function LineSorter() {
                             {/* Checkbox Toggles */}
                             <div className="pt-2 border-t border-slate-200/60 grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                                 <label className="flex items-center gap-2 text-slate-700 cursor-pointer select-none">
-                                    <input
+                                    <input aria-label="Remove Duplicates"
                                         type="checkbox"
                                         checked={removeDuplicates}
                                         onChange={(e) => setRemoveDuplicates(e.target.checked)}
@@ -388,8 +388,7 @@ export default function LineSorter() {
                                     Deduplicate Lines
                                 </label>
                                 <label className="flex items-center gap-2 text-slate-700 cursor-pointer select-none">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Natural Sort" type="checkbox"
                                         checked={naturalSort}
                                         onChange={(e) => setNaturalSort(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -397,8 +396,7 @@ export default function LineSorter() {
                                     Natural Sort (1, 2, 10)
                                 </label>
                                 <label className="flex items-center gap-2 text-slate-700 cursor-pointer select-none">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Trim Whitespace" type="checkbox"
                                         checked={trimWhitespace}
                                         onChange={(e) => setTrimWhitespace(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -406,8 +404,7 @@ export default function LineSorter() {
                                     Trim Space Surrounding Lines
                                 </label>
                                 <label className="flex items-center gap-2 text-slate-700 cursor-pointer select-none">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Remove Empty Lines" type="checkbox"
                                         checked={removeEmptyLines}
                                         onChange={(e) => setRemoveEmptyLines(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -415,8 +412,7 @@ export default function LineSorter() {
                                     Remove Empty Blank Lines
                                 </label>
                                 <label className="flex items-center gap-2 text-slate-700 cursor-pointer select-none">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Case Sensitive" type="checkbox"
                                         checked={caseSensitive}
                                         onChange={(e) => setCaseSensitive(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -429,7 +425,7 @@ export default function LineSorter() {
                             <div className="pt-2 border-t border-slate-200/60 grid grid-cols-1 sm:grid-cols-2 gap-2">
                                 <div>
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">Prefix Each Line</label>
-                                    <input
+                                    <input aria-label="Prefix Each Line"
                                         type="text"
                                         value={prefixText}
                                         onChange={(e) => setPrefixText(e.target.value)}
@@ -439,7 +435,7 @@ export default function LineSorter() {
                                 </div>
                                 <div>
                                     <label className="block text-[11px] font-bold text-slate-600 mb-1">Suffix Each Line</label>
-                                    <input
+                                    <input aria-label="Suffix Each Line"
                                         type="text"
                                         value={suffixText}
                                         onChange={(e) => setSuffixText(e.target.value)}
@@ -487,7 +483,7 @@ export default function LineSorter() {
 
                         {/* Result Output Textarea */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Sorted output will appear here automatically"
                                 readOnly
                                 value={processedText}
                                 placeholder="Sorted output will appear here automatically..."
@@ -499,15 +495,15 @@ export default function LineSorter() {
                     {/* Right Output Metrics Bar */}
                     <div className="pt-3 border-t border-slate-100 grid grid-cols-3 gap-2 text-xs text-center text-slate-600 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
                         <div>
-                            <span className="block text-[10px] uppercase font-bold text-slate-400">Final Lines</span>
+                            <span className="block text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">Final Lines</span>
                             <strong className="text-slate-900 text-sm">{processedMetrics.totalLines}</strong>
                         </div>
                         <div>
-                            <span className="block text-[10px] uppercase font-bold text-slate-400">Lines Removed</span>
+                            <span className="block text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">Lines Removed</span>
                             <strong className="text-emerald-600 text-sm">{processedMetrics.linesRemoved}</strong>
                         </div>
                         <div>
-                            <span className="block text-[10px] uppercase font-bold text-slate-400">Final Chars</span>
+                            <span className="block text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">Final Chars</span>
                             <strong className="text-slate-900 text-sm">{processedMetrics.characters}</strong>
                         </div>
                     </div>
@@ -580,7 +576,7 @@ export default function LineSorter() {
                             </div>
                             <div className="grid grid-cols-2 gap-3 font-mono text-xs">
                                 <div className="bg-white p-2.5 rounded-lg border border-slate-200">
-                                    <span className="block text-[10px] font-sans font-bold text-slate-400 mb-1">Standard ASCII Input:</span>
+                                    <span className="block text-[10px] font-sans font-bold text-slate-600 dark:text-slate-300 mb-1">Standard ASCII Input:</span>
                                     <div className="text-rose-600 space-y-0.5">
                                         <div>release-v10.0</div>
                                         <div>release-v2.0</div>
@@ -606,7 +602,7 @@ export default function LineSorter() {
                             </div>
                             <div className="grid grid-cols-2 gap-3 font-mono text-xs">
                                 <div className="bg-white p-2.5 rounded-lg border border-slate-200">
-                                    <span className="block text-[10px] font-sans font-bold text-slate-400 mb-1">Dirty Input:</span>
+                                    <span className="block text-[10px] font-sans font-bold text-slate-600 dark:text-slate-300 mb-1">Dirty Input:</span>
                                     <div className="text-rose-600 space-y-0.5">
                                         <div>admin</div>
                                         <div> user </div>

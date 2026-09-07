@@ -688,7 +688,7 @@ export default function PdfToWordConverter() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -721,7 +721,7 @@ export default function PdfToWordConverter() {
                                         <p className="text-xs font-semibold text-slate-800 mb-0.5">
                                             Drop PDF document here, or <span className="text-indigo-600">click to browse</span>
                                         </p>
-                                        <p className="text-[11px] text-slate-400">Maximum file size limit: 20 MB</p>
+                                        <p className="text-[11px] text-slate-600 dark:text-slate-300">Maximum file size limit: 20 MB</p>
                                     </>
                                 )}
                             </div>
@@ -786,10 +786,10 @@ export default function PdfToWordConverter() {
                                         dangerouslySetInnerHTML={{ __html: fullExtractedHtml }}
                                     />
                                 ) : (
-                                    <div className="h-full flex flex-col items-center justify-center text-center text-slate-400 space-y-2 p-4 sm:p-6">
+                                    <div className="h-full flex flex-col items-center justify-center text-center text-slate-600 dark:text-slate-300 space-y-2 p-4 sm:p-6">
                                         <FileText className="w-10 h-10 text-slate-300" />
                                         <p className="text-xs font-semibold text-slate-600">No Document Content Loaded</p>
-                                        <p className="text-[11px] max-w-xs text-slate-400">
+                                        <p className="text-[11px] max-w-xs text-slate-600 dark:text-slate-300">
                                             Upload a PDF document above to extract its layout structure and preview formatted content.
                                         </p>
                                     </div>
@@ -849,8 +849,7 @@ export default function PdfToWordConverter() {
                                 </label>
 
                                 <label className="flex items-center gap-2.5 cursor-pointer">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Page Headers" type="checkbox"
                                         checked={includePageHeaders}
                                         onChange={(e) => setIncludePageHeaders(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -861,8 +860,7 @@ export default function PdfToWordConverter() {
                                 </label>
 
                                 <label className="flex items-center gap-2.5 cursor-pointer">
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Preserve Paragraphs" type="checkbox"
                                         checked={preserveParagraphs}
                                         onChange={(e) => setPreserveParagraphs(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500 w-4 h-4"
@@ -876,13 +874,13 @@ export default function PdfToWordConverter() {
                             {/* Document Statistics */}
                             <div className="grid grid-cols-3 gap-2.5 p-3.5 bg-slate-50 border border-slate-200 rounded-xl text-center">
                                 <div>
-                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                    <p className="text-[10px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                         Pages
                                     </p>
                                     <p className="text-xs font-mono font-bold text-slate-800">{totalPages}</p>
                                 </div>
                                 <div>
-                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                    <p className="text-[10px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                         Words
                                     </p>
                                     <p className="text-xs font-mono font-bold text-slate-800">
@@ -890,7 +888,7 @@ export default function PdfToWordConverter() {
                                     </p>
                                 </div>
                                 <div>
-                                    <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                    <p className="text-[10px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                         Characters
                                     </p>
                                     <p className="text-xs font-mono font-bold text-slate-800">
@@ -906,7 +904,7 @@ export default function PdfToWordConverter() {
                                 disabled={!fullExtractedText || isExporting}
                                 className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${fullExtractedText && !isExporting
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isExporting ? (

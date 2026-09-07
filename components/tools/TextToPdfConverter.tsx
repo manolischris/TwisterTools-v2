@@ -416,7 +416,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                     : "border-slate-300 bg-slate-50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept=".txt,.md,.log,.csv"
@@ -435,7 +435,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                             </div>
 
                             {/* Textarea */}
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Type or paste plain text content here..."
@@ -465,8 +465,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 <label className="text-xs font-semibold text-slate-700">
                                     PDF Filename
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={fileName}
                                     onChange={(e) => setFileName(e.target.value)}
                                     className="w-full text-xs border border-slate-200 rounded-xl p-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
@@ -478,8 +477,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 <label className="text-xs font-semibold text-slate-700">
                                     Page Size
                                 </label>
-                                <select
-                                    value={pageSize}
+                                <select aria-label="Select option" value={pageSize}
                                     onChange={(e) => setPageSize(e.target.value as PageSize)}
                                     className="w-full text-xs border border-slate-200 rounded-xl p-2.5 bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                 >
@@ -494,8 +492,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 <label className="text-xs font-semibold text-slate-700">
                                     Orientation
                                 </label>
-                                <select
-                                    value={orientation}
+                                <select aria-label="Select option" value={orientation}
                                     onChange={(e) => setOrientation(e.target.value as Orientation)}
                                     className="w-full text-xs border border-slate-200 rounded-xl p-2.5 bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                 >
@@ -509,8 +506,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 <label className="text-xs font-semibold text-slate-700">
                                     Font Family
                                 </label>
-                                <select
-                                    value={fontFamily}
+                                <select aria-label="Select option" value={fontFamily}
                                     onChange={(e) => setFontFamily(e.target.value as FontFamily)}
                                     className="w-full text-xs border border-slate-200 rounded-xl p-2.5 bg-white text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                 >
@@ -525,7 +521,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 <label className="text-xs font-semibold text-slate-700">
                                     Font Size ({fontSize} pt)
                                 </label>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={8}
                                     max={24}
@@ -540,7 +536,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 <label className="text-xs font-semibold text-slate-700">
                                     Line Spacing ({lineSpacing}x)
                                 </label>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={1}
                                     max={2.5}
@@ -556,7 +552,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 <label className="text-xs font-semibold text-slate-700">
                                     Page Margin ({margin} pt)
                                 </label>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={20}
                                     max={80}
@@ -573,7 +569,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                     Text Color
                                 </label>
                                 <div className="flex items-center gap-2">
-                                    <input
+                                    <input aria-label="Select color"
                                         type="color"
                                         value={textColor}
                                         onChange={(e) => setTextColor(e.target.value)}
@@ -635,12 +631,12 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                             {/* Pagination Visualizer Display */}
                             <div className="h-[480px] overflow-y-auto bg-slate-100/70 border border-slate-200 rounded-xl p-4 space-y-4">
                                 {previewPages.length === 0 ? (
-                                    <div className="h-full flex flex-col items-center justify-center text-center text-slate-400 p-4 sm:p-6">
+                                    <div className="h-full flex flex-col items-center justify-center text-center text-slate-600 dark:text-slate-300 p-4 sm:p-6">
                                         <FileText className="w-12 h-12 mb-2 text-slate-300" />
                                         <p className="text-sm font-semibold text-slate-600">
                                             No Text Content Entered
                                         </p>
-                                        <p className="text-xs text-slate-400 max-w-xs mt-1">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 max-w-xs mt-1">
                                             Enter or paste plain text in the input area to view live paginated document preview.
                                         </p>
                                     </div>
@@ -658,7 +654,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                                             : "sans-serif",
                                             }}
                                         >
-                                            <div className="absolute top-2 right-3 text-[10px] font-mono text-slate-400 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">
+                                            <div className="absolute top-2 right-3 text-[10px] font-mono text-slate-600 dark:text-slate-300 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">
                                                 Page {page.pageNumber}
                                             </div>
 
@@ -695,7 +691,7 @@ Your document content remains strictly in browser RAM. Zero network requests, ze
                                 disabled={!inputText.trim() || isProcessing}
                                 className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${inputText.trim() && !isProcessing
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (

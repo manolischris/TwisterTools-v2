@@ -630,11 +630,11 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                             <div className="space-y-4">
                                 {/* Single Option Add Input */}
                                 <div className="flex items-center gap-2">
-                                    <input
-                                        type="text"
+                                    <input type="text"
                                         value={newOptionText}
                                         onChange={(e) => setNewOptionText(e.target.value)}
                                         onKeyDown={(e) => e.key === "Enter" && handleAddOption()}
+                                        aria-label="Add new choice option"
                                         placeholder="Add new choice option..."
                                         disabled={isSpinning}
                                         className="flex-1 px-3 py-2 rounded-xl border border-slate-200 text-slate-900 text-sm font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
@@ -659,11 +659,10 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                                 className="w-4 h-4 rounded-full flex-shrink-0 border border-black/10"
                                                 style={{ backgroundColor: opt.color }}
                                             />
-                                            <span className="text-xs font-bold text-slate-400 w-5">
+                                            <span className="text-xs font-bold text-slate-600 dark:text-slate-300 w-5">
                                                 #{idx + 1}
                                             </span>
-                                            <input
-                                                type="text"
+                                            <input type="text"
                                                 value={opt.text}
                                                 onChange={(e) => {
                                                     const val = e.target.value;
@@ -672,6 +671,7 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                                     );
                                                 }}
                                                 disabled={isSpinning}
+                                                aria-label={`Option ${idx + 1} text`}
                                                 className="flex-1 text-xs font-semibold text-slate-900 border-none bg-transparent focus:ring-0 outline-none"
                                             />
 
@@ -683,7 +683,7 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                                         type="number"
                                                         min="1"
                                                         max="100"
-                                                        value={opt.weight}
+                                                        value={opt.weight} aria-label={`Weight for option ${idx + 1}`}
                                                         onChange={(e) => handleNumberInput(e, (v) => handleUpdateWeight(opt.id, v))}
                                                         disabled={isSpinning}
                                                         className="w-10 text-xs font-bold text-slate-900 bg-transparent text-center outline-none"
@@ -694,7 +694,7 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                             <button
                                                 onClick={() => handleRemoveOption(opt.id)}
                                                 disabled={isSpinning || options.length <= 1}
-                                                className="p-1 text-slate-400 hover:text-red-500 transition disabled:opacity-30 cursor-pointer"
+                                                className="p-1 text-slate-600 dark:text-slate-300 hover:text-red-500 transition disabled:opacity-30 cursor-pointer"
                                                 title="Remove Choice"
                                             >
                                                 <Trash2 className="w-4 h-4" />
@@ -706,11 +706,10 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                         ) : (
                             /* Bulk Import Textarea */
                             <div className="space-y-3">
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     rows={8}
                                     value={bulkText}
                                     onChange={(e) => setBulkText(e.target.value)}
-                                    placeholder="Enter one choice per line:&#10;Option A&#10;Option B&#10;Option C"
                                     className="w-full p-3 rounded-xl border border-slate-200 text-xs font-mono text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                 />
                                 <button
@@ -731,7 +730,7 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-medium text-slate-700">
                                 <label className="flex items-center gap-2 cursor-pointer select-none">
-                                    <input
+                                    <input aria-label="Weighted"
                                         type="checkbox"
                                         checked={enableWeighted}
                                         onChange={(e) => setEnableWeighted(e.target.checked)}
@@ -742,7 +741,7 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                 </label>
 
                                 <label className="flex items-center gap-2 cursor-pointer select-none">
-                                    <input
+                                    <input aria-label="Enable Weights"
                                         type="checkbox"
                                         checked={removeOnWin}
                                         onChange={(e) => setRemoveOnWin(e.target.checked)}
@@ -753,14 +752,14 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                 </label>
 
                                 <label className="flex items-center gap-2 cursor-pointer select-none">
-                                    <input
+                                    <input aria-label="Remove Choice on Win"
                                         type="checkbox"
                                         checked={soundEnabled}
                                         onChange={(e) => setSoundEnabled(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500"
                                     />
                                     <span className="flex items-center gap-1">
-                                        {soundEnabled ? <Volume2 className="w-3.5 h-3.5 text-indigo-600" /> : <VolumeX className="w-3.5 h-3.5 text-slate-400" />}
+                                        {soundEnabled ? <Volume2 className="w-3.5 h-3.5 text-indigo-600" /> : <VolumeX className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />}
                                         Sound Effects
                                     </span>
                                 </label>
@@ -769,7 +768,7 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                     <span className="text-slate-600 whitespace-nowrap">Duration:</span>
                                     <select
                                         value={spinDuration}
-                                        onChange={(e) => setSpinDuration(Number(e.target.value))}
+                                        aria-label="Spin animation duration" onChange={(e) => setSpinDuration(Number(e.target.value))}
                                         disabled={isSpinning}
                                         className="bg-white border border-slate-200 rounded-md px-2 py-1 text-xs font-bold text-slate-800"
                                     >
@@ -874,7 +873,7 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                     </h3>
                                     <div className="space-y-2 max-h-[160px] overflow-y-auto">
                                         {Object.entries(frequencyMap).length === 0 ? (
-                                            <p className="text-xs text-slate-400">No spin history recorded yet.</p>
+                                            <p className="text-xs text-slate-600 dark:text-slate-300">No spin history recorded yet.</p>
                                         ) : (
                                             Object.entries(frequencyMap).map(([item, count]) => {
                                                 const pct = ((count / history.length) * 100).toFixed(1);
@@ -903,15 +902,15 @@ Simulated via twistertools.com/tools/random-tools/spin-the-wheel`;
                                     </h3>
                                     <div className="max-h-[200px] overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100">
                                         {history.length === 0 ? (
-                                            <p className="p-4 text-center text-xs text-slate-400">Spin the wheel to log results.</p>
+                                            <p className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">Spin the wheel to log results.</p>
                                         ) : (
                                             history.map((record, idx) => (
                                                 <div key={record.id} className="p-3 flex items-center justify-between text-xs hover:bg-slate-50">
                                                     <div className="flex items-center gap-2">
-                                                        <span className="font-bold text-slate-400">#{history.length - idx}</span>
+                                                        <span className="font-bold text-slate-600 dark:text-slate-300">#{history.length - idx}</span>
                                                         <span className="font-extrabold text-slate-900">{record.winner}</span>
                                                     </div>
-                                                    <span className="text-slate-400 text-[11px]">{record.timestamp}</span>
+                                                    <span className="text-slate-600 dark:text-slate-300 text-[11px]">{record.timestamp}</span>
                                                 </div>
                                             ))
                                         )}

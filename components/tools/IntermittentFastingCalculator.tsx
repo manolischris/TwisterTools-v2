@@ -499,7 +499,7 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                         <span>Custom Fasting Duration</span>
                                         <span className="text-indigo-600 font-extrabold text-sm">{activeFastingHours}h Fasting / {24 - activeFastingHours}h Feeding</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max="23"
@@ -510,7 +510,7 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                         }}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <div className="flex justify-between text-[10px] text-slate-400 font-medium">
+                                    <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-medium">
                                         <span>1 hr (Gentle)</span>
                                         <span>16 hrs (Standard)</span>
                                         <span>23 hrs (OMAD)</span>
@@ -524,8 +524,7 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
                                         <Clock className="w-3.5 h-3.5 text-indigo-600" /> Feeding Window Starts
                                     </label>
-                                    <input
-                                        type="time"
+                                    <input aria-label="Input value" type="time"
                                         value={windowStartTime}
                                         onChange={(e) => {
                                             setWindowStartTime(e.target.value);
@@ -533,7 +532,7 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                         }}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     />
-                                    <span className="text-[11px] text-slate-400 mt-1 block">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 mt-1 block">
                                         Local time you break your fast
                                     </span>
                                 </div>
@@ -542,8 +541,7 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
                                         <Utensils className="w-3.5 h-3.5 text-indigo-600" /> Meal Frequency
                                     </label>
-                                    <select
-                                        value={mealCount}
+                                    <select aria-label="Select option" value={mealCount}
                                         onChange={(e) => {
                                             setMealCount(e.target.value as MealFrequency);
                                             setActivePresetId(null);
@@ -555,7 +553,7 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                         <option value="4">4 Frequent Small Meals</option>
                                         <option value="omad">1 Feast (OMAD Protocol)</option>
                                     </select>
-                                    <span className="text-[11px] text-slate-400 mt-1 block">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 mt-1 block">
                                         Evenly partitioned across window
                                     </span>
                                 </div>
@@ -569,22 +567,20 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                     </span>
                                     <span className="text-indigo-600 font-bold">{targetWaterGoalLiters.toFixed(1)} Liters / Day</span>
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     step="0.1"
                                     min="1.0"
                                     max="8.0"
                                     value={targetWaterGoalLiters === 0 ? "" : targetWaterGoalLiters}
                                     onChange={handleWaterGoalChange}
-                                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
-                                />
+                                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"/>
                             </div>
                         </div>
 
                         {/* Presets Row */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Popular Routine Presets
                                 </span>
                                 {activePresetId && (
@@ -788,7 +784,7 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
                                                         Hour {stage.hours}: {stage.title}
                                                     </span>
                                                 </div>
-                                                <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${isReached ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-slate-100 text-slate-400"}`}>
+                                                <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${isReached ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-slate-100 text-slate-600 dark:text-slate-300"}`}>
                                                     {isReached ? "Achieved" : "Requires Longer Fast"}
                                                 </span>
                                             </div>
@@ -817,11 +813,11 @@ Generate your personalized schedule at: twistertools.com/tools/calculators/inter
 
                                 <div className="grid grid-cols-2 gap-2">
                                     <div className="p-3 bg-white border border-slate-200 rounded-xl">
-                                        <span className="text-slate-400 font-semibold block text-[10px]">Autophagy Trigger</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-semibold block text-[10px]">Autophagy Trigger</span>
                                         <span className="font-bold text-slate-900">{activeFastingHours >= 16 ? "High (16h+ Active)" : "Mild Early Phase"}</span>
                                     </div>
                                     <div className="p-3 bg-white border border-slate-200 rounded-xl">
-                                        <span className="text-slate-400 font-semibold block text-[10px]">Glycogen Depletion</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-semibold block text-[10px]">Glycogen Depletion</span>
                                         <span className="font-bold text-slate-900">{activeFastingHours >= 12 ? "Complete (12h+)" : "Partial Phase"}</span>
                                     </div>
                                 </div>

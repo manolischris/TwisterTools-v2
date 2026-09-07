@@ -306,7 +306,7 @@ export default function OnlineTextEditor() {
                   className="w-full h-[450px] p-4 bg-white text-slate-800 border border-slate-200 rounded-xl overflow-y-auto focus:outline-none focus:ring-2 focus:ring-indigo-600 prose prose-slate max-w-none"
                 />
               ) : (
-                <textarea
+                <textarea aria-label="Input text content"
                   value={htmlContent}
                   onChange={(e) => setHtmlContent(e.target.value)}
                   className="w-full h-[450px] font-mono text-sm p-4 bg-slate-900 text-slate-100 border border-slate-800 rounded-xl outline-none focus:ring-2 focus:ring-indigo-500 resize-none"
@@ -328,7 +328,7 @@ export default function OnlineTextEditor() {
               >
                 <Upload className="w-3.5 h-3.5" /> Upload File
               </button>
-              <input type="file" ref={fileInputRef} onChange={handleFileUpload} accept=".txt,.html,.htm" className="hidden" />
+              <input aria-label="Upload file' type='file" ref={fileInputRef} onChange={handleFileUpload} accept=".txt,.html,.htm" className="hidden" />
               <button
                 onClick={clearWorkspace}
                 className="flex items-center justify-center gap-2 py-2 px-3 bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 text-xs font-semibold rounded-xl transition-all"

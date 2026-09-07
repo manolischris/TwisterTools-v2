@@ -523,7 +523,7 @@ export default function RandomLetterPicker() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Custom Character Set (Comma or Space Separated)
                                 </label>
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={customSetInput}
                                     onChange={(e) => setCustomSetInput(e.target.value)}
                                     rows={3}
@@ -541,7 +541,7 @@ export default function RandomLetterPicker() {
                                 </span>
                                 <div className="space-y-2">
                                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                        <input
+                                        <input aria-label="Exclude Vowels"
                                             type="checkbox"
                                             checked={excludeVowels}
                                             onChange={(e) => {
@@ -553,7 +553,7 @@ export default function RandomLetterPicker() {
                                         <span>Exclude Vowels</span>
                                     </label>
                                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                        <input
+                                        <input aria-label="Exclude Vowels"
                                             type="checkbox"
                                             checked={excludeConsonants}
                                             onChange={(e) => {
@@ -595,8 +595,7 @@ export default function RandomLetterPicker() {
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Specific Letters to Exclude
                             </label>
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={excludedCharsInput}
                                 onChange={(e) => setExcludedCharsInput(e.target.value)}
                                 placeholder="e.g. Q, X, Z (separated by comma or space)"
@@ -648,8 +647,7 @@ export default function RandomLetterPicker() {
                                     )}
                                 </div>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max={selectionMode === "without-replacement" ? activePool.length : 1000}
                                         value={pickCount === 0 ? "" : pickCount}
@@ -669,7 +667,7 @@ export default function RandomLetterPicker() {
 
                         {/* Quick Presets for Pick Count */}
                         <div className="flex flex-wrap items-center gap-1.5">
-                            <span className="text-xs font-bold text-slate-400 mr-1">Quick:</span>
+                            <span className="text-xs font-bold text-slate-600 dark:text-slate-300 mr-1">Quick:</span>
                             {[1, 3, 5, 10, 26].map((num) => {
                                 const isDisabled =
                                     selectionMode === "without-replacement" && num > activePool.length;
@@ -771,7 +769,7 @@ export default function RandomLetterPicker() {
                                                             className={`text-[9px] font-bold uppercase tracking-tight ${
                                                                 item.category === "vowel"
                                                                     ? "text-indigo-600"
-                                                                    : "text-slate-400"
+                                                                    : "text-slate-600 dark:text-slate-300"
                                                             }`}
                                                         >
                                                             #{item.index}
@@ -828,21 +826,21 @@ export default function RandomLetterPicker() {
                                     <div className="space-y-4">
                                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
-                                                <span className="text-[10px] font-bold uppercase text-slate-400 block">Total Drawn</span>
+                                                <span className="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300 block">Total Drawn</span>
                                                 <span className="text-lg font-black text-slate-900">{resultStats.total}</span>
                                             </div>
                                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
-                                                <span className="text-[10px] font-bold uppercase text-slate-400 block">Unique Letters</span>
+                                                <span className="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300 block">Unique Letters</span>
                                                 <span className="text-lg font-black text-indigo-600">{resultStats.uniqueCount}</span>
                                             </div>
                                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
-                                                <span className="text-[10px] font-bold uppercase text-slate-400 block">Vowels</span>
+                                                <span className="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300 block">Vowels</span>
                                                 <span className="text-lg font-black text-slate-900">
                                                     {resultStats.vowelCount} ({resultStats.vowelPct.toFixed(0)}%)
                                                 </span>
                                             </div>
                                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
-                                                <span className="text-[10px] font-bold uppercase text-slate-400 block">Consonants</span>
+                                                <span className="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300 block">Consonants</span>
                                                 <span className="text-lg font-black text-slate-900">
                                                     {resultStats.consonantCount} ({resultStats.consonantPct.toFixed(0)}%)
                                                 </span>
@@ -860,14 +858,14 @@ export default function RandomLetterPicker() {
                                                         className="px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-700 flex items-center gap-1.5"
                                                     >
                                                         <span className="text-indigo-600 font-extrabold">{char}</span>
-                                                        <span className="text-slate-400 text-[10px]">×{count}</span>
+                                                        <span className="text-slate-600 dark:text-slate-300 text-[10px]">×{count}</span>
                                                     </span>
                                                 ))}
                                             </div>
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="p-8 text-center text-xs text-slate-400 bg-slate-50 rounded-xl border border-slate-200">
+                                    <div className="p-8 text-center text-xs text-slate-600 dark:text-slate-300 bg-slate-50 rounded-xl border border-slate-200">
                                         Generate a letter sequence to view statistical distribution metrics.
                                     </div>
                                 )}

@@ -373,7 +373,7 @@ export default function Base64ToImageConverter() {
 
                         {/* Textarea for String Input */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Paste raw Base64 string or Data URI here"
                                 value={rawInput}
                                 onChange={handleTextChange}
                                 placeholder="Paste raw Base64 string or Data URI here (e.g., data:image/png;base64,iVBORw0KGgoAAAANSUhEUg...)"
@@ -485,7 +485,7 @@ export default function Base64ToImageConverter() {
                                     <p className="text-xs font-semibold text-slate-600">
                                         No Base64 payload supplied
                                     </p>
-                                    <p className="text-[11px] text-slate-400 max-w-xs">
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300 max-w-xs">
                                         Paste an encoded RFC 4648 string or Data URI to inspect visual elements in real time.
                                     </p>
                                 </div>
@@ -496,7 +496,7 @@ export default function Base64ToImageConverter() {
                         {meta ? (
                             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4">
                                 <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                         Dimensions
                                     </span>
                                     <p className="text-xs sm:text-sm font-black text-slate-900 mt-0.5">
@@ -504,7 +504,7 @@ export default function Base64ToImageConverter() {
                                     </p>
                                 </div>
                                 <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                         Approx. Size
                                     </span>
                                     <p className="text-xs sm:text-sm font-black text-slate-900 mt-0.5">
@@ -512,7 +512,7 @@ export default function Base64ToImageConverter() {
                                     </p>
                                 </div>
                                 <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                         Aspect Ratio
                                     </span>
                                     <p className="text-xs sm:text-sm font-black text-slate-900 mt-0.5">
@@ -520,7 +520,7 @@ export default function Base64ToImageConverter() {
                                     </p>
                                 </div>
                                 <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80">
-                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                                    <span className="block text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300">
                                         MIME Detected
                                     </span>
                                     <p className="text-xs sm:text-sm font-black text-indigo-600 mt-0.5 truncate">
@@ -530,7 +530,7 @@ export default function Base64ToImageConverter() {
                             </div>
                         ) : (
                             <div className="mt-4 p-3 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center gap-2 text-xs text-slate-500">
-                                <Info className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                <Info className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                 <span>Diagnostics will populate automatically upon string parse.</span>
                             </div>
                         )}
@@ -543,8 +543,7 @@ export default function Base64ToImageConverter() {
                                 <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
                                     Output Format
                                 </label>
-                                <select
-                                    value={exportFormat}
+                                <select aria-label="Select option" value={exportFormat}
                                     onChange={(e) => setExportFormat(e.target.value as "png" | "jpeg" | "webp")}
                                     className="w-full py-2 px-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800 bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -558,8 +557,7 @@ export default function Base64ToImageConverter() {
                                 <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
                                     Scale Multiplier
                                 </label>
-                                <select
-                                    value={scaleMultiplier}
+                                <select aria-label="Select option" value={scaleMultiplier}
                                     onChange={(e) => setScaleMultiplier(Number(e.target.value))}
                                     className="w-full py-2 px-3 rounded-xl border border-slate-200 text-xs font-semibold text-slate-800 bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -574,7 +572,7 @@ export default function Base64ToImageConverter() {
                                     <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
                                         Compression: {jpegQuality}%
                                     </label>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="10"
                                         max="100"

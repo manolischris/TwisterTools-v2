@@ -352,8 +352,7 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -377,9 +376,8 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="2500"
                                         value={targetSalary === 0 ? "" : targetSalary}
@@ -387,7 +385,7 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
-                                <p className="text-[11px] text-slate-400 mt-1">
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">
                                     Clean take-home cash for living costs after all taxes and overheads.
                                 </p>
                             </div>
@@ -403,9 +401,8 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={annualExpenses === 0 ? "" : annualExpenses}
@@ -413,7 +410,7 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                         className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
                                 </div>
-                                <p className="text-[11px] text-slate-400 mt-1">
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">
                                     Subscriptions, hardware, web hosting, insurance, legal, accounting, and workspace.
                                 </p>
                             </div>
@@ -425,8 +422,7 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                         <Receipt className="w-4 h-4 text-indigo-600" /> Tax Provision Rate (%)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="70"
                                             step="1"
@@ -434,9 +430,9 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setTaxRate, Math.max(0, Math.min(70, val))))}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
-                                    <p className="text-[11px] text-slate-400 mt-1">Income & self-employment taxes.</p>
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Income & self-employment taxes.</p>
                                 </div>
 
                                 <div>
@@ -444,8 +440,7 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                         <TrendingUp className="w-4 h-4 text-indigo-600" /> Profit Buffer Margin (%)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="50"
                                             step="1"
@@ -453,9 +448,9 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setProfitMargin, Math.max(0, Math.min(50, val))))}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
-                                    <p className="text-[11px] text-slate-400 mt-1">Business emergency reserves.</p>
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300 mt-1">Business emergency reserves.</p>
                                 </div>
                             </div>
 
@@ -470,45 +465,42 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                                         <label className="block text-xs font-semibold text-slate-700 mb-1">
                                             Billable Hrs / Wk
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="60"
                                             value={billableHoursPerWeek === 0 ? "" : billableHoursPerWeek}
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setBillableHoursPerWeek, Math.max(1, Math.min(60, val))))}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 text-sm font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-[10px] text-slate-400">Excludes admin work</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300">Excludes admin work</span>
                                     </div>
 
                                     <div>
                                         <label className="block text-xs font-semibold text-slate-700 mb-1">
                                             Vacation Weeks
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="26"
                                             value={vacationWeeks === 0 ? "" : vacationWeeks}
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setVacationWeeks, Math.max(0, Math.min(26, val))))}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 text-sm font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-[10px] text-slate-400">Paid-off weeks</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300">Paid-off weeks</span>
                                     </div>
 
                                     <div>
                                         <label className="block text-xs font-semibold text-slate-700 mb-1">
                                             Holidays & Sick
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="60"
                                             value={holidaysSickDays === 0 ? "" : holidaysSickDays}
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setHolidaysSickDays, Math.max(0, Math.min(60, val))))}
                                             className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 text-sm font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-[10px] text-slate-400">Days per year</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300">Days per year</span>
                                     </div>
                                 </div>
                             </div>
@@ -517,7 +509,7 @@ Calculated at twistertools.com/tools/calculators/freelance-rate-calculator`;
                         {/* Fast Career Preset Selectors */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Career Tier Benchmarks
                                 </span>
                                 {activePresetId && (

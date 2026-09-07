@@ -496,7 +496,7 @@ export default function Md5Generator() {
                         : "border-slate-300 bg-slate-50 hover:border-indigo-400 hover:bg-indigo-50/50"
                     }`}
                 >
-                  <input
+                  <input aria-label="Md5 File Input"
                     ref={fileInputRef}
                     type="file"
                     className="hidden"
@@ -572,7 +572,7 @@ export default function Md5Generator() {
               {/* File hash display in-panel */}
               {fileHash && !fileLoading && (
                 <div className="rounded-xl bg-slate-900 border border-slate-700 p-4">
-                  <p className="text-xs text-slate-400 mb-2 font-medium tracking-wide uppercase">
+                  <p className="text-xs text-slate-600 dark:text-slate-300 mb-2 font-medium tracking-wide uppercase">
                     File MD5 Checksum
                   </p>
                   <p className="font-mono text-indigo-400 text-sm break-all leading-relaxed">
@@ -657,7 +657,7 @@ export default function Md5Generator() {
                     ? copied
                       ? "bg-green-500 text-white shadow-md shadow-green-200"
                       : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                     }`}
                 >
                   {copied ? (

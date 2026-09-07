@@ -453,7 +453,7 @@ Generated via TwisterTools Physical State Calculator`;
                                             }`}
                                     >
                                         <span className="font-extrabold text-xs">{tab.label}</span>
-                                        <span className={`text-[10px] mt-0.5 font-mono ${solveTarget === tab.id ? "text-indigo-100" : "text-slate-400"}`}>
+                                        <span className={`text-[10px] mt-0.5 font-mono ${solveTarget === tab.id ? "text-indigo-100" : "text-slate-600 dark:text-slate-300"}`}>
                                             {tab.formula}
                                         </span>
                                     </button>
@@ -472,8 +472,7 @@ Generated via TwisterTools Physical State Calculator`;
                                     40+ Standard Elements
                                 </span>
                             </div>
-                            <select
-                                value={selectedPreset}
+                            <select aria-label="Select option" value={selectedPreset}
                                 onChange={(e) => handlePresetChange(e.target.value)}
                                 className="w-full px-3 py-2 text-xs font-semibold text-slate-800 bg-white border border-indigo-200 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                             >
@@ -519,8 +518,7 @@ Generated via TwisterTools Physical State Calculator`;
                                     </label>
                                     <div className="grid grid-cols-3 gap-2">
                                         <div className="col-span-2">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="any"
                                                 value={densityVal === 0 ? "" : densityVal}
@@ -530,8 +528,7 @@ Generated via TwisterTools Physical State Calculator`;
                                             />
                                         </div>
                                         <div>
-                                            <select
-                                                value={densityUnit}
+                                            <select aria-label="Select option" value={densityUnit}
                                                 onChange={(e) => setDensityUnit(e.target.value as DensityUnit)}
                                                 className="w-full px-2 py-2 text-xs font-bold text-slate-800 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                             >
@@ -556,8 +553,7 @@ Generated via TwisterTools Physical State Calculator`;
                                     </label>
                                     <div className="grid grid-cols-3 gap-2">
                                         <div className="col-span-2">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="any"
                                                 value={massVal === 0 ? "" : massVal}
@@ -567,8 +563,7 @@ Generated via TwisterTools Physical State Calculator`;
                                             />
                                         </div>
                                         <div>
-                                            <select
-                                                value={massUnit}
+                                            <select aria-label="Select option" value={massUnit}
                                                 onChange={(e) => setMassUnit(e.target.value as MassUnit)}
                                                 className="w-full px-2 py-2 text-xs font-bold text-slate-800 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                             >
@@ -593,8 +588,7 @@ Generated via TwisterTools Physical State Calculator`;
                                     </label>
                                     <div className="grid grid-cols-3 gap-2">
                                         <div className="col-span-2">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="any"
                                                 value={volumeVal === 0 ? "" : volumeVal}
@@ -604,8 +598,7 @@ Generated via TwisterTools Physical State Calculator`;
                                             />
                                         </div>
                                         <div>
-                                            <select
-                                                value={volumeUnit}
+                                            <select aria-label="Select option" value={volumeUnit}
                                                 onChange={(e) => setVolumeUnit(e.target.value as VolumeUnit)}
                                                 className="w-full px-2 py-2 text-xs font-bold text-slate-800 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                             >
@@ -807,7 +800,7 @@ Generated via TwisterTools Physical State Calculator`;
                             </div>
                         ) : (
                             <div className="p-8 bg-slate-50 border border-slate-200 rounded-xl text-center text-xs text-slate-500 space-y-2">
-                                <Box className="w-8 h-8 mx-auto text-slate-400" />
+                                <Box className="w-8 h-8 mx-auto text-slate-600 dark:text-slate-300" />
                                 <p>Enter valid positive mass, density, and volume inputs to generate full physical profiles.</p>
                             </div>
                         )}
@@ -819,7 +812,7 @@ Generated via TwisterTools Physical State Calculator`;
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${calculation.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

@@ -495,7 +495,7 @@ export default function WordToPdf() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
@@ -531,7 +531,7 @@ export default function WordToPdf() {
                                             Drop Word (.docx) file here, or{" "}
                                             <span className="text-indigo-600">click to browse</span>
                                         </p>
-                                        <p className="text-[11px] text-slate-400">
+                                        <p className="text-[11px] text-slate-600 dark:text-slate-300">
                                             Maximum file size limit: 20 MB
                                         </p>
                                     </>
@@ -602,12 +602,12 @@ export default function WordToPdf() {
                                 />
 
                                 {!docFile && !isLoading && (
-                                    <div className="h-full flex flex-col items-center justify-center text-center text-slate-400 space-y-2 p-4 sm:p-6">
+                                    <div className="h-full flex flex-col items-center justify-center text-center text-slate-600 dark:text-slate-300 space-y-2 p-4 sm:p-6">
                                         <FileText className="w-10 h-10 text-slate-300" />
                                         <p className="text-xs font-semibold text-slate-600">
                                             No Word Document Loaded
                                         </p>
-                                        <p className="text-[11px] max-w-xs text-slate-400">
+                                        <p className="text-[11px] max-w-xs text-slate-600 dark:text-slate-300">
                                             Upload a .docx file above to generate a real-time layout
                                             preview and statistics summary.
                                         </p>
@@ -731,7 +731,7 @@ export default function WordToPdf() {
                                             <label className="text-xs font-bold text-slate-800">
                                                 Font Size ({fontSize} pt)
                                             </label>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min={9}
                                                 max={16}
@@ -745,7 +745,7 @@ export default function WordToPdf() {
                                             <label className="text-xs font-bold text-slate-800">
                                                 Line Spacing ({lineSpacing}x)
                                             </label>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min={1.0}
                                                 max={2.0}
@@ -760,7 +760,7 @@ export default function WordToPdf() {
                                     {/* Checkbox Options */}
                                     <div className="pt-1">
                                         <label className="flex items-center gap-2 cursor-pointer">
-                                            <input
+                                            <input aria-label="Page Numbers"
                                                 type="checkbox"
                                                 checked={includePageNumbers}
                                                 onChange={(e) => setIncludePageNumbers(e.target.checked)}
@@ -775,7 +775,7 @@ export default function WordToPdf() {
                                     {/* Dynamic Document Statistics Summary */}
                                     <div className="grid grid-cols-3 gap-2.5 p-3 bg-slate-50 border border-slate-200 rounded-xl text-center">
                                         <div>
-                                            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                            <p className="text-[10px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                                 Words
                                             </p>
                                             <p className="text-xs font-mono font-bold text-slate-800">
@@ -783,7 +783,7 @@ export default function WordToPdf() {
                                             </p>
                                         </div>
                                         <div>
-                                            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                            <p className="text-[10px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                                 Characters
                                             </p>
                                             <p className="text-xs font-mono font-bold text-slate-800">
@@ -791,7 +791,7 @@ export default function WordToPdf() {
                                             </p>
                                         </div>
                                         <div>
-                                            <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
+                                            <p className="text-[10px] font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
                                                 Paragraphs
                                             </p>
                                             <p className="text-xs font-mono font-bold text-slate-800">
@@ -823,7 +823,7 @@ export default function WordToPdf() {
                                 disabled={!extractedText || isExporting}
                                 className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${extractedText && !isExporting
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isExporting ? (

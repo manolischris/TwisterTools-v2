@@ -284,7 +284,7 @@ const highlightXml = (xml: string) => {
       );
     } else if (token === ">" || token === "/>") {
       parts.push(
-        <span key={match.index} className="text-slate-400">
+        <span key={match.index} className="text-slate-600 dark:text-slate-300">
           {token}
         </span>
       );
@@ -581,13 +581,13 @@ export default function XmlFormatterValidator() {
             {/* Scroll-synced Line Numbers Gutter */}
             <pre
               ref={lineGutterRef}
-              className="w-12 select-none bg-slate-100 border-r border-slate-200 pr-2 text-right leading-6 py-3 font-mono text-xs text-slate-400 overflow-y-hidden"
+              className="w-12 select-none bg-slate-100 border-r border-slate-200 pr-2 text-right leading-6 py-3 font-mono text-xs text-slate-600 dark:text-slate-300 overflow-y-hidden"
             >
               {lineNumbers.join("\n")}
             </pre>
 
             {/* Input Text Area */}
-            <textarea
+            <textarea aria-label="Input text content"
               ref={textareaRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -618,7 +618,7 @@ export default function XmlFormatterValidator() {
                 : "border-slate-300 bg-slate-50/50 hover:border-indigo-500 hover:bg-indigo-50/10"
             }`}
           >
-            <input
+            <input aria-label="Xml File Input"
               ref={fileInputRef}
               type="file"
               accept=".xml,.txt"
@@ -800,7 +800,7 @@ export default function XmlFormatterValidator() {
                   ? copied
                     ? "bg-green-500 text-white shadow-md shadow-green-200"
                     : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                  : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                  : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
               }`}
             >
               {copied ? (
@@ -836,7 +836,7 @@ export default function XmlFormatterValidator() {
                 <p className="text-[10px] text-slate-500 font-semibold uppercase">Payload Sizes</p>
                 <div className="flex items-baseline gap-1.5 mt-1 font-mono">
                   <span className="text-sm font-bold text-slate-800">{formatFileSize(inputSize)}</span>
-                  <span className="text-slate-400 text-xs">vs</span>
+                  <span className="text-slate-600 dark:text-slate-300 text-xs">vs</span>
                   <span className="text-xs font-semibold text-slate-600">{formatFileSize(outputSize)}</span>
                 </div>
               </div>

@@ -324,7 +324,7 @@ export default function RgbToHex() {
               <button
                 type="button"
                 onClick={() => copyToClipboard(color.hex, "hexInput")}
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-slate-400 hover:text-indigo-600 rounded-lg transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 text-slate-600 dark:text-slate-300 hover:text-indigo-600 rounded-lg transition-colors"
                 title="Copy Hex"
               >
                 {copiedKey === "hexInput" ? <Check className="w-4 h-4 text-green-600" /> : <Copy className="w-4 h-4" />}
@@ -343,7 +343,7 @@ export default function RgbToHex() {
                 </span>
                 <span className="font-mono text-slate-700">{color.r}</span>
               </div>
-              <input
+              <input aria-label="Adjust slider value"
                 type="range"
                 min="0"
                 max="255"
@@ -361,7 +361,7 @@ export default function RgbToHex() {
                 </span>
                 <span className="font-mono text-slate-700">{color.g}</span>
               </div>
-              <input
+              <input aria-label="Adjust slider value"
                 type="range"
                 min="0"
                 max="255"
@@ -379,7 +379,7 @@ export default function RgbToHex() {
                 </span>
                 <span className="font-mono text-slate-700">{color.b}</span>
               </div>
-              <input
+              <input aria-label="Adjust slider value"
                 type="range"
                 min="0"
                 max="255"
@@ -397,7 +397,7 @@ export default function RgbToHex() {
                 </span>
                 <span className="font-mono text-slate-700">{Math.round(color.a * 100)}%</span>
               </div>
-              <input
+              <input aria-label="Adjust slider value"
                 type="range"
                 min="0"
                 max="1"
@@ -458,7 +458,7 @@ export default function RgbToHex() {
               ].map(({ label, val, key }) => (
                 <div key={key} className="flex items-center justify-between bg-slate-50 border border-slate-200/80 p-3 rounded-xl">
                   <div>
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{label}</p>
+                    <p className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">{label}</p>
                     <p className="text-xs font-mono font-semibold text-slate-800 mt-0.5">{val}</p>
                   </div>
                   <button

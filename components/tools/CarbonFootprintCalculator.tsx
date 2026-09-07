@@ -340,8 +340,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                             Flight Distance ({distanceUnit})
                                         </label>
                                         <div className="flex items-center gap-1">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={50}
                                                 max={15000}
                                                 value={flightDistance === 0 ? "" : flightDistance}
@@ -351,7 +350,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                             <span className="text-sm font-bold text-slate-600">{distanceUnit}</span>
                                         </div>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={100}
                                         max={8000}
@@ -360,7 +359,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                         onChange={(e) => setFlightDistance(Number(e.target.value))}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                    <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                         <span>500 {distanceUnit} (Short)</span>
                                         <span>3,500 {distanceUnit} (Transatlantic)</span>
                                         <span>8,000 {distanceUnit} (Intercontinental)</span>
@@ -397,8 +396,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                             Passengers
                                         </label>
                                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={1}
                                                 max={10}
                                                 value={passengerCount === 0 ? "" : passengerCount}
@@ -442,8 +440,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                             One-Way Commute Distance ({distanceUnit})
                                         </label>
                                         <div className="flex items-center gap-1">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={1}
                                                 max={150}
                                                 value={commuteDistanceOneWay === 0 ? "" : commuteDistanceOneWay}
@@ -453,7 +450,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                             <span className="text-sm font-bold text-slate-600">{distanceUnit}</span>
                                         </div>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={1}
                                         max={60}
@@ -462,7 +459,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                         onChange={(e) => setCommuteDistanceOneWay(Number(e.target.value))}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                    <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                         <span>5 {distanceUnit} (Short)</span>
                                         <span>25 {distanceUnit} (Suburban)</span>
                                         <span>50 {distanceUnit} (Long)</span>
@@ -500,8 +497,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                             Days / Week
                                         </label>
                                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={1}
                                                 max={7}
                                                 value={commuteDaysPerWeek === 0 ? "" : commuteDaysPerWeek}
@@ -517,8 +513,7 @@ Calculated via twistertools.com/tools/home-tools/carbon-footprint-calculator`;
                                             Weeks / Year
                                         </label>
                                         <div className="flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={1}
                                                 max={52}
                                                 value={weeksPerYear === 0 ? "" : weeksPerYear}

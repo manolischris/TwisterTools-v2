@@ -381,7 +381,7 @@ export default function FaviconGeneratorSuite() {
                   : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
               }`}
             >
-              <input
+              <input aria-label="Upload file"
                 ref={fileInputRef}
                 type="file"
                 accept="image/*"
@@ -412,7 +412,7 @@ export default function FaviconGeneratorSuite() {
                   <p className="text-xs font-semibold text-slate-800 mb-0.5">
                     Drop high-res logo or image, or <span className="text-indigo-600">click to browse</span>
                   </p>
-                  <p className="text-[11px] text-slate-400">Recommended 512×512px or larger (PNG, SVG, JPG, WebP)</p>
+                  <p className="text-[11px] text-slate-600 dark:text-slate-300">Recommended 512×512px or larger (PNG, SVG, JPG, WebP)</p>
                 </>
               )}
             </div>
@@ -438,7 +438,7 @@ export default function FaviconGeneratorSuite() {
                 <label className="font-medium text-slate-700">Inner Icon Padding</label>
                 <span className="font-mono font-bold text-indigo-600">{padding}%</span>
               </div>
-              <input
+              <input aria-label="Adjust slider value"
                 type="range"
                 min="0"
                 max="30"
@@ -446,7 +446,7 @@ export default function FaviconGeneratorSuite() {
                 onChange={(e) => setPadding(parseInt(e.target.value, 10))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
               />
-              <div className="flex justify-between text-[10px] text-slate-400">
+              <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300">
                 <span>Edge-to-Edge (0%)</span>
                 <span>Compact (30%)</span>
               </div>
@@ -458,7 +458,7 @@ export default function FaviconGeneratorSuite() {
                 <label className="font-medium text-slate-700">Border Corner Radius</label>
                 <span className="font-mono font-bold text-indigo-600">{borderRadius}%</span>
               </div>
-              <input
+              <input aria-label="Adjust slider value"
                 type="range"
                 min="0"
                 max="100"
@@ -466,7 +466,7 @@ export default function FaviconGeneratorSuite() {
                 onChange={(e) => setBorderRadius(parseInt(e.target.value, 10))}
                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
               />
-              <div className="flex justify-between text-[10px] text-slate-400">
+              <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300">
                 <span>Square (0%)</span>
                 <span>Squircle (40%)</span>
                 <span>Circle (100%)</span>
@@ -494,14 +494,13 @@ export default function FaviconGeneratorSuite() {
 
               {useCustomBg && (
                 <div className="flex items-center gap-3 pt-1">
-                  <input
+                  <input aria-label="Select color"
                     type="color"
                     value={bgColor}
                     onChange={(e) => setBgColor(e.target.value)}
                     className="w-8 h-8 rounded-lg border border-slate-200 cursor-pointer p-0 bg-transparent"
                   />
-                  <input
-                    type="text"
+                  <input aria-label="Input value" type="text"
                     value={bgColor}
                     onChange={(e) => setBgColor(e.target.value)}
                     className="text-xs font-mono border border-slate-200 rounded-lg px-3 py-1.5 text-slate-800 uppercase focus:outline-none focus:ring-2 focus:ring-indigo-500 w-28"
@@ -597,7 +596,7 @@ export default function FaviconGeneratorSuite() {
               <div className="h-[340px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                 <Globe className="w-10 h-10 text-slate-300 mb-2" />
                 <p className="text-sm font-semibold text-slate-700">No Generated Favicons</p>
-                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                   Upload a master source graphic on the left panel to render all multi-resolution app icons instantly.
                 </p>
               </div>
@@ -624,7 +623,7 @@ export default function FaviconGeneratorSuite() {
                     </div>
 
                     <div className="flex items-center gap-2 flex-shrink-0">
-                      <span className="text-[10px] font-mono text-slate-400">{formatBytes(item.sizeBytes)}</span>
+                      <span className="text-[10px] font-mono text-slate-600 dark:text-slate-300">{formatBytes(item.sizeBytes)}</span>
                       <button
                         type="button"
                         onClick={() => downloadSingleIcon(item)}

@@ -418,8 +418,7 @@ Calculated at twistertools.com/tools/calculators/heart-rate-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Age (Years)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="10"
                                         max="100"
                                         value={age === 0 ? "" : age}
@@ -439,7 +438,7 @@ Calculated at twistertools.com/tools/calculators/heart-rate-calculator`;
                                         {restingHeartRate} BPM
                                     </span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="35"
                                     max="110"
@@ -450,7 +449,7 @@ Calculated at twistertools.com/tools/calculators/heart-rate-calculator`;
                                     }}
                                     className="w-full accent-indigo-600 cursor-pointer"
                                 />
-                                <div className="flex justify-between text-[10px] text-slate-400 font-medium mt-1">
+                                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-medium mt-1">
                                     <span>35 BPM (Athlete)</span>
                                     <span>70 BPM (Average)</span>
                                     <span>110 BPM (Elevated)</span>
@@ -505,7 +504,7 @@ Calculated at twistertools.com/tools/calculators/heart-rate-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Archetype Presets
                                 </span>
                                 {activePresetId && (

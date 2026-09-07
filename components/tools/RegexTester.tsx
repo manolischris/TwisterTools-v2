@@ -328,7 +328,7 @@ export default function RegexTester() {
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <span className="text-slate-400 font-mono text-sm">/</span>
+                  <span className="text-slate-600 dark:text-slate-300 font-mono text-sm">/</span>
                 </div>
                 <input
                   id="regex-pattern"
@@ -339,7 +339,7 @@ export default function RegexTester() {
                   className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-8 pr-4 py-3 text-sm font-mono text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <span className="text-slate-400 font-mono text-sm">/{flagString || "—"}</span>
+                  <span className="text-slate-600 dark:text-slate-300 font-mono text-sm">/{flagString || "—"}</span>
                 </div>
               </div>
             </div>

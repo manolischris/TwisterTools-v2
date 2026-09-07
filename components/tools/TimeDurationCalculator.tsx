@@ -392,14 +392,12 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                         <Calendar className="w-3.5 h-3.5 text-indigo-600" /> Start Date & Time
                                     </label>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        <input
-                                            type="date"
+                                        <input aria-label="Input value" type="date"
                                             value={startDate}
                                             onChange={(e) => setStartDate(e.target.value)}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <input
-                                            type="time"
+                                        <input aria-label="Input value" type="time"
                                             value={startTime}
                                             onChange={(e) => setStartTime(e.target.value)}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
@@ -413,14 +411,12 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                         <Calendar className="w-3.5 h-3.5 text-indigo-600" /> End Date & Time
                                     </label>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        <input
-                                            type="date"
+                                        <input aria-label="Input value" type="date"
                                             value={endDate}
                                             onChange={(e) => setEndDate(e.target.value)}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <input
-                                            type="time"
+                                        <input aria-label="Input value" type="time"
                                             value={endTime}
                                             onChange={(e) => setEndTime(e.target.value)}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
@@ -433,8 +429,7 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                         Break Deduction (Minutes)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="1440"
                                         value={breakMinutes === 0 ? "" : breakMinutes}
@@ -452,9 +447,8 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                         Hourly Rate ($)
                                     </label>
                                     <div className="w-32 relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">$</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">$</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="0.5"
                                             value={hourlyRate === 0 ? "" : hourlyRate}
@@ -469,8 +463,7 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                     {entries.map((entry, idx) => (
                                         <div key={entry.id} className="p-3 border border-slate-200 rounded-xl bg-slate-50 space-y-2 relative">
                                             <div className="flex items-center justify-between">
-                                                <input
-                                                    type="text"
+                                                <input aria-label="Input value" type="text"
                                                     value={entry.description}
                                                     onChange={(e) => handleUpdateEntry(entry.id, "description", e.target.value)}
                                                     className="text-xs font-bold text-slate-800 bg-transparent outline-none border-b border-transparent focus:border-indigo-500"
@@ -479,7 +472,7 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                                 {entries.length > 1 && (
                                                     <button
                                                         onClick={() => handleRemoveEntry(entry.id)}
-                                                        className="text-slate-400 hover:text-rose-600 transition p-1"
+                                                        className="text-slate-600 dark:text-slate-300 hover:text-rose-600 transition p-1"
                                                     >
                                                         <Trash2 className="w-3.5 h-3.5" />
                                                     </button>
@@ -489,7 +482,7 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                             <div className="grid grid-cols-3 gap-2">
                                                 <div>
                                                     <span className="block text-[10px] font-semibold text-slate-500 mb-0.5">Start</span>
-                                                    <input
+                                                    <input aria-label="Start"
                                                         type="time"
                                                         value={entry.startTime}
                                                         onChange={(e) => handleUpdateEntry(entry.id, "startTime", e.target.value)}
@@ -498,7 +491,7 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                                 </div>
                                                 <div>
                                                     <span className="block text-[10px] font-semibold text-slate-500 mb-0.5">End</span>
-                                                    <input
+                                                    <input aria-label="End"
                                                         type="time"
                                                         value={entry.endTime}
                                                         onChange={(e) => handleUpdateEntry(entry.id, "endTime", e.target.value)}
@@ -507,7 +500,7 @@ Calculated at twistertools.com/tools/date-tools/time-duration-calculator`;
                                                 </div>
                                                 <div>
                                                     <span className="block text-[10px] font-semibold text-slate-500 mb-0.5">Break (m)</span>
-                                                    <input
+                                                    <input aria-label="Break (m)"
                                                         type="number"
                                                         value={entry.breakMinutes === 0 ? "" : entry.breakMinutes}
                                                         onChange={(e) => handleNumberInput(e, (val) => handleUpdateEntry(entry.id, "breakMinutes", val))}

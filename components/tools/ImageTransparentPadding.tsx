@@ -387,7 +387,7 @@ export default function ImageTransparentPadding() {
                                         : "border-slate-300 hover:border-indigo-400 bg-slate-50/50"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="image/png,image/webp,image/jpeg,image/svg+xml"
@@ -452,8 +452,7 @@ export default function ImageTransparentPadding() {
                                     <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                         <label>All Sides Margin ({config.unit}):</label>
                                         <div className="flex items-center gap-1">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max={config.unit === "%" ? 500 : 2000}
                                                 value={config.all}
@@ -467,10 +466,10 @@ export default function ImageTransparentPadding() {
                                                 }
                                                 className="w-16 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-white focus:ring-1 focus:ring-indigo-500 outline-none"
                                             />
-                                            <span className="text-slate-400">{config.unit}</span>
+                                            <span className="text-slate-600 dark:text-slate-300">{config.unit}</span>
                                         </div>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max={config.unit === "%" ? 100 : 500}
@@ -491,7 +490,7 @@ export default function ImageTransparentPadding() {
                                                 {config.unit}
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max={config.unit === "%" ? 100 : 500}
@@ -510,7 +509,7 @@ export default function ImageTransparentPadding() {
                                                 {config.unit}
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max={config.unit === "%" ? 100 : 500}
@@ -529,7 +528,7 @@ export default function ImageTransparentPadding() {
                                                 {config.unit}
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max={config.unit === "%" ? 100 : 500}
@@ -550,7 +549,7 @@ export default function ImageTransparentPadding() {
                                                 {config.unit}
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max={config.unit === "%" ? 100 : 500}
@@ -572,8 +571,7 @@ export default function ImageTransparentPadding() {
                                     <Maximize2 className="w-3.5 h-3.5 text-indigo-600" />
                                     Target Aspect Ratio
                                 </label>
-                                <select
-                                    value={config.targetAspectRatio}
+                                <select aria-label="Select option" value={config.targetAspectRatio}
                                     onChange={(e) =>
                                         setConfig((p) => ({ ...p, targetAspectRatio: e.target.value as AspectRatioMode }))
                                     }
@@ -594,8 +592,7 @@ export default function ImageTransparentPadding() {
                                     Canvas Background Fill
                                 </label>
                                 <div className="flex items-center gap-2">
-                                    <select
-                                        value={config.bgMode}
+                                    <select aria-label="Select option" value={config.bgMode}
                                         onChange={(e) =>
                                             setConfig((p) => ({ ...p, bgMode: e.target.value as BackgroundMode }))
                                         }
@@ -605,7 +602,7 @@ export default function ImageTransparentPadding() {
                                         <option value="custom">Solid Color Fill</option>
                                     </select>
                                     {config.bgMode === "custom" && (
-                                        <input
+                                        <input aria-label="Select color"
                                             type="color"
                                             value={config.customColor}
                                             onChange={(e) => setConfig((p) => ({ ...p, customColor: e.target.value }))}
@@ -657,11 +654,11 @@ export default function ImageTransparentPadding() {
                                 </div>
                             ) : (
                                 <div className="text-center space-y-2 select-none">
-                                    <div className="w-12 h-12 rounded-full bg-white/80 border border-slate-200 flex items-center justify-center mx-auto text-slate-400 shadow-xs">
+                                    <div className="w-12 h-12 rounded-full bg-white/80 border border-slate-200 flex items-center justify-center mx-auto text-slate-600 dark:text-slate-300 shadow-xs">
                                         <Layers className="w-6 h-6" />
                                     </div>
                                     <p className="text-sm font-semibold text-slate-600">No Image Uploaded</p>
-                                    <p className="text-xs text-slate-400 max-w-xs mx-auto">
+                                    <p className="text-xs text-slate-600 dark:text-slate-300 max-w-xs mx-auto">
                                         Select a PNG or SVG above to calculate and render transparent canvas boundaries in real time.
                                     </p>
                                 </div>
@@ -697,7 +694,7 @@ export default function ImageTransparentPadding() {
                     {/* Download CTA */}
                     <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
                         <span className="text-xs text-slate-500 flex items-center gap-1 self-start sm:self-center">
-                            <Info className="w-3.5 h-3.5 text-slate-400" />
+                            <Info className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             Lossless PNG Format (32-bit RGBA)
                         </span>
                         <button
@@ -706,7 +703,7 @@ export default function ImageTransparentPadding() {
                             onClick={handleDownload}
                             className={`w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition cursor-pointer shadow-sm ${imageBitmap && !isProcessing
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-100"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                 }`}
                         >
                             <Download className="w-4 h-4" />

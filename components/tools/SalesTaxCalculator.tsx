@@ -355,9 +355,8 @@ ${totalsBreakdown}`;
                   {mode === "add-tax" ? "Net Amount / Pre-Tax Price ($)" : "Gross Amount / Total Included Price ($)"}
                 </label>
                 <div className="relative">
-                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 font-medium">$</span>
-                  <input
-                    type="number"
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-medium">$</span>
+                  <input aria-label="Input value" type="number"
                     step="0.01"
                     min="0"
                     value={baseAmount}
@@ -373,11 +372,9 @@ ${totalsBreakdown}`;
                   <label className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                     US State Preset
                   </label>
-                  <select
-                    value={selectedState}
+                  <select aria-label="-- Custom Rate --" value={selectedState}
                     onChange={handleStateSelect}
-                    className="w-full px-3 py-2.5 text-xs border border-slate-300 rounded-xl bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all min-h-[42px]"
-                  >
+                    className="w-full px-3 py-2.5 text-xs border border-slate-300 rounded-xl bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all min-h-[42px]">
                     <option value="">-- Custom Rate --</option>
                     {US_STATE_TAX_RATES.map((st) => (
                       <option key={st.code} value={st.code}>
@@ -392,8 +389,7 @@ ${totalsBreakdown}`;
                     Tax Rate (%)
                   </label>
                   <div className="relative">
-                    <input
-                      type="number"
+                    <input aria-label="Input value" type="number"
                       step="0.01"
                       min="0"
                       value={taxRate}
@@ -401,7 +397,7 @@ ${totalsBreakdown}`;
                       placeholder="8.25"
                       className="w-full pl-3 pr-8 py-2.5 text-sm font-mono border border-slate-300 rounded-xl bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition-all"
                     />
-                    <Percent className="w-3.5 h-3.5 text-slate-400 absolute right-3 top-1/2 -translate-y-1/2" />
+                    <Percent className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300 absolute right-3 top-1/2 -translate-y-1/2" />
                   </div>
                 </div>
               </div>
@@ -459,14 +455,14 @@ ${totalsBreakdown}`;
               }}
               className="grid sm:grid-cols-12 gap-2 bg-slate-50 p-3 rounded-xl border border-slate-200"
             >
-              <input
+              <input aria-label="Item Description"
                 type="text"
                 placeholder="Item Description"
                 value={newItemDesc}
                 onChange={(e) => setNewItemDesc(e.target.value)}
                 className="sm:col-span-5 px-3 py-2 text-xs border border-slate-300 rounded-lg bg-white text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-600"
               />
-              <input
+              <input aria-label="Net"
                 type="number"
                 step="0.01"
                 placeholder="Net ($)"
@@ -474,7 +470,7 @@ ${totalsBreakdown}`;
                 onChange={(e) => setNewItemAmount(e.target.value.replace(/^0+(?=\d)/, ""))}
                 className="sm:col-span-3 px-3 py-2 text-xs font-mono border border-slate-300 rounded-lg bg-white text-slate-800 focus:outline-none focus:ring-1 focus:ring-indigo-600"
               />
-              <input
+              <input aria-label="Tax %"
                 type="number"
                 step="0.01"
                 placeholder="Tax %"
@@ -506,7 +502,7 @@ ${totalsBreakdown}`;
                 <tbody className="divide-y divide-slate-100 text-xs">
                   {expenseItems.length === 0 ? (
                     <tr>
-                      <td colSpan={5} className="p-4 text-center text-slate-400">
+                      <td colSpan={5} className="p-4 text-center text-slate-600 dark:text-slate-300">
                         No expenses logged. Add an item above to get started.
                       </td>
                     </tr>
@@ -543,7 +539,7 @@ ${totalsBreakdown}`;
                           <td className="p-2.5 text-center">
                             <button
                               onClick={() => removeExpenseItem(item.id)}
-                              className="text-slate-400 hover:text-rose-600 transition-colors"
+                              className="text-slate-600 dark:text-slate-300 hover:text-rose-600 transition-colors"
                               title="Remove item"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
@@ -990,7 +986,7 @@ ${totalsBreakdown}`;
         {/* Card 9: Financial Disclaimer */}
         <div className="bg-slate-50 border border-slate-200 rounded-2xl shadow-sm space-y-3 p-4 sm:p-6">
           <div className="flex items-center gap-2 text-slate-500">
-            <AlertCircle className="w-4 h-4 text-slate-400" />
+            <AlertCircle className="w-4 h-4 text-slate-600 dark:text-slate-300" />
             <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Financial Disclaimer</span>
           </div>
           <p className="text-slate-500 text-xs leading-relaxed">

@@ -371,7 +371,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                         <Activity className="w-4 h-4" />
                     </div>
                     <div>
-                        <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">Calculation Mode</span>
+                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">Calculation Mode</span>
                         <span className="text-sm font-bold text-slate-800">
                             {calcMode === "single" ? "Single Appliance Deep-Dive" : "Household Multi-Appliance Audit"}
                         </span>
@@ -429,16 +429,15 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                     Electricity Rate / kWh
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0.001"
                                         step="0.01"
                                         value={kwhRate === 0 ? "" : kwhRate}
                                         onChange={(e) => handleNumberInput(e, (val) => setKwhRate(Math.max(0.001, val)))}
                                         className="w-full pl-8 pr-16 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-400">/ kWh</span>
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-600 dark:text-slate-300">/ kWh</span>
                                 </div>
                             </div>
 
@@ -446,8 +445,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Currency Symbol
                                 </label>
-                                <select
-                                    value={currency}
+                                <select aria-label="Select option" value={currency}
                                     onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                                 >
@@ -469,8 +467,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                     <label className="block text-sm font-semibold text-slate-800 mb-1.5">
                                         Appliance Name / Description
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={applianceName}
                                         onChange={(e) => {
                                             setApplianceName(e.target.value);
@@ -511,8 +508,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                         </div>
                                     </div>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             step={powerUnit === "watts" ? "50" : "0.1"}
                                             value={powerValue === 0 ? "" : powerValue}
@@ -522,7 +518,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                             })}
                                             className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400 uppercase">
+                                        <span className="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase">
                                             {powerUnit}
                                         </span>
                                     </div>
@@ -537,8 +533,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                             </label>
                                             <span className="text-xs font-bold text-indigo-600">{hoursPerDay} hrs/day</span>
                                         </div>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0.1"
                                             max="24"
                                             step="0.5"
@@ -555,8 +550,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                             </label>
                                             <span className="text-xs font-bold text-indigo-600">{daysPerWeek} days</span>
                                         </div>
-                                        <select
-                                            value={daysPerWeek}
+                                        <select aria-label="Select option" value={daysPerWeek}
                                             onChange={(e) => setDaysPerWeek(Number(e.target.value))}
                                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-white"
                                         >
@@ -574,7 +568,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                 {/* PRESETS SECTION */}
                                 <div className="mt-4 pt-4 border-t border-slate-100 space-y-2">
                                     <div className="flex items-center justify-between">
-                                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                        <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                             <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Instant Appliance Presets
                                         </span>
                                         {activePresetId && (
@@ -618,27 +612,24 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                         <Plus className="w-4 h-4 text-indigo-600" /> Add Appliance to Audit List
                                     </span>
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                                        <input
-                                            type="text"
+                                        <input aria-label="Input value" type="text"
                                             value={newAuditName}
                                             onChange={(e) => setNewAuditName(e.target.value)}
                                             placeholder="Appliance name"
                                             className="px-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                         />
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="1"
                                                 value={newAuditWatts === 0 ? "" : newAuditWatts}
                                                 onChange={(e) => handleNumberInput(e, setNewAuditWatts)}
                                                 placeholder="Watts"
                                                 className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white pr-8"
                                             />
-                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 font-bold">W</span>
+                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-600 dark:text-slate-300 font-bold">W</span>
                                         </div>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0.1"
                                                 max="24"
                                                 step="0.5"
@@ -647,7 +638,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                                 placeholder="Hrs/day"
                                                 className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-900 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white pr-10"
                                             />
-                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 font-bold">hrs</span>
+                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-600 dark:text-slate-300 font-bold">hrs</span>
                                         </div>
                                     </div>
                                     <button
@@ -679,7 +670,7 @@ Calculated at twistertools.com/tools/calculators/electricity-cost-calculator`;
                                                 </span>
                                                 <button
                                                     onClick={() => handleRemoveAuditItem(item.id)}
-                                                    className="p-1 rounded-md text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition"
+                                                    className="p-1 rounded-md text-slate-600 dark:text-slate-300 hover:text-rose-600 hover:bg-rose-50 transition"
                                                 >
                                                     <Trash2 className="w-3.5 h-3.5" />
                                                 </button>

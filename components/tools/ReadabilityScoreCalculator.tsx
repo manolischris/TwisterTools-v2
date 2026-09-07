@@ -373,7 +373,7 @@ Generated with TwisterTools Readability Score Calculator`;
 
                         {/* Textarea Input */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
                                 placeholder="Type or paste your text here to compute reading ease, grade level, and structural syllable metrics..."
@@ -385,19 +385,19 @@ Generated with TwisterTools Readability Score Calculator`;
                     {/* Quick Document Velocity Stats */}
                     <div className="pt-3 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-2 text-center">
                         <div className="p-2 bg-slate-50 rounded-lg border border-slate-200/60">
-                            <span className="text-[10px] uppercase font-bold text-slate-400 block">Words</span>
+                            <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Words</span>
                             <span className="text-base font-black text-slate-800 font-mono">{stats.wordCount}</span>
                         </div>
                         <div className="p-2 bg-slate-50 rounded-lg border border-slate-200/60">
-                            <span className="text-[10px] uppercase font-bold text-slate-400 block">Sentences</span>
+                            <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Sentences</span>
                             <span className="text-base font-black text-slate-800 font-mono">{stats.sentenceCount}</span>
                         </div>
                         <div className="p-2 bg-slate-50 rounded-lg border border-slate-200/60">
-                            <span className="text-[10px] uppercase font-bold text-slate-400 block">Reading Time</span>
+                            <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Reading Time</span>
                             <span className="text-base font-black text-indigo-600 font-mono">~{stats.readingTimeMinutes}m</span>
                         </div>
                         <div className="p-2 bg-slate-50 rounded-lg border border-slate-200/60">
-                            <span className="text-[10px] uppercase font-bold text-slate-400 block">Speaking Time</span>
+                            <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 block">Speaking Time</span>
                             <span className="text-base font-black text-indigo-600 font-mono">~{stats.speakingTimeMinutes}m</span>
                         </div>
                     </div>

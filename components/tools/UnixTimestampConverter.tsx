@@ -323,7 +323,7 @@ export default function UnixTimestampConverter() {
                     onClick={togglePrecision}
                     disabled={!tsInput.trim()}
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium transition-all border ${!tsInput.trim()
-                        ? "bg-slate-50 text-slate-400 border-slate-200 cursor-not-allowed"
+                        ? "bg-slate-50 text-slate-600 dark:text-slate-300 border-slate-200 cursor-not-allowed"
                         : "bg-slate-100 text-slate-700 border-slate-200 hover:bg-indigo-50 hover:text-indigo-600 hover:border-indigo-200"
                       }`}
                   >
@@ -381,7 +381,7 @@ export default function UnixTimestampConverter() {
                         <p className="text-sm text-slate-800 font-mono break-all">{value}</p>
                         <button
                           onClick={() => copyToClipboard(value, `ts-${label}`)}
-                          className="absolute top-2 right-2 w-7 h-7 rounded-md bg-white border border-slate-200 opacity-0 group-hover:opacity-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 transition-all shadow-sm"
+                          className="absolute top-2 right-2 w-7 h-7 rounded-md bg-white border border-slate-200 opacity-0 group-hover:opacity-100 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-all shadow-sm"
                           aria-label={`Copy ${label}`}
                         >
                           {copiedField === `ts-${label}` ? (
@@ -425,7 +425,7 @@ export default function UnixTimestampConverter() {
               )}
 
               {!tsInput.trim() && (
-                <div className="text-center py-8 text-slate-400">
+                <div className="text-center py-8 text-slate-600 dark:text-slate-300">
                   <Clock className="w-10 h-10 mx-auto mb-3 text-slate-300" />
                   <p className="text-sm">Enter a Unix timestamp above to see the date breakdown</p>
                 </div>
@@ -487,7 +487,7 @@ export default function UnixTimestampConverter() {
                         <p className="text-sm text-slate-800 font-mono break-all">{value}</p>
                         <button
                           onClick={() => copyToClipboard(value, `dt-${label}`)}
-                          className="absolute top-2 right-2 w-7 h-7 rounded-md bg-white border border-slate-200 opacity-0 group-hover:opacity-100 flex items-center justify-center text-slate-400 hover:text-indigo-600 transition-all shadow-sm"
+                          className="absolute top-2 right-2 w-7 h-7 rounded-md bg-white border border-slate-200 opacity-0 group-hover:opacity-100 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-all shadow-sm"
                           aria-label={`Copy ${label}`}
                         >
                           {copiedField === `dt-${label}` ? (
@@ -501,7 +501,7 @@ export default function UnixTimestampConverter() {
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-8 text-slate-400">
+                <div className="text-center py-8 text-slate-600 dark:text-slate-300">
                   <Calendar className="w-10 h-10 mx-auto mb-3 text-slate-300" />
                   <p className="text-sm">Select a date and time above to generate timestamps</p>
                 </div>
@@ -524,7 +524,7 @@ export default function UnixTimestampConverter() {
                   onClick={() => setTickerPaused((p) => !p)}
                   className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all ${tickerPaused
                       ? "bg-green-500/20 text-green-400 hover:bg-green-500/30"
-                      : "bg-slate-700 text-slate-400 hover:bg-slate-600"
+                      : "bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-600"
                     }`}
                   aria-label={tickerPaused ? "Resume ticker" : "Pause ticker"}
                 >
@@ -534,7 +534,7 @@ export default function UnixTimestampConverter() {
                   <button
                     id="ticker-copy"
                     onClick={() => copyToClipboard(String(tickerSeconds), "ticker")}
-                    className="w-9 h-9 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-400 hover:text-white flex items-center justify-center transition-all"
+                    className="w-9 h-9 rounded-lg bg-slate-700 hover:bg-slate-600 text-slate-600 dark:text-slate-300 hover:text-white flex items-center justify-center transition-all"
                     aria-label="Copy current timestamp"
                   >
                     {copiedField === "ticker" ? (
@@ -694,7 +694,7 @@ export default function UnixTimestampConverter() {
                   )}
 
                   {((activeMode === "ts-to-date" && !tsBreakdown) || (activeMode === "date-to-ts" && !dtBreakdown)) && (
-                    <div className="text-center py-6 text-slate-400">
+                    <div className="text-center py-6 text-slate-600 dark:text-slate-300">
                       <Activity className="w-8 h-8 mx-auto mb-2 text-slate-300" />
                       <p className="text-xs">Enter values to see parsing summary</p>
                     </div>
@@ -783,14 +783,14 @@ export default function UnixTimestampConverter() {
               <p className="text-indigo-600 tracking-widest">
                 [ 1 ] [ 7 ] [ 7 ] [ 2 ] [ 5 ] [ 4 ] [ 9 ] [ 6 ] [ 0 ] [ 0 ]
               </p>
-              <p className="text-slate-400 text-[10px]">|_______________________ Total Seconds Elapsed Since 1970 _______________________|</p>
+              <p className="text-slate-600 dark:text-slate-300 text-[10px]">|_______________________ Total Seconds Elapsed Since 1970 _______________________|</p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 font-mono text-xs md:text-sm text-center space-y-2">
               <p className="text-slate-500 font-semibold text-xs uppercase tracking-wider">13-Digit Milliseconds (High-Frequency / JavaScript)</p>
               <p className="text-indigo-600 tracking-widest">
                 [ 1 ] [ 7 ] [ 7 ] [ 2 ] [ 5 ] [ 4 ] [ 9 ] [ 6 ] [ 0 ] [ 0 ] [ 0 ] [ 0 ] [ 0 ]
               </p>
-              <p className="text-slate-400 text-[10px]">|_______________________ Seconds Components ____________________| Sub-Sec ms ___|</p>
+              <p className="text-slate-600 dark:text-slate-300 text-[10px]">|_______________________ Seconds Components ____________________| Sub-Sec ms ___|</p>
             </div>
             <ul className="list-disc pl-6 space-y-2">
               <li>

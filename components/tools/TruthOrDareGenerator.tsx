@@ -507,8 +507,7 @@ export default function TruthOrDareGenerator() {
                                 <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
                                     Card Type
                                 </label>
-                                <select
-                                    value={selectedType}
+                                <select aria-label="Select option" value={selectedType}
                                     onChange={(e) => setSelectedType(e.target.value as "both" | PromptType)}
                                     className="w-full py-1.5 px-2.5 rounded-xl border border-slate-200 text-slate-800 text-xs font-medium bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -522,8 +521,7 @@ export default function TruthOrDareGenerator() {
                                 <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">
                                     Intensity Level
                                 </label>
-                                <select
-                                    value={selectedIntensity}
+                                <select aria-label="Select option" value={selectedIntensity}
                                     onChange={(e) => setSelectedIntensity(e.target.value as "all" | IntensityLevel)}
                                     className="w-full py-1.5 px-2.5 rounded-xl border border-slate-200 text-slate-800 text-xs font-medium bg-slate-50 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                 >
@@ -571,16 +569,16 @@ export default function TruthOrDareGenerator() {
                                         "{activePrompt.text}"
                                     </p>
                                 ) : (
-                                    <p className="text-sm text-slate-400">Click a draw button below to pull your first card.</p>
+                                    <p className="text-sm text-slate-600 dark:text-slate-300">Click a draw button below to pull your first card.</p>
                                 )}
                             </div>
 
                             {/* Card Footer Info */}
-                            <div className="flex items-center justify-between pt-3 border-t border-white/10 z-10 text-[11px] text-slate-400">
+                            <div className="flex items-center justify-between pt-3 border-t border-white/10 z-10 text-[11px] text-slate-600 dark:text-slate-300">
                                 <span>Hardware Crypto RNG</span>
                                 <div className="flex items-center gap-2">
                                     {activePrompt?.tags.map((tag) => (
-                                        <span key={tag} className="text-slate-400 font-medium">#{tag}</span>
+                                        <span key={tag} className="text-slate-600 dark:text-slate-300 font-medium">#{tag}</span>
                                     ))}
                                 </div>
                             </div>
@@ -715,7 +713,7 @@ export default function TruthOrDareGenerator() {
                                             {[...players].sort((a, b) => b.score - a.score).map((p, idx) => (
                                                 <div key={p.id} className="flex items-center justify-between text-xs py-1 px-2.5 bg-white border border-slate-200 rounded-lg">
                                                     <span className="font-medium text-slate-800">
-                                                        <span className="text-slate-400 font-mono mr-1.5">#{idx + 1}</span>
+                                                        <span className="text-slate-600 dark:text-slate-300 font-mono mr-1.5">#{idx + 1}</span>
                                                         {p.name}
                                                     </span>
                                                     <span className="font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">
@@ -737,8 +735,7 @@ export default function TruthOrDareGenerator() {
                                         <Users className="w-3.5 h-3.5 text-indigo-600" />
                                         Enable Turn Rotation
                                     </label>
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Turn Tracking Enabled" type="checkbox"
                                         checked={turnTrackingEnabled}
                                         onChange={(e) => setTurnTrackingEnabled(e.target.checked)}
                                         className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500 cursor-pointer"
@@ -746,7 +743,7 @@ export default function TruthOrDareGenerator() {
                                 </div>
 
                                 <form onSubmit={handleAddPlayer} className="flex items-center gap-2">
-                                    <input
+                                    <input aria-label="Add player name"
                                         type="text"
                                         placeholder="Add player name..."
                                         value={newPlayerName}
@@ -798,7 +795,7 @@ export default function TruthOrDareGenerator() {
                                                 <button
                                                     type="button"
                                                     onClick={() => handleRemovePlayer(p.id)}
-                                                    className="p-1 text-slate-400 hover:text-rose-600 rounded transition cursor-pointer"
+                                                    className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 rounded transition cursor-pointer"
                                                     title="Remove player"
                                                 >
                                                     <Trash2 className="w-3.5 h-3.5" />
@@ -814,7 +811,7 @@ export default function TruthOrDareGenerator() {
                         {activeTab === "custom" && (
                             <div className="space-y-3">
                                 <form onSubmit={handleAddCustomPrompt} className="space-y-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                    <textarea
+                                    <textarea aria-label="Type custom truth question or dare prompt"
                                         rows={2}
                                         placeholder="Type custom truth question or dare prompt..."
                                         value={newCustomText}
@@ -822,15 +819,14 @@ export default function TruthOrDareGenerator() {
                                         className="w-full p-2 rounded-lg border border-slate-200 text-xs font-medium text-slate-900 bg-white focus:ring-2 focus:ring-indigo-500 outline-none resize-none"
                                     />
                                     <div className="grid grid-cols-3 gap-2 text-xs">
-                                        <select
-                                            value={newCustomType}
+                                        <select aria-label="Select option" value={newCustomType}
                                             onChange={(e) => setNewCustomType(e.target.value as PromptType)}
                                             className="p-1.5 rounded-md border border-slate-200 bg-white font-medium text-slate-700"
                                         >
                                             <option value="truth">Truth</option>
                                             <option value="dare">Dare</option>
                                         </select>
-                                        <select
+                                        <select aria-label="Select Dare"
                                             value={newCustomMode}
                                             onChange={(e) => setNewCustomMode(e.target.value as GameMode)}
                                             className="p-1.5 rounded-md border border-slate-200 bg-white font-medium text-slate-700 capitalize"
@@ -852,7 +848,7 @@ export default function TruthOrDareGenerator() {
 
                                 <div className="space-y-2 max-h-[160px] overflow-y-auto pr-1">
                                     {customPrompts.length === 0 ? (
-                                        <p className="p-3 text-center text-xs text-slate-400">No custom prompts added yet.</p>
+                                        <p className="p-3 text-center text-xs text-slate-600 dark:text-slate-300">No custom prompts added yet.</p>
                                     ) : (
                                         customPrompts.map((cp) => (
                                             <div key={cp.id} className="p-2.5 rounded-xl border border-slate-200 bg-white flex items-center justify-between text-xs">
@@ -864,7 +860,7 @@ export default function TruthOrDareGenerator() {
                                                 </div>
                                                 <button
                                                     onClick={() => handleRemoveCustomPrompt(cp.id)}
-                                                    className="text-slate-400 hover:text-rose-600 p-1 cursor-pointer"
+                                                    className="text-slate-600 dark:text-slate-300 hover:text-rose-600 p-1 cursor-pointer"
                                                 >
                                                     <Trash2 className="w-3.5 h-3.5" />
                                                 </button>
@@ -879,7 +875,7 @@ export default function TruthOrDareGenerator() {
                         {activeTab === "history" && (
                             <div className="space-y-2 max-h-[260px] overflow-y-auto pr-1">
                                 {history.length === 0 ? (
-                                    <p className="p-4 text-center text-xs text-slate-400">No prompts drawn yet.</p>
+                                    <p className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">No prompts drawn yet.</p>
                                 ) : (
                                     history.map((item) => (
                                         <div key={item.id} className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 space-y-1 text-xs">
@@ -890,7 +886,7 @@ export default function TruthOrDareGenerator() {
                                                     </span>
                                                     {item.player && <strong className="text-slate-800 font-semibold">{item.player}</strong>}
                                                 </div>
-                                                <span className="text-[10px] text-slate-400 font-mono">{item.timestamp}</span>
+                                                <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">{item.timestamp}</span>
                                             </div>
                                             <p className="text-slate-700 font-medium">"{item.text}"</p>
                                         </div>

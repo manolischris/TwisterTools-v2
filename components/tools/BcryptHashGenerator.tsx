@@ -200,11 +200,11 @@ export default function BcryptHashGenerator() {
                             <div className="space-y-2">
                                 <label className="text-xs font-semibold uppercase tracking-wider text-slate-600 flex justify-between">
                                     <span>Plaintext Password</span>
-                                    <span className="text-slate-400 font-normal lowercase font-mono">
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal lowercase font-mono">
                                         {plainPassword.length} chars (UTF-8)
                                     </span>
                                 </label>
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={plainPassword}
                                     onChange={(e) => setPlainPassword(e.target.value)}
                                     placeholder="Enter plaintext to hash..."
@@ -225,8 +225,7 @@ export default function BcryptHashGenerator() {
                                     </label>
                                     <div className="flex items-center gap-2">
                                         <span className="text-xs text-slate-500 font-mono">2^{rounds} = {(2 ** rounds).toLocaleString()} iterations</span>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={4}
                                             max={14}
                                             value={roundsInput}
@@ -235,7 +234,7 @@ export default function BcryptHashGenerator() {
                                         />
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={4}
                                     max={14}
@@ -278,8 +277,7 @@ export default function BcryptHashGenerator() {
                                 <label className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                                     Candidate Plaintext String
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={candidatePlaintext}
                                     onChange={(e) => setCandidatePlaintext(e.target.value)}
                                     placeholder="Enter candidate password to check..."
@@ -292,7 +290,7 @@ export default function BcryptHashGenerator() {
                                 <label className="text-xs font-semibold uppercase tracking-wider text-slate-600">
                                     Stored Target BCRYPT Hash
                                 </label>
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={candidateHash}
                                     onChange={(e) => setCandidateHash(e.target.value)}
                                     placeholder="$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy"
@@ -385,17 +383,17 @@ export default function BcryptHashGenerator() {
                                 {inspectedHash.valid ? (
                                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
                                         <div className="bg-white border border-slate-200 p-3 rounded-lg space-y-1">
-                                            <span className="text-[10px] font-bold uppercase text-slate-400">Prefix</span>
+                                            <span className="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">Prefix</span>
                                             <p className="font-mono text-sm font-bold text-indigo-600">{inspectedHash.prefix}</p>
                                             <p className="text-[11px] text-slate-500">Algorithm ID</p>
                                         </div>
                                         <div className="bg-white border border-slate-200 p-3 rounded-lg space-y-1">
-                                            <span className="text-[10px] font-bold uppercase text-slate-400">Cost</span>
+                                            <span className="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">Cost</span>
                                             <p className="font-mono text-sm font-bold text-indigo-600">{inspectedHash.cost}</p>
                                             <p className="text-[11px] text-slate-500">2^{inspectedHash.cost} rounds</p>
                                         </div>
                                         <div className="bg-white border border-slate-200 p-3 rounded-lg space-y-1 sm:col-span-1">
-                                            <span className="text-[10px] font-bold uppercase text-slate-400">Salt Length</span>
+                                            <span className="text-[10px] font-bold uppercase text-slate-600 dark:text-slate-300">Salt Length</span>
                                             <p className="font-mono text-sm font-bold text-indigo-600">22 characters</p>
                                             <p className="text-[11px] text-slate-500">128-bit Base64</p>
                                         </div>
@@ -415,7 +413,7 @@ export default function BcryptHashGenerator() {
                                     Verification Output
                                 </span>
                                 {verificationResult === null ? (
-                                    <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center text-slate-400 text-sm italic">
+                                    <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 text-center text-slate-600 dark:text-slate-300 text-sm italic">
                                         Enter candidate credentials and click &quot;Verify Match&quot; to execute constant-time comparison.
                                     </div>
                                 ) : verificationResult ? (

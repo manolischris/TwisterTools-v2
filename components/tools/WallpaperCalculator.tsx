@@ -515,8 +515,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Roll Type Preset
                                 </label>
-                                <select
-                                    value={rollPreset}
+                                <select aria-label="Select option" value={rollPreset}
                                     onChange={(e) => setRollPreset(e.target.value as RollPresetKey)}
                                     className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl text-xs font-bold text-slate-800 outline-none focus:ring-2 focus:ring-indigo-500"
                                 >
@@ -535,8 +534,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                     <label className="block text-[11px] font-bold text-indigo-950 uppercase">
                                         Roll Width ({unit === "imperial" ? "inches" : "cm"})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         value={customRollWidth === 0 ? "" : customRollWidth}
                                         onChange={(e) => handleNumberInput(e, setCustomRollWidth)}
@@ -547,8 +545,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                     <label className="block text-[11px] font-bold text-indigo-950 uppercase">
                                         Roll Length ({unit === "imperial" ? "feet" : "meters"})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         value={customRollLength === 0 ? "" : customRollLength}
                                         onChange={(e) => handleNumberInput(e, setCustomRollLength)}
@@ -566,8 +563,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                     Pattern Repeat Interval
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={0}
                                         max={100}
                                         step={0.5}
@@ -623,17 +619,15 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                             <div className="space-y-2 max-h-52 overflow-y-auto pr-1">
                                 {walls.map((wall, index) => (
                                     <div key={wall.id} className="flex items-center gap-2 p-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs">
-                                        <span className="w-5 text-center font-bold text-slate-400">#{index + 1}</span>
-                                        <input
-                                            type="text"
+                                        <span className="w-5 text-center font-bold text-slate-600 dark:text-slate-300">#{index + 1}</span>
+                                        <input aria-label="Input value" type="text"
                                             value={wall.label}
                                             onChange={(e) => handleUpdateWall(wall.id, "label", e.target.value)}
                                             className="flex-1 min-w-0 px-2 py-1 bg-white border border-slate-300 rounded font-semibold text-slate-800"
                                         />
                                         <div className="flex items-center gap-1">
                                             <span className="text-slate-500 font-medium">W:</span>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0.5}
                                                 step={0.1}
                                                 value={wall.width === 0 ? "" : wall.width}
@@ -643,8 +637,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                         </div>
                                         <div className="flex items-center gap-1">
                                             <span className="text-slate-500 font-medium">H:</span>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0.5}
                                                 step={0.1}
                                                 value={wall.height === 0 ? "" : wall.height}
@@ -656,7 +649,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                             <button
                                                 type="button"
                                                 onClick={() => handleRemoveWall(wall.id)}
-                                                className="p-1 text-slate-400 hover:text-rose-600 transition cursor-pointer"
+                                                className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition cursor-pointer"
                                             >
                                                 <Trash2 className="w-4 h-4" />
                                             </button>
@@ -683,23 +676,21 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                             </div>
 
                             {deductions.length === 0 ? (
-                                <p className="text-xs text-slate-400 italic p-2 bg-slate-50 rounded-xl border border-slate-100">
+                                <p className="text-xs text-slate-600 dark:text-slate-300 italic p-2 bg-slate-50 rounded-xl border border-slate-100">
                                     No window or door openings deducted (Full gross wall coverage).
                                 </p>
                             ) : (
                                 <div className="space-y-2 max-h-40 overflow-y-auto pr-1">
                                     {deductions.map((ded) => (
                                         <div key={ded.id} className="flex items-center gap-2 p-2 bg-slate-50 border border-slate-200 rounded-xl text-xs">
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={ded.label}
                                                 onChange={(e) => handleUpdateDeduction(ded.id, "label", e.target.value)}
                                                 className="flex-1 min-w-0 px-2 py-1 bg-white border border-slate-300 rounded font-semibold text-slate-800"
                                             />
                                             <div className="flex items-center gap-1">
                                                 <span className="text-slate-500 font-medium">W:</span>
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min={0}
                                                     step={0.1}
                                                     value={ded.width === 0 ? "" : ded.width}
@@ -709,8 +700,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <span className="text-slate-500 font-medium">H:</span>
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min={0}
                                                     step={0.1}
                                                     value={ded.height === 0 ? "" : ded.height}
@@ -721,7 +711,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                             <button
                                                 type="button"
                                                 onClick={() => handleRemoveDeduction(ded.id)}
-                                                className="p-1 text-slate-400 hover:text-rose-600 transition cursor-pointer"
+                                                className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition cursor-pointer"
                                             >
                                                 <Trash2 className="w-4 h-4" />
                                             </button>
@@ -738,8 +728,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                     Waste / Overage Buffer (%)
                                 </label>
                                 <div className="flex items-center gap-1 mt-1">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={5}
                                         max={40}
                                         value={wasteBufferPct === 0 ? "" : wasteBufferPct}
@@ -755,8 +744,7 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
                                 </label>
                                 <div className="flex items-center gap-1 mt-1">
                                     <span className="text-xs font-bold text-slate-600">$</span>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={0}
                                         value={pricePerRoll === 0 ? "" : pricePerRoll}
                                         onChange={(e) => handleNumberInput(e, setPricePerRoll)}
@@ -1034,22 +1022,22 @@ Calculated via twistertools.com/tools/home-tools/wallpaper-calculator`;
 
                         <div className="space-y-3 text-xs font-mono text-slate-300">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">1. Strip Count Formula:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">1. Strip Count Formula:</span>
                                 <strong className="text-indigo-300 text-sm">Total Strips = ceil( Wall Width / Roll Width )</strong>
                             </div>
 
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">2. Effective Cut Height (with Pattern Repeat):</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">2. Effective Cut Height (with Pattern Repeat):</span>
                                 <strong className="text-indigo-300 text-sm">Cut Height = ceil( (Wall Height + Trim Margin) / Repeat ) × Repeat</strong>
                             </div>
 
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">3. Usable Cuts Per Roll Bolt:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">3. Usable Cuts Per Roll Bolt:</span>
                                 <strong className="text-indigo-300 text-sm">Cuts Per Roll = floor( Total Roll Length / Effective Cut Height )</strong>
                             </div>
 
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">4. Final Required Roll Quantity:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">4. Final Required Roll Quantity:</span>
                                 <strong className="text-indigo-300 text-sm">Rolls Needed = ceil( Total Strips / Cuts Per Roll )</strong>
                             </div>
                         </div>

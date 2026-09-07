@@ -247,7 +247,7 @@ export default function UrlOpener() {
 
                         <div className="p-5 space-y-4">
                             {/* Raw Textarea Input */}
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawInput}
                                 onChange={(e) => setRawInput(e.target.value)}
                                 placeholder="Enter or paste URLs (one per line)...&#10;https://example.com&#10;twistertools.com&#10;https://github.com"
@@ -286,7 +286,7 @@ export default function UrlOpener() {
                                         <Settings2 className="w-4 h-4 text-indigo-600 flex-shrink-0" />
                                         <span>Delay (seconds)</span>
                                     </label>
-                                    <input
+                                    <input aria-label="Delay (seconds)"
                                         id={delayInputId}
                                         type="number"
                                         min="0"
@@ -350,9 +350,8 @@ export default function UrlOpener() {
                                     <label htmlFor={searchInputId} className="sr-only">
                                         Search URL or Domain
                                     </label>
-                                    <Search className="w-4 h-4 absolute left-3 top-3 text-slate-400" />
-                                    <input
-                                        id={searchInputId}
+                                    <Search className="w-4 h-4 absolute left-3 top-3 text-slate-600 dark:text-slate-300" />
+                                    <input aria-label="Input value" id={searchInputId}
                                         type="text"
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
@@ -364,8 +363,7 @@ export default function UrlOpener() {
                                     <label htmlFor={filterSelectId} className="sr-only">
                                         Filter Protocol
                                     </label>
-                                    <select
-                                        id={filterSelectId}
+                                    <select aria-label="Select option" id={filterSelectId}
                                         value={protocolFilter}
                                         onChange={(e) => setProtocolFilter(e.target.value as URLProtocol)}
                                         className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[38px]"
@@ -380,7 +378,7 @@ export default function UrlOpener() {
                             {/* Queue Display Box */}
                             <div className="h-[210px] overflow-y-auto border border-slate-200 rounded-xl bg-slate-50 p-3 space-y-2">
                                 {filteredUrls.length === 0 ? (
-                                    <div className="h-full flex flex-col items-center justify-center text-slate-400 space-y-2">
+                                    <div className="h-full flex flex-col items-center justify-center text-slate-600 dark:text-slate-300 space-y-2">
                                         <AlertCircle className="w-8 h-8 opacity-50" />
                                         <p className="text-xs">No valid URLs ready to launch.</p>
                                     </div>
@@ -397,7 +395,7 @@ export default function UrlOpener() {
                                                 className="font-mono text-indigo-600 font-medium truncate hover:underline flex items-center gap-1.5"
                                             >
                                                 {item.sanitizedUrl}
-                                                <ExternalLink className="w-3 h-3 flex-shrink-0 text-slate-400" />
+                                                <ExternalLink className="w-3 h-3 flex-shrink-0 text-slate-600 dark:text-slate-300" />
                                             </a>
                                             <span className="uppercase text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200 flex-shrink-0">
                                                 {item.protocol}
@@ -425,7 +423,7 @@ export default function UrlOpener() {
                                     disabled={filteredUrls.length === 0 || isLaunching}
                                     className={`w-full flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl text-sm font-bold transition-all duration-200 shadow-md min-h-[48px] ${filteredUrls.length > 0 && !isLaunching
                                             ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200"
-                                            : "bg-slate-100 text-slate-400 cursor-not-allowed shadow-none"
+                                            : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed shadow-none"
                                         }`}
                                 >
                                     <Play className="w-4 h-4 fill-current" />

@@ -427,8 +427,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -452,9 +451,8 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="5000"
                                         value={targetHomePrice === 0 ? "" : targetHomePrice}
@@ -475,7 +473,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                     </span>
                                 </div>
                                 <div className="flex items-center gap-3">
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max="50"
@@ -485,8 +483,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                         className="flex-1 accent-indigo-600 cursor-pointer"
                                     />
                                     <div className="w-20 relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="100"
                                             step="0.5"
@@ -494,7 +491,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setDownPaymentPct, Math.max(0.5, Math.min(100, val))))}
                                             className="w-full pr-6 pl-2.5 py-1.5 text-right rounded-lg border border-slate-200 text-slate-900 font-semibold text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-bold">%</span>
+                                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-bold">%</span>
                                     </div>
                                 </div>
                             </div>
@@ -506,9 +503,8 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                         <PiggyBank className="w-4 h-4 text-indigo-600" /> Current Savings Saved
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="500"
                                             value={currentSavings === 0 ? "" : currentSavings}
@@ -523,9 +519,8 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                         <Calendar className="w-4 h-4 text-indigo-600" /> Monthly Savings Contribution
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="50"
                                             value={monthlyContribution === 0 ? "" : monthlyContribution}
@@ -543,8 +538,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                         <Percent className="w-4 h-4 text-indigo-600" /> HYSA Yield Rate (APY)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="20"
                                             step="0.1"
@@ -552,7 +546,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                             onChange={(e) => handleNumberInput(e, (val) => handleInputChange(setAnnualYield, Math.max(0, val)))}
                                             className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-bold">%</span>
+                                        <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-bold">%</span>
                                     </div>
                                 </div>
 
@@ -561,8 +555,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                         <label className="text-xs font-semibold text-slate-800 flex items-center gap-1">
                                             <Landmark className="w-4 h-4 text-indigo-600" /> Closing Costs
                                         </label>
-                                        <input
-                                            type="checkbox"
+                                        <input aria-label="Closing Costs" type="checkbox"
                                             checked={includeClosingCosts}
                                             onChange={(e) => setIncludeClosingCosts(e.target.checked)}
                                             className="accent-indigo-600 rounded cursor-pointer"
@@ -570,8 +563,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                     </div>
                                     {includeClosingCosts ? (
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0.5"
                                                 max="10"
                                                 step="0.5"
@@ -579,10 +571,10 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setClosingCostPct(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-7 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-xs focus:ring-2 focus:ring-indigo-500 outline-none"
                                             />
-                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-bold">%</span>
+                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-bold">%</span>
                                         </div>
                                     ) : (
-                                        <p className="text-[11px] text-slate-400 py-1.5">Excluded from target.</p>
+                                        <p className="text-[11px] text-slate-600 dark:text-slate-300 py-1.5">Excluded from target.</p>
                                     )}
                                 </div>
                             </div>
@@ -599,8 +591,8 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                 </div>
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Lump Sum"
                                             type="number"
                                             min="0"
                                             step="500"
@@ -611,8 +603,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                         />
                                     </div>
                                     <div className="relative">
-                                        <select
-                                            value={windfallMonth}
+                                        <select aria-label="Select option" value={windfallMonth}
                                             onChange={(e) => setWindfallMonth(Number(e.target.value))}
                                             className="w-full px-2.5 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-800 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                         >
@@ -629,7 +620,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                         {/* Presets Horizontal Pill Bar */}
                         <div className="mt-5 pt-3 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Down Payment Scenarios
                                 </span>
                                 {activePresetId && (
@@ -762,11 +753,11 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                     </h3>
                                     <div className="grid grid-cols-3 gap-2 text-center pt-1">
                                         <div className="p-2 bg-white border border-slate-200 rounded-lg">
-                                            <span className="block text-slate-400 text-[10px] uppercase font-bold">Initial Principal</span>
+                                            <span className="block text-slate-600 dark:text-slate-300 text-[10px] uppercase font-bold">Initial Principal</span>
                                             <span className="font-extrabold text-slate-800 text-xs sm:text-sm">{currencySymbol}{currentSavings.toLocaleString()}</span>
                                         </div>
                                         <div className="p-2 bg-white border border-slate-200 rounded-lg">
-                                            <span className="block text-slate-400 text-[10px] uppercase font-bold">Future Deposits</span>
+                                            <span className="block text-slate-600 dark:text-slate-300 text-[10px] uppercase font-bold">Future Deposits</span>
                                             <span className="font-extrabold text-slate-800 text-xs sm:text-sm">{currencySymbol}{Math.max(0, Math.round(calculations.totalDeposited - currentSavings)).toLocaleString()}</span>
                                         </div>
                                         <div className="p-2 bg-white border border-slate-200 rounded-lg">
@@ -980,7 +971,7 @@ Plan generated at twistertools.com/tools/calculators/down-payment-calculator`;
                                 </tr>
                                 <tr className="bg-emerald-50/40">
                                     <td className="p-3 font-semibold text-slate-900">Total Lifetime Savings vs 5% Down</td>
-                                    <td className="p-3 text-slate-400">Baseline</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300">Baseline</td>
                                     <td className="p-3 text-slate-700 font-semibold">+$36,799</td>
                                     <td className="p-3 font-extrabold text-emerald-700">+$106,737</td>
                                 </tr>

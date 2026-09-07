@@ -415,7 +415,7 @@ export default function MarkdownToHtmlConverter() {
             </div>
 
             {/* Textarea */}
-            <textarea
+            <textarea aria-label="Input text content"
               ref={inputRef}
               value={markdown}
               onChange={(e) => setMarkdown(e.target.value)}
@@ -518,7 +518,7 @@ export default function MarkdownToHtmlConverter() {
                 dangerouslySetInnerHTML={{
                   __html:
                     compiledHtml ||
-                    '<p class="text-slate-400 italic">Start typing Markdown to see the live preview...</p>',
+                    '<p class="text-slate-600 dark:text-slate-300 italic">Start typing Markdown to see the live preview...</p>',
                 }}
               />
             ) : (
@@ -539,7 +539,7 @@ export default function MarkdownToHtmlConverter() {
                       ? "bg-emerald-600 text-white shadow-md"
                       : compiledHtml
                         ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm"
-                        : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                        : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                   }`}
                 >
                   {copied ? (

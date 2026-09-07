@@ -569,7 +569,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                             }`}
                                     >
                                         <span className="font-extrabold text-xs">{mode.label}</span>
-                                        <span className={`text-[10px] truncate max-w-full ${solverMode === mode.id ? "text-indigo-100" : "text-slate-400"}`}>
+                                        <span className={`text-[10px] truncate max-w-full ${solverMode === mode.id ? "text-indigo-100" : "text-slate-600 dark:text-slate-300"}`}>
                                             {mode.desc}
                                         </span>
                                     </button>
@@ -585,7 +585,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                     <div className="grid grid-cols-3 gap-3">
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side a</label>
-                                            <input
+                                            <input aria-label="Side a"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -596,7 +596,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side b</label>
-                                            <input
+                                            <input aria-label="Side b"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -607,7 +607,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side c</label>
-                                            <input
+                                            <input aria-label="Side c"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -626,7 +626,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                     <div className="grid grid-cols-3 gap-3">
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side a</label>
-                                            <input
+                                            <input aria-label="Side a"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -637,7 +637,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side b</label>
-                                            <input
+                                            <input aria-label="Side b"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -648,7 +648,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Angle γ ({angleUnit})</label>
-                                            <input
+                                            <input aria-label="Angle γ ({angleUnit})"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -667,7 +667,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                     <div className="grid grid-cols-3 gap-3">
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Angle α ({angleUnit})</label>
-                                            <input
+                                            <input aria-label="Angle α ({angleUnit})"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -678,7 +678,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side c</label>
-                                            <input
+                                            <input aria-label="Side c"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -689,7 +689,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Angle β ({angleUnit})</label>
-                                            <input
+                                            <input aria-label="Angle β ({angleUnit})"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -708,7 +708,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                     <div className="grid grid-cols-3 gap-3">
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Angle α ({angleUnit})</label>
-                                            <input
+                                            <input aria-label="Angle α ({angleUnit})"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -719,7 +719,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Angle β ({angleUnit})</label>
-                                            <input
+                                            <input aria-label="Angle β ({angleUnit})"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -730,7 +730,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side a</label>
-                                            <input
+                                            <input aria-label="Side a"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -749,7 +749,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                     <div className="grid grid-cols-3 gap-3">
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side a (Opp α)</label>
-                                            <input
+                                            <input aria-label="Side a (Opp α)"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -760,7 +760,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Side b (Adjacent)</label>
-                                            <input
+                                            <input aria-label="Side b (Adjacent)"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -771,7 +771,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         </div>
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Angle α ({angleUnit})</label>
-                                            <input
+                                            <input aria-label="Angle α ({angleUnit})"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -808,7 +808,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                     <div className="grid grid-cols-2 gap-3 pt-1">
                                         <div>
                                             <label className="block text-xs font-semibold text-slate-700 mb-1">Leg a</label>
-                                            <input
+                                            <input aria-label="Leg a"
                                                 type="number"
                                                 min="0"
                                                 step="any"
@@ -820,7 +820,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         {rightModeType === "two-legs" ? (
                                             <div>
                                                 <label className="block text-xs font-semibold text-slate-700 mb-1">Leg b</label>
-                                                <input
+                                                <input aria-label="Leg b"
                                                     type="number"
                                                     min="0"
                                                     step="any"
@@ -832,7 +832,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                         ) : (
                                             <div>
                                                 <label className="block text-xs font-semibold text-slate-700 mb-1">Hypotenuse c</label>
-                                                <input
+                                                <input aria-label="Hypotenuse c"
                                                     type="number"
                                                     min="0"
                                                     step="any"
@@ -924,7 +924,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
 
                         {/* Real-time Dynamic Triangle SVG Renderer */}
                         <div className="w-full bg-slate-900 rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-800 relative overflow-hidden min-h-[220px]">
-                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-400 flex items-center gap-1">
+                            <div className="absolute top-3 left-3 text-[11px] font-mono text-slate-600 dark:text-slate-300 flex items-center gap-1">
                                 <Maximize2 className="w-3.5 h-3.5 text-indigo-400" /> Dynamic 2D Vector Projection
                             </div>
 
@@ -1024,7 +1024,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                                 <div className="p-3 bg-slate-900 text-white rounded-xl space-y-2 text-xs">
                                     <div className="font-bold text-indigo-300 uppercase tracking-wider flex items-center justify-between">
                                         <span>Advanced Radii & Altitudes</span>
-                                        <span className="text-[10px] text-slate-400 font-mono">Precision: {precision}dp</span>
+                                        <span className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">Precision: {precision}dp</span>
                                     </div>
                                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 font-mono text-[11px] text-slate-300">
                                         <div>Inradius (r): <strong className="text-white">{formatNum(activeSolution.inradius)}</strong></div>
@@ -1047,7 +1047,7 @@ Generated via TwisterTools Triangle Geometry Calculator`;
                             onClick={handleCopyResults}
                             className={`w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-semibold text-sm transition shadow-sm cursor-pointer ${computation.valid
                                 ? "bg-slate-900 hover:bg-slate-800 text-white"
-                                : "bg-slate-200 text-slate-400 cursor-not-allowed"
+                                : "bg-slate-200 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                 }`}
                         >
                             {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}

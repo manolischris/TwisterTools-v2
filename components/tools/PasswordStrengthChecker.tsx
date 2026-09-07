@@ -225,7 +225,7 @@ export default function PasswordStrengthChecker() {
 
   // Visual tiers mapping
   const tier = useMemo(() => {
-    if (!password) return { name: "No Password", color: "text-slate-400 dark:text-slate-500", bg: "bg-slate-200 dark:bg-slate-800", hex: "#94a3b8" };
+    if (!password) return { name: "No Password", color: "text-slate-600 dark:text-slate-300 dark:text-slate-500", bg: "bg-slate-200 dark:bg-slate-800", hex: "#94a3b8" };
     if (score <= 20) return { name: "Very Weak", color: "text-red-600 dark:text-red-400", bg: "bg-red-500", hex: "#ef4444" };
     if (score <= 40) return { name: "Weak", color: "text-orange-600 dark:text-orange-400", bg: "bg-orange-500", hex: "#f97316" };
     if (score <= 60) return { name: "Moderate", color: "text-amber-600 dark:text-amber-400", bg: "bg-amber-500", hex: "#f59e0b" };
@@ -324,7 +324,7 @@ export default function PasswordStrengthChecker() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-2 top-2 w-10 h-10 flex items-center justify-center rounded-lg text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
+                  className="absolute right-2 top-2 w-10 h-10 flex items-center justify-center rounded-lg text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors"
                   aria-label={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -381,7 +381,7 @@ export default function PasswordStrengthChecker() {
                   ? "text-emerald-500"
                   : item.isWarning
                   ? "text-amber-500"
-                  : "text-slate-400 dark:text-slate-600";
+                  : "text-slate-600 dark:text-slate-300 dark:text-slate-600";
                 const labelColor = item.met
                   ? "text-slate-700 dark:text-slate-300"
                   : "text-slate-500 dark:text-slate-500";
@@ -444,7 +444,7 @@ export default function PasswordStrengthChecker() {
                     <span className="text-3xl font-extrabold text-slate-800 dark:text-slate-100 leading-none">
                       {password ? score : 0}
                     </span>
-                    <span className="text-[9px] uppercase tracking-widest font-bold text-slate-400 mt-1">
+                    <span className="text-[9px] uppercase tracking-widest font-bold text-slate-600 dark:text-slate-300 mt-1">
                       Score
                     </span>
                   </div>
@@ -575,7 +575,7 @@ export default function PasswordStrengthChecker() {
               <BookOpen className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             </div>
             <span className="flex-1">What is Password Strength and Entropy?</span>
-            <span className="text-xs font-normal text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
+            <span className="text-xs font-normal text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
               Shannon Entropy
             </span>
           </h2>
@@ -596,7 +596,7 @@ export default function PasswordStrengthChecker() {
               <Clock className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             </div>
             <span className="flex-1">How to Interpret Your Cracking Time Results</span>
-            <span className="text-xs font-normal text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
+            <span className="text-xs font-normal text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
               Brute Force Math
             </span>
           </h2>
@@ -651,7 +651,7 @@ export default function PasswordStrengthChecker() {
               <ShieldCheck className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             </div>
             <span className="flex-1">Five Crucial Rules for Bulletproof Password Security</span>
-            <span className="text-xs font-normal text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
+            <span className="text-xs font-normal text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
               Best Practices
             </span>
           </h2>
@@ -699,7 +699,7 @@ export default function PasswordStrengthChecker() {
               <HelpCircle className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
             </div>
             <span className="flex-1">Frequently Asked Questions</span>
-            <span className="text-xs font-normal text-slate-400 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
+            <span className="text-xs font-normal text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 rounded-full px-2 py-0.5">
               Offline FAQ
             </span>
           </h2>

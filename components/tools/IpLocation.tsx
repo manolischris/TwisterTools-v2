@@ -223,7 +223,7 @@ ASN: ${data.asn}`;
                       placeholder="e.g., 8.8.8.8 or leave blank for your IP"
                       className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:bg-white transition-all text-sm"
                     />
-                    <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
+                    <Search className="w-4 h-4 text-slate-600 dark:text-slate-300 absolute left-3.5 top-3.5" />
                   </div>
                 </div>
 
@@ -402,7 +402,7 @@ ASN: ${data.asn}`;
                 </>
               ) : (
                 <div className="text-center py-12 space-y-3 my-auto">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto text-slate-400">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto text-slate-600 dark:text-slate-300">
                     <Globe className="w-6 h-6" />
                   </div>
                   <h3 className="text-sm font-semibold text-slate-700">No Location Query Executed</h3>

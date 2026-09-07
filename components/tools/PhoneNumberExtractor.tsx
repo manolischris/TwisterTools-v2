@@ -320,7 +320,7 @@ export default function PhoneNumberExtractor() {
 
                                 <div className="flex items-center gap-2">
                                     <span className="text-xs text-slate-500">Digit Filter:</span>
-                                    <input
+                                    <input aria-label="Digit Filter"
                                         type="number"
                                         value={minDigits}
                                         onChange={(e) => {
@@ -331,8 +331,8 @@ export default function PhoneNumberExtractor() {
                                         min="1"
                                         max="15"
                                     />
-                                    <span className="text-xs text-slate-400">to</span>
-                                    <input
+                                    <span className="text-xs text-slate-600 dark:text-slate-300">to</span>
+                                    <input aria-label="to"
                                         type="number"
                                         value={maxDigits}
                                         onChange={(e) => {
@@ -347,7 +347,7 @@ export default function PhoneNumberExtractor() {
                             </div>
 
                             {/* Textarea */}
-                            <textarea
+                            <textarea aria-label="Phone Input Textarea"
                                 id="phone-input-textarea"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
@@ -396,7 +396,7 @@ export default function PhoneNumberExtractor() {
                         <div className="p-5 space-y-4">
                             {/* Processed Output Display */}
                             <div className="relative">
-                                <textarea
+                                <textarea aria-label="Extracted and standardized phone numbers will appear here"
                                     id="phone-output-textarea"
                                     value={outputFormattedText}
                                     readOnly
@@ -443,7 +443,7 @@ export default function PhoneNumberExtractor() {
                                         ? copied
                                             ? "bg-green-500 text-white shadow-md shadow-green-200"
                                             : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200"
-                                        : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                         }`}
                                 >
                                     {copied ? (
@@ -463,7 +463,7 @@ export default function PhoneNumberExtractor() {
                                     id="phone-download-csv"
                                     onClick={downloadCSV}
                                     disabled={extractedNumbers.length === 0}
-                                    className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold transition-all duration-200 bg-slate-900 hover:bg-slate-800 text-white shadow-md disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed min-h-[44px]"
+                                    className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm font-semibold transition-all duration-200 bg-slate-900 hover:bg-slate-800 text-white shadow-md disabled:bg-slate-100 disabled:text-slate-600 dark:text-slate-300 disabled:cursor-not-allowed min-h-[44px]"
                                 >
                                     <FileSpreadsheet className="w-4 h-4" />
                                     Export CSV

@@ -508,7 +508,7 @@ export default function ImageResizer() {
                   : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
               }`}
             >
-              <input
+              <input aria-label="Upload file"
                 ref={fileInputRef}
                 type="file"
                 multiple
@@ -598,7 +598,7 @@ export default function ImageResizer() {
                 <div className="grid grid-cols-2 gap-3">
                   <div className="space-y-1">
                     <span className="text-[11px] font-medium text-slate-500">Width (px)</span>
-                    <input
+                    <input aria-label="Width (px)"
                       type="number"
                       placeholder="e.g. 1920"
                       value={targetWidth}
@@ -608,7 +608,7 @@ export default function ImageResizer() {
                   </div>
                   <div className="space-y-1">
                     <span className="text-[11px] font-medium text-slate-500">Height (px)</span>
-                    <input
+                    <input aria-label="Height (px)"
                       type="number"
                       placeholder="e.g. 1080"
                       value={targetHeight}
@@ -627,7 +627,7 @@ export default function ImageResizer() {
                   <label className="font-medium text-slate-700">Scale Factor</label>
                   <span className="font-mono font-bold text-indigo-600">{scalePercentage}%</span>
                 </div>
-                <input
+                <input aria-label="Adjust slider value"
                   type="range"
                   min="5"
                   max="200"
@@ -636,7 +636,7 @@ export default function ImageResizer() {
                   onChange={(e) => setScalePercentage(parseInt(e.target.value, 10))}
                   className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400 font-mono">
+                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                   <span>25% (Thumbnail)</span>
                   <span>50% (Half)</span>
                   <span>100% (Original)</span>
@@ -649,8 +649,7 @@ export default function ImageResizer() {
             {resizeMode === "preset" && (
               <div className="space-y-1.5">
                 <label className="text-xs font-medium text-slate-700">Standard Display Aspect Presets</label>
-                <select
-                  value={selectedPreset}
+                <select aria-label="Select option" value={selectedPreset}
                   onChange={(e) => setSelectedPreset(parseInt(e.target.value, 10))}
                   className="w-full text-xs border border-slate-200 rounded-lg px-3 py-2.5 text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
@@ -691,7 +690,7 @@ export default function ImageResizer() {
                     <label className="font-medium text-slate-700">Compression Quality</label>
                     <span className="font-mono font-bold text-indigo-600">{quality}%</span>
                   </div>
-                  <input
+                  <input aria-label="Adjust slider value"
                     type="range"
                     min="10"
                     max="100"
@@ -708,7 +707,7 @@ export default function ImageResizer() {
                 <div className="flex items-center justify-between text-xs pt-1">
                   <label className="font-medium text-slate-700">Alpha Fill Color</label>
                   <div className="flex items-center gap-2">
-                    <input
+                    <input aria-label="Select color"
                       type="color"
                       value={backgroundColor}
                       onChange={(e) => setBackgroundColor(e.target.value)}
@@ -751,7 +750,7 @@ export default function ImageResizer() {
               <div className="h-[400px] border border-dashed border-slate-200 rounded-xl bg-slate-50/50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                 <ImageIcon className="w-10 h-10 text-slate-300 mb-2" />
                 <p className="text-sm font-medium text-slate-600">No images in processing queue</p>
-                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                   Upload photos on the left panel to execute real-time local canvas scaling.
                 </p>
               </div>
@@ -780,7 +779,7 @@ export default function ImageResizer() {
                             {item.targetWidth}×{item.targetHeight} px
                           </span>
                         </p>
-                        <p className="text-[10px] text-slate-400 font-mono">
+                        <p className="text-[10px] text-slate-600 dark:text-slate-300 font-mono">
                           {formatBytes(item.originalSize)} →{" "}
                           {item.resizedSize > 0 ? formatBytes(item.resizedSize) : "Scaling..."}
                         </p>
@@ -804,7 +803,7 @@ export default function ImageResizer() {
                       )}
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="p-2 hover:bg-rose-100 text-slate-400 hover:text-rose-600 rounded-lg transition-all"
+                        className="p-2 hover:bg-rose-100 text-slate-600 dark:text-slate-300 hover:text-rose-600 rounded-lg transition-all"
                         title="Remove Image"
                       >
                         <Trash2 className="w-4 h-4" />

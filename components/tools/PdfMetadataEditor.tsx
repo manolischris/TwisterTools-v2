@@ -304,7 +304,7 @@ export default function PdfMetadataEditor() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -317,7 +317,7 @@ export default function PdfMetadataEditor() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop your PDF file here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Supports documents up to 20 MB</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Supports documents up to 20 MB</p>
                             </div>
 
                             {errorMessage && (
@@ -377,7 +377,7 @@ export default function PdfMetadataEditor() {
                                 <div className="h-[280px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                     <Layers className="w-10 h-10 text-slate-300 mb-2" />
                                     <p className="text-sm font-semibold text-slate-700">No PDF Loaded</p>
-                                    <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                    <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                         Upload a document above to inspect, modify, and strip internal metadata properties.
                                     </p>
                                 </div>
@@ -425,7 +425,7 @@ export default function PdfMetadataEditor() {
                                         value={metadata.title}
                                         onChange={(e) => handleInputChange("title", e.target.value)}
                                         placeholder={pdfFile ? "Enter document title..." : "Upload PDF to enable"}
-                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 min-h-[40px]"
+                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-600 dark:text-slate-300 min-h-[40px]"
                                     />
                                 </div>
 
@@ -442,7 +442,7 @@ export default function PdfMetadataEditor() {
                                         value={metadata.author}
                                         onChange={(e) => handleInputChange("author", e.target.value)}
                                         placeholder={pdfFile ? "Enter author name..." : "Upload PDF to enable"}
-                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 min-h-[40px]"
+                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-600 dark:text-slate-300 min-h-[40px]"
                                     />
                                 </div>
 
@@ -459,7 +459,7 @@ export default function PdfMetadataEditor() {
                                         value={metadata.subject}
                                         onChange={(e) => handleInputChange("subject", e.target.value)}
                                         placeholder={pdfFile ? "Enter document subject..." : "Upload PDF to enable"}
-                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 min-h-[40px]"
+                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-600 dark:text-slate-300 min-h-[40px]"
                                     />
                                 </div>
 
@@ -476,7 +476,7 @@ export default function PdfMetadataEditor() {
                                         value={metadata.keywords}
                                         onChange={(e) => handleInputChange("keywords", e.target.value)}
                                         placeholder={pdfFile ? "e.g. report, financial, 2026" : "Upload PDF to enable"}
-                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 min-h-[40px]"
+                                        className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-600 dark:text-slate-300 min-h-[40px]"
                                     />
                                 </div>
 
@@ -493,7 +493,7 @@ export default function PdfMetadataEditor() {
                                             value={metadata.creator}
                                             onChange={(e) => handleInputChange("creator", e.target.value)}
                                             placeholder="e.g. Word, Canva"
-                                            className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 min-h-[38px]"
+                                            className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-600 dark:text-slate-300 min-h-[38px]"
                                         />
                                     </div>
                                     <div>
@@ -507,7 +507,7 @@ export default function PdfMetadataEditor() {
                                             value={metadata.producer}
                                             onChange={(e) => handleInputChange("producer", e.target.value)}
                                             placeholder="e.g. Quartz, Acrobat"
-                                            className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-400 min-h-[38px]"
+                                            className="w-full text-xs rounded-xl border border-slate-200 bg-white px-3 py-2 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:border-transparent disabled:bg-slate-50 disabled:text-slate-600 dark:text-slate-300 min-h-[38px]"
                                         />
                                     </div>
                                 </div>
@@ -530,7 +530,7 @@ export default function PdfMetadataEditor() {
                                     disabled={!pdfFile || isProcessing}
                                     className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md min-h-[44px] ${pdfFile && !isProcessing
                                         ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                        : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                         }`}
                                 >
                                     {isProcessing ? (

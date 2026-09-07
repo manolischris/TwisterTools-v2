@@ -359,7 +359,7 @@ export default function CaseConverter() {
                       ? copied
                         ? "bg-green-500 text-white shadow-md shadow-green-150"
                         : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-150 hover:shadow-lg hover:-translate-y-0.5"
-                      : "bg-slate-100 dark:bg-slate-950 text-slate-400 dark:text-slate-600 cursor-not-allowed border border-slate-200 dark:border-slate-800"
+                      : "bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-300 dark:text-slate-600 cursor-not-allowed border border-slate-200 dark:border-slate-800"
                     }`}
                 >
                   {copied ? (

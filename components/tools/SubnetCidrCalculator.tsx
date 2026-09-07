@@ -439,15 +439,14 @@ export default function SubnetCidrCalculator() {
                             IPv4 Address or CIDR Notation
                         </label>
                         <div className="relative">
-                            <input
-                                id={ipFieldId}
+                            <input aria-label="Input value" id={ipFieldId}
                                 type="text"
                                 value={ipInput}
                                 onChange={(e) => handleIpChange(e.target.value)}
                                 placeholder="e.g. 192.168.1.1 or 10.0.0.0/24"
                                 className="w-full px-3 py-2 text-sm font-mono rounded-lg border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-indigo-500 focus:bg-white text-slate-900 outline-none transition"
                             />
-                            <span className="absolute right-3 top-2.5 text-xs font-mono text-slate-400 pointer-events-none">
+                            <span className="absolute right-3 top-2.5 text-xs font-mono text-slate-600 dark:text-slate-300 pointer-events-none">
                                 IPv4
                             </span>
                         </div>
@@ -458,8 +457,7 @@ export default function SubnetCidrCalculator() {
                         <label htmlFor={cidrSelectId} className="text-xs font-bold text-slate-700 block">
                             CIDR Prefix Length
                         </label>
-                        <select
-                            id={cidrSelectId}
+                        <select aria-label="Select option" id={cidrSelectId}
                             value={cidrInput}
                             onChange={(e) => handleCidrSelect(parseInt(e.target.value, 10))}
                             className="w-full px-2.5 py-2 text-xs rounded-lg border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-indigo-500 text-slate-800 font-medium outline-none"
@@ -477,8 +475,7 @@ export default function SubnetCidrCalculator() {
                         <label htmlFor={maskSelectId} className="text-xs font-bold text-slate-700 block">
                             Subnet Mask (Dotted Quad)
                         </label>
-                        <select
-                            id={maskSelectId}
+                        <select aria-label="Select option" id={maskSelectId}
                             value={maskInput}
                             onChange={(e) => handleMaskChange(e.target.value)}
                             className="w-full px-2.5 py-2 text-xs font-mono rounded-lg border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-indigo-500 text-slate-800 outline-none"
@@ -554,7 +551,7 @@ export default function SubnetCidrCalculator() {
                                         <button
                                             type="button"
                                             onClick={() => copyToClipboard(subnetData.networkAddress, "net")}
-                                            className="p-1 text-slate-400 hover:text-indigo-600 transition"
+                                            className="p-1 text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition"
                                             title="Copy Network IP"
                                         >
                                             {copiedKey === "net" ? (
@@ -577,7 +574,7 @@ export default function SubnetCidrCalculator() {
                                         <button
                                             type="button"
                                             onClick={() => copyToClipboard(subnetData.broadcastAddress, "bcast")}
-                                            className="p-1 text-slate-400 hover:text-indigo-600 transition"
+                                            className="p-1 text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition"
                                             title="Copy Broadcast IP"
                                         >
                                             {copiedKey === "bcast" ? (
@@ -687,7 +684,7 @@ export default function SubnetCidrCalculator() {
 
                     <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
                         <span className="flex items-center gap-1">
-                            <Boxes className="w-4 h-4 text-slate-400" />
+                            <Boxes className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                             Deterministic Bitwise Arithmetic
                         </span>
                         <span className="font-mono text-slate-600">RFC 791 / RFC 4632</span>
@@ -703,7 +700,7 @@ export default function SubnetCidrCalculator() {
                                 Binary Octet Representation
                             </h2>
                         </div>
-                        <span className="text-xs text-slate-400 font-mono">32-Bit Map</span>
+                        <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">32-Bit Map</span>
                     </div>
 
                     {subnetData && (
@@ -711,7 +708,7 @@ export default function SubnetCidrCalculator() {
                             {/* Binary Breakdown View */}
                             <div className="p-3 bg-slate-950 rounded-xl space-y-2.5 font-mono text-xs text-slate-200 overflow-x-auto">
                                 <div className="space-y-1">
-                                    <span className="text-[11px] text-slate-400 block font-sans">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 block font-sans">
                                         Target IP Address
                                     </span>
                                     <div className="text-emerald-400 font-bold tracking-wider">
@@ -719,7 +716,7 @@ export default function SubnetCidrCalculator() {
                                     </div>
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="text-[11px] text-slate-400 block font-sans">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 block font-sans">
                                         Subnet Bitmask (/{subnetData.cidr})
                                     </span>
                                     <div className="text-indigo-400 font-bold tracking-wider">
@@ -727,7 +724,7 @@ export default function SubnetCidrCalculator() {
                                     </div>
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="text-[11px] text-slate-400 block font-sans">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 block font-sans">
                                         Bitwise AND (Network Address)
                                     </span>
                                     <div className="text-amber-400 font-bold tracking-wider">
@@ -735,7 +732,7 @@ export default function SubnetCidrCalculator() {
                                     </div>
                                 </div>
                                 <div className="space-y-1">
-                                    <span className="text-[11px] text-slate-400 block font-sans">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 block font-sans">
                                         Bitwise OR (Broadcast Address)
                                     </span>
                                     <div className="text-rose-400 font-bold tracking-wider">
@@ -754,8 +751,7 @@ export default function SubnetCidrCalculator() {
                                         <ArrowRightLeft className="w-4 h-4 text-indigo-600" />
                                         Partition into Subnets of Prefix:
                                     </label>
-                                    <select
-                                        id={subdivideId}
+                                    <select aria-label="Select option" id={subdivideId}
                                         value={subdividePrefix}
                                         onChange={(e) => setSubdividePrefix(parseInt(e.target.value, 10))}
                                         className="px-2.5 py-1 text-xs rounded-lg border border-slate-200 bg-slate-50 font-bold text-indigo-700 outline-none"
@@ -785,7 +781,7 @@ export default function SubnetCidrCalculator() {
                                             <tbody className="divide-y divide-slate-200 font-mono text-[11px] text-slate-700">
                                                 {subnetDivisionList.map((row) => (
                                                     <tr key={row.subnetIndex} className="hover:bg-slate-50">
-                                                        <td className="p-2 text-slate-400">{row.subnetIndex}</td>
+                                                        <td className="p-2 text-slate-600 dark:text-slate-300">{row.subnetIndex}</td>
                                                         <td className="p-2 font-bold text-indigo-600">
                                                             {row.networkAddress}/{row.cidr}
                                                         </td>
@@ -812,7 +808,7 @@ export default function SubnetCidrCalculator() {
                             <CheckCircle2 className="w-4 h-4" />
                             Client-Side Sandbox Computation
                         </span>
-                        <span className="text-slate-400">Zero Network Telemetry</span>
+                        <span className="text-slate-600 dark:text-slate-300">Zero Network Telemetry</span>
                     </div>
                 </div>
             </div>

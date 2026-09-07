@@ -347,8 +347,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                         Original Recipe Temperature
                                     </label>
                                     <div className="flex items-center gap-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={tempUnit === "F" ? 150 : 70}
                                             max={tempUnit === "F" ? 550 : 290}
                                             value={ovenTemp === 0 ? "" : ovenTemp}
@@ -358,7 +357,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                         <span className="text-sm font-bold text-slate-600">°{tempUnit}</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={tempUnit === "F" ? 250 : 120}
                                     max={tempUnit === "F" ? 475 : 245}
@@ -367,7 +366,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                     onChange={(e) => setOvenTemp(Number(e.target.value))}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                     <span>{tempUnit === "F" ? "250°F (Low Bake)" : "120°C (Low Bake)"}</span>
                                     <span>{tempUnit === "F" ? "375°F (Standard)" : "190°C (Standard)"}</span>
                                     <span>{tempUnit === "F" ? "475°F (High Roast)" : "245°C (High Roast)"}</span>
@@ -381,8 +380,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                         Original Recipe Cooking Time
                                     </label>
                                     <div className="flex items-center gap-1">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={1}
                                             max={180}
                                             value={ovenMinutes === 0 ? "" : ovenMinutes}
@@ -392,7 +390,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                         <span className="text-sm font-bold text-slate-600">min</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={5}
                                     max={90}
@@ -401,7 +399,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                     onChange={(e) => setOvenMinutes(Number(e.target.value))}
                                     className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                 />
-                                <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                     <span>5 mins</span>
                                     <span>30 mins</span>
                                     <span>60 mins</span>
@@ -450,7 +448,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                     <div className="flex items-center justify-between text-xs">
                                         <span className="font-medium text-slate-700">Temp Reduction:</span>
                                         <div className="flex items-center gap-1">
-                                            <input
+                                            <input aria-label="Temp Reduction"
                                                 type="number"
                                                 min={0}
                                                 max={50}
@@ -464,7 +462,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                                     <div className="flex items-center justify-between text-xs">
                                         <span className="font-medium text-slate-700">Time Reduction:</span>
                                         <div className="flex items-center gap-1">
-                                            <input
+                                            <input aria-label="Time Reduction"
                                                 type="number"
                                                 min={0}
                                                 max={50}
@@ -627,8 +625,8 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                     {/* Filter and Search Bar */}
                     <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center justify-between">
                         <div className="relative flex-1">
-                            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                            <input
+                            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300" />
+                            <input aria-label="Search food"
                                 type="text"
                                 placeholder="Search food (e.g., wings, fries, salmon)..."
                                 value={searchQuery}
@@ -668,7 +666,7 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                             <tbody className="divide-y divide-slate-200 font-medium">
                                 {filteredPresets.length === 0 ? (
                                     <tr>
-                                        <td colSpan={5} className="p-4 text-center text-xs text-slate-400">
+                                        <td colSpan={5} className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">
                                             No food items matched your query.
                                         </td>
                                     </tr>
@@ -737,11 +735,11 @@ Converted via twistertools.com/tools/home-tools/air-fryer-converter`;
                         </p>
                         <div className="grid sm:grid-cols-2 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Temperature Rule:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Temperature Rule:</span>
                                 <strong className="text-indigo-300 text-sm">T_airfryer = T_oven - 25°F (15°C)</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Cook Time Rule:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Cook Time Rule:</span>
                                 <strong className="text-indigo-300 text-sm">Time_airfryer = Time_oven × 0.80</strong>
                             </div>
                         </div>

@@ -468,7 +468,7 @@ export default function RatioCalculator() {
                                         <div className="space-y-3 text-center">
                                             <span className="text-xs font-bold text-slate-500 uppercase">Ratio 1 (A / B)</span>
                                             <div>
-                                                <input
+                                                <input aria-label="A"
                                                     type="text"
                                                     placeholder="A (e.g. 16)"
                                                     value={valA}
@@ -478,7 +478,7 @@ export default function RatioCalculator() {
                                             </div>
                                             <div className="border-b-2 border-slate-300 my-1 w-3/4 mx-auto"></div>
                                             <div>
-                                                <input
+                                                <input aria-label="B"
                                                     type="text"
                                                     placeholder="B (e.g. 9)"
                                                     value={valB}
@@ -491,14 +491,14 @@ export default function RatioCalculator() {
                                         {/* Equals Sign */}
                                         <div className="flex flex-col items-center justify-center space-y-2">
                                             <span className="text-2xl font-black text-indigo-600">=</span>
-                                            <ArrowRightLeft className="w-5 h-5 text-slate-400" />
+                                            <ArrowRightLeft className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                                         </div>
 
                                         {/* Fraction 2 */}
                                         <div className="col-span-2 sm:col-span-1 space-y-3 text-center">
                                             <span className="text-xs font-bold text-slate-500 uppercase">Ratio 2 (C / D)</span>
                                             <div>
-                                                <input
+                                                <input aria-label="C"
                                                     type="text"
                                                     placeholder="C (e.g. 1920)"
                                                     value={valC}
@@ -508,7 +508,7 @@ export default function RatioCalculator() {
                                             </div>
                                             <div className="border-b-2 border-slate-300 my-1 w-3/4 mx-auto"></div>
                                             <div>
-                                                <input
+                                                <input aria-label="D"
                                                     type="text"
                                                     placeholder="D (Leave blank)"
                                                     value={valD}
@@ -528,8 +528,7 @@ export default function RatioCalculator() {
                                             <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                                 Term A
                                             </label>
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={valA}
                                                 onChange={(e) => { handleNumberInput(e, setValA); setActivePresetId(null); }}
                                                 className="w-full px-3 py-2 rounded-xl border border-slate-300 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
@@ -539,8 +538,7 @@ export default function RatioCalculator() {
                                             <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
                                                 Term B
                                             </label>
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={valB}
                                                 onChange={(e) => { handleNumberInput(e, setValB); setActivePresetId(null); }}
                                                 className="w-full px-3 py-2 rounded-xl border border-slate-300 text-slate-900 font-bold focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
@@ -553,8 +551,7 @@ export default function RatioCalculator() {
                                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                                 Scale Multiplier / Factor
                                             </label>
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 placeholder="e.g. 2.5 or 5"
                                                 value={valC}
                                                 onChange={(e) => { handleNumberInput(e, setValC); setActivePresetId(null); }}
@@ -568,8 +565,7 @@ export default function RatioCalculator() {
                                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                                 Total Amount to Partition ($ / Units)
                                             </label>
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 placeholder="e.g. 1000"
                                                 value={totalShare}
                                                 onChange={(e) => { handleNumberInput(e, setTotalShare); setActivePresetId(null); }}
@@ -584,7 +580,7 @@ export default function RatioCalculator() {
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Preset Use Cases
                                 </span>
                                 {activePresetId && (

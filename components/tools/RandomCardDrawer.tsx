@@ -445,15 +445,14 @@ export default function RandomCardDrawer() {
                                     Cards to Draw
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="52"
                                         value={drawSize === 0 ? "" : drawSize}
                                         onChange={(e) => handleNumberInput(e, setDrawSize)}
                                         className="w-full pl-3 pr-12 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                     />
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                         Cards
                                     </span>
                                 </div>
@@ -463,8 +462,7 @@ export default function RandomCardDrawer() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Number of Decks
                                 </label>
-                                <select
-                                    value={deckCount}
+                                <select aria-label="Select option" value={deckCount}
                                     onChange={(e) => {
                                         const count = parseInt(e.target.value, 10);
                                         setDeckCount(count);
@@ -486,7 +484,7 @@ export default function RandomCardDrawer() {
                         {/* Quick Presets & Auto-Reshuffle Toggle */}
                         <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
                             <div className="flex items-center gap-1.5">
-                                <span className="text-xs font-bold text-slate-400 uppercase mr-1">Presets:</span>
+                                <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase mr-1">Presets:</span>
                                 {[1, 5, 7, 13].map((preset) => (
                                     <button
                                         key={preset}
@@ -502,7 +500,7 @@ export default function RandomCardDrawer() {
                             </div>
 
                             <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer">
-                                <input
+                                <input aria-label="Auto Reshuffle"
                                     type="checkbox"
                                     checked={autoReshuffle}
                                     onChange={(e) => setAutoReshuffle(e.target.checked)}
@@ -665,7 +663,7 @@ export default function RandomCardDrawer() {
                             </h3>
                             <div className="max-h-[240px] overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100">
                                 {history.length === 0 ? (
-                                    <p className="p-4 text-center text-xs text-slate-400">No hands dealt yet in this session.</p>
+                                    <p className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">No hands dealt yet in this session.</p>
                                 ) : (
                                     history.map((entry, idx) => (
                                         <div key={entry.id} className="p-3 hover:bg-slate-50 text-xs flex items-center justify-between gap-2">
@@ -679,7 +677,7 @@ export default function RandomCardDrawer() {
                                                     </div>
                                                 )}
                                             </div>
-                                            <div className="text-right text-[10px] text-slate-400 whitespace-nowrap">
+                                            <div className="text-right text-[10px] text-slate-600 dark:text-slate-300 whitespace-nowrap">
                                                 {entry.timestamp}
                                             </div>
                                         </div>

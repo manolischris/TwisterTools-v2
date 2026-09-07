@@ -403,8 +403,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                             </div>
 
                             <div className="relative">
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     max="2400"
                                     value={targetDpi === 0 ? "" : targetDpi}
@@ -412,7 +411,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                                     className="w-full pl-3 pr-16 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-white"
                                     placeholder="Enter DPI"
                                 />
-                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                     Dots / In
                                 </span>
                             </div>
@@ -443,8 +442,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Pixel Width (px)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             value={pixelWidth === 0 ? "" : pixelWidth}
                                             onChange={(e) => handleNumberInput(e, setPixelWidth)}
@@ -456,8 +454,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Pixel Height (px)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             value={pixelHeight === 0 ? "" : pixelHeight}
                                             onChange={(e) => handleNumberInput(e, setPixelHeight)}
@@ -526,8 +523,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Width ({reverseUnit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.01"
                                             min="0.1"
                                             value={inputPrintWidth === 0 ? "" : inputPrintWidth}
@@ -540,8 +536,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                                         <label className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                             Height ({reverseUnit})
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.01"
                                             min="0.1"
                                             value={inputPrintHeight === 0 ? "" : inputPrintHeight}
@@ -583,7 +578,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                                 </span>
                                 <span className="text-indigo-600 font-mono">{viewingDistanceInches} inches ({(viewingDistanceInches * 2.54).toFixed(0)} cm)</span>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="6"
                                 max="120"
@@ -592,7 +587,7 @@ Generated via twistertools.com/tools/image-tools/image-dpi-print-calculator`;
                                 onChange={(e) => setViewingDistanceInches(parseInt(e.target.value, 10))}
                                 className="w-full accent-indigo-600 cursor-pointer"
                             />
-                            <div className="flex justify-between text-[10px] text-slate-400 font-medium">
+                            <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-medium">
                                 <span>Reading (10-15")</span>
                                 <span>Wall Frame (20-36")</span>
                                 <span>Exhibition Poster (40-60")</span>

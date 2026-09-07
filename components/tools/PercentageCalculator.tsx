@@ -55,8 +55,7 @@ function NumericInput({
             {prefix}
           </span>
         )}
-        <input
-          id={id}
+        <input aria-label="Input value" id={id}
           type="number"
           step="any"
           value={value}
@@ -280,7 +279,7 @@ export default function PercentageCalculator() {
                     ? copiedStates[1]
                       ? "bg-green-50 text-green-700 border-green-200 shadow-sm"
                       : "bg-white text-slate-700 hover:text-indigo-600 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/30"
-                    : "bg-slate-100 text-slate-400 border-slate-100 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border-slate-100 cursor-not-allowed"
                 )}
               >
                 {copiedStates[1] ? (
@@ -357,7 +356,7 @@ export default function PercentageCalculator() {
                     ? copiedStates[2]
                       ? "bg-green-50 text-green-700 border-green-200 shadow-sm"
                       : "bg-white text-slate-700 hover:text-indigo-600 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/30"
-                    : "bg-slate-100 text-slate-400 border-slate-100 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border-slate-100 cursor-not-allowed"
                 )}
               >
                 {copiedStates[2] ? (
@@ -466,7 +465,7 @@ export default function PercentageCalculator() {
                     ? copiedStates[3]
                       ? "bg-green-50 text-green-700 border-green-200 shadow-sm"
                       : "bg-white text-slate-700 hover:text-indigo-600 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/30"
-                    : "bg-slate-100 text-slate-400 border-slate-100 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border-slate-100 cursor-not-allowed"
                 )}
               >
                 {copiedStates[3] ? (
@@ -571,7 +570,7 @@ export default function PercentageCalculator() {
                     ? copiedStates[4]
                       ? "bg-green-50 text-green-700 border-green-200 shadow-sm"
                       : "bg-white text-slate-700 hover:text-indigo-600 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/30"
-                    : "bg-slate-100 text-slate-400 border-slate-100 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border-slate-100 cursor-not-allowed"
                 )}
               >
                 {copiedStates[4] ? (
@@ -648,7 +647,7 @@ export default function PercentageCalculator() {
                     ? copiedStates[5]
                       ? "bg-green-50 text-green-700 border-green-200 shadow-sm"
                       : "bg-white text-slate-700 hover:text-indigo-600 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/30"
-                    : "bg-slate-100 text-slate-400 border-slate-100 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border-slate-100 cursor-not-allowed"
                 )}
               >
                 {copiedStates[5] ? (

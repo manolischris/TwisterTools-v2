@@ -373,8 +373,7 @@ export default function RecurringBillCalculator() {
                                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
                                     Bill / Subscription Title
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={billName}
                                     onChange={(e) => setBillName(e.target.value)}
                                     placeholder="e.g., Office Lease, AWS Cloud, Insurance"
@@ -388,11 +387,10 @@ export default function RecurringBillCalculator() {
                                         Amount Per Cycle ($)
                                     </label>
                                     <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                             <DollarSign className="w-4 h-4" />
                                         </div>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             step="0.01"
                                             value={billAmount === 0 ? "" : billAmount}
@@ -408,8 +406,7 @@ export default function RecurringBillCalculator() {
                                         First Due / Anchor Date
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="date"
+                                        <input aria-label="Input value" type="date"
                                             value={firstDueDate}
                                             onChange={(e) => setFirstDueDate(e.target.value)}
                                             className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold text-slate-900 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none transition"
@@ -470,8 +467,7 @@ export default function RecurringBillCalculator() {
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">
                                         Weekend Due Date Rule
                                     </label>
-                                    <select
-                                        value={weekendRule}
+                                    <select aria-label="Select option" value={weekendRule}
                                         onChange={(e) => setWeekendRule(e.target.value as WeekendHandling)}
                                         className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-xs font-medium text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                     >
@@ -486,8 +482,7 @@ export default function RecurringBillCalculator() {
                                         Grace Period (Days Offset)
                                     </label>
                                     <div className="flex items-center gap-2">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             max={60}
                                             value={gracePeriodDays === 0 ? "" : gracePeriodDays}
@@ -505,7 +500,7 @@ export default function RecurringBillCalculator() {
                                     <span>Projection Scope ({projectionCycles} cycles)</span>
                                     <span className="font-mono text-indigo-600 font-bold">{projectionCycles} billing dates</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min={3}
                                     max={36}
@@ -540,7 +535,7 @@ export default function RecurringBillCalculator() {
                                 <span className="text-lg sm:text-2xl font-black text-indigo-600 font-mono">
                                     ${annualizedCost.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">{FREQUENCY_LABELS[frequency].periodsPerYear} cycles / yr</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">{FREQUENCY_LABELS[frequency].periodsPerYear} cycles / yr</span>
                             </div>
 
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
@@ -548,7 +543,7 @@ export default function RecurringBillCalculator() {
                                 <span className="text-lg sm:text-2xl font-black text-slate-900 font-mono">
                                     ${totalProjectedSpend.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">{projectionCycles} future payments</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">{projectionCycles} future payments</span>
                             </div>
 
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
@@ -556,7 +551,7 @@ export default function RecurringBillCalculator() {
                                 <span className="text-xs sm:text-sm font-black text-emerald-600 block mt-1 truncate">
                                     {nextPaymentDate}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">Horizon: {finalProjectedDate}</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">Horizon: {finalProjectedDate}</span>
                             </div>
                         </div>
 
@@ -586,7 +581,7 @@ export default function RecurringBillCalculator() {
                                     <tbody className="divide-y divide-slate-100 font-medium">
                                         {schedule.map((item) => (
                                             <tr key={item.cycleNumber} className="hover:bg-slate-50/80 transition">
-                                                <td className="p-2.5 font-mono font-bold text-slate-400">
+                                                <td className="p-2.5 font-mono font-bold text-slate-600 dark:text-slate-300">
                                                     #{item.cycleNumber}
                                                 </td>
                                                 <td className="p-2.5 font-mono text-slate-600">
@@ -807,15 +802,15 @@ export default function RecurringBillCalculator() {
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">Bi-Weekly &ne; Semi-Monthly</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">Bi-Weekly &ne; Semi-Monthly</span>
                                 <p>Paying $1,000 bi-weekly costs $26,000/yr, whereas $1,000 semi-monthly costs $24,000/yr—a $2,000 difference.</p>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">Grace Period Buffering</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">Grace Period Buffering</span>
                                 <p>Credit card issuers provide a mandatory 21-day grace period between statement closing and payment due dates.</p>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">Cash Flow Alignment</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">Cash Flow Alignment</span>
                                 <p>Sync bill due dates directly after your revenue deposit milestones to reduce short-term overdraft exposure.</p>
                             </div>
                         </div>

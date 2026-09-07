@@ -395,7 +395,7 @@ export default function DayOfWeekCalculator() {
                                 {/* Detailed Grid Breakdown */}
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="p-3.5 border border-slate-200 rounded-xl bg-slate-50 space-y-1">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                             Day of Year
                                         </span>
                                         <div className="text-lg font-bold font-mono text-slate-800">
@@ -403,7 +403,7 @@ export default function DayOfWeekCalculator() {
                                         </div>
                                     </div>
                                     <div className="p-3.5 border border-slate-200 rounded-xl bg-slate-50 space-y-1">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                             ISO Week Number
                                         </span>
                                         <div className="text-lg font-bold font-mono text-slate-800">
@@ -411,7 +411,7 @@ export default function DayOfWeekCalculator() {
                                         </div>
                                     </div>
                                     <div className="p-3.5 border border-slate-200 rounded-xl bg-slate-50 space-y-1">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                             Zodiac Sign
                                         </span>
                                         <div className="text-sm font-bold text-slate-800 flex items-center gap-1.5">
@@ -420,7 +420,7 @@ export default function DayOfWeekCalculator() {
                                         </div>
                                     </div>
                                     <div className="p-3.5 border border-slate-200 rounded-xl bg-slate-50 space-y-1">
-                                        <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+                                        <span className="text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider block">
                                             Birthstone
                                         </span>
                                         <div className="text-sm font-bold text-slate-800 flex items-center gap-1.5">

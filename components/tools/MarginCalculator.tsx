@@ -325,8 +325,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -345,9 +344,8 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                     <Coins className="w-4 h-4 text-indigo-600" /> Cost of Goods Sold (COGS)
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="1"
                                         value={cost === 0 ? "" : cost}
@@ -364,9 +362,8 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                         <Tag className="w-4 h-4 text-indigo-600" /> Gross Selling Price / Revenue
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="1"
                                             value={revenueOrPrice === 0 ? "" : revenueOrPrice}
@@ -383,8 +380,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                         <Percent className="w-4 h-4 text-indigo-600" /> Target Profit Margin (%)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="99.9"
                                             step="1"
@@ -392,7 +388,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setTargetMargin(Math.max(0, Math.min(99.9, val)))); setActivePresetId(null); }}
                                             className="w-full pr-8 pl-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
                             )}
@@ -403,15 +399,14 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                                         <TrendingUp className="w-4 h-4 text-indigo-600" /> Target Markup (%)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="1"
                                             value={targetMarkup === 0 ? "" : targetMarkup}
                                             onChange={(e) => { handleNumberInput(e, (val) => setTargetMarkup(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pr-8 pl-4 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
                             )}
@@ -420,7 +415,7 @@ Calculated at twistertools.com/tools/calculators/margin-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Industry Benchmarks
                                 </span>
                                 {activePresetId && (

@@ -491,7 +491,7 @@ module.exports = {
                                         <span>Keyframe Timeline Point:</span>
                                         <span className="font-mono font-bold">{activeStep.percentage}%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max="100"
@@ -511,7 +511,7 @@ module.exports = {
                                             <span>Translate X:</span>
                                             <span className="font-mono font-bold">{activeStep.translateX}px</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="-150"
                                             max="150"
@@ -528,7 +528,7 @@ module.exports = {
                                             <span>Translate Y:</span>
                                             <span className="font-mono font-bold">{activeStep.translateY}px</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="-150"
                                             max="150"
@@ -549,7 +549,7 @@ module.exports = {
                                             <span>Scale:</span>
                                             <span className="font-mono font-bold">{activeStep.scale}x</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0.2"
                                             max="2.5"
@@ -566,7 +566,7 @@ module.exports = {
                                             <span>Rotate:</span>
                                             <span className="font-mono font-bold">{activeStep.rotate}°</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="-360"
                                             max="360"
@@ -587,7 +587,7 @@ module.exports = {
                                             <span>Opacity:</span>
                                             <span className="font-mono font-bold">{activeStep.opacity}%</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max="100"
@@ -602,7 +602,7 @@ module.exports = {
                                     <div className="space-y-1">
                                         <label className="text-xs font-medium text-slate-700 block">Target Color</label>
                                         <div className="flex items-center gap-2">
-                                            <input
+                                            <input aria-label="Select color"
                                                 type="color"
                                                 value={activeStep.backgroundColor}
                                                 onChange={(e) =>
@@ -610,8 +610,7 @@ module.exports = {
                                                 }
                                                 className="w-7 h-7 rounded border border-slate-200 cursor-pointer p-0.5 bg-white"
                                             />
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={activeStep.backgroundColor}
                                                 onChange={(e) =>
                                                     updateActiveKeyframe({ backgroundColor: e.target.value })
@@ -635,7 +634,7 @@ module.exports = {
                                         <label htmlFor={durationInputId}>Duration:</label>
                                         <span className="font-mono text-slate-600">{config.duration}s</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         id={durationInputId}
                                         type="range"
                                         min="0.2"
@@ -654,7 +653,7 @@ module.exports = {
                                         <label htmlFor={delayInputId}>Delay:</label>
                                         <span className="font-mono text-slate-600">{config.delay}s</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         id={delayInputId}
                                         type="range"
                                         min="0"
@@ -672,7 +671,7 @@ module.exports = {
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                                 <div className="space-y-1">
                                     <label className="text-xs font-medium text-slate-700 block">Easing Curve</label>
-                                    <select
+                                    <select aria-label="Select Easing Curve"
                                         value={config.timingFunction}
                                         onChange={(e) =>
                                             setConfig((p) => ({ ...p, timingFunction: e.target.value as TimingFunction }))
@@ -690,7 +689,7 @@ module.exports = {
 
                                 <div className="space-y-1">
                                     <label className="text-xs font-medium text-slate-700 block">Direction</label>
-                                    <select
+                                    <select aria-label="Select Direction"
                                         value={config.direction}
                                         onChange={(e) =>
                                             setConfig((p) => ({ ...p, direction: e.target.value as DirectionType }))
@@ -706,7 +705,7 @@ module.exports = {
 
                                 <div className="space-y-1">
                                     <label className="text-xs font-medium text-slate-700 block">Fill Mode</label>
-                                    <select
+                                    <select aria-label="Select Fill Mode"
                                         value={config.fillMode}
                                         onChange={(e) =>
                                             setConfig((p) => ({ ...p, fillMode: e.target.value as FillModeType }))
@@ -853,7 +852,7 @@ module.exports = {
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <span className="text-xs text-slate-500 flex items-center gap-1">
-                            <Cpu className="w-3.5 h-3.5 text-slate-400" />
+                            <Cpu className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             W3C CSS Animations Level 1 Spec
                         </span>
                         <button

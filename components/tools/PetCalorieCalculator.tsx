@@ -514,8 +514,7 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                 </label>
                                 {unitSystem === "imperial" ? (
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.1"
                                             min="0.5"
                                             max="300"
@@ -523,11 +522,11 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setWeightLbs(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">lbs</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">lbs</span>
                                     </div>
                                 ) : (
                                     <div className="relative">
-                                        <input
+                                        <input aria-label="lbs"
                                             type="number"
                                             step="0.1"
                                             min="0.2"
@@ -536,7 +535,7 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setWeightKg(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">kg</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">kg</span>
                                     </div>
                                 )}
                             </div>
@@ -552,8 +551,7 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                     </span>
                                 </label>
                                 {species === "dog" ? (
-                                    <select
-                                        value={dogFactorId}
+                                    <select aria-label="Select option" value={dogFactorId}
                                         onChange={(e) => { setDogFactorId(e.target.value as DogLifeStageFactor); setActivePresetId(null); }}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     >
@@ -564,8 +562,7 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                         ))}
                                     </select>
                                 ) : (
-                                    <select
-                                        value={catFactorId}
+                                    <select aria-label="Select option" value={catFactorId}
                                         onChange={(e) => { setCatFactorId(e.target.value as CatLifeStageFactor); setActivePresetId(null); }}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     >
@@ -588,8 +585,7 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                         {BCS_INFO[bcs].score}
                                     </span>
                                 </label>
-                                <select
-                                    value={bcs}
+                                <select aria-label="Select option" value={bcs}
                                     onChange={(e) => { setBcs(e.target.value as BodyConditionScore); setActivePresetId(null); }}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                 >
@@ -608,15 +604,14 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                         <Utensils className="w-3.5 h-3.5 text-indigo-600" /> Food Energy Density
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="50"
                                             max="1500"
                                             value={foodCalorieDensity === 0 ? "" : foodCalorieDensity}
                                             onChange={(e) => handleNumberInput(e, (val) => setFoodCalorieDensity(Math.max(1, val)))}
                                             className="w-full pl-3 pr-20 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-400">kcal/unit</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[11px] font-bold text-slate-600 dark:text-slate-300">kcal/unit</span>
                                     </div>
                                     <span className="text-[10px] text-slate-500 mt-1 block">Per cup (kibble) or can (wet)</span>
                                 </div>
@@ -625,8 +620,7 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                                         <Layers className="w-3.5 h-3.5 text-indigo-600" /> Daily Feedings
                                     </label>
-                                    <select
-                                        value={feedingsPerDay}
+                                    <select aria-label="Select option" value={feedingsPerDay}
                                         onChange={(e) => setFeedingsPerDay(parseInt(e.target.value, 10))}
                                         className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                     >
@@ -643,7 +637,7 @@ Calculated at twistertools.com/tools/health-tools/pet-calorie-calculator`;
                         {/* Reference Presets */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Clinical Presets
                                 </span>
                                 {activePresetId && (

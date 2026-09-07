@@ -388,8 +388,7 @@ Calculate at twistertools.com/tools/calculators/sleep-cycle-calculator`;
                                         <CalendarCheck className="w-4 h-4 text-indigo-600" />
                                         {mode === "wake_up" ? "Target Wake Up Time" : "Scheduled Bedtime"}
                                     </label>
-                                    <input
-                                        type="time"
+                                    <input aria-label="Input value" type="time"
                                         value={targetTime}
                                         onChange={(e) => { setTargetTime(e.target.value); setActivePresetId(null); }}
                                         className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-900 font-bold text-lg focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50 shadow-inner"
@@ -409,8 +408,7 @@ Calculate at twistertools.com/tools/calculators/sleep-cycle-calculator`;
                                     </span>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max="90"
                                         value={sleepLatency === 0 ? "" : sleepLatency}
@@ -450,8 +448,7 @@ Calculate at twistertools.com/tools/calculators/sleep-cycle-calculator`;
                                         {cycleDuration} min/cycle
                                     </span>
                                 </div>
-                                <select
-                                    value={cycleDuration}
+                                <select aria-label="Select option" value={cycleDuration}
                                     onChange={(e) => setCycleDuration(parseInt(e.target.value, 10))}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                 >
@@ -466,7 +463,7 @@ Calculate at twistertools.com/tools/calculators/sleep-cycle-calculator`;
                         {/* Presets Row */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Routine Presets
                                 </span>
                                 {activePresetId && (

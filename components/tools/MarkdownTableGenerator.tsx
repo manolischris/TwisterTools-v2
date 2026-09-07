@@ -561,7 +561,7 @@ export default function MarkdownTableGenerator() {
             {/* Schema Injection */}
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-            <input
+            <input aria-label="Upload file"
                 type="file"
                 ref={fileInputRef}
                 onChange={handleFileUpload}
@@ -610,15 +610,14 @@ export default function MarkdownTableGenerator() {
                             <table className="w-full text-left text-xs border-collapse">
                                 <thead className="bg-slate-100 sticky top-0 z-10 border-b border-slate-200 shadow-xs">
                                     <tr>
-                                        <th className="p-2 w-10 text-center text-slate-400 font-bold border-r border-slate-200 bg-slate-100">
+                                        <th className="p-2 w-10 text-center text-slate-600 dark:text-slate-300 font-bold border-r border-slate-200 bg-slate-100">
                                             #
                                         </th>
                                         {columns.map((col, cIdx) => (
                                             <th key={col.id} className="p-2 min-w-[140px] border-r border-slate-200 bg-slate-100 last:border-r-0">
                                                 <div className="space-y-1.5">
                                                     <div className="flex items-center justify-between gap-1">
-                                                        <input
-                                                            type="text"
+                                                        <input aria-label="Input value" type="text"
                                                             value={col.name}
                                                             onChange={(e) => handleColumnNameChange(cIdx, e.target.value)}
                                                             placeholder={`Header ${cIdx + 1}`}
@@ -629,7 +628,7 @@ export default function MarkdownTableGenerator() {
                                                                 type="button"
                                                                 onClick={() => handleRemoveColumn(cIdx)}
                                                                 title="Delete Column"
-                                                                className="text-slate-400 hover:text-rose-600 p-0.5 rounded cursor-pointer"
+                                                                className="text-slate-600 dark:text-slate-300 hover:text-rose-600 p-0.5 rounded cursor-pointer"
                                                             >
                                                                 <Trash2 className="w-3.5 h-3.5" />
                                                             </button>
@@ -641,7 +640,7 @@ export default function MarkdownTableGenerator() {
                                                             type="button"
                                                             onClick={() => handleColumnAlignChange(cIdx, "left")}
                                                             title="Align Left"
-                                                            className={`p-1 rounded cursor-pointer ${col.align === "left" ? "bg-indigo-600 text-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                                            className={`p-1 rounded cursor-pointer ${col.align === "left" ? "bg-indigo-600 text-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                                         >
                                                             <AlignLeft className="w-3 h-3" />
                                                         </button>
@@ -649,7 +648,7 @@ export default function MarkdownTableGenerator() {
                                                             type="button"
                                                             onClick={() => handleColumnAlignChange(cIdx, "center")}
                                                             title="Align Center"
-                                                            className={`p-1 rounded cursor-pointer ${col.align === "center" ? "bg-indigo-600 text-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                                            className={`p-1 rounded cursor-pointer ${col.align === "center" ? "bg-indigo-600 text-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                                         >
                                                             <AlignCenter className="w-3 h-3" />
                                                         </button>
@@ -657,7 +656,7 @@ export default function MarkdownTableGenerator() {
                                                             type="button"
                                                             onClick={() => handleColumnAlignChange(cIdx, "right")}
                                                             title="Align Right"
-                                                            className={`p-1 rounded cursor-pointer ${col.align === "right" ? "bg-indigo-600 text-white shadow-xs" : "text-slate-400 hover:text-slate-700"}`}
+                                                            className={`p-1 rounded cursor-pointer ${col.align === "right" ? "bg-indigo-600 text-white shadow-xs" : "text-slate-600 dark:text-slate-300 hover:text-slate-700"}`}
                                                         >
                                                             <AlignRight className="w-3 h-3" />
                                                         </button>
@@ -670,7 +669,7 @@ export default function MarkdownTableGenerator() {
                                 <tbody className="divide-y divide-slate-200">
                                     {rows.map((row, rIdx) => (
                                         <tr key={`row-${rIdx}`} className="hover:bg-slate-50/70 group">
-                                            <td className="p-2 text-center text-slate-400 font-mono font-bold border-r border-slate-200 bg-slate-50/50 group-hover:bg-slate-100">
+                                            <td className="p-2 text-center text-slate-600 dark:text-slate-300 font-mono font-bold border-r border-slate-200 bg-slate-50/50 group-hover:bg-slate-100">
                                                 <div className="flex items-center justify-center gap-1">
                                                     <span>{rIdx + 1}</span>
                                                     {rows.length > 1 && (
@@ -678,7 +677,7 @@ export default function MarkdownTableGenerator() {
                                                             type="button"
                                                             onClick={() => handleRemoveRow(rIdx)}
                                                             title="Delete Row"
-                                                            className="opacity-0 group-hover:opacity-100 text-slate-400 hover:text-rose-600 cursor-pointer"
+                                                            className="opacity-0 group-hover:opacity-100 text-slate-600 dark:text-slate-300 hover:text-rose-600 cursor-pointer"
                                                         >
                                                             <Trash2 className="w-3 h-3" />
                                                         </button>
@@ -687,8 +686,7 @@ export default function MarkdownTableGenerator() {
                                             </td>
                                             {row.map((cell, cIdx) => (
                                                 <td key={cell.id || `c-${rIdx}-${cIdx}`} className="p-1 border-r border-slate-200 last:border-r-0">
-                                                    <input
-                                                        type="text"
+                                                    <input aria-label="Input value" type="text"
                                                         value={cell.value}
                                                         onChange={(e) => handleCellChange(rIdx, cIdx, e.target.value)}
                                                         placeholder="..."
@@ -764,7 +762,7 @@ export default function MarkdownTableGenerator() {
 
                             {activeTab === "markdown" && (
                                 <label className="flex items-center gap-2 text-xs font-bold text-slate-700 cursor-pointer select-none">
-                                    <input
+                                    <input aria-label="Pretty Markdown"
                                         type="checkbox"
                                         checked={isPrettyMarkdown}
                                         onChange={(e) => setIsPrettyMarkdown(e.target.checked)}
@@ -777,7 +775,7 @@ export default function MarkdownTableGenerator() {
 
                         {/* Raw Code Preview Terminal */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 readOnly
                                 value={currentExportContent}
                                 className="w-full h-[360px] p-4 bg-slate-950 text-emerald-400 font-mono text-xs rounded-xl border border-slate-800 outline-none resize-none focus:ring-1 focus:ring-indigo-500 overflow-x-auto whitespace-pre leading-relaxed"
@@ -837,7 +835,7 @@ export default function MarkdownTableGenerator() {
                             <button
                                 type="button"
                                 onClick={() => setImportModalOpen(false)}
-                                className="text-slate-400 hover:text-slate-700 text-xs font-bold"
+                                className="text-slate-600 dark:text-slate-300 hover:text-slate-700 text-xs font-bold"
                             >
                                 Close
                             </button>
@@ -855,7 +853,7 @@ export default function MarkdownTableGenerator() {
                             </button>
                         </div>
 
-                        <textarea
+                        <textarea aria-label="Input text content"
                             value={importText}
                             onChange={(e) => {
                                 setImportText(e.target.value);
@@ -1045,7 +1043,7 @@ export default function MarkdownTableGenerator() {
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-3 font-bold text-slate-900">Strikethrough</td>
                                     <td className="p-3 font-mono text-xs bg-slate-50">~~Deprecated~~</td>
-                                    <td className="p-3 line-through text-slate-400">Deprecated</td>
+                                    <td className="p-3 line-through text-slate-600 dark:text-slate-300">Deprecated</td>
                                     <td className="p-3 text-xs text-slate-600">Changelogs, retired features, and old prices</td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
@@ -1102,14 +1100,14 @@ export default function MarkdownTableGenerator() {
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-3 font-bold text-slate-900">CSV (RFC 4180)</td>
                                     <td className="p-3 text-amber-700 font-bold">Moderate</td>
-                                    <td className="p-3 text-slate-400">None</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300">None</td>
                                     <td className="p-3 text-slate-600">Excel, Google Sheets, Pandas, SQL Loaders</td>
                                     <td className="p-3 text-xs">Database migrations, tabular data exports</td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-3 font-bold text-slate-900">TSV (Tab-Separated)</td>
                                     <td className="p-3 text-amber-700 font-bold">Moderate</td>
-                                    <td className="p-3 text-slate-400">None</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300">None</td>
                                     <td className="p-3 text-slate-600">Bioinformatics, CLI pipelines, Unix cut/awk</td>
                                     <td className="p-3 text-xs">Clipboard pasting between Excel and terminal</td>
                                 </tr>
@@ -1123,7 +1121,7 @@ export default function MarkdownTableGenerator() {
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-3 font-bold text-slate-900">JSON Objects</td>
                                     <td className="p-3 text-indigo-700 font-bold">High (for devs)</td>
-                                    <td className="p-3 text-slate-400">Application logic</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300">Application logic</td>
                                     <td className="p-3 text-slate-600">REST APIs, GraphQL, NoSQL Databases, Node.js</td>
                                     <td className="p-3 text-xs">Mock data endpoints, frontend state fixtures</td>
                                 </tr>

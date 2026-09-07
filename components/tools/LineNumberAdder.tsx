@@ -419,7 +419,7 @@ export default function LineNumberAdder() {
                         <Wand2 className="w-3.5 h-3.5 text-indigo-600" />
                         Quick Workflow Presets
                     </span>
-                    <span className="text-[11px] text-slate-400 font-normal">One-click style application</span>
+                    <span className="text-[11px] text-slate-600 dark:text-slate-300 font-normal">One-click style application</span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
                     {Object.entries(PRESETS).map(([key, p]) => (
@@ -459,7 +459,7 @@ export default function LineNumberAdder() {
                     {/* Numbering Format */}
                     <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-700 block">Numbering Sequence</label>
-                        <select
+                        <select aria-label="Select Numbering Sequence"
                             value={format}
                             onChange={(e) => setFormat(e.target.value as NumberingFormat)}
                             className="w-full px-3 py-2 text-xs font-semibold bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
@@ -476,7 +476,7 @@ export default function LineNumberAdder() {
                     {/* Delimiter */}
                     <div className="space-y-1.5">
                         <label className="text-xs font-bold text-slate-700 block">Delimiter Separator</label>
-                        <select
+                        <select aria-label="Select Delimiter Separator"
                             value={delimiter}
                             onChange={(e) => setDelimiter(e.target.value as DelimiterType)}
                             className="w-full px-3 py-2 text-xs font-semibold bg-slate-50 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
@@ -496,7 +496,7 @@ export default function LineNumberAdder() {
                     <div className="grid grid-cols-2 gap-2">
                         <div className="space-y-1.5">
                             <label className="text-xs font-bold text-slate-700 block">Start Index</label>
-                            <input
+                            <input aria-label="Start Index"
                                 type="number"
                                 min={0}
                                 max={100000}
@@ -507,7 +507,7 @@ export default function LineNumberAdder() {
                         </div>
                         <div className="space-y-1.5">
                             <label className="text-xs font-bold text-slate-700 block">Step / Incr</label>
-                            <input
+                            <input aria-label="Step / Incr"
                                 type="number"
                                 min={1}
                                 max={1000}
@@ -524,7 +524,7 @@ export default function LineNumberAdder() {
                             <label className="text-xs font-bold text-slate-700">Padding Width</label>
                             <span className="text-[11px] font-mono text-indigo-600 font-bold">{padWidth} Digits</span>
                         </div>
-                        <input
+                        <input aria-label="Adjust slider value"
                             type="range"
                             min={1}
                             max={8}
@@ -541,7 +541,7 @@ export default function LineNumberAdder() {
                     {delimiter === "custom" && (
                         <div className="space-y-1">
                             <label className="text-xs font-bold text-slate-700 block">Custom Separator</label>
-                            <input
+                            <input aria-label="Custom Separator"
                                 type="text"
                                 value={customDelimiter}
                                 onChange={(e) => setCustomDelimiter(e.target.value)}
@@ -553,7 +553,7 @@ export default function LineNumberAdder() {
 
                     <div className="space-y-1">
                         <label className="text-xs font-bold text-slate-700 block">Prefix (Optional)</label>
-                        <input
+                        <input aria-label="Prefix (Optional)"
                             type="text"
                             value={prefixText}
                             onChange={(e) => setPrefixText(e.target.value)}
@@ -564,7 +564,7 @@ export default function LineNumberAdder() {
 
                     <div className="space-y-1">
                         <label className="text-xs font-bold text-slate-700 block">Suffix (Optional)</label>
-                        <input
+                        <input aria-label="Suffix (Optional)"
                             type="text"
                             value={suffixText}
                             onChange={(e) => setSuffixText(e.target.value)}
@@ -576,7 +576,7 @@ export default function LineNumberAdder() {
                     {/* Checkbox Toggles */}
                     <div className="space-y-2 col-span-1 sm:col-span-2 lg:col-span-1 pt-1">
                         <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-slate-700">
-                            <input
+                            <input aria-label="Empty"
                                 type="checkbox"
                                 checked={includeEmpty}
                                 onChange={(e) => setIncludeEmpty(e.target.checked)}
@@ -585,8 +585,7 @@ export default function LineNumberAdder() {
                             <span>Number Empty Lines</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-slate-700">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Trim Lines" type="checkbox"
                                 checked={trimLines}
                                 onChange={(e) => setTrimLines(e.target.checked)}
                                 className="rounded text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -594,8 +593,7 @@ export default function LineNumberAdder() {
                             <span>Trim Whitespace Indents</span>
                         </label>
                         <label className="flex items-center gap-2 cursor-pointer text-xs font-medium text-slate-700">
-                            <input
-                                type="checkbox"
+                            <input aria-label="Strip Existing Numbers" type="checkbox"
                                 checked={stripExistingNumbers}
                                 onChange={(e) => setStripExistingNumbers(e.target.checked)}
                                 className="rounded text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5"
@@ -621,7 +619,7 @@ export default function LineNumberAdder() {
                             </div>
 
                             <div className="flex items-center gap-2">
-                                <input
+                                <input aria-label="Upload file"
                                     type="file"
                                     ref={fileInputRef}
                                     onChange={handleFileUpload}
@@ -640,7 +638,7 @@ export default function LineNumberAdder() {
                                 <button
                                     type="button"
                                     onClick={() => setInputText("")}
-                                    className="p-1 text-slate-400 hover:text-rose-600 transition cursor-pointer"
+                                    className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition cursor-pointer"
                                     title="Clear input"
                                 >
                                     <Trash2 className="w-4 h-4" />
@@ -648,7 +646,7 @@ export default function LineNumberAdder() {
                             </div>
                         </div>
 
-                        <textarea
+                        <textarea aria-label="Input text content"
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                             placeholder="Paste your source code, list items, or documentation here..."
@@ -702,7 +700,7 @@ export default function LineNumberAdder() {
                             </div>
                         </div>
 
-                        <textarea
+                        <textarea aria-label="Numbered code output will render automatically here"
                             readOnly
                             value={processedOutput}
                             placeholder="Numbered code output will render automatically here..."

@@ -568,7 +568,7 @@ export default function GradientWallpaperGenerator() {
                                                 {angle}°
                                             </span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max="360"
@@ -576,7 +576,7 @@ export default function GradientWallpaperGenerator() {
                                             onChange={(e) => setAngle(Number(e.target.value))}
                                             className="w-full accent-indigo-600 cursor-pointer"
                                         />
-                                        <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                        <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                             <span>0° (Right)</span>
                                             <span>90° (Bottom)</span>
                                             <span>180° (Left)</span>
@@ -599,7 +599,7 @@ export default function GradientWallpaperGenerator() {
                                                     <span>Center X:</span>
                                                     <span className="text-indigo-600">{radialCenterX}%</span>
                                                 </div>
-                                                <input
+                                                <input aria-label="Adjust slider value"
                                                     type="range"
                                                     min="0"
                                                     max="100"
@@ -613,7 +613,7 @@ export default function GradientWallpaperGenerator() {
                                                     <span>Center Y:</span>
                                                     <span className="text-indigo-600">{radialCenterY}%</span>
                                                 </div>
-                                                <input
+                                                <input aria-label="Adjust slider value"
                                                     type="range"
                                                     min="0"
                                                     max="100"
@@ -651,7 +651,7 @@ export default function GradientWallpaperGenerator() {
                                                 className="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 bg-slate-50/50"
                                             >
                                                 <div className="flex items-center gap-2">
-                                                    <input
+                                                    <input aria-label="Select color"
                                                         type="color"
                                                         value={stop.color}
                                                         onChange={(e) => handleUpdateStop(stop.id, "color", e.target.value)}
@@ -663,7 +663,7 @@ export default function GradientWallpaperGenerator() {
                                                 </div>
 
                                                 <div className="flex-1 flex items-center gap-2">
-                                                    <input
+                                                    <input aria-label="Adjust slider value"
                                                         type="range"
                                                         min="0"
                                                         max="100"
@@ -682,7 +682,7 @@ export default function GradientWallpaperGenerator() {
                                                     type="button"
                                                     onClick={() => handleRemoveStop(stop.id)}
                                                     disabled={colorStops.length <= 2}
-                                                    className="text-slate-400 hover:text-rose-600 disabled:opacity-20 transition cursor-pointer p-1"
+                                                    className="text-slate-600 dark:text-slate-300 hover:text-rose-600 disabled:opacity-20 transition cursor-pointer p-1"
                                                 >
                                                     <Trash2 className="w-4 h-4" />
                                                 </button>
@@ -702,7 +702,7 @@ export default function GradientWallpaperGenerator() {
                                             {noiseOpacity}%
                                         </span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="0"
                                         max="30"
@@ -752,7 +752,7 @@ export default function GradientWallpaperGenerator() {
                                                     <span className="text-xs font-bold text-slate-900 group-hover:text-indigo-600">
                                                         {palette.name}
                                                     </span>
-                                                    <span className="text-[10px] uppercase font-bold text-slate-400 bg-slate-200/60 px-1.5 py-0.5 rounded">
+                                                    <span className="text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300 bg-slate-200/60 px-1.5 py-0.5 rounded">
                                                         {palette.type}
                                                     </span>
                                                 </div>
@@ -810,8 +810,7 @@ export default function GradientWallpaperGenerator() {
                             </span>
                         </div>
 
-                        <select
-                            value={selectedPresetId}
+                        <select aria-label="Select option" value={selectedPresetId}
                             onChange={(e) => handleSelectPreset(e.target.value)}
                             className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-800 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-white cursor-pointer"
                         >
@@ -826,7 +825,7 @@ export default function GradientWallpaperGenerator() {
                         <div className="grid grid-cols-2 gap-3 pt-1">
                             <div>
                                 <label className="block text-[11px] font-bold text-slate-500 mb-1">Width (px)</label>
-                                <input
+                                <input aria-label="Width (px)"
                                     type="number"
                                     min="100"
                                     max="8192"
@@ -840,7 +839,7 @@ export default function GradientWallpaperGenerator() {
                             </div>
                             <div>
                                 <label className="block text-[11px] font-bold text-slate-500 mb-1">Height (px)</label>
-                                <input
+                                <input aria-label="Height (px)"
                                     type="number"
                                     min="100"
                                     max="8192"
@@ -882,7 +881,7 @@ export default function GradientWallpaperGenerator() {
                                     className="w-full h-full object-contain block"
                                 />
                             </div>
-                            <div className="mt-4 flex items-center gap-3 text-[11px] font-mono text-slate-400">
+                            <div className="mt-4 flex items-center gap-3 text-[11px] font-mono text-slate-600 dark:text-slate-300">
                                 <span>Aspect: {(customWidth / customHeight).toFixed(2)}:1</span>
                                 <span>•</span>
                                 <span>
@@ -901,7 +900,7 @@ export default function GradientWallpaperGenerator() {
                         <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2">
                             <div className="flex items-center justify-between text-xs font-bold text-slate-600">
                                 <span>Active Color Stops</span>
-                                <span className="text-slate-400 font-mono">{colorStops.length} Nodes</span>
+                                <span className="text-slate-600 dark:text-slate-300 font-mono">{colorStops.length} Nodes</span>
                             </div>
                             <div className="flex h-3 rounded-md overflow-hidden shadow-xs">
                                 {colorStops.map((stop) => (

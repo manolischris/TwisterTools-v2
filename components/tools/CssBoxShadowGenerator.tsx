@@ -434,7 +434,7 @@ export default function CssBoxShadowGenerator() {
                                 <span className="flex items-center gap-1.5">
                                     <Layers className="w-4 h-4 text-indigo-600" /> Active Shadow Layers ({layers.length})
                                 </span>
-                                <span className="text-[11px] text-slate-400 font-normal lowercase">top renders foremost</span>
+                                <span className="text-[11px] text-slate-600 dark:text-slate-300 font-normal lowercase">top renders foremost</span>
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 {layers.map((layer, index) => {
@@ -462,7 +462,7 @@ export default function CssBoxShadowGenerator() {
                                                         e.stopPropagation();
                                                         removeLayer(layer.id);
                                                     }}
-                                                    className="p-1 hover:text-red-500 rounded text-slate-400 transition"
+                                                    className="p-1 hover:text-red-500 rounded text-slate-600 dark:text-slate-300 transition"
                                                     title="Delete Layer"
                                                 >
                                                     <Trash2 className="w-3 h-3" />
@@ -523,7 +523,7 @@ export default function CssBoxShadowGenerator() {
                                             <span>Horizontal Offset (X)</span>
                                             <span className="font-mono text-indigo-600">{activeLayer.offsetX}px</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="-100"
                                             max="100"
@@ -540,7 +540,7 @@ export default function CssBoxShadowGenerator() {
                                             <span>Vertical Offset (Y)</span>
                                             <span className="font-mono text-indigo-600">{activeLayer.offsetY}px</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="-100"
                                             max="100"
@@ -560,7 +560,7 @@ export default function CssBoxShadowGenerator() {
                                             <span>Blur Radius</span>
                                             <span className="font-mono text-indigo-600">{activeLayer.blurRadius}px</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max="150"
@@ -577,7 +577,7 @@ export default function CssBoxShadowGenerator() {
                                             <span>Spread Radius</span>
                                             <span className="font-mono text-indigo-600">{activeLayer.spreadRadius}px</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="-50"
                                             max="100"
@@ -597,7 +597,7 @@ export default function CssBoxShadowGenerator() {
                                             Shadow Color (Hex)
                                         </label>
                                         <div className="flex items-center gap-2">
-                                            <input
+                                            <input aria-label="Select color"
                                                 type="color"
                                                 value={activeLayer.color}
                                                 onChange={(e) =>
@@ -605,8 +605,7 @@ export default function CssBoxShadowGenerator() {
                                                 }
                                                 className="w-9 h-9 rounded-lg border border-slate-300 p-0.5 cursor-pointer bg-white"
                                             />
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={activeLayer.color}
                                                 onChange={(e) =>
                                                     updateActiveLayer((l) => ({ ...l, color: e.target.value }))
@@ -621,7 +620,7 @@ export default function CssBoxShadowGenerator() {
                                             <span>Layer Opacity</span>
                                             <span className="font-mono text-indigo-600">{Math.round(activeLayer.opacity * 100)}%</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min="0"
                                             max="1"
@@ -726,7 +725,7 @@ export default function CssBoxShadowGenerator() {
                                 <span className={`text-xs font-extrabold uppercase tracking-wider ${boxBg === "#0f172a" || boxBg === "#171026" || boxBg === "#000000" ? "text-white" : "text-slate-900"}`}>
                                     CSS Box Element
                                 </span>
-                                <span className={`text-[11px] font-mono mt-1 ${boxBg === "#0f172a" || boxBg === "#171026" || boxBg === "#000000" ? "text-slate-400" : "text-slate-500"}`}>
+                                <span className={`text-[11px] font-mono mt-1 ${boxBg === "#0f172a" || boxBg === "#171026" || boxBg === "#000000" ? "text-slate-600 dark:text-slate-300" : "text-slate-500"}`}>
                                     {layers.length} {layers.length === 1 ? "layer" : "layers"} active
                                 </span>
                             </div>
@@ -737,7 +736,7 @@ export default function CssBoxShadowGenerator() {
                             <div>
                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">Canvas BG</label>
                                 <div className="flex items-center gap-1">
-                                    <input
+                                    <input aria-label="Select color"
                                         type="color"
                                         value={previewBg}
                                         onChange={(e) => setPreviewBg(e.target.value)}
@@ -749,7 +748,7 @@ export default function CssBoxShadowGenerator() {
                             <div>
                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">Box BG</label>
                                 <div className="flex items-center gap-1">
-                                    <input
+                                    <input aria-label="Select color"
                                         type="color"
                                         value={boxBg}
                                         onChange={(e) => setBoxBg(e.target.value)}
@@ -760,7 +759,7 @@ export default function CssBoxShadowGenerator() {
                             </div>
                             <div>
                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">Radius: {boxBorderRadius}px</label>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="60"
@@ -771,7 +770,7 @@ export default function CssBoxShadowGenerator() {
                             </div>
                             <div>
                                 <label className="block text-[11px] font-bold text-slate-600 mb-1">Box Size: {boxWidth}px</label>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="120"
                                     max="280"

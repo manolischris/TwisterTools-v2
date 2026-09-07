@@ -287,13 +287,13 @@ export default function ArticleRewriter() {
               <FileText className="w-4 h-4 text-indigo-300" />
               <span className="text-sm font-semibold">Original Text</span>
             </div>
-            <span className="text-xs text-slate-400 font-mono">
+            <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">
               {metrics.inputWords} words | {metrics.inputChars} chars
             </span>
           </div>
 
           <div className="p-4 flex-1 flex flex-col space-y-3">
-            <textarea
+            <textarea aria-label="Input text content"
               ref={textareaRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -308,7 +308,7 @@ export default function ArticleRewriter() {
                 disabled={!input.trim()}
                 className={`flex-1 min-h-[42px] px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${input.trim()
                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed border border-slate-200"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed border border-slate-200"
                   }`}
               >
                 <Zap className="w-4 h-4" />
@@ -346,7 +346,7 @@ export default function ArticleRewriter() {
 
           <div className="p-4 flex-1 flex flex-col space-y-3">
             <div className="relative w-full h-full">
-              <textarea
+              <textarea aria-label="Your rewritten article output will appear here automatically"
                 value={output}
                 readOnly
                 placeholder="Your rewritten article output will appear here automatically..."
@@ -369,7 +369,7 @@ export default function ArticleRewriter() {
                   ? copied
                     ? "bg-green-600 text-white shadow-md shadow-green-200"
                     : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg"
-                  : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                  : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                 }`}
             >
               {copied ? (

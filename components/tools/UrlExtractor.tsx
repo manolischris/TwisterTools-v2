@@ -250,7 +250,7 @@ export default function UrlExtractor() {
                             </div>
 
                             {/* Input Textarea */}
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Paste HTML source code or raw string text containing URLs here..."
@@ -322,9 +322,8 @@ export default function UrlExtractor() {
                                     <label htmlFor={searchInputId} className="sr-only">
                                         Search extracted links
                                     </label>
-                                    <Search className="w-4 h-4 absolute left-3 top-3 text-slate-400" />
-                                    <input
-                                        id={searchInputId}
+                                    <Search className="w-4 h-4 absolute left-3 top-3 text-slate-600 dark:text-slate-300" />
+                                    <input aria-label="Input value" id={searchInputId}
                                         type="text"
                                         value={searchQuery}
                                         onChange={(e) => setSearchQuery(e.target.value)}
@@ -336,8 +335,7 @@ export default function UrlExtractor() {
                                     <label htmlFor={filterSelectId} className="sr-only">
                                         Filter link protocol type
                                     </label>
-                                    <select
-                                        id={filterSelectId}
+                                    <select aria-label="Select option" id={filterSelectId}
                                         value={activeFilter}
                                         onChange={(e) => setActiveFilter(e.target.value as FilterType)}
                                         className="w-full px-3 py-2 text-xs border border-slate-200 rounded-xl bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[38px]"
@@ -354,7 +352,7 @@ export default function UrlExtractor() {
                             {/* Extracted Links List Display */}
                             <div className="h-[340px] overflow-y-auto border border-slate-200 rounded-xl bg-slate-50 p-3 space-y-2">
                                 {filteredLinks.length === 0 ? (
-                                    <div className="h-full flex flex-col items-center justify-center text-slate-400 space-y-2">
+                                    <div className="h-full flex flex-col items-center justify-center text-slate-600 dark:text-slate-300 space-y-2">
                                         <AlertCircle className="w-8 h-8 opacity-50" />
                                         <p className="text-xs">No matching URLs extracted yet.</p>
                                     </div>
@@ -372,7 +370,7 @@ export default function UrlExtractor() {
                                                     className="font-mono text-indigo-600 font-medium truncate hover:underline flex items-center gap-1.5"
                                                 >
                                                     {item.url}
-                                                    <ExternalLink className="w-3 h-3 flex-shrink-0 text-slate-400" />
+                                                    <ExternalLink className="w-3 h-3 flex-shrink-0 text-slate-600 dark:text-slate-300" />
                                                 </a>
                                                 <span className="uppercase text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
                                                     {item.type}
@@ -398,7 +396,7 @@ export default function UrlExtractor() {
                                         ? copied
                                             ? "bg-green-600 text-white shadow-md shadow-green-200"
                                             : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200"
-                                        : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                                        : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                                         }`}
                                 >
                                     {copied ? (

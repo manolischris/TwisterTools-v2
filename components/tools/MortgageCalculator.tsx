@@ -376,8 +376,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -401,9 +400,8 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="1000"
                                         value={homePrice === 0 ? "" : homePrice}
@@ -424,9 +422,8 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         max={homePrice}
                                         step="1000"
@@ -444,8 +441,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                         <Percent className="w-4 h-4 text-indigo-600" /> Interest Rate
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="30"
                                             step="0.1"
@@ -453,7 +449,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                             onChange={(e) => { handleNumberInput(e, (val) => setAnnualRate(Math.max(0, val))); setActivePresetId(null); }}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
 
@@ -461,8 +457,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                     <label className="block text-sm font-semibold text-slate-800 mb-1.5 flex items-center gap-1">
                                         <Calendar className="w-4 h-4 text-indigo-600" /> Loan Term
                                     </label>
-                                    <select
-                                        value={years}
+                                    <select aria-label="Select option" value={years}
                                         onChange={(e) => {
                                             setYears(Number(e.target.value));
                                             setActivePresetId(null);
@@ -488,9 +483,8 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                             Annual Prop Tax
                                         </label>
                                         <div className="relative">
-                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="100"
                                                 value={propertyTax === 0 ? "" : propertyTax}
@@ -505,9 +499,8 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                             Annual Insurance
                                         </label>
                                         <div className="relative">
-                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="100"
                                                 value={homeInsurance === 0 ? "" : homeInsurance}
@@ -523,9 +516,8 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                                         <TrendingDown className="w-3.5 h-3.5 text-indigo-500" /> Extra Monthly Payment
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="50"
                                             value={extraMonthlyPayment === 0 ? "" : extraMonthlyPayment}
@@ -541,7 +533,7 @@ Calculated at twistertools.com/tools/calculators/mortgage-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Popular Scenarios
                                 </span>
                                 {activePresetId && (

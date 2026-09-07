@@ -306,8 +306,7 @@ export default function RandomNumberGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Minimum (Lower Bound)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     value={min === 0 ? "" : min}
                                     onChange={(e) => handleNumberInput(e, setMin)}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50 focus:bg-white transition"
@@ -317,8 +316,7 @@ export default function RandomNumberGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Maximum (Upper Bound)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     value={max === 0 ? "" : max}
                                     onChange={(e) => handleNumberInput(e, setMax)}
                                     className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50 focus:bg-white transition"
@@ -331,8 +329,7 @@ export default function RandomNumberGenerator() {
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Quantity to Generate (Count)
                             </label>
-                            <input
-                                type="number"
+                            <input aria-label="Input value" type="number"
                                 min="1"
                                 max="10000"
                                 value={count === 0 ? "" : count}
@@ -378,7 +375,7 @@ export default function RandomNumberGenerator() {
                                     {allowDuplicates ? (
                                         <CheckSquare className="w-5 h-5" />
                                     ) : (
-                                        <Square className="w-5 h-5 text-slate-400" />
+                                        <Square className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                                     )}
                                 </div>
                                 <div>
@@ -478,13 +475,13 @@ export default function RandomNumberGenerator() {
                                     <div className="flex flex-col items-center justify-center py-12 bg-slate-50 rounded-2xl border border-dashed border-slate-200 text-center">
                                         <Dices className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-600">No Numbers Generated Yet</p>
-                                        <p className="text-xs text-slate-400 mt-1">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
                                             Configure your min/max bounds and click Generate.
                                         </p>
                                     </div>
                                 ) : currentResults.length === 1 ? (
                                     <div className="flex flex-col items-center justify-center py-10 bg-slate-50 rounded-2xl border border-slate-200 text-center">
-                                        <span className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">
+                                        <span className="text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest mb-1">
                                             Generated Result
                                         </span>
                                         <span className="text-6xl font-black text-indigo-600 tracking-tight">
@@ -497,11 +494,11 @@ export default function RandomNumberGenerator() {
                                             <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                                                 Formatted Output Text
                                             </span>
-                                            <span className="text-xs text-slate-400 font-mono">
+                                            <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">
                                                 {currentResults.length} Items
                                             </span>
                                         </div>
-                                        <textarea
+                                        <textarea aria-label="Input text content"
                                             readOnly
                                             value={formattedResultsText}
                                             rows={6}
@@ -514,25 +511,25 @@ export default function RandomNumberGenerator() {
                                 {currentResults.length > 1 && (
                                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
                                         <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                            <span className="text-[11px] font-bold text-slate-400 block">Mean</span>
+                                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 block">Mean</span>
                                             <span className="text-base font-extrabold text-slate-900">
                                                 {stats.mean.toFixed(2)}
                                             </span>
                                         </div>
                                         <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                            <span className="text-[11px] font-bold text-slate-400 block">Median</span>
+                                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 block">Median</span>
                                             <span className="text-base font-extrabold text-slate-900">
                                                 {stats.median}
                                             </span>
                                         </div>
                                         <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                            <span className="text-[11px] font-bold text-slate-400 block">Min / Max</span>
+                                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 block">Min / Max</span>
                                             <span className="text-xs font-extrabold text-slate-900">
                                                 {stats.minVal} / {stats.maxVal}
                                             </span>
                                         </div>
                                         <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                                            <span className="text-[11px] font-bold text-slate-400 block">Even / Odd</span>
+                                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 block">Even / Odd</span>
                                             <span className="text-xs font-extrabold text-slate-900">
                                                 {stats.evenCount} / {stats.oddCount}
                                             </span>
@@ -544,7 +541,7 @@ export default function RandomNumberGenerator() {
                             /* History Log List Tab */
                             <div className="max-h-[320px] overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100">
                                 {history.length === 0 ? (
-                                    <p className="p-4 text-center text-xs text-slate-400">No prior generations recorded.</p>
+                                    <p className="p-4 text-center text-xs text-slate-600 dark:text-slate-300">No prior generations recorded.</p>
                                 ) : (
                                     history.map((item) => (
                                         <div key={item.id} className="p-3 text-xs space-y-1 hover:bg-slate-50">

@@ -618,7 +618,7 @@ export default function UserAgentParser() {
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Raw HTTP User-Agent Header
                             </label>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={uaInput}
                                 onChange={(e) => setUaInput(e.target.value)}
                                 rows={4}
@@ -649,7 +649,7 @@ export default function UserAgentParser() {
                                                 {preset.category}
                                             </span>
                                         </div>
-                                        <span className="text-[11px] font-mono text-slate-400 truncate w-full">
+                                        <span className="text-[11px] font-mono text-slate-600 dark:text-slate-300 truncate w-full">
                                             {preset.ua}
                                         </span>
                                     </button>
@@ -670,27 +670,27 @@ export default function UserAgentParser() {
                             </div>
                             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
                                 <div className="p-2 rounded-lg bg-white border border-indigo-100/60">
-                                    <span className="text-slate-400 block text-[10px]">Screen / Viewport</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[10px]">Screen / Viewport</span>
                                     <strong className="text-slate-800 font-semibold text-[11px]">{clientHints.screenRes} ({clientHints.viewport})</strong>
                                 </div>
                                 <div className="p-2 rounded-lg bg-white border border-indigo-100/60">
-                                    <span className="text-slate-400 block text-[10px]">Pixel Ratio / Depth</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[10px]">Pixel Ratio / Depth</span>
                                     <strong className="text-slate-800 font-semibold text-[11px]">{clientHints.pixelRatio}x / {clientHints.colorDepth}-bit</strong>
                                 </div>
                                 <div className="p-2 rounded-lg bg-white border border-indigo-100/60">
-                                    <span className="text-slate-400 block text-[10px]">Touch Points</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[10px]">Touch Points</span>
                                     <strong className="text-slate-800 font-semibold text-[11px]">{clientHints.touchPoints} Max Touch</strong>
                                 </div>
                                 <div className="p-2 rounded-lg bg-white border border-indigo-100/60">
-                                    <span className="text-slate-400 block text-[10px]">System Locale</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[10px]">System Locale</span>
                                     <strong className="text-slate-800 font-semibold text-[11px]">{clientHints.language}</strong>
                                 </div>
                                 <div className="p-2 rounded-lg bg-white border border-indigo-100/60">
-                                    <span className="text-slate-400 block text-[10px]">Cookies Enabled</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[10px]">Cookies Enabled</span>
                                     <strong className="text-slate-800 font-semibold text-[11px]">{clientHints.cookiesEnabled ? "Active (Yes)" : "Disabled"}</strong>
                                 </div>
                                 <div className="p-2 rounded-lg bg-white border border-indigo-100/60">
-                                    <span className="text-slate-400 block text-[10px]">Do Not Track</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block text-[10px]">Do Not Track</span>
                                     <strong className="text-slate-800 font-semibold text-[11px]">{clientHints.doNotTrack || "Unspecified"}</strong>
                                 </div>
                             </div>
@@ -767,7 +767,7 @@ export default function UserAgentParser() {
                                             <CheckCircle2 className="w-3.5 h-3.5" /> Human Browser
                                         </span>
                                     )}
-                                    <span className="text-[11px] text-slate-400 font-mono">
+                                    <span className="text-[11px] text-slate-600 dark:text-slate-300 font-mono">
                                         Engine: {parsedData.engine.name}
                                     </span>
                                 </div>
@@ -840,7 +840,7 @@ export default function UserAgentParser() {
                         {activeTab === "tokens" && (
                             <div className="space-y-2 max-h-[300px] overflow-y-auto pr-1">
                                 {parsedData.tokens.length === 0 ? (
-                                    <p className="text-xs text-slate-400 p-3">No tokens parsed.</p>
+                                    <p className="text-xs text-slate-600 dark:text-slate-300 p-3">No tokens parsed.</p>
                                 ) : (
                                     parsedData.tokens.map((tok, i) => (
                                         <div key={i} className="p-2.5 rounded-lg border border-slate-200 bg-slate-50 flex items-start justify-between gap-3 text-xs">
@@ -889,7 +889,7 @@ export default function UserAgentParser() {
 
                     <div className="p-4 rounded-xl bg-slate-900 text-slate-100 font-mono text-xs overflow-x-auto space-y-2 border border-slate-800">
                         <div className="text-indigo-400 font-bold text-[11px] uppercase tracking-wider">Example User-Agent String Breakdown:</div>
-                        <div className="text-amber-300">Mozilla/5.0 <span className="text-slate-400">(Macintosh; Intel Mac OS X 10_15_7)</span> <span className="text-emerald-400">AppleWebKit/537.36</span> <span className="text-sky-300">(KHTML, like Gecko)</span> <span className="text-indigo-300">Chrome/128.0.0.0</span> <span className="text-pink-400">Safari/537.36</span></div>
+                        <div className="text-amber-300">Mozilla/5.0 <span className="text-slate-600 dark:text-slate-300">(Macintosh; Intel Mac OS X 10_15_7)</span> <span className="text-emerald-400">AppleWebKit/537.36</span> <span className="text-sky-300">(KHTML, like Gecko)</span> <span className="text-indigo-300">Chrome/128.0.0.0</span> <span className="text-pink-400">Safari/537.36</span></div>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-4 pt-2">

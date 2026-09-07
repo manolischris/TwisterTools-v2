@@ -223,7 +223,7 @@ export default function SmallTextGenerator() {
                 Source Text Input
               </label>
             </div>
-            <span className="text-xs text-slate-400 font-mono">
+            <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">
               {stats.chars} chars | {stats.words} words
             </span>
           </div>

@@ -540,8 +540,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Body Weight ({weightUnitLabel})
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="30"
                                         max="300"
                                         value={weight === 0 ? "" : weight}
@@ -554,8 +553,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
                                     <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                         Hours Since First Drink
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.5"
                                         min="0"
                                         max="24"
@@ -628,8 +626,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
                                     {drinks.map((drink, index) => (
                                         <div key={drink.id} className="p-3 rounded-xl border border-slate-200 bg-slate-50/50 space-y-2">
                                             <div className="flex items-center justify-between gap-2">
-                                                <input
-                                                    type="text"
+                                                <input aria-label="Input value" type="text"
                                                     value={drink.name}
                                                     onChange={(e) => updateDrink(drink.id, "name", e.target.value)}
                                                     className="text-xs font-bold text-slate-900 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-indigo-500 focus:bg-white outline-none px-1 py-0.5 rounded transition w-full"
@@ -637,7 +634,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
                                                 {drinks.length > 1 && (
                                                     <button
                                                         onClick={() => removeDrink(drink.id)}
-                                                        className="text-slate-400 hover:text-rose-600 transition p-1"
+                                                        className="text-slate-600 dark:text-slate-300 hover:text-rose-600 transition p-1"
                                                         title="Remove drink"
                                                     >
                                                         <Trash2 className="w-3.5 h-3.5" />
@@ -648,7 +645,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
                                             <div className="grid grid-cols-3 gap-2 text-xs">
                                                 <div>
                                                     <span className="text-[10px] text-slate-500 font-semibold block">Volume ({volumeUnitLabel})</span>
-                                                    <input
+                                                    <input aria-label="Volume ({volumeUnitLabel})"
                                                         type="number"
                                                         min="0"
                                                         value={drink.volume === 0 ? "" : drink.volume}
@@ -659,7 +656,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
 
                                                 <div>
                                                     <span className="text-[10px] text-slate-500 font-semibold block">ABV %</span>
-                                                    <input
+                                                    <input aria-label="ABV %"
                                                         type="number"
                                                         step="0.5"
                                                         min="0"
@@ -672,7 +669,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
 
                                                 <div>
                                                     <span className="text-[10px] text-slate-500 font-semibold block">Quantity</span>
-                                                    <input
+                                                    <input aria-label="Quantity"
                                                         type="number"
                                                         min="1"
                                                         max="50"
@@ -691,7 +688,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
                         {/* Presets Row */}
                         <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Drinking Scenarios
                                 </span>
                                 {activePresetId && (
@@ -933,7 +930,7 @@ Calculated at twistertools.com/tools/calculators/bac-calculator`;
                         </p>
                         <div className="bg-slate-950 p-4 rounded-lg font-mono text-xs sm:text-sm text-indigo-300 overflow-x-auto border border-slate-800 space-y-2">
                             <div><strong>BAC = [ (Dose in grams) / (Body Weight in grams × r) ] × 100 - (β × Hours)</strong></div>
-                            <div className="text-slate-400 text-xs">Where: r = Gender constant (0.68 male, 0.55 female) | β = Metabolic elimination rate (0.015% / hour)</div>
+                            <div className="text-slate-600 dark:text-slate-300 text-xs">Where: r = Gender constant (0.68 male, 0.55 female) | β = Metabolic elimination rate (0.015% / hour)</div>
                         </div>
                     </div>
                 </section>

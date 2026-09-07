@@ -336,7 +336,7 @@ export default function StandardDeviationCalculator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                                     Raw Dataset Values (Comma, space, or newline separated)
                                 </label>
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={rawInput}
                                     onChange={(e) => {
                                         setRawInput(e.target.value);
@@ -356,7 +356,7 @@ export default function StandardDeviationCalculator() {
                             {/* Presets */}
                             <div className="pt-2 border-t border-slate-100 space-y-2">
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                    <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                         <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Sample Datasets
                                     </span>
                                     {activePresetId && (

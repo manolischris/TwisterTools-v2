@@ -307,7 +307,7 @@ export default function LineCounter() {
 
                         {/* Input Text Area */}
                         <div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => {
                                     setInputText(e.target.value);
@@ -327,7 +327,7 @@ export default function LineCounter() {
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-medium text-slate-700">
                                 <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Remove Empty Lines"
                                         type="checkbox"
                                         checked={options.removeEmptyLines}
                                         onChange={() => handleOptionToggle("removeEmptyLines")}
@@ -337,7 +337,7 @@ export default function LineCounter() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Strip Empty Lines"
                                         type="checkbox"
                                         checked={options.removeWhitespaceLines}
                                         onChange={() => handleOptionToggle("removeWhitespaceLines")}
@@ -347,7 +347,7 @@ export default function LineCounter() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Strip Whitespace-Only"
                                         type="checkbox"
                                         checked={options.trimLines}
                                         onChange={() => handleOptionToggle("trimLines")}
@@ -357,7 +357,7 @@ export default function LineCounter() {
                                 </label>
 
                                 <label className="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition">
-                                    <input
+                                    <input aria-label="Trim Line Edges"
                                         type="checkbox"
                                         checked={options.removeDuplicateLines}
                                         onChange={() => handleOptionToggle("removeDuplicateLines")}
@@ -373,8 +373,7 @@ export default function LineCounter() {
                                     <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
                                         Line Ordering
                                     </label>
-                                    <select
-                                        value={options.sortLines}
+                                    <select aria-label="Select option" value={options.sortLines}
                                         onChange={(e) => {
                                             setOptions((prev) => ({ ...prev, sortLines: e.target.value as any }));
                                             setActivePresetId(null);
@@ -396,7 +395,7 @@ export default function LineCounter() {
                                         disabled={!options.removeDuplicateLines}
                                         onClick={() => handleOptionToggle("caseSensitiveDedupe")}
                                         className={`w-full py-2 px-3 text-xs font-semibold rounded-xl border transition text-left flex items-center justify-between ${!options.removeDuplicateLines
-                                            ? "opacity-50 cursor-not-allowed bg-slate-100 text-slate-400 border-slate-200"
+                                            ? "opacity-50 cursor-not-allowed bg-slate-100 text-slate-600 dark:text-slate-300 border-slate-200"
                                             : options.caseSensitiveDedupe
                                                 ? "bg-indigo-50 text-indigo-700 border-indigo-200"
                                                 : "bg-slate-50 text-slate-700 border-slate-200"
@@ -412,7 +411,7 @@ export default function LineCounter() {
                         {/* Reference Presets */}
                         <div className="pt-3 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Workflows
                                 </span>
                             </div>
@@ -448,7 +447,7 @@ export default function LineCounter() {
                         {/* Live Stat Badges Grid */}
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                             <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl">
-                                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Total Lines</span>
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600 dark:text-slate-300 block">Total Lines</span>
                                 <span className="text-xl font-extrabold text-slate-900">{processedResult.rawLineCount}</span>
                             </div>
                             <div className="p-3 bg-amber-50/60 border border-amber-200/80 rounded-xl">
@@ -473,7 +472,7 @@ export default function LineCounter() {
                                     <span className="text-indigo-600 font-semibold">{processedResult.duplicateCount} Duplicates Removed</span>
                                 )}
                             </label>
-                            <textarea
+                            <textarea aria-label="Cleaned text will appear here in real time"
                                 readOnly
                                 value={processedResult.text}
                                 rows={10}

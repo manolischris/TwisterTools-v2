@@ -298,7 +298,7 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
 
                         {/* Textarea Input */}
                         <div className="space-y-2">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => {
                                     setInputText(e.target.value);
@@ -317,8 +317,7 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
                                 <label className={`flex items-center gap-2 p-2.5 rounded-xl border text-xs font-semibold cursor-pointer transition ${caseSensitive ? "bg-indigo-50 border-indigo-200 text-indigo-700" : "bg-slate-50 border-slate-200 text-slate-600"
                                     }`}>
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Case Sensitive" type="checkbox"
                                         checked={caseSensitive}
                                         onChange={(e) => setCaseSensitive(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500"
@@ -328,8 +327,7 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
 
                                 <label className={`flex items-center gap-2 p-2.5 rounded-xl border text-xs font-semibold cursor-pointer transition ${ignoreSpaces ? "bg-indigo-50 border-indigo-200 text-indigo-700" : "bg-slate-50 border-slate-200 text-slate-600"
                                     }`}>
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Ignore Spaces" type="checkbox"
                                         checked={ignoreSpaces}
                                         onChange={(e) => setIgnoreSpaces(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500"
@@ -339,8 +337,7 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
 
                                 <label className={`flex items-center gap-2 p-2.5 rounded-xl border text-xs font-semibold cursor-pointer transition ${ignorePunctuation ? "bg-indigo-50 border-indigo-200 text-indigo-700" : "bg-slate-50 border-slate-200 text-slate-600"
                                     }`}>
-                                    <input
-                                        type="checkbox"
+                                    <input aria-label="Ignore Punctuation" type="checkbox"
                                         checked={ignorePunctuation}
                                         onChange={(e) => setIgnorePunctuation(e.target.checked)}
                                         className="rounded text-indigo-600 focus:ring-indigo-500"
@@ -353,7 +350,7 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
                         {/* Reference Presets */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Test Samples
                                 </span>
                                 {activePresetId && (
@@ -416,8 +413,8 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
 
                             {/* Search Filter input */}
                             <div className="relative w-full sm:w-48">
-                                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                                <input
+                                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300" />
+                                <input aria-label="Filter char"
                                     type="text"
                                     placeholder="Filter char..."
                                     value={searchQuery}
@@ -430,19 +427,19 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
                         {/* Top-line KPI Cards */}
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center">
-                                <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Raw Chars</span>
+                                <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Raw Chars</span>
                                 <span className="text-lg font-extrabold text-slate-900">{textStats.rawLength}</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center">
-                                <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Processed</span>
+                                <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Processed</span>
                                 <span className="text-lg font-extrabold text-indigo-600">{textStats.processedLength}</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center">
-                                <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Words</span>
+                                <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Words</span>
                                 <span className="text-lg font-extrabold text-slate-900">{textStats.wordCount}</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center">
-                                <span className="block text-[10px] font-bold text-slate-400 uppercase tracking-wider">Unique</span>
+                                <span className="block text-[10px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Unique</span>
                                 <span className="text-lg font-extrabold text-slate-900">{frequencyData.length}</span>
                             </div>
                         </div>
@@ -456,19 +453,19 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
                                             <th className="p-2.5 cursor-pointer hover:bg-slate-200/70 transition" onClick={() => handleSort("char")}>
                                                 <div className="flex items-center gap-1">
                                                     Character
-                                                    <ArrowUpDown className="w-3 h-3 text-slate-400" />
+                                                    <ArrowUpDown className="w-3 h-3 text-slate-600 dark:text-slate-300" />
                                                 </div>
                                             </th>
                                             <th className="p-2.5 cursor-pointer hover:bg-slate-200/70 transition" onClick={() => handleSort("count")}>
                                                 <div className="flex items-center gap-1">
                                                     Count
-                                                    <ArrowUpDown className="w-3 h-3 text-slate-400" />
+                                                    <ArrowUpDown className="w-3 h-3 text-slate-600 dark:text-slate-300" />
                                                 </div>
                                             </th>
                                             <th className="p-2.5 cursor-pointer hover:bg-slate-200/70 transition" onClick={() => handleSort("percentage")}>
                                                 <div className="flex items-center gap-1">
                                                     Density %
-                                                    <ArrowUpDown className="w-3 h-3 text-slate-400" />
+                                                    <ArrowUpDown className="w-3 h-3 text-slate-600 dark:text-slate-300" />
                                                 </div>
                                             </th>
                                             <th className="p-2.5 text-right">Visual Scale</th>
@@ -513,7 +510,7 @@ Calculated at twistertools.com/tools/text-tools/character-frequency-counter`;
                                             })
                                         ) : (
                                             <tr>
-                                                <td colSpan={4} className="p-8 text-center text-slate-400 italic">
+                                                <td colSpan={4} className="p-8 text-center text-slate-600 dark:text-slate-300 italic">
                                                     No matching characters found. Type text into the document workspace.
                                                 </td>
                                             </tr>

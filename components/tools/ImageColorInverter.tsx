@@ -475,7 +475,7 @@ export default function ImageColorInverter() {
                                     <span className="truncate max-w-[180px] font-mono text-slate-700 font-medium">{fileName}</span>
                                     <span className="bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-mono font-medium">{fileSize}</span>
                                 </div>
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="image/*"
@@ -520,7 +520,7 @@ export default function ImageColorInverter() {
                             <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                 <label htmlFor={invertInputId}>Invert Intensity:</label>
                                 <div className="flex items-center gap-1">
-                                    <input
+                                    <input aria-label="Invert Intensity"
                                         id={invertInputId}
                                         type="number"
                                         min="0"
@@ -531,10 +531,10 @@ export default function ImageColorInverter() {
                                         }
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">%</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">%</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="0"
                                 max="100"
@@ -553,8 +553,7 @@ export default function ImageColorInverter() {
                                     Solarization Sabattier Threshold:
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        id={solarizeInputId}
+                                    <input aria-label="Input value" id={solarizeInputId}
                                         type="number"
                                         min="0"
                                         max="255"
@@ -564,10 +563,10 @@ export default function ImageColorInverter() {
                                         }
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">/255</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">/255</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="0"
                                 max="255"
@@ -586,7 +585,7 @@ export default function ImageColorInverter() {
                                     <label htmlFor={brightnessInputId}>Brightness Offset:</label>
                                     <span className="font-mono text-slate-600">{settings.brightness > 0 ? `+${settings.brightness}` : settings.brightness}</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     id={brightnessInputId}
                                     type="range"
                                     min="-100"
@@ -603,7 +602,7 @@ export default function ImageColorInverter() {
                                     <label htmlFor={contrastInputId}>Contrast Curve:</label>
                                     <span className="font-mono text-slate-600">{settings.contrast > 0 ? `+${settings.contrast}` : settings.contrast}</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     id={contrastInputId}
                                     type="range"
                                     min="-100"
@@ -619,7 +618,7 @@ export default function ImageColorInverter() {
                         {/* Alpha Preservation Checkbox */}
                         <div className="pt-2">
                             <label className="flex items-center gap-2 cursor-pointer select-none text-xs font-semibold text-slate-700">
-                                <input
+                                <input aria-label="Preserve Alpha"
                                     type="checkbox"
                                     checked={settings.preserveAlpha}
                                     onChange={(e) => setSettings((p) => ({ ...p, preserveAlpha: e.target.checked }))}
@@ -735,7 +734,7 @@ export default function ImageColorInverter() {
                                         <label htmlFor={qualityInputId}>Encoding Quality:</label>
                                         <span className="font-mono">{quality}%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         id={qualityInputId}
                                         type="range"
                                         min="10"
@@ -762,7 +761,7 @@ export default function ImageColorInverter() {
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
                         <span className="flex items-center gap-1">
-                            <Cpu className="w-3.5 h-3.5 text-slate-400" />
+                            <Cpu className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             Hardware Accelerated Compositor
                         </span>
                         <span className="font-mono text-slate-600 truncate max-w-[180px]">{fileName}</span>

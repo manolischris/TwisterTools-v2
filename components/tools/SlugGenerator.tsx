@@ -269,8 +269,7 @@ export default function SlugGenerator() {
                             Word Separator
                         </label>
                         <div className="flex items-center gap-2">
-                            <select
-                                value={separator}
+                            <select aria-label="Select option" value={separator}
                                 onChange={(e) => {
                                     setSeparator(e.target.value);
                                     setActivePresetId(null);
@@ -290,8 +289,7 @@ export default function SlugGenerator() {
                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                             Letter Casing
                         </label>
-                        <select
-                            value={casing}
+                        <select aria-label="Select option" value={casing}
                             onChange={(e) => {
                                 setCasing(e.target.value as "lower" | "upper" | "preserve");
                                 setActivePresetId(null);
@@ -309,8 +307,7 @@ export default function SlugGenerator() {
                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                             Domain / Base Path Preview
                         </label>
-                        <input
-                            type="text"
+                        <input aria-label="Input value" type="text"
                             value={customBaseUrl}
                             onChange={(e) => setCustomBaseUrl(e.target.value)}
                             placeholder="e.g. https://example.com/blog/"
@@ -322,7 +319,7 @@ export default function SlugGenerator() {
                 {/* Preset Chips */}
                 <div className="pt-2 border-t border-slate-100 space-y-2">
                     <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                        <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                             <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Output Target Presets
                         </span>
                         {activePresetId && (
@@ -354,7 +351,7 @@ export default function SlugGenerator() {
                 {/* Granular Option Toggles */}
                 <div className="pt-3 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer select-none">
-                        <input
+                        <input aria-label="Strip Accents"
                             type="checkbox"
                             checked={stripAccents}
                             onChange={(e) => setStripAccents(e.target.checked)}
@@ -364,8 +361,7 @@ export default function SlugGenerator() {
                     </label>
 
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer select-none">
-                        <input
-                            type="checkbox"
+                        <input aria-label="Remove Stop Words" type="checkbox"
                             checked={removeStopWords}
                             onChange={(e) => setRemoveStopWords(e.target.checked)}
                             className="rounded text-indigo-600 focus:ring-indigo-500 h-4 w-4"
@@ -374,8 +370,7 @@ export default function SlugGenerator() {
                     </label>
 
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer select-none">
-                        <input
-                            type="checkbox"
+                        <input aria-label="Remove Numbers" type="checkbox"
                             checked={removeNumbers}
                             onChange={(e) => {
                                 setRemoveNumbers(e.target.checked);
@@ -399,13 +394,13 @@ export default function SlugGenerator() {
                             </h2>
                             <button
                                 onClick={() => setInputText("")}
-                                className="text-xs text-slate-400 hover:text-rose-600 flex items-center gap-1 font-semibold transition"
+                                className="text-xs text-slate-600 dark:text-slate-300 hover:text-rose-600 flex items-center gap-1 font-semibold transition"
                             >
                                 <Trash2 className="w-3.5 h-3.5" /> Clear
                             </button>
                         </div>
 
-                        <textarea
+                        <textarea aria-label="Input text content"
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                             placeholder="Type or paste your article title, product name, or headline here..."
@@ -414,7 +409,7 @@ export default function SlugGenerator() {
 
                         <div className="flex items-center justify-between text-xs text-slate-500 pt-1">
                             <span>Input Length: <strong>{stats.rawCharCount}</strong> characters</span>
-                            <span className="text-slate-400">Pasting automatically cleans non-latin symbols</span>
+                            <span className="text-slate-600 dark:text-slate-300">Pasting automatically cleans non-latin symbols</span>
                         </div>
                     </div>
                 </div>
@@ -435,7 +430,7 @@ export default function SlugGenerator() {
 
                         {/* Direct Slug Output Box */}
                         <div className="space-y-1">
-                            <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Clean Slug</label>
+                            <label className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Clean Slug</label>
                             <div className="p-3 bg-slate-900 rounded-xl border border-slate-800 font-mono text-sm text-indigo-300 break-all min-h-[64px] flex items-center justify-between gap-2">
                                 <span>{transformedSlug || <span className="text-slate-600 italic">Slug preview will appear here...</span>}</span>
                                 <button
@@ -451,7 +446,7 @@ export default function SlugGenerator() {
 
                         {/* Full URL Preview Box */}
                         <div className="space-y-1 pt-1">
-                            <label className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Full Address Preview</label>
+                            <label className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">Full Address Preview</label>
                             <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 font-mono text-xs text-slate-700 break-all flex items-center justify-between gap-2">
                                 <span className="truncate">{fullUrlPreview}</span>
                                 <button

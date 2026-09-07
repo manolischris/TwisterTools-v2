@@ -294,8 +294,7 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -314,9 +313,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                     <DollarSign className="w-4 h-4 text-indigo-600" /> Initial Amount Invested
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={initialInvestment === 0 ? "" : initialInvestment}
@@ -332,9 +330,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                     <Coins className="w-4 h-4 text-indigo-600" /> End Value / Sale Price
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={finalValue === 0 ? "" : finalValue}
@@ -349,8 +346,7 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                 <label className="block text-sm font-semibold text-slate-800 mb-1.5 flex items-center gap-1.5">
                                     <Calendar className="w-4 h-4 text-indigo-600" /> Time Horizon (Years)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="0.1"
                                     max="50"
                                     step="0.5"
@@ -370,9 +366,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                             Expenses & Fees
                                         </label>
                                         <div className="relative">
-                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="50"
                                                 value={additionalCosts === 0 ? "" : additionalCosts}
@@ -387,9 +382,8 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                                             Dividends / Income
                                         </label>
                                         <div className="relative">
-                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">{currencySymbol}</span>
-                                            <input
-                                                type="number"
+                                            <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">{currencySymbol}</span>
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="50"
                                                 value={dividends === 0 ? "" : dividends}
@@ -405,7 +399,7 @@ Calculated at twistertools.com/tools/calculators/roi-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Pre-set Benchmarks
                                 </span>
                                 {activePresetId && (

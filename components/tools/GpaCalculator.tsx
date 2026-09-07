@@ -452,8 +452,7 @@ export default function GpaCalculator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Grading Scale System
                                 </label>
-                                <select
-                                    value={scale}
+                                <select aria-label="Select option" value={scale}
                                     onChange={(e) => {
                                         setScale(e.target.value as "4.0" | "4.3" | "5.0");
                                         setActivePresetId(null);
@@ -491,27 +490,23 @@ export default function GpaCalculator() {
                                     <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
                                         Prior Cumulative GPA
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.01"
                                         placeholder="e.g. 3.45"
                                         value={priorGpa}
                                         onChange={handlePriorGpaInput}
-                                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
-                                    />
+                                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"/>
                                 </div>
                                 <div className="space-y-1">
                                     <label className="block text-[11px] font-bold text-slate-700 uppercase tracking-wider">
                                         Prior Earned Credits
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="1"
                                         placeholder="e.g. 45"
                                         value={priorCredits}
                                         onChange={handlePriorCreditsInput}
-                                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
-                                    />
+                                        className="w-full px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"/>
                                 </div>
                             </div>
                         )}
@@ -534,8 +529,7 @@ export default function GpaCalculator() {
                                         className="p-3 bg-slate-50 border border-slate-200 rounded-xl grid grid-cols-12 gap-2 items-center"
                                     >
                                         <div className="col-span-12 sm:col-span-4">
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 placeholder={`Course ${idx + 1}`}
                                                 value={course.name}
                                                 onChange={(e) => updateCourse(course.id, "name", e.target.value)}
@@ -544,8 +538,7 @@ export default function GpaCalculator() {
                                         </div>
 
                                         <div className="col-span-5 sm:col-span-3">
-                                            <select
-                                                value={course.grade}
+                                            <select aria-label="Select option" value={course.grade}
                                                 onChange={(e) => updateCourse(course.id, "grade", e.target.value)}
                                                 className="w-full px-2 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                             >
@@ -556,7 +549,7 @@ export default function GpaCalculator() {
                                         </div>
 
                                         <div className="col-span-4 sm:col-span-2">
-                                            <input
+                                            <input aria-label="Credits"
                                                 type="number"
                                                 min="0.5"
                                                 step="0.5"
@@ -572,8 +565,7 @@ export default function GpaCalculator() {
 
                                         <div className="col-span-3 sm:col-span-3 flex items-center justify-end gap-1">
                                             {scale === "5.0" && (
-                                                <select
-                                                    value={course.courseType}
+                                                <select aria-label="Select option" value={course.courseType}
                                                     onChange={(e) => updateCourse(course.id, "courseType", e.target.value)}
                                                     className="px-1.5 py-1.5 bg-white border border-slate-300 rounded-lg text-[10px] font-bold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none"
                                                 >
@@ -585,7 +577,7 @@ export default function GpaCalculator() {
                                             <button
                                                 onClick={() => removeCourse(course.id)}
                                                 disabled={courses.length <= 1}
-                                                className="p-1.5 text-slate-400 hover:text-rose-600 disabled:opacity-30 transition rounded-lg hover:bg-rose-50 cursor-pointer"
+                                                className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-rose-600 disabled:opacity-30 transition rounded-lg hover:bg-rose-50 cursor-pointer"
                                                 title="Remove course"
                                             >
                                                 <Trash2 className="w-4 h-4" />
@@ -607,7 +599,7 @@ export default function GpaCalculator() {
                         {/* Presets Bar */}
                         <div className="pt-3 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Academic Term Templates
                                 </span>
                                 {activePresetId && (
@@ -743,27 +735,23 @@ export default function GpaCalculator() {
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                         Desired Target GPA
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="0.01"
                                         placeholder="e.g. 3.75"
                                         value={targetGpa}
                                         onChange={handleTargetGpaInput}
-                                        className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
-                                    />
+                                        className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"/>
                                 </div>
                                 <div>
                                     <label className="block text-[11px] font-semibold text-slate-600 mb-1">
                                         Remaining Credits Left
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         step="1"
                                         placeholder="e.g. 30"
                                         value={remainingCredits}
                                         onChange={handleRemainingCreditsInput}
-                                        className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
-                                    />
+                                        className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"/>
                                 </div>
                             </div>
 
@@ -1092,7 +1080,7 @@ export default function GpaCalculator() {
 
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
                             <h3 className="font-bold text-slate-900 text-xs flex items-center gap-2">
-                                <Award className="w-4 h-4 text-slate-400" /> Magna Cum Laude
+                                <Award className="w-4 h-4 text-slate-600 dark:text-slate-300" /> Magna Cum Laude
                             </h3>
                             <p className="text-[11px] text-slate-600 leading-relaxed">
                                 Meaning "With Great Honor". Typically awarded to the top 5% to 15% of a graduating class (GPA 3.70–3.89).

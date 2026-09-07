@@ -471,7 +471,7 @@ export default function RandomStringGenerator() {
                                         String Length ({stringLength} chars)
                                     </label>
                                     <div className="flex items-center gap-3">
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min={4}
                                             max={256}
@@ -479,8 +479,7 @@ export default function RandomStringGenerator() {
                                             onChange={(e) => setStringLength(Number(e.target.value))}
                                             className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                         />
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={4}
                                             max={256}
                                             value={stringLength}
@@ -501,8 +500,7 @@ export default function RandomStringGenerator() {
                                     <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                                         Batch Quantity ({quantity} items)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         max={100}
                                         value={quantity}
@@ -592,8 +590,7 @@ export default function RandomStringGenerator() {
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">
                                         Custom Prefix
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         placeholder="e.g. sk_live_"
                                         value={prefix}
                                         onChange={(e) => setPrefix(e.target.value)}
@@ -604,8 +601,7 @@ export default function RandomStringGenerator() {
                                     <label className="block text-xs font-semibold text-slate-700 mb-1">
                                         Custom Suffix
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         placeholder="e.g. _v2"
                                         value={suffix}
                                         onChange={(e) => setSuffix(e.target.value)}
@@ -700,7 +696,7 @@ export default function RandomStringGenerator() {
                                 {/* Generated Keys Display List */}
                                 <div className="h-[450px] overflow-y-auto pr-1 space-y-3 font-mono text-xs">
                                     {generatedItems.length === 0 ? (
-                                        <div className="h-full flex items-center justify-center text-slate-400">
+                                        <div className="h-full flex items-center justify-center text-slate-600 dark:text-slate-300">
                                             No strings generated. Check parameters.
                                         </div>
                                     ) : (
@@ -752,7 +748,7 @@ export default function RandomStringGenerator() {
                                 {/* Metrics Summary Card */}
                                 <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-100 text-center">
                                     <div className="bg-slate-50 rounded-lg p-2 border border-slate-200">
-                                        <span className="block text-[10px] uppercase font-bold text-slate-400">
+                                        <span className="block text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">
                                             Total Keys
                                         </span>
                                         <span className="text-xs font-mono font-bold text-slate-800">
@@ -760,7 +756,7 @@ export default function RandomStringGenerator() {
                                         </span>
                                     </div>
                                     <div className="bg-slate-50 rounded-lg p-2 border border-slate-200">
-                                        <span className="block text-[10px] uppercase font-bold text-slate-400">
+                                        <span className="block text-[10px] uppercase font-bold text-slate-600 dark:text-slate-300">
                                             Chars/Key
                                         </span>
                                         <span className="text-xs font-mono font-bold text-slate-800">

@@ -307,7 +307,7 @@ export default function FakeWordGenerator() {
                                     className="text-xs font-semibold text-slate-700 uppercase tracking-wider flex items-center justify-between"
                                 >
                                     <span>Word Count Quantity</span>
-                                    <span className="text-slate-400 font-normal lowercase">(Max 500)</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal lowercase">(Max 500)</span>
                                 </label>
                                 <input
                                     id="word-count-input"
@@ -348,7 +348,7 @@ export default function FakeWordGenerator() {
                                 </div>
 
                                 <label className="flex items-center gap-3 cursor-pointer select-none pt-1">
-                                    <input
+                                    <input aria-label="Definitions"
                                         type="checkbox"
                                         checked={includeDefinitions}
                                         onChange={(e) => setIncludeDefinitions(e.target.checked)}
@@ -396,7 +396,7 @@ export default function FakeWordGenerator() {
                         <div className="p-5 space-y-4 flex-1 flex flex-col">
                             {/* Preview Window */}
                             <div className="relative flex-1 min-w-0">
-                                <textarea
+                                <textarea aria-label="Generated vocabulary will appear here"
                                     readOnly
                                     value={output}
                                     placeholder="Generated vocabulary will appear here..."

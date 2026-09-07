@@ -472,11 +472,10 @@ Calculated at twistertools.com/tools/calculators/dog-age-calculator`;
                                         <Calendar className="w-3.5 h-3.5 text-indigo-600" /> Chronological Years
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="25"
-                                            value={ageYears === 0 && ageMonths > 0 ? 0 : ageYears === 0 ? "" : ageYears}
+                                            value={ageYears === 0 && ageMonths> 0 ? 0 : ageYears === 0 ? "" : ageYears}
                                             onChange={(e) => {
                                                 handleNumberInput(e, (val) => setAgeYears(Math.max(0, Math.min(25, val))));
                                                 setActivePresetId(null);
@@ -484,7 +483,7 @@ Calculated at twistertools.com/tools/calculators/dog-age-calculator`;
                                             className="w-full pl-3 pr-12 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                             placeholder="Years"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">years</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">years</span>
                                     </div>
                                 </div>
 
@@ -493,8 +492,7 @@ Calculated at twistertools.com/tools/calculators/dog-age-calculator`;
                                         <Clock className="w-3.5 h-3.5 text-indigo-600" /> Additional Months
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="11"
                                             value={ageMonths === 0 ? "" : ageMonths}
@@ -505,7 +503,7 @@ Calculated at twistertools.com/tools/calculators/dog-age-calculator`;
                                             className="w-full pl-3 pr-14 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 outline-none text-sm bg-slate-50"
                                             placeholder="0–11"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">months</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">months</span>
                                     </div>
                                 </div>
                             </div>
@@ -527,7 +525,7 @@ Calculated at twistertools.com/tools/calculators/dog-age-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Breed Profile Presets
                                 </span>
                                 {activePresetId && (
@@ -652,7 +650,7 @@ Calculated at twistertools.com/tools/calculators/dog-age-calculator`;
                                         />
                                     )}
                                 </div>
-                                <div className="flex justify-between text-[10px] font-bold text-slate-400">
+                                <div className="flex justify-between text-[10px] font-bold text-slate-600 dark:text-slate-300">
                                     <span>Puppy</span>
                                     <span>Young Adult</span>
                                     <span>Mature</span>

@@ -844,7 +844,7 @@ export default function HtmlToMarkdown() {
             </div>
 
             {/* Textarea */}
-            <textarea
+            <textarea aria-label="Input text content"
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -964,7 +964,7 @@ export default function HtmlToMarkdown() {
                         {convertedOutput}
                       </pre>
                     ) : (
-                      <p className="text-slate-400 dark:text-slate-500 italic text-sm">
+                      <p className="text-slate-600 dark:text-slate-300 dark:text-slate-500 italic text-sm">
                         {input.trim()
                           ? ""
                           : mode === "html-to-md"
@@ -986,7 +986,7 @@ export default function HtmlToMarkdown() {
                       ? copied
                         ? "bg-green-500 text-white shadow-md shadow-green-200"
                         : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                      : "bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed"
+                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 dark:text-slate-600 cursor-not-allowed"
                   }`}
                 >
                   {copied ? (
@@ -1020,7 +1020,7 @@ export default function HtmlToMarkdown() {
                     Input Size
                   </p>
                   <p className="text-xs font-bold text-slate-800 dark:text-slate-200 mt-1">
-                    {metrics.inputBytes.toLocaleString()} <span className="font-normal text-slate-400">B</span>
+                    {metrics.inputBytes.toLocaleString()} <span className="font-normal text-slate-600 dark:text-slate-300">B</span>
                   </p>
                 </div>
                 <div className="bg-white dark:bg-slate-900 p-3 text-center">
@@ -1028,7 +1028,7 @@ export default function HtmlToMarkdown() {
                     Output Size
                   </p>
                   <p className="text-xs font-bold text-slate-800 dark:text-slate-200 mt-1">
-                    {metrics.outputBytes.toLocaleString()} <span className="font-normal text-slate-400">B</span>
+                    {metrics.outputBytes.toLocaleString()} <span className="font-normal text-slate-600 dark:text-slate-300">B</span>
                   </p>
                 </div>
                 <div className="bg-white dark:bg-slate-900 p-3 text-center">

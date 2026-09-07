@@ -370,7 +370,7 @@ export default function SubscriptSuperscriptGenerator() {
                         {/* Input Text Area */}
                         <div className="space-y-2">
                             <div className="relative">
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     value={inputText}
                                     onChange={(e) => setInputText(e.target.value)}
                                     placeholder="Type regular text, or use LaTeX-style notation: x^2 + y^2 = z^2 or H_2O..."
@@ -392,7 +392,7 @@ export default function SubscriptSuperscriptGenerator() {
                             </span>
                             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
                                 <label className="flex items-center gap-2 text-slate-700 cursor-pointer font-medium">
-                                    <input
+                                    <input aria-label="Preserve Unsupported"
                                         type="checkbox"
                                         checked={preserveUnsupported}
                                         onChange={(e) => setPreserveUnsupported(e.target.checked)}
@@ -476,7 +476,7 @@ export default function SubscriptSuperscriptGenerator() {
                                 </button>
                             </div>
                             <div className="p-3 bg-white rounded-lg border border-slate-200 font-mono text-sm sm:text-base text-slate-900 break-all min-h-[44px] flex items-center">
-                                {formulaFormatted || <span className="text-slate-400 italic">No output yet...</span>}
+                                {formulaFormatted || <span className="text-slate-600 dark:text-slate-300 italic">No output yet...</span>}
                             </div>
                         </div>
 
@@ -499,7 +499,7 @@ export default function SubscriptSuperscriptGenerator() {
                                 </button>
                             </div>
                             <div className="p-2.5 bg-white rounded-lg border border-slate-200 font-mono text-sm text-slate-800 break-all min-h-[38px] flex items-center">
-                                {fullSuperscript || <span className="text-slate-400 italic">No output...</span>}
+                                {fullSuperscript || <span className="text-slate-600 dark:text-slate-300 italic">No output...</span>}
                             </div>
                         </div>
 
@@ -522,7 +522,7 @@ export default function SubscriptSuperscriptGenerator() {
                                 </button>
                             </div>
                             <div className="p-2.5 bg-white rounded-lg border border-slate-200 font-mono text-sm text-slate-800 break-all min-h-[38px] flex items-center">
-                                {fullSubscript || <span className="text-slate-400 italic">No output...</span>}
+                                {fullSubscript || <span className="text-slate-600 dark:text-slate-300 italic">No output...</span>}
                             </div>
                         </div>
 
@@ -675,7 +675,7 @@ export default function SubscriptSuperscriptGenerator() {
                                 <tr className="hover:bg-slate-50">
                                     <td className="p-3 font-bold text-slate-900">Greek Subscripts</td>
                                     <td className="p-3 font-mono">β, γ, ρ, φ, χ</td>
-                                    <td className="p-3 font-mono text-slate-400">N/A</td>
+                                    <td className="p-3 font-mono text-slate-600 dark:text-slate-300">N/A</td>
                                     <td className="p-3 text-xs font-mono text-slate-500">-</td>
                                     <td className="p-3 font-mono text-indigo-600 font-bold">ᵦ, ᵧ, ᵨ, ᵩ, ᵪ</td>
                                     <td className="p-3 text-xs font-mono text-slate-500">U+1D66 - U+1D6A</td>

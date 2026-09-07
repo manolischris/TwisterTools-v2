@@ -516,7 +516,7 @@ export default function RandomEmojiGenerator() {
                                     </label>
                                     <span className="text-xs font-bold text-indigo-600 font-mono">{count} Items</span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="1"
                                     max="50"
@@ -545,8 +545,7 @@ export default function RandomEmojiGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Item Separator
                                 </label>
-                                <select
-                                    value={separator}
+                                <select aria-label="Select option" value={separator}
                                     onChange={(e) => setSeparator(e.target.value)}
                                     className="w-full px-3 py-2 rounded-xl border border-slate-200 text-slate-900 font-medium text-sm focus:ring-2 focus:ring-indigo-500 outline-none bg-white"
                                 >
@@ -558,7 +557,7 @@ export default function RandomEmojiGenerator() {
                                     <option value="custom">Custom String</option>
                                 </select>
                                 {separator === "custom" && (
-                                    <input
+                                    <input aria-label="Custom String"
                                         type="text"
                                         value={customSep}
                                         onChange={(e) => setCustomSep(e.target.value)}
@@ -575,8 +574,7 @@ export default function RandomEmojiGenerator() {
                                 <span className="text-xs font-bold text-slate-800 block">Allow Repeating Characters</span>
                                 <span className="text-[11px] text-slate-500">Allow duplicate icons in the generated sequence</span>
                             </div>
-                            <input
-                                type="checkbox"
+                            <input aria-label="Allow Duplicates" type="checkbox"
                                 checked={allowDuplicates}
                                 onChange={(e) => setAllowDuplicates(e.target.checked)}
                                 className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500 cursor-pointer"
@@ -683,7 +681,7 @@ export default function RandomEmojiGenerator() {
                             >
                                 {generatedList.length > 0 ? generatedList.join(activeSeparation) : "Click Generate"}
                             </div>
-                            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mt-4">
+                            <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider mt-4">
                                 {generatedList.length} Items Rendered • Universal Font Fallback Active
                             </span>
                         </div>
@@ -712,7 +710,7 @@ export default function RandomEmojiGenerator() {
 
                         {/* Raw Code View Box */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 readOnly
                                 value={formattedOutput}
                                 rows={outputFormat === "json" ? 6 : 3}
@@ -735,7 +733,7 @@ export default function RandomEmojiGenerator() {
                                         >
                                             <div className="truncate mr-2" style={EMOJI_FONT_FAMILY}>
                                                 <span className="font-bold text-slate-800 mr-2">{pal.items.join(" ")}</span>
-                                                <span className="text-[10px] text-slate-400">({pal.timestamp})</span>
+                                                <span className="text-[10px] text-slate-600 dark:text-slate-300">({pal.timestamp})</span>
                                             </div>
                                             <div className="flex items-center gap-1">
                                                 <button

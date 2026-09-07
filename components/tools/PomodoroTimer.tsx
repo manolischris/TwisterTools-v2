@@ -502,7 +502,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                     className="px-2.5 py-1.5 rounded-lg bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition border border-slate-200 cursor-pointer shadow-xs"
                                     title={soundEnabled ? "Mute audio alerts" : "Enable audio alerts"}
                                 >
-                                    {soundEnabled ? <Volume2 className="w-3.5 h-3.5 text-indigo-500" /> : <VolumeX className="w-3.5 h-3.5 text-slate-400" />}
+                                    {soundEnabled ? <Volume2 className="w-3.5 h-3.5 text-indigo-500" /> : <VolumeX className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />}
                                     <span>{soundEnabled ? "Sound On" : "Muted"}</span>
                                 </button>
 
@@ -589,7 +589,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
 
                                 {/* Central Numerical Readout */}
                                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                                    <span className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">
+                                    <span className="text-xs font-black uppercase tracking-widest text-slate-600 dark:text-slate-300 mb-1">
                                         {currentMode === "work" ? "Deep Focus Sprint" : currentMode === "shortBreak" ? "Restorative Break" : "Extended Recovery"}
                                     </span>
                                     <div className="text-5xl sm:text-6xl font-black text-slate-900 tracking-tight font-mono">
@@ -730,7 +730,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                             <span>Work Sprint Duration</span>
                                             <span className="font-mono text-indigo-600 font-black">{workDuration} mins</span>
                                         </div>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min={5}
                                             max={120}
@@ -751,7 +751,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                                 <span>Short Break</span>
                                                 <span className="font-mono text-emerald-600 font-black">{shortBreakDuration}m</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min={1}
                                                 max={30}
@@ -771,7 +771,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                                 <span>Long Break</span>
                                                 <span className="font-mono text-indigo-600 font-black">{longBreakDuration}m</span>
                                             </div>
-                                            <input
+                                            <input aria-label="Adjust slider value"
                                                 type="range"
                                                 min={5}
                                                 max={60}
@@ -790,7 +790,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                     {/* Auto-start triggers */}
                                     <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-200 text-xs font-medium text-slate-700">
                                         <label className="flex items-center gap-2 cursor-pointer">
-                                            <input
+                                            <input aria-label="Auto Start Breaks"
                                                 type="checkbox"
                                                 checked={autoStartBreaks}
                                                 onChange={(e) => setAutoStartBreaks(e.target.checked)}
@@ -799,7 +799,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                             <span>Auto-start Breaks</span>
                                         </label>
                                         <label className="flex items-center gap-2 cursor-pointer">
-                                            <input
+                                            <input aria-label="Auto-start Breaks"
                                                 type="checkbox"
                                                 checked={autoStartPomodoros}
                                                 onChange={(e) => setAutoStartPomodoros(e.target.checked)}
@@ -817,17 +817,17 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Completed</span>
                                 <span className="text-xl sm:text-2xl font-black text-indigo-600 font-mono">{totalCompletedToday}</span>
-                                <span className="text-[10px] text-slate-400 block">sprints today</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">sprints today</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Total Focus</span>
                                 <span className="text-xl sm:text-2xl font-black text-slate-800 font-mono">{totalFocusMinutes}m</span>
-                                <span className="text-[10px] text-slate-400 block">~{(totalFocusMinutes / 60).toFixed(1)} hours</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">~{(totalFocusMinutes / 60).toFixed(1)} hours</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-0.5">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Streak Cycle</span>
                                 <span className="text-xl sm:text-2xl font-black text-emerald-600 font-mono">{completedCycles}</span>
-                                <span className="text-[10px] text-slate-400 block">intervals completed</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">intervals completed</span>
                             </div>
                         </div>
 
@@ -845,7 +845,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
 
                             {/* Task Creation Input */}
                             <form onSubmit={handleAddTask} className="flex gap-2">
-                                <input
+                                <input aria-label="Add task to focus on"
                                     type="text"
                                     placeholder="Add task to focus on..."
                                     value={newTaskText}
@@ -854,8 +854,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                 />
                                 <div className="flex items-center gap-1 bg-slate-100 px-2 py-1 rounded-xl border border-slate-200" title="Estimated Pomodoros">
                                     <Flame className="w-3.5 h-3.5 text-amber-500" />
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min={1}
                                         max={12}
                                         value={newTaskEst}
@@ -875,7 +874,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                             {/* Task List */}
                             <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
                                 {tasks.length === 0 ? (
-                                    <p className="text-xs text-slate-400 text-center py-4 italic">No active tasks. Add a task to link sprint intervals.</p>
+                                    <p className="text-xs text-slate-600 dark:text-slate-300 text-center py-4 italic">No active tasks. Add a task to link sprint intervals.</p>
                                 ) : (
                                     tasks.map((task) => {
                                         const isActive = activeTaskId === task.id;
@@ -900,7 +899,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                                     </button>
                                                     <span
                                                         onClick={() => setActiveTaskId(task.id)}
-                                                        className={`text-xs font-semibold truncate cursor-pointer flex-1 ${task.completed ? "line-through text-slate-400" : "text-slate-800"
+                                                        className={`text-xs font-semibold truncate cursor-pointer flex-1 ${task.completed ? "line-through text-slate-600 dark:text-slate-300" : "text-slate-800"
                                                             }`}
                                                     >
                                                         {task.text}
@@ -915,7 +914,7 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                                                     <button
                                                         type="button"
                                                         onClick={() => deleteTask(task.id)}
-                                                        className="text-slate-400 hover:text-rose-500 p-1 transition cursor-pointer"
+                                                        className="text-slate-600 dark:text-slate-300 hover:text-rose-500 p-1 transition cursor-pointer"
                                                         title="Delete Task"
                                                     >
                                                         <Trash2 className="w-3.5 h-3.5" />
@@ -1106,15 +1105,15 @@ Logged with TwisterTools Pomodoro Work Sprint Visualizer`;
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">23 Min 15 Sec</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">23 Min 15 Sec</span>
                                 <p>Average recovery time required to regain original deep focus after a single external interruption (UC Irvine Study).</p>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">40% Efficiency Loss</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">40% Efficiency Loss</span>
                                 <p>Average drop in cognitive performance caused by continuous multitasking and rapid task-switching (APA Research).</p>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1 font-bold">10-15 IQ Point Drop</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1 font-bold">10-15 IQ Point Drop</span>
                                 <p>Temporary impairment in effective functional intelligence caused by unmanaged digital notifications and inbox alerts.</p>
                             </div>
                         </div>

@@ -399,15 +399,14 @@ export default function Ipv6AddressConverter() {
                         IPv6 Address (Supports Standard, Compressed ::, Dotted IPv4-Mapped, and 6to4)
                     </label>
                     <div className="relative">
-                        <input
-                            id={inputId}
+                        <input aria-label="Input value" id={inputId}
                             type="text"
                             value={inputAddress}
                             onChange={(e) => setInputAddress(e.target.value)}
                             placeholder="e.g. 2001:db8::1, ::ffff:192.168.1.1, or 2002:c0a8:0101::"
                             className="w-full px-3.5 py-2.5 text-sm font-mono rounded-lg border border-slate-200 bg-slate-50 focus:ring-2 focus:ring-indigo-500 focus:bg-white text-slate-900 outline-none transition"
                         />
-                        <span className="absolute right-3.5 top-3 text-xs font-mono font-semibold text-slate-400 pointer-events-none">
+                        <span className="absolute right-3.5 top-3 text-xs font-mono font-semibold text-slate-600 dark:text-slate-300 pointer-events-none">
                             128-Bit IPv6
                         </span>
                     </div>
@@ -564,7 +563,7 @@ export default function Ipv6AddressConverter() {
 
                     <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
                         <span className="flex items-center gap-1">
-                            <Boxes className="w-4 h-4 text-slate-400" />
+                            <Boxes className="w-4 h-4 text-slate-600 dark:text-slate-300" />
                             Client-Side Native RFC Parsing
                         </span>
                         <span className="font-mono text-slate-600">RFC 4291 / RFC 5952</span>
@@ -580,7 +579,7 @@ export default function Ipv6AddressConverter() {
                                 IPv4 Extraction & 128-Bit Binary
                             </h2>
                         </div>
-                        <span className="text-xs text-slate-400 font-mono">Dual-Stack Decoder</span>
+                        <span className="text-xs text-slate-600 dark:text-slate-300 font-mono">Dual-Stack Decoder</span>
                     </div>
 
                     {parsedData && (
@@ -616,7 +615,7 @@ export default function Ipv6AddressConverter() {
                                                 <button
                                                     type="button"
                                                     onClick={() => copyToClipboard(parsedData.extractedIpv4!, "ipv4")}
-                                                    className="p-1 text-slate-400 hover:text-indigo-600 transition"
+                                                    className="p-1 text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition"
                                                 >
                                                     {copiedKey === "ipv4" ? (
                                                         <Check className="w-3.5 h-3.5 text-emerald-600" />
@@ -637,7 +636,7 @@ export default function Ipv6AddressConverter() {
                                                 <button
                                                     type="button"
                                                     onClick={() => copyToClipboard(parsedData.embeddedIpv4Hex!, "ipv4hex")}
-                                                    className="p-1 text-slate-400 hover:text-indigo-600 transition"
+                                                    className="p-1 text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition"
                                                 >
                                                     {copiedKey === "ipv4hex" ? (
                                                         <Check className="w-3.5 h-3.5 text-emerald-600" />
@@ -666,7 +665,7 @@ export default function Ipv6AddressConverter() {
                                             key={idx}
                                             className="p-2 bg-slate-50 border border-slate-200 rounded-lg space-y-1"
                                         >
-                                            <span className="text-[10px] text-slate-400 block font-mono">
+                                            <span className="text-[10px] text-slate-600 dark:text-slate-300 block font-mono">
                                                 H{idx + 1}
                                             </span>
                                             <span className="font-mono text-xs font-bold text-indigo-600 block">
@@ -711,7 +710,7 @@ export default function Ipv6AddressConverter() {
                             <CheckCircle2 className="w-4 h-4" />
                             Client-Side Sandbox Computation
                         </span>
-                        <span className="text-slate-400">Zero Server Telemetry</span>
+                        <span className="text-slate-600 dark:text-slate-300">Zero Server Telemetry</span>
                     </div>
                 </div>
             </div>
@@ -863,17 +862,17 @@ export default function Ipv6AddressConverter() {
                         </span>
                         <div className="space-y-2 text-xs font-mono">
                             <div>
-                                <span className="text-slate-400">Compressed IPv6: </span>
+                                <span className="text-slate-600 dark:text-slate-300">Compressed IPv6: </span>
                                 <span className="text-white font-bold">2001:db8::1</span>
                             </div>
                             <div>
-                                <span className="text-slate-400">Expanded 32 Nibbles: </span>
+                                <span className="text-slate-600 dark:text-slate-300">Expanded 32 Nibbles: </span>
                                 <span className="text-emerald-400 font-bold">
                                     2001:0db8:0000:0000:0000:0000:0000:0001
                                 </span>
                             </div>
                             <div>
-                                <span className="text-slate-400">Reversed Dot-Separated String: </span>
+                                <span className="text-slate-600 dark:text-slate-300">Reversed Dot-Separated String: </span>
                                 <span className="text-indigo-300 font-bold break-all">
                                     1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.b.d.0.1.0.0.2.ip6.arpa
                                 </span>

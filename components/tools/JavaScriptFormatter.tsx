@@ -1109,7 +1109,7 @@ export default function JavaScriptFormatter() {
 
 
             <div className="relative rounded-xl border border-slate-200 bg-slate-50 overflow-hidden focus-within:ring-2 focus-within:ring-indigo-500 focus-within:border-transparent flex-1 flex">
-              <textarea
+              <textarea aria-label="Input text content"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Paste your JavaScript code here to format, beautify, and minify..."
@@ -1246,7 +1246,7 @@ export default function JavaScriptFormatter() {
                     ? copied
                       ? "bg-green-500 text-white shadow-md shadow-green-200"
                       : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                 }`}
               >
                 {copied ? (

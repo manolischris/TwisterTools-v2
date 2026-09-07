@@ -267,8 +267,7 @@ export default function PrefixSuffixAttacher() {
                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                             Prefix (Attach to Start of Line)
                         </label>
-                        <input
-                            type="text"
+                        <input aria-label="Input value" type="text"
                             value={prefix}
                             onChange={(e) => {
                                 setPrefix(e.target.value);
@@ -283,8 +282,7 @@ export default function PrefixSuffixAttacher() {
                         <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
                             Suffix (Attach to End of Line)
                         </label>
-                        <input
-                            type="text"
+                        <input aria-label="Input value" type="text"
                             value={suffix}
                             onChange={(e) => {
                                 setSuffix(e.target.value);
@@ -299,7 +297,7 @@ export default function PrefixSuffixAttacher() {
                 {/* Preset Chips */}
                 <div className="pt-2 border-t border-slate-100 space-y-2">
                     <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                        <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                             <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Quick Syntax Presets
                         </span>
                         {activePresetId && (
@@ -331,7 +329,7 @@ export default function PrefixSuffixAttacher() {
                 {/* Options Row */}
                 <div className="pt-3 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer select-none">
-                        <input
+                        <input aria-label="Ignore Empty Lines"
                             type="checkbox"
                             checked={ignoreEmptyLines}
                             onChange={(e) => setIgnoreEmptyLines(e.target.checked)}
@@ -341,8 +339,7 @@ export default function PrefixSuffixAttacher() {
                     </label>
 
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer select-none">
-                        <input
-                            type="checkbox"
+                        <input aria-label="Trim Lines" type="checkbox"
                             checked={trimLines}
                             onChange={(e) => setTrimLines(e.target.checked)}
                             className="rounded text-indigo-600 focus:ring-indigo-500 h-4 w-4"
@@ -351,8 +348,7 @@ export default function PrefixSuffixAttacher() {
                     </label>
 
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer select-none">
-                        <input
-                            type="checkbox"
+                        <input aria-label="Add Line Numbers" type="checkbox"
                             checked={addLineNumbers}
                             onChange={(e) => setAddLineNumbers(e.target.checked)}
                             className="rounded text-indigo-600 focus:ring-indigo-500 h-4 w-4"
@@ -362,16 +358,14 @@ export default function PrefixSuffixAttacher() {
 
                     {addLineNumbers && (
                         <div className="flex items-center gap-2">
-                            <input
-                                type="number"
+                            <input aria-label="Input value" type="number"
                                 min="1"
                                 value={lineNumberStart}
                                 onChange={(e) => handleNumberInput(e, setLineNumberStart)}
                                 className="w-16 px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono text-center outline-none focus:ring-2 focus:ring-indigo-500"
                                 title="Start Number"
                             />
-                            <input
-                                type="text"
+                            <input aria-label="Input value" type="text"
                                 value={lineNumberSeparator}
                                 onChange={(e) => setLineNumberSeparator(e.target.value)}
                                 className="w-16 px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono text-center outline-none focus:ring-2 focus:ring-indigo-500"
@@ -393,13 +387,13 @@ export default function PrefixSuffixAttacher() {
                             </h2>
                             <button
                                 onClick={() => setInputText("")}
-                                className="text-xs text-slate-400 hover:text-rose-600 flex items-center gap-1 font-semibold transition"
+                                className="text-xs text-slate-600 dark:text-slate-300 hover:text-rose-600 flex items-center gap-1 font-semibold transition"
                             >
                                 <Trash2 className="w-3.5 h-3.5" /> Clear
                             </button>
                         </div>
 
-                        <textarea
+                        <textarea aria-label="Input text content"
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                             placeholder="Paste your lines of text here..."
@@ -425,7 +419,7 @@ export default function PrefixSuffixAttacher() {
                             </span>
                         </div>
 
-                        <textarea
+                        <textarea aria-label="Transformed text will appear here instantly"
                             readOnly
                             value={transformedOutput}
                             placeholder="Transformed text will appear here instantly..."

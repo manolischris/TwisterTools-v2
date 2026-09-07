@@ -294,8 +294,7 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -314,9 +313,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                     <Layers className="w-4 h-4 text-indigo-600" /> Total Fixed Costs (Per Period)
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={fixedCosts === 0 ? "" : fixedCosts}
@@ -334,9 +332,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                         <DollarSign className="w-4 h-4 text-indigo-600" /> Price Per Unit
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="5"
                                             value={pricePerUnit === 0 ? "" : pricePerUnit}
@@ -351,9 +348,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                         <Coins className="w-4 h-4 text-indigo-600" /> Variable Cost / Unit
                                     </label>
                                     <div className="relative">
-                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                        <input
-                                            type="number"
+                                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="5"
                                             value={costPerUnit === 0 ? "" : costPerUnit}
@@ -370,9 +366,8 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                                     <Target className="w-4 h-4 text-indigo-600" /> Target Net Profit Goal (Optional)
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="500"
                                         value={targetProfit === 0 ? "" : targetProfit}
@@ -386,7 +381,7 @@ Calculated at twistertools.com/tools/calculators/break-even-calculator`;
                         {/* PRESETS COMPONENT */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Preset Business Models
                                 </span>
                                 {activePresetId && (

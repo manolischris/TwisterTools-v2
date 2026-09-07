@@ -373,8 +373,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency Display
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -398,9 +397,8 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         step="500"
                                         value={initialPrincipal === 0 ? "" : initialPrincipal}
@@ -420,8 +418,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                         <span className="text-sm font-bold text-indigo-600">{annualRate}%</span>
                                     </div>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0.1"
                                             max="100"
                                             step="0.1"
@@ -432,9 +429,9 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                             })}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max="25"
@@ -456,8 +453,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                         <span className="text-sm font-bold text-indigo-600">{targetYears} Years</span>
                                     </div>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0.5"
                                             max="50"
                                             step="0.5"
@@ -465,9 +461,9 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                             onChange={(e) => handleNumberInput(e, (val) => setTargetYears(Math.max(0.5, Math.min(50, val))))}
                                             className="w-full pl-3 pr-16 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">Years</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">Years</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="1"
                                         max="30"
@@ -487,8 +483,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                             <Flame className="w-3.5 h-3.5 text-amber-500" /> Inflation Drag Rate (%)
                                         </label>
                                         <div className="relative">
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="20"
                                                 step="0.1"
@@ -496,7 +491,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                                 onChange={(e) => handleNumberInput(e, (val) => setInflationRate(Math.max(0, val)))}
                                                 className="w-full pl-3 pr-7 py-2 rounded-lg border border-slate-200 text-slate-800 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none bg-slate-50"
                                             />
-                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 font-semibold text-xs">%</span>
+                                            <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold text-xs">%</span>
                                         </div>
                                     </div>
 
@@ -504,8 +499,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                         <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
                                             <Scale className="w-3.5 h-3.5 text-indigo-500" /> Rule Numerator
                                         </label>
-                                        <select
-                                            value={ruleVariant}
+                                        <select aria-label="Select option" value={ruleVariant}
                                             onChange={(e) => setRuleVariant(Number(e.target.value))}
                                             className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 text-slate-800 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                         >
@@ -521,7 +515,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                         {/* Strategy Presets */}
                         <div className="mt-6 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Asset Class Presets
                                 </span>
                                 {activePresetId && (
@@ -662,7 +656,7 @@ Computed at twistertools.com/tools/calculators/rule-of-72-calculator`;
                                                         <span className="font-extrabold text-indigo-600">
                                                             {currencySymbol}{Math.round(m.portfolioValue).toLocaleString()}
                                                         </span>
-                                                        <span className="text-slate-400 text-[10px] ml-1.5">
+                                                        <span className="text-slate-600 dark:text-slate-300 text-[10px] ml-1.5">
                                                             (@ {m.yearsExact.toFixed(1)} yrs)
                                                         </span>
                                                     </div>

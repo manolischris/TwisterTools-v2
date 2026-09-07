@@ -442,7 +442,7 @@ export default function GrayscalePdf() {
                                     : "border-slate-300 bg-slate-50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="application/pdf"
@@ -475,7 +475,7 @@ export default function GrayscalePdf() {
                                         <p className="text-xs font-semibold text-slate-800 mb-0.5">
                                             Drop PDF document here, or <span className="text-indigo-600">click to browse</span>
                                         </p>
-                                        <p className="text-[11px] text-slate-400">Maximum file size limit: 20 MB</p>
+                                        <p className="text-[11px] text-slate-600 dark:text-slate-300">Maximum file size limit: 20 MB</p>
                                     </>
                                 )}
                             </div>
@@ -532,7 +532,7 @@ export default function GrayscalePdf() {
                             <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                 <Palette className="w-10 h-10 text-slate-300 mb-2" />
                                 <p className="text-sm font-semibold text-slate-700">No Document Loaded</p>
-                                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                     Upload a PDF document above to render interactive page previews and configure monochrome options.
                                 </p>
                             </div>
@@ -555,8 +555,7 @@ export default function GrayscalePdf() {
                                             }
                                         >
                                             <div className="w-full flex items-center justify-between mb-1.5 px-0.5">
-                                                <input
-                                                    type="checkbox"
+                                                <input aria-label="Selected" type="checkbox"
                                                     checked={page.selected}
                                                     onChange={() => { }}
                                                     className="rounded text-indigo-600 focus:ring-indigo-500 w-3.5 h-3.5 cursor-pointer"
@@ -640,7 +639,7 @@ export default function GrayscalePdf() {
                                         <span className="text-slate-700">Brightness Offset</span>
                                         <span className="font-mono text-indigo-600">{brightness > 0 ? `+${brightness}` : brightness}</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="-100"
                                         max="100"
@@ -655,7 +654,7 @@ export default function GrayscalePdf() {
                                         <span className="text-slate-700">Contrast Boost</span>
                                         <span className="font-mono text-indigo-600">{contrast > 0 ? `+${contrast}` : contrast}</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min="-100"
                                         max="100"
@@ -666,7 +665,7 @@ export default function GrayscalePdf() {
                                 </div>
 
                                 <label className="flex items-center gap-2.5 pt-1 cursor-pointer">
-                                    <input
+                                    <input aria-label="Preserve Dark Text"
                                         type="checkbox"
                                         checked={preserveDarkText}
                                         onChange={(e) => setPreserveDarkText(e.target.checked)}
@@ -685,7 +684,7 @@ export default function GrayscalePdf() {
                                 disabled={pages.length === 0 || selectedCount === 0 || isProcessing}
                                 className={`w-full py-3.5 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${pages.length > 0 && selectedCount > 0 && !isProcessing
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (
@@ -721,7 +720,7 @@ export default function GrayscalePdf() {
                             <span className="text-xs font-bold text-slate-800">Page Expanded Preview</span>
                             <button
                                 onClick={() => setPreviewPageUrl(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>

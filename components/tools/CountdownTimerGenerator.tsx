@@ -361,7 +361,7 @@ export default function CountdownTimerGenerator() {
                             {/* Toggles */}
                             <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
                                 <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700">
-                                    <input
+                                    <input aria-label="Labels"
                                         type="checkbox"
                                         checked={showLabels}
                                         onChange={(e) => setShowLabels(e.target.checked)}
@@ -546,7 +546,7 @@ export default function CountdownTimerGenerator() {
                                 <div className="p-4 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
                                     <label className="text-xs font-bold text-slate-700 block">Direct URL to Shareable Timer</label>
                                     <div className="flex items-center gap-2">
-                                        <input
+                                        <input aria-label="Direct URL to Shareable Timer"
                                             type="text"
                                             readOnly
                                             value={shareableUrl}

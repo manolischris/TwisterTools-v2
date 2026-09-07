@@ -462,7 +462,7 @@ Analyzed with TwisterTools Syllable Counter & Lexical Density Analyzer`;
                             </div>
 
                             <div className="flex items-center gap-2">
-                                <input
+                                <input aria-label="Upload file"
                                     type="file"
                                     ref={fileInputRef}
                                     onChange={handleFileUpload}
@@ -502,7 +502,7 @@ Analyzed with TwisterTools Syllable Counter & Lexical Density Analyzer`;
 
                         {/* Text Editor Area */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={text}
                                 onChange={(e) => setText(e.target.value)}
                                 placeholder="Paste or type your text here to analyze syllables, lexical density, and readability grades..."
@@ -569,7 +569,7 @@ Analyzed with TwisterTools Syllable Counter & Lexical Density Analyzer`;
                                 <span className="text-2xl sm:text-3xl font-black text-slate-800 font-mono">
                                     {analytics.wordCount.toLocaleString()}
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">
                                     {analytics.sentenceCount} sentences
                                 </span>
                             </div>
@@ -579,7 +579,7 @@ Analyzed with TwisterTools Syllable Counter & Lexical Density Analyzer`;
                                 <span className="text-2xl sm:text-3xl font-black text-slate-800 font-mono">
                                     {analytics.lexicalDensity.toFixed(1)}%
                                 </span>
-                                <span className="text-[10px] text-slate-400 block">
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">
                                     {analytics.contentWordCount} content words
                                 </span>
                             </div>
@@ -654,8 +654,8 @@ Analyzed with TwisterTools Syllable Counter & Lexical Density Analyzer`;
                             {/* Search & Filter Bar */}
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                                 <div className="relative">
-                                    <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
-                                    <input
+                                    <Search className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300 absolute left-3 top-2.5" />
+                                    <input aria-label="Filter words"
                                         type="text"
                                         placeholder="Filter words..."
                                         value={searchFilter}
@@ -663,8 +663,7 @@ Analyzed with TwisterTools Syllable Counter & Lexical Density Analyzer`;
                                         className="w-full pl-8 pr-3 py-1.5 border border-slate-200 rounded-lg text-xs outline-none focus:ring-1 focus:ring-indigo-500"
                                     />
                                 </div>
-                                <select
-                                    value={syllableFilter}
+                                <select aria-label="Select option" value={syllableFilter}
                                     onChange={(e) => setSyllableFilter(e.target.value)}
                                     className="px-2.5 py-1.5 border border-slate-200 rounded-lg text-xs outline-none bg-white text-slate-700 cursor-pointer"
                                 >
@@ -680,7 +679,7 @@ Analyzed with TwisterTools Syllable Counter & Lexical Density Analyzer`;
                             {/* Word Tokens Grid */}
                             <div className="max-h-48 overflow-y-auto pr-1 space-y-1">
                                 {filteredBreakdowns.length === 0 ? (
-                                    <p className="text-xs text-slate-400 text-center py-4 italic">
+                                    <p className="text-xs text-slate-600 dark:text-slate-300 text-center py-4 italic">
                                         No words matching current filter criteria.
                                     </p>
                                 ) : (

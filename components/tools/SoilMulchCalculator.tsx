@@ -543,15 +543,13 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                         className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 space-y-3"
                                     >
                                         <div className="flex items-center justify-between gap-2">
-                                            <input
-                                                type="text"
+                                            <input aria-label="Input value" type="text"
                                                 value={zone.name}
                                                 onChange={(e) => handleUpdateZone(zone.id, "name", e.target.value)}
                                                 className="font-bold text-xs text-slate-900 bg-transparent border-b border-transparent hover:border-slate-300 focus:border-indigo-500 outline-none px-0.5"
                                             />
                                             <div className="flex items-center gap-2">
-                                                <select
-                                                    value={zone.shape}
+                                                <select aria-label="Select option" value={zone.shape}
                                                     onChange={(e) => handleUpdateZone(zone.id, "shape", e.target.value as AreaShape)}
                                                     className="text-xs font-bold bg-white border border-slate-200 rounded-lg px-2 py-1 text-slate-700 outline-none"
                                                 >
@@ -563,7 +561,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                                     <button
                                                         type="button"
                                                         onClick={() => handleRemoveZone(zone.id)}
-                                                        className="p-1 text-slate-400 hover:text-rose-600 rounded-md transition cursor-pointer"
+                                                        className="p-1 text-slate-600 dark:text-slate-300 hover:text-rose-600 rounded-md transition cursor-pointer"
                                                         title="Remove Zone"
                                                     >
                                                         <Trash2 className="w-4 h-4" />
@@ -580,8 +578,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                                         <span className="text-[11px] font-bold text-slate-500 block mb-1">
                                                             Length ({unitSystem === "imperial" ? "ft" : "m"})
                                                         </span>
-                                                        <input
-                                                            type="number"
+                                                        <input aria-label="Input value" type="number"
                                                             min={0}
                                                             step={unitSystem === "imperial" ? 1 : 0.1}
                                                             value={unitSystem === "imperial" ? (zone.lengthFeet || "") : (zone.lengthMeters || "")}
@@ -597,8 +594,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                                         <span className="text-[11px] font-bold text-slate-500 block mb-1">
                                                             Width ({unitSystem === "imperial" ? "ft" : "m"})
                                                         </span>
-                                                        <input
-                                                            type="number"
+                                                        <input aria-label="Input value" type="number"
                                                             min={0}
                                                             step={unitSystem === "imperial" ? 1 : 0.1}
                                                             value={unitSystem === "imperial" ? (zone.widthFeet || "") : (zone.widthMeters || "")}
@@ -618,8 +614,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                                     <span className="text-[11px] font-bold text-slate-500 block mb-1">
                                                         Diameter ({unitSystem === "imperial" ? "ft" : "m"})
                                                     </span>
-                                                    <input
-                                                        type="number"
+                                                    <input aria-label="Input value" type="number"
                                                         min={0}
                                                         step={unitSystem === "imperial" ? 1 : 0.1}
                                                         value={unitSystem === "imperial" ? (zone.diameterFeet || "") : (zone.diameterMeters || "")}
@@ -639,8 +634,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                                         <span className="text-[11px] font-bold text-slate-500 block mb-1">
                                                             Base ({unitSystem === "imperial" ? "ft" : "m"})
                                                         </span>
-                                                        <input
-                                                            type="number"
+                                                        <input aria-label="Input value" type="number"
                                                             min={0}
                                                             step={unitSystem === "imperial" ? 1 : 0.1}
                                                             value={unitSystem === "imperial" ? (zone.baseFeet || "") : (zone.baseMeters || "")}
@@ -656,8 +650,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                                         <span className="text-[11px] font-bold text-slate-500 block mb-1">
                                                             Height ({unitSystem === "imperial" ? "ft" : "m"})
                                                         </span>
-                                                        <input
-                                                            type="number"
+                                                        <input aria-label="Input value" type="number"
                                                             min={0}
                                                             step={unitSystem === "imperial" ? 1 : 0.1}
                                                             value={unitSystem === "imperial" ? (zone.heightFeet || "") : (zone.heightMeters || "")}
@@ -676,8 +669,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                                 <span className="text-[11px] font-bold text-slate-500 block mb-1">
                                                     Depth ({unitSystem === "imperial" ? "in" : "cm"})
                                                 </span>
-                                                <input
-                                                    type="number"
+                                                <input aria-label="Input value" type="number"
                                                     min={0.5}
                                                     step={unitSystem === "imperial" ? 0.5 : 1}
                                                     value={unitSystem === "imperial" ? (zone.depthInches || "") : (zone.depthCentimeters || "")}
@@ -704,7 +696,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                 </label>
                                 <span className="font-bold text-indigo-600 text-sm font-mono">+{compactionBufferPct}%</span>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min={0}
                                 max={25}
@@ -713,7 +705,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                 onChange={(e) => setCompactionBufferPct(Number(e.target.value))}
                                 className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                             />
-                            <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                            <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                 <span>0% (Exact)</span>
                                 <span>10% (Mulch/Gravel)</span>
                                 <span>15% (Topsoil)</span>
@@ -727,8 +719,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                 <label className="block text-[11px] font-bold text-slate-700 mb-1">
                                     Bag Size
                                 </label>
-                                <select
-                                    value={selectedBagSizeCuFt}
+                                <select aria-label="Select option" value={selectedBagSizeCuFt}
                                     onChange={(e) => setSelectedBagSizeCuFt(parseFloat(e.target.value) as BagSizeOption)}
                                     className="w-full px-2.5 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-800 outline-none focus:ring-2 focus:ring-indigo-500"
                                 >
@@ -745,9 +736,8 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                     Bulk Cost / yd³ ($)
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-xs">$</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-bold text-xs">$</span>
+                                    <input aria-label="Input value" type="number"
                                         min={0}
                                         value={costPerUnitBulk === 0 ? "" : costPerUnitBulk}
                                         onChange={(e) => handleNumberInput(e, setCostPerUnitBulk)}
@@ -761,9 +751,8 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                     Price / Bag ($)
                                 </label>
                                 <div className="relative">
-                                    <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-xs">$</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-bold text-xs">$</span>
+                                    <input aria-label="Input value" type="number"
                                         min={0}
                                         step={0.1}
                                         value={costPerBag === 0 ? "" : costPerBag}
@@ -866,17 +855,17 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Est. Total Weight</span>
                                 <span className="text-base sm:text-lg font-black text-slate-900">{calculations.totalWeightTons} Tons</span>
-                                <span className="text-[10px] text-slate-400 block">({calculations.totalWeightLbs.toLocaleString()} lbs)</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">({calculations.totalWeightLbs.toLocaleString()} lbs)</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">DIY Pickup Trips</span>
                                 <span className="text-base sm:text-lg font-black text-indigo-600">~{calculations.estimatedTruckTrips} Loads</span>
-                                <span className="text-[10px] text-slate-400 block">(Standard 6-ft Bed)</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">(Standard 6-ft Bed)</span>
                             </div>
                             <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl text-center space-y-1">
                                 <span className="text-[11px] font-bold text-slate-500 block uppercase">Metric Volume</span>
                                 <span className="text-base sm:text-lg font-black text-emerald-600">{calculations.totalCubicMeters} m³</span>
-                                <span className="text-[10px] text-slate-400 block">({calculations.totalSquareMeters} m² area)</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300 block">({calculations.totalSquareMeters} m² area)</span>
                             </div>
                         </div>
 
@@ -887,20 +876,20 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                                     <DollarSign className="w-4 h-4 text-emerald-400" />
                                     Cost Comparison Matrix
                                 </span>
-                                <span className="text-slate-400 font-mono">Side-by-Side</span>
+                                <span className="text-slate-600 dark:text-slate-300 font-mono">Side-by-Side</span>
                             </div>
                             <div className="grid grid-cols-2 gap-4 text-xs">
                                 <div className="space-y-1 border-r border-slate-800 pr-2">
-                                    <span className="text-slate-400 block">Bulk Delivery Estimate:</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block">Bulk Delivery Estimate:</span>
                                     <span className="text-lg font-black text-white">${calculations.bulkTotalWithDelivery.toFixed(2)}</span>
-                                    <p className="text-[11px] text-slate-400 leading-tight">
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-tight">
                                         Material: ${calculations.bulkMaterialCost.toFixed(2)} + ~$55 freight
                                     </p>
                                 </div>
                                 <div className="space-y-1 pl-2">
-                                    <span className="text-slate-400 block">Store Bagged Total:</span>
+                                    <span className="text-slate-600 dark:text-slate-300 block">Store Bagged Total:</span>
                                     <span className="text-lg font-black text-white">${calculations.baggedTotalCost.toFixed(2)}</span>
-                                    <p className="text-[11px] text-slate-400 leading-tight">
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-tight">
                                         {calculations.bagsRequired} bags @ ${costPerBag.toFixed(2)}/ea
                                     </p>
                                 </div>
@@ -913,7 +902,7 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                             onClick={handleCopyResults}
                             className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition shadow-sm cursor-pointer"
                         >
-                            {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-slate-400" />}
+                            {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4 text-slate-600 dark:text-slate-300" />}
                             {copied ? "Estimate Copied to Clipboard!" : "Copy Landscape Estimate"}
                         </button>
                     </div>
@@ -1040,15 +1029,15 @@ Calculated at twistertools.com/tools/home-tools/soil-mulch-calculator`;
                         </h3>
                         <div className="grid sm:grid-cols-3 gap-4 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Circular Bed / Tree Ring:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Circular Bed / Tree Ring:</span>
                                 <strong className="text-indigo-300">Area = π × (Diameter / 2)²</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Corner Triangle Bed:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Corner Triangle Bed:</span>
                                 <strong className="text-indigo-300">Area = 0.5 × Base × Height</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Curved Kidney Bed:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Curved Kidney Bed:</span>
                                 <strong className="text-indigo-300">Area ≈ 0.45 × (A + B) × Length</strong>
                             </div>
                         </div>

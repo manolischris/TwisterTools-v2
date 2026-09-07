@@ -240,11 +240,10 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                             Original Sticker Price ($)
                                         </label>
                                         <div className="relative">
-                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                                 <DollarSign className="w-4 h-4" />
                                             </div>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="any"
                                                 value={val1}
@@ -260,11 +259,10 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                             Primary Discount (%)
                                         </label>
                                         <div className="relative">
-                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                                 <Percent className="w-4 h-4" />
                                             </div>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="100"
                                                 step="any"
@@ -283,11 +281,10 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                             Final Sale Price Received ($)
                                         </label>
                                         <div className="relative">
-                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                                 <DollarSign className="w-4 h-4" />
                                             </div>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 step="any"
                                                 value={val1}
@@ -303,11 +300,10 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                             Applied Discount Rate (%)
                                         </label>
                                         <div className="relative">
-                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                                 <Percent className="w-4 h-4" />
                                             </div>
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min="0"
                                                 max="99.9"
                                                 step="any"
@@ -328,11 +324,10 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                         Secondary Stacked Promo Rate (%)
                                     </label>
                                     <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                             <Tag className="w-4 h-4" />
                                         </div>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="100"
                                             step="any"
@@ -352,11 +347,10 @@ ${metrics.taxAmount > 0 ? `- Sales Tax: $${metrics.taxAmount.toFixed(2)}\n` : ""
                                         State / Regional Sales Tax (%)
                                     </label>
                                     <div className="relative">
-                                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                                        <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-600 dark:text-slate-300">
                                             <Percent className="w-4 h-4" />
                                         </div>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             step="any"
                                             value={val3}

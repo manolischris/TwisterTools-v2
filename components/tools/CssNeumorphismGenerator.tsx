@@ -399,14 +399,13 @@ box-shadow: ${boxShadowValue};`;
                         <div className="space-y-2">
                             <label className="text-xs font-bold text-slate-700 block">Substrate Base Color</label>
                             <div className="flex items-center gap-2">
-                                <input
+                                <input aria-label="Select color"
                                     type="color"
                                     value={config.baseColor}
                                     onChange={(e) => setConfig((p) => ({ ...p, baseColor: e.target.value }))}
                                     className="w-10 h-10 rounded-lg border border-slate-200 cursor-pointer p-0.5 bg-white shrink-0"
                                 />
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={config.baseColor}
                                     onChange={(e) => setConfig((p) => ({ ...p, baseColor: e.target.value }))}
                                     className="flex-1 px-3 py-2 text-xs font-mono border border-slate-200 rounded-lg bg-slate-50 text-slate-800 focus:ring-1 focus:ring-indigo-500 outline-none"
@@ -493,7 +492,7 @@ box-shadow: ${boxShadowValue};`;
                                 <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                     <label htmlFor={distanceInputId}>Extrusion Distance:</label>
                                     <div className="flex items-center gap-1">
-                                        <input
+                                        <input aria-label="Extrusion Distance"
                                             id={distanceInputId}
                                             type="number"
                                             min="1"
@@ -504,10 +503,10 @@ box-shadow: ${boxShadowValue};`;
                                             }
                                             className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-slate-400 font-normal">px</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-normal">px</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="1"
                                     max="50"
@@ -523,7 +522,7 @@ box-shadow: ${boxShadowValue};`;
                                 <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                     <label htmlFor={blurInputId}>Shadow Softness (Blur):</label>
                                     <div className="flex items-center gap-1">
-                                        <input
+                                        <input aria-label="Shadow Softness (Blur)"
                                             id={blurInputId}
                                             type="number"
                                             min="1"
@@ -534,10 +533,10 @@ box-shadow: ${boxShadowValue};`;
                                             }
                                             className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-slate-400 font-normal">px</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-normal">px</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="1"
                                     max="100"
@@ -556,7 +555,7 @@ box-shadow: ${boxShadowValue};`;
                                 <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                     <label htmlFor={radiusInputId}>Corner Radius:</label>
                                     <div className="flex items-center gap-1">
-                                        <input
+                                        <input aria-label="Corner Radius"
                                             id={radiusInputId}
                                             type="number"
                                             min="0"
@@ -567,10 +566,10 @@ box-shadow: ${boxShadowValue};`;
                                             }
                                             className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-slate-400 font-normal">px</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-normal">px</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="0"
                                     max="160"
@@ -586,7 +585,7 @@ box-shadow: ${boxShadowValue};`;
                                 <div className="flex justify-between items-center text-xs font-bold text-slate-700">
                                     <label htmlFor={sizeInputId}>Element Scale:</label>
                                     <div className="flex items-center gap-1">
-                                        <input
+                                        <input aria-label="Element Scale"
                                             id={sizeInputId}
                                             type="number"
                                             min="80"
@@ -597,10 +596,10 @@ box-shadow: ${boxShadowValue};`;
                                             }
                                             className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="text-slate-400 font-normal">px</span>
+                                        <span className="text-slate-600 dark:text-slate-300 font-normal">px</span>
                                     </div>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="80"
                                     max="320"
@@ -619,8 +618,7 @@ box-shadow: ${boxShadowValue};`;
                                     Shadow Intensity (Contrast):
                                 </label>
                                 <div className="flex items-center gap-1">
-                                    <input
-                                        id={intensityInputId}
+                                    <input aria-label="Input value" id={intensityInputId}
                                         type="number"
                                         min="5"
                                         max="60"
@@ -630,10 +628,10 @@ box-shadow: ${boxShadowValue};`;
                                         }
                                         className="w-14 px-1.5 py-0.5 text-right font-mono text-xs border border-slate-200 rounded bg-slate-50 focus:ring-1 focus:ring-indigo-500 outline-none"
                                     />
-                                    <span className="text-slate-400 font-normal">%</span>
+                                    <span className="text-slate-600 dark:text-slate-300 font-normal">%</span>
                                 </div>
                             </div>
-                            <input
+                            <input aria-label="Adjust slider value"
                                 type="range"
                                 min="5"
                                 max="60"
@@ -690,7 +688,7 @@ box-shadow: ${boxShadowValue};`;
                                     {config.surfaceShape}
                                 </span>
                                 <span
-                                    className={`text-[10px] font-mono mt-0.5 ${rgbBase.r + rgbBase.g + rgbBase.b > 380 ? "text-slate-500" : "text-slate-400"
+                                    className={`text-[10px] font-mono mt-0.5 ${rgbBase.r + rgbBase.g + rgbBase.b > 380 ? "text-slate-500" : "text-slate-600 dark:text-slate-300"
                                         }`}
                                 >
                                     d:{config.distance}px | r:{config.radius}px
@@ -743,7 +741,7 @@ box-shadow: ${boxShadowValue};`;
 
                     <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                         <span className="text-xs text-slate-500 flex items-center gap-1">
-                            <Cpu className="w-3.5 h-3.5 text-slate-400" />
+                            <Cpu className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                             Calculated RGB Luminance Delta
                         </span>
                         <button

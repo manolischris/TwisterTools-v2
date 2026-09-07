@@ -780,8 +780,7 @@ export default function RandomAddressGenerator() {
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1">
                                     <Layers className="w-3.5 h-3.5 text-indigo-600" /> Batch Quantity (1-100)
                                 </label>
-                                <input
-                                    type="number"
+                                <input aria-label="Input value" type="number"
                                     min="1"
                                     max="100"
                                     value={batchQuantity === 0 ? "" : batchQuantity}
@@ -978,7 +977,7 @@ export default function RandomAddressGenerator() {
                         ) : (
                             /* Raw Code Block View */
                             <div className="relative">
-                                <textarea
+                                <textarea aria-label="Input text content"
                                     readOnly
                                     value={rawFormattedOutput}
                                     className="w-full h-[500px] p-3.5 font-mono text-xs text-slate-800 bg-slate-50 rounded-xl border border-slate-200 focus:outline-none resize-none"

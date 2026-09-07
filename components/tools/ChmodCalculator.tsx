@@ -448,7 +448,7 @@ export default function ChmodCalculator() {
                                                             onClick={() => togglePermission("owner", p)}
                                                             className={`p-2 rounded-xl transition inline-flex items-center justify-center cursor-pointer ${checked
                                                                     ? "bg-indigo-600 text-white shadow-xs"
-                                                                    : "bg-slate-100 text-slate-400 hover:bg-slate-200"
+                                                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 hover:bg-slate-200"
                                                                 }`}
                                                             aria-label={`Owner ${p}`}
                                                         >
@@ -485,7 +485,7 @@ export default function ChmodCalculator() {
                                                             onClick={() => togglePermission("group", p)}
                                                             className={`p-2 rounded-xl transition inline-flex items-center justify-center cursor-pointer ${checked
                                                                     ? "bg-indigo-600 text-white shadow-xs"
-                                                                    : "bg-slate-100 text-slate-400 hover:bg-slate-200"
+                                                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 hover:bg-slate-200"
                                                                 }`}
                                                             aria-label={`Group ${p}`}
                                                         >
@@ -522,7 +522,7 @@ export default function ChmodCalculator() {
                                                             onClick={() => togglePermission("others", p)}
                                                             className={`p-2 rounded-xl transition inline-flex items-center justify-center cursor-pointer ${checked
                                                                     ? "bg-indigo-600 text-white shadow-xs"
-                                                                    : "bg-slate-100 text-slate-400 hover:bg-slate-200"
+                                                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 hover:bg-slate-200"
                                                                 }`}
                                                             aria-label={`Others ${p}`}
                                                         >
@@ -568,7 +568,7 @@ export default function ChmodCalculator() {
                                         {permissions.special.setuid ? (
                                             <CheckSquare className="w-4 h-4 text-amber-600 flex-shrink-0" />
                                         ) : (
-                                            <Square className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                            <Square className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                         )}
                                     </button>
 
@@ -588,7 +588,7 @@ export default function ChmodCalculator() {
                                         {permissions.special.setgid ? (
                                             <CheckSquare className="w-4 h-4 text-amber-600 flex-shrink-0" />
                                         ) : (
-                                            <Square className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                            <Square className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                         )}
                                     </button>
 
@@ -608,7 +608,7 @@ export default function ChmodCalculator() {
                                         {permissions.special.sticky ? (
                                             <CheckSquare className="w-4 h-4 text-amber-600 flex-shrink-0" />
                                         ) : (
-                                            <Square className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                                            <Square className="w-4 h-4 text-slate-600 dark:text-slate-300 flex-shrink-0" />
                                         )}
                                     </button>
                                 </div>
@@ -620,8 +620,7 @@ export default function ChmodCalculator() {
                                     Target File or Directory Path
                                 </label>
                                 <div className="relative">
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={targetPath}
                                         onChange={(e) => setTargetPath(e.target.value)}
                                         placeholder="/path/to/target/file.sh"
@@ -631,7 +630,7 @@ export default function ChmodCalculator() {
 
                                 <div className="flex flex-wrap gap-4 pt-1">
                                     <label className="inline-flex items-center gap-2 cursor-pointer select-none">
-                                        <input
+                                        <input aria-label="Recursive"
                                             type="checkbox"
                                             checked={isRecursive}
                                             onChange={(e) => setIsRecursive(e.target.checked)}
@@ -640,7 +639,7 @@ export default function ChmodCalculator() {
                                         <span className="text-xs font-bold text-slate-700">-R (Recursive)</span>
                                     </label>
                                     <label className="inline-flex items-center gap-2 cursor-pointer select-none">
-                                        <input
+                                        <input aria-label="-R (Recursive)"
                                             type="checkbox"
                                             checked={isVerbose}
                                             onChange={(e) => setIsVerbose(e.target.checked)}
@@ -659,7 +658,7 @@ export default function ChmodCalculator() {
                             <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Common Preset Profiles
                             </span>
-                            <span className="text-[11px] text-slate-400 font-semibold">1-Click Setup</span>
+                            <span className="text-[11px] text-slate-600 dark:text-slate-300 font-semibold">1-Click Setup</span>
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                             {COMMON_PRESETS.slice(0, 4).map((p) => (
@@ -702,10 +701,9 @@ export default function ChmodCalculator() {
                                     Octal (Numeric)
                                 </span>
                                 <div className="flex items-center gap-1.5 mt-2">
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         maxLength={4}
-                                        value={getSpecialOctal() > 0 ? fullOctal : standardOctal}
+                                        value={getSpecialOctal()> 0 ? fullOctal : standardOctal}
                                         onChange={(e) => handleOctalInput(e.target.value)}
                                         className="w-full text-xl sm:text-2xl font-mono font-extrabold text-indigo-600 bg-white border border-slate-200 rounded-lg px-2 py-0.5 text-center focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                     />

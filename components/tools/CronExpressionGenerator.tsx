@@ -835,7 +835,7 @@ export default function CronExpressionGenerator() {
                         </div>
                       </div>
                       <ChevronDown
-                        className={`w-5 h-5 text-slate-400 transition-transform duration-200 ${
+                        className={`w-5 h-5 text-slate-600 dark:text-slate-300 transition-transform duration-200 ${
                           isOpen ? "transform rotate-180" : ""
                         }`}
                       />
@@ -879,7 +879,7 @@ export default function CronExpressionGenerator() {
                               Execute every [X] {field.label.toLowerCase()}:
                             </label>
                             <div className="flex items-center gap-3">
-                              <input
+                              <input aria-label="Adjust slider value"
                                 type="range"
                                 min={field.id === "hours" ? 2 : field.id === "dom" ? 2 : field.id === "month" ? 2 : 2}
                                 max={field.id === "hours" ? 12 : field.id === "dom" ? 15 : field.id === "month" ? 6 : 30}
@@ -902,7 +902,7 @@ export default function CronExpressionGenerator() {
                             <div className="flex gap-4 items-center">
                               <div className="flex-1 space-y-1.5">
                                 <label className="block text-xs font-semibold text-slate-700">Start Value</label>
-                                <select
+                                <select aria-label="Select Start Value"
                                   value={field.rangeStart}
                                   onChange={(e) => field.setRangeStart(parseInt(e.target.value, 10))}
                                   className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-10"
@@ -917,10 +917,10 @@ export default function CronExpressionGenerator() {
                                   })}
                                 </select>
                               </div>
-                              <span className="text-slate-400 text-sm mt-5">to</span>
+                              <span className="text-slate-600 dark:text-slate-300 text-sm mt-5">to</span>
                               <div className="flex-1 space-y-1.5">
                                 <label className="block text-xs font-semibold text-slate-700">End Value</label>
-                                <select
+                                <select aria-label="Select End Value"
                                   value={field.rangeEnd}
                                   onChange={(e) => field.setRangeEnd(parseInt(e.target.value, 10))}
                                   className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 h-10"

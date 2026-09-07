@@ -665,7 +665,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     <div className="space-y-1">
                                         <label className="text-xs font-bold text-slate-700">Number of Loaves</label>
-                                        <input
+                                        <input aria-label="Number of Loaves"
                                             type="number"
                                             min={1}
                                             max={50}
@@ -676,7 +676,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                     </div>
                                     <div className="space-y-1">
                                         <label className="text-xs font-bold text-slate-700">Weight per Loaf ({unit})</label>
-                                        <input
+                                        <input aria-label="Weight per Loaf ({unit})"
                                             type="number"
                                             min={50}
                                             max={5000}
@@ -692,7 +692,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                         <span className="font-bold text-slate-700">Target True Hydration:</span>
                                         <span className="font-black text-indigo-600 text-sm">{targetHydrationPct}%</span>
                                     </div>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={50}
                                         max={95}
@@ -701,7 +701,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                         onChange={(e) => setTargetHydrationPct(Number(e.target.value))}
                                         className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                                     />
-                                    <div className="flex justify-between text-[11px] font-semibold text-slate-400">
+                                    <div className="flex justify-between text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                                         <span>55% (Stiff)</span>
                                         <span>75% (Tartine)</span>
                                         <span>90%+ (Ciabatta/Focaccia)</span>
@@ -734,8 +734,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                         return (
                                             <div key={flour.id} className="p-3 bg-slate-50 border border-slate-200 rounded-xl flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
                                                 <div className="flex-1">
-                                                    <input
-                                                        type="text"
+                                                    <input aria-label="Input value" type="text"
                                                         value={flour.name}
                                                         onChange={(e) => updateFlour(flour.id, "name", e.target.value)}
                                                         placeholder="Flour name"
@@ -745,8 +744,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
 
                                                 <div className="flex items-center gap-2">
                                                     <div className="relative w-24">
-                                                        <input
-                                                            type="number"
+                                                        <input aria-label="Input value" type="number"
                                                             min={0}
                                                             value={flour.weight === 0 ? "" : flour.weight}
                                                             onChange={(e) => {
@@ -758,12 +756,11 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                                             placeholder="0"
                                                             className="w-full pl-2 pr-6 py-1.5 text-right font-bold text-slate-900 bg-white border border-slate-300 rounded-lg text-xs outline-none"
                                                         />
-                                                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 font-bold">{unit}</span>
+                                                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-600 dark:text-slate-300 font-bold">{unit}</span>
                                                     </div>
 
                                                     <div className="relative w-20">
-                                                        <input
-                                                            type="number"
+                                                        <input aria-label="Input value" type="number"
                                                             step="0.1"
                                                             min={7}
                                                             max={20}
@@ -777,7 +774,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                                             placeholder="Protein %"
                                                             className="w-full pl-1.5 pr-5 py-1.5 text-right font-semibold text-slate-700 bg-white border border-slate-300 rounded-lg text-xs outline-none"
                                                         />
-                                                        <span className="absolute right-1.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 font-bold">%P</span>
+                                                        <span className="absolute right-1.5 top-1/2 -translate-y-1/2 text-[10px] text-slate-600 dark:text-slate-300 font-bold">%P</span>
                                                     </div>
 
                                                     <span className="text-[11px] font-bold text-indigo-600 w-12 text-right">
@@ -788,7 +785,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                                         <button
                                                             type="button"
                                                             onClick={() => removeFlourRow(flour.id)}
-                                                            className="p-1.5 text-slate-400 hover:text-rose-600 transition cursor-pointer"
+                                                            className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-rose-600 transition cursor-pointer"
                                                         >
                                                             <Trash2 className="w-3.5 h-3.5" />
                                                         </button>
@@ -817,14 +814,13 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
 
                                 {calcMode === "bakers_pct" ? (
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             value={directWaterWeight === 0 ? "" : directWaterWeight}
                                             onChange={(e) => handleNumberInput(e, setDirectWaterWeight)}
                                             className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">{unit}</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">{unit}</span>
                                     </div>
                                 ) : (
                                     <div className="p-2 bg-white rounded-lg border border-slate-200 text-center font-black text-slate-900 text-sm">
@@ -847,27 +843,25 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
 
                                 {calcMode === "bakers_pct" ? (
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.5"
                                             min={0}
                                             value={saltWeight === 0 ? "" : saltWeight}
                                             onChange={(e) => handleNumberInput(e, setSaltWeight)}
                                             className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">{unit}</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">{unit}</span>
                                     </div>
                                 ) : (
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.1"
                                             min={0}
                                             value={targetSaltPct === 0 ? "" : targetSaltPct}
                                             onChange={(e) => handleNumberInput(e, setTargetSaltPct)}
                                             className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-900 focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">%</span>
                                     </div>
                                 )}
                             </div>
@@ -892,16 +886,14 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                             {calcMode === "bakers_pct" ? `Starter Weight (${unit})` : "Starter Baker's %"}
                                         </span>
                                         {calcMode === "bakers_pct" ? (
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0}
                                                 value={starterWeight === 0 ? "" : starterWeight}
                                                 onChange={(e) => handleNumberInput(e, setStarterWeight)}
                                                 className="w-full px-3 py-1.5 bg-white border border-slate-300 rounded-lg text-xs font-bold text-slate-900 outline-none"
                                             />
                                         ) : (
-                                            <input
-                                                type="number"
+                                            <input aria-label="Input value" type="number"
                                                 min={0}
                                                 max={100}
                                                 value={targetStarterPct === 0 ? "" : targetStarterPct}
@@ -913,7 +905,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
 
                                     <div className="space-y-1">
                                         <span className="text-[11px] font-bold text-slate-600">Starter Feeding Hydration (%)</span>
-                                        <input
+                                        <input aria-label="Starter Feeding Hydration (%)"
                                             type="number"
                                             min={40}
                                             max={200}
@@ -945,8 +937,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                 </div>
                                 <div className="relative">
                                     {calcMode === "bakers_pct" ? (
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.1"
                                             min={0}
                                             value={yeastWeight === 0 ? "" : yeastWeight}
@@ -954,8 +945,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                             className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-900 outline-none"
                                         />
                                     ) : (
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.05"
                                             min={0}
                                             value={targetYeastPct === 0 ? "" : targetYeastPct}
@@ -963,7 +953,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                             className="w-full px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-900 outline-none"
                                         />
                                     )}
-                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-400">
+                                    <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-slate-600 dark:text-slate-300">
                                         {calcMode === "bakers_pct" ? unit : "%"}
                                     </span>
                                 </div>
@@ -988,8 +978,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                 <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-200 grid grid-cols-2 gap-3">
                                     <div className="space-y-1">
                                         <span className="text-[11px] font-bold text-slate-700">Oil / Fat ({calcMode === "bakers_pct" ? unit : "%"})</span>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             value={calcMode === "bakers_pct" ? (oilWeight === 0 ? "" : oilWeight) : (targetOilPct === 0 ? "" : targetOilPct)}
                                             onChange={(e) => handleNumberInput(e, calcMode === "bakers_pct" ? setOilWeight : setTargetOilPct)}
@@ -998,8 +987,7 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                                     </div>
                                     <div className="space-y-1">
                                         <span className="text-[11px] font-bold text-slate-700">Sugar / Honey ({calcMode === "bakers_pct" ? unit : "%"})</span>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min={0}
                                             value={calcMode === "bakers_pct" ? (sugarWeight === 0 ? "" : sugarWeight) : (targetSugarPct === 0 ? "" : targetSugarPct)}
                                             onChange={(e) => handleNumberInput(e, calcMode === "bakers_pct" ? setSugarWeight : setTargetSugarPct)}
@@ -1261,11 +1249,11 @@ Calculated via twistertools.com/tools/home-tools/sourdough-hydration-calculator`
                         </p>
                         <div className="grid sm:grid-cols-2 gap-3 text-xs font-mono text-slate-300 pt-1">
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">Levain Flour Decomposition:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">Levain Flour Decomposition:</span>
                                 <strong className="text-indigo-300 text-sm">Flour_levain = Weight_starter / (1 + H_starter)</strong>
                             </div>
                             <div className="p-3 bg-slate-950 rounded-lg border border-slate-800">
-                                <span className="text-slate-400 block mb-1">True Hydration Calculation:</span>
+                                <span className="text-slate-600 dark:text-slate-300 block mb-1">True Hydration Calculation:</span>
                                 <strong className="text-indigo-300 text-sm">True Hydration = (Water_direct + Water_levain) / (Flour_dry + Flour_levain)</strong>
                             </div>
                         </div>

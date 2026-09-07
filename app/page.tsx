@@ -494,8 +494,9 @@ export default function HomePage() {
             alt="TwisterTools Background Visual"
             fill
             priority
-            className="object-cover object-center opacity-50 mix-blend-luminosity"
-            sizes="100vw"
+            quality={60}
+            className="hidden sm:block object-cover object-center opacity-50 mix-blend-luminosity"
+            sizes="(max-width: 768px) 100vw, 1400px"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/80 to-indigo-950/85" />
         </div>

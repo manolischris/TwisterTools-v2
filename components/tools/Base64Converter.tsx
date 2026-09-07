@@ -591,7 +591,7 @@ export default function Base64Converter() {
                           : "border-slate-300 bg-slate-50 hover:border-indigo-400 hover:bg-indigo-50/50"
                     }`}
                 >
-                  <input
+                  <input aria-label="B64 File Input"
                     ref={fileInputRef}
                     type="file"
                     className="hidden"
@@ -742,7 +742,7 @@ export default function Base64Converter() {
               {/* Read-Only Output Textarea */}
               <div className="rounded-xl bg-slate-900 border border-slate-700 p-4 min-h-[120px] flex flex-col justify-between">
                 {output ? (
-                  <textarea
+                  <textarea aria-label="B64 Output Display"
                     id="b64-output-display"
                     readOnly
                     value={output}
@@ -798,7 +798,7 @@ export default function Base64Converter() {
                       ? copied
                         ? "bg-green-500 text-white shadow-md shadow-green-200"
                         : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200 hover:shadow-lg hover:-translate-y-0.5"
-                      : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                      : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                     }`}
                   style={{ minHeight: "40px" }}
                 >

@@ -334,7 +334,7 @@ export default function HeicToJpgConverter() {
                   : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
               }`}
             >
-              <input
+              <input aria-label="Upload file"
                 ref={fileInputRef}
                 type="file"
                 multiple
@@ -406,7 +406,7 @@ export default function HeicToJpgConverter() {
                   <label className="font-medium text-slate-700">JPEG Compression Quality</label>
                   <span className="font-mono font-bold text-indigo-600">{quality}%</span>
                 </div>
-                <input
+                <input aria-label="Adjust slider value"
                   type="range"
                   min="10"
                   max="100"
@@ -415,7 +415,7 @@ export default function HeicToJpgConverter() {
                   onChange={(e) => setQuality(parseInt(e.target.value, 10))}
                   className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
                 />
-                <div className="flex justify-between text-[10px] text-slate-400">
+                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300">
                   <span>Smaller File</span>
                   <span>Balanced (85%)</span>
                   <span>Maximum Quality</span>
@@ -430,14 +430,13 @@ export default function HeicToJpgConverter() {
                   Alpha Channel / Transparency Fill Color
                 </label>
                 <div className="flex items-center gap-3">
-                  <input
+                  <input aria-label="Select color"
                     type="color"
                     value={backgroundColor}
                     onChange={(e) => setBackgroundColor(e.target.value)}
                     className="w-9 h-9 rounded-lg border border-slate-200 cursor-pointer p-0 bg-transparent"
                   />
-                  <input
-                    type="text"
+                  <input aria-label="Input value" type="text"
                     value={backgroundColor}
                     onChange={(e) => setBackgroundColor(e.target.value)}
                     className="text-xs font-mono border border-slate-200 rounded-lg px-3 py-2 text-slate-800 uppercase focus:outline-none focus:ring-2 focus:ring-indigo-500 w-28"
@@ -478,7 +477,7 @@ export default function HeicToJpgConverter() {
               <div className="h-[380px] border border-dashed border-slate-200 rounded-xl bg-slate-50/50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                 <ImageIcon className="w-10 h-10 text-slate-300 mb-2" />
                 <p className="text-sm font-medium text-slate-600">No images in queue</p>
-                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                   Upload Apple HEIC or Next-Gen AVIF files to start instant browser-based processing.
                 </p>
               </div>
@@ -498,7 +497,7 @@ export default function HeicToJpgConverter() {
                             className="w-full h-full object-cover"
                           />
                         ) : (
-                          <FileImage className="w-6 h-6 text-slate-400" />
+                          <FileImage className="w-6 h-6 text-slate-600 dark:text-slate-300" />
                         )}
                       </div>
                       <div className="min-w-0 space-y-0.5">
@@ -534,7 +533,7 @@ export default function HeicToJpgConverter() {
                       )}
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="p-2 hover:bg-rose-100 text-slate-400 hover:text-rose-600 rounded-lg transition-all"
+                        className="p-2 hover:bg-rose-100 text-slate-600 dark:text-slate-300 hover:text-rose-600 rounded-lg transition-all"
                         title="Remove Image"
                       >
                         <Trash2 className="w-4 h-4" />

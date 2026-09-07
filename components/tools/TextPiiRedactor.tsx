@@ -447,7 +447,7 @@ export default function TextPiiRedactor() {
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
             {/* Hidden File Input */}
-            <input
+            <input aria-label="Upload file"
                 type="file"
                 ref={fileInputRef}
                 onChange={handleFileUpload}
@@ -484,7 +484,7 @@ export default function TextPiiRedactor() {
                                     className="px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-700 text-xs font-semibold flex items-center gap-1.5 transition border border-slate-200 cursor-pointer"
                                     title="Clear input"
                                 >
-                                    <RotateCcw className="w-3.5 h-3.5 text-slate-400" />
+                                    <RotateCcw className="w-3.5 h-3.5 text-slate-600 dark:text-slate-300" />
                                     <span>Clear</span>
                                 </button>
                                 <button
@@ -501,7 +501,7 @@ export default function TextPiiRedactor() {
 
                         {/* Raw Input Text Area */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={inputText}
                                 onChange={(e) => setInputText(e.target.value)}
                                 placeholder="Paste raw text, debug server logs, customer transcripts, or database records to redact PII..."
@@ -519,9 +519,9 @@ export default function TextPiiRedactor() {
                                     <KeyRound className="w-3.5 h-3.5 text-indigo-500" />
                                     Whitelist Exemptions (One per line)
                                 </label>
-                                <span className="text-[10px] text-slate-400">Never redact these strings</span>
+                                <span className="text-[10px] text-slate-600 dark:text-slate-300">Never redact these strings</span>
                             </div>
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={customWhitelist}
                                 onChange={(e) => setCustomWhitelist(e.target.value)}
                                 placeholder="e.g. enterprise-corp.com&#10;internal.cloud"
@@ -537,7 +537,7 @@ export default function TextPiiRedactor() {
                             <ShieldCheck className="w-4 h-4 text-emerald-600" />
                             100% Client-Side Engine (Zero Server Transmissions)
                         </span>
-                        <span className="font-mono text-[11px] text-slate-400">AES/Regex Safe</span>
+                        <span className="font-mono text-[11px] text-slate-600 dark:text-slate-300">AES/Regex Safe</span>
                     </div>
                 </div>
 
@@ -638,7 +638,7 @@ export default function TextPiiRedactor() {
                         {/* Tab Content Display */}
                         {activeTab === "redacted" ? (
                             <div className="relative">
-                                <textarea
+                                <textarea aria-label="Redacted output will render here instantly"
                                     readOnly
                                     value={redactedOutput}
                                     placeholder="Redacted output will render here instantly..."
@@ -652,7 +652,7 @@ export default function TextPiiRedactor() {
                         ) : (
                             <div className="h-80 sm:h-96 overflow-y-auto border border-slate-200 rounded-xl bg-slate-50 p-2 space-y-2">
                                 {auditLog.length === 0 ? (
-                                    <div className="flex flex-col items-center justify-center h-full text-slate-400 text-xs">
+                                    <div className="flex flex-col items-center justify-center h-full text-slate-600 dark:text-slate-300 text-xs">
                                         <ShieldCheck className="w-8 h-8 mb-2 text-slate-300" />
                                         <span>No PII matches detected in current input text.</span>
                                     </div>
@@ -665,10 +665,10 @@ export default function TextPiiRedactor() {
                                                         {log.category}
                                                     </span>
                                                     <span className="text-slate-500 line-through truncate max-w-[140px]">{log.original}</span>
-                                                    <span className="text-slate-400">&rarr;</span>
+                                                    <span className="text-slate-600 dark:text-slate-300">&rarr;</span>
                                                     <span className="text-emerald-700 font-bold truncate max-w-[140px]">{log.replacement}</span>
                                                 </div>
-                                                <span className="text-[10px] text-slate-400 flex-shrink-0">offset {log.index}</span>
+                                                <span className="text-[10px] text-slate-600 dark:text-slate-300 flex-shrink-0">offset {log.index}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -698,7 +698,7 @@ export default function TextPiiRedactor() {
                     <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
                         {strategy === "asterisk" && (
                             <label className="flex items-center gap-1.5 cursor-pointer">
-                                <input
+                                <input aria-label="Preserve First Last"
                                     type="checkbox"
                                     checked={preserveFirstLast}
                                     onChange={(e) => setPreserveFirstLast(e.target.checked)}
@@ -710,7 +710,7 @@ export default function TextPiiRedactor() {
                         {(strategy === "hash" || strategy === "synthetic") && (
                             <div className="flex items-center gap-1.5">
                                 <span className="text-slate-500">Hash Salt:</span>
-                                <input
+                                <input aria-label="Hash Salt"
                                     type="text"
                                     value={customSalt}
                                     onChange={(e) => setCustomSalt(e.target.value)}
@@ -777,8 +777,7 @@ export default function TextPiiRedactor() {
                 <div className="pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-3">
                     <div className="w-full sm:flex-1 flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-xl px-3 py-2">
                         <Binary className="w-4 h-4 text-indigo-500 flex-shrink-0" />
-                        <input
-                            type="text"
+                        <input aria-label="Input value" type="text"
                             value={customPatternInput}
                             onChange={(e) => setCustomPatternInput(e.target.value)}
                             placeholder="Add Custom Regular Expression (e.g. \bEMP-[0-9]{5}\b or \bCUST_[A-Z]{3}\b)..."
@@ -786,7 +785,7 @@ export default function TextPiiRedactor() {
                         />
                     </div>
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-700 cursor-pointer flex-shrink-0">
-                        <input
+                        <input aria-label="Case Sensitive"
                             type="checkbox"
                             checked={caseSensitive}
                             onChange={(e) => setCaseSensitive(e.target.checked)}

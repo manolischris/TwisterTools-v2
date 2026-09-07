@@ -604,7 +604,7 @@ export default function ImageColorExtractor() {
                             ) : (
                                 <div className="text-center p-6 space-y-2">
                                     <Palette className="w-10 h-10 text-slate-500 mx-auto" />
-                                    <p className="text-sm font-medium text-slate-400">No image loaded</p>
+                                    <p className="text-sm font-medium text-slate-600 dark:text-slate-300">No image loaded</p>
                                 </div>
                             )}
 
@@ -696,7 +696,7 @@ export default function ImageColorExtractor() {
                         <div className="grid grid-cols-2 gap-2 text-xs">
                             <div>
                                 <label className="block text-[11px] font-semibold text-slate-500 mb-1">Sort Mode</label>
-                                <select
+                                <select aria-label="Select Sort Mode"
                                     value={settings.sortBy}
                                     onChange={(e) =>
                                         setSettings((s) => ({
@@ -713,7 +713,7 @@ export default function ImageColorExtractor() {
                             </div>
                             <div className="flex flex-col justify-end">
                                 <label className="flex items-center gap-2 p-1.5 bg-slate-50 border border-slate-200 rounded-lg cursor-pointer text-slate-700 hover:bg-slate-100">
-                                    <input
+                                    <input aria-label="Exclude Background"
                                         type="checkbox"
                                         checked={settings.excludeBackground}
                                         onChange={(e) =>

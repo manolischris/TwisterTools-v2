@@ -416,7 +416,7 @@ export default function ImageToPdfConverter() {
                                     : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                     }`}
                             >
-                                <input
+                                <input aria-label="Upload file"
                                     ref={fileInputRef}
                                     type="file"
                                     accept="image/jpeg,image/jpg,image/png,image/webp"
@@ -430,7 +430,7 @@ export default function ImageToPdfConverter() {
                                 <p className="text-xs font-bold text-slate-800 mb-1">
                                     Drop JPG, PNG, or WEBP images here, or <span className="text-indigo-600">click to browse</span>
                                 </p>
-                                <p className="text-[11px] text-slate-400">Maximum file size: 20 MB per image</p>
+                                <p className="text-[11px] text-slate-600 dark:text-slate-300">Maximum file size: 20 MB per image</p>
                             </div>
 
                             {errorMessage && (
@@ -457,7 +457,7 @@ export default function ImageToPdfConverter() {
                                     <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                         <Layers3 className="w-10 h-10 text-slate-300 mb-2" />
                                         <p className="text-sm font-semibold text-slate-700">No Images Loaded</p>
-                                        <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                        <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                             Select or drop image files above to populate the PDF page queue.
                                         </p>
                                     </div>
@@ -501,7 +501,7 @@ export default function ImageToPdfConverter() {
                                                     <p className="text-xs font-bold text-slate-800 truncate">
                                                         {item.file.name}
                                                     </p>
-                                                    <p className="text-[10px] text-slate-400 font-mono mt-0.5">
+                                                    <p className="text-[10px] text-slate-600 dark:text-slate-300 font-mono mt-0.5">
                                                         {item.width} × {item.height} px • {formatBytes(item.file.size)}
                                                     </p>
                                                 </div>
@@ -668,7 +668,7 @@ export default function ImageToPdfConverter() {
                                 disabled={images.length === 0 || isProcessing}
                                 className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${images.length > 0 && !isProcessing
                                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                    : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                    : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                     }`}
                             >
                                 {isProcessing ? (
@@ -702,7 +702,7 @@ export default function ImageToPdfConverter() {
                             <span className="text-xs font-bold text-slate-800">Full Image Preview</span>
                             <button
                                 onClick={() => setPreviewUrl(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>

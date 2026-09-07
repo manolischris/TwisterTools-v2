@@ -250,7 +250,7 @@ export default function UrlEncoderDecoder() {
                     : "border-slate-300 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-900/50 hover:border-indigo-500 hover:bg-indigo-50/10"
                 }`}
               >
-                <input
+                <input aria-label="Url File Input"
                   ref={fileInputRef}
                   type="file"
                   accept=".txt,.json,.csv,.log,.xml,.html,.js,.css"
@@ -318,7 +318,7 @@ export default function UrlEncoderDecoder() {
                         : "border-slate-200 hover:border-indigo-200 hover:bg-slate-50/50"
                     }`}
                   >
-                    <input
+                    <input aria-label="Variant Toggle"
                       type="radio"
                       name="variant-toggle"
                       checked={variant === "component"}
@@ -342,7 +342,7 @@ export default function UrlEncoderDecoder() {
                         : "border-slate-200 hover:border-indigo-200 hover:bg-slate-50/50"
                     }`}
                   >
-                    <input
+                    <input aria-label="Variant Toggle"
                       type="radio"
                       name="variant-toggle"
                       checked={variant === "uri"}
@@ -388,7 +388,7 @@ export default function UrlEncoderDecoder() {
                 className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 flex-1 min-h-[40px] flex items-center justify-center ${
                   input
                     ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-100"
-                    : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                    : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                 }`}
               >
                 Process Output
@@ -432,7 +432,7 @@ export default function UrlEncoderDecoder() {
               <div className="p-5 space-y-4">
                 {/* Result Textarea */}
                 <div className="space-y-1">
-                  <textarea
+                  <textarea aria-label="Url Output Textarea"
                     id="url-output-textarea"
                     readOnly
                     value={hasError ? "" : output}
@@ -459,7 +459,7 @@ export default function UrlEncoderDecoder() {
                       ? copied
                         ? "bg-green-500 text-white shadow-md shadow-green-100"
                         : "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-100 hover:shadow-lg hover:-translate-y-0.5"
-                      : "bg-slate-100 text-slate-400 cursor-not-allowed"
+                      : "bg-slate-100 text-slate-600 dark:text-slate-300 cursor-not-allowed"
                   }`}
                 >
                   {copied ? (

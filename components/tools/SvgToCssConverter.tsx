@@ -303,7 +303,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 <h2 className="text-lg font-bold text-slate-900">
                                     Raw SVG Source Input
                                 </h2>
-                                <span className="text-xs font-medium text-slate-400 ml-1">
+                                <span className="text-xs font-medium text-slate-600 dark:text-slate-300 ml-1">
                                     ({stats.rawBytes.toLocaleString()} bytes)
                                 </span>
                             </div>
@@ -316,7 +316,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                     <Upload className="w-3.5 h-3.5" />
                                     Upload SVG
                                 </button>
-                                <input
+                                <input aria-label="Upload file"
                                     type="file"
                                     ref={fileInputRef}
                                     onChange={handleFileUpload}
@@ -336,7 +336,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
 
                         {/* Raw SVG Textarea */}
                         <div className="relative">
-                            <textarea
+                            <textarea aria-label="Input text content"
                                 value={rawSvg}
                                 onChange={(e) => setRawSvg(e.target.value)}
                                 placeholder="Paste your raw <svg>...</svg> markup here..."
@@ -352,8 +352,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Encoding Standard
                                 </label>
-                                <select
-                                    value={encodeMode}
+                                <select aria-label="Select option" value={encodeMode}
                                     onChange={(e) => setEncodeMode(e.target.value as EncodeMode)}
                                     className="w-full py-2 px-3 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                 >
@@ -368,8 +367,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                     Output Syntax
                                 </label>
-                                <select
-                                    value={outputFormat}
+                                <select aria-label="Select option" value={outputFormat}
                                     onChange={(e) => setOutputFormat(e.target.value as OutputFormat)}
                                     className="w-full py-2 px-3 bg-white border border-slate-200 rounded-xl text-xs font-semibold text-slate-800 focus:ring-2 focus:ring-indigo-500 outline-none cursor-pointer"
                                 >
@@ -385,7 +383,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                         <div className="p-3.5 bg-slate-50 border border-slate-200 rounded-xl space-y-3">
                             <div className="flex items-center justify-between">
                                 <label className="flex items-center gap-2 text-xs font-bold text-slate-800 cursor-pointer">
-                                    <input
+                                    <input aria-label="Apply Color Override"
                                         type="checkbox"
                                         checked={applyColorOverride}
                                         onChange={(e) => setApplyColorOverride(e.target.checked)}
@@ -396,7 +394,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 </label>
                                 {applyColorOverride && (
                                     <div className="flex items-center gap-2">
-                                        <input
+                                        <input aria-label="Select color"
                                             type="color"
                                             value={overrideColor}
                                             onChange={(e) => setOverrideColor(e.target.value)}
@@ -414,8 +412,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                     <label className="text-[11px] font-bold text-slate-600 uppercase tracking-wider block">
                                         Target Class Selector
                                     </label>
-                                    <input
-                                        type="text"
+                                    <input aria-label="Input value" type="text"
                                         value={classNameTarget}
                                         onChange={(e) => setClassNameTarget(e.target.value)}
                                         className="w-full px-2.5 py-1.5 text-xs font-mono bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 text-slate-800"
@@ -500,7 +497,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 }}
                             />
                             {!dataUri && (
-                                <div className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-slate-400">
+                                <div className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-slate-600 dark:text-slate-300">
                                     No valid SVG code supplied
                                 </div>
                             )}
@@ -512,8 +509,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
                                     Repeat
                                 </label>
-                                <select
-                                    value={bgRepeat}
+                                <select aria-label="Select option" value={bgRepeat}
                                     onChange={(e) => setBgRepeat(e.target.value as any)}
                                     className="w-full p-1.5 border border-slate-200 rounded-lg font-medium text-slate-800 bg-white"
                                 >
@@ -527,8 +523,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
                                     Position
                                 </label>
-                                <select
-                                    value={bgPosition}
+                                <select aria-label="Select option" value={bgPosition}
                                     onChange={(e) => setBgPosition(e.target.value)}
                                     className="w-full p-1.5 border border-slate-200 rounded-lg font-medium text-slate-800 bg-white"
                                 >
@@ -543,8 +538,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 <label className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">
                                     Size
                                 </label>
-                                <select
-                                    value={bgSize}
+                                <select aria-label="Select option" value={bgSize}
                                     onChange={(e) => setBgSize(e.target.value as any)}
                                     className="w-full p-1.5 border border-slate-200 rounded-lg font-medium text-slate-800 bg-white"
                                 >
@@ -561,8 +555,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                 <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">
                                     Custom Dimensions (e.g. 32px 32px or 50%)
                                 </label>
-                                <input
-                                    type="text"
+                                <input aria-label="Input value" type="text"
                                     value={customBgSize}
                                     onChange={(e) => setCustomBgSize(e.target.value)}
                                     className="w-full px-2.5 py-1.5 text-xs font-mono bg-slate-50 border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-indigo-500 text-slate-800"
@@ -693,7 +686,7 @@ ${bgSize !== "auto" ? `background-size: ${sizeVal};` : ""}`.trim();
                                     <td className="p-3 font-semibold text-slate-900">Base64 Binary</td>
                                     <td className="p-3 text-rose-600 font-bold">+33% Inflation</td>
                                     <td className="p-3 text-amber-600">Moderate</td>
-                                    <td className="p-3 text-slate-400">Completely Opaque</td>
+                                    <td className="p-3 text-slate-600 dark:text-slate-300">Completely Opaque</td>
                                     <td className="p-3">Embedded raster images inside SVG</td>
                                 </tr>
                                 <tr className="hover:bg-slate-50">

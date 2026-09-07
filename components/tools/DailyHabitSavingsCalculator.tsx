@@ -386,8 +386,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                             <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider">
                                 Currency
                             </label>
-                            <select
-                                value={currency}
+                            <select aria-label="Select option" value={currency}
                                 onChange={(e) => setCurrency(e.target.value as CurrencyCode)}
                                 className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition bg-slate-50"
                             >
@@ -411,9 +410,8 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                     </span>
                                 </div>
                                 <div className="relative">
-                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">{currencySymbol}</span>
-                                    <input
-                                        type="number"
+                                    <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">{currencySymbol}</span>
+                                    <input aria-label="Input value" type="number"
                                         min="0"
                                         step="0.25"
                                         value={dailyCost === 0 ? "" : dailyCost}
@@ -433,7 +431,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                         {daysPerWeek} {daysPerWeek === 1 ? "day" : "days"} / week
                                     </span>
                                 </div>
-                                <input
+                                <input aria-label="Adjust slider value"
                                     type="range"
                                     min="1"
                                     max="7"
@@ -442,7 +440,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                     onChange={(e) => handleCustomChange(setDaysPerWeek, Number(e.target.value))}
                                     className="w-full accent-indigo-600 cursor-pointer"
                                 />
-                                <div className="flex justify-between text-[10px] text-slate-400 font-semibold mt-1">
+                                <div className="flex justify-between text-[10px] text-slate-600 dark:text-slate-300 font-semibold mt-1">
                                     <span>1 day (Occasional)</span>
                                     <span>5 days (Workdays)</span>
                                     <span>7 days (Daily)</span>
@@ -456,8 +454,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                         <Percent className="w-4 h-4 text-indigo-600" /> Expected APY Return
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="30"
                                             step="0.5"
@@ -465,7 +462,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                             onChange={(e) => handleNumberInput(e, (val) => handleCustomChange(setAnnualRate, Math.max(0, val)))}
                                             className="w-full pl-3 pr-8 py-2.5 rounded-xl border border-slate-200 text-slate-900 font-medium focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none text-sm transition"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 font-semibold">%</span>
                                     </div>
                                 </div>
 
@@ -473,8 +470,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                     <label className="block text-sm font-semibold text-slate-800 mb-1.5 flex items-center gap-1">
                                         <TrendingUp className="w-4 h-4 text-indigo-600" /> Horizon (Years)
                                     </label>
-                                    <input
-                                        type="number"
+                                    <input aria-label="Input value" type="number"
                                         min="1"
                                         max="50"
                                         value={years === 0 ? "" : years}
@@ -490,8 +486,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                     <label className="block text-xs font-semibold text-slate-600 mb-1">
                                         Compounding Frequency
                                     </label>
-                                    <select
-                                        value={compoundingFrequency}
+                                    <select aria-label="Select option" value={compoundingFrequency}
                                         onChange={(e) => setCompoundingFrequency(Number(e.target.value))}
                                         className="w-full px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 text-slate-800 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                     >
@@ -507,8 +502,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                         Expected Inflation Rate (%)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="0"
                                             max="15"
                                             step="0.1"
@@ -516,7 +510,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                                             onChange={(e) => handleNumberInput(e, (val) => setInflationRate(Math.max(0, val)))}
                                             className="w-full pl-3 pr-8 py-2 rounded-lg border border-slate-200 bg-slate-50 text-slate-800 text-xs font-medium focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs font-semibold">%</span>
+                                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-600 dark:text-slate-300 text-xs font-semibold">%</span>
                                     </div>
                                 </div>
                             </div>
@@ -525,7 +519,7 @@ Calculated at twistertools.com/tools/calculators/daily-habit-savings-calculator`
                         {/* Fast Strategy Presets Bar */}
                         <div className="mt-5 pt-4 border-t border-slate-100 space-y-2">
                             <div className="flex items-center justify-between">
-                                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                                <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5 text-indigo-500" /> Common Habit Presets
                                 </span>
                                 {activePresetId && (

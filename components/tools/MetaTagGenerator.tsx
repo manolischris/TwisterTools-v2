@@ -188,7 +188,7 @@ function GoogleSearchPreview({ data }: { data: MetaFormData }) {
           <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-          <span className="ml-2 text-xs text-slate-400">Google Search Preview</span>
+          <span className="ml-2 text-xs text-slate-600 dark:text-slate-300">Google Search Preview</span>
         </div>
       </div>
       <div className="p-4 space-y-1.5">
@@ -229,7 +229,7 @@ function FacebookSharePreview({ data }: { data: MetaFormData }) {
               target.style.display = "none";
               const parent = target.parentElement;
               if (parent) {
-                parent.innerHTML = '<div class="flex items-center justify-center w-full h-full text-slate-400"><svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>';
+                parent.innerHTML = '<div class="flex items-center justify-center w-full h-full text-slate-600 dark:text-slate-300"><svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>';
               }
             }}
           />
@@ -238,7 +238,7 @@ function FacebookSharePreview({ data }: { data: MetaFormData }) {
         <div className="w-full h-48 bg-gradient-to-br from-indigo-100 to-slate-100 flex items-center justify-center">
           <div className="text-center">
             <Image className="w-10 h-10 text-slate-300 mx-auto mb-2" />
-            <p className="text-xs text-slate-400">No OG Image URL provided</p>
+            <p className="text-xs text-slate-600 dark:text-slate-300">No OG Image URL provided</p>
           </div>
         </div>
       )}
@@ -295,7 +295,7 @@ function TwitterCardPreview({ data }: { data: MetaFormData }) {
           <div className="w-full h-48 bg-gradient-to-br from-sky-100 to-slate-100 flex items-center justify-center border-b border-slate-200">
             <div className="text-center">
               <Image className="w-10 h-10 text-slate-300 mx-auto mb-2" />
-              <p className="text-xs text-slate-400">No image provided</p>
+              <p className="text-xs text-slate-600 dark:text-slate-300">No image provided</p>
             </div>
           </div>
         ) : null}
@@ -303,7 +303,7 @@ function TwitterCardPreview({ data }: { data: MetaFormData }) {
           <p className="text-sm text-slate-500 font-medium truncate">{handle}</p>
           <h3 className="text-[15px] text-slate-900 font-semibold leading-snug line-clamp-2">{title}</h3>
           <p className="text-sm text-slate-600 leading-relaxed line-clamp-2">{description}</p>
-          <p className="text-xs text-slate-400">{isLarge ? "Summary Large Image Card" : "Summary Card"}</p>
+          <p className="text-xs text-slate-600 dark:text-slate-300">{isLarge ? "Summary Large Image Card" : "Summary Card"}</p>
         </div>
       </div>
     </div>
@@ -358,10 +358,10 @@ function TextField({
     <div>
       <label className="block text-sm font-medium text-slate-700 mb-1">
         {label}
-        {optional && <span className="text-slate-400 font-normal ml-1">(optional)</span>}
+        {optional && <span className="text-slate-600 dark:text-slate-300 font-normal ml-1">(optional)</span>}
       </label>
       {rows && rows > 1 ? (
-        <textarea
+        <textarea aria-label="Input text content"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
@@ -369,7 +369,7 @@ function TextField({
           className={inputClasses + " resize-none h-20"}
         />
       ) : (
-        <input
+        <input aria-label="1  ("
           type="text"
           value={value}
           onChange={(e) => onChange(e.target.value)}
@@ -395,8 +395,7 @@ function SelectField({
   return (
     <div>
       <label className="block text-sm font-medium text-slate-700 mb-1">{label}</label>
-      <select
-        value={value}
+      <select aria-label="Select option" value={value}
         onChange={(e) => onChange(e.target.value)}
         className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all appearance-none"
       >

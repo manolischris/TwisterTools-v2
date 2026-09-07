@@ -476,15 +476,14 @@ export default function ScreenResolutionCalculator() {
                                         Width (Pixels)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="32000"
                                             value={width}
                                             onChange={(e) => handleNumberChange(e, setWidth)}
                                             className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono font-bold text-slate-900 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3.5 top-2.5 text-xs font-bold text-slate-400 pointer-events-none">
+                                        <span className="absolute right-3.5 top-2.5 text-xs font-bold text-slate-600 dark:text-slate-300 pointer-events-none">
                                             px
                                         </span>
                                     </div>
@@ -495,15 +494,14 @@ export default function ScreenResolutionCalculator() {
                                         Height (Pixels)
                                     </label>
                                     <div className="relative">
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             max="32000"
                                             value={height}
                                             onChange={(e) => handleNumberChange(e, setHeight)}
                                             className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono font-bold text-slate-900 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none"
                                         />
-                                        <span className="absolute right-3.5 top-2.5 text-xs font-bold text-slate-400 pointer-events-none">
+                                        <span className="absolute right-3.5 top-2.5 text-xs font-bold text-slate-600 dark:text-slate-300 pointer-events-none">
                                             px
                                         </span>
                                     </div>
@@ -553,8 +551,7 @@ export default function ScreenResolutionCalculator() {
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                             Ratio Numerator (W)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             value={targetAspectW}
                                             onChange={(e) => handleNumberChange(e, setTargetAspectW)}
@@ -565,8 +562,7 @@ export default function ScreenResolutionCalculator() {
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                             Ratio Denominator (H)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             min="1"
                                             value={targetAspectH}
                                             onChange={(e) => handleNumberChange(e, setTargetAspectH)}
@@ -580,8 +576,7 @@ export default function ScreenResolutionCalculator() {
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                             Scaled Width
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             value={scaledWidth}
                                             onChange={(e) => handleResizeChange(Number(e.target.value) || 0, "w")}
                                             className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-mono font-bold text-indigo-700"
@@ -591,8 +586,7 @@ export default function ScreenResolutionCalculator() {
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                             Scaled Height (Auto)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             value={scaledHeight}
                                             onChange={(e) => handleResizeChange(Number(e.target.value) || 0, "h")}
                                             className="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs font-mono font-bold text-indigo-700"
@@ -614,8 +608,7 @@ export default function ScreenResolutionCalculator() {
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                             Diagonal Size (Inches)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="0.1"
                                             min="1"
                                             max="120"
@@ -628,8 +621,7 @@ export default function ScreenResolutionCalculator() {
                                         <label className="text-[11px] font-bold text-slate-600 block mb-1">
                                             Viewing Distance (Inches)
                                         </label>
-                                        <input
-                                            type="number"
+                                        <input aria-label="Input value" type="number"
                                             step="1"
                                             min="1"
                                             max="200"

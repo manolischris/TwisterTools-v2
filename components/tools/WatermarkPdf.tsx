@@ -467,7 +467,7 @@ export default function WatermarkPdf() {
                                 : "border-slate-300 bg-slate-50/50 hover:border-indigo-400 hover:bg-indigo-50/30"
                                 }`}
                         >
-                            <input
+                            <input aria-label="Upload file"
                                 ref={fileInputRef}
                                 type="file"
                                 accept="application/pdf"
@@ -500,7 +500,7 @@ export default function WatermarkPdf() {
                                     <p className="text-xs font-semibold text-slate-800 mb-0.5">
                                         Drop PDF document here, or <span className="text-indigo-600">click to browse</span>
                                     </p>
-                                    <p className="text-[11px] text-slate-400">Maximum file size guardrail: 20 MB</p>
+                                    <p className="text-[11px] text-slate-600 dark:text-slate-300">Maximum file size guardrail: 20 MB</p>
                                 </>
                             )}
                         </div>
@@ -566,7 +566,7 @@ export default function WatermarkPdf() {
                             <div className="space-y-4">
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-semibold text-slate-700">Watermark Text String</label>
-                                    <input
+                                    <input aria-label="Watermark Text String"
                                         type="text"
                                         value={text}
                                         onChange={(e) => setText(e.target.value)}
@@ -578,7 +578,7 @@ export default function WatermarkPdf() {
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="space-y-1.5">
                                         <label className="text-xs font-semibold text-slate-700">Font Size ({fontSize}px)</label>
-                                        <input
+                                        <input aria-label="Adjust slider value"
                                             type="range"
                                             min={16}
                                             max={120}
@@ -590,7 +590,7 @@ export default function WatermarkPdf() {
                                     <div className="space-y-1.5">
                                         <label className="text-xs font-semibold text-slate-700">Color Overlay</label>
                                         <div className="flex items-center gap-2">
-                                            <input
+                                            <input aria-label="Select color"
                                                 type="color"
                                                 value={textColor}
                                                 onChange={(e) => setTextColor(e.target.value)}
@@ -603,7 +603,7 @@ export default function WatermarkPdf() {
 
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-semibold text-slate-700">Typography Font Family</label>
-                                    <select
+                                    <select aria-label="Select Typography Font Family"
                                         value={fontFamily}
                                         onChange={(e) => setFontFamily(e.target.value as StandardFonts)}
                                         className="w-full text-xs border border-slate-200 rounded-xl p-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white"
@@ -622,7 +622,7 @@ export default function WatermarkPdf() {
                             <div className="space-y-4">
                                 <div className="space-y-1.5">
                                     <label className="text-xs font-semibold text-slate-700">Upload Logo / Stamp (PNG or JPG)</label>
-                                    <input
+                                    <input aria-label="Upload file"
                                         ref={stampImageInputRef}
                                         type="file"
                                         accept="image/png, image/jpeg"
@@ -643,7 +643,7 @@ export default function WatermarkPdf() {
                                     <label className="text-xs font-semibold text-slate-700">
                                         Image Scale Factor ({Math.round(imageScale * 100)}%)
                                     </label>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={0.05}
                                         max={1.0}
@@ -663,7 +663,7 @@ export default function WatermarkPdf() {
                                     <label className="text-xs font-semibold text-slate-700">
                                         Opacity Transparency ({Math.round(opacity * 100)}%)
                                     </label>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={0.05}
                                         max={1.0}
@@ -678,7 +678,7 @@ export default function WatermarkPdf() {
                                     <label className="text-xs font-semibold text-slate-700">
                                         Rotation Angle ({rotation}°)
                                     </label>
-                                    <input
+                                    <input aria-label="Adjust slider value"
                                         type="range"
                                         min={-90}
                                         max={90}
@@ -692,7 +692,7 @@ export default function WatermarkPdf() {
 
                             <div className="space-y-1.5">
                                 <label className="text-xs font-semibold text-slate-700">Position & Layout Alignment</label>
-                                <select
+                                <select aria-label="Select Position & Layout Alignment"
                                     value={position}
                                     onChange={(e) => setPosition(e.target.value as WatermarkPosition)}
                                     className="w-full text-xs border border-slate-200 rounded-xl p-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white"
@@ -708,14 +708,14 @@ export default function WatermarkPdf() {
 
                             <div className="space-y-1.5">
                                 <label className="text-xs font-semibold text-slate-700">Page Range Target</label>
-                                <input
+                                <input aria-label="Page Range Target"
                                     type="text"
                                     value={applyToRange}
                                     onChange={(e) => setApplyToRange(e.target.value)}
                                     placeholder="e.g. all OR 1-3, 5"
                                     className="w-full text-xs font-mono border border-slate-200 rounded-xl p-2.5 text-slate-800 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
                                 />
-                                <p className="text-[10px] text-slate-400">
+                                <p className="text-[10px] text-slate-600 dark:text-slate-300">
                                     Type "all" to watermark entire PDF or enter specific ranges.
                                 </p>
                             </div>
@@ -740,7 +740,7 @@ export default function WatermarkPdf() {
                             <div className="h-[320px] border border-dashed border-slate-200 rounded-xl bg-slate-50 flex flex-col items-center justify-center text-center p-4 sm:p-6">
                                 <Stamp className="w-10 h-10 text-slate-300 mb-2" />
                                 <p className="text-sm font-semibold text-slate-700">No PDF Loaded</p>
-                                <p className="text-xs text-slate-400 mt-1 max-w-xs">
+                                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1 max-w-xs">
                                     Upload a PDF document to preview pages and apply real-time watermarks.
                                 </p>
                             </div>
@@ -800,7 +800,7 @@ export default function WatermarkPdf() {
                             disabled={!pdfBytes || isProcessing}
                             className={`w-full py-3 px-4 rounded-xl font-bold text-xs flex items-center justify-center gap-2 transition-all shadow-md ${pdfBytes && !isProcessing
                                 ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-indigo-200 hover:-translate-y-0.5"
-                                : "bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed"
+                                : "bg-slate-100 text-slate-600 dark:text-slate-300 border border-slate-200 cursor-not-allowed"
                                 }`}
                         >
                             {isProcessing ? (
@@ -833,7 +833,7 @@ export default function WatermarkPdf() {
                             <span className="text-xs font-bold text-slate-800">Page Thumbnail Preview</span>
                             <button
                                 onClick={() => setPreviewPageUrl(null)}
-                                className="text-xs font-bold text-slate-400 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
+                                className="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-slate-600 px-2 py-1 bg-slate-100 rounded-lg"
                             >
                                 Close (ESC)
                             </button>
