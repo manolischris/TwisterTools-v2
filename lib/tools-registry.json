@@ -26,7 +26,6 @@
     "iconName": "Hash",
     "isFeatured": false
   },
-
   {
     "id": "password-generator",
     "title": "Strong Password & Passphrase Generator",
@@ -2659,9 +2658,59 @@
     "href": "/tools/web-tools/csp-header-generator",
     "iconName": "ShieldCheck",
     "isFeatured": false
+  },
+  {
+    "id": "image-to-text-ocr",
+    "title": "Optical Character Recognition (OCR) Image to Text Extractor",
+    "description": "Convert images, scanned documents, and receipts into editable text in your browser.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-to-text-ocr",
+    "iconName": "ScanText",
+    "isFeatured": false
+  },
+  {
+    "id": "image-color-inverter",
+    "title": "Image Color Inverter & Negative Filter",
+    "description": "Browser-native tool to invert image colors, reverse photographic negatives, and apply Sabattier solarization effects.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-color-inverter",
+    "iconName": "Palette",
+    "isFeatured": false
+  },
+  {
+    "id": "image-transparent-padding",
+    "title": "PNG Transparent Pixel Padding & Border Expander",
+    "description": "Add transparent margins and custom pixel borders to PNGs with real-time preview and lossless output.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-transparent-padding",
+    "iconName": "Crop",
+    "isFeatured": false
+  },
+  {
+    "id": "svg-path-minifier",
+    "title": "SVG Path Minifier & Coordinate Precision Reducer",
+    "description": "High-performance browser-native SVG path optimizer. Reduce coordinate decimal precision, collapse delimiters, and strip redundant whitespace.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/svg-path-minifier",
+    "iconName": "Scissors",
+    "isFeatured": false
+  },
+  {
+    "id": "pixel-art-scaler",
+    "title": "Pixel Art Sprite Scaler & Nearest-Neighbor Resizer",
+    "description": "Upscale retro pixel art and sprites up to 32x with razor-sharp nearest-neighbor rendering and zero blur.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/pixel-art-scaler",
+    "iconName": "Maximize2",
+    "isFeatured": false
+  },
+  {
+    "id": "image-exif-stripper",
+    "title": "Image Metadata & EXIF Tag Stripper",
+    "description": "Scrub EXIF metadata, GPS coordinates, camera hardware models, and personal timestamps directly in the client browser with zero server uploads.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-exif-stripper",
+    "iconName": "ShieldCheck",
+    "isFeatured": false
   }
 ]
-
-
-
-

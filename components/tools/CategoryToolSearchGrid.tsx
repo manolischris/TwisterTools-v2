@@ -129,6 +129,7 @@ import { Link as LinkIcon,
   FileCode2,
   KeyRound,
   Network,
+  ScanText,
   Trophy, PenTool, Smile, Gamepad2, MapPin, QrCode, CalendarClock, ListStart, Share2, Tv, Fuel, Maximize2, VectorSquare, Printer } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
@@ -287,7 +288,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Share2,
   Tv,
   Fuel,
-  Maximize2
+  Maximize2,
+  ScanText
 };
 
 export default function CategoryToolSearchGrid({

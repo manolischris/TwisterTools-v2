@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Link as LinkIcon,
+import {
+  Link as LinkIcon,
   Link2,
   Activity,
   ArrowLeftRight,
@@ -111,7 +112,9 @@ import { Link as LinkIcon,
   Baseline,
   Trophy,
   FileCode2,
-  Shuffle, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer } from "lucide-react";
+  ScanText,
+  Shuffle, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer
+} from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
 import fs from "fs";
@@ -238,6 +241,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Box,
   Gauge,
   Table,
+  ScanText,
   Shuffle
 };
 
@@ -897,7 +901,7 @@ export async function generateMetadata({
   }
 
   const canonicalUrl = `https://www.twistertools.com/tools/${category}`;
-  
+
   const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
   const webpCategoryPath = `${categoryImagePath}.webp`;
   const jpgCategoryPath = `${categoryImagePath}.jpg`;

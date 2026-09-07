@@ -239,6 +239,11 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 * [Image to Base64 String Data URI Encoder](/tools/image-tools/image-to-base64-converter): Client-side image to RFC 4648 Base64 string and Data URI converter with format transformation controls.
 - Image DPI to Physical Print Dimension Calculator: Bidirectional pixel-to-dimension rendering, viewing distance acuity, and prepress density matrix (/tools/image-tools/image-dpi-print-calculator)
 - `/tools/image-tools/gradient-wallpaper-generator`: Canvas Color Gradient Generator & High-Res PNG Exporter (linear, radial, and conic gradients with 4K PNG export).
+- /tools/image-tools/image-to-text-ocr: Extract text from images, scans, and documents directly in your browser using client-side WebAssembly OCR.
+* Image Color Inverter (/tools/image-tools/image-color-inverter): Browser-native film negative reversal, luminance negative, and color complement engine.
+- [PNG Transparent Padding Expander](/tools/image-tools/image-transparent-padding): Expand PNG canvas boundaries with transparent borders or custom background fills.
+- SVG Path Minifier: Browser-native vector path optimizer to strip coordinate decimals and collapse path delimiters.
+- Pixel Art Sprite Scaler: Free client-side nearest-neighbor sprite scaler and pixel art resizer with up to 32x integer magnification.
 ### [SEO, Domain & Network Inspector Tools](https://www.twistertools.com/tools/web-tools)
 - [XML Sitemap Generator & URL Crawler](https://www.twistertools.com/tools/web-tools/sitemap-generator): Crawl links and generate valid Sitemaps.org XML and TXT sitemaps.
 - [Meta Tag Generator & Social Preview Suite](https://www.twistertools.com/tools/web-tools/meta-tag-generator): Draft SEO meta tags with live Google, Facebook, and Twitter card previews.

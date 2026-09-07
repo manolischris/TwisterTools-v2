@@ -136,6 +136,7 @@ import {
   VectorSquare,
   Printer,
   KeyRound,
+  ScanText,
 } from "lucide-react";
 import toolsRegistryData from "@/lib/tools-registry.json";
 import { rankTools, type SearchableTool } from "@/lib/search-utils";
@@ -162,6 +163,7 @@ const categories = [
 ];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  ScanText,
   KeyRound,
   FileCode2,
   Printer,
@@ -296,11 +298,10 @@ export default function Header() {
 
     return (
       <div
-        className={`absolute ${
-          position === "desktop"
+        className={`absolute ${position === "desktop"
             ? "top-full left-0 mt-2 w-full"
             : "top-full left-0 right-0 mt-1"
-        } z-50 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden`}
+          } z-50 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden`}
       >
         {searchResults.length > 0 ? (
           <div className="p-2">
@@ -448,9 +449,8 @@ export default function Header() {
               >
                 Categories
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    isDropdownOpen ? "rotate-180" : ""
-                  }`}
+                  className={`h-4 w-4 transition-transform duration-200 ${isDropdownOpen ? "rotate-180" : ""
+                    }`}
                 />
               </Link>
 
@@ -581,9 +581,8 @@ export default function Header() {
             >
               <span>Categories</span>
               <ChevronDown
-                className={`h-4 w-4 transition-transform duration-200 ${
-                  isMobileCategoriesOpen ? "rotate-180" : ""
-                }`}
+                className={`h-4 w-4 transition-transform duration-200 ${isMobileCategoriesOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 

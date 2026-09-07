@@ -133,6 +133,7 @@ import { Link as LinkIcon,
   FileCode2,
   KeyRound,
   Network,
+  ScanText,
   Trophy, PenTool, Smile, Gamepad2, Palette, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
@@ -152,6 +153,7 @@ interface RegistryTool {
    Icon Map
  ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  ScanText,
   Network,
   KeyRound,
   FileCode2,
@@ -358,7 +360,7 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
 const INACTIVE_PILL =
   "bg-white border border-slate-200 text-slate-600 hover:border-indigo-400 hover:text-indigo-600 hover:bg-indigo-50/60";
 
-const TOOLS_PER_PAGE = 12;
+const TOOLS_PER_PAGE = 30;
 const BOOKMARK_KEY = "twistertools_bookmarks";
 
 /* ─────────────────────────────────────────────────────────

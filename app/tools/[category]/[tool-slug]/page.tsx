@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2 } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop } from "lucide-react";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -150,6 +150,11 @@ const CspHeaderGenerator = dynamic(() => import("@/components/tools/CspHeaderGen
 const Ipv6AddressConverter = dynamic(() => import("@/components/tools/Ipv6AddressConverter"));
 const SubnetCidrCalculator = dynamic(() => import("@/components/tools/SubnetCidrCalculator"));
 const UrlQueryParameterParser = dynamic(() => import("@/components/tools/UrlQueryParameterParser"));
+import ImageToTextOcr from "@/components/tools/ImageToTextOcr";
+import ImageColorInverter from "@/components/tools/ImageColorInverter";
+import ImageTransparentPadding from "@/components/tools/ImageTransparentPadding";
+import SvgPathMinifier from "@/components/tools/SvgPathMinifier";
+import ImageExifStripper from "@/components/tools/ImageExifStripper";
 
 
 
@@ -309,6 +314,11 @@ const COMPLETED_TOOLS = [
   "ipv6-address-converter",
   "subnet-cidr-calculator",
   "url-query-parameter-parser",
+  "image-to-text-ocr",
+  "image-color-inverter",
+  "image-transparent-padding",
+  "svg-path-minifier",
+  "image-exif-stripper",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -374,9 +384,16 @@ function handleConsolidationRedirects(category: string, toolSlug: string) {
     "power-converter",
     "pressure-converter",
     "voltage-converter",
+    "speed-converter",
   ];
   if (category === "calculators" && unitConverterSlugs.includes(toolSlug)) {
     permanentRedirect("/tools/calculators/master-unit-converter");
+  }
+
+  // Redirect legacy image-to-text slugs to image-to-text-ocr
+  const imageToTextSlugs = ["image-to-text", "image-to-text-converter"];
+  if (category === "image-tools" && imageToTextSlugs.includes(toolSlug)) {
+    permanentRedirect("/tools/image-tools/image-to-text-ocr");
   }
 }
 
@@ -471,6 +488,11 @@ export async function generateMetadata({
   if (category === "image-tools" && toolSlug === "base64-to-image-converter") {
     title = "Base64 to Image Decoder & Instant PNG/JPG Exporter";
     description = "Decode raw Base64 strings and Data URIs into full-resolution PNG, JPG, and WebP images with instant browser-side raster export.";
+  }
+
+  if (category === "image-tools" && toolSlug === "svg-path-minifier") {
+    title = "SVG Path Minifier & Coordinate Precision Reducer";
+    description = "Compress SVG vector paths, strip redundant decimal precision, collapse whitespace delimiters, and inspect live rendered vectors.";
   }
 
   if (category === "image-tools" && toolSlug === "image-dpi-print-calculator") {
@@ -709,6 +731,11 @@ export async function generateMetadata({
   if (category === "random-tools" && toolSlug === "random-emoji-generator") {
     title = "Random Emoji & Emoticon Combination Generator";
     description = "Generate cryptographically randomized emoji combinations, aesthetic Kaomoji emoticons, and custom Unicode character sets with advanced export formatting.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-to-text-ocr") {
+    title = "Optical Character Recognition (OCR) Image to Text Extractor";
+    description = "Extract text from photos, scans, receipts, and documents instantly in your browser using secure client-side OCR. 100% private with no server uploads.";
   }
 
   return {
@@ -961,6 +988,11 @@ export default async function ToolPage({
   if (category === "random-tools" && toolSlug === "random-emoji-generator") {
     tool.name = "Random Emoji & Emoticon Combination Generator";
     tool.description = "Generate cryptographically randomized emoji combinations, aesthetic Kaomoji emoticons, and custom Unicode character sets with advanced export formatting.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-to-text-ocr") {
+    tool.name = "Optical Character Recognition (OCR) Image to Text Extractor";
+    tool.description = "Extract text from photos, scans, receipts, and documents instantly in your browser using secure client-side OCR. 100% private with no server uploads.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -1546,6 +1578,14 @@ export default async function ToolPage({
                   <Link2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "web-tools" && toolSlug === "csp-header-generator" ? (
                   <ShieldCheck className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "image-to-text-ocr" ? (
+                  <ScanText className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "image-transparent-padding" ? (
+                  <Crop className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "svg-path-minifier" ? (
+                  <Scissors className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "image-exif-stripper" ? (
+                  <ShieldCheck className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
                   <Binary className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (
@@ -1847,6 +1887,16 @@ export default async function ToolPage({
             <SubnetCidrCalculator />
           ) : category === "developer-tools" && toolSlug === "url-query-parameter-parser" ? (
             <UrlQueryParameterParser />
+          ) : category === "image-tools" && toolSlug === "image-to-text-ocr" ? (
+            <ImageToTextOcr />
+          ) : category === "image-tools" && toolSlug === "image-color-inverter" ? (
+            <ImageColorInverter />
+          ) : category === "image-tools" && toolSlug === "image-transparent-padding" ? (
+            <ImageTransparentPadding />
+          ) : category === "image-tools" && toolSlug === "svg-path-minifier" ? (
+            <SvgPathMinifier />
+          ) : category === "image-tools" && toolSlug === "image-exif-stripper" ? (
+            <ImageExifStripper />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

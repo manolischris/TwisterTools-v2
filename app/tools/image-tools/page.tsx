@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
   const webpCategoryPath = `${categoryImagePath}.webp`;
   const jpgCategoryPath = `${categoryImagePath}.jpg`;
-  
+
   const featuredImage = fs.existsSync(webpCategoryPath)
     ? `https://www.twistertools.com/images/categories/${category}.webp`
     : fs.existsSync(jpgCategoryPath)
@@ -150,6 +150,38 @@ export default function ImageToolsCategoryPage() {
           iconName: "FileCode"
         };
       }
+      if (tool.id === "image-color-inverter") {
+        return {
+          ...tool,
+          title: "Image Color Inverter & Negative Filter",
+          description: "Instantly invert image colors, turn film negatives into positive photos, and apply creative solarization filters.",
+          iconName: "Palette"
+        };
+      }
+      if (tool.id === "image-transparent-padding") {
+        return {
+          ...tool,
+          title: "PNG Transparent Pixel Padding & Border Expander",
+          description: "Add transparent margins and custom pixel padding to PNGs with lossless alpha channel preservation.",
+          iconName: "Crop"
+        };
+      }
+      if (tool.id === "image-exif-stripper") {
+        return {
+          ...tool,
+          title: "Image Metadata & EXIF Tag Stripper",
+          description: "Remove EXIF metadata, GPS locations, camera specs, and timestamps directly in your browser with zero server uploads.",
+          iconName: "ShieldCheck"
+        };
+      }
+      if (tool.id === "pixel-art-scaler") {
+        return {
+          ...tool,
+          title: "Pixel Art Sprite Scaler & Nearest-Neighbor Resizer",
+          description: "Enlarge retro pixel sprites up to 32x with crystal-clear nearest-neighbor interpolation and zero blur.",
+          iconName: "Maximize2"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {
@@ -229,10 +261,10 @@ export default function ImageToolsCategoryPage() {
                 card.icon === "Image"
                   ? ImageIcon
                   : card.icon === "Minimize2"
-                  ? Minimize2
-                  : card.icon === "Palette"
-                  ? Palette
-                  : Globe;
+                    ? Minimize2
+                    : card.icon === "Palette"
+                      ? Palette
+                      : Globe;
 
               return (
                 <div

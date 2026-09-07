@@ -479,7 +479,7 @@
       "id": 15,
       "name": "Image to Text Converter",
       "legacy_url": "/image-to-text-converter",
-      "new_url": "/tools/image-tools",
+      "new_url": "/tools/image-tools/image-to-text-ocr",
       "new_category": "image-tools",
       "description": "Extract text from images using OCR technology"
     },
@@ -591,7 +591,7 @@
       "id": 29,
       "name": "Speed Converter",
       "legacy_url": "/speed-converter",
-      "new_url": "/tools/calculators",
+      "new_url": "/tools/calculators/master-unit-converter",
       "new_category": "calculators",
       "description": "Convert between different speed units"
     },

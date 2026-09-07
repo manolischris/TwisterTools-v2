@@ -140,6 +140,12 @@ const nextConfig: NextConfig = {
       { source: "/tools/calculators/torque-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/voltage-converter", destination: "/tools/calculators/master-unit-converter" },
       { source: "/tools/calculators/voltage-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/speed-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/calculators/speed-converter", destination: "/tools/calculators/master-unit-converter" },
+      { source: "/tools/image-tools/image-to-text", destination: "/tools/image-tools/image-to-text-ocr" },
+      { source: "/image-to-text", destination: "/tools/image-tools/image-to-text-ocr" },
+      { source: "/image-to-text-converter", destination: "/tools/image-tools/image-to-text-ocr" },
+      { source: "/tools/image-tools/image-to-text-converter", destination: "/tools/image-tools/image-to-text-ocr" },
     ];
     for (const r of legacyRedirects) {
       // Avoid duplicate redirects if they're already loaded from url-map.json
