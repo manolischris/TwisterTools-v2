@@ -158,6 +158,19 @@ export default function ToolsDirectoryPage() {
                 return b.originalIndex - a.originalIndex;
               })}
           />
+
+          {/* Static Crawler Index for Search Spiders & AI Bots */}
+          <nav aria-label="Complete Tools Index" className="sr-only">
+            <h2>Complete Directory of All Utilities</h2>
+            <ul>
+              {toolsRegistry.map((tool: any) => (
+                <li key={`crawler-link-${tool.id}`}>
+                  <Link href={tool.href}>{tool.title}</Link>
+                  <p>{tool.description}</p>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         {/* ── SEO Below-the-Fold Cards ─────────────────────── */}
