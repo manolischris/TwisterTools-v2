@@ -150,11 +150,16 @@ const CspHeaderGenerator = dynamic(() => import("@/components/tools/CspHeaderGen
 const Ipv6AddressConverter = dynamic(() => import("@/components/tools/Ipv6AddressConverter"));
 const SubnetCidrCalculator = dynamic(() => import("@/components/tools/SubnetCidrCalculator"));
 const UrlQueryParameterParser = dynamic(() => import("@/components/tools/UrlQueryParameterParser"));
+const CanvasDuotoneGenerator = dynamic(() => import("@/components/tools/CanvasDuotoneGenerator"));
+const SvgCircleToPathConverter = dynamic(() => import("@/components/tools/SvgCircleToPathConverter"));
+const ImageGridCollageMaker = dynamic(() => import("@/components/tools/ImageGridCollageMaker"));
 import ImageToTextOcr from "@/components/tools/ImageToTextOcr";
 import ImageColorInverter from "@/components/tools/ImageColorInverter";
 import ImageTransparentPadding from "@/components/tools/ImageTransparentPadding";
 import SvgPathMinifier from "@/components/tools/SvgPathMinifier";
 import ImageExifStripper from "@/components/tools/ImageExifStripper";
+import ImageFiltersAdjuster from "@/components/tools/ImageFiltersAdjuster";
+import WebpToPngConverter from "@/components/tools/WebpToPngConverter";
 
 
 
@@ -319,6 +324,11 @@ const COMPLETED_TOOLS = [
   "image-transparent-padding",
   "svg-path-minifier",
   "image-exif-stripper",
+  "image-duotone-generator",
+  "svg-circle-to-path",
+  "image-filters-adjuster",
+  "image-grid-collage-maker",
+  "webp-to-png-converter",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -738,6 +748,26 @@ export async function generateMetadata({
     description = "Extract text from photos, scans, receipts, and documents instantly in your browser using secure client-side OCR. 100% private with no server uploads.";
   }
 
+  if (category === "image-tools" && toolSlug === "svg-circle-to-path") {
+    title = "SVG Circle & Ellipse to Path Converter";
+    description = "Convert SVG circle and ellipse tags into unified vector path (d) commands using Elliptical Arcs or Cubic Bézier curves. Browser-native, instant, and lossless.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-filters-adjuster") {
+    title = "Image Brightness, Contrast & Saturation Matrix Adjuster";
+    description = "Fine-tune image brightness, contrast, saturation, exposure, and color temperature with real-time GPU filtering and high-res export.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-grid-collage-maker") {
+    title = "Multi-Image Canvas Collage & Grid Assembler";
+    description = "Assemble photos into customizable grid collages, side-by-side comparisons, and mosaic boards with custom padding, rounded borders, and pan/zoom controls.";
+  }
+
+  if (category === "image-tools" && toolSlug === "webp-to-png-converter") {
+    title = "Lossless WebP to PNG Batch Converter";
+    description = "Convert WebP images to lossless 32-bit PNG format in batch directly in your browser. 100% client-side privacy, zero server uploads, and ZIP archive download.";
+  }
+
   return {
     title,
     description,
@@ -751,7 +781,8 @@ export async function generateMetadata({
           (category === "random-tools" && toolSlug === "writing-prompt-generator") ||
           (category === "image-tools" && toolSlug === "image-dpi-print-calculator") ||
           (category === "developer-tools" && toolSlug === "css-clamp-calculator") ||
-          (category === "developer-tools" && toolSlug === "tailwind-color-generator")
+          (category === "developer-tools" && toolSlug === "tailwind-color-generator") ||
+          (category === "image-tools" && toolSlug === "webp-to-png-converter")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -777,7 +808,8 @@ export async function generateMetadata({
           (category === "random-tools" && toolSlug === "writing-prompt-generator") ||
           (category === "image-tools" && toolSlug === "image-dpi-print-calculator") ||
           (category === "developer-tools" && toolSlug === "css-clamp-calculator") ||
-          (category === "developer-tools" && toolSlug === "tailwind-color-generator")
+          (category === "developer-tools" && toolSlug === "tailwind-color-generator") ||
+          (category === "image-tools" && toolSlug === "webp-to-png-converter")
           ? title
           : `${title} | TwisterTools`,
       description,
@@ -993,6 +1025,26 @@ export default async function ToolPage({
   if (category === "image-tools" && toolSlug === "image-to-text-ocr") {
     tool.name = "Optical Character Recognition (OCR) Image to Text Extractor";
     tool.description = "Extract text from photos, scans, receipts, and documents instantly in your browser using secure client-side OCR. 100% private with no server uploads.";
+  }
+
+  if (category === "image-tools" && toolSlug === "svg-circle-to-path") {
+    tool.name = "SVG Circle & Ellipse to Path Converter";
+    tool.description = "Convert SVG circle and ellipse tags into unified vector path (d) commands using Elliptical Arcs or Cubic Bézier curves. Browser-native, instant, and lossless.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-filters-adjuster") {
+    tool.name = "Image Brightness, Contrast & Saturation Matrix Adjuster";
+    tool.description = "Fine-tune image brightness, contrast, saturation, exposure, and color temperature with real-time GPU filtering and high-res export.";
+  }
+
+  if (category === "image-tools" && toolSlug === "image-grid-collage-maker") {
+    tool.name = "Multi-Image Canvas Collage & Grid Assembler";
+    tool.description = "Assemble photos into customizable grid collages, side-by-side comparisons, and mosaic boards with custom padding, rounded borders, and pan/zoom controls.";
+  }
+
+  if (category === "image-tools" && toolSlug === "webp-to-png-converter") {
+    tool.name = "Lossless WebP to PNG Batch Converter";
+    tool.description = "Convert WebP images to lossless 32-bit PNG format in batch directly in your browser. 100% client-side privacy, zero server uploads, and ZIP archive download.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -1424,7 +1476,7 @@ export default async function ToolPage({
                   <RefreshCw className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "text-tools" && toolSlug === "online-text-editor" ? (
                   <FileText className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : category === "image-tools" && toolSlug === "image-color-extractor" ? (
+                ) : category === "image-tools" && (toolSlug === "image-color-extractor" || toolSlug === "image-duotone-generator") ? (
                   <Palette className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : category === "image-tools" && toolSlug === "svg-path-visualizer" ? (
                   <VectorSquare className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
@@ -1506,12 +1558,14 @@ export default async function ToolPage({
                   <Pipette className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "css-border-radius-generator" ? (
                   <Shapes className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "css-box-shadow-generator" ? (
+                ) : (toolSlug === "css-box-shadow-generator" || toolSlug === "image-filters-adjuster") ? (
                   <Sliders className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "css-flexbox-playground" ? (
                   <Layout className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
-                ) : toolSlug === "css-grid-generator" ? (
+                ) : (toolSlug === "css-grid-generator" || toolSlug === "image-grid-collage-maker") ? (
                   <LayoutGrid className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "webp-to-png-converter" ? (
+                  <FileImage className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (toolSlug === "html-table-generator" || toolSlug === "markdown-table-generator") ? (
                   <Table className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "user-agent-parser" ? (
@@ -1897,6 +1951,16 @@ export default async function ToolPage({
             <SvgPathMinifier />
           ) : category === "image-tools" && toolSlug === "image-exif-stripper" ? (
             <ImageExifStripper />
+          ) : category === "image-tools" && toolSlug === "image-duotone-generator" ? (
+            <CanvasDuotoneGenerator />
+          ) : category === "image-tools" && toolSlug === "svg-circle-to-path" ? (
+            <SvgCircleToPathConverter />
+          ) : category === "image-tools" && toolSlug === "image-filters-adjuster" ? (
+            <ImageFiltersAdjuster />
+          ) : category === "image-tools" && toolSlug === "image-grid-collage-maker" ? (
+            <ImageGridCollageMaker />
+          ) : category === "image-tools" && toolSlug === "webp-to-png-converter" ? (
+            <WebpToPngConverter />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

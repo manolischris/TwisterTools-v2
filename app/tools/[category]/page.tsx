@@ -113,7 +113,7 @@ import {
   Trophy,
   FileCode2,
   ScanText,
-  Shuffle, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer
+  Shuffle, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -228,6 +228,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Sliders,
   LayoutGrid,
   Circle,
+  CircleDot,
   Triangle,
   Bot,
   Terminal,

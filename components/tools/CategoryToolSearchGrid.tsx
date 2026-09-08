@@ -130,7 +130,7 @@ import { Link as LinkIcon,
   KeyRound,
   Network,
   ScanText,
-  Trophy, PenTool, Smile, Gamepad2, MapPin, QrCode, CalendarClock, ListStart, Share2, Tv, Fuel, Maximize2, VectorSquare, Printer } from "lucide-react";
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, MapPin, QrCode, CalendarClock, ListStart, Share2, Tv, Fuel, Maximize2, VectorSquare, Printer } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
 interface RegistryTool {
@@ -151,6 +151,7 @@ interface CategoryToolSearchGridProps {
 
 // Icon mapping dictionary to resolve icon strings dynamically
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
+  CircleDot,
   Network,
   KeyRound,
   FileCode2,

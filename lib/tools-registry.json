@@ -2712,5 +2712,59 @@
     "href": "/tools/image-tools/image-exif-stripper",
     "iconName": "ShieldCheck",
     "isFeatured": false
+  },
+  {
+    "id": "image-duotone-generator",
+    "title": "Canvas Duotone & Color Grading Filter",
+    "description": "Transform photos into high-contrast two-tone duotone graphics with client-side canvas filters, custom color mapping, and instant multi-format downloads.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-duotone-generator",
+    "iconName": "Palette",
+    "isFeatured": false
+  },
+  {
+    "id": "svg-circle-to-path",
+    "title": "SVG Circle & Ellipse to Path Converter",
+    "description": "Convert circle and ellipse elements into unified SVG path commands with Arc and Bézier support.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/svg-circle-to-path",
+    "iconName": "CircleDot",
+    "isFeatured": false
+  },
+  {
+    "id": "image-filters-adjuster",
+    "title": "Image Brightness, Contrast & Saturation Matrix Adjuster",
+    "description": "Adjust image exposure, contrast, saturation, and color balance directly in the browser with full-resolution export.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-filters-adjuster",
+    "iconName": "Sliders",
+    "isFeatured": false
+  },
+  {
+    "id": "image-grid-collage-maker",
+    "title": "Multi-Image Canvas Collage & Grid Assembler",
+    "description": "Assemble photos into customizable grid collages, side-by-side comparisons, and mosaic boards with custom padding, rounded borders, and pan/zoom controls.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/image-grid-collage-maker",
+    "iconName": "LayoutGrid",
+    "isFeatured": false
+  },
+  {
+    "id": "webp-to-png-converter",
+    "title": "Lossless WebP to PNG Batch Converter",
+    "description": "Convert WebP images to lossless 32-bit PNG format in batch directly inside your browser with alpha transparency preservation.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/webp-to-png-converter",
+    "iconName": "FileImage",
+    "isFeatured": false
+  },
+  {
+    "id": "svg-stroke-to-fill",
+    "title": "SVG Stroke to Filled Outline Converter",
+    "description": "Transform SVG stroked paths into solid filled contour polygons for crisp scaling, icon fonts, and CNC fabrication.",
+    "category": "image-tools",
+    "href": "/tools/image-tools/svg-stroke-to-fill",
+    "iconName": "PenTool",
+    "isFeatured": false
   }
 ]

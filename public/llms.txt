@@ -46,15 +46,16 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [YAML to JSON & JSON to YAML Converter](https://www.twistertools.com/tools/developer-tools/yaml-to-json-converter): Bidirectional YAML/JSON data structure converter with tree visualization.
 - [JSON to CSV & CSV to JSON Converter](https://www.twistertools.com/tools/developer-tools/json-to-csv-converter): Tabular data converter supporting custom delimiters and nested structures.
 - [RGB to Hex & Hex to RGB Converter](https://www.twistertools.com/tools/developer-tools/rgb-to-hex): Bidirectional color format converter with HSL, HSV, and CMYK outputs.
-- [Responsive CSS Clamp() & Fluid Typography Calculator](https://twistertools.com/tools/developer-tools/css-clamp-calculator): Fluid typography & CSS clamp() linear interpolation calculator with real-time viewport simulation and Tailwind export.
-- [CSS Glassmorphism & Backdrop Blur Generator](/tools/developer-tools/css-glassmorphism-generator): Real-time optical backdrop-filter and glass UI code generator for CSS and Tailwind.
-- [CSS Neumorphism Soft UI Generator](/tools/developer-tools/css-neumorphism-generator): Generate tactile soft UI surfaces, dual box-shadow extrusions, and Tailwind CSS code.
-- Tailwind CSS Color Palette Generator & Config Exporter: /tools/developer-tools/tailwind-color-generator - Interactive 11-stop color palette ramp generator with Tailwind v3, v4 @theme, and CSS variables exporter.
-- [CSS Keyframe Animation Visualizer & Code Exporter](/tools/developer-tools/css-animation-generator): Interactive browser-native timeline animation studio with real-time GPU previews, cubic-bezier easing, and CSS/Tailwind exports.
+- [Responsive CSS Clamp() & Fluid Typography Calculator](https://www.twistertools.com/tools/developer-tools/css-clamp-calculator): Fluid typography & CSS clamp() linear interpolation calculator with real-time viewport simulation and Tailwind export.
+- [CSS Glassmorphism & Backdrop Blur Generator](https://www.twistertools.com/tools/developer-tools/css-glassmorphism-generator): Real-time optical backdrop-filter and glass UI code generator for CSS and Tailwind.
+- [CSS Neumorphism Soft UI Generator](https://www.twistertools.com/tools/developer-tools/css-neumorphism-generator): Generate tactile soft UI surfaces, dual box-shadow extrusions, and Tailwind CSS code.
+- [Tailwind CSS Color Palette Generator & Config Exporter](https://www.twistertools.com/tools/developer-tools/tailwind-color-generator): Interactive 11-stop color palette ramp generator with Tailwind v3, v4 @theme, and CSS variables exporter.
+- [CSS Keyframe Animation Visualizer & Code Exporter](https://www.twistertools.com/tools/developer-tools/css-animation-generator): Interactive browser-native timeline animation studio with real-time GPU previews, cubic-bezier easing, and CSS/Tailwind exports.
 - [JSON Schema Generator from Mock JSON Data](https://www.twistertools.com/tools/developer-tools/json-to-json-schema): Infer JSON Schema (Draft-07 and Draft 2020-12) from mock JSON data with automatic format detection and validation hardening.
-- JSON to TypeScript Converter (/tools/developer-tools/json-to-typescript-converter): Generate clean TypeScript interfaces and types from sample JSON payloads.
-- BCRYPT Password Hash Generator & Salt Verifier: /tools/developer-tools/bcrypt-hash-generator - Client-side Blowfish password hashing and verification with configurable cost factor.
-- URL Query Parameter Parser (/tools/developer-tools/url-query-parameter-parser): Deconstruct URL query strings into structured JSON objects and TypeScript interfaces.
+- [JSON to TypeScript Converter](https://www.twistertools.com/tools/developer-tools/json-to-typescript-converter): Generate clean TypeScript interfaces and types from sample JSON payloads.
+- [BCRYPT Password Hash Generator & Salt Verifier](https://www.twistertools.com/tools/developer-tools/bcrypt-hash-generator): Client-side Blowfish password hashing and verification with configurable cost factor.
+- [URL Query Parameter Parser](https://www.twistertools.com/tools/developer-tools/url-query-parameter-parser): Deconstruct URL query strings into structured JSON objects and TypeScript interfaces.
+- [HTML Formatter, Beautifier & Validator](https://www.twistertools.com/tools/developer-tools/html-formatter-validator): Format, beautify, minify, and validate HTML markup instantly with pure client-side processing.
 ### [Daily Essentials, Financial & Health Calculators](https://www.twistertools.com/tools/calculators)
 - [Simple Interest & Loan Calculator](https://www.twistertools.com/tools/calculators/simple-interest-calculator): Calculate flat loan interest, payment splits, and amortization schedules.
 - [Compound Interest & Growth Calculator](https://www.twistertools.com/tools/calculators/compound-interest-calculator): Simulate capital growth across varying compounding frequencies.
@@ -101,8 +102,8 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Heat Index, Humidity & Real-Feel Temperature Estimator](https://www.twistertools.com/tools/math-tools/heat-index-calculator): Calculate NOAA apparent heat index, Canadian Humidex, dew point, and thermal stress danger categories.
 - [Wind Chill Factor & Frostbite Risk Estimator](https://www.twistertools.com/tools/math-tools/wind-chill-calculator): Calculate perceived wind chill temperatures, convective skin heat loss, and time-to-frostbite using NOAA and Australian standards.
 - [Dew Point & Relative Humidity Equilibrium Calculator](https://www.twistertools.com/tools/math-tools/dew-point-calculator): Thermodynamic psychrometric modeling for dew point, relative humidity, vapor pressure deficit (VPD), mixing ratios, enthalpy, and surface condensation analysis.
-- Sound Decibel (dB) Distance & Attenuation Calculator: /tools/math-tools/decibel-attenuation-calculator - Calculate acoustic attenuation over distance using the inverse square law, line sources, and ISO air absorption.
-* /tools/math-tools/lightning-distance-calculator - Lightning strike distance and thunder delay calculator with thermodynamic acoustic speed adjustments and 30/30 storm safety metrics.
+- [Sound Decibel (dB) Distance & Attenuation Calculator](https://www.twistertools.com/tools/math-tools/decibel-attenuation-calculator): Calculate acoustic attenuation over distance using the inverse square law, line sources, and ISO air absorption.
+- [Lightning strike distance and thunder delay calculator with thermodynamic acoustic speed adjustments and 30/30 storm safety metrics.](https://www.twistertools.com/tools/math-tools/lightning-distance-calculator): Lightning strike distance and thunder delay calculator with thermodynamic acoustic speed adjustments and 30/30 storm safety metrics.
 - [Probability Calculator](https://www.twistertools.com/tools/calculators/probability-calculator): Calculate single, independent, dependent, and conditional event odds.
 
 - [Percentage Calculator](https://www.twistertools.com/tools/math-tools/percentage-calculator): Calculate percentage changes, differences, proportions, and percentage of values.
@@ -182,6 +183,7 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [JPG to PDF Converter](https://www.twistertools.com/tools/pdf-tools/jpg-to-pdf): Convert JPEG photos into PDF format with page orientation options.
 - [Text to PDF Converter](https://www.twistertools.com/tools/pdf-tools/text-to-pdf): Convert raw plain text files into formatted PDF documents.
 - [HTML to PDF Webpage Compiler](https://www.twistertools.com/tools/pdf-tools/html-to-pdf): Render and compile HTML documents or web snippets into PDF format.
+- [PDF to ZIP Archive Packager](https://www.twistertools.com/tools/pdf-tools/pdf-to-zip): Package PDF document pages or extracted image graphics into compressed ZIP archives directly in your browser with zero server uploads.
 ### [Text Analysis, List Comparison & Editing Tools](https://www.twistertools.com/tools/text-tools)
 - [Word Counter & Text Analyzer](https://www.twistertools.com/tools/text-tools/word-counter): Measure characters, words, sentences, reading time, and speaking duration.
 - [Case Converter](https://www.twistertools.com/tools/text-tools/case-converter): Transform text between UPPERCASE, lowercase, Title Case, camelCase, and snake_case.
@@ -213,16 +215,16 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Article Rewriter & Text Paraphraser](https://www.twistertools.com/tools/text-tools/rewrite-article): Paraphrase sentences and substitute synonyms client-side.
 - [Online Text Editor & Formatting Sandbox](https://www.twistertools.com/tools/text-tools/online-text-editor): Rich WYSIWYG text editor with formatting controls and HTML export.
 - [Markdown Table Generator](https://www.twistertools.com/tools/text-tools/markdown-table-generator): Visual spreadsheet matrix editor with multi-format export (Markdown, CSV, TSV, HTML, JSON).
-- Text to ASCII Art & Banner Typography Generator (/tools/text-tools/ascii-art-generator): Convert text into multi-line FIGlet banners, Unicode typography, and framed code comments.
-- Text Anonymizer & PII Redactor: Client-side tool to redact emails, SSNs, credit cards, IPs, and API secrets before LLM ingestion (/tools/text-tools/text-pii-redactor)
-- [Title Case Converter for Capitalization Standards](/tools/text-tools/title-case-converter): Capitalize headlines and references to APA, Chicago, MLA, AP, and NYT style standards.
-- [Invisible Whitespace & Zero-Width Space Cleaner](https://twistertools.com/tools/text-tools/zero-width-space-cleaner): Detect, visualize, and strip hidden Unicode characters, zero-width spaces, BOM markers, and BiDi overrides.
-- [Text Column Extractor](/tools/text-tools/text-column-extractor): Parse, isolate, reorder, and convert delimited text columns, CSV, TSV, and server logs into structured JSON, SQL, or clean CSV.
-- [Line Number Adder](/tools/text-tools/line-number-adder): Prepend customizable line numbers, zero-padding, and delimiters to text and source code.
-* [Plain Text to Single-Line Minifier](https://twistertools.com/tools/text-tools/text-single-line-converter): Flatten and minify multi-line text into clean single-line strings with custom delimiters and quotation wrapping.
-- Subscript & Superscript Unicode Formatter (/tools/text-tools/subscript-superscript-generator): Convert text, mathematical formulas, and chemical equations into universal Unicode subscript and superscript symbols.
-- [Text Syllable Counter & Lexical Density Analyzer](https://twistertools.com/tools/text-tools/syllable-counter): Real-time syllable counter, lexical density scanner, phonetic inspector, and readability grade estimator.
-- Readability Score Calculator: Compute Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, and ARI reading scores.
+- [Text to ASCII Art & Banner Typography Generator](https://www.twistertools.com/tools/text-tools/ascii-art-generator): Convert text into multi-line FIGlet banners, Unicode typography, and framed code comments.
+- [Text Anonymizer & PII Redactor](https://www.twistertools.com/tools/text-tools/text-pii-redactor): Client-side tool to redact emails, SSNs, credit cards, IPs, and API secrets before LLM ingestion.
+- [Title Case Converter for Capitalization Standards](https://www.twistertools.com/tools/text-tools/title-case-converter): Capitalize headlines and references to APA, Chicago, MLA, AP, and NYT style standards.
+- [Invisible Whitespace & Zero-Width Space Cleaner](https://www.twistertools.com/tools/text-tools/zero-width-space-cleaner): Detect, visualize, and strip hidden Unicode characters, zero-width spaces, BOM markers, and BiDi overrides.
+- [Text Column Extractor](https://www.twistertools.com/tools/text-tools/text-column-extractor): Parse, isolate, reorder, and convert delimited text columns, CSV, TSV, and server logs into structured JSON, SQL, or clean CSV.
+- [Line Number Adder](https://www.twistertools.com/tools/text-tools/line-number-adder): Prepend customizable line numbers, zero-padding, and delimiters to text and source code.
+- [Plain Text to Single-Line Minifier](https://www.twistertools.com/tools/text-tools/text-single-line-converter): Flatten and minify multi-line text into clean single-line strings with custom delimiters and quotation wrapping.
+- [Subscript & Superscript Unicode Formatter](https://www.twistertools.com/tools/text-tools/subscript-superscript-generator): Convert text, mathematical formulas, and chemical equations into universal Unicode subscript and superscript symbols.
+- [Text Syllable Counter & Lexical Density Analyzer](https://www.twistertools.com/tools/text-tools/syllable-counter): Real-time syllable counter, lexical density scanner, phonetic inspector, and readability grade estimator.
+- [Readability Score Calculator](https://www.twistertools.com/tools/text-tools/readability-score-calculator): Compute Flesch-Kincaid, Gunning Fog, Coleman-Liau, SMOG, and ARI reading scores.
 ### [Image Editing, Compression & Conversion Tools](https://www.twistertools.com/tools/image-tools)
 - [Image Compressor & Quality Optimizer](https://www.twistertools.com/tools/image-tools/image-compressor): Compress JPEG, PNG, and WebP images client-side via HTML5 Canvas.
 - [Image Resizer & Dimensions Scaler](https://www.twistertools.com/tools/image-tools/image-resizer): Scale pixel dimensions and resize images with aspect ratio locking.
@@ -230,20 +232,26 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Vector SVG Converter & Rasterizer](https://www.twistertools.com/tools/image-tools/svg-converter): Render SVG vectors to raster PNG, JPEG, and WebP formats at custom resolutions.
 - [Favicon Generator & Multi-Resolution Suite](https://www.twistertools.com/tools/image-tools/favicon-generator): Generate multi-layer ICO favicons and web application icons.
 - [HEIC & AVIF to JPG Converter](https://www.twistertools.com/tools/image-tools/heic-to-jpg): Convert Apple HEIC and AVIF photos to standard JPEG format in browser memory.
-- [Aspect Ratio Scaler](/tools/image-tools/image-aspect-ratio-scaler): Browser-native proportional dimension resizer, missing side calculator, standard resolution converter, and CSS aspect-ratio generator.
-- Image Color Palette & Dominant Hex Extractor (/tools/image-tools/image-color-extractor): Browser-based color quantization and palette generation tool with real-time eyedropper and CSS/JSON/SVG export.
-- SVG Path Visualizer (/tools/image-tools/svg-path-visualizer): Real-time SVG path command deconstructor, Bézier control handle inspector, and coordinate visualizer.
-* SVG to CSS Background Converter (/tools/image-tools/svg-to-css-converter): Convert SVG vector markup into URL-encoded or Base64 CSS Data URIs and Tailwind classes.
-* SVG to React JSX Converter (/tools/image-tools/svg-to-jsx-converter): Transform raw SVG vector markup into optimized React JSX/TSX components with forwardRef, TypeScript interfaces, and camelCase attributes.
-* `base64-to-image-converter`: Client-side Base64 string and Data URI decoder with instant PNG, JPG, and WebP raster export.
-* [Image to Base64 String Data URI Encoder](/tools/image-tools/image-to-base64-converter): Client-side image to RFC 4648 Base64 string and Data URI converter with format transformation controls.
-- Image DPI to Physical Print Dimension Calculator: Bidirectional pixel-to-dimension rendering, viewing distance acuity, and prepress density matrix (/tools/image-tools/image-dpi-print-calculator)
-- `/tools/image-tools/gradient-wallpaper-generator`: Canvas Color Gradient Generator & High-Res PNG Exporter (linear, radial, and conic gradients with 4K PNG export).
-- /tools/image-tools/image-to-text-ocr: Extract text from images, scans, and documents directly in your browser using client-side WebAssembly OCR.
-* Image Color Inverter (/tools/image-tools/image-color-inverter): Browser-native film negative reversal, luminance negative, and color complement engine.
-- [PNG Transparent Padding Expander](/tools/image-tools/image-transparent-padding): Expand PNG canvas boundaries with transparent borders or custom background fills.
-- SVG Path Minifier: Browser-native vector path optimizer to strip coordinate decimals and collapse path delimiters.
-- Pixel Art Sprite Scaler: Free client-side nearest-neighbor sprite scaler and pixel art resizer with up to 32x integer magnification.
+- [Aspect Ratio Scaler](https://www.twistertools.com/tools/image-tools/image-aspect-ratio-scaler): Browser-native proportional dimension resizer, missing side calculator, standard resolution converter, and CSS aspect-ratio generator.
+- [Image Color Palette & Dominant Hex Extractor](https://www.twistertools.com/tools/image-tools/image-color-extractor): Browser-based color quantization and palette generation tool with real-time eyedropper and CSS/JSON/SVG export.
+- [SVG Path Visualizer](https://www.twistertools.com/tools/image-tools/svg-path-visualizer): Real-time SVG path command deconstructor, Bézier control handle inspector, and coordinate visualizer.
+- [SVG to CSS Background Converter](https://www.twistertools.com/tools/image-tools/svg-to-css-converter): Convert SVG vector markup into URL-encoded or Base64 CSS Data URIs and Tailwind classes.
+- [SVG to React JSX Converter](https://www.twistertools.com/tools/image-tools/svg-to-jsx-converter): Transform raw SVG vector markup into optimized React JSX/TSX components with forwardRef, TypeScript interfaces, and camelCase attributes.
+- [Base64 to Image Converter](https://www.twistertools.com/tools/image-tools/base64-to-image-converter): Client-side Base64 string and Data URI decoder with instant PNG, JPG, and WebP raster export.
+- [Image to Base64 String Data URI Encoder](https://www.twistertools.com/tools/image-tools/image-to-base64-converter): Client-side image to RFC 4648 Base64 string and Data URI converter with format transformation controls.
+- [Image DPI to Physical Print Dimension Calculator](https://www.twistertools.com/tools/image-tools/image-dpi-print-calculator): Bidirectional pixel-to-dimension rendering, viewing distance acuity, and prepress density matrix.
+- [Canvas Color Gradient Generator & High-Res PNG Exporter](https://www.twistertools.com/tools/image-tools/gradient-wallpaper-generator): Linear, radial, and conic gradients with 4K PNG export.
+- [Optical Character Recognition (OCR) Image to Text Extractor](https://www.twistertools.com/tools/image-tools/image-to-text-ocr): Extract text from images, scans, and documents directly in your browser using client-side WebAssembly OCR.
+- [Image Color Inverter](https://www.twistertools.com/tools/image-tools/image-color-inverter): Browser-native film negative reversal, luminance negative, and color complement engine.
+- [PNG Transparent Padding Expander](https://www.twistertools.com/tools/image-tools/image-transparent-padding): Expand PNG canvas boundaries with transparent borders or custom background fills.
+- [SVG Path Minifier](https://www.twistertools.com/tools/image-tools/svg-path-minifier): Browser-native vector path optimizer to strip coordinate decimals and collapse path delimiters.
+- [Pixel Art Sprite Scaler](https://www.twistertools.com/tools/image-tools/pixel-art-scaler): Free client-side nearest-neighbor sprite scaler and pixel art resizer with up to 32x integer magnification.
+- [Image Duotone & Color Grading Filter Generator](https://www.twistertools.com/tools/image-tools/image-duotone-generator): Browser-native image color mapping and Spotify-style two-tone filter utility.
+- [SVG Circle & Ellipse to Path Converter](https://www.twistertools.com/tools/image-tools/svg-circle-to-path): Convert native SVG circle and ellipse tags into path (d) commands using Elliptical Arc or Cubic Bézier algorithms.
+- [Image Brightness, Contrast & Saturation Matrix Adjuster](https://www.twistertools.com/tools/image-tools/image-filters-adjuster): Client-side image color grader to adjust brightness, contrast, saturation, exposure, and color temperature with zero server uploads.
+- [Image Grid & Photo Collage Maker](https://www.twistertools.com/tools/image-tools/image-grid-collage-maker): Client-side multi-image photo grid, split frame, and collage assembler with custom borders, aspect ratios, and full-resolution canvas export.
+- [Lossless WebP to PNG Batch Converter](https://www.twistertools.com/tools/image-tools/webp-to-png-converter): Convert WebP images to lossless transparent PNG format in client-side batches with ZIP download options.
+- [SVG Stroke to Filled Outline Converter](https://www.twistertools.com/tools/image-tools/svg-stroke-to-fill): Convert open and closed SVG strokes into filled polygon vector outlines client-side.
 ### [SEO, Domain & Network Inspector Tools](https://www.twistertools.com/tools/web-tools)
 - [XML Sitemap Generator & URL Crawler](https://www.twistertools.com/tools/web-tools/sitemap-generator): Crawl links and generate valid Sitemaps.org XML and TXT sitemaps.
 - [Meta Tag Generator & Social Preview Suite](https://www.twistertools.com/tools/web-tools/meta-tag-generator): Draft SEO meta tags with live Google, Facebook, and Twitter card previews.
@@ -255,8 +263,8 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [DNS Record Finder](https://www.twistertools.com/tools/web-tools/find-dns-record): Query A, AAAA, MX, TXT, NS, CNAME, and SOA DNS records via DNS-over-HTTPS.
 - [SSL Certificate Checker](https://www.twistertools.com/tools/web-tools/ssl-checker): Audit SSL/TLS certificate validity, issuer authority, and cipher expiration.
 - [HTTP Headers Inspector](https://www.twistertools.com/tools/web-tools/http-headers): Inspect HTTP response headers, status codes, security policies, and CORS headers.
-- Subnet Mask & IPv4 CIDR Range Calculator: /tools/web-tools/subnet-cidr-calculator
-- [IPv6 to IPv4 & Hexadecimal Address Expander](/tools/web-tools/ipv6-address-converter): Client-side IPv6 RFC 4291 expansion, RFC 5952 canonical compression, dual-stack IPv4 extraction, 128-bit binary mapping, and ip6.arpa PTR reverse DNS generation.
+- [Subnet Mask & IPv4 CIDR Range Calculator](https://www.twistertools.com/tools/web-tools/subnet-cidr-calculator): Calculate subnet masks, IP ranges, network and broadcast addresses.
+- [IPv6 to IPv4 & Hexadecimal Address Expander](https://www.twistertools.com/tools/web-tools/ipv6-address-converter): Client-side IPv6 RFC 4291 expansion, RFC 5952 canonical compression, dual-stack IPv4 extraction, 128-bit binary mapping, and ip6.arpa PTR reverse DNS generation.
 ### [Password Management & Security Utilities](https://www.twistertools.com/tools/password-tools)
 - [Strong Password Generator](https://www.twistertools.com/tools/password-tools/password-generator): Generate cryptographically secure random passwords and multi-word passphrases using browser CSPRNG.
 - [Password Strength Checker & Cracking Time Analyzer](https://www.twistertools.com/tools/password-tools/password-strength-checker): Analyze password entropy and estimate brute-force cracking resistance without sending data to servers.
@@ -277,16 +285,16 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Event Countdown Timer Generator](https://www.twistertools.com/tools/date-tools/countdown-timer-generator): Generate customized event countdown clocks for product launches and deadlines.
 - [Sunrise & Sunset Time Estimator](https://www.twistertools.com/tools/date-tools/sunrise-sunset-calculator): Calculate solar noon, twilight phases, and daylight duration for any GPS coordinates.
 - [Moon Phase Calendar & Visualizer](https://www.twistertools.com/tools/date-tools/moon-phase-calculator): Calculate lunar illumination percentages, moon age, and monthly phase cycles.
-- /tools/date-tools/pomodoro-timer: Pomodoro Interval Timer & Work Sprint Visualizer - Circadian focus sprint intervals, task batching, custom presets, and daily flow state ergonomics.
-- Meeting Overlap & Multi-Timezone Scheduler: Calculate international working hour overlaps, visualize 24-hour heatmaps, and export ICS calendar invites.
-- employee-timesheet-calculator: Employee timesheet and overtime pay calculator supporting federal FLSA, California daily double time, break deductions, tax estimations, and CSV export.
-- Work Hours to Full-Time Equivalent (FTE) Calculator: /tools/date-tools/fte-calculator - Standardize employee hours, part-time shifts, and ACA compliance metrics into Full-Time Equivalency.
-- /tools/date-tools/solar-noon-angle-calculator: High-precision astronomical tool calculating exact solar noon culmination, solar zenith angle, altitude elevation, azimuth heading, and daylight ephemeris.
-- [Julian Day & Astronomical MJD Converter](/tools/date-tools/julian-date-converter): Bidirectional Julian Day (JD), Modified Julian Date (MJD), and Sidereal Time converter.
-- [Habit Tracker Streak & Target Goal Probability Calculator](/tools/date-tools/habit-streak-calculator): Forecast habit streak success probability, calculate target milestone timelines, and model 66-day automaticity curves.
-- [Bill Due Date & Recurring Cycle Schedule Calculator](/tools/date-tools/recurring-bill-calculator): Compute recurring billing timelines, weekend banking adjustments, and annualized payment liabilities.
-- [School Semester & College Graduation Date Estimator](/tools/date-tools/graduation-date-calculator): Calculate college degree completion date, semester roadmap, and credit pacing.
-- [Next Solar & Lunar Eclipse Visibility Explorer](/tools/date-tools/solar-lunar-eclipse-finder): Interactive astronomical trajectory explorer for upcoming solar and lunar eclipses, totality paths, and visibility zones.
+- [Pomodoro Interval Timer & Work Sprint Visualizer](https://www.twistertools.com/tools/date-tools/pomodoro-timer): Circadian focus sprint intervals, task batching, custom presets, and daily flow state ergonomics.
+- [Meeting Overlap & Multi-Timezone Scheduler](https://www.twistertools.com/tools/date-tools/meeting-timezone-scheduler): Calculate international working hour overlaps, visualize 24-hour heatmaps, and export ICS calendar invites.
+- [Employee Timesheet & Overtime Calculator](https://www.twistertools.com/tools/date-tools/employee-timesheet-calculator): Employee timesheet and overtime pay calculator supporting federal FLSA, California daily double time, break deductions, tax estimations, and CSV export.
+- [Work Hours to Full-Time Equivalent (FTE) Calculator](https://www.twistertools.com/tools/date-tools/fte-calculator): Standardize employee hours, part-time shifts, and ACA compliance metrics into Full-Time Equivalency.
+- [Solar Noon Angle Calculator](https://www.twistertools.com/tools/date-tools/solar-noon-angle-calculator): High-precision astronomical tool calculating exact solar noon culmination, solar zenith angle, altitude elevation, azimuth heading, and daylight ephemeris.
+- [Julian Day & Astronomical MJD Converter](https://www.twistertools.com/tools/date-tools/julian-date-converter): Bidirectional Julian Day (JD), Modified Julian Date (MJD), and Sidereal Time converter.
+- [Habit Tracker Streak & Target Goal Probability Calculator](https://www.twistertools.com/tools/date-tools/habit-streak-calculator): Forecast habit streak success probability, calculate target milestone timelines, and model 66-day automaticity curves.
+- [Bill Due Date & Recurring Cycle Schedule Calculator](https://www.twistertools.com/tools/date-tools/recurring-bill-calculator): Compute recurring billing timelines, weekend banking adjustments, and annualized payment liabilities.
+- [School Semester & College Graduation Date Estimator](https://www.twistertools.com/tools/date-tools/graduation-date-calculator): Calculate college degree completion date, semester roadmap, and credit pacing.
+- [Next Solar & Lunar Eclipse Visibility Explorer](https://www.twistertools.com/tools/date-tools/solar-lunar-eclipse-finder): Interactive astronomical trajectory explorer for upcoming solar and lunar eclipses, totality paths, and visibility zones.
 ### [Randomization, Games & Decision Tools](https://www.twistertools.com/tools/random-tools)
 - [Coin Flipper & Probability Simulator](https://www.twistertools.com/tools/random-tools/coin-flipper): Simulate 3D coin flips with statistical probability telemetry.
 - [Dice Roller & Multi-Die Simulator](https://www.twistertools.com/tools/random-tools/dice-roller): Roll multi-sided tabletop dice (D4, D6, D8, D10, D12, D20, D100) with outcome distributions.
@@ -298,16 +306,16 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Random Color & Palette Generator](https://www.twistertools.com/tools/random-tools/random-color-generator): Generate harmonious palettes with HEX/RGB/HSL values and WCAG contrast checks.
 - [Random Address & Location Picker](https://www.twistertools.com/tools/random-tools/random-address-generator): Generate synthetic test street addresses and GPS coordinates with interactive map previews.
 - [Random Country & Flag Quiz Generator](https://www.twistertools.com/tools/random-tools/random-country-picker): Explore 196 sovereign nations with high-res vector flags, capital cities, and trivia.
-- [Secret Santa Generator](/tools/random-tools/secret-santa-generator): Match gift exchange participants with custom exclusion rules and private assignments.
-- [Random List Randomizer & Shuffler](/tools/random-tools/list-randomizer-shuffler): Cryptographically secure Fisher-Yates list randomizer and array shuffler with custom delimiters, group splitting, and ranking.
-- [Random Letter & Alphabet Picker](/tools/random-tools/random-letter-picker): Pick random characters across English, Greek, Cyrillic, and custom sets with cryptographic entropy.
-- [Tournament Bracket & Seeding Generator](/tools/random-tools/tournament-bracket-generator): Interactive tournament bracket generator supporting power-of-2 matchmaking, crypto shuffling, ranked seeding, and CSV exports.
-- [Truth or Dare Card Prompt Generator](/tools/random-tools/truth-or-dare-generator): Interactive card prompt generator with 5 curated game modes, custom deck injection, and player score tracking.
-- Would You Rather Dilemma & Debate Card Generator (/tools/random-tools/would-you-rather-generator): Curated moral, philosophical, workplace, and party dilemmas with live vote tracking and debate timers.
-- [Random Writing Prompt & Story Hook Generator](/tools/random-tools/writing-prompt-generator): Generate narrative writing prompts, deep character dilemmas, opening line hooks, and unexpected story twists across all literary genres.
-- /tools/random-tools/lottery-number-generator: Cryptographic lottery quick pick generator and dual-drum simulator for Powerball, Mega Millions, EuroMillions, and custom lotto configurations.
-- Random Emoji & Emoticon Combination Generator: /tools/random-tools/random-emoji-generator - Cryptographically secure randomized Unicode emoji palettes and Kaomoji generator.
-- Charades & Game Night Word Generator (/tools/random-tools/charades-word-generator): Interactive random prompt engine with countdown timer buzzer, team scoreboard, and custom word injection.
+- [Secret Santa Generator](https://www.twistertools.com/tools/random-tools/secret-santa-generator): Match gift exchange participants with custom exclusion rules and private assignments.
+- [Random List Randomizer & Shuffler](https://www.twistertools.com/tools/random-tools/list-randomizer-shuffler): Cryptographically secure Fisher-Yates list randomizer and array shuffler with custom delimiters, group splitting, and ranking.
+- [Random Letter & Alphabet Picker](https://www.twistertools.com/tools/random-tools/random-letter-picker): Pick random characters across English, Greek, Cyrillic, and custom sets with cryptographic entropy.
+- [Tournament Bracket & Seeding Generator](https://www.twistertools.com/tools/random-tools/tournament-bracket-generator): Interactive tournament bracket generator supporting power-of-2 matchmaking, crypto shuffling, ranked seeding, and CSV exports.
+- [Truth or Dare Card Prompt Generator](https://www.twistertools.com/tools/random-tools/truth-or-dare-generator): Interactive card prompt generator with 5 curated game modes, custom deck injection, and player score tracking.
+- [Would You Rather Dilemma & Debate Card Generator](https://www.twistertools.com/tools/random-tools/would-you-rather-generator): Curated moral, philosophical, workplace, and party dilemmas with live vote tracking and debate timers.
+- [Random Writing Prompt & Story Hook Generator](https://www.twistertools.com/tools/random-tools/writing-prompt-generator): Generate narrative writing prompts, deep character dilemmas, opening line hooks, and unexpected story twists across all literary genres.
+- [Cryptographic Lottery Number Generator](https://www.twistertools.com/tools/random-tools/lottery-number-generator): Cryptographic lottery quick pick generator and dual-drum simulator for Powerball, Mega Millions, EuroMillions, and custom lotto configurations.
+- [Random Emoji & Emoticon Combination Generator](https://www.twistertools.com/tools/random-tools/random-emoji-generator): Cryptographically secure randomized Unicode emoji palettes and Kaomoji generator.
+- [Charades & Game Night Word Generator](https://www.twistertools.com/tools/random-tools/charades-word-generator): Interactive random prompt engine with countdown timer buzzer, team scoreboard, and custom word injection.
 - [Random Time & Hour Generator](https://www.twistertools.com/tools/random-tools/random-time-generator): Generate cryptographically secure random times, timestamps, and clock hours with customizable ranges and formatting.
 ## Platform Pages
 

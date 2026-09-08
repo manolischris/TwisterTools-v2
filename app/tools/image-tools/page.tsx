@@ -182,6 +182,30 @@ export default function ImageToolsCategoryPage() {
           iconName: "Maximize2"
         };
       }
+      if (tool.id === "svg-circle-to-path") {
+        return {
+          ...tool,
+          title: "SVG Circle & Ellipse to Path Converter",
+          description: "Convert circle and ellipse elements into unified SVG path commands with Arc and Bézier support.",
+          iconName: "CircleDot"
+        };
+      }
+      if (tool.id === "image-grid-collage-maker") {
+        return {
+          ...tool,
+          title: "Multi-Image Canvas Collage & Grid Assembler",
+          description: "Create high-resolution multi-photo grids, side-by-side comparisons, and mood boards.",
+          iconName: "LayoutGrid"
+        };
+      }
+      if (tool.id === "svg-stroke-to-fill") {
+        return {
+          ...tool,
+          title: "SVG Stroke to Filled Outline Converter",
+          description: "Transform SVG stroked paths into solid filled contour polygons for crisp scaling, icon fonts, and CNC fabrication.",
+          iconName: "PenTool"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {

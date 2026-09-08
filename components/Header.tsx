@@ -137,6 +137,7 @@ import {
   Printer,
   KeyRound,
   ScanText,
+  CircleDot,
 } from "lucide-react";
 import toolsRegistryData from "@/lib/tools-registry.json";
 import { rankTools, type SearchableTool } from "@/lib/search-utils";
@@ -182,7 +183,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Clock, SearchCode, Columns, Share2, Server, ShieldCheck, Palette, Unlock,
   Stamp, FileType, FileType2, FolderArchive, RotateCw, Crop, Car, ArrowUpDown,
   AlignLeft, ListFilter, AtSign, Phone, Replace, Radio, Sunrise, Moon, Dices,
-  Users, Shuffle, Pipette, Sliders, Layout, LayoutGrid, Circle, Triangle,
+  Users, Shuffle, Pipette, Sliders, Layout, LayoutGrid, Circle, CircleDot, Triangle,
   Table, Bot, Home, Wallet, Footprints, Coffee, Dumbbell, Dog, Cat, Wheat,
   PaintBucket, ScrollText, Boxes, Shovel, Sprout, Fish, Sun, Box, Gauge,
   Wind, Volume2, Plane, Eraser, Shapes, Trophy,

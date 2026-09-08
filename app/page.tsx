@@ -139,7 +139,7 @@ import {
   KeyRound,
   Network,
   ScanText,
-  Trophy, PenTool, Smile, Gamepad2, VectorSquare, Printer
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Printer
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -262,6 +262,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Layout,
   LayoutGrid,
   Circle,
+  CircleDot,
   Triangle,
   Table,
   Bot,
