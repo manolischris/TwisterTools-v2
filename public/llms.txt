@@ -319,6 +319,9 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Random Time & Hour Generator](https://www.twistertools.com/tools/random-tools/random-time-generator): Generate cryptographically secure random times, timestamps, and clock hours with customizable ranges and formatting.
 ### [Social Media & Content Creator Tools](https://www.twistertools.com/tools/social-tools)
 - Free client-side utilities for creators and marketers: caption formatters, thread splitters, character counters, and platform link generators.
+- [Instagram Clean Caption Line Break Formatter](https://twistertools.com/tools/social-tools/instagram-line-break-generator): Format paragraph spacing using zero-width invisible unicode.
+- [Social Media Character & Byte Limit Counter](/tools/social-tools/social-character-counter): Audit real-time character limits, Twitter weighted logic, and above-the-fold feed hook cutoffs.
+- [YouTube Timestamp Chapter Link & Deep-Link Generator](https://www.twistertools.com/tools/social-tools/youtube-timestamp-link-generator): Instant cue-point links, video chapter builder, and iframe embeds.
 ## Platform Pages
 
 - [Categories Directory](https://www.twistertools.com/categories): Complete directory of all 15 tool categories on TwisterTools.

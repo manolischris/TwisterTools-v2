@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const categoryImagePath = path.join(process.cwd(), "public", "images", "categories", category);
   const webpCategoryPath = `${categoryImagePath}.webp`;
   const jpgCategoryPath = `${categoryImagePath}.jpg`;
-  
+
   const featuredImage = fs.existsSync(webpCategoryPath)
     ? `https://www.twistertools.com/images/categories/${category}.webp`
     : fs.existsSync(jpgCategoryPath)
@@ -153,8 +153,8 @@ export default function SocialToolsCategoryPage() {
       </header>
 
       {/* Main Content Workspace Container */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 space-y-12">
-        
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 space-y-8">
+
         {/* Trademark Disclaimer Banner */}
         <div className="bg-amber-50 border border-amber-200 text-amber-900 dark:bg-amber-950/40 dark:border-amber-900/50 dark:text-amber-300 rounded-xl p-4 flex items-start gap-3 text-sm">
           <ShieldAlert className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
@@ -178,8 +178,8 @@ export default function SocialToolsCategoryPage() {
             {socialMetadata.cards.map((card, idx) => {
               const CardIcon =
                 card.icon === "ShieldCheck" ? ShieldCheck :
-                card.icon === "Share2" ? Share2 :
-                card.icon === "Zap" ? Zap : Layers;
+                  card.icon === "Share2" ? Share2 :
+                    card.icon === "Zap" ? Zap : Layers;
 
               return (
                 <div

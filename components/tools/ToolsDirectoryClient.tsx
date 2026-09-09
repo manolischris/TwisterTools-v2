@@ -149,10 +149,13 @@ interface RegistryTool {
   isFeatured?: boolean;
 }
 
+import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+
 /* ─────────────────────────────────────────────────────────
    Icon Map
  ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Youtube: YoutubeIcon,
   ScanText,
   Network,
   KeyRound,

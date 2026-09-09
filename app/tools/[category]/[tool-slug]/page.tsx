@@ -3,7 +3,8 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video } from "lucide-react";
+import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
 const QrCodeGenerator = dynamic(() => import("../../../../components/tools/QrCodeGenerator"));
@@ -153,13 +154,15 @@ const UrlQueryParameterParser = dynamic(() => import("@/components/tools/UrlQuer
 const CanvasDuotoneGenerator = dynamic(() => import("@/components/tools/CanvasDuotoneGenerator"));
 const SvgCircleToPathConverter = dynamic(() => import("@/components/tools/SvgCircleToPathConverter"));
 const ImageGridCollageMaker = dynamic(() => import("@/components/tools/ImageGridCollageMaker"));
-import ImageToTextOcr from "@/components/tools/ImageToTextOcr";
-import ImageColorInverter from "@/components/tools/ImageColorInverter";
-import ImageTransparentPadding from "@/components/tools/ImageTransparentPadding";
-import SvgPathMinifier from "@/components/tools/SvgPathMinifier";
-import ImageExifStripper from "@/components/tools/ImageExifStripper";
-import ImageFiltersAdjuster from "@/components/tools/ImageFiltersAdjuster";
-import WebpToPngConverter from "@/components/tools/WebpToPngConverter";
+const ImageToTextOcr = dynamic(() => import("@/components/tools/ImageToTextOcr"));
+const ImageColorInverter = dynamic(() => import("@/components/tools/ImageColorInverter"));
+const ImageTransparentPadding = dynamic(() => import("@/components/tools/ImageTransparentPadding"));
+const SvgPathMinifier = dynamic(() => import("@/components/tools/SvgPathMinifier"));
+const ImageExifStripper = dynamic(() => import("@/components/tools/ImageExifStripper"));
+const ImageFiltersAdjuster = dynamic(() => import("@/components/tools/ImageFiltersAdjuster"));
+const WebpToPngConverter = dynamic(() => import("@/components/tools/WebpToPngConverter"));
+const InstagramLineBreakGenerator = dynamic(() => import("@/components/tools/InstagramLineBreakGenerator"));
+const YouTubeTimestampChapterGenerator = dynamic(() => import("@/components/tools/YouTubeTimestampChapterGenerator"));
 
 
 
@@ -329,6 +332,8 @@ const COMPLETED_TOOLS = [
   "image-filters-adjuster",
   "image-grid-collage-maker",
   "webp-to-png-converter",
+  "instagram-line-break-generator",
+  "youtube-timestamp-link-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -1640,6 +1645,10 @@ export default async function ToolPage({
                   <Scissors className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : toolSlug === "image-exif-stripper" ? (
                   <ShieldCheck className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "instagram-line-break-generator" ? (
+                  <AlignLeft className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                ) : toolSlug === "youtube-timestamp-link-generator" ? (
+                  <YoutubeIcon className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
                   <Binary className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
                 ) : (
@@ -1961,6 +1970,10 @@ export default async function ToolPage({
             <ImageGridCollageMaker />
           ) : category === "image-tools" && toolSlug === "webp-to-png-converter" ? (
             <WebpToPngConverter />
+          ) : category === "social-tools" && toolSlug === "instagram-line-break-generator" ? (
+            <InstagramLineBreakGenerator />
+          ) : category === "social-tools" && toolSlug === "youtube-timestamp-link-generator" ? (
+            <YouTubeTimestampChapterGenerator />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

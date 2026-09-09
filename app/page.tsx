@@ -155,7 +155,10 @@ interface Tool {
   isFeatured?: boolean;
 }
 
+import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Youtube: YoutubeIcon,
   ScanText,
   Network,
   KeyRound,
@@ -304,6 +307,7 @@ const CATEGORIES = [
   { id: "home-tools", name: "Home Tools", href: "/tools/home-tools", icon: Home },
   { id: "math-tools", name: "Math & Science", href: "/tools/math-tools", icon: Binary },
   { id: "health-tools", name: "Health & Wellness", href: "/tools/health-tools", icon: Activity },
+  { id: "social-tools", name: "Social & Creator", href: "/tools/social-tools", icon: Share2 },
 ];
 
 const ALL_TOOLS_REGISTRY: Tool[] = (toolsRegistryData as Tool[])

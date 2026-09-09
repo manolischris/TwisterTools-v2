@@ -164,7 +164,10 @@ const categories = [
   { slug: "social-tools", name: "Social Media & Content Creator Tools", icon: Share2, desc: "Caption stylers, thread splitters & social utilities" },
 ];
 
+import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
+  Youtube: YoutubeIcon,
   ScanText,
   KeyRound,
   FileCode2,
@@ -301,8 +304,8 @@ export default function Header() {
     return (
       <div
         className={`absolute ${position === "desktop"
-            ? "top-full left-0 mt-2 w-full"
-            : "top-full left-0 right-0 mt-1"
+          ? "top-full left-0 mt-2 w-full"
+          : "top-full left-0 right-0 mt-1"
           } z-50 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl overflow-hidden`}
       >
         {searchResults.length > 0 ? (
@@ -458,25 +461,25 @@ export default function Header() {
 
               {/* Dropdown Menu Panel */}
               {isDropdownOpen && (
-                <div className="absolute right-0 md:-right-12 lg:-right-4 top-full pt-1 w-[780px] max-w-[90vw] z-50">
-                  <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-4 grid grid-cols-3 gap-2">
+                <div className="absolute right-[-100px] top-full pt-1 w-[820px] max-w-[90vw] z-50">
+                  <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xl p-4 grid grid-cols-3 gap-2">
                     {categories.map((cat) => {
                       const Icon = cat.icon;
                       return (
                         <Link
                           key={cat.slug}
                           href={`/tools/${cat.slug}`}
-                          className="flex items-start gap-2.5 p-2 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
+                          className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors group"
                           onClick={() => setIsDropdownOpen(false)}
                         >
                           <div className="p-2 rounded-lg bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-100 dark:group-hover:bg-indigo-900/60 transition-colors shrink-0">
-                            <Icon className="h-4.5 w-4.5" />
+                            <Icon className="h-5 w-5" />
                           </div>
                           <div className="flex flex-col justify-center min-w-0">
-                            <span className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-tight line-clamp-2">
+                            <span className="text-sm font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                               {cat.name}
                             </span>
-                            <span className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">
+                            <span className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
                               {cat.desc}
                             </span>
                           </div>

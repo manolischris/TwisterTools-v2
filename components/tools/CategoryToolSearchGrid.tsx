@@ -3,6 +3,7 @@
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { rankTools } from "@/lib/search-utils";
+import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
 import { Link as LinkIcon,
   Link2,
   Circle,
@@ -151,6 +152,7 @@ interface CategoryToolSearchGridProps {
 
 // Icon mapping dictionary to resolve icon strings dynamically
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
+  Youtube: YoutubeIcon,
   CircleDot,
   Network,
   KeyRound,

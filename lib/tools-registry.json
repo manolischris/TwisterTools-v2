@@ -2766,5 +2766,32 @@
     "href": "/tools/image-tools/svg-stroke-to-fill",
     "iconName": "PenTool",
     "isFeatured": false
+  },
+  {
+    "id": "instagram-line-break-generator",
+    "title": "Instagram Clean Caption Line Break & Spacing Formatter",
+    "description": "Format clean, paragraph-spaced Instagram captions with invisible zero-width unicode characters. Prevent collapsed text without visible punctuation marks or dots.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/instagram-line-break-generator",
+    "iconName": "AlignLeft",
+    "isFeatured": false
+  },
+  {
+    "id": "social-character-counter",
+    "title": "Social Media Character & Byte Limit Counter",
+    "description": "Audit post character lengths, Twitter weighted limits, UTF-8 byte sizes, and above-the-fold feed hooks across X, LinkedIn, and Instagram.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/social-character-counter",
+    "iconName": "Scale",
+    "isFeatured": false
+  },
+  {
+    "id": "youtube-timestamp-link-generator",
+    "title": "YouTube Timestamp Chapter Link & Deep-Link Generator",
+    "description": "Generate exact timestamped YouTube URLs, interactive video chapters for descriptions, and start-time embed iframe snippets with zero ads or tracking.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/youtube-timestamp-link-generator",
+    "iconName": "Youtube",
+    "isFeatured": false
   }
 ]
