@@ -23,6 +23,7 @@ import {
   Home,
   Binary,
   Activity,
+  Share2,
 } from "lucide-react";
 import toolsRegistry from "@/lib/tools-registry.json";
 
@@ -32,12 +33,12 @@ import toolsRegistry from "@/lib/tools-registry.json";
 export const metadata: Metadata = {
   title: "All Tool Categories",
   description:
-    "Browse all 14 TwisterTools categories — Developer Tools, Calculators, Passwords, Text, Images, PDFs, Web/SEO, Generators, Converters, Date & Time, Randomization, Home Living, Math & STEM, and Health, Fitness & Biological Utilities. Free, fast, and browser-based.",
+    "Browse all 15 TwisterTools categories — Developer Tools, Calculators, Passwords, Text, Images, PDFs, Web/SEO, Generators, Converters, Date & Time, Randomization, Home Living, Math & STEM, Health & Fitness, and Social Media & Creator Tools. Free, fast, and browser-based.",
   alternates: { canonical: "https://www.twistertools.com/categories" },
   openGraph: {
     title: "All Tool Categories | TwisterTools",
     description:
-      "Discover 14 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
+      "Discover 15 curated categories of free online utilities. Most tools run entirely in your browser — no sign-up, no server uploads.",
     url: "https://www.twistertools.com/categories",
     siteName: "TwisterTools",
     type: "website",
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "All Tool Categories | TwisterTools",
     description:
-      "14 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, and health utilities.",
+      "15 categories of free browser-based tools — developer utilities, calculators, password generators, PDF document tools, image editors, health utilities, and social media tools.",
     images: ["https://www.twistertools.com/images/categories.jpg"],
   },
 };
@@ -277,6 +278,20 @@ const CATEGORIES: CategoryDef[] = [
       "sleep cycle tracker",
     ],
   },
+  {
+    slug: "social-tools",
+    name: "Social Media & Content Creator Tools",
+    description:
+      "Free client-side utilities for creators and marketers: caption formatters, thread splitters, character counters, and platform link generators.",
+    icon: Share2,
+    accentClass: "bg-violet-100 text-violet-600 dark:bg-violet-950/40 dark:text-violet-400",
+    keywords: [
+      "social media tools",
+      "instagram caption generator",
+      "twitter thread splitter",
+      "youtube timestamp generator",
+    ],
+  },
 ];
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -303,9 +318,9 @@ const SEO_CARDS: SeoCard[] = [
   },
   {
     icon: Layers,
-    title: "Fourteen Growing Specialist Categories",
+    title: "Fifteen Growing Specialist Categories",
     content:
-      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, and health and fitness estimators, TwisterTools is organized into fourteen focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
+      "From cryptographic developer utilities and statistical calculators to image canvas processors, PDF document engines, health estimators, and social media creator tools, TwisterTools is organized into fifteen focused categories. New tools are shipped regularly across every vertical — all free, all accessible without an account.",
   },
   {
     icon: Globe,
@@ -353,7 +368,7 @@ export default function CategoriesIndexPage() {
     "@type": "CollectionPage",
     name: "All Tool Categories — TwisterTools",
     description:
-      "Browse 14 curated categories of free browser-based online utilities on TwisterTools.",
+      "Browse 15 curated categories of free browser-based online utilities on TwisterTools.",
     url: "https://www.twistertools.com/categories",
     publisher: {
       "@type": "Organization",

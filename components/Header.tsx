@@ -161,6 +161,7 @@ const categories = [
   { slug: "home-tools", name: "Home, Garden & Kitchen Living Utilities", icon: Home, desc: "Home, DIY, kitchen & gardening calculations" },
   { slug: "math-tools", name: "Math, Geometry & STEM Science Utilities", icon: Binary, desc: "Geometry solvers, physics & STEM calculation engines" },
   { slug: "health-tools", name: "Health, Fitness & Biological Utilities", icon: Activity, desc: "Body composition, metabolic & athletic performance estimators" },
+  { slug: "social-tools", name: "Social Media & Content Creator Tools", icon: Share2, desc: "Caption stylers, thread splitters & social utilities" },
 ];
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {

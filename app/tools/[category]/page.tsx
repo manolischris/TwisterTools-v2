@@ -875,6 +875,50 @@ const CATEGORIES_METADATA: Record<
         a: "Our metabolic estimators use standard, clinically-validated equations including the Mifflin-St Jeor and Harris-Benedict formulas to compute Basal Metabolic Rate (BMR) and Total Daily Energy Expenditure (TDEE)."
       }
     ]
+  },
+  "social-tools": {
+    name: "Social Media & Content Creator Tools",
+    icon: "Share2",
+    description: "Free client-side utilities for creators and marketers: caption formatters, thread splitters, character counters, and platform link generators.",
+    detailedGuide: "Streamline your content creation workflow with browser-native social utilities. Format Instagram captions, split Twitter/X threads, count platform character limits, and generate YouTube timestamps with 100% privacy.",
+    seoDescription: "Free browser-based tools for social media managers and content creators. Format Instagram captions, split Twitter threads, calculate character limits, and generate YouTube timestamps.",
+    keywords: ["social media tools", "content creator tools", "instagram line breaks", "twitter thread formatter", "youtube timestamp generator", "character counter"],
+    cards: [
+      {
+        title: "Zero-Friction Tools for Modern Digital Creators",
+        icon: "Share2",
+        content: "Drafting, editing, and publishing content across modern social platforms requires fast, reliable text and media utilities. Our suite provides instant caption line-break formatting, thread splitting, hashtag organization, and timestamp link creation without awkward copy-pasting or broken line breaks."
+      },
+      {
+        title: "Platform-Compliant Safe Text & Media Formatting",
+        icon: "Layers",
+        content: "Every social platform imposes strict character limits, specific line-break rules, and unique URL parameter structures. Our tools automatically validate your posts against official limits for Instagram, X (Twitter), LinkedIn, YouTube, TikTok, Discord, and Reddit so your content publishes cleanly every time."
+      },
+      {
+        title: "100% Client-Side Privacy & Account Security",
+        icon: "ShieldCheck",
+        content: "Your post drafts, unpublished captions, media tags, and campaign ideas remain completely confidential. All formatting and text processing execute purely inside your browser memory (RAM). No credentials, access tokens, API keys, or draft text are ever saved or transmitted to a server."
+      },
+      {
+        title: "Optimized for Multi-Platform Publishing Workflows",
+        icon: "Zap",
+        content: "Repurpose your content effortlessly. Easily transform long articles into numbered X threads, format clean Instagram captions with hidden line breaks, calculate exact reading and video speaking times, and generate click-to-subscribe or timestamped media URLs in seconds."
+      }
+    ],
+    faqs: [
+      {
+        q: "Do these tools require logging into my social media accounts?",
+        a: "No, zero logins or API permissions are required. All tools run completely client-side in your browser, generating formatted text, threads, timestamps, and links ready to copy and paste."
+      },
+      {
+        q: "Why do Instagram and other platforms collapse line breaks without formatting?",
+        a: "Platforms like Instagram often strip standard newline characters or collapse empty spaces when posts are submitted. Our caption formatters inject invisible, platform-compliant Unicode spacing characters to preserve clean paragraph breaks."
+      },
+      {
+        q: "Are my drafts, captions, or image assets uploaded to a server?",
+        a: "No. Every text operation, character count check, thread split, and link generation occurs 100% locally in your browser RAM session. No data is sent to external servers."
+      }
+    ]
   }
 };
 
@@ -1105,6 +1149,18 @@ export default async function CategoryDirectoryPage({
               <strong className="font-semibold block mb-1">Medical Disclaimer</strong>
               <p>
                 Calculations and estimations provided by these tools (including BMI, TDEE, BAC, calorie deficits, heart rate zones, and other health estimators) are for educational and informational purposes only. They do not constitute professional medical advice, diagnosis, or clinical treatment. Always consult a qualified healthcare provider before making medical decisions or changes to your fitness and nutrition plans.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {category === "social-tools" && (
+          <div className="bg-amber-50 border border-amber-200 text-amber-900 dark:bg-amber-950/40 dark:border-amber-900/50 dark:text-amber-300 rounded-xl p-4 flex items-start gap-3 text-sm">
+            <ShieldAlert className="w-5 h-5 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+            <div>
+              <strong className="font-semibold block mb-1">Trademark Disclaimer</strong>
+              <p>
+                Disclaimer: TwisterTools is an independent utility platform and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Instagram, Meta, YouTube, Google, X (Twitter), TikTok, Discord, LinkedIn, Twitch, WhatsApp, Reddit, or Telegram. All product names, logos, and brands are property of their respective owners.
               </p>
             </div>
           </div>

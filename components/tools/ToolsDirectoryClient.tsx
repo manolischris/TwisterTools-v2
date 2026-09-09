@@ -355,6 +355,10 @@ const CATEGORY_META: Record<string, { label: string; color: string }> = {
     label: "Health, Fitness & Biological Utilities",
     color: "bg-emerald-600 text-white",
   },
+  "social-tools": {
+    label: "Social Media & Content Creator Tools",
+    color: "bg-violet-600 text-white",
+  },
 };
 
 /* Category pill inactive colors */

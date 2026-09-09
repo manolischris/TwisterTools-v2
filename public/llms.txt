@@ -8,7 +8,7 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - **100% Client-Side Privacy**: All processing runs locally in browser memory. No telemetry logs, no database persistence of inputs, and zero data uploads.
 - **Zero Server Uploads**: PDF manipulation, image conversions, cryptographic hashing, and code transformations happen entirely on the user's local CPU/GPU.
 - **Instant Execution**: Bound strictly by local device performance, completely eliminating network latency and server queue bottlenecks.
-- **Unrestricted Access**: Every utility across all 13 categories is accessible without subscriptions, usage limits, paywalls, or accounts.
+- **Unrestricted Access**: Every utility across all 15 categories is accessible without subscriptions, usage limits, paywalls, or accounts.
 ## Category Hubs & Tool Directories
 ### [Developer, Code & Web Engineering Tools](https://www.twistertools.com/tools/developer-tools)
 - [JSON Formatter, Validator & Viewer](https://www.twistertools.com/tools/developer-tools/json-formatter-validator): Validate, beautify, minify, and inspect complex JSON structures.
@@ -317,9 +317,11 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Random Emoji & Emoticon Combination Generator](https://www.twistertools.com/tools/random-tools/random-emoji-generator): Cryptographically secure randomized Unicode emoji palettes and Kaomoji generator.
 - [Charades & Game Night Word Generator](https://www.twistertools.com/tools/random-tools/charades-word-generator): Interactive random prompt engine with countdown timer buzzer, team scoreboard, and custom word injection.
 - [Random Time & Hour Generator](https://www.twistertools.com/tools/random-tools/random-time-generator): Generate cryptographically secure random times, timestamps, and clock hours with customizable ranges and formatting.
+### [Social Media & Content Creator Tools](https://www.twistertools.com/tools/social-tools)
+- Free client-side utilities for creators and marketers: caption formatters, thread splitters, character counters, and platform link generators.
 ## Platform Pages
 
-- [Categories Directory](https://www.twistertools.com/categories): Complete directory of all 13 tool categories on TwisterTools.
+- [Categories Directory](https://www.twistertools.com/categories): Complete directory of all 15 tool categories on TwisterTools.
 - [All Tools Directory](https://www.twistertools.com/tools): Searchable and filterable master directory of all available online utilities.
 - [About TwisterTools](https://www.twistertools.com/about): Mission statement, privacy guarantees, and browser-native architecture background.
 - [Privacy Policy](https://www.twistertools.com/privacy-policy): Detailed privacy documentation verifying zero-server data transmission.

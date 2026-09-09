@@ -240,6 +240,14 @@ export default function Footer() {
                   Generators & Keys
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/tools/social-tools"
+                  className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  Social & Creator Tools
+                </Link>
+              </li>
             </ul>
           </div>
 
