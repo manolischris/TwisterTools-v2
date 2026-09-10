@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import { rankTools } from "@/lib/search-utils";
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+import { TwitterIcon } from "@/components/icons/TwitterIcon";
 import { Link as LinkIcon,
   Link2,
   Circle,
@@ -131,7 +132,7 @@ import { Link as LinkIcon,
   KeyRound,
   Network,
   ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, MapPin, QrCode, CalendarClock, ListStart, Share2, Tv, Fuel, Maximize2, VectorSquare, Printer } from "lucide-react";
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, MapPin, QrCode, CalendarClock, ListStart, Share2, Tv, Fuel, Maximize2, VectorSquare, Printer, MessageSquare } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
 interface RegistryTool {
@@ -153,6 +154,8 @@ interface CategoryToolSearchGridProps {
 // Icon mapping dictionary to resolve icon strings dynamically
 const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Youtube: YoutubeIcon,
+  Twitter: TwitterIcon,
+  MessageSquare,
   CircleDot,
   Network,
   KeyRound,

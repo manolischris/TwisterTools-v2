@@ -139,7 +139,7 @@ import {
   KeyRound,
   Network,
   ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Printer
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Printer, MessageSquare, Tv
 } from "lucide-react";
 
 // Import master tool registry (automatically maintained by build/agent scripts)
@@ -156,9 +156,13 @@ interface Tool {
 }
 
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+import { TwitterIcon } from "@/components/icons/TwitterIcon";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Youtube: YoutubeIcon,
+  Twitter: TwitterIcon,
+  Tv,
+  MessageSquare,
   ScanText,
   Network,
   KeyRound,
@@ -189,6 +193,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Code2,
   Sparkles,
   ImageIcon,
+  Image: ImageIcon,
   RefreshCw,
   Lock,
   Database,

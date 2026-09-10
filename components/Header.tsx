@@ -138,6 +138,7 @@ import {
   KeyRound,
   ScanText,
   CircleDot,
+  MessageSquare,
 } from "lucide-react";
 import toolsRegistryData from "@/lib/tools-registry.json";
 import { rankTools, type SearchableTool } from "@/lib/search-utils";
@@ -165,9 +166,12 @@ const categories = [
 ];
 
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+import { TwitterIcon } from "@/components/icons/TwitterIcon";
 
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Youtube: YoutubeIcon,
+  Twitter: TwitterIcon,
+  MessageSquare,
   ScanText,
   KeyRound,
   FileCode2,

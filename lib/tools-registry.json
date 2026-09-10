@@ -2793,5 +2793,59 @@
     "href": "/tools/social-tools/youtube-timestamp-link-generator",
     "iconName": "Youtube",
     "isFeatured": false
+  },
+  {
+    "id": "twitter-thread-formatter",
+    "title": "Twitter Thread Splitter & Numbered Sequence Formatter",
+    "description": "Split long articles, essays, and notes into character-accurate, auto-numbered Twitter/X threads.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/twitter-thread-formatter",
+    "iconName": "Twitter",
+    "isFeatured": false
+  },
+  {
+    "id": "tiktok-bio-formatter",
+    "title": "TikTok Bio Link & Multi-Callout Generator",
+    "description": "Format high-converting 80-character TikTok bios with structured callouts, link anchors, and live mobile preview simulation.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/tiktok-bio-formatter",
+    "iconName": "Sliders",
+    "isFeatured": false
+  },
+  {
+    "id": "discord-markdown-styler",
+    "title": "Discord Markdown & Text Color Formatter",
+    "description": "Generate colored ANSI Discord messages, bold headers, spoilers, and codeblocks with live preview.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/discord-markdown-styler",
+    "iconName": "MessageSquare",
+    "isFeatured": false
+  },
+  {
+    "id": "linkedin-post-formatter",
+    "title": "LinkedIn Post Formatting & Bold Unicode Stylizer",
+    "description": "Transform LinkedIn captions with bold Unicode styling, aesthetic list bullet symbols, and live 'see more' feed fold previews.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/linkedin-post-formatter",
+    "iconName": "Type",
+    "isFeatured": false
+  },
+  {
+    "id": "youtube-thumbnail-previewer",
+    "title": "YouTube Thumbnail Safe Zone & Overlay Inspector",
+    "description": "Preview 16:9 YouTube thumbnails against real timestamp overlays, desktop watch later scrims, and mobile feed cards.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/youtube-thumbnail-previewer",
+    "iconName": "Tv",
+    "isFeatured": false
+  },
+  {
+    "id": "twitch-emote-resizer",
+    "title": "Twitch Emote Resizer & Dimension Validator",
+    "description": "Resize and format subscriber emotes into verified Twitch tiers (28x28, 56x56, 112x112 px) with bicubic/pixel-art downsampling and dark chat preview.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/twitch-emote-resizer",
+    "iconName": "Image",
+    "isFeatured": false
   }
-]
+]

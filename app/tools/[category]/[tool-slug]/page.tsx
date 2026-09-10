@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video, MessageSquare, Tv, Image as ImageIcon } from "lucide-react";
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
@@ -163,6 +163,9 @@ const ImageFiltersAdjuster = dynamic(() => import("@/components/tools/ImageFilte
 const WebpToPngConverter = dynamic(() => import("@/components/tools/WebpToPngConverter"));
 const InstagramLineBreakGenerator = dynamic(() => import("@/components/tools/InstagramLineBreakGenerator"));
 const YouTubeTimestampChapterGenerator = dynamic(() => import("@/components/tools/YouTubeTimestampChapterGenerator"));
+const DiscordMarkdownStyler = dynamic(() => import("@/components/tools/DiscordMarkdownStyler"));
+const LinkedInPostFormatter = dynamic(() => import("@/components/tools/LinkedInPostFormatter"));
+const TwitchEmoteResizer = dynamic(() => import("@/components/tools/TwitchEmoteResizer"));
 
 
 
@@ -334,6 +337,9 @@ const COMPLETED_TOOLS = [
   "webp-to-png-converter",
   "instagram-line-break-generator",
   "youtube-timestamp-link-generator",
+  "discord-markdown-styler",
+  "linkedin-post-formatter",
+  "twitch-emote-resizer",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -771,6 +777,21 @@ export async function generateMetadata({
   if (category === "image-tools" && toolSlug === "webp-to-png-converter") {
     title = "Lossless WebP to PNG Batch Converter";
     description = "Convert WebP images to lossless 32-bit PNG format in batch directly in your browser. 100% client-side privacy, zero server uploads, and ZIP archive download.";
+  }
+
+  if (category === "social-tools" && toolSlug === "discord-markdown-styler") {
+    title = "Discord Markdown & Text Color Formatter";
+    description = "Generate colored ANSI Discord messages, bold headers, spoilers, and codeblocks with live dark-mode preview and 1-click clipboard copy.";
+  }
+
+  if (category === "social-tools" && toolSlug === "linkedin-post-formatter") {
+    title = "LinkedIn Post Formatting & Bold Unicode Stylizer";
+    description = "Format high-converting LinkedIn posts with bold Unicode text, custom bullet indicators, and a live desktop 'see more' fold simulator.";
+  }
+
+  if (category === "social-tools" && toolSlug === "twitch-emote-resizer") {
+    title = "Twitch Emote Resizer & Dimension Validator (28px, 56px, 112px)";
+    description = "Convert artwork into verified 28px, 56px, and 112px transparent PNG emotes with live Twitch dark mode chat emulation.";
   }
 
   return {
@@ -1379,287 +1400,298 @@ export default async function ToolPage({
         />
       )}
 
-      {/* Hero Header Section */}
-      <div className="bg-gradient-to-r from-indigo-50/80 via-white to-slate-50/50 dark:from-slate-900/50 dark:via-slate-950 dark:to-slate-900/50 border-b border-slate-200 dark:border-slate-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4">
-          <div className="max-w-6xl mx-auto">
+      {/* Page Header Strip - Modern Ambient Studio Style */}
+      <div className="relative overflow-hidden border-b border-slate-200/80 bg-slate-50/80 dark:border-slate-800 dark:bg-slate-950">
+        {/* Ambient Radial Mesh Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_75%_at_50%_-15%,rgba(99,102,241,0.12),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_65%_75%_at_50%_-15%,rgba(99,102,241,0.18),rgba(0,0,0,0))]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5">
+          <div className="mx-auto max-w-6xl">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-1 text-xs text-slate-600 dark:text-slate-400 mb-2 flex-wrap overflow-x-auto whitespace-nowrap scrollbar-none truncate">
-              <Link href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
+            <div className="scrollbar-none mb-1.5 flex flex-wrap items-center gap-1 overflow-x-auto whitespace-nowrap text-xs text-slate-500 dark:text-slate-400">
+              <Link className="max-w-32.5 truncate font-medium transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 sm:max-w-50 md:max-w-none" href="/">
                 Home
               </Link>
-              <span>/</span>
-              <Link
-                href={`/tools/${category}`}
-                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate"
-              >
+              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <Link className="max-w-32.5 truncate font-medium transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 sm:max-w-50 md:max-w-none" href={`/tools/${category}`}>
                 {categoryName}
               </Link>
-              <span>/</span>
-              <span className="text-slate-900 dark:text-white max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">{tool.name}</span>
+              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <span className="max-w-32.5 truncate font-semibold text-slate-800 dark:text-slate-200 sm:max-w-50 md:max-w-none">
+                {tool.name}
+              </span>
             </div>
 
-            {/* Tool Title & Description */}
+            {/* Tool Title Row */}
             <div className="flex items-start gap-3 sm:gap-4">
-              {/* Strict square icon container — 1:1, aligned using shrink-0 items-center justify-center */}
-              <div className="w-10 h-10 sm:w-14 sm:h-14 p-1 sm:p-2 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0 bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-indigo-200/80 bg-gradient-to-br from-indigo-50 to-white p-1 shadow-xs shadow-indigo-100/60 dark:border-indigo-900/50 dark:from-slate-800 dark:to-slate-900 sm:h-14 sm:w-14 sm:rounded-2xl sm:p-2">
                 {toolSlug === "md5-generator" || toolSlug === "sha-generator" ? (
-                  <Hash className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Hash className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "password-generator" ? (
-                  <Lock className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Lock className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "password-strength-checker" ? (
-                  <ShieldAlert className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ShieldAlert className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "age-calculator" ? (
-                  <CalendarClock className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <CalendarClock className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "percentage-calculator" ? (
-                  <Percent className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Percent className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "average-calculator" || toolSlug === "freelance-rate-calculator" || toolSlug === "fte-calculator") ? (
-                  <Calculator className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Calculator className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "case-converter" ? (
-                  <Type className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Type className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "comma-separator" ? (
-                  <ListStart className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ListStart className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "base64-encode-decode" ? (
-                  <Binary className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Binary className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "url-encoder-decoder" ? (
-                  <Globe className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Globe className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "html-entity-encoder-decoder" ? (
-                  <Code className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Code className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "json-formatter-validator" ? (
-                  <FileJson className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileJson className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "xml-formatter-validator" ? (
-                  <FileCode className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileCode className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "jwt-decoder" ? (
-                  <ShieldAlert className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ShieldAlert className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "unix-timestamp-converter" || toolSlug === "cron-expression-generator" ? (
-                  <Clock className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Clock className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "reverse-text-generator" ? (
-                  <ArrowRightLeft className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ArrowRightLeft className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "sql-formatter-validator" ? (
-                  <Database className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Database className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "regex-tester" ? (
-                  <SearchCode className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <SearchCode className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "diff-checker" || toolSlug === "text-column-extractor") ? (
-                  <Columns className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Columns className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "markdown-to-html" ? (
-                  <FileText className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileText className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "html-formatter-validator" || toolSlug === "css-formatter-validator" || toolSlug === "javascript-formatter-minifier" || toolSlug === "json-to-typescript-converter") ? (
-                  <FileCode2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileCode2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "json-to-csv-converter" ? (
-                  <ArrowRightLeft className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ArrowRightLeft className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "html-to-markdown" ? (
-                  <ArrowRightLeft className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ArrowRightLeft className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "html-css-minifier-unminifier" ? (
-                  <Minimize2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Minimize2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "meta-tag-generator" ? (
-                  <Globe className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Globe className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "open-graph-generator" ? (
-                  <Share2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Share2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "domain-age-checker" ? (
-                  <Clock className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Clock className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "domain-to-ip" ? (
-                  <Globe className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Globe className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "ip-location" || toolSlug === "random-address-generator") ? (
-                  <MapPin className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <MapPin className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "random-country-picker" ? (
-                  <Globe2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Globe2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "find-dns-record" ? (
-                  <Database className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Database className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "http-headers" ? (
-                  <Server className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Server className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "ssl-checker" ? (
-                  <ShieldCheck className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "sitemap-generator" || toolSlug === "timezone-converter" || toolSlug === "meeting-timezone-scheduler") ? (
-                  <Globe className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Globe className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "yaml-to-json-converter" ? (
-                  <ArrowRightLeft className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ArrowRightLeft className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "text-tools" && toolSlug === "small-text-generator" ? (
-                  <Type className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Type className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "text-tools" && toolSlug === "word-combiner" ? (
-                  <Layers className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Layers className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "text-tools" && toolSlug === "rewrite-article" ? (
-                  <RefreshCw className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <RefreshCw className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "text-tools" && toolSlug === "online-text-editor" ? (
-                  <FileText className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileText className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && (toolSlug === "image-color-extractor" || toolSlug === "image-duotone-generator") ? (
-                  <Palette className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Palette className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "svg-path-visualizer" ? (
-                  <VectorSquare className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <VectorSquare className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "generator-tools" && toolSlug === "credit-card-generator" ? (
-                  <CreditCard className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <CreditCard className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "png-to-jpg" ? (
-                  <FileImage className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileImage className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "image-compressor" ? (
-                  <Minimize2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Minimize2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (category === "image-tools" && toolSlug === "image-aspect-ratio-scaler") || toolSlug === "css-clamp-calculator" ? (
-                  <Maximize2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Maximize2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "favicon-generator" ? (
-                  <Globe className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Globe className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "image-dpi-print-calculator" ? (
-                  <Printer className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Printer className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "base64-to-image-converter" ? (
-                  <FileCode className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileCode className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "svg-converter" ? (
-                  <FileCode className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileCode className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "heic-to-jpg" ? (
-                  <FileImage className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileImage className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "extract-pdf-images" ? (
-                  <FileImage className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileImage className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (category === "text-tools" && toolSlug === "lorem-ipsum-generator") || (category === "pdf-tools" && (toolSlug === "compress-pdf" || toolSlug === "text-to-pdf")) ? (
-                  <FileText className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileText className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "calculators" && toolSlug === "pregnancy-due-date-calculator" ? (
-                  <Baby className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Baby className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "emergency-fund-calculator" ? (
-                  <ShieldCheck className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "car-lease-vs-buy-calculator" ? (
-                  <Car className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Car className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "subscription-cost-calculator" ? (
-                  <Wallet className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Wallet className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "rent-vs-buy-calculator" || toolSlug === "unit-price-calculator" || toolSlug === "cake-pan-converter") ? (
-                  <Scale className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Scale className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "sourdough-hydration-calculator" ? (
-                  <Wheat className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Wheat className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "daily-habit-savings-calculator" ? (
-                  <Coffee className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Coffee className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "rule-of-72-calculator" ? (
-                  <TrendingUp className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <TrendingUp className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "sleep-cycle-calculator" ? (
-                  <Moon className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Moon className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "caffeine-half-life-calculator" ? (
-                  <Coffee className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Coffee className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "one-rep-max-calculator" ? (
-                  <Dumbbell className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Dumbbell className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "vo2-max-calculator" || toolSlug === "lean-body-mass-calculator") ? (
-                  <Activity className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Activity className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "calorie-deficit-calculator" || toolSlug === "quit-smoking-savings-calculator" || toolSlug === "air-fryer-converter" || toolSlug === "heat-index-calculator") ? (
-                  <Flame className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Flame className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "cat-age-calculator" ? (
-                  <Cat className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Cat className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "dog-age-calculator" || toolSlug === "pet-calorie-calculator") ? (
-                  <Dog className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Dog className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "steps-to-calories-calculator" ? (
-                  <Footprints className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Footprints className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "intermittent-fasting-calculator" || toolSlug === "race-split-pace-calculator" || toolSlug === "pomodoro-timer") ? (
-                  <Timer className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Timer className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "fuel-cost-calculator" ? (
-                  <Fuel className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Fuel className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "electricity-cost-calculator" ? (
-                  <Zap className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Zap className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "math-tools" && toolSlug === "scientific-calculator" ? (
-                  <Calculator className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Calculator className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "uuid-generator" ? (
-                  <Fingerprint className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Fingerprint className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "list-randomizer-shuffler" || toolSlug === "would-you-rather-generator" || toolSlug === "lottery-number-generator") ? (
-                  <Shuffle className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Shuffle className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "writing-prompt-generator" ? (
-                  <PenTool className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <PenTool className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "random-emoji-generator" ? (
-                  <Smile className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Smile className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "random-letter-picker" ? (
-                  <Type className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Type className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "dice-roller" ? (
-                  <Dices className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Dices className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "color-picker-contrast-checker" ? (
-                  <Pipette className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Pipette className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "css-border-radius-generator" ? (
-                  <Shapes className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Shapes className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "css-box-shadow-generator" || toolSlug === "image-filters-adjuster") ? (
-                  <Sliders className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Sliders className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "css-flexbox-playground" ? (
-                  <Layout className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Layout className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "css-grid-generator" || toolSlug === "image-grid-collage-maker") ? (
-                  <LayoutGrid className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <LayoutGrid className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "webp-to-png-converter" ? (
-                  <FileImage className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileImage className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "html-table-generator" || toolSlug === "markdown-table-generator") ? (
-                  <Table className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Table className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "user-agent-parser" ? (
-                  <Terminal className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Terminal className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "javascript-keycode-finder" ? (
-                  <Keyboard className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Keyboard className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "chmod-calculator" ? (
-                  <Shield className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Shield className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "tile-flooring-calculator" ? (
-                  <Grid3X3 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Grid3X3 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "wallpaper-calculator" ? (
-                  <ScrollText className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ScrollText className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "concrete-volume-calculator" ? (
-                  <Boxes className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Boxes className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "plant-watering-calculator" ? (
-                  <Sprout className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Sprout className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "habit-streak-calculator" ? (
-                  <Flame className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Flame className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "graduation-date-calculator" ? (
-                  <GraduationCap className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <GraduationCap className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "zero-width-space-cleaner" ? (
-                  <Eraser className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Eraser className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "line-number-adder" ? (
-                  <ListOrdered className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ListOrdered className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "subscript-superscript-generator" ? (
-                  <Baseline className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Baseline className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "readability-score-calculator" ? (
-                  <Gauge className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Gauge className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "solar-panel-calculator" || toolSlug === "solar-noon-angle-calculator" || toolSlug === "julian-date-converter") ? (
-                  <Sun className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Sun className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "triangle-geometry-calculator" ? (
-                  <Triangle className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Triangle className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "circle-geometry-calculator" ? (
-                  <Circle className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Circle className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "3d-volume-calculator" ? (
-                  <Box className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Box className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "pythagorean-calculator" ? (
-                  <Triangle className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Triangle className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "density-mass-volume-calculator" ? (
-                  <Scale className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Scale className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "wind-chill-calculator" ? (
-                  <Wind className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Wind className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "dew-point-calculator" ? (
-                  <Droplets className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Droplets className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "lightning-distance-calculator" ? (
-                  <Zap className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Zap className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "css-glassmorphism-generator" ? (
-                  <Layers className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Layers className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "css-neumorphism-generator" ? (
-                  <Box className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Box className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "tailwind-color-generator" ? (
-                  <Palette className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Palette className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "css-animation-generator" ? (
-                  <Sparkles className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Sparkles className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "svg-to-css-converter" ? (
-                  <FileCode className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <FileCode className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "image-tools" && toolSlug === "svg-to-jsx-converter" ? (
-                  <Code2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Code2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "web-tools" && toolSlug === "subnet-cidr-calculator" ? (
-                  <Network className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Network className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "web-tools" && toolSlug === "ipv6-address-converter" ? (
-                  <ArrowRightLeft className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ArrowRightLeft className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "developer-tools" && toolSlug === "url-query-parameter-parser" ? (
-                  <Link2 className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Link2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "web-tools" && toolSlug === "csp-header-generator" ? (
-                  <ShieldCheck className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "image-to-text-ocr" ? (
-                  <ScanText className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ScanText className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "image-transparent-padding" ? (
-                  <Crop className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Crop className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "svg-path-minifier" ? (
-                  <Scissors className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Scissors className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "image-exif-stripper" ? (
-                  <ShieldCheck className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "instagram-line-break-generator" ? (
-                  <AlignLeft className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <AlignLeft className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "youtube-timestamp-link-generator" ? (
-                  <YoutubeIcon className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <YoutubeIcon className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "discord-markdown-styler" ? (
+                  <MessageSquare className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "linkedin-post-formatter" ? (
+                  <Type className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "twitch-emote-resizer" ? (
+                  <ImageIcon className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
-                  <Binary className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <Binary className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (
-                  <QrCode className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+                  <QrCode className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 )}
               </div>
-              <div className="flex-1 min-w-0">
-                <h1 className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+
+              <div className="min-w-0 flex-1">
+                <h1 className="text-lg font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-xl md:text-2xl">
                   {tool.name}
                 </h1>
-                <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 sm:line-clamp-none">
+                <p className="line-clamp-2 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:line-clamp-none sm:text-sm md:text-base">
                   {tool.description}
                 </p>
               </div>
@@ -1974,6 +2006,12 @@ export default async function ToolPage({
             <InstagramLineBreakGenerator />
           ) : category === "social-tools" && toolSlug === "youtube-timestamp-link-generator" ? (
             <YouTubeTimestampChapterGenerator />
+          ) : category === "social-tools" && toolSlug === "discord-markdown-styler" ? (
+            <DiscordMarkdownStyler />
+          ) : category === "social-tools" && toolSlug === "linkedin-post-formatter" ? (
+            <LinkedInPostFormatter />
+          ) : category === "social-tools" && toolSlug === "twitch-emote-resizer" ? (
+            <TwitchEmoteResizer />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

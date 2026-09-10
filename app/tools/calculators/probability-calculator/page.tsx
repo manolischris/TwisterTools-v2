@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata, NextPage } from "next";
 import { Calculator } from "lucide-react";
 import ProbabilityCalculator from "@/components/tools/ProbabilityCalculator";
@@ -49,38 +50,42 @@ export const metadata: Metadata = {
 const ProbabilityCalculatorPage: NextPage = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Header */}
-      <div className="bg-gradient-to-r from-indigo-50/80 via-white to-slate-50/50 dark:from-slate-900/50 dark:via-slate-950 dark:to-slate-900/50 border-b border-slate-200 dark:border-slate-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4">
-          <div className="max-w-6xl mx-auto">
+      {/* Page Header Strip - Modern Ambient Studio Style */}
+      <div className="relative overflow-hidden border-b border-slate-200/80 bg-slate-50/80 dark:border-slate-800 dark:bg-slate-950">
+        {/* Ambient Radial Mesh Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_65%_75%_at_50%_-15%,rgba(99,102,241,0.12),rgba(255,255,255,0))] dark:bg-[radial-gradient(ellipse_65%_75%_at_50%_-15%,rgba(99,102,241,0.18),rgba(0,0,0,0))]"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5">
+          <div className="mx-auto max-w-6xl">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-1 text-xs text-slate-600 dark:text-slate-400 mb-2 truncate flex-wrap overflow-x-auto whitespace-nowrap scrollbar-none">
-              <a href="/" className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
+            <div className="scrollbar-none mb-1.5 flex flex-wrap items-center gap-1 overflow-x-auto whitespace-nowrap text-xs text-slate-500 dark:text-slate-400">
+              <Link className="max-w-32.5 truncate font-medium transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 sm:max-w-50 md:max-w-none" href="/">
                 Home
-              </a>
-              <span>/</span>
-              <a
-                href="/tools/calculators"
-                className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors max-w-[130px] sm:max-w-[200px] md:max-w-none truncate"
-              >
+              </Link>
+              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <Link className="max-w-32.5 truncate font-medium transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 sm:max-w-50 md:max-w-none" href="/tools/calculators">
                 Daily Essentials, Financial & Math Calculators
-              </a>
-              <span>/</span>
-              <span className="text-slate-900 dark:text-white max-w-[130px] sm:max-w-[200px] md:max-w-none truncate">
-                Probability Calculator
+              </Link>
+              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <span className="max-w-32.5 truncate font-semibold text-slate-800 dark:text-slate-200 sm:max-w-50 md:max-w-none">
+                Probability Calculator & Event Odds Suite
               </span>
             </div>
 
-            {/* Tool Title & Description */}
+            {/* Tool Title Row */}
             <div className="flex items-start gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-14 sm:h-14 p-1 sm:p-2 rounded-xl sm:rounded-2xl shrink-0 flex items-center justify-center bg-indigo-50/70 dark:bg-slate-800 shadow-sm">
-                <Calculator className="w-7 h-7 sm:w-10 sm:h-10 text-indigo-600 dark:text-indigo-400" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-indigo-200/80 bg-gradient-to-br from-indigo-50 to-white p-1 shadow-xs shadow-indigo-100/60 dark:border-indigo-900/50 dark:from-slate-800 dark:to-slate-900 sm:h-14 sm:w-14 sm:rounded-2xl sm:p-2">
+                <Calculator className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
               </div>
-              <div className="flex-1 min-w-0">
-                <h1 className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-tight leading-tight text-slate-900 dark:text-white">
+
+              <div className="min-w-0 flex-1">
+                <h1 className="text-lg font-extrabold leading-tight tracking-tight text-slate-900 dark:text-white sm:text-xl md:text-2xl">
                   Probability Calculator & Event Odds Suite
                 </h1>
-                <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-2 sm:line-clamp-none">
+                <p className="line-clamp-2 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:line-clamp-none sm:text-sm md:text-base">
                   Calculate single event odds, conditional joint probabilities, series repetitions, and binomial distribution PMF metrics.
                 </p>
               </div>
@@ -88,6 +93,7 @@ const ProbabilityCalculatorPage: NextPage = () => {
           </div>
         </div>
       </div>
+      
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-4 md:py-6">

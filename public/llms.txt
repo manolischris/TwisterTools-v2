@@ -322,6 +322,13 @@ TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of clie
 - [Instagram Clean Caption Line Break Formatter](https://twistertools.com/tools/social-tools/instagram-line-break-generator): Format paragraph spacing using zero-width invisible unicode.
 - [Social Media Character & Byte Limit Counter](/tools/social-tools/social-character-counter): Audit real-time character limits, Twitter weighted logic, and above-the-fold feed hook cutoffs.
 - [YouTube Timestamp Chapter Link & Deep-Link Generator](https://www.twistertools.com/tools/social-tools/youtube-timestamp-link-generator): Instant cue-point links, video chapter builder, and iframe embeds.
+- [Twitter Thread Splitter & Numbered Sequence Formatter](/tools/social-tools/twitter-thread-formatter): Split long essays into 280-char numbered X threads.
+- [TikTok Bio Link & Multi-Callout Generator](/tools/social-tools/tiktok-bio-formatter): 80-character TikTok profile bio optimizer with multi-callout links and mobile simulation preview.
+- [Discord Markdown & Text Color Formatter](https://www.twistertools.com/tools/social-tools/discord-markdown-styler): Format ANSI colored Discord text and markdown headers with live preview.
+- [LinkedIn Post Formatting & Bold Unicode Stylizer](https://www.twistertools.com/tools/social-tools/linkedin-post-formatter): Professional LinkedIn post editor with bold Unicode fonts, custom list symbols, and live feed preview.
+- [YouTube Thumbnail Safe Zone & Overlay Inspector](https://www.twistertools.com/tools/social-tools/youtube-thumbnail-previewer): Audit timestamp collisions, danger zones, rule of thirds, and mobile glance legibility in real-time 16:9 simulated mockups.
+- [Twitch Emote Resizer & Dimension Validator](https://twistertools.com/tools/social-tools/twitch-emote-resizer): Instant 28px, 56px, 112px Twitch emote dimension validator with pixel art resampling and live chat preview.
+
 ## Platform Pages
 
 - [Categories Directory](https://www.twistertools.com/categories): Complete directory of all 15 tool categories on TwisterTools.

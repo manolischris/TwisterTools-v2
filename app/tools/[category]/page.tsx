@@ -113,7 +113,7 @@ import {
   Trophy,
   FileCode2,
   ScanText,
-  Shuffle, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer, Video
+  Shuffle, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer, Video, MessageSquare, Tv
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -123,6 +123,7 @@ import path from "path";
 export const dynamic = "force-dynamic";
 
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+import { TwitterIcon } from "@/components/icons/TwitterIcon";
 
 // Type definitions for Next.js params
 type Params = Promise<{ category: string }>;
@@ -130,6 +131,9 @@ type Params = Promise<{ category: string }>;
 // Map icon strings to Lucide components for the Server Page
 const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Youtube: YoutubeIcon,
+  Twitter: TwitterIcon,
+  Tv,
+  MessageSquare,
   FileCode2,
   Maximize2,
   Printer,

@@ -134,7 +134,7 @@ import { Link as LinkIcon,
   KeyRound,
   Network,
   ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, Palette, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer } from "lucide-react";
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, Palette, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer, MessageSquare } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
    Types
@@ -150,12 +150,15 @@ interface RegistryTool {
 }
 
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
+import { TwitterIcon } from "@/components/icons/TwitterIcon";
 
 /* ─────────────────────────────────────────────────────────
    Icon Map
  ───────────────────────────────────────────────────────── */
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Youtube: YoutubeIcon,
+  Twitter: TwitterIcon,
+  MessageSquare,
   ScanText,
   Network,
   KeyRound,
