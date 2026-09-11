@@ -139,10 +139,10 @@ import {
   KeyRound,
   Network,
   ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Printer, MessageSquare, Tv
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Printer, MessageSquare, Tv, Send, UserX
 } from "lucide-react";
 
-// Import master tool registry (automatically maintained by build/agent scripts)
+// Import master tool registry (automatically synchronized for pure text comparison utilities)
 import toolsRegistryData from "@/lib/tools-registry.json";
 
 interface Tool {
@@ -163,6 +163,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Twitter: TwitterIcon,
   Tv,
   MessageSquare,
+  Send,
   ScanText,
   Network,
   KeyRound,
@@ -294,7 +295,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Wind,
   Volume2,
   Plane,
-  Eraser
+  Eraser,
+  UserX
 };
 
 const CATEGORIES = [

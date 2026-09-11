@@ -92,11 +92,11 @@
   {
     "id": "compare-two-lists",
     "title": "Compare Two Lists & Set Difference Finder",
-    "description": "Compare two text lists online to find missing items, set differences, intersections, and unfollowers from Instagram ZIP exports.",
+    "description": "Compare two text lists online to find missing entries, duplicate items, intersections, unions, and set differences.",
     "category": "text-tools",
     "href": "/tools/text-tools/compare-two-lists",
     "iconName": "ArrowLeftRight",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "base64-encode-decode",
@@ -2847,5 +2847,41 @@
     "href": "/tools/social-tools/twitch-emote-resizer",
     "iconName": "Image",
     "isFeatured": false
+  },
+  {
+    "id": "whatsapp-link-generator",
+    "title": "WhatsApp Direct Chat Link Generator",
+    "description": "Create instant wa.me direct chat WhatsApp links with pre-filled greeting messages and QR codes without saving contact numbers.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/whatsapp-link-generator",
+    "iconName": "MessageSquare",
+    "isFeatured": false
+  },
+  {
+    "id": "reddit-markdown-formatter",
+    "title": "Reddit Table & Spoilers Markdown Formatter",
+    "description": "Visual grid generator and syntax formatter for Reddit markdown tables, column alignments, pipe escaping, and official >!spoiler!< tags.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/reddit-markdown-formatter",
+    "iconName": "Table",
+    "isFeatured": false
+  },
+  {
+    "id": "telegram-link-generator",
+    "title": "Telegram Deep-Link & Pre-Filled Message Generator",
+    "description": "Generate custom t.me deep-links, bot launch parameters, universal share URLs, and pre-filled conversation messages with instant QR codes.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/telegram-link-generator",
+    "iconName": "Send",
+    "isFeatured": false
+  },
+  {
+    "id": "instagram-unfollower-checker",
+    "title": "Instagram Unfollowers & Data Export Delta Tracker",
+    "description": "Detect who unfollowed you on Instagram using your official data export ZIP. Features snapshot baseline comparison to isolate new unfollows without passwords or external servers.",
+    "category": "social-tools",
+    "href": "/tools/social-tools/instagram-unfollower-checker",
+    "iconName": "UserX",
+    "isFeatured": true
   }
-]
+]

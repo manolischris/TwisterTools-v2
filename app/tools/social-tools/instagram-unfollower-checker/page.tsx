@@ -2,52 +2,55 @@ import type { Metadata } from "next";
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
-import { ArrowLeftRight } from "lucide-react";
-import CompareTwoLists from "@/components/tools/CompareTwoLists";
+import { UserX } from "lucide-react";
+import InstagramUnfollowersTracker from "@/components/tools/InstagramUnfollowersTracker";
 import RelatedTools from "@/components/RelatedTools";
 import CopyLinkButton from "@/components/CopyLinkButton";
 
-const TOOL_TITLE = "Compare Two Lists & Set Difference Finder";
-const TOOL_SLUG = "compare-two-lists";
+const TOOL_TITLE = "Instagram Unfollowers & Data Export Delta Tracker";
+const TOOL_SLUG = "instagram-unfollower-checker";
 const TOOL_DESCRIPTION =
-  "Compare two text lists online to find missing entries, duplicate items, intersections, unions, and set differences.";
+  "Detect who unfollowed you on Instagram using your official data export ZIP. Features snapshot baseline comparison to isolate new unfollows without passwords or external servers.";
+const TOOL_META_TITLE =
+  "Instagram Unfollowers & Data Export Delta Tracker";
 const TOOL_META_DESCRIPTION =
-  "Compare two text lists online to find missing entries, duplicate items, intersections, unions, and set differences. 100% private, client-side processing.";
+  "Detect who unfollowed you on Instagram using your official data export ZIP. Features snapshot baseline comparison to isolate new unfollows without passwords or external servers.";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const canonicalUrl = `https://www.twistertools.com/tools/text-tools/${TOOL_SLUG}`;
+  const canonicalUrl = "https://www.twistertools.com/tools/social-tools/instagram-unfollower-checker";
   const imageBasePath = path.join(
     process.cwd(),
     "public",
     "images",
     "tools",
-    "text-tools",
+    "social-tools",
     TOOL_SLUG
   );
   const webpPath = `${imageBasePath}.webp`;
   const jpgPath = `${imageBasePath}.jpg`;
   const ogImageUrl = fs.existsSync(webpPath)
-    ? `https://www.twistertools.com/images/tools/text-tools/${TOOL_SLUG}.webp`
+    ? `https://www.twistertools.com/images/tools/social-tools/${TOOL_SLUG}.webp`
     : fs.existsSync(jpgPath)
-      ? `https://www.twistertools.com/images/tools/text-tools/${TOOL_SLUG}.jpg`
+      ? `https://www.twistertools.com/images/tools/social-tools/${TOOL_SLUG}.jpg`
       : "https://www.twistertools.com/images/og-default.jpg";
 
   return {
-    title: TOOL_TITLE,
+    title: TOOL_META_TITLE,
     description: TOOL_META_DESCRIPTION,
     keywords: [
-      "compare two lists",
-      "set difference finder",
-      "list difference tool",
-      "list intersection tool",
-      "text list compare",
+      "instagram unfollowers tracker",
+      "instagram unfollower checker",
+      "meta data export unfollowers",
+      "who unfollowed me instagram zip",
+      "instagram delta unfollow tracker",
+      "instagram non-reciprocal accounts",
       "twistertools"
     ],
     alternates: {
       canonical: canonicalUrl
     },
     openGraph: {
-      title: `${TOOL_TITLE} | TwisterTools`,
+      title: `${TOOL_META_TITLE} | TwisterTools`,
       description: TOOL_META_DESCRIPTION,
       url: canonicalUrl,
       siteName: "TwisterTools",
@@ -63,15 +66,15 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${TOOL_TITLE} | TwisterTools`,
+      title: `${TOOL_META_TITLE} | TwisterTools`,
       description: TOOL_META_DESCRIPTION,
       images: [ogImageUrl]
     }
   };
 }
 
-export default function CompareTwoListsPage() {
-  const toolUrl = `https://www.twistertools.com/tools/text-tools/${TOOL_SLUG}`;
+export default function InstagramUnfollowerCheckerPage() {
+  const toolUrl = "https://www.twistertools.com/tools/social-tools/instagram-unfollower-checker";
 
   return (
     <div className="min-h-screen bg-background">
@@ -91,8 +94,8 @@ export default function CompareTwoListsPage() {
                 Home
               </Link>
               <span className="text-slate-300 dark:text-slate-600">/</span>
-              <Link className="max-w-32.5 truncate font-medium transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 sm:max-w-50 md:max-w-none" href="/tools/text-tools">
-                Text Analysis, List Comparison & Editing Tools
+              <Link className="max-w-32.5 truncate font-medium transition-colors hover:text-indigo-600 dark:hover:text-indigo-400 sm:max-w-50 md:max-w-none" href="/tools/social-tools">
+                Social Media &amp; Content Creator Tools
               </Link>
               <span className="text-slate-300 dark:text-slate-600">/</span>
               <span className="max-w-32.5 truncate font-semibold text-slate-800 dark:text-slate-200 sm:max-w-50 md:max-w-none">
@@ -103,7 +106,7 @@ export default function CompareTwoListsPage() {
             {/* Tool Title Row */}
             <div className="flex items-start gap-3 sm:gap-4">
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-indigo-200/80 bg-gradient-to-br from-indigo-50 to-white p-1 shadow-xs shadow-indigo-100/60 dark:border-indigo-900/50 dark:from-slate-800 dark:to-slate-900 sm:h-14 sm:w-14 sm:rounded-2xl sm:p-2">
-                <ArrowLeftRight className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                <UserX className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
               </div>
 
               <div className="min-w-0 flex-1">
@@ -118,13 +121,14 @@ export default function CompareTwoListsPage() {
           </div>
         </div>
       </div>
-      
 
+      {/* Main Content Workspace Container */}
       <main className="mx-auto max-w-7xl px-4 py-4 sm:px-6 md:px-8 md:py-6">
         <div className="mx-auto max-w-6xl space-y-8">
-          <CompareTwoLists />
+          <InstagramUnfollowersTracker />
 
-          <div className="rounded-2xl border border-slate-200 bg-linear-to-br from-slate-50 to-white p-5 shadow-sm dark:border-slate-700 dark:from-slate-900 dark:to-slate-800">
+          {/* Social Share Bar */}
+          <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-5 shadow-sm dark:border-slate-700 dark:from-slate-900 dark:to-slate-800">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
               <p className="flex-1 text-sm text-slate-600 dark:text-slate-400">
                 Found this tool helpful?{" "}
@@ -132,6 +136,7 @@ export default function CompareTwoListsPage() {
               </p>
 
               <div className="flex shrink-0 items-center gap-2">
+                {/* Facebook */}
                 <div className="group relative">
                   <a
                     href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(toolUrl)}`}
@@ -150,9 +155,10 @@ export default function CompareTwoListsPage() {
                   </span>
                 </div>
 
+                {/* X / Twitter */}
                 <div className="group relative">
                   <a
-                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(toolUrl)}&text=${encodeURIComponent("Check out this free Compare Two Lists & Set Difference Finder tool!")}`}
+                    href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(toolUrl)}&text=${encodeURIComponent("Check out this free Instagram Unfollowers & Data Export Delta Tracker tool!")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on X"
@@ -168,6 +174,7 @@ export default function CompareTwoListsPage() {
                   </span>
                 </div>
 
+                {/* LinkedIn */}
                 <div className="group relative">
                   <a
                     href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(toolUrl)}`}
@@ -186,6 +193,7 @@ export default function CompareTwoListsPage() {
                   </span>
                 </div>
 
+                {/* Copy URL */}
                 <div className="group relative">
                   <CopyLinkButton url={toolUrl} />
                   <span className="pointer-events-none absolute -top-9 left-1/2 z-10 -translate-x-1/2 whitespace-nowrap rounded-md bg-slate-900 px-2 py-1 text-[11px] font-medium text-white opacity-0 shadow-lg transition-opacity duration-150 group-hover:opacity-100 dark:bg-slate-700">
@@ -197,7 +205,7 @@ export default function CompareTwoListsPage() {
             </div>
           </div>
 
-          <RelatedTools currentSlug={TOOL_SLUG} currentCategory="text-tools" />
+          <RelatedTools currentSlug={TOOL_SLUG} currentCategory="social-tools" />
         </div>
       </main>
     </div>

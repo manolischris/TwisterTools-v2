@@ -115,7 +115,8 @@ import { Link as LinkIcon,
   KeyRound,
   Network,
   ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, AtSign, Phone, ListFilter, AlignLeft, Replace, Key, Radio, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer, MessageSquare } from "lucide-react";
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, AtSign, Phone, ListFilter, AlignLeft, Replace, Key, Radio, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer, MessageSquare, Send, UserX } from "lucide-react";
+// Import master tool registry (automatically synchronized for pure text comparison utilities)
 import toolsRegistry from "@/lib/tools-registry.json";
 
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
@@ -126,6 +127,7 @@ const ICON_MAP: Record<string, any> = {
   Youtube: YoutubeIcon,
   Twitter: TwitterIcon,
   MessageSquare,
+  Send,
   CircleDot,
   ScanText,
   Network,
@@ -256,7 +258,8 @@ const ICON_MAP: Record<string, any> = {
   Fuel,
   Grid3X3,
   Shovel,
-  Maximize2
+  Maximize2,
+  UserX
 };
 
 interface RelatedToolsProps {

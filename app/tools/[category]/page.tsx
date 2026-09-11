@@ -113,7 +113,7 @@ import {
   Trophy,
   FileCode2,
   ScanText,
-  Shuffle, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer, Video, MessageSquare, Tv
+  Shuffle, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer, Video, MessageSquare, Tv, Send, UserX
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -134,6 +134,7 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Twitter: TwitterIcon,
   Tv,
   MessageSquare,
+  Send,
   FileCode2,
   Maximize2,
   Printer,
@@ -251,7 +252,8 @@ const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Table,
   ScanText,
   Shuffle,
-  Video
+  Video,
+  UserX
 };
 
 // Centralized Category Metadata Registry matching all categories from url-map.json

@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video, MessageSquare, Tv, Image as ImageIcon } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video, MessageSquare, Tv, Send, Image as ImageIcon } from "lucide-react";
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
@@ -166,6 +166,8 @@ const YouTubeTimestampChapterGenerator = dynamic(() => import("@/components/tool
 const DiscordMarkdownStyler = dynamic(() => import("@/components/tools/DiscordMarkdownStyler"));
 const LinkedInPostFormatter = dynamic(() => import("@/components/tools/LinkedInPostFormatter"));
 const TwitchEmoteResizer = dynamic(() => import("@/components/tools/TwitchEmoteResizer"));
+const WhatsAppLinkGenerator = dynamic(() => import("@/components/tools/WhatsAppLinkGenerator"));
+const TelegramLinkGenerator = dynamic(() => import("@/components/tools/TelegramLinkGenerator"));
 
 
 
@@ -340,6 +342,8 @@ const COMPLETED_TOOLS = [
   "discord-markdown-styler",
   "linkedin-post-formatter",
   "twitch-emote-resizer",
+  "whatsapp-link-generator",
+  "telegram-link-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -794,6 +798,11 @@ export async function generateMetadata({
     description = "Convert artwork into verified 28px, 56px, and 112px transparent PNG emotes with live Twitch dark mode chat emulation.";
   }
 
+  if (category === "social-tools" && toolSlug === "whatsapp-link-generator") {
+    title = "WhatsApp Direct Chat Link Generator";
+    description = "Generate instant wa.me click-to-chat WhatsApp links with pre-filled greeting messages and QR codes without saving contact numbers.";
+  }
+
   return {
     title,
     description,
@@ -1071,6 +1080,11 @@ export default async function ToolPage({
   if (category === "image-tools" && toolSlug === "webp-to-png-converter") {
     tool.name = "Lossless WebP to PNG Batch Converter";
     tool.description = "Convert WebP images to lossless 32-bit PNG format in batch directly in your browser. 100% client-side privacy, zero server uploads, and ZIP archive download.";
+  }
+
+  if (category === "social-tools" && toolSlug === "whatsapp-link-generator") {
+    tool.name = "WhatsApp Direct Chat Link Generator";
+    tool.description = "Generate instant wa.me click-to-chat WhatsApp links with pre-filled greeting messages and QR codes without saving contact numbers.";
   }
 
   // Get category display name matching blueprint's modern taxonomies exactly
@@ -1680,6 +1694,10 @@ export default async function ToolPage({
                   <Type className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "twitch-emote-resizer" ? (
                   <ImageIcon className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "whatsapp-link-generator" ? (
+                  <MessageSquare className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "telegram-link-generator" ? (
+                  <Send className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
                   <Binary className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (
@@ -2012,6 +2030,10 @@ export default async function ToolPage({
             <LinkedInPostFormatter />
           ) : category === "social-tools" && toolSlug === "twitch-emote-resizer" ? (
             <TwitchEmoteResizer />
+          ) : category === "social-tools" && toolSlug === "whatsapp-link-generator" ? (
+            <WhatsAppLinkGenerator />
+          ) : category === "social-tools" && toolSlug === "telegram-link-generator" ? (
+            <TelegramLinkGenerator />
           ) : category === "generator-tools" && toolSlug === "uuid-generator" ? (
 
             <UuidGenerator />

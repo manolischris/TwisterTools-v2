@@ -91,8 +91,8 @@ const textToolsMeta = {
       a: "No. All list parsing, comparisons, and formatting are executed inside your browser session."
     },
     {
-      q: "Can I compare Instagram followers and following exports?",
-      a: "Yes. The Compare Two Lists tool supports Instagram export parsing and ZIP-based extraction workflows."
+      q: "How does list comparison privacy work?",
+      a: "All set comparisons, intersections, and deduplications are computed 100% locally in your browser memory."
     },
     {
       q: "Is there a line limit for list comparison?",
@@ -114,7 +114,7 @@ export default function TextToolsCategoryPage() {
           ...tool,
           title: "Compare Two Lists & Set Difference Finder",
           description:
-            "Compare two lists online to find missing items, set differences, intersections, and unfollowers from Instagram data exports.",
+            "Compare two text lists online to find missing entries, duplicate items, intersections, unions, and set differences. 100% private, client-side processing.",
           iconName: "ArrowLeftRight"
         };
       }

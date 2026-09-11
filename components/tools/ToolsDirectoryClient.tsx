@@ -134,7 +134,7 @@ import { Link as LinkIcon,
   KeyRound,
   Network,
   ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, Palette, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer, MessageSquare } from "lucide-react";
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, Palette, Tv, Keyboard, Fuel, Grid3X3, Shovel, Maximize2, VectorSquare, Printer, MessageSquare, Send, UserX } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
    Types
@@ -159,6 +159,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Youtube: YoutubeIcon,
   Twitter: TwitterIcon,
   MessageSquare,
+  Send,
   ScanText,
   Network,
   KeyRound,
@@ -297,7 +298,8 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Fuel,
   Grid3X3,
   Shovel,
-  Maximize2
+  Maximize2,
+  UserX
 };
 
 /* ─────────────────────────────────────────────────────────

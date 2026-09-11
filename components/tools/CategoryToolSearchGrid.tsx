@@ -132,7 +132,7 @@ import { Link as LinkIcon,
   KeyRound,
   Network,
   ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, MapPin, QrCode, CalendarClock, ListStart, Share2, Tv, Fuel, Maximize2, VectorSquare, Printer, MessageSquare } from "lucide-react";
+  Trophy, CircleDot, PenTool, Smile, Gamepad2, MapPin, QrCode, CalendarClock, ListStart, Share2, Tv, Fuel, Maximize2, VectorSquare, Printer, MessageSquare, Send, UserX } from "lucide-react";
 
 // Explicit interface for dynamic tools registry entry
 interface RegistryTool {
@@ -156,6 +156,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Youtube: YoutubeIcon,
   Twitter: TwitterIcon,
   MessageSquare,
+  Send,
   CircleDot,
   Network,
   KeyRound,
@@ -295,7 +296,8 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   Tv,
   Fuel,
   Maximize2,
-  ScanText
+  ScanText,
+  UserX
 };
 
 export default function CategoryToolSearchGrid({

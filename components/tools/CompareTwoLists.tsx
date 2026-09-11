@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useCallback, useRef, useEffect } from "react";
-import JSZip from "jszip";
 import {
   ArrowLeftRight,
   Upload,
@@ -11,26 +10,12 @@ import {
   RefreshCw,
   Download,
   ShieldCheck,
-  FileCode,
-  FileJson,
-  CheckCircle2,
-  XCircle,
-  HelpCircle,
-  Zap,
-  Shield,
-  Layers,
-  ListFilter,
-  AtSign,
-  FileArchive,
-  AlertTriangle,
   Info,
   Database,
-  Search,
   Cpu,
   Table,
   Workflow,
-  Sparkles,
-  BookOpen,
+  HelpCircle,
 } from "lucide-react";
 
 // ─────────────────────────────────────────────────────────────
@@ -44,155 +29,6 @@ interface ProcessingOptions {
   trimWhitespace: boolean;
   removeDuplicates: boolean;
   sortOutput: boolean;
-  instagramMode: boolean;
-}
-
-/**
- * Robustly extracts clean Instagram usernames from JSON structures, HTML documents, or text lists.
- */
-function extractInstagramUsernames(text: string): string[] {
-  if (!text || !text.trim()) return [];
-
-  const usernames = new Set<string>();
-  const isIgnoredHandle = (handle: string) =>
-    [
-      "_u",
-      "explore",
-      "direct",
-      "reels",
-      "stories",
-      "p",
-      "tv",
-      "developer",
-      "about",
-      "help",
-      "legal",
-      "privacy",
-      "terms",
-      "locations",
-      "instagram",
-    ].includes(handle.toLowerCase());
-
-  // 1. JSON Export Parser
-  try {
-    const json = JSON.parse(text);
-    const extractFromObj = (obj: unknown) => {
-      if (!obj) return;
-      if (typeof obj === "string") {
-        if (obj.startsWith("http") && obj.includes("instagram.com/")) {
-          const match = obj.match(/instagram\.com\/(?:_u\/)?([^/?#]+)/);
-          if (match && match[1] && !isIgnoredHandle(match[1])) {
-            usernames.add(match[1]);
-          }
-        }
-      } else if (Array.isArray(obj)) {
-        obj.forEach(extractFromObj);
-      } else if (typeof obj === "object") {
-        const record = obj as Record<string, unknown>;
-        if (typeof record.value === "string" && record.value.trim()) {
-          const val = record.value.trim().replace(/^@/, "");
-          if (/^[a-zA-Z0-9_.-]{1,30}$/.test(val) && !isIgnoredHandle(val)) {
-            usernames.add(val);
-          }
-        }
-        if (typeof record.string_list_data === "object" && Array.isArray(record.string_list_data)) {
-          record.string_list_data.forEach((item) => {
-            if (item && typeof item.value === "string" && item.value.trim()) {
-              const val = item.value.trim().replace(/^@/, "");
-              if (/^[a-zA-Z0-9_.-]{1,30}$/.test(val) && !isIgnoredHandle(val)) {
-                usernames.add(val);
-              }
-            }
-            if (item && typeof item.href === "string") {
-              const match = item.href.match(/instagram\.com\/(?:_u\/)?([^/?#]+)/);
-              if (match && match[1] && !isIgnoredHandle(match[1])) {
-                usernames.add(match[1]);
-              }
-            }
-          });
-        }
-        Object.values(record).forEach(extractFromObj);
-      }
-    };
-    extractFromObj(json);
-    if (usernames.size > 0) return Array.from(usernames);
-  } catch {
-    // Not valid JSON, proceed to HTML/Text DOM parsing
-  }
-
-  // 2. Client-Side HTML DOM Parser (for HTML data exports)
-  if (typeof window !== "undefined" && (text.includes("<html") || text.includes("<div") || text.includes("<table") || text.includes("<a"))) {
-    try {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, "text/html");
-
-      // Strategy A: Check H2 headers (Instagram HTML export format for following.html)
-      const h2Elements = doc.querySelectorAll("h2");
-      h2Elements.forEach((h2) => {
-        const txt = h2.textContent?.trim().replace(/^@/, "") || "";
-        if (/^[a-zA-Z0-9_.-]{1,30}$/.test(txt) && !isIgnoredHandle(txt)) {
-          usernames.add(txt);
-        }
-      });
-
-      // Strategy B: Check HTML links pointing to instagram.com/_u/username or instagram.com/username
-      const anchors = doc.querySelectorAll("a[href*='instagram.com']");
-      anchors.forEach((a) => {
-        const href = a.getAttribute("href") || "";
-        const match = href.match(/instagram\.com\/(?:_u\/)?([^/?#]+)/);
-        if (match && match[1] && !isIgnoredHandle(match[1])) {
-          usernames.add(match[1]);
-        } else {
-          const anchorText = a.textContent?.trim().replace(/^@/, "") || "";
-          if (/^[a-zA-Z0-9_.-]{1,30}$/.test(anchorText) && !isIgnoredHandle(anchorText)) {
-            usernames.add(anchorText);
-          }
-        }
-      });
-
-      // Strategy C: Table cells (Instagram HTML exports format: Username / Όνομα χρήστη)
-      const rows = doc.querySelectorAll("tr, div._a6-g, div.pam");
-      rows.forEach((row) => {
-        const cells = Array.from(row.querySelectorAll("td, div, span"));
-        for (let i = 0; i < cells.length; i++) {
-          const cellText = cells[i].textContent?.trim().toLowerCase() || "";
-          if (cellText.includes("username") || cellText.includes("όνομα χρήστη")) {
-            const valueCell = cells[i + 1] || cells[i];
-            const candidate = valueCell?.textContent?.trim().replace(/^@/, "") || "";
-            if (/^[a-zA-Z0-9_.-]{1,30}$/.test(candidate) && !isIgnoredHandle(candidate)) {
-              usernames.add(candidate);
-            }
-          }
-        }
-      });
-
-      if (usernames.size > 0) return Array.from(usernames);
-    } catch {
-      /* Fallback to regex if DOMParser fails */
-    }
-  }
-
-  // 3. Fallback Regex for URL patterns
-  const hrefRegex = /href=["'](?:https?:\/\/)?(?:www\.)?instagram\.com\/(?:_u\/)?([a-zA-Z0-9_.-]+)\/?["']/gi;
-  let match: RegExpExecArray | null;
-  while ((match = hrefRegex.exec(text)) !== null) {
-    if (match[1] && !isIgnoredHandle(match[1])) {
-      usernames.add(match[1]);
-    }
-  }
-
-  // 4. Plain Text Fallback
-  if (usernames.size === 0) {
-    const lines = text.split(/\r?\n/);
-    lines.forEach((line) => {
-      const trimmed = line.trim().replace(/^@/, "");
-      if (/^[a-zA-Z0-9_.-]{1,30}$/.test(trimmed) && !isIgnoredHandle(trimmed)) {
-        usernames.add(trimmed);
-      }
-    });
-  }
-
-  return Array.from(usernames);
 }
 
 /**
@@ -201,13 +37,7 @@ function extractInstagramUsernames(text: string): string[] {
 function parseList(rawText: string, options: ProcessingOptions): string[] {
   if (!rawText.trim()) return [];
 
-  let items: string[] = [];
-
-  if (options.instagramMode) {
-    items = extractInstagramUsernames(rawText);
-  } else {
-    items = rawText.split(/\r?\n/);
-  }
+  let items = rawText.split(/\r?\n/);
 
   items = items
     .map((item) => (options.trimWhitespace ? item.trim() : item))
@@ -268,19 +98,14 @@ export default function CompareTwoLists() {
     trimWhitespace: true,
     removeDuplicates: true,
     sortOutput: true,
-    instagramMode: false,
   });
 
   // ── Output & UI State ──
   const [outputItems, setOutputItems] = useState<string[]>([]);
   const [copied, setCopied] = useState(false);
-  const [isProcessingZip, setIsProcessingZip] = useState(false);
-  const [zipMessage, setZipMessage] = useState<string | null>(null);
-  const [zipError, setZipError] = useState<string | null>(null);
 
   const fileInputARef = useRef<HTMLInputElement>(null);
   const fileInputBRef = useRef<HTMLInputElement>(null);
-  const zipInputRef = useRef<HTMLInputElement>(null);
 
   // ── Set Operation Calculations ──
   const processComparison = useCallback(() => {
@@ -301,13 +126,13 @@ export default function CompareTwoLists() {
       case "listB":
         result = itemsB;
         break;
-      case "aOnly": // A \ B (In A, missing in B - e.g., Unfollowers)
+      case "aOnly": // A \ B (In A, missing in B)
         result = itemsA.filter((item) => !setBKeys.has(getCompareKey(item)));
         break;
-      case "bOnly": // B \ A (In B, missing in A - e.g., Fans/Non-reciprocated by A)
+      case "bOnly": // B \ A (In B, missing in A)
         result = itemsB.filter((item) => !setAKeys.has(getCompareKey(item)));
         break;
-      case "intersection": // A ∩ B (Common to both - Mutuals)
+      case "intersection": // A ∩ B (Common to both)
         result = itemsA.filter((item) => setBKeys.has(getCompareKey(item)));
         break;
       case "union": // A ∪ B (Combined Unique)
@@ -361,98 +186,10 @@ export default function CompareTwoLists() {
     const reader = new FileReader();
     reader.onload = (event) => {
       const text = event.target?.result as string;
-      if (options.instagramMode || file.name.endsWith(".html") || file.name.endsWith(".json")) {
-        const cleanedUsernames = extractInstagramUsernames(text);
-        if (cleanedUsernames.length > 0) {
-          const joined = cleanedUsernames.join("\n");
-          if (target === "A") setListAText(joined);
-          else setListBText(joined);
-          return;
-        }
-      }
       if (target === "A") setListAText(text);
       else setListBText(text);
     };
     reader.readAsText(file);
-  };
-
-  // ── Instagram Zip Unpacker (Safe Client-Side Unfollow Finder) ──
-  const handleZipUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    setIsProcessingZip(true);
-    setZipError(null);
-    setZipMessage("Unzipping Instagram archive securely in your browser...");
-
-    try {
-      const zip = new JSZip();
-      const unzipped = await zip.loadAsync(file);
-
-      let rawFollowersContent = "";
-      let rawFollowingContent = "";
-
-      const filePaths = Object.keys(unzipped.files);
-
-      for (const path of filePaths) {
-        const filename = path.split("/").pop()?.toLowerCase() || "";
-
-        // Precise filename matching regardless of parent directory structure
-        if (
-          filename === "followers_1.html" ||
-          filename === "followers_1.json" ||
-          filename === "followers.html" ||
-          filename === "followers.json"
-        ) {
-          rawFollowersContent += "\n" + (await unzipped.files[path].async("text"));
-        }
-
-        if (
-          filename === "following.html" ||
-          filename === "following.json" ||
-          filename === "following_1.html" ||
-          filename === "following_1.json"
-        ) {
-          rawFollowingContent += "\n" + (await unzipped.files[path].async("text"));
-        }
-      }
-
-      if (!rawFollowersContent && !rawFollowingContent) {
-        throw new Error(
-          "Could not find followers or following files in the zip archive. Please ensure you uploaded an official Instagram Data Export ZIP."
-        );
-      }
-
-      // Automatically enable Instagram Mode
-      setOptions((prev) => ({ ...prev, instagramMode: true }));
-
-      // Extract clean usernames BEFORE assigning to textarea state
-      const followersUsernames = extractInstagramUsernames(rawFollowersContent);
-      const followingUsernames = extractInstagramUsernames(rawFollowingContent);
-
-      if (followersUsernames.length === 0 && followingUsernames.length === 0) {
-        throw new Error(
-          "Could not parse any valid usernames from the extracted archive files. Make sure the ZIP contains official Instagram data."
-        );
-      }
-
-      setListBText(followersUsernames.join("\n")); // Followers in List B
-      setListAText(followingUsernames.join("\n")); // Following in List A
-      setActiveTab("aOnly"); // Show accounts you follow who don't follow back (Unfollowers)
-
-      setZipMessage(
-        `Successfully extracted ${followingUsernames.length} Following and ${followersUsernames.length} Followers! Displaying accounts you follow who do not follow back.`
-      );
-    } catch (err) {
-      setZipError(
-        err instanceof Error
-          ? err.message
-          : "Failed to process ZIP archive. Make sure it is a valid zip file."
-      );
-      setZipMessage(null);
-    } finally {
-      setIsProcessingZip(false);
-    }
   };
 
   // ── Clipboard & Download ──
@@ -481,73 +218,16 @@ export default function CompareTwoLists() {
   const loadSample = () => {
     setListAText(SAMPLE_LIST_A);
     setListBText(SAMPLE_LIST_B);
-    setZipMessage(null);
-    setZipError(null);
   };
 
   const clearWorkspace = () => {
     setListAText("");
     setListBText("");
     setOutputItems([]);
-    setZipMessage(null);
-    setZipError(null);
   };
 
   return (
     <div className="w-full space-y-8">
-      {/* ── Global Banner for ZIP / Instagram Quick Action ── */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 rounded-2xl p-5 shadow-xl text-white">
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-md flex-shrink-0">
-              <FileArchive className="w-5 h-5 text-white" />
-            </div>
-            <div>
-              <h3 className="text-base font-semibold flex items-center gap-2">
-                Instagram Followers & ZIP Archive Parser
-                <span className="bg-indigo-500/30 text-indigo-300 text-xs px-2.5 py-0.5 rounded-full font-medium">
-                  100% Client-Side
-                </span>
-              </h3>
-              <p className="text-xs text-slate-300 mt-0.5">
-                Upload your Instagram data ZIP file (HTML or JSON) to instantly detect non-reciprocal accounts (unfollowers) without sharing passwords.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3 w-full md:w-auto">
-            <input aria-label="Instagram Zip Input"
-              ref={zipInputRef}
-              type="file"
-              accept=".zip"
-              className="hidden"
-              onChange={handleZipUpload}
-              id="instagram-zip-input"
-            />
-            <button
-              onClick={() => zipInputRef.current?.click()}
-              disabled={isProcessingZip}
-              className="w-full md:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-all duration-200 shadow-md min-h-[40px] disabled:opacity-50"
-            >
-              <Upload className="w-4 h-4" />
-              {isProcessingZip ? "Unzipping Archive..." : "Upload IG Data ZIP"}
-            </button>
-          </div>
-        </div>
-
-        {zipMessage && (
-          <div className="mt-4 bg-emerald-500/10 text-emerald-300 rounded-xl p-3 text-xs flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-            <span>{zipMessage}</span>
-          </div>
-        )}
-        {zipError && (
-          <div className="mt-4 bg-rose-500/10 border border-rose-500/30 text-rose-300 rounded-xl p-3 text-xs flex items-center gap-2">
-            <AlertTriangle className="w-4 h-4 text-rose-400 flex-shrink-0" />
-            <span>{zipError}</span>
-          </div>
-        )}
-      </div>
-
       {/* ── Two-Column Workspace Grid ── */}
       <div className="grid lg:grid-cols-2 gap-6 items-start">
         {/* ══════════════════ LEFT PANEL: LIST A & LIST B INPUTS ══════════════════ */}
@@ -560,14 +240,14 @@ export default function CompareTwoLists() {
                   <span className="text-xs font-bold text-indigo-700">A</span>
                 </div>
                 <span className="text-xs sm:text-sm font-semibold text-slate-900">
-                  First List (List A / Following)
+                  First List (List A)
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <input aria-label="Upload file"
                   ref={fileInputARef}
                   type="file"
-                  accept=".txt,.csv,.json,.html"
+                  accept=".txt,.csv"
                   className="hidden"
                   onChange={(e) => handleSingleFileUpload(e, "A")}
                 />
@@ -586,11 +266,7 @@ export default function CompareTwoLists() {
                 id="list-a-input"
                 value={listAText}
                 onChange={(e) => setListAText(e.target.value)}
-                placeholder={
-                  options.instagramMode
-                    ? "Paste HTML, JSON, or list of handles for List A (e.g. accounts you follow)..."
-                    : "Paste items for List A (one item per line)..."
-                }
+                placeholder="Paste items for List A (one item per line)..."
                 className="font-mono text-xs sm:text-sm h-[220px] focus:ring-2 focus:ring-indigo-600 outline-none p-3.5 w-full bg-slate-50 text-slate-800 border border-slate-200 rounded-xl resize-none"
               />
               <div className="flex items-center justify-between text-xs text-slate-500 px-1">
@@ -613,14 +289,14 @@ export default function CompareTwoLists() {
                   <span className="text-xs font-bold text-indigo-700">B</span>
                 </div>
                 <span className="text-xs sm:text-sm font-semibold text-slate-900">
-                  Second List (List B / Followers)
+                  Second List (List B)
                 </span>
               </div>
               <div className="flex items-center gap-2">
                 <input aria-label="Upload file"
                   ref={fileInputBRef}
                   type="file"
-                  accept=".txt,.csv,.json,.html"
+                  accept=".txt,.csv"
                   className="hidden"
                   onChange={(e) => handleSingleFileUpload(e, "B")}
                 />
@@ -639,11 +315,7 @@ export default function CompareTwoLists() {
                 id="list-b-input"
                 value={listBText}
                 onChange={(e) => setListBText(e.target.value)}
-                placeholder={
-                  options.instagramMode
-                    ? "Paste HTML, JSON, or list of handles for List B (e.g. accounts following you)..."
-                    : "Paste items for List B (one item per line)..."
-                }
+                placeholder="Paste items for List B (one item per line)..."
                 className="font-mono text-xs sm:text-sm h-[220px] focus:ring-2 focus:ring-indigo-600 outline-none p-3.5 w-full bg-slate-50 text-slate-800 border border-slate-200 rounded-xl resize-none"
               />
               <div className="flex items-center justify-between text-xs text-slate-500 px-1">
@@ -663,22 +335,7 @@ export default function CompareTwoLists() {
             <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider">
               Comparison & Parsing Rules
             </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-700">
-              <label className="flex items-center gap-2.5 cursor-pointer bg-slate-50 p-2.5 rounded-xl border border-slate-200 hover:bg-indigo-50/50 transition-colors">
-                <input aria-label="Instagram Mode"
-                  type="checkbox"
-                  checked={options.instagramMode}
-                  onChange={(e) =>
-                    setOptions((p) => ({ ...p, instagramMode: e.target.checked }))
-                  }
-                  className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500"
-                />
-                <span className="font-semibold text-slate-800 flex items-center gap-1.5">
-                  <AtSign className="w-3.5 h-3.5 text-pink-600" />
-                  Instagram Extractor
-                </span>
-              </label>
-
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-700">
               <label className="flex items-center gap-2.5 cursor-pointer bg-slate-50 p-2.5 rounded-xl border border-slate-200 hover:bg-indigo-50/50 transition-colors">
                 <input aria-label="Case Sensitive" type="checkbox"
                   checked={options.caseSensitive}
@@ -777,32 +434,32 @@ export default function CompareTwoLists() {
                 <span>
                   {activeTab === "aOnly" && (
                     <>
-                      <strong>In List A, but NOT in List B:</strong> Useful for finding who you follow on IG that doesn&apos;t follow you back (Unfollowers).
+                      <strong>Items in List A not found in List B (Relative Complement A \ B):</strong> Displays all elements unique to List A that do not exist in List B.
                     </>
                   )}
                   {activeTab === "bOnly" && (
                     <>
-                      <strong>In List B, but NOT in List A:</strong> Shows items unique to List B (e.g. Followers you don&apos;t follow back).
+                      <strong>Items in List B not found in List A (Relative Complement B \ A):</strong> Displays all elements unique to List B that do not exist in List A.
                     </>
                   )}
                   {activeTab === "intersection" && (
                     <>
-                      <strong>Common to Both Lists (Intersection):</strong> Items existing in both List A and List B (Mutuals).
+                      <strong>Common to Both Lists (Intersection A ∩ B):</strong> Displays items existing identically in both List A and List B.
                     </>
                   )}
                   {activeTab === "union" && (
                     <>
-                      <strong>Combined Unique Items (Union):</strong> Master list containing all distinct items from both datasets.
+                      <strong>Combined Unique Items (Union A ∪ B):</strong> Displays a master set containing all distinct entries from both datasets.
                     </>
                   )}
                   {activeTab === "symmetric" && (
                     <>
-                      <strong>Symmetric Difference:</strong> Items that exist in either List A or List B, but NOT in both.
+                      <strong>Symmetric Difference (A Δ B):</strong> Displays items that exist in either List A or List B, but NOT in both.
                     </>
                   )}
                   {activeTab === "listA" && (
                     <>
-                      <strong>Cleaned List A:</strong> Showing normalized items from List A.
+                      <strong>Cleaned List A:</strong> Showing normalized, deduplicated items from List A.
                     </>
                   )}
                 </span>
@@ -880,7 +537,7 @@ export default function CompareTwoLists() {
                   Relative Complement (Difference A - B)
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600">
-                  Computes all elements contained within set $A$ that do not exist in set $B$. Commonly used to isolate dropped leads, missing database entries, or accounts you follow who do not follow you back.
+                  Computes all elements contained within set $A$ that do not exist in set $B$. Commonly used to isolate dropped leads, missing database keys, or unfulfilled inventory SKUs.
                 </p>
               </div>
 
@@ -890,7 +547,7 @@ export default function CompareTwoLists() {
                   Relative Complement (Difference B - A)
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600">
-                  Computes all elements contained in set $B$ that are missing from set $A$. Ideal for identifying incoming audience fans, prospective additions, or target delta sets.
+                  Computes all elements contained in set $B$ that are missing from set $A$. Ideal for identifying incoming records, new subscriber entries, or target delta sets.
                 </p>
               </div>
 
@@ -900,7 +557,7 @@ export default function CompareTwoLists() {
                   Intersection (Mutual Matches)
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600">
-                  Isolates only the mutual items shared identically by both sets. Used for finding common subscribers, mutual followers, or identical API key registers.
+                  Isolates only the mutual items shared identically by both sets. Used for finding common subscribers, overlapping customer IDs, or identical API key registers.
                 </p>
               </div>
 
@@ -917,7 +574,7 @@ export default function CompareTwoLists() {
           </div>
         </div>
 
-        {/* Card 2: Technical Architecture & In-Memory Unpack Engine */}
+        {/* Card 2: Technical Architecture & In-Memory Parsing Pipeline */}
         <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 md:p-8 shadow-sm space-y-6 mb-6">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -931,55 +588,60 @@ export default function CompareTwoLists() {
             </p>
             <div className="grid md:grid-cols-4 gap-3 text-xs sm:text-sm">
               <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2">
-                <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">1</div>
-                <h3 className="font-semibold text-slate-900">1. Stream Decoding</h3>
-                <p className="text-slate-600 text-xs">Input streams or uploaded ZIP buffers are converted into raw text vectors without server transmission.</p>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs flex-shrink-0">1</div>
+                  <h3 className="font-semibold text-slate-900">Stream Decoding</h3>
+                </div>
+                <p className="text-slate-600 text-xs">Text buffers and uploaded .txt or .csv files are decoded into raw strings in local browser memory.</p>
               </div>
               <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2">
-                <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">2</div>
-                <h3 className="font-semibold text-slate-900">2. Pattern Extraction</h3>
-                <p className="text-slate-600 text-xs">DOM and Regex parsers strip HTML markup, tables, JSON keys, and timestamps to extract clean handles.</p>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs flex-shrink-0">2</div>
+                  <h3 className="font-semibold text-slate-900">Sanitization</h3>
+                </div>
+                <p className="text-slate-600 text-xs">Configured whitespace trimming, case normalization, and empty line filtering clean raw input vectors.</p>
               </div>
               <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2">
-                <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">3</div>
-                <h3 className="font-semibold text-slate-900">3. Hash Set Indexing</h3>
-                <p className="text-slate-600 text-xs">List items are loaded into JavaScript <code>Set</code> objects for instant constant-time $O(1)$ membership checks.</p>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs flex-shrink-0">3</div>
+                  <h3 className="font-semibold text-slate-900">Hash Set Indexing</h3>
+                </div>
+                <p className="text-slate-600 text-xs">List items are loaded into JavaScript <code>Set</code> structures for instant $O(1)$ constant-time membership checks.</p>
               </div>
               <div className="border border-slate-200 rounded-xl p-4 bg-slate-50/50 space-y-2">
-                <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs">4</div>
-                <h3 className="font-semibold text-slate-900">4. Set Result Output</h3>
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-indigo-600 text-white font-bold flex items-center justify-center text-xs flex-shrink-0">4</div>
+                  <h3 className="font-semibold text-slate-900">Set Result Output</h3>
+                </div>
                 <p className="text-slate-600 text-xs">Selected set difference logic executes instantly, returning deduplicated and sorted lists.</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Card 3: Safe Instagram Unfollower Auditing Protocol */}
+        {/* Card 3: Data Deduplication & Set Operation Best Practices */}
         <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 md:p-8 shadow-sm space-y-6 mb-6">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
               <ShieldCheck className="w-5 h-5 text-indigo-600" />
             </div>
-            <span>Zero-Risk Client-Side Instagram Follower & Unfollow Audit</span>
+            <span>Data Deduplication & Set Operation Best Practices</span>
           </h2>
           <div className="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
             <p>
-              Traditional online follower apps require users to input their account passwords or grant OAuth session cookies to external web servers. This practice frequently results in flagged accounts, action blocks, or compromise. 
-            </p>
-            <p>
-              Our tool provides a 100% legal, non-invasive alternative by working directly with your official Meta Data Export ZIP file:
+              Maintaining clean datasets is essential when executing email marketing campaigns, database reconciliations, or log analyses. Combining set theory operations with rigorous data sanitization prevents duplicate outreach, reduces database lockups, and guarantees key alignment across decoupled microservices.
             </p>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-3">
               <h3 className="font-semibold text-slate-800 text-sm flex items-center gap-2">
-                <Shield className="w-4 h-4 text-indigo-600" />
-                Step-by-Step Instagram Audit Instructions:
+                <Workflow className="w-4 h-4 text-indigo-600" />
+                Recommended List Reconciliation Workflow:
               </h3>
               <ol className="list-decimal pl-5 space-y-2 text-xs sm:text-sm text-slate-700">
-                <li>Log in to your Instagram mobile app or web browser and navigate to <strong>Settings & Privacy &gt; Accounts Center</strong>.</li>
-                <li>Select <strong>Your Information and Permissions &gt; Download Your Information</strong>.</li>
-                <li>Choose <strong>Export Specific Information</strong> and select <strong>Followers and Following</strong> (JSON or HTML format).</li>
-                <li>Once Meta emails you your official download link, save the <code>.zip</code> file onto your computer or phone.</li>
-                <li>Drop the <code>.zip</code> archive directly into our top upload bar. The tool automatically reads <code>followers.json/html</code> and <code>following.json/html</code> in local memory, presenting non-reciprocal accounts under the <strong>Only in A (Unfollowers)</strong> tab.</li>
+                <li>Paste master dataset entries into <strong>List A</strong> and comparison targets into <strong>List B</strong>.</li>
+                <li>Enable <strong>Trim Whitespace</strong> and <strong>Deduplicate Items</strong> to ensure clean match keys.</li>
+                <li>Select <strong>Case Sensitive</strong> if comparing alphanumeric UUIDs, hashes, or code tokens where letter casing matters.</li>
+                <li>Use <strong>Only in A (A \ B)</strong> to extract missing entries or suppression list targets.</li>
+                <li>Copy or download the resulting list directly for instant database import or spreadsheet reconciliation.</li>
               </ol>
             </div>
           </div>
@@ -1008,10 +670,10 @@ export default function CompareTwoLists() {
               </thead>
               <tbody>
                 {[
-                  ["Difference (A \\ B)", "A - B", "Find Instagram Unfollowers / Missing Keys", "Items present in List A, but missing from List B"],
-                  ["Difference (B \\ A)", "B - A", "Identify Non-Followed Fans / New Leads", "Items present in List B, but missing from List A"],
-                  ["Intersection (A ∩ B)", "A ∩ B", "Mutual Followers / Shared Database Keys", "Items appearing in both List A and List B"],
-                  ["Union (A ∪ B)", "A ∪ B", "Merge Email Subscribers / Master Lists", "All distinct items combined from both lists"],
+                  ["Difference (A \\ B)", "A - B", "Reconcile Master vs Target Discrepancies", "Items present in List A, but missing from List B"],
+                  ["Difference (B \\ A)", "B - A", "Identify Unmatched Incoming Records", "Items present in List B, but missing from List A"],
+                  ["Intersection (A ∩ B)", "A ∩ B", "Mutual Subscribers / Shared Database Keys", "Items appearing in both List A and List B"],
+                  ["Union (A ∪ B)", "A ∪ B", "Merge Email Campaigns / Master Catalogs", "All distinct items combined from both lists"],
                   ["Symmetric Diff (A Δ B)", "(A\\B) ∪ (B\\A)", "Audit System Sync Discrepancies", "Items unique to either list, excluding common matches"],
                   ["Cleaned List A", "A", "Remove Empty Lines & Deduplicate List A", "Normalized, deduplicated, and sorted List A"],
                 ].map((row, idx) => (
@@ -1034,7 +696,7 @@ export default function CompareTwoLists() {
           </div>
         </div>
 
-        {/* Card 5: Enterprise Engineering & Audience Growth Applications */}
+        {/* Card 5: Enterprise Engineering Applications */}
         <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-6 md:p-8 shadow-sm space-y-6 mb-6">
           <h2 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
             <div className="w-9 h-9 rounded-xl bg-indigo-100 flex items-center justify-center flex-shrink-0">
@@ -1046,7 +708,7 @@ export default function CompareTwoLists() {
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
               <h3 className="font-semibold text-slate-900 text-sm">Database Migration Auditing</h3>
               <p className="text-xs sm:text-sm text-slate-600">
-                Compare exported SQL primary key columns against Elasticsearch indices to verify 100% data sync completion during backend migrations.
+                Compare exported SQL primary key columns against search indices to verify 100% data sync completion during backend migrations.
               </p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
@@ -1056,9 +718,9 @@ export default function CompareTwoLists() {
               </p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
-              <h3 className="font-semibold text-slate-900 text-sm">Social Media Audience Hygiene</h3>
+              <h3 className="font-semibold text-slate-900 text-sm">Inventory & SKU Reconciliation</h3>
               <p className="text-xs sm:text-sm text-slate-600">
-                Keep your creator or business profile ratio balanced by identifying non-reciprocal accounts safely without third-party login apps.
+                Identify unfulfilled warehouse stock items or catalog discrepancies between e-commerce feeds and ERP system records.
               </p>
             </div>
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-5 space-y-2">
@@ -1081,24 +743,24 @@ export default function CompareTwoLists() {
           <div className="space-y-4">
             {[
               {
-                q: "Is it safe and legal to upload my Instagram Data ZIP file to this tool?",
-                a: "Yes, 100% safe and legal. The unzipping and HTML/JSON parsing execute locally inside your browser's JavaScript engine using JSZip. No data or credentials are transmitted to any cloud server or stored anywhere.",
-              },
-              {
                 q: "Can this tool handle large email lists or log files?",
                 a: "Yes. The parsing algorithm runs in client memory with O(N) lookup efficiency. It can comfortably process and compare lists containing over 100,000 items without browser slowdown.",
               },
               {
-                q: "What file formats are supported for list extraction?",
-                a: "You can upload standard plain text files (.txt), CSV spreadsheets (.csv), JSON data files (.json), HTML files (.html), or complete compressed archives (.zip).",
+                q: "Is my list data kept private?",
+                a: "100% private. All parsing and set operations execute locally within your web browser. No data or lists are ever uploaded to an external server or stored anywhere.",
               },
               {
-                q: "Does this violate Instagram Terms of Service?",
-                a: "No. This tool does not perform automated scraping, API calls, or unauthorized account access. It simply provides a local math utility for analyzing official data files you download directly from your own account.",
+                q: "What file formats are supported for list loading?",
+                a: "You can upload standard plain text files (.txt) or CSV spreadsheet listings (.csv), as well as copy-pasting raw text columns directly into the input textareas.",
               },
               {
                 q: "What is the difference between Case-Sensitive and Case-Insensitive comparison?",
-                a: "In case-sensitive mode, 'User@Example.com' and 'user@example.com' are treated as two distinct items. In case-insensitive mode (default), all strings are normalized to lowercase prior to set calculation.",
+                a: "In case-sensitive mode, 'User@Example.com' and 'user@example.com' are treated as two distinct items. In case-insensitive mode (default), all strings are normalized prior to set calculation.",
+              },
+              {
+                q: "How does whitespace trimming work?",
+                a: "When 'Trim Whitespace' is enabled, leading and trailing spaces, tabs, and non-printable carriage returns are stripped from each line before comparisons occur.",
               },
             ].map(({ q, a }, idx) => (
               <div
@@ -1128,7 +790,7 @@ export default function CompareTwoLists() {
             operatingSystem: "All",
             browserRequirements: "Requires JavaScript.",
             description:
-              "Compare two text lists online to find missing items, unfollowers, mutual matches, and set differences. Includes native browser ZIP file extraction for Instagram data.",
+              "Compare two text lists online to find missing items, duplicate records, mutual matches, and set differences with 100% client-side processing.",
             offers: {
               "@type": "Offer",
               price: "0",
