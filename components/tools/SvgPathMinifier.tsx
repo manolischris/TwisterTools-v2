@@ -783,7 +783,7 @@ export default function SvgPathMinifier() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        Vector rendering environments like modern web browsers rely on screen grids composed of discrete pixels[cite: 2]. When desktop authoring tools export vector drawings, their internal parametric curve solvers generate floating-point numbers with extraordinary precision—often calculating coordinates down to seven or eight decimal places[cite: 2]. In practical web design, this level of precision is completely redundant[cite: 2].
+                        Vector rendering environments like modern web browsers rely on screen grids composed of discrete pixels. When desktop authoring tools export vector drawings, their internal parametric curve solvers generate floating-point numbers with extraordinary precision—often calculating coordinates down to seven or eight decimal places. In practical web design, this level of precision is completely redundant.
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-4">
@@ -792,7 +792,7 @@ export default function SvgPathMinifier() {
                                 <Sparkles className="w-4 h-4 text-indigo-600" /> Subpixel Rendering Thresholds
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                On a standard 1080p or 4K screen, a coordinate offset of 0.001 units represents less than one-tenth of a device pixel[cite: 2]. Truncating coordinates to 1 or 2 decimal places produces zero human-perceptible deviation in curve silhouette[cite: 2].
+                                On a standard 1080p or 4K screen, a coordinate offset of 0.001 units represents less than one-tenth of a device pixel. Truncating coordinates to 1 or 2 decimal places produces zero human-perceptible deviation in curve silhouette.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
@@ -800,7 +800,7 @@ export default function SvgPathMinifier() {
                                 <Scissors className="w-4 h-4 text-indigo-600" /> Whitespace Stripping
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                The W3C SVG path specification allows implicit separators[cite: 2]. Commas and spaces can be eliminated when adjacent tokens are inherently unambiguous, such as between path commands (M, C, Z) and negative coordinates[cite: 2].
+                                The W3C SVG path specification allows implicit separators. Commas and spaces can be eliminated when adjacent tokens are inherently unambiguous, such as between path commands (M, C, Z) and negative coordinates.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50 space-y-2">
@@ -808,7 +808,7 @@ export default function SvgPathMinifier() {
                                 <FileCode className="w-4 h-4 text-indigo-600" /> Leading Zero Elimination
                             </h3>
                             <p className="text-xs text-slate-600 leading-relaxed">
-                                Fractional numbers between -1.0 and 1.0 can legally omit the integer zero character (rendering <code>0.45</code> as <code>.45</code> and <code>-0.8</code> as <code>-.8</code>), instantly shedding one byte per fractional coordinate across thousands of points[cite: 2].
+                                Fractional numbers between -1.0 and 1.0 can legally omit the integer zero character (rendering <code>0.45</code> as <code>.45</code> and <code>-0.8</code> as <code>-.8</code>), instantly shedding one byte per fractional coordinate across thousands of points.
                             </p>
                         </div>
                     </div>
@@ -818,7 +818,7 @@ export default function SvgPathMinifier() {
                             <Terminal className="w-4 h-4" /> Before and After: SVG Path Minification in Action
                         </h3>
                         <p className="text-xs text-slate-300 leading-relaxed">
-                            Observe how excessive floating-point data and bloated whitespace are converted into a compact, production-ready vector stream without altering control points[cite: 2]:
+                            Observe how excessive floating-point data and bloated whitespace are converted into a compact, production-ready vector stream without altering control points:
                         </p>
                         <div className="bg-slate-950 p-3 rounded-lg font-mono text-xs text-indigo-300 overflow-x-auto border border-slate-800 space-y-2">
                             <div className="text-rose-400">
@@ -845,7 +845,7 @@ export default function SvgPathMinifier() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        Selecting the appropriate precision level requires balancing raw file size reduction against dimensional accuracy[cite: 2]. The table below outlines industry-standard precision targets for typical digital media workflows[cite: 2]:
+                        Selecting the appropriate precision level requires balancing raw file size reduction against dimensional accuracy. The table below outlines industry-standard precision targets for typical digital media workflows:
                     </p>
 
                     <div className="overflow-x-auto border border-slate-200 rounded-xl">
@@ -905,7 +905,7 @@ export default function SvgPathMinifier() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        Embedding inline SVGs in HTML documents has become standard practice for modern web frameworks like Next.js, React, and Vue to eliminate HTTP requests and enable instant CSS styling[cite: 2]. However, unoptimized path strings introduce subtle performance bottlenecks[cite: 2]:
+                        Embedding inline SVGs in HTML documents has become standard practice for modern web frameworks like Next.js, React, and Vue to eliminate HTTP requests and enable instant CSS styling. However, unoptimized path strings introduce subtle performance bottlenecks:
                     </p>
 
                     <div className="grid md:grid-cols-2 gap-4">
@@ -915,13 +915,13 @@ export default function SvgPathMinifier() {
                             </h3>
                             <ul className="text-xs text-slate-700 space-y-2">
                                 <li>
-                                    • <strong>Faster DOM Parsing:</strong> Browsers parse inline SVG path tokens synchronously during initial HTML layout[cite: 2]. Smaller path strings directly reduce Total Blocking Time (TBT)[cite: 2].
+                                    • <strong>Faster DOM Parsing:</strong> Browsers parse inline SVG path tokens synchronously during initial HTML layout. Smaller path strings directly reduce Total Blocking Time (TBT).
                                 </li>
                                 <li>
-                                    • <strong>Reduced JS Bundle Size:</strong> React components containing icon SVGs (e.g. Lucide, Heroicons) bundle raw path strings as JavaScript string literals[cite: 2]. Smaller strings shrink your client-side JavaScript payloads[cite: 2].
+                                    • <strong>Reduced JS Bundle Size:</strong> React components containing icon SVGs (e.g. Lucide, Heroicons) bundle raw path strings as JavaScript string literals. Smaller strings shrink your client-side JavaScript payloads.
                                 </li>
                                 <li>
-                                    • <strong>Optimized Gzip/Brotli Compression:</strong> Uniform precision creates repetitive byte sequences that compress substantially better in HTTP transfer encodings[cite: 2].
+                                    • <strong>Optimized Gzip/Brotli Compression:</strong> Uniform precision creates repetitive byte sequences that compress substantially better in HTTP transfer encodings.
                                 </li>
                             </ul>
                         </div>
@@ -932,13 +932,13 @@ export default function SvgPathMinifier() {
                             </h3>
                             <ul className="text-xs text-slate-700 space-y-2">
                                 <li>
-                                    • <strong>Exporting 8-Decimal Precision:</strong> Generating sub-atomic coordinates that provide zero visual value while doubling string memory[cite: 2].
+                                    • <strong>Exporting 8-Decimal Precision:</strong> Generating sub-atomic coordinates that provide zero visual value while doubling string memory.
                                 </li>
                                 <li>
-                                    • <strong>Redundant Commas & Spaces:</strong> Leaving commas between commands and coordinates (e.g. <code>M,10,20,C,30...</code>) which wastes critical byte space[cite: 2].
+                                    • <strong>Redundant Commas & Spaces:</strong> Leaving commas between commands and coordinates (e.g. <code>M,10,20,C,30...</code>) which wastes critical byte space.
                                 </li>
                                 <li>
-                                    • <strong>Unminified Production SVGs:</strong> Loading uncompressed 50KB SVG icons on mobile networks, leading to layout shifts and degraded Largest Contentful Paint (LCP)[cite: 2].
+                                    • <strong>Unminified Production SVGs:</strong> Loading uncompressed 50KB SVG icons on mobile networks, leading to layout shifts and degraded Largest Contentful Paint (LCP).
                                 </li>
                             </ul>
                         </div>
@@ -957,44 +957,44 @@ export default function SvgPathMinifier() {
                     </div>
 
                     <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                        The SVG <code>&lt;path&gt;</code> element is the most versatile shape generator in vector design, defined by a sequence of commands and coordinates[cite: 2]. TwisterTools accurately recognizes and safely compresses all standard SVG command parameters[cite: 2]:
+                        The SVG <code>&lt;path&gt;</code> element is the most versatile shape generator in vector design, defined by a sequence of commands and coordinates. TwisterTools accurately recognizes and safely compresses all standard SVG command parameters:
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-mono font-bold text-indigo-600 text-xs">M / m (MoveTo)</h3>
                             <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                                Sets a new current pen position without drawing[cite: 2]. Follow-up coordinate pairs automatically execute implicit LineTo commands[cite: 2].
+                                Sets a new current pen position without drawing. Follow-up coordinate pairs automatically execute implicit LineTo commands.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-mono font-bold text-indigo-600 text-xs">L / l, H / h, V / v (Lines)</h3>
                             <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                                Draws straight lines from the current point to a new point[cite: 2]. H/h and V/v streamline single-axis horizontal and vertical translations[cite: 2].
+                                Draws straight lines from the current point to a new point. H/h and V/v streamline single-axis horizontal and vertical translations.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-mono font-bold text-indigo-600 text-xs">C / c, S / s (Cubic Bezier)</h3>
                             <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                                Draws smooth cubic Bezier curves utilizing two control points[cite: 2]. S/s mirrors the previous control point for ultra-compact syntax[cite: 2].
+                                Draws smooth cubic Bezier curves utilizing two control points. S/s mirrors the previous control point for ultra-compact syntax.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-mono font-bold text-indigo-600 text-xs">Q / q, T / t (Quadratic Bezier)</h3>
                             <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                                Draws quadratic curves with a single control point, providing lightweight curvature with lower computing complexity[cite: 2].
+                                Draws quadratic curves with a single control point, providing lightweight curvature with lower computing complexity.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-mono font-bold text-indigo-600 text-xs">A / a (Elliptical Arc)</h3>
                             <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                                Draws complex arc curves defined by radiuses, rotation angle, large-arc flag, sweep flag, and target coordinate endpoints[cite: 2].
+                                Draws complex arc curves defined by radiuses, rotation angle, large-arc flag, sweep flag, and target coordinate endpoints.
                             </p>
                         </div>
                         <div className="p-4 border border-slate-200 rounded-xl bg-slate-50">
                             <h3 className="font-mono font-bold text-indigo-600 text-xs">Z / z (ClosePath)</h3>
                             <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                                Automatically seals the current subpath by rendering a straight stroke back to the initial MoveTo coordinate[cite: 2].
+                                Automatically seals the current subpath by rendering a straight stroke back to the initial MoveTo coordinate.
                             </p>
                         </div>
                     </div>
@@ -1017,7 +1017,7 @@ export default function SvgPathMinifier() {
                                 How does decimal precision reduction optimize SVG file size?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                Vector design applications like Adobe Illustrator, Figma, and Inkscape export coordinate floats with 4 to 8 decimal places (e.g., 142.584931)[cite: 2]. On standard web displays, fractions beyond 1 or 2 decimal places represent fractions of a physical subpixel that are visually imperceptible[cite: 2]. Truncating coordinates from 6 decimal places to 1 or 2 eliminates up to 60% of raw character payload from the SVG path &quot;d&quot; attribute without degrading visual quality[cite: 2].
+                                Vector design applications like Adobe Illustrator, Figma, and Inkscape export coordinate floats with 4 to 8 decimal places (e.g., 142.584931). On standard web displays, fractions beyond 1 or 2 decimal places represent fractions of a physical subpixel that are visually imperceptible. Truncating coordinates from 6 decimal places to 1 or 2 eliminates up to 60% of raw character payload from the SVG path &quot;d&quot; attribute without degrading visual quality.
                             </p>
                         </div>
 
@@ -1026,7 +1026,7 @@ export default function SvgPathMinifier() {
                                 What is consecutive delimiter collapsing in SVG path data?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                The SVG specification allows whitespace and commas to be omitted when path token boundaries are unambiguous[cite: 2]. For example, negative coordinates contain an inherent minus delimiter, and decimals starting with a period are syntactically distinct from preceding floats containing periods[cite: 2]. Replacing spaces like &quot;M 10 20 L -30 .5&quot; with &quot;M10 20L-30.5&quot; saves significant byte count[cite: 2].
+                                The SVG specification allows whitespace and commas to be omitted when path token boundaries are unambiguous. For example, negative coordinates contain an inherent minus delimiter, and decimals starting with a period are syntactically distinct from preceding floats containing periods. Replacing spaces like &quot;M 10 20 L -30 .5&quot; with &quot;M10 20L-30.5&quot; saves significant byte count.
                             </p>
                         </div>
 
@@ -1035,7 +1035,7 @@ export default function SvgPathMinifier() {
                                 Will reducing coordinate precision distort complex curves?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                For standard icons and illustrations rendered at sizes between 16px and 1200px, 1 to 2 decimal places provides sub-pixel accuracy that looks identical to the human eye[cite: 2]. Only microscopic viewports mapped onto massive canvas viewboxes (such as GIS mapping or CAD architectural blueprints) require 3 or more decimal places[cite: 2].
+                                For standard icons and illustrations rendered at sizes between 16px and 1200px, 1 to 2 decimal places provides sub-pixel accuracy that looks identical to the human eye. Only microscopic viewports mapped onto massive canvas viewboxes (such as GIS mapping or CAD architectural blueprints) require 3 or more decimal places.
                             </p>
                         </div>
 
@@ -1053,7 +1053,7 @@ export default function SvgPathMinifier() {
                                 Does leading zero omission break browser SVG rendering?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                No[cite: 2]. The W3C SVG path specification explicitly supports floating-point notation omitting the integer zero preceding a decimal point (e.g., .5 instead of 0.5, or -.25 instead of -0.25)[cite: 2]. All modern rendering engines (Blink, WebKit, Gecko) parse this correctly[cite: 2].
+                                No. The W3C SVG path specification explicitly supports floating-point notation omitting the integer zero preceding a decimal point (e.g., .5 instead of 0.5, or -.25 instead of -0.25). All modern rendering engines (Blink, WebKit, Gecko) parse this correctly.
                             </p>
                         </div>
 
@@ -1062,7 +1062,7 @@ export default function SvgPathMinifier() {
                                 Why is client-side SVG minification safer than server-side optimization?
                             </h3>
                             <p className="text-slate-700 text-sm md:text-base leading-relaxed">
-                                Client-side processing executes entirely in your local browser runtime via JavaScript[cite: 2]. Your vector graphics, brand iconography, and proprietary digital assets are never transmitted across a network or stored on external servers, ensuring zero risk of data leakage[cite: 2].
+                                Client-side processing executes entirely in your local browser runtime via JavaScript. Your vector graphics, brand iconography, and proprietary digital assets are never transmitted across a network or stored on external servers, ensuring zero risk of data leakage.
                             </p>
                         </div>
                     </div>
