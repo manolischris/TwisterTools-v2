@@ -23,6 +23,7 @@ import {
   Home,
   Binary,
   Activity,
+  Compass,
   // ── Icons used in search result cards ──
   Link as LinkIcon,
   Link2,
@@ -197,7 +198,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Users, Shuffle, Pipette, Sliders, Layout, LayoutGrid, Circle, CircleDot, Triangle,
   Table, Bot, Home, Wallet, Footprints, Coffee, Dumbbell, Dog, Cat, Wheat,
   PaintBucket, ScrollText, Boxes, Shovel, Sprout, Fish, Sun, Box, Gauge,
-  Wind, Volume2, Plane, Eraser, Shapes, Trophy, UserX,
+  Wind, Volume2, Plane, Eraser, Shapes, Trophy, UserX, Compass,
   Image: ImageIcon,
 };
 

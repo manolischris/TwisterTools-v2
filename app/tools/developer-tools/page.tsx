@@ -222,6 +222,34 @@ export default function DeveloperToolsCategoryPage() {
           iconName: "FileCode2"
         };
       }
+      if (tool.id === "curl-to-fetch-converter") {
+        return {
+          ...tool,
+          title: "cURL to Fetch & Python Converter",
+          description: "Convert cURL commands to Python, JavaScript Fetch, Axios, PHP, and Go code in real time.",
+          iconName: "Terminal",
+          href: "/tools/developer-tools/curl-to-fetch-converter"
+        };
+      }
+      if (tool.id === "css-scroll-snap-builder") {
+        return {
+          ...tool,
+          title: "CSS Scroll-Snap Carousel & Gallery Playground",
+          description: "Build 60fps hardware-accelerated touch sliders, carousels, and snap galleries with pure CSS and Tailwind export.",
+          iconName: "Sliders"
+        };
+      }
+      if (tool.id === "graphql-to-typescript") {
+        return {
+          ...tool,
+          title: "GraphQL to TypeScript Generator",
+          description: "Generate strictly typed TypeScript interfaces and TypedDocumentNode definitions from GraphQL queries.",
+          category: "developer-tools",
+          href: "/tools/developer-tools/graphql-to-typescript",
+          iconName: "FileCode",
+          isFeatured: false
+        };
+      }
       return tool;
     })
     .sort((a, b) => {

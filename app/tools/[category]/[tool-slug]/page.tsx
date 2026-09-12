@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video, MessageSquare, Tv, Send, Image as ImageIcon } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, ArrowLeftRight, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video, MessageSquare, Tv, Send, Compass, Image as ImageIcon } from "lucide-react";
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
@@ -168,6 +168,10 @@ const LinkedInPostFormatter = dynamic(() => import("@/components/tools/LinkedInP
 const TwitchEmoteResizer = dynamic(() => import("@/components/tools/TwitchEmoteResizer"));
 const WhatsAppLinkGenerator = dynamic(() => import("@/components/tools/WhatsAppLinkGenerator"));
 const TelegramLinkGenerator = dynamic(() => import("@/components/tools/TelegramLinkGenerator"));
+const CssCubicBezierGenerator = dynamic(() => import("@/components/tools/CssCubicBezierGenerator"));
+const JsonToTomlConverter = dynamic(() => import("@/components/tools/JsonToTomlConverter"));
+const CurlToFetchConverter = dynamic(() => import("@/components/tools/CurlToFetchConverter"));
+const ScrollSnapBuilder = dynamic(() => import("@/components/tools/ScrollSnapBuilder"));
 
 
 
@@ -344,6 +348,10 @@ const COMPLETED_TOOLS = [
   "twitch-emote-resizer",
   "whatsapp-link-generator",
   "telegram-link-generator",
+  "css-cubic-bezier-generator",
+  "json-to-toml-converter",
+  "curl-to-fetch-converter",
+  "css-scroll-snap-builder",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -550,9 +558,29 @@ export async function generateMetadata({
     description = "Interactive visual CSS keyframe animation generator, timeline studio, and code exporter. Create smooth 60 FPS GPU-accelerated CSS and Tailwind animations.";
   }
 
+  if (category === "developer-tools" && toolSlug === "css-cubic-bezier-generator") {
+    title = "CSS Cubic-Bezier Transition Curve Builder & Generator";
+    description = "Interactive visual cubic-bezier easing curve designer. Generate custom CSS transition curves, preview real-time physics overshoot animations, and copy production code.";
+  }
+
   if (category === "developer-tools" && toolSlug === "json-to-typescript-converter") {
     title = "JSON to TypeScript Interface Generator";
     description = "Convert raw JSON sample payloads into production-grade TypeScript interfaces and types.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "json-to-toml-converter") {
+    title = "JSON to TOML & TOML to JSON Dual Converter";
+    description = "Convert JSON configuration payloads to TOML tables and TOML back into formatted JSON with instant client-side validation.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "curl-to-fetch-converter") {
+    title = "cURL to Fetch & Python Converter";
+    description = "Translate raw terminal cURL commands into clean Python Requests, HTTPX, JavaScript Fetch, Axios, Node.js, and Go HTTP syntax instantly and securely in your browser.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "css-scroll-snap-builder") {
+    title = "CSS Scroll-Snap Carousel & Gallery Playground";
+    description = "Interactive browser-native CSS Scroll-Snap visual builder. Construct high-performance, accessible touch sliders, carousels, and vertical feeds with CSS and Tailwind output.";
   }
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
@@ -1476,6 +1504,8 @@ export default async function ToolPage({
                   <ArrowRightLeft className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "sql-formatter-validator" ? (
                   <Database className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "curl-to-fetch-converter" ? (
+                  <Terminal className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "regex-tester" ? (
                   <SearchCode className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (toolSlug === "diff-checker" || toolSlug === "text-column-extractor") ? (
@@ -1698,6 +1728,12 @@ export default async function ToolPage({
                   <MessageSquare className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "telegram-link-generator" ? (
                   <Send className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "css-cubic-bezier-generator" ? (
+                  <Compass className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "json-to-toml-converter" ? (
+                  <ArrowLeftRight className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "css-scroll-snap-builder" ? (
+                  <Sliders className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
                   <Binary className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (
@@ -1846,6 +1882,14 @@ export default async function ToolPage({
             <TailwindColorGenerator />
           ) : category === "developer-tools" && toolSlug === "css-animation-generator" ? (
             <CssAnimationGenerator />
+          ) : category === "developer-tools" && toolSlug === "css-cubic-bezier-generator" ? (
+            <CssCubicBezierGenerator />
+          ) : category === "developer-tools" && toolSlug === "json-to-toml-converter" ? (
+            <JsonToTomlConverter />
+          ) : category === "developer-tools" && toolSlug === "curl-to-fetch-converter" ? (
+            <CurlToFetchConverter />
+          ) : category === "developer-tools" && toolSlug === "css-scroll-snap-builder" ? (
+            <ScrollSnapBuilder />
           ) : category === "developer-tools" && toolSlug === "json-to-typescript-converter" ? (
             <JsonToTypescriptConverter />
           ) : category === "image-tools" && toolSlug === "favicon-generator" ? (

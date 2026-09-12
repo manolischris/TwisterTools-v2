@@ -4,3 +4,10 @@
 
 # Text Tools (text-tools)
 - [Compare Two Lists & Set Difference Finder](https://www.twistertools.com/tools/text-tools/compare-two-lists): Find differences, intersections, unions, and complements between two text lists.
+
+# Developer Tools (developer-tools)
+- CSS Cubic-Bezier Transition Curve Builder: Interactive visual bezier easing generator with motion previews and multi-framework exports (/tools/developer-tools/css-cubic-bezier-generator)
+- JSON to TOML & TOML to JSON Dual Converter: /tools/developer-tools/json-to-toml-converter (Fast, browser-native bi-directional JSON & TOML transformer)
+- cURL to Fetch & Python Converter (/tools/developer-tools/curl-to-fetch-converter): Browser-native cURL command parser and multi-language HTTP syntax generator.
+- CSS Scroll-Snap Carousel & Gallery Playground (/tools/developer-tools/css-scroll-snap-builder): Interactive visual builder for hardware-accelerated CSS scroll-snap sliders and feeds.
+
