@@ -250,6 +250,61 @@ export default function DeveloperToolsCategoryPage() {
           isFeatured: false
         };
       }
+      if (tool.id === "markdown-progress-calculator") {
+        return {
+          ...tool,
+          title: "Markdown Checklist to Linear Progress Bar Calculator",
+          description: "Convert markdown checklists into ASCII/Unicode linear progress bars, badges, and completion metrics.",
+          category: "developer-tools",
+          href: "/tools/developer-tools/markdown-progress-calculator",
+          iconName: "CheckSquare",
+          isFeatured: false
+        };
+      }
+      if (tool.id === "css-container-query-builder") {
+        return {
+          ...tool,
+          title: "CSS Container Query Formatter",
+          description: "Visual @container builder with live interactive resizing, CQ unit previews, and CSS export.",
+          category: "developer-tools",
+          href: "/tools/developer-tools/css-container-query-builder",
+          iconName: "Boxes",
+          isFeatured: false
+        };
+      }
+      if (tool.id === "semver-version-calculator") {
+        return {
+          ...tool,
+          title: "SemVer Semantic Version Comparison & Bump Calculator",
+          description: "Compare SemVer 2.0.0 versions, determine precedence, compute release bumps, and validate build metadata.",
+          category: "developer-tools",
+          href: "/tools/developer-tools/semver-version-calculator",
+          iconName: "GitCompare",
+          isFeatured: false
+        };
+      }
+      if (tool.id === "sql-parameter-replacer") {
+        return {
+          ...tool,
+          title: "SQL Query Parameter Binder",
+          description: "Convert parameterized ORM SQL statements into executable raw queries with dialect-aware escaping.",
+          category: "developer-tools",
+          href: "/tools/developer-tools/sql-parameter-replacer",
+          iconName: "Database",
+          isFeatured: false
+        };
+      }
+      if (tool.id === "gitignore-generator") {
+        return {
+          ...tool,
+          title: "Git .gitignore Generator",
+          description: "Generate multi-stack .gitignore files tailored to your frameworks, runtimes, and IDEs.",
+          category: "developer-tools",
+          href: "/tools/developer-tools/gitignore-generator",
+          iconName: "FolderGit2",
+          isFeatured: false
+        };
+      }
       return tool;
     })
     .sort((a, b) => {

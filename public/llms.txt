@@ -10,4 +10,8 @@
 - JSON to TOML & TOML to JSON Dual Converter: /tools/developer-tools/json-to-toml-converter (Fast, browser-native bi-directional JSON & TOML transformer)
 - cURL to Fetch & Python Converter (/tools/developer-tools/curl-to-fetch-converter): Browser-native cURL command parser and multi-language HTTP syntax generator.
 - CSS Scroll-Snap Carousel & Gallery Playground (/tools/developer-tools/css-scroll-snap-builder): Interactive visual builder for hardware-accelerated CSS scroll-snap sliders and feeds.
-
+- [Markdown Checklist to Linear Progress Bar Calculator](/tools/developer-tools/markdown-progress-calculator): Real-time parser converting CommonMark task lists to ASCII, Unicode progress bars, and Shields.io badges.
+- [CSS Container Query (CQ) & Size-Container Formatter](/tools/developer-tools/css-container-query-builder): Visual @container builder with live interactive resizing, CQ unit previews, and CSS export.
+- SemVer Version Calculator (/tools/developer-tools/semver-version-calculator): Compare SemVer 2.0.0 release precedence and calculate version bumps.
+- SQL Query Parameter Binder (/tools/developer-tools/sql-parameter-replacer): Browser-native binder that inlines positional and named SQL placeholders with escaped values for instant database debugging.
+- [Git .gitignore Template Generator by Tech Stack](/tools/developer-tools/gitignore-generator): Create consolidated, conflict-free .gitignore templates for any modern programming language, framework, operating system, and IDE.

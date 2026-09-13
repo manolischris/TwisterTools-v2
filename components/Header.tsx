@@ -35,6 +35,7 @@ import {
   CreditCard,
   FileCode,
   FileCode2,
+  FolderGit2,
   Clock,
   SearchCode,
   ShieldCheck,
@@ -142,6 +143,8 @@ import {
   MessageSquare,
   Send,
   UserX,
+  CheckSquare,
+  GitCompare,
 } from "lucide-react";
 import toolsRegistryData from "@/lib/tools-registry.json";
 import { rankTools, type SearchableTool } from "@/lib/search-utils";
@@ -174,6 +177,9 @@ import { TwitterIcon } from "@/components/icons/TwitterIcon";
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Youtube: YoutubeIcon,
   Twitter: TwitterIcon,
+  FolderGit2,
+  GitCompare,
+  CheckSquare,
   MessageSquare,
   Send,
   ScanText,

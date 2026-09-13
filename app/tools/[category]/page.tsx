@@ -37,6 +37,7 @@ import {
   Fingerprint,
   Flame,
   FolderArchive,
+  FolderGit2,
   Globe,
   Globe2,
   GraduationCap,
@@ -112,8 +113,23 @@ import {
   Baseline,
   Trophy,
   FileCode2,
-  ScanText,
-  Shuffle, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Code2, Printer, Video, MessageSquare, Tv, Send, UserX, Compass
+  Shuffle,
+  CircleDot,
+  PenTool,
+  Smile,
+  Gamepad2,
+  VectorSquare,
+  Code2,
+  Printer,
+  Video,
+  MessageSquare,
+  Tv,
+  Send,
+  UserX,
+  Compass,
+  CheckSquare,
+  GitCompare,
+  ScanText
 } from "lucide-react";
 
 import CategoryToolSearchGrid from "@/components/tools/CategoryToolSearchGrid";
@@ -132,6 +148,9 @@ type Params = Promise<{ category: string }>;
 const SERVER_ICON_MAP: Record<string, React.ComponentType<any>> = {
   Youtube: YoutubeIcon,
   Twitter: TwitterIcon,
+  FolderGit2,
+  GitCompare,
+  CheckSquare,
   Tv,
   MessageSquare,
   Send,

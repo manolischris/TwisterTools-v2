@@ -2928,5 +2928,50 @@
     "href": "/tools/developer-tools/graphql-to-typescript",
     "iconName": "FileCode",
     "isFeatured": false
+  },
+  {
+    "id": "markdown-progress-calculator",
+    "title": "Markdown Checklist to Linear Progress Bar Calculator",
+    "description": "Convert Markdown task lists into ASCII/Unicode linear progress bars, shields badges, and real-time completion metrics.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/markdown-progress-calculator",
+    "iconName": "CheckSquare",
+    "isFeatured": false
+  },
+  {
+    "id": "css-container-query-builder",
+    "title": "CSS Container Query (CQ) & Size-Container Formatter",
+    "description": "Visual @container builder with live interactive resizing, CQ unit previews, and CSS export.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-container-query-builder",
+    "iconName": "Boxes",
+    "isFeatured": false
+  },
+  {
+    "id": "semver-version-calculator",
+    "title": "SemVer Semantic Version Comparison & Bump Calculator",
+    "description": "Evaluate SemVer 2.0.0 release precedence, compute major, minor, patch, and prerelease version bumps, validate build metadata, and inspect diff boundaries client-side.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/semver-version-calculator",
+    "iconName": "GitCompare",
+    "isFeatured": false
+  },
+  {
+    "id": "sql-parameter-replacer",
+    "title": "SQL Query Parameter Placeholder to Inline Value Binder",
+    "description": "Convert parameterized ORM SQL queries into executable raw statements with dialect-safe escaping for Postgres, MySQL, SQLite, and Oracle.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/sql-parameter-replacer",
+    "iconName": "Database",
+    "isFeatured": false
+  },
+  {
+    "id": "gitignore-generator",
+    "title": "Git .gitignore Template Generator by Tech Stack",
+    "description": "Create consolidated, conflict-free .gitignore templates for any modern programming language, framework, operating system, and IDE.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/gitignore-generator",
+    "iconName": "FolderGit2",
+    "isFeatured": false
   }
 ]

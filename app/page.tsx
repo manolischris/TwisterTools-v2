@@ -14,6 +14,7 @@ import {
   Globe2,
   Database,
   Code2,
+  FolderGit2,
   RefreshCw,
   Calculator,
   Image as ImageIcon,
@@ -139,8 +140,20 @@ import {
   FileCode2,
   KeyRound,
   Network,
-  ScanText,
-  Trophy, CircleDot, PenTool, Smile, Gamepad2, VectorSquare, Printer, MessageSquare, Tv, Send, UserX
+  Trophy,
+  CircleDot,
+  PenTool,
+  Smile,
+  Gamepad2,
+  VectorSquare,
+  Printer,
+  MessageSquare,
+  Tv,
+  Send,
+  UserX,
+  CheckSquare,
+  GitCompare,
+  ScanText
 } from "lucide-react";
 
 // Import master tool registry (automatically synchronized for pure text comparison utilities)
@@ -162,6 +175,9 @@ import { TwitterIcon } from "@/components/icons/TwitterIcon";
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   Youtube: YoutubeIcon,
   Twitter: TwitterIcon,
+  FolderGit2,
+  GitCompare,
+  CheckSquare,
   Tv,
   MessageSquare,
   Send,
