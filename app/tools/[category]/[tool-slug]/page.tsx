@@ -3,7 +3,7 @@ import path from "path";
 import Link from "next/link";
 import { redirect, permanentRedirect, notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, ArrowLeftRight, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video, MessageSquare, Tv, Send, Compass, Image as ImageIcon } from "lucide-react";
+import { QrCode, Hash, Info, HelpCircle, Lock, ShieldAlert, CalendarClock, Percent, Calculator, Type, ListStart, Binary, Globe, Globe2, FileJson, Code, Code2, FileCode, FileCode2, Clock, ArrowRightLeft, ArrowLeftRight, Database, SearchCode, Columns, FileText, Minimize2, Maximize2, Share2, MapPin, ShieldCheck, Server, Layers, RefreshCw, Palette, CreditCard, FileImage, Workflow, Fingerprint, Baby, Dices, Pipette, Sliders, Shapes, Layout, LayoutGrid, Grid3X3, Table, Terminal, Keyboard, Shield, Car, Wallet, Scale, Fuel, Zap, Coffee, TrendingUp, Moon, Dumbbell, Activity, Flame, Cat, Dog, Footprints, Timer, Wheat, ScrollText, Boxes, Sprout, Sun, Triangle, Circle, Box, Wind, Droplets, GraduationCap, Eraser, ListOrdered, Baseline, Gauge, Shuffle, PenTool, Smile, VectorSquare, Printer, Sparkles, Network, Link2, ScanText, Scissors, Crop, AlignLeft, Video, MessageSquare, Tv, Send, Compass, Bot, Image as ImageIcon } from "lucide-react";
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
 import urlMap from "../../../../url-map.json";
 import toolsRegistry from "../../../../lib/tools-registry.json";
@@ -174,6 +174,8 @@ const CurlToFetchConverter = dynamic(() => import("@/components/tools/CurlToFetc
 const ScrollSnapBuilder = dynamic(() => import("@/components/tools/ScrollSnapBuilder"));
 const SqlQueryParameterReplacer = dynamic(() => import("@/components/tools/SqlQueryParameterReplacer"));
 const JsonPathEvaluator = dynamic(() => import("@/components/tools/JsonPathEvaluator"));
+const CanonicalUrlTagBuilder = dynamic(() => import("@/components/tools/CanonicalUrlTagBuilder"));
+const LlmsTxtGenerator = dynamic(() => import("@/components/tools/LlmsTxtGenerator"));
 
 
 
@@ -357,6 +359,8 @@ const COMPLETED_TOOLS = [
   "css-scroll-snap-builder",
   "sql-parameter-replacer",
   "jsonpath-evaluator",
+  "canonical-url-tag-builder",
+  "llms-txt-generator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -596,6 +600,16 @@ export async function generateMetadata({
   if (category === "developer-tools" && toolSlug === "jsonpath-evaluator") {
     title = "JSONPath Expression Evaluator";
     description = "Test, debug, and filter nested JSON payloads with real-time JSONPath syntax evaluation.";
+  }
+
+  if (category === "web-tools" && toolSlug === "canonical-url-tag-builder") {
+    title = "Canonical URL Link Tag & Cross-Domain Audit Formatter";
+    description = "Generate, sanitize, and validate canonical link tags, HTTP response headers, hreflang clusters, and cross-domain rel=canonical markup with instant SEO audit diagnostics.";
+  }
+
+  if (category === "web-tools" && toolSlug === "llms-txt-generator") {
+    title = "llms.txt & llms-full.txt Generator for AI Search";
+    description = "Generate standard-compliant /llms.txt and /llms-full.txt files to optimize your website for LLM crawlers, AI search agents, and GEO. 100% browser-based with multi-language and Greek support.";
   }
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
@@ -1019,6 +1033,11 @@ export default async function ToolPage({
   if (category === "developer-tools" && toolSlug === "jsonpath-evaluator") {
     tool.name = "JSONPath Expression Evaluator";
     tool.description = "Test, debug, and filter nested JSON payloads with real-time JSONPath syntax evaluation.";
+  }
+
+  if (category === "web-tools" && toolSlug === "canonical-url-tag-builder") {
+    tool.name = "Canonical URL Link Tag & Cross-Domain Audit Formatter";
+    tool.description = "Generate, sanitize, and validate canonical link tags, HTTP response headers, hreflang clusters, and cross-domain rel=canonical markup with instant SEO audit diagnostics.";
   }
 
   if (category === "calculators" && toolSlug === "rule-of-72-calculator") {
@@ -1763,6 +1782,10 @@ export default async function ToolPage({
                   <Database className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "jsonpath-evaluator" ? (
                   <Code2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : category === "web-tools" && toolSlug === "canonical-url-tag-builder" ? (
+                  <Link2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : category === "web-tools" && toolSlug === "llms-txt-generator" ? (
+                  <Bot className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
                   <Binary className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (
@@ -1923,6 +1946,10 @@ export default async function ToolPage({
             <SqlQueryParameterReplacer />
           ) : category === "developer-tools" && toolSlug === "jsonpath-evaluator" ? (
             <JsonPathEvaluator />
+          ) : category === "web-tools" && toolSlug === "canonical-url-tag-builder" ? (
+            <CanonicalUrlTagBuilder />
+          ) : category === "web-tools" && toolSlug === "llms-txt-generator" ? (
+            <LlmsTxtGenerator />
           ) : category === "developer-tools" && toolSlug === "json-to-typescript-converter" ? (
             <JsonToTypescriptConverter />
           ) : category === "image-tools" && toolSlug === "favicon-generator" ? (

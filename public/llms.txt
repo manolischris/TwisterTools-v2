@@ -16,6 +16,9 @@
 - [Subnet Mask & IPv4 CIDR Range Calculator](https://www.twistertools.com/tools/web-tools/subnet-cidr-calculator): Calculate IPv4 network ranges, broadcast addresses, usable IP spans, wildcard masks, and VLSM subnets client-side.
 - [IPv6 to IPv4 & Hexadecimal Address Expander](https://www.twistertools.com/tools/web-tools/ipv6-address-converter): Enterprise-grade IPv6 address expander, RFC 5952 compressor, IPv4-mapped address extractor, 128-bit binary visualizer, and ip6.arpa reverse DNS PTR generator.
 - [Content Security Policy (CSP) Header Generator](https://www.twistertools.com/tools/web-tools/csp-header-generator): Generate hardened Content Security Policy Level 3 headers with presets for Next.js, WordPress, and zero-trust security.
+- [HTTP Status Code Reference & Diagnostic Header Matrix](https://www.twistertools.com/tools/web-tools/http-status-code-checker): Lookup RFC 9110 HTTP status codes, diagnose API response headers, inspect cURL commands, and test live endpoints in real time.
+- [Canonical URL Link Tag & Cross-Domain Audit Formatter](https://www.twistertools.com/tools/web-tools/canonical-url-tag-builder): Generate, sanitize, and validate canonical link tags, HTTP response headers, hreflang clusters, and cross-domain rel=canonical markup with instant SEO audit diagnostics.
+- [llms.txt & llms-full.txt Generator for AI Search](https://www.twistertools.com/tools/web-tools/llms-txt-generator): Generate standard-compliant /llms.txt and /llms-full.txt files to optimize your website for LLM crawlers, AI search agents, and GEO. 100% browser-based with multi-language and Greek support.
 
 ## Developer & Code Tools (developer-tools)
 - [MD5 Hash Generator & Checksum Tool](https://www.twistertools.com/tools/developer-tools/md5-generator): Compute secure RFC 1321 MD5 hashes instantly from text strings, bulk multi-line inputs, or local files — 100% client-side with zero server transmission.
@@ -75,6 +78,8 @@
 - [SQL Query Parameter Placeholder to Inline Value Binder](https://www.twistertools.com/tools/developer-tools/sql-parameter-replacer): Convert parameterized ORM SQL queries into executable raw statements with dialect-safe escaping for Postgres, MySQL, SQLite, and Oracle.
 - [Git .gitignore Template Generator by Tech Stack](https://www.twistertools.com/tools/developer-tools/gitignore-generator): Create consolidated, conflict-free .gitignore templates for any modern programming language, framework, operating system, and IDE.
 - [JSONPath Expression Evaluator](https://www.twistertools.com/tools/developer-tools/jsonpath-evaluator): Evaluate, debug, and filter complex nested JSON payloads with real-time JSONPath expressions, array slicing, and predicate conditions.
+- [Nginx Server Block & Reverse Proxy Config Generator](https://www.twistertools.com/tools/developer-tools/nginx-config-generator): Generate production-grade NGINX server blocks, reverse proxies, SSL/TLS configurations, security headers, and caching rules instantly.
+- [CSS Text Wrap Balance & Pretty Previewer](https://www.twistertools.com/tools/developer-tools/css-text-wrap-previewer): Preview and compare modern CSS text-wrap values across responsive viewports to eradicate typography widows.
 
 ## Data & Number Converters (converter-tools)
 - [String to Hex & Hex to String Converter](https://www.twistertools.com/tools/converter-tools/string-to-hex): Convert plain text strings to hexadecimal format and decode hex arrays back to readable text in real-time.

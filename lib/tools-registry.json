@@ -1568,7 +1568,7 @@
     "category": "random-tools",
     "href": "/tools/random-tools/random-country-picker",
     "iconName": "Globe2",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "color-picker-contrast-checker",
@@ -2405,7 +2405,7 @@
     "category": "random-tools",
     "href": "/tools/random-tools/tournament-bracket-generator",
     "iconName": "Trophy",
-    "isFeatured": true
+    "isFeatured": false
   },
   {
     "id": "truth-or-dare-generator",
@@ -2982,5 +2982,50 @@
     "href": "/tools/developer-tools/jsonpath-evaluator",
     "iconName": "Code2",
     "isFeatured": false
+  },
+  {
+    "id": "nginx-config-generator",
+    "title": "Nginx Server Block & Reverse Proxy Config Generator",
+    "description": "Generate production-grade NGINX server blocks, reverse proxies, SSL/TLS configurations, security headers, and caching rules instantly.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/nginx-config-generator",
+    "iconName": "Server",
+    "isFeatured": false
+  },
+  {
+    "id": "css-text-wrap-previewer",
+    "title": "CSS Text Wrap Balance & Pretty Previewer",
+    "description": "Preview and compare modern CSS text-wrap values across responsive viewports to eradicate typography widows.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/css-text-wrap-previewer",
+    "iconName": "AlignJustify",
+    "isFeatured": false
+  },
+  {
+    "id": "http-status-code-checker",
+    "title": "HTTP Status Code Reference & Diagnostic Header Matrix",
+    "description": "Lookup RFC 9110 HTTP status codes, diagnose API response headers, inspect cURL commands, and test live endpoints in real time.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/http-status-code-checker",
+    "iconName": "Activity",
+    "isFeatured": false
+  },
+  {
+    "id": "canonical-url-tag-builder",
+    "title": "Canonical URL Link Tag & Cross-Domain Audit Formatter",
+    "description": "Generate, sanitize, and validate canonical link tags, HTTP response headers, hreflang clusters, and cross-domain rel=canonical markup with instant SEO audit diagnostics.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/canonical-url-tag-builder",
+    "iconName": "Link2",
+    "isFeatured": false
+  },
+  {
+    "id": "llms-txt-generator",
+    "title": "llms.txt & llms-full.txt Generator for AI Search",
+    "description": "Generate standard-compliant /llms.txt and /llms-full.txt files to optimize your website for LLM crawlers, AI search agents, and GEO. 100% browser-based with multi-language and Greek support.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/llms-txt-generator",
+    "iconName": "Bot",
+    "isFeatured": true
   }
 ]

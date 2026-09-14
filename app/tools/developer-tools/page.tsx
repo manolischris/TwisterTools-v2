@@ -313,6 +313,22 @@ export default function DeveloperToolsCategoryPage() {
           isFeatured: false
         };
       }
+      if (tool.id === "nginx-config-generator") {
+        return {
+          ...tool,
+          title: "Nginx Config Generator",
+          description: "Generate production-grade NGINX reverse proxies, SSL server blocks, security headers, and caching rules.",
+          iconName: "Server"
+        };
+      }
+      if (tool.id === "css-text-wrap-previewer") {
+        return {
+          ...tool,
+          title: "CSS Text Wrap Balance & Pretty Previewer",
+          description: "Preview and compare modern CSS text-wrap values (balance vs pretty) across viewport sizes to eliminate typography widows and orphans.",
+          iconName: "AlignJustify"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {

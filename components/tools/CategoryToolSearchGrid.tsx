@@ -6,6 +6,7 @@ import { rankTools } from "@/lib/search-utils";
 import { YoutubeIcon } from "@/components/icons/YoutubeIcon";
 import { TwitterIcon } from "@/components/icons/TwitterIcon";
 import { Link as LinkIcon,
+  AlignJustify,
   Link2,
   Circle,
   Search,
@@ -273,6 +274,7 @@ const ICON_MAP: Record<string, React.ComponentType<any>> = {
   ListFilter,
   ArrowUpDown,
   AlignLeft,
+  AlignJustify,
   Replace,
   Radio,
   Zap,

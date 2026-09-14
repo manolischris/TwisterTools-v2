@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Link as LinkIcon,
+  AlignJustify,
   Link2,
   Activity,
   ArrowLeftRight,
@@ -226,6 +227,7 @@ const ICON_MAP: Record<string, any> = {
   Scissors,
   SearchCode,
   Server,
+  AlignJustify,
   Share2,
   ShieldAlert,
   ShieldCheck,
