@@ -173,6 +173,7 @@ const JsonToTomlConverter = dynamic(() => import("@/components/tools/JsonToTomlC
 const CurlToFetchConverter = dynamic(() => import("@/components/tools/CurlToFetchConverter"));
 const ScrollSnapBuilder = dynamic(() => import("@/components/tools/ScrollSnapBuilder"));
 const SqlQueryParameterReplacer = dynamic(() => import("@/components/tools/SqlQueryParameterReplacer"));
+const JsonPathEvaluator = dynamic(() => import("@/components/tools/JsonPathEvaluator"));
 
 
 
@@ -355,6 +356,7 @@ const COMPLETED_TOOLS = [
   "curl-to-fetch-converter",
   "css-scroll-snap-builder",
   "sql-parameter-replacer",
+  "jsonpath-evaluator",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -589,6 +591,11 @@ export async function generateMetadata({
   if (category === "developer-tools" && toolSlug === "sql-parameter-replacer") {
     title = "SQL Query Parameter Placeholder to Inline Value Binder";
     description = "Safely substitute ?, $1, :name, and @param ORM query placeholders with literal values for instant DBeaver, DataGrip, and pgAdmin query execution.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "jsonpath-evaluator") {
+    title = "JSONPath Expression Evaluator";
+    description = "Test, debug, and filter nested JSON payloads with real-time JSONPath syntax evaluation.";
   }
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
@@ -1007,6 +1014,11 @@ export default async function ToolPage({
   if (category === "developer-tools" && toolSlug === "sql-parameter-replacer") {
     tool.name = "SQL Query Parameter Placeholder to Inline Value Binder";
     tool.description = "Safely substitute ?, $1, :name, and @param ORM query placeholders with literal values for instant DBeaver, DataGrip, and pgAdmin query execution.";
+  }
+
+  if (category === "developer-tools" && toolSlug === "jsonpath-evaluator") {
+    tool.name = "JSONPath Expression Evaluator";
+    tool.description = "Test, debug, and filter nested JSON payloads with real-time JSONPath syntax evaluation.";
   }
 
   if (category === "calculators" && toolSlug === "rule-of-72-calculator") {
@@ -1749,6 +1761,8 @@ export default async function ToolPage({
                   <Sliders className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : toolSlug === "sql-parameter-replacer" ? (
                   <Database className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : toolSlug === "jsonpath-evaluator" ? (
+                  <Code2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
                   <Binary className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (
@@ -1907,6 +1921,8 @@ export default async function ToolPage({
             <ScrollSnapBuilder />
           ) : category === "developer-tools" && toolSlug === "sql-parameter-replacer" ? (
             <SqlQueryParameterReplacer />
+          ) : category === "developer-tools" && toolSlug === "jsonpath-evaluator" ? (
+            <JsonPathEvaluator />
           ) : category === "developer-tools" && toolSlug === "json-to-typescript-converter" ? (
             <JsonToTypescriptConverter />
           ) : category === "image-tools" && toolSlug === "favicon-generator" ? (

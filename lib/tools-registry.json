@@ -2973,5 +2973,14 @@
     "href": "/tools/developer-tools/gitignore-generator",
     "iconName": "FolderGit2",
     "isFeatured": false
+  },
+  {
+    "id": "jsonpath-evaluator",
+    "title": "JSONPath Expression Evaluator",
+    "description": "Evaluate, debug, and filter complex nested JSON payloads with real-time JSONPath expressions, array slicing, and predicate conditions.",
+    "category": "developer-tools",
+    "href": "/tools/developer-tools/jsonpath-evaluator",
+    "iconName": "Code2",
+    "isFeatured": false
   }
 ]

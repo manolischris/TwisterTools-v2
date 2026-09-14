@@ -294,6 +294,14 @@ export default function DeveloperToolsCategoryPage() {
           isFeatured: false
         };
       }
+      if (tool.id === "jsonpath-evaluator") {
+        return {
+          ...tool,
+          title: "JSONPath Expression Evaluator",
+          description: "Evaluate, debug, and filter complex nested JSON payloads with real-time JSONPath expressions, array slicing, and predicate conditions.",
+          iconName: "Code2"
+        };
+      }
       if (tool.id === "gitignore-generator") {
         return {
           ...tool,

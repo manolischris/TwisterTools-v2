@@ -920,8 +920,8 @@
       "id": 70,
       "name": "Twitter Card Generator",
       "legacy_url": "/twitter-card-generator",
-      "new_url": "/tools/web-tools",
-      "new_category": "web-tools",
+      "new_url": "/tools/social-tools",
+      "new_category": "social-tools",
       "description": "Generate Twitter card meta tags"
     },
     {
