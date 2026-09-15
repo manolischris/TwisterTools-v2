@@ -1,6 +1,8 @@
 # TwisterTools
 
-> TwisterTools is a fast, 100% browser-native web utility platform providing developer, media, mathematical, and social utilities without server uploads or logins.
+> 100% free, fast, privacy-first, browser-native online utilities and calculation engines.
+
+TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of client-side web tools, calculators, generators, and converters designed to execute entirely in the user's browser memory (RAM). By utilizing modern browser-side technologies—including native JavaScript, WebAssembly, HTML5 Canvas, and the Web Cryptography API—TwisterTools guarantees zero-latency execution without transmitting user files, sensitive data, code, or cryptographic keys to remote servers.
 
 ## Web & SEO Tools (web-tools)
 - [Meta Tag Generator & Social Preview Inspector](https://www.twistertools.com/tools/web-tools/meta-tag-generator): Generate SEO-optimized HTML meta tags, Open Graph properties, and Twitter Cards with live previews for Google, Facebook, & X. 100% client-side & secure.
@@ -19,6 +21,11 @@
 - [HTTP Status Code Reference & Diagnostic Header Matrix](https://www.twistertools.com/tools/web-tools/http-status-code-checker): Lookup RFC 9110 HTTP status codes, diagnose API response headers, inspect cURL commands, and test live endpoints in real time.
 - [Canonical URL Link Tag & Cross-Domain Audit Formatter](https://www.twistertools.com/tools/web-tools/canonical-url-tag-builder): Generate, sanitize, and validate canonical link tags, HTTP response headers, hreflang clusters, and cross-domain rel=canonical markup with instant SEO audit diagnostics.
 - [llms.txt & llms-full.txt Generator for AI Search](https://www.twistertools.com/tools/web-tools/llms-txt-generator): Generate standard-compliant /llms.txt and /llms-full.txt files to optimize your website for LLM crawlers, AI search agents, and GEO. 100% browser-based with multi-language and Greek support.
+- [Schema.org FAQPage & Article JSON-LD Microdata Builder](https://www.twistertools.com/tools/web-tools/schema-jsonld-generator): Generate Google-compliant JSON-LD structured data for FAQPage, Article, NewsArticle, and BlogPosting schemas.
+- [SPF Record Generator & Permissive Syntax Validator](https://www.twistertools.com/tools/web-tools/spf-record-generator): Generate, test, and audit RFC 7208 SPF records. Detect the 10 DNS lookup limit, avoid Permerrors, and prevent unauthorized email spoofing.
+- [DMARC Policy TXT Record Formatter & Reporting Tool](https://www.twistertools.com/tools/web-tools/dmarc-record-generator): Generate RFC 7489 compliant DMARC TXT records with custom policy levels, aggregate rua and forensic ruf reporting tags, and DKIM/SPF alignment.
+- [DKIM Selector Public Key Record Inspector & Generator](https://www.twistertools.com/tools/web-tools/dkim-record-generator): Inspect, generate, and validate RFC 6376 DKIM DNS TXT records with 2048-bit RSA key health diagnostics.
+- [Browser User-Agent Client Hints (UA-CH) Header Inspector](https://www.twistertools.com/tools/web-tools/client-hints-inspector): Inspect, simulate, and generate RFC 8942 User-Agent Client Hints (Sec-CH-UA), Accept-CH headers, and Nginx proxy rules.
 
 ## Developer & Code Tools (developer-tools)
 - [MD5 Hash Generator & Checksum Tool](https://www.twistertools.com/tools/developer-tools/md5-generator): Compute secure RFC 1321 MD5 hashes instantly from text strings, bulk multi-line inputs, or local files — 100% client-side with zero server transmission.

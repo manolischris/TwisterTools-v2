@@ -176,6 +176,10 @@ const SqlQueryParameterReplacer = dynamic(() => import("@/components/tools/SqlQu
 const JsonPathEvaluator = dynamic(() => import("@/components/tools/JsonPathEvaluator"));
 const CanonicalUrlTagBuilder = dynamic(() => import("@/components/tools/CanonicalUrlTagBuilder"));
 const LlmsTxtGenerator = dynamic(() => import("@/components/tools/LlmsTxtGenerator"));
+const SchemaJsonLdGenerator = dynamic(() => import("@/components/tools/SchemaJsonLdGenerator"));
+const DmarcRecordGenerator = dynamic(() => import("@/components/tools/DmarcRecordGenerator"));
+const ClientHintsInspector = dynamic(() => import("@/components/tools/ClientHintsInspector"));
+
 
 
 
@@ -361,6 +365,9 @@ const COMPLETED_TOOLS = [
   "jsonpath-evaluator",
   "canonical-url-tag-builder",
   "llms-txt-generator",
+  "schema-jsonld-generator",
+  "dmarc-record-generator",
+  "client-hints-inspector",
 ];
 
 function handleConsolidationRedirects(category: string, toolSlug: string) {
@@ -610,6 +617,16 @@ export async function generateMetadata({
   if (category === "web-tools" && toolSlug === "llms-txt-generator") {
     title = "llms.txt & llms-full.txt Generator for AI Search";
     description = "Generate standard-compliant /llms.txt and /llms-full.txt files to optimize your website for LLM crawlers, AI search agents, and GEO. 100% browser-based with multi-language and Greek support.";
+  }
+
+  if (category === "web-tools" && toolSlug === "schema-jsonld-generator") {
+    title = "Schema.org FAQPage & Article JSON-LD Microdata Builder";
+    description = "Generate valid Schema.org JSON-LD microdata for FAQPage and Article structured data to qualify for Google search rich snippets.";
+  }
+
+  if (category === "web-tools" && toolSlug === "client-hints-inspector") {
+    title = "Browser User-Agent Client Hints (UA-CH) Header Inspector";
+    description = "Inspect live navigator.userAgentData client hints, test high-entropy values via getHighEntropyValues(), and generate production Accept-CH and Nginx rules.";
   }
 
   if (category === "developer-tools" && toolSlug === "css-flexbox-playground") {
@@ -1038,6 +1055,11 @@ export default async function ToolPage({
   if (category === "web-tools" && toolSlug === "canonical-url-tag-builder") {
     tool.name = "Canonical URL Link Tag & Cross-Domain Audit Formatter";
     tool.description = "Generate, sanitize, and validate canonical link tags, HTTP response headers, hreflang clusters, and cross-domain rel=canonical markup with instant SEO audit diagnostics.";
+  }
+
+  if (category === "web-tools" && toolSlug === "client-hints-inspector") {
+    tool.name = "Browser User-Agent Client Hints (UA-CH) Header Inspector";
+    tool.description = "Inspect live navigator.userAgentData client hints, test high-entropy values via getHighEntropyValues(), and generate production Accept-CH and Nginx rules.";
   }
 
   if (category === "calculators" && toolSlug === "rule-of-72-calculator") {
@@ -1786,6 +1808,12 @@ export default async function ToolPage({
                   <Link2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : category === "web-tools" && toolSlug === "llms-txt-generator" ? (
                   <Bot className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : category === "web-tools" && toolSlug === "schema-jsonld-generator" ? (
+                  <Code2 className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : category === "web-tools" && toolSlug === "dmarc-record-generator" ? (
+                  <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
+                ) : category === "web-tools" && toolSlug === "client-hints-inspector" ? (
+                  <Activity className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : COMPLETED_TOOLS.includes(toolSlug) && category === "converter-tools" ? (
                   <Binary className="h-6 w-6 text-indigo-600 dark:text-indigo-400 sm:h-9 sm:w-9" />
                 ) : (
@@ -2102,6 +2130,12 @@ export default async function ToolPage({
             <Ipv6AddressConverter />
           ) : category === "web-tools" && toolSlug === "subnet-cidr-calculator" ? (
             <SubnetCidrCalculator />
+          ) : category === "web-tools" && toolSlug === "schema-jsonld-generator" ? (
+            <SchemaJsonLdGenerator />
+          ) : category === "web-tools" && toolSlug === "dmarc-record-generator" ? (
+            <DmarcRecordGenerator />
+          ) : category === "web-tools" && toolSlug === "client-hints-inspector" ? (
+            <ClientHintsInspector />
           ) : category === "developer-tools" && toolSlug === "url-query-parameter-parser" ? (
             <UrlQueryParameterParser />
           ) : category === "image-tools" && toolSlug === "image-to-text-ocr" ? (

@@ -38,7 +38,8 @@ for (const tool of tools) {
 }
 
 let content = "# TwisterTools\n\n";
-content += "> TwisterTools is a fast, 100% browser-native web utility platform providing developer, media, mathematical, and social utilities without server uploads or logins.\n\n";
+content += "> 100% free, fast, privacy-first, browser-native online utilities and calculation engines.\n\n";
+content += "TwisterTools is a rapidly expanding, privacy-first ecosystem of hundreds of client-side web tools, calculators, generators, and converters designed to execute entirely in the user's browser memory (RAM). By utilizing modern browser-side technologies—including native JavaScript, WebAssembly, HTML5 Canvas, and the Web Cryptography API—TwisterTools guarantees zero-latency execution without transmitting user files, sensitive data, code, or cryptographic keys to remote servers.\n\n";
 
 for (const [catKey, catName] of Object.entries(CATEGORY_NAMES)) {
   if (grouped[catKey] && grouped[catKey].length > 0) {

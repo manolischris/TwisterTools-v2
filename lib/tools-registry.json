@@ -3027,5 +3027,50 @@
     "href": "/tools/web-tools/llms-txt-generator",
     "iconName": "Bot",
     "isFeatured": true
+  },
+  {
+    "id": "schema-jsonld-generator",
+    "title": "Schema.org FAQPage & Article JSON-LD Microdata Builder",
+    "description": "Generate Google-compliant JSON-LD structured data for FAQPage, Article, NewsArticle, and BlogPosting schemas.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/schema-jsonld-generator",
+    "iconName": "Code2",
+    "isFeatured": false
+  },
+  {
+    "id": "spf-record-generator",
+    "title": "SPF Record Generator & Permissive Syntax Validator",
+    "description": "Generate, test, and audit RFC 7208 SPF records. Detect the 10 DNS lookup limit, avoid Permerrors, and prevent unauthorized email spoofing.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/spf-record-generator",
+    "iconName": "ShieldCheck",
+    "isFeatured": false
+  },
+  {
+    "id": "dmarc-record-generator",
+    "title": "DMARC Policy TXT Record Formatter & Reporting Tool",
+    "description": "Generate RFC 7489 compliant DMARC TXT records with custom policy levels, aggregate rua and forensic ruf reporting tags, and DKIM/SPF alignment.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/dmarc-record-generator",
+    "iconName": "ShieldCheck",
+    "isFeatured": false
+  },
+  {
+    "id": "dkim-record-generator",
+    "title": "DKIM Selector Public Key Record Inspector & Generator",
+    "description": "Inspect, generate, and validate RFC 6376 DKIM DNS TXT records with 2048-bit RSA key health diagnostics.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/dkim-record-generator",
+    "iconName": "KeyRound",
+    "isFeatured": false
+  },
+  {
+    "id": "client-hints-inspector",
+    "title": "Browser User-Agent Client Hints (UA-CH) Header Inspector",
+    "description": "Inspect, simulate, and generate RFC 8942 User-Agent Client Hints (Sec-CH-UA), Accept-CH headers, and Nginx proxy rules.",
+    "category": "web-tools",
+    "href": "/tools/web-tools/client-hints-inspector",
+    "iconName": "Activity",
+    "isFeatured": false
   }
 ]

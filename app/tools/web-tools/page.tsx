@@ -131,6 +131,61 @@ export default function WebToolsCategoryPage() {
           icon: "Activity"
         };
       }
+      if (tool.id === "schema-jsonld-generator") {
+        return {
+          ...tool,
+          name: "Schema.org FAQPage & Article JSON-LD Microdata Builder",
+          title: "Schema.org FAQPage & Article JSON-LD Microdata Builder",
+          slug: "schema-jsonld-generator",
+          description: "Generate Google-compliant JSON-LD structured data for FAQPage, Article, NewsArticle, and BlogPosting schemas.",
+          iconName: "Code2",
+          icon: "Code2"
+        };
+      }
+      if (tool.id === "spf-record-generator") {
+        return {
+          ...tool,
+          name: "SPF Record Generator & Permissive Syntax Validator",
+          title: "SPF Record Generator & Permissive Syntax Validator",
+          slug: "spf-record-generator",
+          description: "Generate, test, and audit RFC 7208 SPF records. Detect the 10 DNS lookup limit, avoid Permerrors, and prevent unauthorized email spoofing.",
+          iconName: "ShieldCheck",
+          icon: "ShieldCheck"
+        };
+      }
+      if (tool.id === "dmarc-record-generator") {
+        return {
+          ...tool,
+          name: "DMARC Policy TXT Record Formatter & Reporting Tool",
+          title: "DMARC Policy TXT Record Formatter & Reporting Tool",
+          slug: "dmarc-record-generator",
+          description: "Generate RFC 7489 compliant DMARC TXT records with custom policy levels, aggregate rua and forensic ruf reporting tags, and DKIM/SPF alignment.",
+          iconName: "ShieldCheck",
+          icon: "ShieldCheck"
+        };
+      }
+      if (tool.id === "dkim-record-generator") {
+        return {
+          ...tool,
+          name: "DKIM Selector Public Key Record Inspector & Generator",
+          title: "DKIM Selector Public Key Record Inspector & Generator",
+          slug: "dkim-record-generator",
+          description: "Inspect, generate, and validate RFC 6376 DKIM DNS TXT records with 2048-bit RSA key health diagnostics.",
+          iconName: "KeyRound",
+          icon: "KeyRound"
+        };
+      }
+      if (tool.id === "client-hints-inspector") {
+        return {
+          ...tool,
+          name: "User-Agent Client Hints Inspector",
+          title: "User-Agent Client Hints Inspector",
+          slug: "client-hints-inspector",
+          description: "Inspect, simulate, and generate RFC 8942 User-Agent Client Hints (Sec-CH-UA), Accept-CH headers, and Nginx proxy rules.",
+          iconName: "Activity",
+          icon: "Activity"
+        };
+      }
       return tool;
     })
     .sort((a, b) => {
@@ -204,10 +259,10 @@ export default function WebToolsCategoryPage() {
                 card.icon === "Clock"
                   ? Clock
                   : card.icon === "ShieldCheck"
-                  ? ShieldCheck
-                  : card.icon === "Globe"
-                  ? Globe
-                  : Server;
+                    ? ShieldCheck
+                    : card.icon === "Globe"
+                      ? Globe
+                      : Server;
 
               return (
                 <div
